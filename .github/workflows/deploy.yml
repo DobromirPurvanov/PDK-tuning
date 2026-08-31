@@ -1,0 +1,41 @@
+name: Deploy PDK Chip Tuning Website
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Tagged Code
+        uses: actions/checkout@v4
+
+      - name: Copy files to server via SCP
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "."
+          target: "/home/pdk_new/website"
+
+      - name: Verify Deployment via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /home/pdk_new/website
+
+            echo "Successfully deployed PDK Chip Tuning Website - tag ${{ github.ref_name }}!"
+
+            # Verify the files arrived
+            ls -la
+
+            # Future Docker commands will go here:
+            # docker compose down
+            # docker compose up -d --build
