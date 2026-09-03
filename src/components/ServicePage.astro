@@ -1,0 +1,117 @@
+---
+// Шаблонът за страница на услуга (план, стр. 17): 8 блока, еднакви за седемте услуги.
+import Base from '@/layouts/Base.astro';
+import Crumbs from '@/components/Crumbs.astro';
+import Faq from '@/components/Faq.astro';
+import ContactForm from '@/components/ContactForm.astro';
+import ServiceTiles from '@/components/ServiceTiles.astro';
+import { t, routes, servicePath, type Lang } from '@/i18n';
+import type { Service } from '@/data/services';
+import { SERVICES } from '@/data/services';
+import prices from '@/data/prices.json';
+import business from '@/data/business.json';
+import { brands, enginesOfModel, modelPath, hpGain } from '@/lib/catalog';
+import { ldService, ldBreadcrumb, ldFaq, ldLocalBusiness } from '@/lib/seo';
+import { icons } from '@/lib/icons';
+interface Props { lang: Lang; s: Service }
+const { lang, s } = Astro.props;
+const d = t(lang);
+const path = servicePath(lang, s.slug);
+const price = (prices.items as Record<string, { from: number; time: string }>)[s.priceKey];
+// 12 популярни модела според горивото на услугата (правило 03, стр. 11)
+const wantFuel = s.fuel === 'both' ? null : s.fuel;
+const popular = brands.flatMap((b) => b.models.map((m) => ({ b, m, es: enginesOfModel(m).filter((e) => !wantFuel || e.fuel === wantFuel) }))).filter((x) => x.es.length >= 3).sort((a, z) => z.es.length - a.es.length).slice(0, 12);
+const crumbs = [{ name: d.crumbs.home, path: routes.home[lang] }, { name: d.nav.services, path: routes.services[lang] }];
+const others = SERVICES.filter((x) => x.slug !== s.slug).map((x) => x.slug).slice(0, 3);
+const L = lang === 'bg' ? { problem: 'Какъв е проблемът', what: 'Какво правим', when: 'Кога има смисъл — и кога не', yes: 'Има смисъл, когато', no: 'Няма смисъл, когато', legal: 'Закон и технически преглед', price: 'Цена и време', cars: 'За кои коли', faq: 'Чести въпроси', act: 'Запази час', from: 'от', time: 'време', other: 'Другите услуги', check: 'провери какво печели твоята кола', in: 'в каталога' } : { problem: 'The problem', what: 'What we do', when: 'When it makes sense — and when not', yes: 'Makes sense when', no: 'Does not make sense when', legal: 'Law and roadworthiness inspection', price: 'Price and time', cars: 'Which cars', faq: 'Questions', act: 'Book or upload', from: 'from', time: 'time', other: 'Other services', check: 'check what your car gains', in: 'in the catalog' };
+---
+<Base lang={lang} title={s.title[lang]} description={s.description[lang]} path={path} current="services" jsonld={[ldBreadcrumb([...crumbs, { name: s.name[lang], path }]), ldService(lang, s.name[lang], s.description[lang], path, price.from), ldFaq(s.faq[lang]), ldLocalBusiness(lang)]}>
+  <div class="hero">
+    <div class="wrap">
+      <Crumbs items={crumbs} current={s.name[lang]} />
+      <div class="cols c64">
+        <div>
+          <p class="kicker">{d.nav.services} · {s.fuel === 'diesel' ? (lang === 'bg' ? 'дизел' : 'diesel') : s.fuel === 'petrol' ? (lang === 'bg' ? 'бензин' : 'petrol') : (lang === 'bg' ? 'дизел и бензин' : 'diesel and petrol')}</p>
+          <h1>{s.h1[lang]}</h1>
+          <p class="lead">{s.problem[lang][0]}</p>
+          <div class="actions"><a class="btn primary" href={`tel:${business.phone}`} data-ev="tel_click" data-ev-label={`service-${s.slug}`}><Fragment set:html={icons.phone} />{business.phoneDisplay}</a><a class="btn ghost" href="#form">{d.cta.form}</a></div>
+          <div class="meta"><span>{L.from} {price.from} €</span><span>{L.time}: {price.time}</span><span>{business.address.street}, {lang === 'bg' ? business.address.city : business.address.cityEn}</span></div>
+        </div>
+        <div class="side">
+          <h3>{lang === 'bg' ? 'Накратко' : 'In short'}</h3>
+          <ul class="check">{s.yes[lang].map((x) => <li>{x}</li>)}</ul>
+          <p class="muted" style="margin:0;font-size:var(--s14)">{lang === 'bg' ? 'Кога не го правим — по-долу, честно.' : 'When we do not do it — below, honestly.'}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="two">
+        <article class="article">
+          <p class="kicker">01 · {L.problem}</p>
+          <h2 id="problem">{L.problem}</h2>
+          {s.problem[lang].slice(1).map((x) => <p>{x}</p>)}
+          <p class="kicker">02 · {L.what}</p>
+          <h2 id="what">{L.what}</h2>
+          {s.what[lang].map((x) => <p>{x}</p>)}
+          <p class="kicker">03 · {L.when}</p>
+          <h2 id="when">{L.when}</h2>
+          <div class="cols">
+            <div><h3 style="color:var(--ok)">{L.yes}</h3><ul class="check">{s.yes[lang].map((x) => <li>{x}</li>)}</ul></div>
+            <div><h3 style="color:var(--signal)">{L.no}</h3><ul class="check">{s.no[lang].map((x) => <li>{x}</li>)}</ul></div>
+          </div>
+          <p class="kicker">04 · {L.legal}</p>
+          <h2 id="legal">{L.legal}</h2>
+          <div class="box warn">{s.legal[lang].map((x) => <p>{x}</p>)}</div>
+          <p class="kicker">05 · {L.price}</p>
+          <h2 id="price">{L.price}</h2>
+          <p><strong class="num" style="font-size:var(--s22)">{L.from} {price.from} €</strong> · {price.time}</p>
+          {s.price[lang].map((x) => <p>{x}</p>)}
+          <p><a href={routes.prices[lang]}>{d.cta.prices} →</a></p>
+        </article>
+        <aside>
+          <div class="side sticky">
+            <h3>{L.act}</h3>
+            <p style="font-size:var(--s16)">{lang === 'bg' ? 'По телефона за две минути: дали е за вашата кола, колко струва, кога има час.' : 'Local customers: call. Partner workshops: upload the file through the portal.'}</p>
+            <div class="actions" style="flex-direction:column;align-items:stretch"><a class="btn primary" href={`tel:${business.phone}`} data-ev="tel_click" data-ev-label={`service-side-${s.slug}`}>{business.phoneDisplay}</a><a class="btn ghost" href={`viber://chat?number=%2B${business.viber.replace('+', '')}`} data-ev="viber_click" data-ev-label={`service-${s.slug}`}>Viber</a><a class="btn ghost" href={business.portal.login[lang]} rel="nofollow" data-ev="file_upload_click" data-ev-label={`service-${s.slug}`}>{d.cta.upload}</a></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <p class="kicker">06 · {L.cars}</p>
+      <h2>{lang === 'bg' ? 'Провери какво печели твоята кола' : 'Check what your car gains'}</h2>
+      <p class="lead">{lang === 'bg' ? `Най-търсените модели за тази услуга ${L.in}. Всяка страница показва двигателите с числа преди и след.` : `The most requested models for this service ${L.in}. Each page lists the engines with stock and tuned figures.`}</p>
+      <ul class="brands" style="columns:2">{popular.map((x) => <li><a href={modelPath(lang, x.b, x.m)}>{x.b.name} {x.m.name}<span class="c">+{Math.max(...x.es.map(hpGain))} {d.units.hp}</span></a></li>)}</ul>
+      <p style="margin-top:1.5rem"><a class="btn" href={routes.home[lang] + '#kalkulator'}>{d.cta.catalog}</a></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <p class="kicker">07 · {L.faq}</p>
+          <h2>{s.name[lang]}</h2>
+          <Faq items={s.faq[lang]} />
+        </div>
+        <div>
+          <p class="kicker">08 · {d.form.title}</p>
+          <ContactForm lang={lang} service={s.slug} id="form" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <p class="kicker">{L.other}</p>
+      <ServiceTiles lang={lang} only={others} cols={3} />
+    </div>
+  </section>
+</Base>

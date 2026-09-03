@@ -1,0 +1,75 @@
+---
+import '@/styles/global.css';
+import { t, otherLang, routes, type Lang } from '@/i18n';
+import business from '@/data/business.json';
+import { SITE, ldOrganization } from '@/lib/seo';
+import { PAGES } from '@/data/pages';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import StickyBar from '@/components/StickyBar.astro';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  path: string;            // адресът на тази страница, без домейн; каноникълът е SITE + path
+  altPath?: string | null; // същата страница на другия език; null = няма такава (превключвателят води към началната)
+  jsonld?: object[];
+  current?: string;        // ключ на менюто за маркиране на активния елемент
+  ogImage?: string;
+}
+const { lang, title, description, path, altPath, jsonld = [], current, ogImage = '/og.png' } = Astro.props;
+const other = otherLang(lang);
+const hasAlt = altPath !== null;
+const pageDef = PAGES.find((p) => p.path[lang] === path);
+const alt = hasAlt ? (altPath ?? pageDef?.path[other] ?? path.replace(/^\/(bg|en)/, `/${other}`)) : routes.home[other];
+const canonical = SITE + path;
+const enUrl = lang === 'en' ? canonical : SITE + alt;
+const GTM = import.meta.env.PUBLIC_GTM_ID as string | undefined;
+const fonts = lang === 'bg'
+  ? ['oswald-700-cyrillic', 'oswald-700-latin', 'golos-text-400-cyrillic', 'golos-text-400-latin']
+  : ['oswald-700-latin', 'golos-text-400-latin'];
+if (description.length < 80 || description.length > 165) { const msg = `Описание извън 80–165 знака (${description.length}): ${path}`; if (import.meta.env.PDK_LENIENT) console.warn('[desc] ' + msg); else throw new Error(msg); }
+---
+<!doctype html>
+<html lang={lang}>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{title}</title>
+<meta name="description" content={description}>
+<link rel="canonical" href={canonical}>
+{hasAlt && <link rel="alternate" hreflang="bg" href={lang === 'bg' ? canonical : SITE + alt} />}
+{hasAlt && <link rel="alternate" hreflang="en" href={enUrl} />}
+{!hasAlt && <link rel="alternate" hreflang={lang} href={canonical} />}
+<link rel="alternate" hreflang="x-default" href={hasAlt ? enUrl : canonical}>
+<meta property="og:type" content="website">
+<meta property="og:url" content={canonical}>
+<meta property="og:title" content={title}>
+<meta property="og:description" content={description}>
+<meta property="og:image" content={SITE + ogImage}>
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content={lang === 'bg' ? 'bg_BG' : 'en_GB'}>
+<meta property="og:site_name" content={business.name}>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#14181c">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+{fonts.map((f) => <link rel="preload" href={`/fonts/${f}.woff2`} as="font" type="font/woff2" crossorigin />)}
+{GTM && <script is:inline set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'granted'});`} />}
+{GTM && <script is:inline set:html={`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM}');`} />}
+<script type="application/ld+json" set:html={JSON.stringify(ldOrganization(lang))} />
+{jsonld.map((o) => <script type="application/ld+json" set:html={JSON.stringify(o)} />)}
+</head>
+<body>
+<a class="skip" href="#main">{t(lang).skip}</a>
+<Header lang={lang} altPath={alt} current={current} />
+<main id="main">
+  <slot />
+</main>
+<Footer lang={lang} altPath={alt} />
+<StickyBar lang={lang} />
+<script is:inline set:html={`document.addEventListener('click',function(e){var a=e.target.closest('[data-ev]');if(!a)return;var d=a.dataset;(window.dataLayer=window.dataLayer||[]).push({event:d.ev,label:d.evLabel||'',page:location.pathname});});`} />
+</body>
+</html>

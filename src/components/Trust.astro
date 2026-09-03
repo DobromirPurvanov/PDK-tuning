@@ -1,0 +1,20 @@
+---
+import type { Lang } from '@/i18n';
+import { fmt } from '@/i18n';
+import business from '@/data/business.json';
+import { stats } from '@/lib/catalog';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const items = lang === 'bg' ? [
+  { v: `${String(business.rating.value).replace('.', ',')}`, l: `от 5 при ${business.rating.count} отзива в Google` },
+  { v: `${business.yearsExperience}+`, l: 'години с файлове и стенд' },
+  { v: `${business.countries}`, l: 'държави с наши сервизи' },
+  { v: fmt(stats.engines), l: 'двигателя с реални числа в базата' },
+] : [
+  { v: `${business.rating.value}`, l: `of 5 from ${business.rating.count} Google reviews` },
+  { v: `${business.yearsExperience}+`, l: 'years of files and dyno work' },
+  { v: `${business.countries}`, l: 'countries with our workshops' },
+  { v: fmt(stats.engines), l: 'engines with real figures in the database' },
+];
+---
+<div class="trust">{items.map((i) => <div><b>{i.v}</b><span>{i.l}</span></div>)}</div>

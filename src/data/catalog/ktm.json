@@ -1,0 +1,74 @@
+{
+ "slug": "ktm",
+ "name": "KTM",
+ "logo": "ktm.png",
+ "models": [
+  {
+   "slug": "x-bow-943",
+   "name": "X-Bow",
+   "generations": [
+    {
+     "slug": "2008-0",
+     "from": 2008,
+     "to": null,
+     "engines": [
+      {
+       "path": "9114/5933",
+       "name": "2.0TFSI - 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 260,
+       "nmStock": 310,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2012-0",
+     "from": 2012,
+     "to": null,
+     "engines": [
+      {
+       "path": "9115/5934",
+       "name": "R - 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 340,
+       "nmStock": 400,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2014-0",
+     "from": 2014,
+     "to": null,
+     "engines": [
+      {
+       "path": "9116/5935",
+       "name": "GT - 285hp",
+       "fuel": "petrol",
+       "hpStock": 285,
+       "hpTuned": 340,
+       "nmStock": 420,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9117/5934",
+       "name": "R - 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 340,
+       "nmStock": 400,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

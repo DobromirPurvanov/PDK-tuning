@@ -1,0 +1,692 @@
+{
+ "slug": "steyr",
+ "name": "Steyr",
+ "logo": "steyr.png",
+ "models": [
+  {
+   "slug": "cvt-1111",
+   "name": "CVT",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11669/7534",
+       "name": "CVT - 6130 - 6.7L - 133HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 133,
+       "hpTuned": 165,
+       "nmStock": 631,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11646/7511",
+       "name": "CVT - 6135 - 6.6L - 137HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 137,
+       "hpTuned": 170,
+       "nmStock": 570,
+       "nmTuned": 685,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11655/7520",
+       "name": "CVT - 6140 - 6.6L - 141HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 141,
+       "hpTuned": 165,
+       "nmStock": 585,
+       "nmTuned": 660,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11647/7512",
+       "name": "CVT - 6145 - 6.6L - 147HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 147,
+       "hpTuned": 185,
+       "nmStock": 610,
+       "nmTuned": 730,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11670/7535",
+       "name": "CVT - 6145 - 6.7L - 148HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 148,
+       "hpTuned": 182,
+       "nmStock": 698,
+       "nmTuned": 850,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11656/7521",
+       "name": "CVT - 6150 - 6.6L - 151HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 151,
+       "hpTuned": 170,
+       "nmStock": 520,
+       "nmTuned": 650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11690/7555",
+       "name": "CVT - 6150 - 6.7L - 150HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 185,
+       "nmStock": 700,
+       "nmTuned": 820,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11648/7513",
+       "name": "CVT - 6155 - 6.6L - 156HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 195,
+       "nmStock": 660,
+       "nmTuned": 790,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11657/7522",
+       "name": "CVT - 6160 - 6.6L - 160HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 185,
+       "nmStock": 675,
+       "nmTuned": 750,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11671/7536",
+       "name": "CVT - 6160 - 6.7L - 162HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 162,
+       "hpTuned": 208,
+       "nmStock": 767,
+       "nmTuned": 940,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11691/7556",
+       "name": "CVT - 6165 - 6.7L - 165HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 200,
+       "nmStock": 770,
+       "nmTuned": 890,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11658/7523",
+       "name": "CVT - 6165 - 6.7L - 169HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 169,
+       "hpTuned": 215,
+       "nmStock": 774,
+       "nmTuned": 970,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11649/7514",
+       "name": "CVT - 6170 - 6.6L - 171HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 171,
+       "hpTuned": 215,
+       "nmStock": 725,
+       "nmTuned": 870,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11672/7537",
+       "name": "CVT - 6170 - 6.7L - 170HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 210,
+       "nmStock": 725,
+       "nmTuned": 866,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11659/7524",
+       "name": "CVT - 6175 - 6.6L - 175HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 175,
+       "hpTuned": 200,
+       "nmStock": 745,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11692/7557",
+       "name": "CVT - 6175 - 6.7L - 180HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 210,
+       "nmStock": 770,
+       "nmTuned": 890,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11660/7525",
+       "name": "CVT - 6180 - 6.7L - 180HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 210,
+       "nmStock": 938,
+       "nmTuned": 1108,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11693/7558",
+       "name": "CVT - 6185 - 6.7L - 180HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 210,
+       "nmStock": 840,
+       "nmTuned": 980,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11673/7538",
+       "name": "CVT - 6185 - 6.7L - 185HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 220,
+       "nmStock": 863,
+       "nmTuned": 1020,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11650/7515",
+       "name": "CVT - 6190 - 6.6L - 192HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 192,
+       "hpTuned": 240,
+       "nmStock": 790,
+       "nmTuned": 950,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11661/7526",
+       "name": "CVT - 6195 - 6.6L - 196HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 196,
+       "hpTuned": 245,
+       "nmStock": 792,
+       "nmTuned": 950,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11662/7527",
+       "name": "CVT - 6200 - 6.7L - 200HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 235,
+       "nmStock": 965,
+       "nmTuned": 1142,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11694/7559",
+       "name": "CVT - 6200 - 6.7L - 200HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 235,
+       "nmStock": 930,
+       "nmTuned": 1080,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11674/7539",
+       "name": "CVT - 6205 - 6.7L - 205HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 205,
+       "hpTuned": 235,
+       "nmStock": 957,
+       "nmTuned": 1150,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11663/7528",
+       "name": "CVT - 6210 - 6.7L - 210HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 240,
+       "nmStock": 984,
+       "nmTuned": 1159,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11675/7540",
+       "name": "CVT - 6215 - 6.7L - 215HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 240,
+       "nmStock": 995,
+       "nmTuned": 1130,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11695/7560",
+       "name": "CVT - 6220 - 6.7L - 220HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 260,
+       "nmStock": 1000,
+       "nmTuned": 1180,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11664/7529",
+       "name": "CVT - 6225 - 6.7L - 225HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 225,
+       "hpTuned": 265,
+       "nmStock": 850,
+       "nmTuned": 1000,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11676/7541",
+       "name": "CVT - 6230 - 6.7L - 230HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 230,
+       "hpTuned": 265,
+       "nmStock": 1089,
+       "nmTuned": 1215,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11696/7561",
+       "name": "CVT - 6240 - 6.7L - 240HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 1100,
+       "nmTuned": 1220,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "kompakt-1113",
+   "name": "Kompakt",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11677/7542",
+       "name": "Kompakt - 4075 - 3.4L - 75HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 95,
+       "nmStock": 260,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11678/7543",
+       "name": "Kompakt - 4085 - 3.4L - 86HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 86,
+       "hpTuned": 105,
+       "nmStock": 351,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11679/7544",
+       "name": "Kompakt - 4095 - 3.4L - 99HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 99,
+       "hpTuned": 128,
+       "nmStock": 407,
+       "nmTuned": 510,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11680/7545",
+       "name": "Kompakt - 4105 - 3.4L - 107HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 107,
+       "hpTuned": 135,
+       "nmStock": 444,
+       "nmTuned": 550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11705/7570",
+       "name": "Kompakt S - 4055 - 3.4L - 58HP - Tier 3B",
+       "fuel": "petrol",
+       "hpStock": 58,
+       "hpTuned": 65,
+       "nmStock": 221,
+       "nmTuned": 287,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11682/7547",
+       "name": "Kompakt S - 4065 - 3.4L - 65HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 65,
+       "hpTuned": 80,
+       "nmStock": 260,
+       "nmTuned": 346,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "multi-1114",
+   "name": "Multi",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11685/7550",
+       "name": "Multi - 4095 - 3.4L - 99HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 99,
+       "hpTuned": 128,
+       "nmStock": 407,
+       "nmTuned": 510,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11697/7562",
+       "name": "Multi - 4100 - 3.4L - 99HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 99,
+       "hpTuned": 135,
+       "nmStock": 430,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11683/7548",
+       "name": "Multi - 4105 - 3.4L - 107HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 107,
+       "hpTuned": 135,
+       "nmStock": 444,
+       "nmTuned": 550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11698/7563",
+       "name": "Multi - 4110 - 3.4L - 107HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 107,
+       "hpTuned": 140,
+       "nmStock": 468,
+       "nmTuned": 549,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11684/7549",
+       "name": "Multi - 4115 - 3.4 - 114HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 114,
+       "hpTuned": 144,
+       "nmStock": 457,
+       "nmTuned": 560,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11699/7564",
+       "name": "Multi - 4120 - 3.4L - 117HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 117,
+       "hpTuned": 147,
+       "nmStock": 563,
+       "nmTuned": 620,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "profi-1112",
+   "name": "Profi",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11665/7530",
+       "name": "Profi - 4110 - 4.5L - 110HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 145,
+       "nmStock": 498,
+       "nmTuned": 630,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11686/7551",
+       "name": "Profi - 4110 - 4.5L - 110HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 145,
+       "nmStock": 498,
+       "nmTuned": 630,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11651/7516",
+       "name": "Profi - 4115 - 4.5L - 116HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 116,
+       "hpTuned": 140,
+       "nmStock": 528,
+       "nmTuned": 620,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11700/7565",
+       "name": "Profi - 4115 - 4.5L - 116HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 116,
+       "hpTuned": 145,
+       "nmStock": 491,
+       "nmTuned": 572,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11666/7531",
+       "name": "Profi - 4120 - 4.5L - 121HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 121,
+       "hpTuned": 150,
+       "nmStock": 549,
+       "nmTuned": 640,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11687/7552",
+       "name": "Profi - 4120 - 4.5L - 121HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 121,
+       "hpTuned": 150,
+       "nmStock": 549,
+       "nmTuned": 640,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11701/7566",
+       "name": "Profi - 4125 - 4.5L - 125HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 150,
+       "nmStock": 560,
+       "nmTuned": 660,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11667/7532",
+       "name": "Profi - 4130 - 4.5L - 131HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 131,
+       "hpTuned": 165,
+       "nmStock": 590,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11688/7553",
+       "name": "Profi - 4130 - 4.5L - 131HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 131,
+       "hpTuned": 165,
+       "nmStock": 590,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11702/7567",
+       "name": "Profi - 4135 - 4.5L - 135HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 170,
+       "nmStock": 605,
+       "nmTuned": 690,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11703/7568",
+       "name": "Profi - 4145 - 4.5L - 145HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 145,
+       "hpTuned": 160,
+       "nmStock": 650,
+       "nmTuned": 740,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11652/7517",
+       "name": "Profi - 6115 - 6.7L - 117HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 117,
+       "hpTuned": 145,
+       "nmStock": 543,
+       "nmTuned": 821,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11653/7518",
+       "name": "Profi - 6125 - 6.7L - 125HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 150,
+       "nmStock": 566,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11654/7519",
+       "name": "Profi - 6135 - 6.7L - 135HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 155,
+       "nmStock": 612,
+       "nmTuned": 735,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11668/7533",
+       "name": "Profi - 6140 - 6.7L - 140HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 160,
+       "nmStock": 632,
+       "nmTuned": 760,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11689/7554",
+       "name": "Profi - 6140 - 6.7L - 140HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 185,
+       "nmStock": 632,
+       "nmTuned": 830,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11704/7569",
+       "name": "Profi - 6145 - 6.7L - 145HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 145,
+       "hpTuned": 180,
+       "nmStock": 650,
+       "nmTuned": 784,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "terrus-1115",
+   "name": "Terrus",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11706/7571",
+       "name": "Terrus CVT - 6250 - 6.7L - 250HP - Tier4B",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 300,
+       "nmStock": 1173,
+       "nmTuned": 1300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11707/7572",
+       "name": "Terrus CVT - 6270 - 6.7L - 271HP - Tier4B",
+       "fuel": "petrol",
+       "hpStock": 271,
+       "hpTuned": 310,
+       "nmStock": 1194,
+       "nmTuned": 1350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11708/7573",
+       "name": "Terrus CVT - 6300 - 6.7L - 300HP - Tier4B",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 340,
+       "nmStock": 1282,
+       "nmTuned": 1450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

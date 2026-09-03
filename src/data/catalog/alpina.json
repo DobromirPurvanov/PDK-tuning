@@ -1,0 +1,403 @@
+{
+ "slug": "alpina",
+ "name": "Alpina",
+ "logo": "alpina.png",
+ "models": [
+  {
+   "slug": "a110-735",
+   "name": "A110",
+   "generations": [
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "5976/3384",
+       "name": "1.8 Turbo 252hp",
+       "fuel": "petrol",
+       "hpStock": 252,
+       "hpTuned": 285,
+       "nmStock": 320,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5978/3386",
+       "name": "Coupe S 1.8 Turbo 292hp",
+       "fuel": "petrol",
+       "hpStock": 296,
+       "hpTuned": 310,
+       "nmStock": 320,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "b3-736",
+   "name": "B3",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "5979/3387",
+       "name": "3.5i 360hp",
+       "fuel": "petrol",
+       "hpStock": 360,
+       "hpTuned": 400,
+       "nmStock": 500,
+       "nmTuned": 560,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5980/3388",
+       "name": "B3 Bi-Turbo 410hp",
+       "fuel": "petrol",
+       "hpStock": 410,
+       "hpTuned": 450,
+       "nmStock": 600,
+       "nmTuned": 680,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "b3-s-737",
+   "name": "B3 S",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "5981/3389",
+       "name": "3.5i 400hp",
+       "fuel": "petrol",
+       "hpStock": 400,
+       "hpTuned": 450,
+       "nmStock": 540,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "b4-738",
+   "name": "B4",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "5982/3390",
+       "name": "B4 Bi-Turbo 410hp",
+       "fuel": "petrol",
+       "hpStock": 410,
+       "hpTuned": 450,
+       "nmStock": 600,
+       "nmTuned": 680,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "b5-745",
+   "name": "B5",
+   "generations": [
+    {
+     "slug": "2005-2010",
+     "from": 2005,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "5994/3395",
+       "name": "4.4 V8 Bi-Turbo 507hp",
+       "fuel": "petrol",
+       "hpStock": 507,
+       "hpTuned": 600,
+       "nmStock": 700,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2010-0",
+     "from": 2010,
+     "to": null,
+     "engines": [
+      {
+       "path": "5995/3401",
+       "name": "B5 Bi-Turbo 540hp",
+       "fuel": "petrol",
+       "hpStock": 540,
+       "hpTuned": 575,
+       "nmStock": 730,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "b6-739",
+   "name": "B6",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "5983/3391",
+       "name": "4.4 V8 Bi-Turbo 500hp",
+       "fuel": "petrol",
+       "hpStock": 500,
+       "hpTuned": 600,
+       "nmStock": 700,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5984/3392",
+       "name": "4.4 V8 Bi-Turbo 600hp",
+       "fuel": "petrol",
+       "hpStock": 600,
+       "hpTuned": 680,
+       "nmStock": 800,
+       "nmTuned": 850,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5985/3393",
+       "name": "B6 Bi-Turbo 540hp",
+       "fuel": "petrol",
+       "hpStock": 540,
+       "hpTuned": 575,
+       "nmStock": 730,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "b6-s-740",
+   "name": "B6 S",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "5986/3394",
+       "name": "4.4 V8 Bi-Turbo 530hp",
+       "fuel": "petrol",
+       "hpStock": 530,
+       "hpTuned": 600,
+       "nmStock": 725,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "b7-741",
+   "name": "B7",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "5987/3395",
+       "name": "4.4 V8 Bi-Turbo 507hp",
+       "fuel": "petrol",
+       "hpStock": 507,
+       "hpTuned": 600,
+       "nmStock": 700,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5988/3396",
+       "name": "4.4 V8 Bi-Turbo 608hp",
+       "fuel": "petrol",
+       "hpStock": 608,
+       "hpTuned": 680,
+       "nmStock": 800,
+       "nmTuned": 850,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5989/3397",
+       "name": "B7 Bi-Turbo 540hp",
+       "fuel": "petrol",
+       "hpStock": 540,
+       "hpTuned": 575,
+       "nmStock": 730,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "d3-747",
+   "name": "D3",
+   "generations": [
+    {
+     "slug": "2010-0",
+     "from": 2010,
+     "to": null,
+     "engines": [
+      {
+       "path": "5997/3403",
+       "name": "2.0D 200hp",
+       "fuel": "diesel",
+       "hpStock": 200,
+       "hpTuned": 230,
+       "nmStock": 410,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5998/3404",
+       "name": "2.0D 214hp",
+       "fuel": "diesel",
+       "hpStock": 214,
+       "hpTuned": 265,
+       "nmStock": 450,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5999/3405",
+       "name": "D3 Bi-Turbo 350hp",
+       "fuel": "petrol",
+       "hpStock": 350,
+       "hpTuned": 395,
+       "nmStock": 700,
+       "nmTuned": 750,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "d4-742",
+   "name": "D4",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "5990/3398",
+       "name": "D4 Bi-Turbo 350hp",
+       "fuel": "petrol",
+       "hpStock": 350,
+       "hpTuned": 390,
+       "nmStock": 700,
+       "nmTuned": 750,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "d5-746",
+   "name": "D5",
+   "generations": [
+    {
+     "slug": "2010-0",
+     "from": 2010,
+     "to": null,
+     "engines": [
+      {
+       "path": "5996/3402",
+       "name": "D5 Bi-Turbo 350hp",
+       "fuel": "petrol",
+       "hpStock": 350,
+       "hpTuned": 390,
+       "nmStock": 700,
+       "nmTuned": 750,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "xd3-743",
+   "name": "XD3",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "5992/3400",
+       "name": "XD3 Bi-Turbo 350p",
+       "fuel": "petrol",
+       "hpStock": 350,
+       "hpTuned": 395,
+       "nmStock": 700,
+       "nmTuned": 750,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "xd4-744",
+   "name": "XD4",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "17608/16286",
+       "name": "3.0 Quad-Turbo 388hp",
+       "fuel": "petrol",
+       "hpStock": 388,
+       "hpTuned": 450,
+       "nmStock": 750,
+       "nmTuned": 850,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

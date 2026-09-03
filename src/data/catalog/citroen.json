@@ -1,0 +1,4453 @@
+{
+ "slug": "citroen",
+ "name": "Citroen",
+ "logo": "citroen.png",
+ "models": [
+  {
+   "slug": "berlingo-161",
+   "name": "Berlingo",
+   "generations": [
+    {
+     "slug": "1997-2002",
+     "from": 1997,
+     "to": 2002,
+     "engines": [
+      {
+       "path": "1326/1005",
+       "name": "2.0 HDi 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 205,
+       "nmTuned": 255,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2002-2009",
+     "from": 2002,
+     "to": 2009,
+     "engines": [
+      {
+       "path": "1327/1006",
+       "name": "1.6 HDi 16V 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 115,
+       "nmStock": 175,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1328/1007",
+       "name": "1.6 HDi 16V 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 215,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1329/1008",
+       "name": "1.6i 16v 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 120,
+       "nmStock": 147,
+       "nmTuned": 160,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1330/1009",
+       "name": "2.0 HDi 109hp",
+       "fuel": "diesel",
+       "hpStock": 109,
+       "hpTuned": 140,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7430/1005",
+       "name": "2.0 HDi 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 205,
+       "nmTuned": 255,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2008-2012",
+     "from": 2008,
+     "to": 2012,
+     "engines": [
+      {
+       "path": "7431/4377",
+       "name": "1.6 HDi 16V 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 115,
+       "nmStock": 185,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7432/1007",
+       "name": "1.6 HDi 16V 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 215,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1331/1010",
+       "name": "1.6 HDiF 16V 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 240,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1332/1011",
+       "name": "1.6 HDiF 8V 112hp",
+       "fuel": "petrol",
+       "hpStock": 112,
+       "hpTuned": 140,
+       "nmStock": 260,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1333/1012",
+       "name": "1.6 HDiF 8V 92hp",
+       "fuel": "petrol",
+       "hpStock": 92,
+       "hpTuned": 115,
+       "nmStock": 230,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1334/1013",
+       "name": "1.6 VTi 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 130,
+       "nmStock": 160,
+       "nmTuned": 175,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1335/1014",
+       "name": "1.6 VTi 98hp",
+       "fuel": "petrol",
+       "hpStock": 98,
+       "hpTuned": 108,
+       "nmStock": 152,
+       "nmTuned": 165,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1336/1015",
+       "name": "2.0 HDiF 109hp",
+       "fuel": "petrol",
+       "hpStock": 109,
+       "hpTuned": 140,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2012-2015",
+     "from": 2012,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "1337/1016",
+       "name": "1.6 e-HDi 8V 92hp",
+       "fuel": "diesel",
+       "hpStock": 92,
+       "hpTuned": 115,
+       "nmStock": 230,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7435/4377",
+       "name": "1.6 HDi 16V 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 115,
+       "nmStock": 185,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7436/4378",
+       "name": "1.6 HDiF 8V 112hp",
+       "fuel": "petrol",
+       "hpStock": 112,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1338/1017",
+       "name": "1.6 HDiF 8V 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7438/1014",
+       "name": "1.6 VTi 98hp",
+       "fuel": "petrol",
+       "hpStock": 98,
+       "hpTuned": 108,
+       "nmStock": 152,
+       "nmTuned": 165,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-2017",
+     "from": 2015,
+     "to": 2017,
+     "engines": [
+      {
+       "path": "1339/1018",
+       "name": "1.6 BlueHDI 8V 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 130,
+       "nmStock": 254,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7439/7143",
+       "name": "1.6 BlueHDI 8V 100hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1340/1019",
+       "name": "1.6 BlueHDI 8V 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 140,
+       "nmStock": 300,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1341/1020",
+       "name": "1.6 BlueHDI 8V 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 95,
+       "nmStock": 230,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2018-0",
+     "from": 2018,
+     "to": null,
+     "engines": [
+      {
+       "path": "7441/4379",
+       "name": "1.2 Puretech 110 - 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 145,
+       "nmStock": 205,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7442/4380",
+       "name": "1.2 Puretech 130 - 130hp",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 145,
+       "nmStock": 230,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16201/4381",
+       "name": "1.5 BlueHDI 100 - 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 130,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7444/2564",
+       "name": "1.5 BlueHDI 130 - 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 155,
+       "nmStock": 300,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7445/4382",
+       "name": "1.5 BlueHDI 75 - 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 125,
+       "nmStock": 230,
+       "nmTuned": 295,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c-crosser-162",
+   "name": "C-Crosser",
+   "generations": [
+    {
+     "slug": "2007-2012",
+     "from": 2007,
+     "to": 2012,
+     "engines": [
+      {
+       "path": "1342/1021",
+       "name": "2.2 HDIF 156hp",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 185,
+       "nmStock": 380,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c-elysee-827",
+   "name": "C-Elysee",
+   "generations": [
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "7451/4388",
+       "name": "1.6 BlueHDI 99hp",
+       "fuel": "diesel",
+       "hpStock": 99,
+       "hpTuned": 130,
+       "nmStock": 254,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c1-163",
+   "name": "C1",
+   "generations": [
+    {
+     "slug": "2005-2013",
+     "from": 2005,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "1343/948",
+       "name": "1.0i 68hp",
+       "fuel": "petrol",
+       "hpStock": 68,
+       "hpTuned": 75,
+       "nmStock": 93,
+       "nmTuned": 105,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1344/1022",
+       "name": "1.4 HDi 8V 55hp",
+       "fuel": "diesel",
+       "hpStock": 55,
+       "hpTuned": 81,
+       "nmStock": 130,
+       "nmTuned": 168,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2014-0",
+     "from": 2014,
+     "to": null,
+     "engines": [
+      {
+       "path": "1345/1023",
+       "name": "1.0 e-VTI 69hp",
+       "fuel": "petrol",
+       "hpStock": 69,
+       "hpTuned": 75,
+       "nmStock": 95,
+       "nmTuned": 110,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1346/1024",
+       "name": "1.0 e-VTI 82hp",
+       "fuel": "petrol",
+       "hpStock": 82,
+       "hpTuned": 90,
+       "nmStock": 116,
+       "nmTuned": 130,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c2-164",
+   "name": "C2",
+   "generations": [
+    {
+     "slug": "2003-2010",
+     "from": 2003,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "1347/1025",
+       "name": "1.4 HDi 8V 68hp",
+       "fuel": "diesel",
+       "hpStock": 68,
+       "hpTuned": 86,
+       "nmStock": 150,
+       "nmTuned": 192,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1348/1026",
+       "name": "1.4i 8v 75hp",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 84,
+       "nmStock": 117,
+       "nmTuned": 133,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1349/1027",
+       "name": "1.6 16v VTS 125hp",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 137,
+       "nmStock": 140,
+       "nmTuned": 160,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1350/1010",
+       "name": "1.6 HDiF 16V 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 240,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1351/1008",
+       "name": "1.6i 16v 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 120,
+       "nmStock": 147,
+       "nmTuned": 160,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c3-165",
+   "name": "C3",
+   "generations": [
+    {
+     "slug": "2002-2010",
+     "from": 2002,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "1352/1028",
+       "name": "1.1i 60hp",
+       "fuel": "petrol",
+       "hpStock": 60,
+       "hpTuned": 72,
+       "nmStock": 94,
+       "nmTuned": 104,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1353/1029",
+       "name": "1.4 HDi 8V 70hp",
+       "fuel": "diesel",
+       "hpStock": 70,
+       "hpTuned": 90,
+       "nmStock": 150,
+       "nmTuned": 200,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7461/4396",
+       "name": "1.4 HDi 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 215,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1354/1030",
+       "name": "1.4i 16v 90hp",
+       "fuel": "petrol",
+       "hpStock": 90,
+       "hpTuned": 102,
+       "nmStock": 133,
+       "nmTuned": 148,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1355/1031",
+       "name": "1.4i 75hp",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 83,
+       "nmStock": 120,
+       "nmTuned": 134,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1356/1007",
+       "name": "1.6 HDi 16V 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 215,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1357/1010",
+       "name": "1.6 HDiF 16V 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 240,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1358/1008",
+       "name": "1.6i 16v 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 120,
+       "nmStock": 147,
+       "nmTuned": 160,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2010-2013",
+     "from": 2010,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "1359/1032",
+       "name": "1.1i 61hp",
+       "fuel": "petrol",
+       "hpStock": 61,
+       "hpTuned": 68,
+       "nmStock": 95,
+       "nmTuned": 105,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1360/1033",
+       "name": "1.2 VTi 82hp",
+       "fuel": "petrol",
+       "hpStock": 82,
+       "hpTuned": 102,
+       "nmStock": 116,
+       "nmTuned": 130,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7466/4398",
+       "name": "1.4 HDI 8V 70hp",
+       "fuel": "diesel",
+       "hpStock": 70,
+       "hpTuned": 90,
+       "nmStock": 160,
+       "nmTuned": 210,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1361/1034",
+       "name": "1.4 VTI 95hp",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 105,
+       "nmStock": 135,
+       "nmTuned": 150,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7467/7766",
+       "name": "1.4i 75hp",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 83,
+       "nmStock": 128,
+       "nmTuned": 142,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1362/1035",
+       "name": "1.6 e-HDI 8V 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1363/1036",
+       "name": "1.6 HDI 16V 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 135,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1364/1037",
+       "name": "1.6 HDI 8V 112hp",
+       "fuel": "diesel",
+       "hpStock": 112,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1365/1038",
+       "name": "1.6 HDI 8V 92hp",
+       "fuel": "diesel",
+       "hpStock": 92,
+       "hpTuned": 115,
+       "nmStock": 230,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1366/1013",
+       "name": "1.6 VTi 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 130,
+       "nmStock": 160,
+       "nmTuned": 175,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2013-0",
+     "from": 2013,
+     "to": null,
+     "engines": [
+      {
+       "path": "1367/1039",
+       "name": "1.0 PureTech 68hp",
+       "fuel": "petrol",
+       "hpStock": 68,
+       "hpTuned": 99,
+       "nmStock": 116,
+       "nmTuned": 140,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1368/1040",
+       "name": "1.2 PureTech 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 145,
+       "nmStock": 205,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1369/1018",
+       "name": "1.6 BlueHDI 8V 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 130,
+       "nmStock": 254,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1370/1020",
+       "name": "1.6 BlueHDI 8V 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 95,
+       "nmStock": 230,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1371/1016",
+       "name": "1.6 e-HDi 8V 92hp",
+       "fuel": "diesel",
+       "hpStock": 92,
+       "hpTuned": 115,
+       "nmStock": 230,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2013-2019",
+     "from": 2013,
+     "to": 2019,
+     "engines": [
+      {
+       "path": "7469/1039",
+       "name": "1.0 PureTech 68hp",
+       "fuel": "petrol",
+       "hpStock": 68,
+       "hpTuned": 99,
+       "nmStock": 116,
+       "nmTuned": 140,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7470/1040",
+       "name": "1.2 PureTech 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 145,
+       "nmStock": 205,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7471/1092",
+       "name": "1.2 PureTech 82hp",
+       "fuel": "petrol",
+       "hpStock": 82,
+       "hpTuned": 92,
+       "nmStock": 118,
+       "nmTuned": 128,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7472/4401",
+       "name": "1.4 HDI 68hp",
+       "fuel": "diesel",
+       "hpStock": 68,
+       "hpTuned": 90,
+       "nmStock": 160,
+       "nmTuned": 210,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7473/4414",
+       "name": "1.5 BlueHDI 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7474/7143",
+       "name": "1.6 BlueHDI 8V 100hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7475/4403",
+       "name": "1.6 BlueHDI 8V 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 95,
+       "nmStock": 233,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7477/1035",
+       "name": "1.6 e-HDI 8V 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2020-0",
+     "from": 2020,
+     "to": null,
+     "engines": [
+      {
+       "path": "7478/1040",
+       "name": "1.2 PureTech 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 145,
+       "nmStock": 205,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7479/4404",
+       "name": "1.2 PureTech 83hp",
+       "fuel": "petrol",
+       "hpStock": 83,
+       "hpTuned": 92,
+       "nmStock": 118,
+       "nmTuned": 130,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7480/4383",
+       "name": "1.5 BlueHDI 102hp",
+       "fuel": "diesel",
+       "hpStock": 102,
+       "hpTuned": 145,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c3-aircross-166",
+   "name": "C3 Aircross",
+   "generations": [
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "1372/1041",
+       "name": "1.2 Puretech - 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 130,
+       "nmStock": 205,
+       "nmTuned": 245,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1373/1042",
+       "name": "1.2 Puretech - 130hp",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 150,
+       "nmStock": 230,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1374/1043",
+       "name": "1.6 BlueHDI 8V - 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 130,
+       "nmStock": 254,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1375/1044",
+       "name": "1.6 BlueHDI 8V - 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-2020",
+     "from": 2017,
+     "to": 2020,
+     "engines": [
+      {
+       "path": "15943/1041",
+       "name": "1.2 Puretech - 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 130,
+       "nmStock": 205,
+       "nmTuned": 245,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "15944/1042",
+       "name": "1.2 Puretech - 130hp",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 150,
+       "nmStock": 230,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7485/1043",
+       "name": "1.6 BlueHDI 8V - 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 130,
+       "nmStock": 254,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7486/1044",
+       "name": "1.6 BlueHDI 8V - 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c3-picasso-167",
+   "name": "C3 Picasso",
+   "generations": [
+    {
+     "slug": "2009-2013",
+     "from": 2009,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "1376/1034",
+       "name": "1.4 VTI 95hp",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 105,
+       "nmStock": 135,
+       "nmTuned": 150,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1377/1035",
+       "name": "1.6 e-HDI 8V 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1378/1036",
+       "name": "1.6 HDI 16V 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 135,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1379/1037",
+       "name": "1.6 HDI 8V 112hp",
+       "fuel": "diesel",
+       "hpStock": 112,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1380/1038",
+       "name": "1.6 HDI 8V 92hp",
+       "fuel": "diesel",
+       "hpStock": 92,
+       "hpTuned": 115,
+       "nmStock": 230,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1381/1013",
+       "name": "1.6 VTi 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 130,
+       "nmStock": 160,
+       "nmTuned": 175,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2013-0",
+     "from": 2013,
+     "to": null,
+     "engines": [
+      {
+       "path": "1382/1040",
+       "name": "1.2 PureTech 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 145,
+       "nmStock": 205,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1383/1018",
+       "name": "1.6 BlueHDI 8V 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 130,
+       "nmStock": 254,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7490/7143",
+       "name": "1.6 BlueHDI 8V 100hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1384/1020",
+       "name": "1.6 BlueHDI 8V 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 95,
+       "nmStock": 230,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7493/7147",
+       "name": "1.6 e-HDi 8V 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 285,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1385/1016",
+       "name": "1.6 e-HDi 8V 92hp",
+       "fuel": "diesel",
+       "hpStock": 92,
+       "hpTuned": 115,
+       "nmStock": 230,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16410/1037",
+       "name": "1.6 HDI 8V 112hp",
+       "fuel": "diesel",
+       "hpStock": 112,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c3-xr-829",
+   "name": "C3-XR",
+   "generations": [
+    {
+     "slug": "2014-2018",
+     "from": 2014,
+     "to": 2018,
+     "engines": [
+      {
+       "path": "7494/4408",
+       "name": "1.6 THP 167hp",
+       "fuel": "petrol",
+       "hpStock": 167,
+       "hpTuned": 190,
+       "nmStock": 245,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2019-0",
+     "from": 2019,
+     "to": null,
+     "engines": [
+      {
+       "path": "7497/4410",
+       "name": "1.2 Puretech 116hp",
+       "fuel": "petrol",
+       "hpStock": 116,
+       "hpTuned": 145,
+       "nmStock": 190,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c4-168",
+   "name": "C4",
+   "generations": [
+    {
+     "slug": "2004-2010",
+     "from": 2004,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "1386/1036",
+       "name": "1.6 HDI 16V 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 135,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1387/1007",
+       "name": "1.6 HDi 16V 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 215,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1388/1045",
+       "name": "1.6 THP 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 185,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1389/1013",
+       "name": "1.6 VTi 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 130,
+       "nmStock": 160,
+       "nmTuned": 175,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1390/1008",
+       "name": "1.6i 16v 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 120,
+       "nmStock": 147,
+       "nmTuned": 160,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1391/1046",
+       "name": "2.0 HDi 138hp",
+       "fuel": "diesel",
+       "hpStock": 138,
+       "hpTuned": 165,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1392/1047",
+       "name": "2.0i 16v 138hp",
+       "fuel": "petrol",
+       "hpStock": 138,
+       "hpTuned": 148,
+       "nmStock": 190,
+       "nmTuned": 210,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1393/1048",
+       "name": "2.0i 16v vts 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 194,
+       "nmStock": 202,
+       "nmTuned": 228,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2010-2015",
+     "from": 2010,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "1394/1049",
+       "name": "1.2 e-THP 131hp",
+       "fuel": "petrol",
+       "hpStock": 131,
+       "hpTuned": 150,
+       "nmStock": 230,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1395/1034",
+       "name": "1.4 VTI 95hp",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 105,
+       "nmStock": 135,
+       "nmTuned": 150,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1396/1018",
+       "name": "1.6 BlueHDI 8V 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 130,
+       "nmStock": 254,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7509/7143",
+       "name": "1.6 BlueHDI 8V 100hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1397/1019",
+       "name": "1.6 BlueHDI 8V 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 140,
+       "nmStock": 300,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1398/1035",
+       "name": "1.6 e-HDI 8V 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1399/1037",
+       "name": "1.6 HDI 8V 112hp",
+       "fuel": "diesel",
+       "hpStock": 112,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1400/1038",
+       "name": "1.6 HDI 8V 92hp",
+       "fuel": "diesel",
+       "hpStock": 92,
+       "hpTuned": 115,
+       "nmStock": 230,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1401/1050",
+       "name": "1.6 THP 156hp",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 190,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1402/1051",
+       "name": "2.0 HDi 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 165,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1403/1052",
+       "name": "2.0 HDi 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 340,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1404/1053",
+       "name": "2.0 HDi 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 190,
+       "nmStock": 340,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-2019",
+     "from": 2015,
+     "to": 2019,
+     "engines": [
+      {
+       "path": "7514/1040",
+       "name": "1.2 PureTech 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 145,
+       "nmStock": 205,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7515/1054",
+       "name": "1.2 PureTech 130hp",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 145,
+       "nmStock": 230,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7516/7143",
+       "name": "1.6 BlueHDI 8V 100hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7517/1019",
+       "name": "1.6 BlueHDI 8V 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 140,
+       "nmStock": 300,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7519/1035",
+       "name": "1.6 e-HDI 8V 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7518/1045",
+       "name": "1.6 THP 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 185,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7520/1055",
+       "name": "2.0 BlueHDI 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 370,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "1405/1040",
+       "name": "1.2 PureTech 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 145,
+       "nmStock": 205,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1406/1054",
+       "name": "1.2 PureTech 130hp",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 145,
+       "nmStock": 230,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1407/1055",
+       "name": "2.0 BlueHDI 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 370,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2020-0",
+     "from": 2020,
+     "to": null,
+     "engines": [
+      {
+       "path": "7481/4405",
+       "name": "1.2 PureTech 100hp",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 145,
+       "nmStock": 205,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7482/1054",
+       "name": "1.2 PureTech 130hp",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 145,
+       "nmStock": 230,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7483/4406",
+       "name": "1.2 PureTech 155hp",
+       "fuel": "petrol",
+       "hpStock": 155,
+       "hpTuned": 165,
+       "nmStock": 240,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7484/4407",
+       "name": "1.5 BlueHDI 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16215/1086",
+       "name": "1.5 BlueHDi 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 160,
+       "nmStock": 300,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c4-aircross-169",
+   "name": "C4 Aircross",
+   "generations": [
+    {
+     "slug": "2012-0",
+     "from": 2012,
+     "to": null,
+     "engines": [
+      {
+       "path": "1408/1056",
+       "name": "1.6 HDi 8V 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1409/1057",
+       "name": "1.6i 117hp",
+       "fuel": "petrol",
+       "hpStock": 117,
+       "hpTuned": 127,
+       "nmStock": 154,
+       "nmTuned": 170,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c4-cactus-170",
+   "name": "C4 Cactus",
+   "generations": [
+    {
+     "slug": "2014-2018",
+     "from": 2014,
+     "to": 2018,
+     "engines": [
+      {
+       "path": "1410/1058",
+       "name": "1.2 e-THP 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 130,
+       "nmStock": 205,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1411/1033",
+       "name": "1.2 VTi 82hp",
+       "fuel": "petrol",
+       "hpStock": 82,
+       "hpTuned": 102,
+       "nmStock": 116,
+       "nmTuned": 130,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1412/1018",
+       "name": "1.6 BlueHDI 8V 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 130,
+       "nmStock": 254,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7496/7143",
+       "name": "1.6 BlueHDI 8V 100hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1413/1016",
+       "name": "1.6 e-HDi 8V 92hp",
+       "fuel": "diesel",
+       "hpStock": 92,
+       "hpTuned": 115,
+       "nmStock": 230,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2018-0",
+     "from": 2018,
+     "to": null,
+     "engines": [
+      {
+       "path": "7446/4383",
+       "name": "1.5 BlueHDI 102hp",
+       "fuel": "diesel",
+       "hpStock": 102,
+       "hpTuned": 145,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7447/4384",
+       "name": "1.5 BlueHDI 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 160,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7448/4385",
+       "name": "1.6 BlueHDi 102hp",
+       "fuel": "diesel",
+       "hpStock": 102,
+       "hpTuned": 130,
+       "nmStock": 254,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7449/4386",
+       "name": "BlueHDi 100 - 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 130,
+       "nmStock": 205,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1414/1059",
+       "name": "Puretech 110 - 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 145,
+       "nmStock": 205,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7450/4387",
+       "name": "PureTech 130 - 130hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 145,
+       "nmStock": 205,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1415/1060",
+       "name": "Puretech 130 - 130hp",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 145,
+       "nmStock": 230,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c4-picasso-171",
+   "name": "C4 Picasso",
+   "generations": [
+    {
+     "slug": "2006-2013",
+     "from": 2006,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "1416/1036",
+       "name": "1.6 HDI 16V 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 135,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1417/1037",
+       "name": "1.6 HDI 8V 112hp",
+       "fuel": "diesel",
+       "hpStock": 112,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1418/1045",
+       "name": "1.6 THP 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 185,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1419/1061",
+       "name": "1.6 THP 155hp",
+       "fuel": "petrol",
+       "hpStock": 155,
+       "hpTuned": 190,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1420/1013",
+       "name": "1.6 VTi 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 130,
+       "nmStock": 160,
+       "nmTuned": 175,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1421/1046",
+       "name": "2.0 HDi 138hp",
+       "fuel": "diesel",
+       "hpStock": 138,
+       "hpTuned": 165,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1422/1052",
+       "name": "2.0 HDi 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 340,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1423/1062",
+       "name": "2.0i 143hp",
+       "fuel": "petrol",
+       "hpStock": 143,
+       "hpTuned": 153,
+       "nmStock": 200,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2013-0",
+     "from": 2013,
+     "to": null,
+     "engines": [
+      {
+       "path": "1424/1018",
+       "name": "1.6 BlueHDI 8V 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 130,
+       "nmStock": 254,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1425/1019",
+       "name": "1.6 BlueHDI 8V 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 140,
+       "nmStock": 300,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1426/1063",
+       "name": "1.6 e-HDI 8V 112hp",
+       "fuel": "diesel",
+       "hpStock": 112,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1427/1035",
+       "name": "1.6 e-HDI 8V 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1428/1016",
+       "name": "1.6 e-HDi 8V 92hp",
+       "fuel": "diesel",
+       "hpStock": 92,
+       "hpTuned": 115,
+       "nmStock": 230,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1429/1064",
+       "name": "1.6 e-THP 165hp",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 200,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1430/1055",
+       "name": "2.0 BlueHDI 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 370,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c4-picasso-c4-spacetourer-830",
+   "name": "C4 Picasso / C4 SpaceTourer",
+   "generations": [
+    {
+     "slug": "2006-2013",
+     "from": 2006,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "16405/15004",
+       "name": "1.6 HDi 16V 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 135,
+       "nmStock": 240,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7529/1045",
+       "name": "1.6 THP 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 185,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7530/7171",
+       "name": "1.6 THP 155hp",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 190,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16535/14999",
+       "name": "1.6 VTi 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 130,
+       "nmStock": 160,
+       "nmTuned": 180,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7532/1062",
+       "name": "2.0i 143hp",
+       "fuel": "petrol",
+       "hpStock": 143,
+       "hpTuned": 153,
+       "nmStock": 200,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2013-2016",
+     "from": 2013,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "7534/7143",
+       "name": "1.6 BlueHDI 8V 100hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7535/1019",
+       "name": "1.6 BlueHDI 8V 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 140,
+       "nmStock": 300,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7538/1063",
+       "name": "1.6 e-HDI 8V 112hp",
+       "fuel": "diesel",
+       "hpStock": 112,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7539/1035",
+       "name": "1.6 e-HDI 8V 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16391/1016",
+       "name": "1.6 e-HDi 8V 92hp",
+       "fuel": "diesel",
+       "hpStock": 92,
+       "hpTuned": 115,
+       "nmStock": 230,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7540/1064",
+       "name": "1.6 e-THP 165hp",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 200,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7536/7171",
+       "name": "1.6 THP 155hp",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 190,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7541/1055",
+       "name": "2.0 BlueHDI 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 370,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16902/1052",
+       "name": "2.0 HDi 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 340,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "7542/1040",
+       "name": "1.2 PureTech 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 145,
+       "nmStock": 205,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7543/1054",
+       "name": "1.2 PureTech 130hp",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 145,
+       "nmStock": 230,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7544/4384",
+       "name": "1.5 BlueHDI 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 160,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16343/15007",
+       "name": "1.6 BlueHDi 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 130,
+       "nmStock": 254,
+       "nmTuned": 130,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7545/4419",
+       "name": "1.6 BlueHDi 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 145,
+       "nmStock": 254,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7546/1095",
+       "name": "1.6 THP 165hp",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 215,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7547/7156",
+       "name": "2.0 BlueHDi 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 340,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7548/4420",
+       "name": "2.0 BlueHDi 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c5-172",
+   "name": "C5",
+   "generations": [
+    {
+     "slug": "2001-2008",
+     "from": 2001,
+     "to": 2008,
+     "engines": [
+      {
+       "path": "1431/1010",
+       "name": "1.6 HDiF 16V 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 240,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1432/1065",
+       "name": "2.0 HDI 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 250,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1433/1005",
+       "name": "2.0 HDi 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 205,
+       "nmTuned": 255,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7549/7164",
+       "name": "2.0 HDI 90hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 150,
+       "nmStock": 230,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1434/1066",
+       "name": "2.0 HDiF 138hp",
+       "fuel": "petrol",
+       "hpStock": 138,
+       "hpTuned": 170,
+       "nmStock": 320,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1435/1067",
+       "name": "2.0 HDiF FAP 136hp",
+       "fuel": "petrol",
+       "hpStock": 136,
+       "hpTuned": 163,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1436/1068",
+       "name": "2.0i 16v 136hp",
+       "fuel": "petrol",
+       "hpStock": 136,
+       "hpTuned": 146,
+       "nmStock": 190,
+       "nmTuned": 205,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1437/1069",
+       "name": "2.0i HPi 143hp",
+       "fuel": "petrol",
+       "hpStock": 143,
+       "hpTuned": 153,
+       "nmStock": 192,
+       "nmTuned": 210,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1438/1070",
+       "name": "2.2 HDI 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 170,
+       "nmStock": 317,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1439/1071",
+       "name": "2.2 HDiF 173hp",
+       "fuel": "petrol",
+       "hpStock": 173,
+       "hpTuned": 190,
+       "nmStock": 370,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1440/1072",
+       "name": "3.0i V6 210hp",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 220,
+       "nmStock": 285,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2008-0",
+     "from": 2008,
+     "to": null,
+     "engines": [
+      {
+       "path": "1441/1035",
+       "name": "1.6 e-HDI 8V 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1442/1037",
+       "name": "1.6 HDI 8V 112hp",
+       "fuel": "diesel",
+       "hpStock": 112,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7551/1010",
+       "name": "1.6 HDiF 16V 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 240,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1443/1050",
+       "name": "1.6 THP 156hp",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 190,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1444/1013",
+       "name": "1.6 VTi 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 130,
+       "nmStock": 160,
+       "nmTuned": 175,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1445/1055",
+       "name": "2.0 BlueHDI 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 370,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1446/1073",
+       "name": "2.0 BlueHDI 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7554/4421",
+       "name": "2.0 HDI 138bhp",
+       "fuel": "diesel",
+       "hpStock": 138,
+       "hpTuned": 185,
+       "nmStock": 236,
+       "nmTuned": 315,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1447/1053",
+       "name": "2.0 HDi 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 190,
+       "nmStock": 340,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1448/1074",
+       "name": "2.0 HDI FAP 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 163,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1449/1075",
+       "name": "2.0i 16v 143hp",
+       "fuel": "petrol",
+       "hpStock": 143,
+       "hpTuned": 153,
+       "nmStock": 200,
+       "nmTuned": 215,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7555/5045",
+       "name": "2.0i 16v 143hp",
+       "fuel": "petrol",
+       "hpStock": 145,
+       "hpTuned": 155,
+       "nmStock": 190,
+       "nmTuned": 205,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1450/1076",
+       "name": "2.2 HDI 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 195,
+       "nmStock": 370,
+       "nmTuned": 435,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1451/1077",
+       "name": "2.2 HDI 204hp",
+       "fuel": "diesel",
+       "hpStock": 204,
+       "hpTuned": 235,
+       "nmStock": 450,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7556/1071",
+       "name": "2.2 HDiF 173hp",
+       "fuel": "petrol",
+       "hpStock": 173,
+       "hpTuned": 190,
+       "nmStock": 370,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1452/1078",
+       "name": "2.7 HDI 208hp",
+       "fuel": "diesel",
+       "hpStock": 208,
+       "hpTuned": 240,
+       "nmStock": 440,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1453/1079",
+       "name": "3.0 HDI 207hp",
+       "fuel": "diesel",
+       "hpStock": 207,
+       "hpTuned": 290,
+       "nmStock": 450,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1454/1080",
+       "name": "3.0 HDI 241hp",
+       "fuel": "diesel",
+       "hpStock": 243,
+       "hpTuned": 290,
+       "nmStock": 450,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7557/1072",
+       "name": "3.0i V6 210hp",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 220,
+       "nmStock": 285,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c5-aircross-831",
+   "name": "C5 Aircross",
+   "generations": [
+    {
+     "slug": "2018-2021",
+     "from": 2018,
+     "to": 2021,
+     "engines": [
+      {
+       "path": "7558/1054",
+       "name": "1.2 PureTech 130hp",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 145,
+       "nmStock": 230,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16784/14627",
+       "name": "2.0 BlueHDi 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 205,
+       "nmStock": 400,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c6-173",
+   "name": "C6",
+   "generations": [
+    {
+     "slug": "2006-2013",
+     "from": 2006,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "1455/1081",
+       "name": "2.2 HDi 173hp",
+       "fuel": "diesel",
+       "hpStock": 173,
+       "hpTuned": 203,
+       "nmStock": 370,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1456/1078",
+       "name": "2.7 HDI 208hp",
+       "fuel": "diesel",
+       "hpStock": 208,
+       "hpTuned": 240,
+       "nmStock": 440,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1457/1079",
+       "name": "3.0 HDI 207hp",
+       "fuel": "diesel",
+       "hpStock": 207,
+       "hpTuned": 290,
+       "nmStock": 450,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7533/4418",
+       "name": "3.0 HDi 241hp",
+       "fuel": "diesel",
+       "hpStock": 241,
+       "hpTuned": 290,
+       "nmStock": 450,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1458/1080",
+       "name": "3.0 HDI 241hp",
+       "fuel": "diesel",
+       "hpStock": 243,
+       "hpTuned": 290,
+       "nmStock": 450,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1459/1082",
+       "name": "3.0i v6 215hp",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 225,
+       "nmStock": 290,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "7452/4389",
+       "name": "350 THP 167hp",
+       "fuel": "petrol",
+       "hpStock": 167,
+       "hpTuned": 200,
+       "nmStock": 245,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7453/4390",
+       "name": "380 THP 204hp",
+       "fuel": "petrol",
+       "hpStock": 204,
+       "hpTuned": 230,
+       "nmStock": 280,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c8-174",
+   "name": "C8",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "1460/1009",
+       "name": "2.0 HDi 109hp",
+       "fuel": "diesel",
+       "hpStock": 109,
+       "hpTuned": 140,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1461/1083",
+       "name": "2.0 HDi 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 165,
+       "nmStock": 280,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1462/1051",
+       "name": "2.0 HDi 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 165,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1463/1046",
+       "name": "2.0 HDi 138hp",
+       "fuel": "diesel",
+       "hpStock": 138,
+       "hpTuned": 165,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1464/1053",
+       "name": "2.0 HDi 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 190,
+       "nmStock": 340,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17285/4424",
+       "name": "2.0i 16v 143hp",
+       "fuel": "petrol",
+       "hpStock": 138,
+       "hpTuned": 150,
+       "nmStock": 190,
+       "nmTuned": 210,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1465/1075",
+       "name": "2.0i 16v 143hp",
+       "fuel": "petrol",
+       "hpStock": 143,
+       "hpTuned": 153,
+       "nmStock": 200,
+       "nmTuned": 215,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7562/5045",
+       "name": "2.0i 16v 143hp",
+       "fuel": "petrol",
+       "hpStock": 145,
+       "hpTuned": 155,
+       "nmStock": 190,
+       "nmTuned": 205,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1466/1084",
+       "name": "2.2 HDi 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 162,
+       "nmStock": 314,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1467/1076",
+       "name": "2.2 HDI 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 195,
+       "nmStock": 370,
+       "nmTuned": 435,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1468/1081",
+       "name": "2.2 HDi 173hp",
+       "fuel": "diesel",
+       "hpStock": 173,
+       "hpTuned": 203,
+       "nmStock": 370,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1469/1085",
+       "name": "3.0i v6 208hp",
+       "fuel": "petrol",
+       "hpStock": 208,
+       "hpTuned": 225,
+       "nmStock": 285,
+       "nmTuned": 305,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "dispatch-828",
+   "name": "Dispatch",
+   "generations": [
+    {
+     "slug": "2000-2005",
+     "from": 2000,
+     "to": 2005,
+     "engines": [
+      {
+       "path": "7595/4437",
+       "name": "2.0 HDi - 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 150,
+       "nmStock": 188,
+       "nmTuned": 236,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2006-2011",
+     "from": 2006,
+     "to": 2011,
+     "engines": [
+      {
+       "path": "7596/4438",
+       "name": "1.6 HDi - 88hp",
+       "fuel": "diesel",
+       "hpStock": 88,
+       "hpTuned": 116,
+       "nmStock": 133,
+       "nmTuned": 195,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7597/4439",
+       "name": "2.0 HDi - 118hp",
+       "fuel": "diesel",
+       "hpStock": 118,
+       "hpTuned": 145,
+       "nmStock": 221,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7598/4440",
+       "name": "2.0 HDi - 134hp",
+       "fuel": "diesel",
+       "hpStock": 134,
+       "hpTuned": 168,
+       "nmStock": 236,
+       "nmTuned": 303,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2011-2015",
+     "from": 2011,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "7592/4434",
+       "name": "1.6 HDi - 93hp",
+       "fuel": "diesel",
+       "hpStock": 93,
+       "hpTuned": 119,
+       "nmStock": 192,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7593/4435",
+       "name": "2.0 HDi - 128hp",
+       "fuel": "diesel",
+       "hpStock": 128,
+       "hpTuned": 190,
+       "nmStock": 236,
+       "nmTuned": 289,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7594/4436",
+       "name": "2.0 HDi - 157hp",
+       "fuel": "diesel",
+       "hpStock": 157,
+       "hpTuned": 201,
+       "nmStock": 251,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "7454/4391",
+       "name": "1.6 HDi - 114hp",
+       "fuel": "diesel",
+       "hpStock": 114,
+       "hpTuned": 140,
+       "nmStock": 221,
+       "nmTuned": 255,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7455/4392",
+       "name": "1.6 HDi - 94hp",
+       "fuel": "diesel",
+       "hpStock": 94,
+       "hpTuned": 130,
+       "nmStock": 210,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7456/4393",
+       "name": "2.0 HDi - 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 147,
+       "nmStock": 251,
+       "nmTuned": 273,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7457/4394",
+       "name": "2.0 HDi - 147hp",
+       "fuel": "diesel",
+       "hpStock": 147,
+       "hpTuned": 173,
+       "nmStock": 273,
+       "nmTuned": 315,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7458/4395",
+       "name": "2.0 HDi - 175hp",
+       "fuel": "diesel",
+       "hpStock": 175,
+       "hpTuned": 210,
+       "nmStock": 295,
+       "nmTuned": 335,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "ds-7-crossback-175",
+   "name": "DS 7 Crossback",
+   "generations": [
+    {
+     "slug": "2018-0",
+     "from": 2018,
+     "to": null,
+     "engines": [
+      {
+       "path": "1470/1054",
+       "name": "1.2 PureTech 130hp",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 145,
+       "nmStock": 230,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1471/1086",
+       "name": "1.5 BlueHDi 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 160,
+       "nmStock": 300,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1472/1087",
+       "name": "1.6 PureTech 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 210,
+       "nmStock": 250,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1473/1088",
+       "name": "1.6 PureTech 225hp",
+       "fuel": "petrol",
+       "hpStock": 225,
+       "hpTuned": 255,
+       "nmStock": 300,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1474/1073",
+       "name": "2.0 BlueHDI 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "ds3-176",
+   "name": "DS3",
+   "generations": [
+    {
+     "slug": "2010-2014",
+     "from": 2010,
+     "to": 2014,
+     "engines": [
+      {
+       "path": "1475/1033",
+       "name": "1.2 VTi 82hp",
+       "fuel": "petrol",
+       "hpStock": 82,
+       "hpTuned": 102,
+       "nmStock": 116,
+       "nmTuned": 130,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1476/1025",
+       "name": "1.4 HDi 8V 68hp",
+       "fuel": "diesel",
+       "hpStock": 68,
+       "hpTuned": 86,
+       "nmStock": 150,
+       "nmTuned": 192,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1477/1034",
+       "name": "1.4 VTI 95hp",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 105,
+       "nmStock": 135,
+       "nmTuned": 150,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1478/1035",
+       "name": "1.6 e-HDI 8V 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1479/1037",
+       "name": "1.6 HDI 8V 112hp",
+       "fuel": "diesel",
+       "hpStock": 112,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1480/1038",
+       "name": "1.6 HDI 8V 92hp",
+       "fuel": "diesel",
+       "hpStock": 92,
+       "hpTuned": 115,
+       "nmStock": 230,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1481/1045",
+       "name": "1.6 THP 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 185,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1482/1061",
+       "name": "1.6 THP 155hp",
+       "fuel": "petrol",
+       "hpStock": 155,
+       "hpTuned": 190,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7571/7171",
+       "name": "1.6 THP 155hp",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 190,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1483/1089",
+       "name": "1.6 THP 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 240,
+       "nmStock": 275,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1484/1090",
+       "name": "1.6 THP 202hp",
+       "fuel": "petrol",
+       "hpStock": 202,
+       "hpTuned": 220,
+       "nmStock": 275,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1485/1091",
+       "name": "1.6 THP Sportchic 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1486/1013",
+       "name": "1.6 VTi 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 130,
+       "nmStock": 160,
+       "nmTuned": 175,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2014-2015",
+     "from": 2014,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "1487/1092",
+       "name": "1.2 PureTech 82hp",
+       "fuel": "petrol",
+       "hpStock": 82,
+       "hpTuned": 92,
+       "nmStock": 118,
+       "nmTuned": 128,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1488/1093",
+       "name": "1.2 THP 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 130,
+       "nmStock": 205,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1489/1094",
+       "name": "1.4 e-HDi 8V 68hp",
+       "fuel": "diesel",
+       "hpStock": 68,
+       "hpTuned": 90,
+       "nmStock": 160,
+       "nmTuned": 210,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1490/1018",
+       "name": "1.6 BlueHDI 8V 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 130,
+       "nmStock": 254,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7573/7143",
+       "name": "1.6 BlueHDI 8V 100hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1491/1019",
+       "name": "1.6 BlueHDI 8V 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 140,
+       "nmStock": 300,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16498/1061",
+       "name": "1.6 THP 155hp",
+       "fuel": "petrol",
+       "hpStock": 155,
+       "hpTuned": 190,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7574/7171",
+       "name": "1.6 THP 155hp",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 190,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16536/14544",
+       "name": "1.6 VTi 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 135,
+       "nmStock": 160,
+       "nmTuned": 180,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "1492/1040",
+       "name": "1.2 PureTech 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 145,
+       "nmStock": 205,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7577/4429",
+       "name": "1.6 HDi 8V 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 130,
+       "nmStock": 254,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1493/1095",
+       "name": "1.6 THP 165hp",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 215,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "ds4-177",
+   "name": "DS4",
+   "generations": [
+    {
+     "slug": "2011-2015",
+     "from": 2011,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "1494/1019",
+       "name": "1.6 BlueHDI 8V 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 140,
+       "nmStock": 300,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1495/1035",
+       "name": "1.6 e-HDI 8V 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1496/1037",
+       "name": "1.6 HDI 8V 112hp",
+       "fuel": "diesel",
+       "hpStock": 112,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1497/1061",
+       "name": "1.6 THP 155hp",
+       "fuel": "petrol",
+       "hpStock": 155,
+       "hpTuned": 190,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7586/7171",
+       "name": "1.6 THP 155hp",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 190,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1498/1096",
+       "name": "1.6 THP 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 190,
+       "nmStock": 240,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1499/1089",
+       "name": "1.6 THP 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 240,
+       "nmStock": 275,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1500/1013",
+       "name": "1.6 VTi 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 130,
+       "nmStock": 160,
+       "nmTuned": 175,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1501/1055",
+       "name": "2.0 BlueHDI 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 370,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1502/1073",
+       "name": "2.0 BlueHDI 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1503/1053",
+       "name": "2.0 HDi 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 190,
+       "nmStock": 340,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "1504/1054",
+       "name": "1.2 PureTech 130hp",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 145,
+       "nmStock": 230,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7578/1019",
+       "name": "1.6 BlueHDI 8V 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 140,
+       "nmStock": 300,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1505/1095",
+       "name": "1.6 THP 165hp",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 215,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7579/1089",
+       "name": "1.6 THP 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 240,
+       "nmStock": 275,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1506/1097",
+       "name": "1.6 THP 210hp",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 230,
+       "nmStock": 285,
+       "nmTuned": 305,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7580/1055",
+       "name": "2.0 BlueHDI 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 370,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7581/1073",
+       "name": "2.0 BlueHDI 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "ds5-178",
+   "name": "DS5",
+   "generations": [
+    {
+     "slug": "2011-2015",
+     "from": 2011,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "1507/1019",
+       "name": "1.6 BlueHDI 8V 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 140,
+       "nmStock": 300,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7591/4433",
+       "name": "1.6 e- HDI 8V 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1508/1063",
+       "name": "1.6 e-HDI 8V 112hp",
+       "fuel": "diesel",
+       "hpStock": 112,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1510/1050",
+       "name": "1.6 THP 156hp",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 190,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1511/1095",
+       "name": "1.6 THP 165hp",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 215,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1512/1089",
+       "name": "1.6 THP 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 240,
+       "nmStock": 275,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1513/1097",
+       "name": "1.6 THP 210hp",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 230,
+       "nmStock": 285,
+       "nmTuned": 305,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1514/1055",
+       "name": "2.0 BlueHDI 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 370,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1515/1073",
+       "name": "2.0 BlueHDI 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16894/15197",
+       "name": "2.0 HDI 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 170,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1516/1053",
+       "name": "2.0 HDi 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 190,
+       "nmStock": 340,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "16348/14561",
+       "name": "1.6 BlueHDI 8V 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 145,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7582/1095",
+       "name": "1.6 THP 165hp",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 215,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7583/1097",
+       "name": "1.6 THP 210hp",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 230,
+       "nmStock": 285,
+       "nmTuned": 305,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7584/1055",
+       "name": "2.0 BlueHDI 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 370,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7585/1073",
+       "name": "2.0 BlueHDI 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "jumper-179",
+   "name": "Jumper",
+   "generations": [
+    {
+     "slug": "2006-2012",
+     "from": 2006,
+     "to": 2012,
+     "engines": [
+      {
+       "path": "1517/1005",
+       "name": "2.0 HDi 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 205,
+       "nmTuned": 255,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1518/1098",
+       "name": "2.2 HDi 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 125,
+       "nmStock": 240,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1519/1099",
+       "name": "2.2 HDi 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 320,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1520/1100",
+       "name": "2.8 HDi 128hp",
+       "fuel": "diesel",
+       "hpStock": 128,
+       "hpTuned": 160,
+       "nmStock": 300,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1521/1101",
+       "name": "3.0 HDi 157hp",
+       "fuel": "diesel",
+       "hpStock": 157,
+       "hpTuned": 190,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2012-2014",
+     "from": 2012,
+     "to": 2014,
+     "engines": [
+      {
+       "path": "1522/1102",
+       "name": "2.2 HDi 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 180,
+       "nmStock": 250,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1523/1084",
+       "name": "2.2 HDi 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 162,
+       "nmStock": 314,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1524/1103",
+       "name": "2.2 HDi 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1525/1104",
+       "name": "3.0 HDi 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 215,
+       "nmStock": 400,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-2019",
+     "from": 2015,
+     "to": 2019,
+     "engines": [
+      {
+       "path": "7521/1105",
+       "name": "2.0 BlueHDI 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 200,
+       "nmStock": 300,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7522/1106",
+       "name": "2.0 BlueHDI 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 200,
+       "nmStock": 340,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7523/1107",
+       "name": "2.0 BlueHDI 160hp",
+       "fuel": "diesel",
+       "hpStock": 160,
+       "hpTuned": 200,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7524/1102",
+       "name": "2.2 HDi 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 180,
+       "nmStock": 250,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7525/4416",
+       "name": "2.2 HDi 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 180,
+       "nmStock": 320,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7526/1103",
+       "name": "2.2 HDi 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7527/1108",
+       "name": "2.2 HDi 160hp",
+       "fuel": "diesel",
+       "hpStock": 160,
+       "hpTuned": 180,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7528/1104",
+       "name": "3.0 HDi 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 215,
+       "nmStock": 400,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "1526/1105",
+       "name": "2.0 BlueHDI 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 200,
+       "nmStock": 300,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1527/1106",
+       "name": "2.0 BlueHDI 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 200,
+       "nmStock": 340,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1528/1107",
+       "name": "2.0 BlueHDI 160hp",
+       "fuel": "diesel",
+       "hpStock": 160,
+       "hpTuned": 200,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1529/1108",
+       "name": "2.2 HDi 160hp",
+       "fuel": "diesel",
+       "hpStock": 160,
+       "hpTuned": 180,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2019-0",
+     "from": 2019,
+     "to": null,
+     "engines": [
+      {
+       "path": "7498/4411",
+       "name": "2.2 BlueHDI 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 185,
+       "nmStock": 310,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7499/4412",
+       "name": "2.2 BlueHDI 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 185,
+       "nmStock": 340,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7500/4413",
+       "name": "2.2 BlueHDI 165hp",
+       "fuel": "diesel",
+       "hpStock": 165,
+       "hpTuned": 185,
+       "nmStock": 370,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "jumpy-180",
+   "name": "Jumpy",
+   "generations": [
+    {
+     "slug": "0-2016",
+     "from": 0,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "7601/4441",
+       "name": "1.6 HDi 16V 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 145,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7602/1007",
+       "name": "1.6 HDi 16V 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 215,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7603/7128",
+       "name": "2.0 HDi 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7604/4442",
+       "name": "2.0 HDi 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 300,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7605/1109",
+       "name": "2.0 HDi 128hp",
+       "fuel": "diesel",
+       "hpStock": 128,
+       "hpTuned": 160,
+       "nmStock": 300,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7606/1051",
+       "name": "2.0 HDi 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 165,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7607/1110",
+       "name": "2.0 HDi 160hp",
+       "fuel": "diesel",
+       "hpStock": 160,
+       "hpTuned": 190,
+       "nmStock": 340,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7608/1005",
+       "name": "2.0 HDi 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 205,
+       "nmTuned": 255,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "1537/1111",
+       "name": "1.6 BlueHDI 8V 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1538/1112",
+       "name": "1.6 BlueHDI 8V 95hp",
+       "fuel": "diesel",
+       "hpStock": 95,
+       "hpTuned": 115,
+       "nmStock": 210,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1530/1007",
+       "name": "1.6 HDi 16V 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 215,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1539/1113",
+       "name": "2.0 BlueHDI 122hp",
+       "fuel": "diesel",
+       "hpStock": 122,
+       "hpTuned": 200,
+       "nmStock": 310,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1540/1055",
+       "name": "2.0 BlueHDI 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 370,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1541/1073",
+       "name": "2.0 BlueHDI 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1531/1065",
+       "name": "2.0 HDI 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 250,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1532/1083",
+       "name": "2.0 HDi 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 165,
+       "nmStock": 280,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1533/1109",
+       "name": "2.0 HDi 128hp",
+       "fuel": "diesel",
+       "hpStock": 128,
+       "hpTuned": 160,
+       "nmStock": 300,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1534/1051",
+       "name": "2.0 HDi 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 165,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1535/1110",
+       "name": "2.0 HDi 160hp",
+       "fuel": "diesel",
+       "hpStock": 160,
+       "hpTuned": 190,
+       "nmStock": 340,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1536/1005",
+       "name": "2.0 HDi 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 205,
+       "nmTuned": 255,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-2019",
+     "from": 2016,
+     "to": 2019,
+     "engines": [
+      {
+       "path": "7609/1111",
+       "name": "1.6 BlueHDI 8V 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7610/1112",
+       "name": "1.6 BlueHDI 8V 95hp",
+       "fuel": "diesel",
+       "hpStock": 95,
+       "hpTuned": 115,
+       "nmStock": 210,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7611/1113",
+       "name": "2.0 BlueHDI 122hp",
+       "fuel": "diesel",
+       "hpStock": 122,
+       "hpTuned": 200,
+       "nmStock": 310,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7612/1055",
+       "name": "2.0 BlueHDI 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 370,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7613/1073",
+       "name": "2.0 BlueHDI 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2019-0",
+     "from": 2019,
+     "to": null,
+     "engines": [
+      {
+       "path": "7501/4414",
+       "name": "1.5 BlueHDI 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7502/4384",
+       "name": "1.5 BlueHDI 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 160,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7503/2563",
+       "name": "2.0 BlueHDI 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 200,
+       "nmStock": 340,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7504/1055",
+       "name": "2.0 BlueHDI 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 370,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7505/4415",
+       "name": "2.0 BlueHDI 177hp",
+       "fuel": "diesel",
+       "hpStock": 177,
+       "hpTuned": 205,
+       "nmStock": 400,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "nemo-181",
+   "name": "Nemo",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "1542/1114",
+       "name": "1.3 HDi 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 95,
+       "nmStock": 190,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7564/4425",
+       "name": "1.3 HDI 80hp",
+       "fuel": "diesel",
+       "hpStock": 80,
+       "hpTuned": 100,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1543/1029",
+       "name": "1.4 HDi 8V 70hp",
+       "fuel": "diesel",
+       "hpStock": 70,
+       "hpTuned": 90,
+       "nmStock": 150,
+       "nmTuned": 200,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "spacetourer-182",
+   "name": "SpaceTourer",
+   "generations": [
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "7459/4384",
+       "name": "1.5 BlueHDI 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 160,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1544/1111",
+       "name": "1.6 BlueHDI 8V 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1545/1112",
+       "name": "1.6 BlueHDI 8V 95hp",
+       "fuel": "diesel",
+       "hpStock": 95,
+       "hpTuned": 115,
+       "nmStock": 210,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1546/1055",
+       "name": "2.0 BlueHDI 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 370,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1547/1073",
+       "name": "2.0 BlueHDI 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "xantia-183",
+   "name": "Xantia",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "1548/1065",
+       "name": "2.0 HDI 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 250,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1549/1005",
+       "name": "2.0 HDi 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 205,
+       "nmTuned": 255,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1550/1115",
+       "name": "2.0T 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 192,
+       "nmStock": 235,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "xsara-picasso-184",
+   "name": "Xsara Picasso",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "1551/1116",
+       "name": "1.4 HDi 8V 68",
+       "fuel": "diesel",
+       "hpStock": 68,
+       "hpTuned": 98,
+       "nmStock": 160,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7566/4426",
+       "name": "1.4 HDi 8V 68hp",
+       "fuel": "diesel",
+       "hpStock": 68,
+       "hpTuned": 98,
+       "nmStock": 160,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1552/1036",
+       "name": "1.6 HDI 16V 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 135,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1553/1065",
+       "name": "2.0 HDI 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 250,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1554/1046",
+       "name": "2.0 HDi 138hp",
+       "fuel": "diesel",
+       "hpStock": 138,
+       "hpTuned": 165,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1555/1005",
+       "name": "2.0 HDi 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 205,
+       "nmTuned": 255,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

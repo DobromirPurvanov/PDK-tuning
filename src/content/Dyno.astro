@@ -1,0 +1,74 @@
+---
+// Дино стенд (план, стр. 18): какъв е, какво измерва, как минава, какво получава клиентът, цена, кога има смисъл извън тунинг.
+import Base from '@/layouts/Base.astro';
+import Crumbs from '@/components/Crumbs.astro';
+import PowerCurve from '@/components/PowerCurve.astro';
+import Faq from '@/components/Faq.astro';
+import ContactForm from '@/components/ContactForm.astro';
+import { t, routes, type Lang } from '@/i18n';
+import business from '@/data/business.json';
+import prices from '@/data/prices.json';
+import { brandBySlug, engineLabel, enginePath } from '@/lib/catalog';
+import { ldBreadcrumb, ldService, ldLocalBusiness, ldFaq } from '@/lib/seo';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang); const path = routes.dyno[lang]; const p = prices.items.dyno;
+const bmw = brandBySlug('bmw'); let ex: any = null;
+if (bmw) for (const m of bmw.models) for (const g of m.generations) for (const e of g.engines) if (/^730d/i.test(e.name) && e.hpStock === 204 && !ex) ex = { b: bmw, m, g, e };
+const C = lang === 'bg' ? {
+  title: `Дино стенд Варна — замерване на мощност от ${p.from} € | PDK Tuning`,
+  description: `Замерване на мощност и момент на дино стенд във Варна: от ${p.from} €, ${p.time}, с криви и разпечатка. Преди и след чип тунинг, при покупка на кола или загуба на мощност.`,
+  h1: 'Дино стенд — замерване на мощност във Варна',
+  lead: `Замерване на мощност и въртящ момент от ${p.from} €, за ${p.time}. Получавате двете криви и числата — на хартия и по имейл. Не само след чип тунинг: и когато купувате кола, и когато ви се струва, че „не дърпа“.`,
+  s1: 'Какво е стендът', s1p: ['Динамометричният стенд („дино“) е ролки, върху които колата кара на място, и датчици, които мерят силата на колелата при ускорение. От нея, от оборотите и от загубите по трансмисията се смятат мощността и моментът на двигателя — крива по оборотите, не едно число.', 'Мерим по един и същ протокол при всяко замерване: една и съща предавка, загрят двигател, записана температура и налягане. Само така две замервания в различни дни могат да се сравняват — и затова числата в каталога ни са сравними помежду си.'],
+  s2: 'Какво измерва', s2p: ['Максимална мощност (к.с.) и при кои обороти', 'Максимален въртящ момент (Nm) и при кои обороти', 'Цялата крива — къде двигателят „сяда“ и къде свършва', 'Загуби по трансмисията — разликата между колелата и двигателя', 'Сравнение преди/след при два последователни замервания'],
+  s3: 'Как минава замерването', s3: 'Как минава замерването', s3steps: [['Преглед', 'Гуми, налягане, течове, грешки в блока. Кола с проблем не се качва на стенда.'], ['Загряване', 'Двигателят и трансмисията се докарват до работна температура — студен двигател дава грешни числа.'], ['Замерване', 'Три последователни ускорения на една предавка. Взима се повторяемият резултат, не най-високият.'], ['Резултат', 'Кривите на екрана, разпечатка и файл по имейл. Обясняваме какво виждате.']],
+  s4: 'Какво получавате', s4p: 'Графика с мощността и момента по оборотите, числата на върха, температурата и условията на замерването. При замерване преди/след — двете криви една върху друга. Това е документът, с който можете да отидете при всеки друг сервиз.',
+  s5: 'Кога има смисъл извън тунинг', s5p: ['Купувате кола „със 240 коня“ — проверете дали са там, преди да платите.', 'Колата „не дърпа“ и три сервиза казват, че всичко е наред — стендът показва дали проблемът е реален и къде по оборотите.', 'След ремонт на турбо, инжектори или скоростна кутия — дали ремонтът е върнал мощността.', 'Тунингована другаде кола — мерим, без да питаме кой го е правил.'],
+  s6: 'Цена', s6p: `Самостоятелно замерване — от ${p.from} €, ${p.time}. При чип тунинг при нас замерването преди и след е включено в цената на файла. Запазете час — стендът е един.`,
+  faq: [
+    { q: 'Мерите ли коли, тунинговани другаде?', a: 'Да. Мерим това, което е, без коментари за чуждата работа. Получавате същата разпечатка.' },
+    { q: 'Защо числата на стенда се различават от тези на производителя?', a: 'Производителят дава мощност на двигателя при лабораторни условия. Стендът мери на колелата и смята обратно; разликата обикновено е ±5%, а при коли на възраст — и повече надолу. Затова мерим преди и след при еднакви условия — сравнението е това, което има значение.' },
+    { q: 'Опасно ли е за колата?', a: 'Не повече от едно здраво ускорение на пътя. Затова преглеждаме гуми и грешки преди това и не качваме кола с проблем.' },
+    { q: 'Мерите ли 4×4?', a: 'Зависи от системата. Обадете се с модела — казваме предварително дали може.' },
+  ],
+} : {
+  title: `Dyno in Varna — power measurement from ${p.from} € | PDK Tuning`,
+  description: `Power and torque measurement on the dyno in Varna: from ${p.from} €, ${p.time.replace('мин', 'min')}, both curves and a printout. Before and after a remap or when buying a car.`,
+  h1: 'Dyno — power measurement in Varna',
+  lead: `Power and torque measurement from ${p.from} €, in ${p.time.replace('мин', 'min')}. You get both curves and the figures — on paper and by email. Not only after a remap: when buying a car and when it feels like it “does not pull”.`,
+  s1: 'What the dyno is', s1p: ['A chassis dynamometer is a set of rollers the car drives on in place, with sensors measuring force at the wheels under acceleration. From that, from rpm and from drivetrain losses, engine power and torque are calculated — a curve over rpm, not a single number.', 'We measure with the same protocol every time: same gear, warm engine, logged temperature and pressure. Only then can two runs on different days be compared — and that is why the figures in our catalog are comparable with each other.'],
+  s2: 'What it measures', s2p: ['Peak power (hp) and at what rpm', 'Peak torque (Nm) and at what rpm', 'The whole curve — where the engine sags and where it stops pulling', 'Drivetrain losses — the difference between wheels and engine', 'Before/after comparison of two consecutive runs'],
+  s3: 'How a run goes', s3steps: [['Check', 'Tyres, pressure, leaks, fault memory. A car with a problem does not go on the rollers.'], ['Warm-up', 'Engine and drivetrain brought to working temperature — a cold engine gives wrong figures.'], ['Runs', 'Three consecutive pulls in one gear. The repeatable result is taken, not the highest.'], ['Result', 'Curves on screen, a printout and a file by email. We explain what you see.']],
+  s4: 'What you get', s4p: 'A chart of power and torque over rpm, peak figures, temperature and run conditions. For before/after — both curves overlaid. A document you can take to any other workshop.',
+  s5: 'When it makes sense outside tuning', s5p: ['Buying a car “with 240 hp” — check they are there before paying.', 'The car “does not pull” and three workshops say all is fine — the dyno shows whether the problem is real and where in the rev range.', 'After a turbo, injector or gearbox repair — did the repair bring the power back.', 'A car tuned elsewhere — we measure without asking who did it.'],
+  s6: 'Price', s6p: `Standalone run — from ${p.from} €, ${p.time.replace('мин', 'min')}. With a remap at our workshop the before/after run is included in the file price. Book a slot — there is one dyno.`,
+  faq: [
+    { q: 'Do you measure cars tuned elsewhere?', a: 'Yes. We measure what is there, without comments on someone else’s work. Same printout.' },
+    { q: 'Why do dyno figures differ from the manufacturer’s?', a: 'Manufacturers quote engine power under lab conditions. The dyno measures at the wheels and calculates back; the difference is usually ±5%, more on older cars. That is why we measure before and after under the same conditions — the comparison is what matters.' },
+    { q: 'Is it dangerous for the car?', a: 'No more than one hard acceleration on the road. That is why tyres and fault memory are checked first and a car with a problem stays off the rollers.' },
+    { q: 'All-wheel drive?', a: 'Depends on the system. Call with the model — we say in advance whether it is possible.' },
+  ],
+};
+const crumbs = [{ name: d.crumbs.home, path: routes.home[lang] }];
+---
+<Base lang={lang} title={C.title} description={C.description} path={path} current="dyno" jsonld={[ldBreadcrumb([...crumbs, { name: d.nav.dyno, path }]), ldService(lang, lang === 'bg' ? 'Замерване на дино стенд' : 'Dyno measurement', C.description, path, p.from), ldLocalBusiness(lang), ldFaq(C.faq)]}>
+  <div class="hero"><div class="wrap">
+    <Crumbs items={crumbs} current={d.nav.dyno} />
+    <div class="cols c64">
+      <div><p class="kicker">{d.nav.dyno} · {lang === 'bg' ? 'Варна' : 'Varna'}</p><h1>{C.h1}</h1><p class="lead">{C.lead}</p>
+        <div class="actions"><a class="btn primary" href={`tel:${business.phone}`} data-ev="tel_click" data-ev-label="dyno">{business.phoneDisplay}</a><a class="btn ghost" href="#form">{d.cta.form}</a></div>
+        <div class="meta"><span>{lang === 'bg' ? 'от' : 'from'} {p.from} €</span><span>{p.time}</span></div></div>
+      <div>{ex && <><PowerCurve lang={lang} hpStock={ex.e.hpStock} hpTuned={ex.e.hpTuned} nmStock={ex.e.nmStock} nmTuned={ex.e.nmTuned} fuel={ex.e.fuel} /><p class="muted" style="font-family:var(--mono);font-size:var(--s12);margin-top:.5rem">{ex.b.name} {ex.m.name} {engineLabel(ex.e)} · <a href={enginePath(lang, ex.b, ex.m, ex.g, ex.e)}>{d.calc.full}</a></p></>}</div>
+    </div>
+  </div></div>
+  <section class="section"><div class="wrap"><div class="two"><article class="article">
+    <p class="kicker">01</p><h2>{C.s1}</h2>{C.s1p.map((x) => <p>{x}</p>)}
+    <p class="kicker">02</p><h2>{C.s2}</h2><ul class="check">{C.s2p.map((x) => <li>{x}</li>)}</ul>
+    <p class="kicker">03</p><h2>{C.s3}</h2><ol class="steps" style="grid-template-columns:1fr 1fr">{C.s3steps.map(([h, x]) => <li><h3>{h}</h3><p>{x}</p></li>)}</ol>
+    <p class="kicker">04</p><h2>{C.s4}</h2><p>{C.s4p}</p>
+    <p class="kicker">05</p><h2>{C.s5}</h2><ul class="check">{C.s5p.map((x) => <li>{x}</li>)}</ul>
+    <p class="kicker">06</p><h2>{C.s6}</h2><p><strong class="num" style="font-size:var(--s22)">{lang === 'bg' ? 'от' : 'from'} {p.from} €</strong> · {p.time}</p><p>{C.s6p}</p>
+  </article><aside><div class="side sticky"><h3>{d.cta.book}</h3><div class="actions" style="flex-direction:column;align-items:stretch"><a class="btn primary" href={`tel:${business.phone}`} data-ev="tel_click" data-ev-label="dyno-side">{business.phoneDisplay}</a><a class="btn ghost" href={`viber://chat?number=%2B${business.viber.replace('+', '')}`} data-ev="viber_click" data-ev-label="dyno">Viber</a></div></div></aside></div></div></section>
+  <section class="section alt"><div class="wrap"><div class="cols"><div><p class="kicker">{d.nav.faq}</p><h2>{d.nav.dyno}</h2><Faq items={C.faq} /></div><div><p class="kicker">{d.form.title}</p><ContactForm lang={lang} service="dyno" id="form" /></div></div></div></section>
+</Base>

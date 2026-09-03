@@ -1,0 +1,923 @@
+{
+ "slug": "fendt",
+ "name": "Fendt",
+ "logo": "fendt.png",
+ "models": [
+  {
+   "slug": "katana-861",
+   "name": "Katana",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7989/4791",
+       "name": "Katana - 65 - 15,6L - 625 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 625,
+       "hpTuned": 626,
+       "nmStock": 680,
+       "nmTuned": 681,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "tractor-862",
+   "name": "Tractor",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7995/4797",
+       "name": "Tractor - 207 - 3,3L - 70 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 70,
+       "hpTuned": 100,
+       "nmStock": 295,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8058/4860",
+       "name": "Tractor - 207 - 3,3L - 70 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 70,
+       "hpTuned": 90,
+       "nmStock": 295,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7996/4798",
+       "name": "Tractor - 208 - 3,3L - 80 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 80,
+       "hpTuned": 110,
+       "nmStock": 337,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8059/4861",
+       "name": "Tractor - 208 - 3,3L - 80 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 80,
+       "hpTuned": 105,
+       "nmStock": 337,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7997/4799",
+       "name": "Tractor - 209 - 3,3L - 90 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 408,
+       "nmTuned": 510,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8060/4862",
+       "name": "Tractor - 209 - 3,3L - 90 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 90,
+       "hpTuned": 110,
+       "nmStock": 373,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7998/4800",
+       "name": "Tractor - 210 - 3,3L - 100 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 130,
+       "nmStock": 408,
+       "nmTuned": 510,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8061/4863",
+       "name": "Tractor - 210 - 3,3L - 100 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 125,
+       "nmStock": 408,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7999/4801",
+       "name": "Tractor - 211 - 3,3L - 110 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 145,
+       "nmStock": 458,
+       "nmTuned": 610,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8062/4864",
+       "name": "Tractor - 211 - 3,3L - 110 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 135,
+       "nmStock": 458,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8000/4802",
+       "name": "Tractor - 309 - 4,1L - 94 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 94,
+       "hpTuned": 115,
+       "nmStock": 410,
+       "nmTuned": 475,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8063/4865",
+       "name": "Tractor - 309 - 4,4L - 95 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 120,
+       "nmStock": 407,
+       "nmTuned": 490,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8001/4803",
+       "name": "Tractor - 310 - 4,1L - 105 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 125,
+       "nmStock": 455,
+       "nmTuned": 515,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8064/4866",
+       "name": "Tractor - 310 - 4,4L - 105 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 130,
+       "nmStock": 445,
+       "nmTuned": 535,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8002/4804",
+       "name": "Tractor - 311 - 4,1L - 115 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 135,
+       "nmStock": 505,
+       "nmTuned": 565,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8026/4828",
+       "name": "Tractor - 311 - 4,4L - 113 pk - S4",
+       "fuel": "petrol",
+       "hpStock": 113,
+       "hpTuned": 140,
+       "nmStock": 485,
+       "nmTuned": 580,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8065/4867",
+       "name": "Tractor - 311 - 4,4L - 114 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 114,
+       "hpTuned": 145,
+       "nmStock": 485,
+       "nmTuned": 580,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8003/4805",
+       "name": "Tractor - 312 - 4,1L - 125 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 145,
+       "nmStock": 550,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8027/4829",
+       "name": "Tractor - 312 - 4,4L - 123 pk - S4",
+       "fuel": "petrol",
+       "hpStock": 113,
+       "hpTuned": 140,
+       "nmStock": 485,
+       "nmTuned": 580,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8066/4868",
+       "name": "Tractor - 312 - 4,4L - 124 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 124,
+       "hpTuned": 155,
+       "nmStock": 515,
+       "nmTuned": 620,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8004/4806",
+       "name": "Tractor - 313 - 4,1L - 135 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 155,
+       "nmStock": 590,
+       "nmTuned": 640,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8028/4830",
+       "name": "Tractor - 313 - 4,4L - 133 pk - S4",
+       "fuel": "petrol",
+       "hpStock": 133,
+       "hpTuned": 155,
+       "nmStock": 590,
+       "nmTuned": 640,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8067/4869",
+       "name": "Tractor - 313 - 4,4L - 135 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 170,
+       "nmStock": 590,
+       "nmTuned": 740,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8068/4870",
+       "name": "Tractor - 411 - 4,4L - 115 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 145,
+       "nmStock": 505,
+       "nmTuned": 605,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8069/4871",
+       "name": "Tractor - 412 - 4,4L - 125 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 155,
+       "nmStock": 550,
+       "nmTuned": 660,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8070/4872",
+       "name": "Tractor - 413 - 4,4L - 135 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 165,
+       "nmStock": 589,
+       "nmTuned": 705,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8071/4873",
+       "name": "Tractor - 414 - 4,4L - 145 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 145,
+       "hpTuned": 180,
+       "nmStock": 613,
+       "nmTuned": 735,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8072/4874",
+       "name": "Tractor - 415 - 4,4L - 155 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 155,
+       "hpTuned": 190,
+       "nmStock": 657,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8029/4831",
+       "name": "Tractor - 512 - 4,0L - 124 pk - S4",
+       "fuel": "petrol",
+       "hpStock": 124,
+       "hpTuned": 160,
+       "nmStock": 550,
+       "nmTuned": 690,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8005/4807",
+       "name": "Tractor - 512 - 4,0L - 125 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 150,
+       "nmStock": 550,
+       "nmTuned": 620,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8030/4832",
+       "name": "Tractor - 513 - 4,0L - 133 pk - S4",
+       "fuel": "petrol",
+       "hpStock": 133,
+       "hpTuned": 170,
+       "nmStock": 590,
+       "nmTuned": 710,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8006/4808",
+       "name": "Tractor - 513 - 4,0L - 135 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 165,
+       "nmStock": 590,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8007/4809",
+       "name": "Tractor - 514 - 4,0L - 145 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 145,
+       "hpTuned": 175,
+       "nmStock": 649,
+       "nmTuned": 770,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8031/4833",
+       "name": "Tractor - 514 - 4,0L - 150 pk - S4",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 649,
+       "nmTuned": 740,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8032/4834",
+       "name": "Tractor - 516 - 4,0L - 163 pk - S4",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 649,
+       "nmTuned": 740,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8008/4810",
+       "name": "Tractor - 516 - 4,0L - 165 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 190,
+       "nmStock": 687,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8047/4849",
+       "name": "Tractor - 711 - 5,7L - 116 pk - Tier 2",
+       "fuel": "petrol",
+       "hpStock": 116,
+       "hpTuned": 145,
+       "nmStock": 550,
+       "nmTuned": 640,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8073/4875",
+       "name": "Tractor - 712 - 6,1L - 132 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 132,
+       "hpTuned": 165,
+       "nmStock": 571,
+       "nmTuned": 685,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8048/4850",
+       "name": "Tractor - 714 - 5,7L - 147 pk - Tier 2",
+       "fuel": "petrol",
+       "hpStock": 147,
+       "hpTuned": 185,
+       "nmStock": 675,
+       "nmTuned": 770,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8009/4811",
+       "name": "Tractor - 714 - 6,1L - 145 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 145,
+       "hpTuned": 182,
+       "nmStock": 650,
+       "nmTuned": 760,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8049/4851",
+       "name": "Tractor - 716 - 5,7L - 160 pk - Tier 2",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 190,
+       "nmStock": 760,
+       "nmTuned": 840,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8033/4835",
+       "name": "Tractor - 716 - 6,1L - 163 pk - S4",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 649,
+       "nmTuned": 740,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8010/4812",
+       "name": "Tractor - 716 - 6,1L - 163 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 205,
+       "nmStock": 725,
+       "nmTuned": 825,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8075/4877",
+       "name": "Tractor - 716 - 6,1L - 165 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 210,
+       "nmStock": 724,
+       "nmTuned": 870,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8076/4878",
+       "name": "Tractor - 718 - 6,1L - 180 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 225,
+       "nmStock": 780,
+       "nmTuned": 935,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8034/4836",
+       "name": "Tractor - 718 - 6,1L - 181 pk - S4",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 649,
+       "nmTuned": 740,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8011/4813",
+       "name": "Tractor - 718 - 6,1L - 181 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 181,
+       "hpTuned": 225,
+       "nmStock": 804,
+       "nmTuned": 905,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8035/4837",
+       "name": "Tractor - 720 - 6,1L - 201 pk - S4",
+       "fuel": "petrol",
+       "hpStock": 201,
+       "hpTuned": 245,
+       "nmStock": 911,
+       "nmTuned": 1015,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8036/4838",
+       "name": "Tractor - 722 - 6,1L - 222 pk - S4",
+       "fuel": "petrol",
+       "hpStock": 222,
+       "hpTuned": 260,
+       "nmStock": 988,
+       "nmTuned": 1080,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8012/4814",
+       "name": "Tractor - 722 - 6,1L - 222 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 222,
+       "hpTuned": 260,
+       "nmStock": 988,
+       "nmTuned": 1080,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8037/4839",
+       "name": "Tractor - 724 - 6,1L - 237 pk - S4",
+       "fuel": "petrol",
+       "hpStock": 237,
+       "hpTuned": 281,
+       "nmStock": 1072,
+       "nmTuned": 1072,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8013/4815",
+       "name": "Tractor - 724 - 6,1L - 237 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 237,
+       "hpTuned": 281,
+       "nmStock": 1058,
+       "nmTuned": 1160,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8050/4852",
+       "name": "Tractor - 815 - 5,7L - 150 pk - Tier 2",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 185,
+       "nmStock": 730,
+       "nmTuned": 810,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8051/4853",
+       "name": "Tractor - 817 - 5,7L - 165 pk - Tier 2",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 200,
+       "nmStock": 780,
+       "nmTuned": 950,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8052/4854",
+       "name": "Tractor - 818 - 5,7L - 180 pk - Tier 2",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 215,
+       "nmStock": 850,
+       "nmTuned": 1000,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8077/4879",
+       "name": "Tractor - 818 - 6,1L - 186 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 186,
+       "hpTuned": 215,
+       "nmStock": 650,
+       "nmTuned": 850,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8014/4816",
+       "name": "Tractor - 819 - 6,1L - 200 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 255,
+       "nmStock": 863,
+       "nmTuned": 1043,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8078/4880",
+       "name": "Tractor - 820 - 6,1L - 207 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 207,
+       "hpTuned": 260,
+       "nmStock": 895,
+       "nmTuned": 1075,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8015/4817",
+       "name": "Tractor - 822 - 6,1L - 220 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 260,
+       "nmStock": 955,
+       "nmTuned": 1065,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8038/4840",
+       "name": "Tractor - 822 - 6,1L - 226 pk - S4",
+       "fuel": "petrol",
+       "hpStock": 226,
+       "hpTuned": 266,
+       "nmStock": 906,
+       "nmTuned": 10180,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8016/4818",
+       "name": "Tractor - 824 - 6,1L - 240 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 280,
+       "nmStock": 1040,
+       "nmTuned": 1140,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8039/4841",
+       "name": "Tractor - 824 - 6,1L - 246 pk - S4",
+       "fuel": "petrol",
+       "hpStock": 246,
+       "hpTuned": 286,
+       "nmStock": 1054,
+       "nmTuned": 1155,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8017/4819",
+       "name": "Tractor - 826 - 6,1L - 260 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 260,
+       "hpTuned": 300,
+       "nmStock": 1120,
+       "nmTuned": 1220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8040/4842",
+       "name": "Tractor - 826 - 6,1L - 265 pk - S4",
+       "fuel": "petrol",
+       "hpStock": 265,
+       "hpTuned": 305,
+       "nmStock": 1125,
+       "nmTuned": 1225,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8018/4820",
+       "name": "Tractor - 828 - 6,1L - 280 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 280,
+       "hpTuned": 320,
+       "nmStock": 1210,
+       "nmTuned": 1310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8041/4843",
+       "name": "Tractor - 828 - 6,1L - 287 pk - S4",
+       "fuel": "petrol",
+       "hpStock": 287,
+       "hpTuned": 327,
+       "nmStock": 1217,
+       "nmTuned": 1317,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8053/4855",
+       "name": "Tractor - 916 - 6,9L - 180 pk - Tier 2",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 215,
+       "nmStock": 825,
+       "nmTuned": 990,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8054/4856",
+       "name": "Tractor - 920 - 6,9L - 210 pk - Tier 2",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 248,
+       "nmStock": 960,
+       "nmTuned": 1130,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8079/4881",
+       "name": "Tractor - 922 - 7,1L - 220 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 270,
+       "nmStock": 913,
+       "nmTuned": 1050,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8080/4882",
+       "name": "Tractor - 924 - 7,1L - 239 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 239,
+       "hpTuned": 295,
+       "nmStock": 1000,
+       "nmTuned": 1200,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8019/4821",
+       "name": "Tractor - 924 - 7,8L - 240 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 260,
+       "nmStock": 1049,
+       "nmTuned": 1300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8055/4857",
+       "name": "Tractor - 926 - 6,9L - 239 pk - Tier 2",
+       "fuel": "petrol",
+       "hpStock": 239,
+       "hpTuned": 270,
+       "nmStock": 1045,
+       "nmTuned": 1225,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8056/4858",
+       "name": "Tractor - 926 - 6,9L - 271 pk - Tier 2",
+       "fuel": "petrol",
+       "hpStock": 271,
+       "hpTuned": 300,
+       "nmStock": 1180,
+       "nmTuned": 1350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8081/4883",
+       "name": "Tractor - 927 - 7,1L - 264 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 264,
+       "hpTuned": 330,
+       "nmStock": 1100,
+       "nmTuned": 1320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8020/4822",
+       "name": "Tractor - 927 - 7,8L - 270 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 270,
+       "hpTuned": 330,
+       "nmStock": 1116,
+       "nmTuned": 1300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8042/4844",
+       "name": "Tractor - 927 - 7,8L - 275 pk - S4",
+       "fuel": "petrol",
+       "hpStock": 275,
+       "hpTuned": 335,
+       "nmStock": 1160,
+       "nmTuned": 1350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8057/4859",
+       "name": "Tractor - 930 - 6,9L - 301 pk - Tier 2",
+       "fuel": "petrol",
+       "hpStock": 301,
+       "hpTuned": 335,
+       "nmStock": 1280,
+       "nmTuned": 1455,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8082/4884",
+       "name": "Tractor - 930 - 7,1L - 299 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 299,
+       "hpTuned": 370,
+       "nmStock": 1218,
+       "nmTuned": 1450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8021/4823",
+       "name": "Tractor - 930 - 7,8L - 300 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 360,
+       "nmStock": 1234,
+       "nmTuned": 1400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8043/4845",
+       "name": "Tractor - 930 - 7,8L - 305 pk - S4",
+       "fuel": "petrol",
+       "hpStock": 305,
+       "hpTuned": 365,
+       "nmStock": 1278,
+       "nmTuned": 1450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8083/4885",
+       "name": "Tractor - 933 - 7,1L - 324 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 324,
+       "hpTuned": 405,
+       "nmStock": 1310,
+       "nmTuned": 1500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8022/4824",
+       "name": "Tractor - 933 - 7,8L - 330 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 330,
+       "hpTuned": 390,
+       "nmStock": 1326,
+       "nmTuned": 1600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8044/4846",
+       "name": "Tractor - 933 - 7,8L - 336 pk - S4",
+       "fuel": "petrol",
+       "hpStock": 336,
+       "hpTuned": 395,
+       "nmStock": 1380,
+       "nmTuned": 1650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8084/4886",
+       "name": "Tractor - 936 - 7,1L - 355 pk - Tier 3",
+       "fuel": "petrol",
+       "hpStock": 355,
+       "hpTuned": 445,
+       "nmStock": 1482,
+       "nmTuned": 1780,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8023/4825",
+       "name": "Tractor - 936 - 7,8L - 360 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 360,
+       "hpTuned": 410,
+       "nmStock": 1326,
+       "nmTuned": 1600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8045/4847",
+       "name": "Tractor - 936 - 7,8L - 366 pk - S4",
+       "fuel": "petrol",
+       "hpStock": 366,
+       "hpTuned": 415,
+       "nmStock": 1515,
+       "nmTuned": 1650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8024/4826",
+       "name": "Tractor - 939 - 7,8L - 390 pk - SCR",
+       "fuel": "petrol",
+       "hpStock": 390,
+       "hpTuned": 440,
+       "nmStock": 1547,
+       "nmTuned": 1750,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8046/4848",
+       "name": "Tractor - 939 - 7,8L - 396 pk - S4",
+       "fuel": "petrol",
+       "hpStock": 396,
+       "hpTuned": 445,
+       "nmStock": 1565,
+       "nmTuned": 1750,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

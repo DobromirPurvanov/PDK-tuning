@@ -1,0 +1,60 @@
+---
+import Base from '@/layouts/Base.astro';
+import Crumbs from '@/components/Crumbs.astro';
+import PriceTable from '@/components/PriceTable.astro';
+import ContactForm from '@/components/ContactForm.astro';
+import Faq from '@/components/Faq.astro';
+import { t, routes, type Lang } from '@/i18n';
+import { ldBreadcrumb, ldLocalBusiness, ldFaq } from '@/lib/seo';
+import { FAQ } from '@/data/faq';
+import business from '@/data/business.json';
+import prices from '@/data/prices.json';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang); const path = routes.prices[lang]; const p = prices.items;
+const money = FAQ[3].items[lang];
+const C = lang === 'bg' ? {
+  title: 'Цени за чип тунинг и софтуерни ремонти във Варна | PDK Tuning',
+  description: `Чип тунинг от ${p['chip-tuning'].from} €, DPF от ${p['dpf-fap'].from} €, EGR от ${p.egr.from} €, AdBlue от ${p.adblue.from} €, стенд от ${p.dyno.from} €. Начални цени, от какво зависят и какво е включено.`,
+  h1: 'Цени', lead: 'Начални цени по услуги. Всяка е с обхват, не с „по запитване“. Крайната зависи от блока на двигателя и се казва по телефона, преди да дойдете.',
+  dep: 'От какво зависи цената', depItems: ['Блокът на двигателя: по OBD (по-евтино и по-бързо) или на маса при защитени блокове след 2016 г. — това е основната разлика.', 'Stage 1 или Stage 2: Stage 2 изисква хардуер (изпускателна система, интеркулер) и се уговаря отделно.', 'Комбинация: чип тунинг + DPF + EGR в един файл е по-евтино от три отделни посещения.', 'Товарна и строителна техника: отделни блокове (SCR модул) — цената е по конкретния случай.'],
+  inc: 'Какво е включено', incItems: ['Диагностика преди работа и проверка на здравето на двигателя', 'Запазен оригинален файл — връщане към фабричното по всяко време', 'Измерване на стенда преди и след при чип тунинг', 'Пробно шофиране и проверка на грешки след записа', 'Повторно качване на файла, ако дилър го презапише при обновяване'],
+  pay: 'Плащане', payP: 'В брой или с карта в сервиза, след като видите числата. Сервизи партньори — по фактура през портала за файлове. Диагностиката се приспада от цената на услугата.',
+} : {
+  title: 'Prices — chip tuning and ECU software repair in Varna | PDK Tuning',
+  description: `Chip tuning from ${p['chip-tuning'].from} €, DPF from ${p['dpf-fap'].from} €, EGR from ${p.egr.from} €, AdBlue from ${p.adblue.from} €, dyno from ${p.dyno.from} €. Workshop prices, what they depend on and what is included.`,
+  h1: 'Prices', lead: 'Starting prices for the Varna workshop. Partner workshops have a separate file-service price list in the portal. The final price depends on the ECU and is confirmed by phone.',
+  dep: 'What the price depends on', depItems: ['The ECU: OBD (cheaper and faster) or bench for protected ECUs after 2016 — this is the main difference.', 'Stage 1 or Stage 2: Stage 2 needs hardware (exhaust, intercooler) and is agreed separately.', 'Combination: remap + DPF + EGR in one file costs less than three visits.', 'Trucks and plant machinery: separate modules (SCR/DCU) — priced per case.'],
+  inc: 'What is included', incItems: ['Diagnostics before the work and an engine health check', 'The original file kept — back to stock at any time', 'Before/after dyno run with every remap', 'Test drive and fault check after flashing', 'Re-flash if a dealer update overwrites the file'],
+  pay: 'Payment', payP: 'Cash or card at the workshop after you have seen the figures. Partner workshops — by invoice through the file portal. Diagnostics is deducted from the service price.',
+};
+const crumbs = [{ name: d.crumbs.home, path: routes.home[lang] }];
+---
+<Base lang={lang} title={C.title} description={C.description} path={path} current="prices" jsonld={[ldBreadcrumb([...crumbs, { name: d.nav.prices, path }]), ldLocalBusiness(lang), ldFaq(money)]}>
+  <div class="wrap">
+    <Crumbs items={crumbs} current={d.nav.prices} />
+    <p class="kicker">{d.nav.prices} · EUR</p>
+    <h1>{C.h1}</h1>
+    <p class="lead">{C.lead}</p>
+  </div>
+  <section class="section">
+    <div class="wrap"><PriceTable lang={lang} /></div>
+  </section>
+  <section class="section alt">
+    <div class="wrap">
+      <div class="grid g3">
+        <div><h3>{C.dep}</h3><ul class="check">{C.depItems.map((x) => <li>{x}</li>)}</ul></div>
+        <div><h3>{C.inc}</h3><ul class="check">{C.incItems.map((x) => <li>{x}</li>)}</ul></div>
+        <div><h3>{C.pay}</h3><p>{C.payP}</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="cols">
+        <div><p class="kicker">{d.nav.faq}</p><h2>{FAQ[3].title[lang]}</h2><Faq items={money} /></div>
+        <div><p class="kicker">{d.form.title}</p><ContactForm lang={lang} id="form-prices" /><p style="margin-top:1rem"><a class="btn primary" href={`tel:${business.phone}`} data-ev="tel_click" data-ev-label="prices">{business.phoneDisplay}</a></p></div>
+      </div>
+    </div>
+  </section>
+</Base>

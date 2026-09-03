@@ -1,0 +1,12 @@
+---
+interface Props { items: { q: string; a: string }[]; firstOpen?: boolean; id?: string }
+const { items, firstOpen = true, id } = Astro.props;
+---
+<div class="faq" id={id}>
+  {items.map((it, i) => (
+    <details open={firstOpen && i === 0 ? true : undefined}>
+      <summary>{it.q}</summary>
+      <div set:html={it.a.split('\n').map((p) => `<p>${p}</p>`).join('')} />
+    </details>
+  ))}
+</div>

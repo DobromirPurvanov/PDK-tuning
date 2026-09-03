@@ -1,0 +1,42 @@
+---
+// Принципна крива на мощността и момента — къде по оборотите се появява ръстът.
+// Формата е схематична (означено е в легендата); стойностите на върха са реалните от каталога.
+import type { Lang } from '@/i18n';
+import type { Fuel } from '@/lib/catalog';
+interface Props { lang: Lang; hpStock: number; hpTuned: number; nmStock: number | null; nmTuned: number | null; fuel: Fuel }
+const { lang, hpStock, hpTuned, nmStock, nmTuned, fuel } = Astro.props;
+const W = 600, H = 284, L = 44, R = 44, T = 22, B = 34;
+const rpmMax = fuel === 'diesel' ? 5000 : 7000;
+const pw = W - L - R, ph = H - T - B;
+const hpMax = Math.ceil((hpTuned * 1.12) / 50) * 50;
+const nmMax = nmTuned ? Math.ceil((nmTuned * 1.12) / 50) * 50 : hpMax;
+const x = (r: number) => L + (r / rpmMax) * pw;
+const yP = (v: number) => T + ph - (v / hpMax) * ph;
+const yT = (v: number) => T + ph - (v / nmMax) * ph;
+// мощност: расте до върха при ~78% от оборотите, после пада
+const power = (peak: number) => { const pts: string[] = []; for (let i = 0; i <= 40; i++) { const f = i / 40; const r = rpmMax * (0.15 + 0.85 * f); const s = Math.pow(Math.sin(Math.PI * Math.min(f / 0.82, 1) * 0.5), 1.35) * (f > 0.82 ? 1 - (f - 0.82) * 0.9 : 1); pts.push(`${x(r).toFixed(1)},${yP(peak * Math.max(s, 0.08)).toFixed(1)}`); } return 'M' + pts.join(' L'); };
+// момент: бързо плато от ~30% до ~65%, после спада
+const torque = (peak: number) => { const pts: string[] = []; for (let i = 0; i <= 40; i++) { const f = i / 40; const r = rpmMax * (0.15 + 0.85 * f); let s: number; if (f < 0.3) s = 0.55 + 0.45 * Math.sin((f / 0.3) * Math.PI * 0.5); else if (f < 0.62) s = 1; else s = 1 - (f - 0.62) * 0.75; pts.push(`${x(r).toFixed(1)},${yT(peak * s).toFixed(1)}`); } return 'M' + pts.join(' L'); };
+const ticksX = Array.from({ length: rpmMax / 1000 + 1 }, (_, i) => i * 1000);
+const ticksP = [0, 0.25, 0.5, 0.75, 1].map((f) => Math.round(hpMax * f));
+const unit = lang === 'bg' ? 'к.с.' : 'hp';
+const labels = lang === 'bg' ? { stock: 'фабрично', tuned: 'след файла', p: 'мощност', t: 'момент', note: 'принципна крива по оборотите — върховете са реалните числа', rpm: 'об/мин' } : { stock: 'stock', tuned: 'after file', p: 'power', t: 'torque', note: 'indicative curve over rpm — the peaks are the real figures', rpm: 'rpm' };
+---
+<figure class="curve" aria-label={`${labels.p} ${hpStock}→${hpTuned} ${unit}`}>
+  <svg viewBox={`0 0 ${W} ${H}`} role="img" font-family="JetBrains Mono, monospace" font-size="10">
+    <rect x={L} y={T} width={pw} height={ph} fill="#fff" stroke="#c9ced3" />
+    {ticksP.map((v) => <g><line x1={L} x2={L + pw} y1={yP(v)} y2={yP(v)} stroke="#e4e7ea" /><text x={L - 6} y={yP(v) + 3} text-anchor="end" fill="#5f6873">{v}</text></g>)}
+    {ticksX.map((r) => <g><line x1={x(r)} x2={x(r)} y1={T + ph} y2={T + ph + 5} stroke="#14181c" /><text x={x(r)} y={T + ph + 17} text-anchor="middle" fill="#5f6873">{r / 1000}k</text></g>)}
+    <text x={L + pw / 2} y={H - 2} text-anchor="middle" fill="#5f6873">{labels.rpm}</text>
+    <text x={L - 6} y={11} text-anchor="end" fill="#5f6873">{unit}</text>
+    {nmStock != null && nmTuned != null && <text x={L + pw + 6} y={11} fill="#5f6873">Nm</text>}
+    {nmStock != null && nmTuned != null && [0.25, 0.5, 0.75, 1].map((f) => <text x={L + pw + 6} y={yT(nmMax * f) + 3} fill="#5f6873">{Math.round(nmMax * f)}</text>)}
+    {nmStock != null && nmTuned != null && <path d={torque(nmStock)} fill="none" stroke="#5f6873" stroke-width="1.5" stroke-dasharray="4 3" />}
+    {nmStock != null && nmTuned != null && <path d={torque(nmTuned)} fill="none" stroke="#b3300e" stroke-width="1.5" stroke-dasharray="4 3" />}
+    <path d={power(hpStock)} fill="none" stroke="#5f6873" stroke-width="2" />
+    <path d={power(hpTuned)} fill="none" stroke="#b3300e" stroke-width="2.5" />
+    <line x1={x(rpmMax * 0.85)} x2={x(rpmMax * 0.85)} y1={yP(hpStock)} y2={yP(hpTuned)} stroke="#b3300e" stroke-width="1" />
+    <text x={x(rpmMax * 0.85) - 6} y={(yP(hpStock) + yP(hpTuned)) / 2 + 3} text-anchor="end" fill="#b3300e" font-weight="700">+{hpTuned - hpStock}</text>
+  </svg>
+  <figcaption class="legend"><span><i></i>{labels.stock}</span><span><i class="s"></i>{labels.tuned}</span><span><i class="dash"></i>{labels.t}</span><span class="muted">· {labels.note}</span></figcaption>
+</figure>

@@ -1,0 +1,86 @@
+{
+ "slug": "rolls-royce",
+ "name": "Rolls Royce",
+ "logo": "rolls-royce.png",
+ "models": [
+  {
+   "slug": "dawn-1075",
+   "name": "Dawn",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11168/7341",
+       "name": "6.6 V12 571hp",
+       "fuel": "petrol",
+       "hpStock": 571,
+       "hpTuned": 700,
+       "nmStock": 820,
+       "nmTuned": 950,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "ghost-1076",
+   "name": "Ghost",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11169/7342",
+       "name": "6.6 V12 570hp",
+       "fuel": "petrol",
+       "hpStock": 570,
+       "hpTuned": 700,
+       "nmStock": 820,
+       "nmTuned": 950,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11170/7343",
+       "name": "6.6 V12 612hp",
+       "fuel": "petrol",
+       "hpStock": 612,
+       "hpTuned": 700,
+       "nmStock": 840,
+       "nmTuned": 950,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "wraith-1077",
+   "name": "Wraith",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11171/7344",
+       "name": "6.6 V12 633hp",
+       "fuel": "petrol",
+       "hpStock": 633,
+       "hpTuned": 700,
+       "nmStock": 795,
+       "nmTuned": 950,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

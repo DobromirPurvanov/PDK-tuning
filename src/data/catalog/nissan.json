@@ -1,0 +1,1991 @@
+{
+ "slug": "nissan",
+ "name": "Nissan",
+ "logo": "nissan.png",
+ "models": [
+  {
+   "slug": "350z-484",
+   "name": "350Z",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "3466/2284",
+       "name": "3.5 V6 - 280hp",
+       "fuel": "petrol",
+       "hpStock": 280,
+       "hpTuned": 300,
+       "nmStock": 350,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3467/2285",
+       "name": "3.5 V6 - 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 320,
+       "nmStock": 350,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3468/2286",
+       "name": "3.5 V6 - 313hp",
+       "fuel": "petrol",
+       "hpStock": 313,
+       "hpTuned": 335,
+       "nmStock": 358,
+       "nmTuned": 378,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "370z-485",
+   "name": "370Z",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "3469/2287",
+       "name": "3.7 V6 - 328hp",
+       "fuel": "petrol",
+       "hpStock": 328,
+       "hpTuned": 348,
+       "nmStock": 363,
+       "nmTuned": 383,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10432/1617",
+       "name": "3.7 V6 - 331hp",
+       "fuel": "petrol",
+       "hpStock": 331,
+       "hpTuned": 350,
+       "nmStock": 366,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10433/6992",
+       "name": "3.7 V6 - 344hp",
+       "fuel": "petrol",
+       "hpStock": 344,
+       "hpTuned": 360,
+       "nmStock": 371,
+       "nmTuned": 386,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "almera-486",
+   "name": "Almera",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "3470/2288",
+       "name": "1.5 DCi 82hp",
+       "fuel": "diesel",
+       "hpStock": 82,
+       "hpTuned": 107,
+       "nmStock": 185,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3471/2289",
+       "name": "2.2 DCi 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 138,
+       "nmStock": 230,
+       "nmTuned": 280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3472/2290",
+       "name": "2.2 DCi 112hp",
+       "fuel": "diesel",
+       "hpStock": 112,
+       "hpTuned": 140,
+       "nmStock": 248,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3473/2291",
+       "name": "2.2 DCi 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 163,
+       "nmStock": 304,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10435/6993",
+       "name": "2.2 TD 126hp",
+       "fuel": "diesel",
+       "hpStock": 126,
+       "hpTuned": 150,
+       "nmStock": 280,
+       "nmTuned": 325,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3474/2292",
+       "name": "2.2TD 126hp",
+       "fuel": "diesel",
+       "hpStock": 126,
+       "hpTuned": 150,
+       "nmStock": 280,
+       "nmTuned": 325,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "altima-487",
+   "name": "Altima",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "3475/2293",
+       "name": "3.5 V6 270hp",
+       "fuel": "petrol",
+       "hpStock": 270,
+       "hpTuned": 317,
+       "nmStock": 340,
+       "nmTuned": 382,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "armada-488",
+   "name": "Armada",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "3476/2294",
+       "name": "5.6 V8 317hp",
+       "fuel": "petrol",
+       "hpStock": 317,
+       "hpTuned": 340,
+       "nmStock": 385,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3477/2295",
+       "name": "5.6 V8 390hp",
+       "fuel": "petrol",
+       "hpStock": 390,
+       "hpTuned": 450,
+       "nmStock": 545,
+       "nmTuned": 591,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "cabstar-1042",
+   "name": "Cabstar",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "10436/6994",
+       "name": "3.0 TD 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 130,
+       "nmStock": 276,
+       "nmTuned": 304,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "cube-489",
+   "name": "Cube",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "3478/1123",
+       "name": "1.5 DCI 85hp",
+       "fuel": "diesel",
+       "hpStock": 85,
+       "hpTuned": 110,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "evalia-490",
+   "name": "Evalia",
+   "generations": [
+    {
+     "slug": "2014-0",
+     "from": 2014,
+     "to": null,
+     "engines": [
+      {
+       "path": "3479/1122",
+       "name": "1.5 DCI 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 135,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3480/1118",
+       "name": "1.5 DCI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 110,
+       "nmStock": 190,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "frontier-491",
+   "name": "Frontier",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "3481/2296",
+       "name": "4.0 V6 261hp",
+       "fuel": "petrol",
+       "hpStock": 261,
+       "hpTuned": 281,
+       "nmStock": 381,
+       "nmTuned": 405,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "fuga-492",
+   "name": "Fuga",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "3482/2297",
+       "name": "2.5 V6 223hp",
+       "fuel": "petrol",
+       "hpStock": 223,
+       "hpTuned": 240,
+       "nmStock": 263,
+       "nmTuned": 273,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3483/2298",
+       "name": "3.5 V6 283hp",
+       "fuel": "petrol",
+       "hpStock": 283,
+       "hpTuned": 304,
+       "nmStock": 358,
+       "nmTuned": 383,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "gt-r-493",
+   "name": "GT-R",
+   "generations": [
+    {
+     "slug": "2009-0",
+     "from": 2009,
+     "to": null,
+     "engines": [
+      {
+       "path": "3484/2299",
+       "name": "3.8 V6 Turbo - 485hp",
+       "fuel": "petrol",
+       "hpStock": 485,
+       "hpTuned": 550,
+       "nmStock": 588,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3485/2300",
+       "name": "3.8 V6 Turbo - 530hp",
+       "fuel": "petrol",
+       "hpStock": 530,
+       "hpTuned": 580,
+       "nmStock": 612,
+       "nmTuned": 750,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3486/2301",
+       "name": "3.8 V6 Turbo - 550hp",
+       "fuel": "petrol",
+       "hpStock": 550,
+       "hpTuned": 600,
+       "nmStock": 630,
+       "nmTuned": 770,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2022-2024",
+     "from": 2022,
+     "to": 2024,
+     "engines": [
+      {
+       "path": "3586/2368",
+       "name": "3.8 Twin-Turbo 600hp",
+       "fuel": "petrol",
+       "hpStock": 600,
+       "hpTuned": 650,
+       "nmStock": 652,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "interstar-494",
+   "name": "Interstar",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "3487/2302",
+       "name": "2.5 DCI 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 130,
+       "nmStock": 260,
+       "nmTuned": 335,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3488/2303",
+       "name": "2.5 DCI 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 147,
+       "nmStock": 300,
+       "nmTuned": 375,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3489/2304",
+       "name": "2.5 DCI 145hp",
+       "fuel": "diesel",
+       "hpStock": 145,
+       "hpTuned": 172,
+       "nmStock": 320,
+       "nmTuned": 405,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "juke-495",
+   "name": "Juke",
+   "generations": [
+    {
+     "slug": "2010-0",
+     "from": 2010,
+     "to": null,
+     "engines": [
+      {
+       "path": "3490/2305",
+       "name": "1.2 DIG-T 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 190,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3491/1122",
+       "name": "1.5 DCI 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 135,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3492/2306",
+       "name": "1.6 DIG-T 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 230,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3493/774",
+       "name": "1.6 Turbo 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 220,
+       "nmStock": 280,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3494/2307",
+       "name": "1.6 Turbo Nismo RS 218hp",
+       "fuel": "petrol",
+       "hpStock": 218,
+       "hpTuned": 230,
+       "nmStock": 280,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3495/2308",
+       "name": "1.6i - 117hp",
+       "fuel": "petrol",
+       "hpStock": 117,
+       "hpTuned": 130,
+       "nmStock": 158,
+       "nmTuned": 174,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "kubistar-496",
+   "name": "Kubistar",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "3496/1121",
+       "name": "1.5 DCI 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 130,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3497/2309",
+       "name": "1.5 DCi 60hp",
+       "fuel": "diesel",
+       "hpStock": 60,
+       "hpTuned": 84,
+       "nmStock": 170,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3498/2310",
+       "name": "1.5 DCi 86hp",
+       "fuel": "diesel",
+       "hpStock": 86,
+       "hpTuned": 112,
+       "nmStock": 200,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "micra-497",
+   "name": "Micra",
+   "generations": [
+    {
+     "slug": "2013-2016",
+     "from": 2013,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "3499/2311",
+       "name": "1.5 DCi 65hp",
+       "fuel": "diesel",
+       "hpStock": 65,
+       "hpTuned": 85,
+       "nmStock": 160,
+       "nmTuned": 200,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3500/2288",
+       "name": "1.5 DCi 82hp",
+       "fuel": "diesel",
+       "hpStock": 82,
+       "hpTuned": 107,
+       "nmStock": 185,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3501/2310",
+       "name": "1.5 DCi 86hp",
+       "fuel": "diesel",
+       "hpStock": 86,
+       "hpTuned": 112,
+       "nmStock": 200,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "3502/1130",
+       "name": "0.9 TCE 90hp",
+       "fuel": "petrol",
+       "hpStock": 90,
+       "hpTuned": 107,
+       "nmStock": 135,
+       "nmTuned": 175,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3503/1118",
+       "name": "1.5 DCI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 110,
+       "nmStock": 190,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "murano-498",
+   "name": "Murano",
+   "generations": [
+    {
+     "slug": "2010-0",
+     "from": 2010,
+     "to": null,
+     "engines": [
+      {
+       "path": "3504/2312",
+       "name": "2.5 DCi 190hp",
+       "fuel": "diesel",
+       "hpStock": 190,
+       "hpTuned": 225,
+       "nmStock": 450,
+       "nmTuned": 540,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10442/6997",
+       "name": "3.5 V6 260hp",
+       "fuel": "petrol",
+       "hpStock": 260,
+       "hpTuned": 278,
+       "nmStock": 325,
+       "nmTuned": 348,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "navara-499",
+   "name": "Navara",
+   "generations": [
+    {
+     "slug": "2005-2015",
+     "from": 2005,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "3505/2313",
+       "name": "2.5 DCi 174hp",
+       "fuel": "diesel",
+       "hpStock": 174,
+       "hpTuned": 210,
+       "nmStock": 403,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3506/2312",
+       "name": "2.5 DCi 190hp",
+       "fuel": "diesel",
+       "hpStock": 190,
+       "hpTuned": 225,
+       "nmStock": 450,
+       "nmTuned": 540,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3507/2314",
+       "name": "2.5 Di 133hp",
+       "fuel": "petrol",
+       "hpStock": 133,
+       "hpTuned": 165,
+       "nmStock": 304,
+       "nmTuned": 365,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3508/2315",
+       "name": "3.0 DCi 231hp",
+       "fuel": "diesel",
+       "hpStock": 231,
+       "hpTuned": 280,
+       "nmStock": 550,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3509/2316",
+       "name": "4.0 V6 269hp",
+       "fuel": "petrol",
+       "hpStock": 269,
+       "hpTuned": 281,
+       "nmStock": 390,
+       "nmTuned": 405,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "3510/2317",
+       "name": "2.3 DCi Bi-turbo (Euro 5) 160hp",
+       "fuel": "diesel",
+       "hpStock": 160,
+       "hpTuned": 190,
+       "nmStock": 403,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3511/2318",
+       "name": "2.3 DCi Bi-turbo (Euro 5) 190hp",
+       "fuel": "diesel",
+       "hpStock": 190,
+       "hpTuned": 210,
+       "nmStock": 450,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3512/2319",
+       "name": "2.3 DCi Bi-turbo (Euro 6) 160hp",
+       "fuel": "diesel",
+       "hpStock": 160,
+       "hpTuned": 190,
+       "nmStock": 403,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3513/2320",
+       "name": "2.3 DCi Bi-turbo (Euro 6) 190hp",
+       "fuel": "diesel",
+       "hpStock": 190,
+       "hpTuned": 210,
+       "nmStock": 450,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "note-500",
+   "name": "Note",
+   "generations": [
+    {
+     "slug": "2006-2009",
+     "from": 2006,
+     "to": 2009,
+     "engines": [
+      {
+       "path": "3514/2321",
+       "name": "1.5 DCi 106hp",
+       "fuel": "diesel",
+       "hpStock": 106,
+       "hpTuned": 130,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3515/2322",
+       "name": "1.5 DCi 68hp",
+       "fuel": "diesel",
+       "hpStock": 68,
+       "hpTuned": 82,
+       "nmStock": 160,
+       "nmTuned": 210,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3516/2310",
+       "name": "1.5 DCi 86hp",
+       "fuel": "diesel",
+       "hpStock": 86,
+       "hpTuned": 112,
+       "nmStock": 200,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3517/1305",
+       "name": "1.6i 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 120,
+       "nmStock": 152,
+       "nmTuned": 182,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2009-2013",
+     "from": 2009,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "10449/2321",
+       "name": "1.5 DCi 106hp",
+       "fuel": "diesel",
+       "hpStock": 106,
+       "hpTuned": 130,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3518/1118",
+       "name": "1.5 DCI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 110,
+       "nmStock": 190,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10450/7002",
+       "name": "1.6i 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 120,
+       "nmStock": 153,
+       "nmTuned": 168,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2013-0",
+     "from": 2013,
+     "to": null,
+     "engines": [
+      {
+       "path": "3519/2323",
+       "name": "1.2 DIG 98hp",
+       "fuel": "petrol",
+       "hpStock": 98,
+       "hpTuned": 108,
+       "nmStock": 147,
+       "nmTuned": 162,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "np300-501",
+   "name": "NP300",
+   "generations": [
+    {
+     "slug": "2005-2015",
+     "from": 2005,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "3520/2324",
+       "name": "2.5 DCi 129hp",
+       "fuel": "diesel",
+       "hpStock": 129,
+       "hpTuned": 155,
+       "nmStock": 300,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "3521/2317",
+       "name": "2.3 DCi Bi-turbo (Euro 5) 160hp",
+       "fuel": "diesel",
+       "hpStock": 160,
+       "hpTuned": 190,
+       "nmStock": 403,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3522/2318",
+       "name": "2.3 DCi Bi-turbo (Euro 5) 190hp",
+       "fuel": "diesel",
+       "hpStock": 190,
+       "hpTuned": 210,
+       "nmStock": 450,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10444/6999",
+       "name": "2.3 DCi Bi-Turbo (Euro 6 160hp",
+       "fuel": "diesel",
+       "hpStock": 160,
+       "hpTuned": 190,
+       "nmStock": 403,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3523/2319",
+       "name": "2.3 DCi Bi-turbo (Euro 6) 160hp",
+       "fuel": "diesel",
+       "hpStock": 160,
+       "hpTuned": 190,
+       "nmStock": 403,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3524/2320",
+       "name": "2.3 DCi Bi-turbo (Euro 6) 190hp",
+       "fuel": "diesel",
+       "hpStock": 190,
+       "hpTuned": 210,
+       "nmStock": 450,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "nv200-502",
+   "name": "NV200",
+   "generations": [
+    {
+     "slug": "2009-0",
+     "from": 2009,
+     "to": null,
+     "engines": [
+      {
+       "path": "3525/1122",
+       "name": "1.5 DCI 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 135,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3526/1118",
+       "name": "1.5 DCI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 110,
+       "nmStock": 190,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "nv300-503",
+   "name": "NV300",
+   "generations": [
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "3527/2325",
+       "name": "1.6 DCi (Euro 6) - 95hp",
+       "fuel": "diesel",
+       "hpStock": 95,
+       "hpTuned": 145,
+       "nmStock": 260,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3528/2326",
+       "name": "1.6 DCi Bi-Turbo (Euro 6) - 125h",
+       "fuel": "diesel",
+       "hpStock": 125,
+       "hpTuned": 145,
+       "nmStock": 300,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10446/7000",
+       "name": "1.6 DCi Bi-Turbo (Euro 6) - 125hp",
+       "fuel": "diesel",
+       "hpStock": 125,
+       "hpTuned": 175,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3529/2327",
+       "name": "1.6 DCi Bi-Turbo (Euro 6) - 145h",
+       "fuel": "diesel",
+       "hpStock": 145,
+       "hpTuned": 175,
+       "nmStock": 340,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10447/7001",
+       "name": "1.6 DCi Bi-Turbo (Euro 6) - 145hp",
+       "fuel": "diesel",
+       "hpStock": 145,
+       "hpTuned": 175,
+       "nmStock": 340,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "nv400-504",
+   "name": "NV400",
+   "generations": [
+    {
+     "slug": "2010-2016",
+     "from": 2010,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "3530/2328",
+       "name": "2.3 DCi 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 130,
+       "nmStock": 285,
+       "nmTuned": 345,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3531/2329",
+       "name": "2.3 DCi 125hp",
+       "fuel": "diesel",
+       "hpStock": 125,
+       "hpTuned": 155,
+       "nmStock": 310,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3532/2330",
+       "name": "2.3 DCi 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "3533/2331",
+       "name": "2.3 DCi (Euro 6) 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 285,
+       "nmTuned": 345,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3534/2332",
+       "name": "2.3 DCi (Euro 6) 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 160,
+       "nmStock": 340,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3535/2333",
+       "name": "2.3 DCi Bi-Turbo (Euro 6) 145hp",
+       "fuel": "diesel",
+       "hpStock": 145,
+       "hpTuned": 195,
+       "nmStock": 360,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3536/2334",
+       "name": "2.3 DCi Bi-Turbo (Euro 6) 165hp",
+       "fuel": "diesel",
+       "hpStock": 165,
+       "hpTuned": 195,
+       "nmStock": 380,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3537/2335",
+       "name": "2.3 DCi Bi-Turbo (Euro 6) 170hp",
+       "fuel": "diesel",
+       "hpStock": 170,
+       "hpTuned": 195,
+       "nmStock": 380,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "pathfinder-505",
+   "name": "Pathfinder",
+   "generations": [
+    {
+     "slug": "2005-0",
+     "from": 2005,
+     "to": null,
+     "engines": [
+      {
+       "path": "3538/2336",
+       "name": "2.5 DCi 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 210,
+       "nmStock": 403,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3539/2313",
+       "name": "2.5 DCi 174hp",
+       "fuel": "diesel",
+       "hpStock": 174,
+       "hpTuned": 210,
+       "nmStock": 403,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3540/2312",
+       "name": "2.5 DCi 190hp",
+       "fuel": "diesel",
+       "hpStock": 190,
+       "hpTuned": 225,
+       "nmStock": 450,
+       "nmTuned": 540,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3541/2315",
+       "name": "3.0 DCi 231hp",
+       "fuel": "diesel",
+       "hpStock": 231,
+       "hpTuned": 280,
+       "nmStock": 550,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3542/2337",
+       "name": "4.0i V6 - 266hp",
+       "fuel": "petrol",
+       "hpStock": 266,
+       "hpTuned": 281,
+       "nmStock": 385,
+       "nmTuned": 405,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3543/2338",
+       "name": "5.6i V8 - 310hp",
+       "fuel": "petrol",
+       "hpStock": 310,
+       "hpTuned": 332,
+       "nmStock": 526,
+       "nmTuned": 550,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "patrol-506",
+   "name": "Patrol",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "3544/2339",
+       "name": "3.0 DI 158hp",
+       "fuel": "petrol",
+       "hpStock": 158,
+       "hpTuned": 188,
+       "nmStock": 323,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3545/2340",
+       "name": "3.0 DI 160hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 190,
+       "nmStock": 380,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3546/2341",
+       "name": "5.6i V8 - 320hp",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 332,
+       "nmStock": 527,
+       "nmTuned": 550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3547/2342",
+       "name": "5.6i V8 - 405hp",
+       "fuel": "petrol",
+       "hpStock": 405,
+       "hpTuned": 419,
+       "nmStock": 560,
+       "nmTuned": 581,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3548/2343",
+       "name": "5.6i V8 Nismo - 428hp",
+       "fuel": "petrol",
+       "hpStock": 428,
+       "hpTuned": 450,
+       "nmStock": 560,
+       "nmTuned": 591,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3549/2344",
+       "name": "VQ40 4.0 V6 - 275hp",
+       "fuel": "petrol",
+       "hpStock": 275,
+       "hpTuned": 297,
+       "nmStock": 394,
+       "nmTuned": 433,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "primastar-507",
+   "name": "Primastar",
+   "generations": [
+    {
+     "slug": "2002-2006",
+     "from": 2002,
+     "to": 2006,
+     "engines": [
+      {
+       "path": "10451/7003",
+       "name": "1.9 DCi 82hp",
+       "fuel": "diesel",
+       "hpStock": 82,
+       "hpTuned": 110,
+       "nmStock": 190,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3550/2345",
+       "name": "1.9 DCi 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 130,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10452/7004",
+       "name": "2.0 DCi 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 145,
+       "nmStock": 290,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10453/7009",
+       "name": "2.0 DCi 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 145,
+       "nmStock": 260,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10454/7006",
+       "name": "2.5 DCi 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 149,
+       "nmStock": 290,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10455/7007",
+       "name": "2.5 DCi 145hp",
+       "fuel": "diesel",
+       "hpStock": 135,
+       "hpTuned": 165,
+       "nmStock": 320,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3555/2304",
+       "name": "2.5 DCI 145hp",
+       "fuel": "diesel",
+       "hpStock": 145,
+       "hpTuned": 172,
+       "nmStock": 320,
+       "nmTuned": 405,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2007-0",
+     "from": 2007,
+     "to": null,
+     "engines": [
+      {
+       "path": "10456/7008",
+       "name": "2.0 DCi 114hp",
+       "fuel": "diesel",
+       "hpStock": 114,
+       "hpTuned": 145,
+       "nmStock": 300,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10457/7009",
+       "name": "2.0 DCi 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 145,
+       "nmStock": 260,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10458/7010",
+       "name": "2.5 DCi 146hp",
+       "fuel": "diesel",
+       "hpStock": 146,
+       "hpTuned": 172,
+       "nmStock": 320,
+       "nmTuned": 405,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "primera-508",
+   "name": "Primera",
+   "generations": [
+    {
+     "slug": "2002-2008",
+     "from": 2002,
+     "to": 2008,
+     "engines": [
+      {
+       "path": "10459/7011",
+       "name": "1.9 DCi 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 160,
+       "nmStock": 250,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10460/7012",
+       "name": "1.9 DCi 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 165,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10461/7013",
+       "name": "2.2 DCi 126hp",
+       "fuel": "diesel",
+       "hpStock": 126,
+       "hpTuned": 155,
+       "nmStock": 280,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10462/7014",
+       "name": "2.2 DCi 138hp",
+       "fuel": "diesel",
+       "hpStock": 138,
+       "hpTuned": 170,
+       "nmStock": 314,
+       "nmTuned": 374,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "pulsar-509",
+   "name": "Pulsar",
+   "generations": [
+    {
+     "slug": "2014-0",
+     "from": 2014,
+     "to": null,
+     "engines": [
+      {
+       "path": "3562/2305",
+       "name": "1.2 DIG-T 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 190,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10438/6995",
+       "name": "1.5 DCi 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 130,
+       "nmStock": 260,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3563/1122",
+       "name": "1.5 DCI 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 135,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3564/2306",
+       "name": "1.6 DIG-T 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 230,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "qashqai-510",
+   "name": "Qashqai",
+   "generations": [
+    {
+     "slug": "2007-2013",
+     "from": 2007,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "10463/7015",
+       "name": "1.5 DCi 106hp",
+       "fuel": "diesel",
+       "hpStock": 106,
+       "hpTuned": 125,
+       "nmStock": 240,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10464/6995",
+       "name": "1.5 DCi 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 130,
+       "nmStock": 260,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3565/2321",
+       "name": "1.5 DCi 106hp",
+       "fuel": "diesel",
+       "hpStock": 106,
+       "hpTuned": 130,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3566/1122",
+       "name": "1.5 DCI 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 135,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10465/7017",
+       "name": "1.6 DCi 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 160,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3568/986",
+       "name": "1.6i 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 124,
+       "nmStock": 157,
+       "nmTuned": 172,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10467/7019",
+       "name": "2.0 DCi 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2014-2016",
+     "from": 2014,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "3570/2305",
+       "name": "1.2 DIG-T 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 190,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3571/2358",
+       "name": "1.2 DIG-T CVT 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 130,
+       "nmStock": 165,
+       "nmTuned": 185,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10468/6995",
+       "name": "1.5 DCi 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 130,
+       "nmStock": 260,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10469/2356",
+       "name": "1.6 DCi 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 160,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3572/2359",
+       "name": "1.6 DIG-T 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 200,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-2019",
+     "from": 2017,
+     "to": 2019,
+     "engines": [
+      {
+       "path": "3573/2360",
+       "name": "1.2 DIG-T - 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 190,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10470/7020",
+       "name": "1.2 DIG-T CVT - 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 130,
+       "nmStock": 165,
+       "nmTuned": 185,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3574/2361",
+       "name": "1.5 DCi - 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 130,
+       "nmStock": 260,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3575/2362",
+       "name": "1.6 DCi - 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 160,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3576/2363",
+       "name": "1.6 DIG-T - 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 190,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "quest-511",
+   "name": "Quest",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "3577/2364",
+       "name": "3.5 V6 233hp",
+       "fuel": "petrol",
+       "hpStock": 233,
+       "hpTuned": 270,
+       "nmStock": 318,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "terrano-2-512",
+   "name": "Terrano 2",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "3578/2365",
+       "name": "2.7 TD 125hp",
+       "fuel": "diesel",
+       "hpStock": 125,
+       "hpTuned": 150,
+       "nmStock": 280,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "x-trail-513",
+   "name": "X-Trail",
+   "generations": [
+    {
+     "slug": "0-2014",
+     "from": 0,
+     "to": 2014,
+     "engines": [
+      {
+       "path": "10471/2356",
+       "name": "1.6 DCi 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 160,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16849/2357",
+       "name": "2.0 DCi 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10473/2366",
+       "name": "2.0 DCi 173hp",
+       "fuel": "diesel",
+       "hpStock": 173,
+       "hpTuned": 210,
+       "nmStock": 360,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10474/7021",
+       "name": "2.2 DCi 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 168,
+       "nmStock": 314,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2014-0",
+     "from": 2014,
+     "to": null,
+     "engines": [
+      {
+       "path": "3583/2362",
+       "name": "1.6 DCi - 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 160,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3584/2363",
+       "name": "1.6 DIG-T - 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 190,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3585/2367",
+       "name": "2.0 DCi - 177hp",
+       "fuel": "diesel",
+       "hpStock": 177,
+       "hpTuned": 205,
+       "nmStock": 380,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3580/2357",
+       "name": "2.0 DCi 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3581/2366",
+       "name": "2.0 DCi 173hp",
+       "fuel": "diesel",
+       "hpStock": 173,
+       "hpTuned": 210,
+       "nmStock": 360,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "3582/2291",
+       "name": "2.2 DCi 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 163,
+       "nmStock": 304,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2014-2017",
+     "from": 2014,
+     "to": 2017,
+     "engines": [
+      {
+       "path": "10475/2362",
+       "name": "1.6 DCi - 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 160,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10476/2363",
+       "name": "1.6 DIG-T - 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 190,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10477/2367",
+       "name": "2.0 DCi - 177hp",
+       "fuel": "diesel",
+       "hpStock": 177,
+       "hpTuned": 205,
+       "nmStock": 380,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2018-0",
+     "from": 2018,
+     "to": null,
+     "engines": [
+      {
+       "path": "10478/2362",
+       "name": "1.6 DCi - 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 160,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10479/2363",
+       "name": "1.6 DIG-T - 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 190,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10480/2367",
+       "name": "2.0 DCi - 177hp",
+       "fuel": "diesel",
+       "hpStock": 177,
+       "hpTuned": 205,
+       "nmStock": 380,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10481/7022",
+       "name": "dCi 150 - 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 340,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

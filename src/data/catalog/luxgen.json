@@ -1,0 +1,73 @@
+{
+ "slug": "luxgen",
+ "name": "Luxgen",
+ "logo": "luxgen.png",
+ "models": [
+  {
+   "slug": "s5-2853",
+   "name": "S5",
+   "generations": [
+    {
+     "slug": "2013-0",
+     "from": 2013,
+     "to": null,
+     "engines": [
+      {
+       "path": "16749/6055",
+       "name": "150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 165,
+       "nmStock": 210,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16753/6056",
+       "name": "170hp",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 185,
+       "nmStock": 250,
+       "nmTuned": 280,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "u6-961",
+   "name": "U6",
+   "generations": [
+    {
+     "slug": "2013-0",
+     "from": 2013,
+     "to": null,
+     "engines": [
+      {
+       "path": "9266/6057",
+       "name": "1.8 Turbo 171hp",
+       "fuel": "petrol",
+       "hpStock": 171,
+       "hpTuned": 202,
+       "nmStock": 265,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9267/6058",
+       "name": "2.0 Turbo 191hp",
+       "fuel": "petrol",
+       "hpStock": 191,
+       "hpTuned": 220,
+       "nmStock": 275,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

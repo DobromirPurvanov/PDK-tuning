@@ -1,0 +1,329 @@
+{
+ "slug": "holden",
+ "name": "Holden",
+ "logo": "holden.png",
+ "models": [
+  {
+   "slug": "captiva-2833",
+   "name": "Captiva",
+   "generations": [
+    {
+     "slug": "2007-2009",
+     "from": 2007,
+     "to": 2009,
+     "engines": [
+      {
+       "path": "17716/15036",
+       "name": "3.2 V6 230hp",
+       "fuel": "petrol",
+       "hpStock": 230,
+       "hpTuned": 250,
+       "nmStock": 297,
+       "nmTuned": 315,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2013-0",
+     "from": 2013,
+     "to": null,
+     "engines": [
+      {
+       "path": "17360/5144",
+       "name": "2.2L 160hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 190,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17424/5145",
+       "name": "2.4L 165hp",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 195,
+       "nmStock": 230,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "colorado-2834",
+   "name": "Colorado",
+   "generations": [
+    {
+     "slug": "2008-0",
+     "from": 2008,
+     "to": null,
+     "engines": [
+      {
+       "path": "17498/5154",
+       "name": "2.8 TD - 180hp",
+       "fuel": "diesel",
+       "hpStock": 181,
+       "hpTuned": 200,
+       "nmStock": 500,
+       "nmTuned": 530,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17613/5155",
+       "name": "3.0 TD - 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 190,
+       "nmStock": 360,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "commodore-895",
+   "name": "Commodore",
+   "generations": [
+    {
+     "slug": "1995-2005",
+     "from": 1995,
+     "to": 2005,
+     "engines": [
+      {
+       "path": "8573/5157",
+       "name": "5.7 V8 306hp",
+       "fuel": "petrol",
+       "hpStock": 306,
+       "hpTuned": 340,
+       "nmStock": 460,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2005-2008",
+     "from": 2005,
+     "to": 2008,
+     "engines": [
+      {
+       "path": "8574/5158",
+       "name": "3.6 V6 235hp",
+       "fuel": "petrol",
+       "hpStock": 235,
+       "hpTuned": 255,
+       "nmStock": 325,
+       "nmTuned": 345,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8575/5159",
+       "name": "6.0 V8 354hp",
+       "fuel": "petrol",
+       "hpStock": 354,
+       "hpTuned": 375,
+       "nmStock": 510,
+       "nmTuned": 540,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8576/5160",
+       "name": "6.0 V8 Clubsport 412hp",
+       "fuel": "petrol",
+       "hpStock": 412,
+       "hpTuned": 435,
+       "nmStock": 550,
+       "nmTuned": 575,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2013-0",
+     "from": 2013,
+     "to": null,
+     "engines": [
+      {
+       "path": "8569/5146",
+       "name": "3.6 V6 - 280hp",
+       "fuel": "petrol",
+       "hpStock": 280,
+       "hpTuned": 301,
+       "nmStock": 350,
+       "nmTuned": 376,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8570/5147",
+       "name": "6.0 V8 - 350hp",
+       "fuel": "petrol",
+       "hpStock": 350,
+       "hpTuned": 370,
+       "nmStock": 517,
+       "nmTuned": 535,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8571/5148",
+       "name": "6.0 V8 - 360hp",
+       "fuel": "petrol",
+       "hpStock": 360,
+       "hpTuned": 380,
+       "nmStock": 530,
+       "nmTuned": 550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8572/5149",
+       "name": "6.2 V8 - 408hp",
+       "fuel": "petrol",
+       "hpStock": 408,
+       "hpTuned": 430,
+       "nmStock": 570,
+       "nmTuned": 590,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "cruze-2835",
+   "name": "Cruze",
+   "generations": [
+    {
+     "slug": "2012-2013",
+     "from": 2012,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "16047/5161",
+       "name": "1.4 90hp",
+       "fuel": "petrol",
+       "hpStock": 90,
+       "hpTuned": 110,
+       "nmStock": 125,
+       "nmTuned": 145,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "monaro-896",
+   "name": "Monaro",
+   "generations": [
+    {
+     "slug": "2001-2005",
+     "from": 2001,
+     "to": 2005,
+     "engines": [
+      {
+       "path": "8577/5157",
+       "name": "5.7 V8 306hp",
+       "fuel": "petrol",
+       "hpStock": 306,
+       "hpTuned": 340,
+       "nmStock": 460,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8578/5162",
+       "name": "5.7 V8 408hp",
+       "fuel": "petrol",
+       "hpStock": 408,
+       "hpTuned": 430,
+       "nmStock": 460,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "rodeo-897",
+   "name": "Rodeo",
+   "generations": [
+    {
+     "slug": "2006-2007",
+     "from": 2006,
+     "to": 2007,
+     "engines": [
+      {
+       "path": "8579/5163",
+       "name": "3.6 V6 211hp",
+       "fuel": "petrol",
+       "hpStock": 211,
+       "hpTuned": 230,
+       "nmStock": 313,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "trax-2836",
+   "name": "Trax",
+   "generations": [
+    {
+     "slug": "2013-0",
+     "from": 2013,
+     "to": null,
+     "engines": [
+      {
+       "path": "16197/5150",
+       "name": "1.4L 16v 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 200,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16575/5151",
+       "name": "1.6L 16v 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 145,
+       "nmStock": 155,
+       "nmTuned": 215,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16598/5152",
+       "name": "1.7D 125hp",
+       "fuel": "diesel",
+       "hpStock": 125,
+       "hpTuned": 155,
+       "nmStock": 300,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16634/5153",
+       "name": "1.8L 16v 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 175,
+       "nmTuned": 235,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

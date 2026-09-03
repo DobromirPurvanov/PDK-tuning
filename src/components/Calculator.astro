@@ -1,0 +1,29 @@
+---
+// Калкулаторът (план, стр. 24): три полета едно под друго, данните се теглят по марка,
+// резултатът се показва без презареждане и води към истинската страница на двигателя.
+// Без JavaScript полетата не работят — тогава се показват връзки към марките.
+import { t, routes, type Lang } from '@/i18n';
+import { brandIndex } from '@/lib/catalog';
+import business from '@/data/business.json';
+interface Props { lang: Lang; id?: string; compact?: boolean }
+const { lang, id = 'kalkulator' } = Astro.props;
+const d = t(lang);
+const top = ['bmw', 'audi', 'volkswagen', 'mercedes-benz', 'ford', 'opel'].map((s) => brandIndex.find((b) => b.slug === s)).filter(Boolean) as typeof brandIndex;
+---
+<div class="calc" id={id} data-lang={lang} data-hp={d.units.hp} data-full={d.calc.full} data-book={d.cta.book} data-tel={business.phone}>
+  <div class="head"><span>{d.calc.title}</span><span class="st" data-state>{d.calc.state.empty}</span></div>
+  <div class="body">
+    <div><label for={`${id}-b`}>{d.calc.brand}</label><select id={`${id}-b`} data-brand><option value="">{d.calc.choose}</option>{brandIndex.map((b) => <option value={b.slug}>{b.name}</option>)}</select></div>
+    <div><label for={`${id}-m`}>{d.calc.model}</label><select id={`${id}-m`} data-model disabled><option value="">{d.calc.choose}</option></select></div>
+    <div><label for={`${id}-e`}>{d.calc.engine}</label><select id={`${id}-e`} data-engine disabled><option value="">{d.calc.choose}</option></select></div>
+  </div>
+  <div class="result" data-result>
+    <div class="readout">
+      <div><div class="l">{d.readout.power}</div><div class="v"><span class="num" data-hp0></span><span class="arrow">→</span><span class="to" data-hp1></span><span class="u">{d.units.hp}</span></div><div class="d" data-hpd></div></div>
+      <div><div class="l">{d.readout.torque}</div><div class="v"><span class="num" data-nm0></span><span class="arrow">→</span><span class="to" data-nm1></span><span class="u">Nm</span></div><div class="d" data-nmd></div></div>
+    </div>
+    <div class="actions"><a class="btn primary" data-link href="#">{d.calc.full}</a><a class="btn ghost" href={`tel:${business.phone}`} data-ev="tel_click" data-ev-label="calculator">{d.calc.book}</a></div>
+  </div>
+  <noscript><div class="nojs">{d.calc.nojs} {top.map((b) => <a href={`/${lang}/${b.slug}`}>{b.name}</a>)}<a href={routes.home[lang] + '#marki'}>{d.calc.all}</a></div></noscript>
+</div>
+<script is:inline set:html={`(function(){var root=document.getElementById('${id}');if(!root)return;var L=root.dataset.lang,S=${JSON.stringify(d.calc.state)};var sb=root.querySelector('[data-brand]'),sm=root.querySelector('[data-model]'),se=root.querySelector('[data-engine]'),st=root.querySelector('[data-state]'),res=root.querySelector('[data-result]');var data=null,cache={};function setState(k){st.textContent=S[k]}function opt(sel,items,label){sel.innerHTML='<option value="">'+sel.options[0].text+'</option>';items.forEach(function(it){var o=document.createElement('option');o.value=it.v;o.textContent=it.t;sel.appendChild(o)});sel.disabled=items.length===0}function years(g){return !g.from?(g.to?(L==='en'?'up to '+g.to:'до '+g.to):(L==='en'?'all years':'всички години')):g.to?g.from+'–'+g.to:g.from+'–…'}sb.addEventListener('change',function(){res.removeAttribute('data-show');opt(sm,[]);opt(se,[]);var b=sb.value;if(!b){setState('empty');return}setState('loading');var go=function(j){data=j;opt(sm,j.models.map(function(m){return{v:m.slug,t:m.name}}));setState('ready');sm.focus()};if(cache[b])return go(cache[b]);fetch('/data/'+b+'.json').then(function(r){return r.json()}).then(function(j){cache[b]=j;go(j)}).catch(function(){setState('none')})});sm.addEventListener('change',function(){res.removeAttribute('data-show');opt(se,[]);var m=data&&data.models.find(function(x){return x.slug===sm.value});if(!m){setState('ready');return}se.innerHTML='<option value="">'+se.options[0].text+'</option>';m.gens.forEach(function(g){var og=document.createElement('optgroup');og.label=years(g);g.engines.forEach(function(e){var o=document.createElement('option');o.value=g.slug+'/'+e.path;o.textContent=e.name+' · '+e.hp[0]+' '+root.dataset.hp;og.appendChild(o)});se.appendChild(og)});se.disabled=false;setState('pick');se.focus()});se.addEventListener('change',function(){var m=data&&data.models.find(function(x){return x.slug===sm.value});if(!m||!se.value){res.removeAttribute('data-show');return}var parts=se.value.split('/'),gs=parts[0],ep=parts[1]+'/'+parts[2];var g=m.gens.find(function(x){return x.slug===gs}),e=g.engines.find(function(x){return x.path===ep});var q=function(s){return root.querySelector(s)};q('[data-hp0]').textContent=e.hp[0];q('[data-hp1]').textContent=e.hp[1];q('[data-hpd]').textContent='+'+(e.hp[1]-e.hp[0])+' '+root.dataset.hp+' · +'+Math.round((e.hp[1]-e.hp[0])/e.hp[0]*100)+'%';if(e.nm&&e.nm[0]!=null){q('[data-nm0]').textContent=e.nm[0];q('[data-nm1]').textContent=e.nm[1];q('[data-nmd]').textContent='+'+(e.nm[1]-e.nm[0])+' Nm'}else{q('[data-nm0]').textContent='—';q('[data-nm1]').textContent='';q('[data-nmd]').textContent=''}q('[data-link]').href='/'+L+'/'+data.slug+'/'+m.slug+'/'+g.slug+'/'+e.path;res.setAttribute('data-show','');setState('done');(window.dataLayer=window.dataLayer||[]).push({event:'catalog_select',brand:data.name,model:m.name,engine:e.name})});})();`} />

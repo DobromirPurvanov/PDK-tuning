@@ -1,0 +1,810 @@
+{
+ "slug": "dodge",
+ "name": "Dodge",
+ "logo": "dodge.png",
+ "models": [
+  {
+   "slug": "avenger-190",
+   "name": "Avenger",
+   "generations": [
+    {
+     "slug": "2007-2010",
+     "from": 2007,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "1587/992",
+       "name": "2.0 CRD 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 175,
+       "nmStock": 310,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1588/1132",
+       "name": "2.4 - 173hp",
+       "fuel": "petrol",
+       "hpStock": 173,
+       "hpTuned": 195,
+       "nmStock": 225,
+       "nmTuned": 245,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1589/996",
+       "name": "3.5 V6 - 235hp",
+       "fuel": "petrol",
+       "hpStock": 235,
+       "hpTuned": 255,
+       "nmStock": 315,
+       "nmTuned": 335,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1590/968",
+       "name": "3.6 V6 - 283hp",
+       "fuel": "petrol",
+       "hpStock": 283,
+       "hpTuned": 305,
+       "nmStock": 350,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "caliber-191",
+   "name": "Caliber",
+   "generations": [
+    {
+     "slug": "2006-2011",
+     "from": 2006,
+     "to": 2011,
+     "engines": [
+      {
+       "path": "1591/1133",
+       "name": "2.0 - 158hp",
+       "fuel": "petrol",
+       "hpStock": 158,
+       "hpTuned": 180,
+       "nmStock": 191,
+       "nmTuned": 210,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1592/992",
+       "name": "2.0 CRD 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 175,
+       "nmStock": 310,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1593/1134",
+       "name": "2.2 CRD 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 200,
+       "nmStock": 320,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1594/1135",
+       "name": "2.4 - 172hp",
+       "fuel": "petrol",
+       "hpStock": 172,
+       "hpTuned": 195,
+       "nmStock": 224,
+       "nmTuned": 245,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2012-0",
+     "from": 2012,
+     "to": null,
+     "engines": [
+      {
+       "path": "1595/1136",
+       "name": "2.4 SRT4 295hp",
+       "fuel": "petrol",
+       "hpStock": 295,
+       "hpTuned": 330,
+       "nmStock": 363,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "caravan-192",
+   "name": "Caravan",
+   "generations": [
+    {
+     "slug": "2001-2007",
+     "from": 2001,
+     "to": 2007,
+     "engines": [
+      {
+       "path": "1596/997",
+       "name": "3.3 V6 - 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 278,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1597/1137",
+       "name": "3.8 V8 - 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 220,
+       "nmStock": 332,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2008-0",
+     "from": 2008,
+     "to": null,
+     "engines": [
+      {
+       "path": "1598/968",
+       "name": "3.6 V6 - 283hp",
+       "fuel": "petrol",
+       "hpStock": 283,
+       "hpTuned": 305,
+       "nmStock": 350,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1599/1138",
+       "name": "4.0 V6 - 251hp",
+       "fuel": "petrol",
+       "hpStock": 251,
+       "hpTuned": 270,
+       "nmStock": 350,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "challenger-193",
+   "name": "Challenger",
+   "generations": [
+    {
+     "slug": "2008-0",
+     "from": 2008,
+     "to": null,
+     "engines": [
+      {
+       "path": "1600/972",
+       "name": "3.5 V6 - 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 270,
+       "nmStock": 339,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1601/1139",
+       "name": "3.6 V6 - 305hp",
+       "fuel": "petrol",
+       "hpStock": 305,
+       "hpTuned": 325,
+       "nmStock": 363,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1602/1140",
+       "name": "6.4 HEMI V8 470hp",
+       "fuel": "petrol",
+       "hpStock": 470,
+       "hpTuned": 500,
+       "nmStock": 640,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1603/1141",
+       "name": "Hellcat 6.2 V8 Supercharged 707h",
+       "fuel": "petrol",
+       "hpStock": 707,
+       "hpTuned": 740,
+       "nmStock": 880,
+       "nmTuned": 918,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7947/4765",
+       "name": "Hellcat 6.2 V8 Supercharged 707hp",
+       "fuel": "petrol",
+       "hpStock": 707,
+       "hpTuned": 740,
+       "nmStock": 880,
+       "nmTuned": 918,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1604/1142",
+       "name": "R/T 5.7 V8 - 372hp",
+       "fuel": "petrol",
+       "hpStock": 372,
+       "hpTuned": 390,
+       "nmStock": 540,
+       "nmTuned": 560,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1605/1143",
+       "name": "SRT 392 6.4 V8 - 485hp",
+       "fuel": "petrol",
+       "hpStock": 485,
+       "hpTuned": 505,
+       "nmStock": 644,
+       "nmTuned": 665,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1606/1144",
+       "name": "SRT8 6.2 V8 - 425hp",
+       "fuel": "petrol",
+       "hpStock": 425,
+       "hpTuned": 445,
+       "nmStock": 570,
+       "nmTuned": 590,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "charger-194",
+   "name": "Charger",
+   "generations": [
+    {
+     "slug": "2006-2010",
+     "from": 2006,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "1607/969",
+       "name": "2.7 V6 - 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 210,
+       "nmStock": 258,
+       "nmTuned": 280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1608/972",
+       "name": "3.5 V6 - 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 270,
+       "nmStock": 339,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1609/1145",
+       "name": "R/T 5.7 V8 - 370hp",
+       "fuel": "petrol",
+       "hpStock": 370,
+       "hpTuned": 390,
+       "nmStock": 536,
+       "nmTuned": 555,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7949/4767",
+       "name": "SRT8 8.1 V8 432hp",
+       "fuel": "petrol",
+       "hpStock": 432,
+       "hpTuned": 460,
+       "nmStock": 569,
+       "nmTuned": 608,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2011-0",
+     "from": 2011,
+     "to": null,
+     "engines": [
+      {
+       "path": "1610/975",
+       "name": "3.6 V6 - 292hp",
+       "fuel": "petrol",
+       "hpStock": 292,
+       "hpTuned": 310,
+       "nmStock": 350,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1611/1146",
+       "name": "6.2 Hemi V8 Hellcat 707hp",
+       "fuel": "petrol",
+       "hpStock": 707,
+       "hpTuned": 740,
+       "nmStock": 880,
+       "nmTuned": 918,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1612/1143",
+       "name": "SRT 392 6.4 V8 - 485hp",
+       "fuel": "petrol",
+       "hpStock": 485,
+       "hpTuned": 505,
+       "nmStock": 644,
+       "nmTuned": 665,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1613/1147",
+       "name": "SRT8 6.1 V8 - 425hp",
+       "fuel": "petrol",
+       "hpStock": 425,
+       "hpTuned": 445,
+       "nmStock": 569,
+       "nmTuned": 590,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "dakota-195",
+   "name": "Dakota",
+   "generations": [
+    {
+     "slug": "2005-2011",
+     "from": 2005,
+     "to": 2011,
+     "engines": [
+      {
+       "path": "1614/1148",
+       "name": "3.7 V6 - 210hp",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 230,
+       "nmStock": 319,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1615/1149",
+       "name": "4.7 V8 - 235hp",
+       "fuel": "petrol",
+       "hpStock": 235,
+       "hpTuned": 255,
+       "nmStock": 400,
+       "nmTuned": 425,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1616/1150",
+       "name": "4.7 V8 - 265hp",
+       "fuel": "petrol",
+       "hpStock": 265,
+       "hpTuned": 285,
+       "nmStock": 450,
+       "nmTuned": 475,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "dart-196",
+   "name": "Dart",
+   "generations": [
+    {
+     "slug": "2013-2016",
+     "from": 2013,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "1617/1151",
+       "name": "2.0 - 160hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 180,
+       "nmStock": 210,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "durango-197",
+   "name": "Durango",
+   "generations": [
+    {
+     "slug": "2010-0",
+     "from": 2010,
+     "to": null,
+     "engines": [
+      {
+       "path": "1618/1152",
+       "name": "3.6 V6 - 290hp",
+       "fuel": "petrol",
+       "hpStock": 290,
+       "hpTuned": 310,
+       "nmStock": 350,
+       "nmTuned": 375,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1619/1153",
+       "name": "5.7 V8 - 360hp",
+       "fuel": "petrol",
+       "hpStock": 360,
+       "hpTuned": 380,
+       "nmStock": 530,
+       "nmTuned": 550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1620/1154",
+       "name": "SRT 6.4 V8 Hemi 475hp",
+       "fuel": "petrol",
+       "hpStock": 475,
+       "hpTuned": 495,
+       "nmStock": 637,
+       "nmTuned": 655,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "journey-198",
+   "name": "Journey",
+   "generations": [
+    {
+     "slug": "2008-2011",
+     "from": 2008,
+     "to": 2011,
+     "engines": [
+      {
+       "path": "1621/992",
+       "name": "2.0 CRD 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 175,
+       "nmStock": 310,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1622/1155",
+       "name": "2.4i 170hp",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 180,
+       "nmStock": 220,
+       "nmTuned": 235,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1623/1156",
+       "name": "2.7i V6 185hp",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 195,
+       "nmStock": 256,
+       "nmTuned": 271,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1624/996",
+       "name": "3.5 V6 - 235hp",
+       "fuel": "petrol",
+       "hpStock": 235,
+       "hpTuned": 255,
+       "nmStock": 315,
+       "nmTuned": 335,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1625/968",
+       "name": "3.6 V6 - 283hp",
+       "fuel": "petrol",
+       "hpStock": 283,
+       "hpTuned": 305,
+       "nmStock": 350,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "magnum-199",
+   "name": "Magnum",
+   "generations": [
+    {
+     "slug": "2005-2008",
+     "from": 2005,
+     "to": 2008,
+     "engines": [
+      {
+       "path": "1626/1157",
+       "name": "3.5 V6 - 254hp",
+       "fuel": "petrol",
+       "hpStock": 254,
+       "hpTuned": 275,
+       "nmStock": 339,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1627/1158",
+       "name": "R/T 5.7 V8 - 345hp",
+       "fuel": "petrol",
+       "hpStock": 345,
+       "hpTuned": 365,
+       "nmStock": 529,
+       "nmTuned": 560,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1628/1147",
+       "name": "SRT8 6.1 V8 - 425hp",
+       "fuel": "petrol",
+       "hpStock": 425,
+       "hpTuned": 445,
+       "nmStock": 569,
+       "nmTuned": 590,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "neon-200",
+   "name": "Neon",
+   "generations": [
+    {
+     "slug": "2000-2005",
+     "from": 2000,
+     "to": 2005,
+     "engines": [
+      {
+       "path": "1629/1159",
+       "name": "SRT4 2.4 - 215hp",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 270,
+       "nmStock": 332,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "nitro-201",
+   "name": "Nitro",
+   "generations": [
+    {
+     "slug": "2007-2010",
+     "from": 2007,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "1630/1160",
+       "name": "2.8 CRD 177hp",
+       "fuel": "diesel",
+       "hpStock": 177,
+       "hpTuned": 210,
+       "nmStock": 420,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1631/1148",
+       "name": "3.7 V6 - 210hp",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 230,
+       "nmStock": 319,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1632/1161",
+       "name": "4.0 V6 - 260hp",
+       "fuel": "petrol",
+       "hpStock": 260,
+       "hpTuned": 280,
+       "nmStock": 359,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "ram-202",
+   "name": "Ram",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "1633/1162",
+       "name": "1500 EcoDiesel 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 305,
+       "nmStock": 570,
+       "nmTuned": 660,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7954/4770",
+       "name": "3.6 V6 - 305hp",
+       "fuel": "petrol",
+       "hpStock": 305,
+       "hpTuned": 325,
+       "nmStock": 365,
+       "nmTuned": 395,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1635/1163",
+       "name": "3.7 V6 - 215hp",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 235,
+       "nmStock": 319,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1636/1149",
+       "name": "4.7 V8 - 235hp",
+       "fuel": "petrol",
+       "hpStock": 235,
+       "hpTuned": 255,
+       "nmStock": 400,
+       "nmTuned": 425,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1637/1164",
+       "name": "5.7 Hemi V8 - 396hp",
+       "fuel": "petrol",
+       "hpStock": 396,
+       "hpTuned": 424,
+       "nmStock": 552,
+       "nmTuned": 586,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1638/1165",
+       "name": "5.7 V8 - 345hp",
+       "fuel": "petrol",
+       "hpStock": 345,
+       "hpTuned": 365,
+       "nmStock": 540,
+       "nmTuned": 560,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1639/1166",
+       "name": "6.4 Hemi V8 - 410hp",
+       "fuel": "petrol",
+       "hpStock": 410,
+       "hpTuned": 430,
+       "nmStock": 582,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1640/1167",
+       "name": "6.7 L6 350hp",
+       "fuel": "petrol",
+       "hpStock": 350,
+       "hpTuned": 380,
+       "nmStock": 890,
+       "nmTuned": 950,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1641/1168",
+       "name": "6.7 L6 375hp",
+       "fuel": "petrol",
+       "hpStock": 375,
+       "hpTuned": 405,
+       "nmStock": 1100,
+       "nmTuned": 1160,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1642/1169",
+       "name": "6.7 L6 385hp",
+       "fuel": "petrol",
+       "hpStock": 385,
+       "hpTuned": 415,
+       "nmStock": 1150,
+       "nmTuned": 1210,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "viper-203",
+   "name": "Viper",
+   "generations": [
+    {
+     "slug": "2008-0",
+     "from": 2008,
+     "to": null,
+     "engines": [
+      {
+       "path": "1643/1170",
+       "name": "8.4 V10 640hp",
+       "fuel": "petrol",
+       "hpStock": 640,
+       "hpTuned": 670,
+       "nmStock": 815,
+       "nmTuned": 875,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7948/4766",
+       "name": "8.4 V10 SRT - 10 600hp",
+       "fuel": "petrol",
+       "hpStock": 600,
+       "hpTuned": 620,
+       "nmStock": 760,
+       "nmTuned": 790,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

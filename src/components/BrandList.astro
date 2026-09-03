@@ -1,0 +1,11 @@
+---
+import { t, type Lang } from '@/i18n';
+import { brandIndex } from '@/lib/catalog';
+interface Props { lang: Lang; collapsed?: boolean; id?: string }
+const { lang, collapsed = true, id = 'marki' } = Astro.props;
+const d = t(lang);
+---
+<ul class:list={['brands', { collapsed }]} id={id}>
+  {brandIndex.map((b) => <li><a href={`/${lang}/${b.slug}`}>{b.name}<span class="c">{b.engines}</span></a></li>)}
+</ul>
+{collapsed && <button class="btn ghost sm showall" type="button" onclick={`document.getElementById('${id}').classList.remove('collapsed');this.remove()`}>{d.catalog.showAll}</button>}

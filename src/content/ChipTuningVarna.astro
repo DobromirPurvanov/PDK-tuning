@@ -1,0 +1,113 @@
+---
+// Най-важната нова страница (план, стр. 16): 8 секции, 1 000–1 300 думи, Service + LocalBusiness + FAQPage + BreadcrumbList.
+import Base from '@/layouts/Base.astro';
+import Crumbs from '@/components/Crumbs.astro';
+import Calculator from '@/components/Calculator.astro';
+import Steps from '@/components/Steps.astro';
+import Faq from '@/components/Faq.astro';
+import MapBlock from '@/components/MapBlock.astro';
+import ContactForm from '@/components/ContactForm.astro';
+import Readout from '@/components/Readout.astro';
+import { t, routes, fmt, type Lang } from '@/i18n';
+import business from '@/data/business.json';
+import prices from '@/data/prices.json';
+import { stats, brandBySlug, engineLabel, enginePath, hpGain, hpPct } from '@/lib/catalog';
+import { ldBreadcrumb, ldService, ldLocalBusiness, ldFaq } from '@/lib/seo';
+import { icons } from '@/lib/icons';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang); const path = routes.chipTuningVarna[lang]; const p = prices.items['chip-tuning'];
+const bmw = brandBySlug('bmw'); let ex: any = null;
+if (bmw) for (const m of bmw.models) for (const g of m.generations) for (const e of g.engines) if (/^730d/i.test(e.name) && e.hpStock === 204 && !ex) ex = { b: bmw, m, g, e };
+const C = lang === 'bg' ? {
+  title: 'Чип тунинг Варна — с измерване на стенд, от 250 € | PDK Tuning',
+  description: `Чип тунинг във Варна с измерване на стенд преди и след: Stage 1 от ${p.from} €, колата остава ${p.time}, оригиналният файл се пази. Реални числа за ${fmt(stats.engines)} двигателя.`,
+  h1: 'Чип тунинг във Варна — с измерване на стенд',
+  lead: `Stage 1 от ${p.from} €, колата остава ${p.time}, числата се мерят преди и след. Петнайсет години файлове, собствен стенд на ул. „Прилеп“, ${fmt(stats.engines)} двигателя с реални стойности в базата.`,
+  s1: 'Какво получавате', s1p: [
+    ex ? `Пример, а не реклама: ${ex.b.name} ${ex.m.name} ${engineLabel(ex.e)} дава ${ex.e.hpStock} к.с. фабрично. След нашия файл — ${ex.e.hpTuned} к.с. и ${ex.e.nmTuned} Nm, измерени на стенда. Това са +${hpGain(ex.e)} к.с. (+${hpPct(ex.e)}%), които се усещат при изпреварване, с натоварена кола и с ремарке — не само на магистрала.` : 'Пример, а не реклама: всяка страница на двигател в каталога показва числата преди и след, измерени на стенда.',
+    'Три неща се променят при Stage 1: мощността (обикновено +15–30% при дизел с турбо, +10–20% при бензин с турбо), въртящият момент (по-пълна крива от 1 800 оборота нагоре) и разходът при спокойно каране (обикновено с 5–10% по-нисък, защото двигателят държи по-ниски обороти при същата скорост). Атмосферните бензинови двигатели печелят малко и го казваме предварително.',
+  ],
+  s2: 'Проверете своята кола', s2p: 'Марка → модел → двигател. Числата са от файлове, които сме писали, не от каталог на производителя.',
+  s3: 'Как минава при нас', s3p: 'Между 2 и 4 часа. Можете да гледате — нищо не става зад затворена врата.',
+  s4: 'Колко струва и колко трае', s4p: [
+    `Stage 1 е от ${p.from} € с диагностика и измерване преди и след. Крайната цена зависи от едно нещо: дали блокът на двигателя се чете през диагностичния куплунг (повечето коли до 2016 г.) или трябва да се свали и да се чете на маса (защитените блокове след това). Разликата е 1–2 часа работа и се казва по телефона, преди да дойдете.`,
+    `Stage 2 — с хардуерни промени (изпускателна система, интеркулер, при някои и турбо) — е от ${prices.items['stage-2'].from} € и се уговаря след разговор, защото зависи от това какво вече е сложено на колата. Комбинацията чип тунинг + DPF + EGR в един файл е по-евтина от три посещения.`,
+  ],
+  s5: 'Гаранция и рискове — честно', s5p: [
+    'Всяка промяна в софтуера на двигателя е основание производителят да откаже заводска гаранция. Затова при кола в гаранция не препоръчваме намеса и ще ви кажем защо — по-добре да изчакате една година, отколкото да спорите с дилъра за турбо.',
+    'Какво не правим: чип тунинг на двигател с механичен проблем (маслоядене, свирещо турбо, грешки по впръскването) — първо ремонт, после файл. Не пишем „универсални“ файлове от интернет. Не обещаваме конкретен процент разход.',
+    'Какво гарантираме: файлът е за точно този двигател и тази мощност; оригиналът се пази и се връща за под час; ако проблемът е в нашия файл, оправяме го безплатно; ако дилър презапише софтуера при обновяване, качваме файла отново.',
+  ],
+  s6: 'Стендът', s6p: 'Стендът не е за да ви впечатли, а за да няма спор. Колата се мери преди файла и след него, при еднакви условия, и получавате двете криви. Ако числата не са като в каталога, ще знаете и вие, и ние — и ще търсим защо.',
+  s7: 'Къде сме', s8: 'Чести въпроси',
+  faq: [
+    { q: 'Колко коня ще даде моята кола?', a: 'Зависи от двигателя — проверете го в каталога, там числата са реални. Общото правило: дизел с турбо +15–30%, бензин с турбо +10–20%, атмосферен бензин под +5%.' },
+    { q: 'Колко време остава колата?', a: `${p.time} за Stage 1, с диагностика и измерване. Можете да изчакате в сервиза.` },
+    { q: 'Губя ли гаранцията?', a: 'При заводска гаранция — да, производителят има основание да я откаже. Затова при такава кола не препоръчваме и ще ви кажем защо.' },
+    { q: 'Ще се види ли при сервизно обслужване?', a: 'Дилърът може да види, че софтуерът е променен. При обновяване от дилъра файлът се презаписва — тогава идвате и го качваме отново, за наши клиенти без доплащане.' },
+    { q: 'Какво гориво трябва след тунинга?', a: 'При дизел — нищо не се променя. При бензин с турбо файлът е за 98 или 100 октана; с 95 блокът дърпа запалването и ръстът се губи.' },
+    { q: 'Може ли да се върне фабричното?', a: 'Да, по всяко време, за под час. Оригиналният файл се пази при нас.' },
+  ],
+} : {
+  title: 'Chip tuning in Varna — dyno-measured, from 250 € | PDK Tuning',
+  description: `Chip tuning in Varna with a before/after dyno run: Stage 1 from ${p.from} €, the original file is kept. Real figures for ${fmt(stats.engines)} engines; file service for workshops.`,
+  h1: 'Chip tuning in Varna — dyno-measured',
+  lead: `Stage 1 from ${p.from} €, the car stays ${p.time.replace('ч', 'h')}, figures measured before and after. Fifteen years of files, our own dyno on Prilep Street, ${fmt(stats.engines)} engines with real figures — and the same files for partner workshops through the portal.`,
+  s1: 'What you get', s1p: [
+    ex ? `An example, not an advert: the ${ex.b.name} ${ex.m.name} ${engineLabel(ex.e)} makes ${ex.e.hpStock} hp stock. After our file — ${ex.e.hpTuned} hp and ${ex.e.nmTuned} Nm, measured on the dyno. That is +${hpGain(ex.e)} hp (+${hpPct(ex.e)}%), felt when overtaking, loaded and towing — not only on the motorway.` : 'An example, not an advert: every engine page in the catalog shows stock and tuned figures measured on the dyno.',
+    'Three things change with Stage 1: power (typically +15–30% on turbo diesels, +10–20% on turbo petrols), torque (a fuller curve from 1,800 rpm up) and consumption at normal driving (usually 5–10% lower because the engine holds lower revs at the same speed). Naturally aspirated petrols gain little and we say so up front.',
+  ],
+  s2: 'Check your car', s2p: 'Brand → model → engine. The figures come from files we have written, not from a manufacturer catalogue.',
+  s3: 'How it works', s3p: '2 to 4 hours in the workshop. Partner workshops: upload the read-out, receive the file the same working day.',
+  s4: 'Price and time', s4p: [
+    `Stage 1 is from ${p.from} € with diagnostics and a before/after dyno run. The final price depends on one thing: whether the ECU reads through the diagnostic port (most cars up to 2016) or has to come out and be read on the bench (protected ECUs after that). The difference is 1–2 hours of work and is confirmed by phone.`,
+    `Stage 2 — with hardware changes (exhaust, intercooler, on some cars the turbo) — is from ${prices.items['stage-2'].from} € and is agreed after a call, because it depends on what is already fitted. Remap + DPF + EGR in one file costs less than three visits. Partner workshops: file prices are in the portal.`,
+  ],
+  s5: 'Warranty and risks — honestly', s5p: [
+    'Any change to the engine software is grounds for a manufacturer to refuse factory warranty. On a car under warranty we do not recommend it and will say why — better to wait a year than argue with a dealer about a turbo.',
+    'What we do not do: remap an engine with a mechanical fault (oil consumption, whistling turbo, injection faults) — repair first, file after. We do not use “universal” files from the internet. We do not promise a specific consumption figure.',
+    'What we guarantee: the file is for exactly this engine and this output; the original is kept and restored in under an hour; if the problem is in our file we fix it free; if a dealer update overwrites the file, we flash it again.',
+  ],
+  s6: 'The dyno', s6p: 'The dyno is not there to impress you but to end arguments. The car is measured before and after under the same conditions and you get both curves. If the figures differ from the catalog, both you and we will know — and we look for why.',
+  s7: 'Where we are', s8: 'Questions',
+  faq: [
+    { q: 'How much will my car gain?', a: 'It depends on the engine — check it in the catalog, the figures there are real. Rule of thumb: turbo diesel +15–30%, turbo petrol +10–20%, naturally aspirated petrol under +5%.' },
+    { q: 'How long does the car stay?', a: `${p.time.replace('ч', 'h')} for Stage 1 with diagnostics and the dyno run. You can wait at the workshop.` },
+    { q: 'Do I lose the warranty?', a: 'Under factory warranty — yes, the manufacturer has grounds to refuse it. On such a car we do not recommend it.' },
+    { q: 'What do partner workshops send?', a: 'The original read-out (full or OBD), ECU type and software number, the requested stage, and the vehicle details. Files come back through the portal the same working day.' },
+    { q: 'Which fuel after the remap?', a: 'Diesel — nothing changes. Turbo petrol — the file is for 98 or 100 octane; on 95 the ECU pulls timing and the gain is lost.' },
+    { q: 'Back to stock?', a: 'Yes, any time, in under an hour. The original file is kept.' },
+  ],
+};
+const crumbs = [{ name: d.crumbs.home, path: routes.home[lang] }];
+---
+<Base lang={lang} title={C.title} description={C.description} path={path} current="chipTuning" jsonld={[ldBreadcrumb([...crumbs, { name: C.h1, path }]), ldService(lang, lang === 'bg' ? 'Чип тунинг' : 'Chip tuning', C.description, path, p.from), ldLocalBusiness(lang), ldFaq(C.faq)]}>
+  <div class="hero">
+    <div class="wrap">
+      <Crumbs items={crumbs} current={lang === 'bg' ? 'Чип тунинг Варна' : 'Chip tuning Varna'} />
+      <div class="cols">
+        <div>
+          <p class="kicker">{lang === 'bg' ? 'Чип тунинг · Варна' : 'Chip tuning · Varna'}</p>
+          <h1>{C.h1}</h1>
+          <p class="lead">{C.lead}</p>
+          <div class="actions"><a class="btn primary" href={`tel:${business.phone}`} data-ev="tel_click" data-ev-label="ctv-hero"><Fragment set:html={icons.phone} />{business.phoneDisplay}</a><a class="btn ghost" href="#kalkulator">{d.cta.catalog}</a></div>
+          <div class="meta"><span>{lang === 'bg' ? 'от' : 'from'} {p.from} €</span><span>{p.time}</span><span>{d.misc.rated(business.rating.value, business.rating.count)}</span></div>
+        </div>
+        <div>{ex && <div><p class="kicker">{ex.b.name} {ex.m.name} {engineLabel(ex.e)}</p><Readout lang={lang} hpStock={ex.e.hpStock} hpTuned={ex.e.hpTuned} nmStock={ex.e.nmStock} nmTuned={ex.e.nmTuned} /><p class="muted" style="font-family:var(--mono);font-size:var(--s12);margin-top:.5rem"><a href={enginePath(lang, ex.b, ex.m, ex.g, ex.e)}>{d.calc.full} →</a></p></div>}</div>
+      </div>
+    </div>
+  </div>
+  <section class="section"><div class="wrap"><div class="two"><article class="article">
+    <p class="kicker">01 · {C.s1}</p><h2>{C.s1}</h2>{C.s1p.map((x) => <p>{x}</p>)}
+  </article><aside><div class="side sticky"><h3>{d.cta.book}</h3><div class="actions" style="flex-direction:column;align-items:stretch"><a class="btn primary" href={`tel:${business.phone}`} data-ev="tel_click" data-ev-label="ctv-side">{business.phoneDisplay}</a><a class="btn ghost" href={`viber://chat?number=%2B${business.viber.replace('+', '')}`} data-ev="viber_click" data-ev-label="ctv">Viber</a><a class="btn ghost" href="#form">{d.cta.form}</a></div></div></aside></div></div></section>
+  <section class="section alt"><div class="wrap"><div class="cols"><div><p class="kicker">02 · {C.s2}</p><h2>{C.s2}</h2><p class="lead">{C.s2p}</p></div><Calculator lang={lang} /></div></div></section>
+  <section class="section"><div class="wrap"><p class="kicker">03 · {C.s3}</p><h2>{C.s3}</h2><p class="lead">{C.s3p}</p><Steps lang={lang} /></div></section>
+  <section class="section alt"><div class="wrap"><div class="two"><article class="article">
+    <p class="kicker">04 · {C.s4}</p><h2 id="cena">{C.s4}</h2>{C.s4p.map((x) => <p>{x}</p>)}<p><a class="btn" href={routes.prices[lang]}>{d.cta.prices}</a></p>
+    <p class="kicker">05 · {C.s5}</p><h2 id="garancia">{C.s5}</h2><div class="box warn">{C.s5p.map((x) => <p>{x}</p>)}</div>
+    <p class="kicker">06 · {C.s6}</p><h2 id="stend">{C.s6}</h2><p>{C.s6p}</p><p><a href={routes.dyno[lang]}>{d.nav.dyno} →</a></p>
+  </article><aside></aside></div></div></section>
+  <section class="section"><div class="wrap"><p class="kicker">07 · {C.s7}</p><h2>{C.s7}</h2><MapBlock lang={lang} /></div></section>
+  <section class="section alt"><div class="wrap"><div class="cols"><div><p class="kicker">08 · {C.s8}</p><h2>{C.s8}</h2><Faq items={C.faq} /></div><div><p class="kicker">{d.form.title}</p><ContactForm lang={lang} service="chip-tuning" id="form" /></div></div></div></section>
+</Base>

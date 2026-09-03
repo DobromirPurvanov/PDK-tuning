@@ -1,0 +1,146 @@
+{
+ "slug": "geely",
+ "name": "Geely",
+ "logo": "geely.jpg",
+ "models": [
+  {
+   "slug": "bo-rui-874",
+   "name": "Bo Rui",
+   "generations": [
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "8468/5069",
+       "name": "1.8i Turbo 161hp",
+       "fuel": "petrol",
+       "hpStock": 161,
+       "hpTuned": 205,
+       "nmStock": 250,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8469/5070",
+       "name": "2.4i 162hp",
+       "fuel": "petrol",
+       "hpStock": 162,
+       "hpTuned": 177,
+       "nmStock": 210,
+       "nmTuned": 231,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8470/5071",
+       "name": "3.5i 275hp",
+       "fuel": "petrol",
+       "hpStock": 275,
+       "hpTuned": 293,
+       "nmStock": 326,
+       "nmTuned": 349,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "emgrand-gt-875",
+   "name": "Emgrand GT",
+   "generations": [
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "8471/5072",
+       "name": "1.8 Turbo 161hp",
+       "fuel": "petrol",
+       "hpStock": 161,
+       "hpTuned": 205,
+       "nmStock": 250,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8472/5073",
+       "name": "2.4I 148hp",
+       "fuel": "petrol",
+       "hpStock": 148,
+       "hpTuned": 177,
+       "nmStock": 215,
+       "nmTuned": 241,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17420/15234",
+       "name": "2.4I 162hp",
+       "fuel": "petrol",
+       "hpStock": 162,
+       "hpTuned": 177,
+       "nmStock": 210,
+       "nmTuned": 241,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8473/5071",
+       "name": "3.5i 275hp",
+       "fuel": "petrol",
+       "hpStock": 275,
+       "hpTuned": 293,
+       "nmStock": 326,
+       "nmTuned": 349,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "emgrand-x7-876",
+   "name": "Emgrand X7",
+   "generations": [
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "8474/5074",
+       "name": "1.4 Turbo 133hp",
+       "fuel": "petrol",
+       "hpStock": 133,
+       "hpTuned": 160,
+       "nmStock": 215,
+       "nmTuned": 248,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8475/5075",
+       "name": "2.0i 139hp",
+       "fuel": "petrol",
+       "hpStock": 139,
+       "hpTuned": 158,
+       "nmStock": 191,
+       "nmTuned": 223,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8476/5076",
+       "name": "2.4i 148hp",
+       "fuel": "petrol",
+       "hpStock": 148,
+       "hpTuned": 177,
+       "nmStock": 191,
+       "nmTuned": 241,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

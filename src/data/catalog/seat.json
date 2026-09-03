@@ -1,0 +1,2821 @@
+{
+ "slug": "seat",
+ "name": "Seat",
+ "logo": "seat.png",
+ "models": [
+  {
+   "slug": "alhambra-596",
+   "name": "Alhambra",
+   "generations": [
+    {
+     "slug": "1996-2000",
+     "from": 1996,
+     "to": 2000,
+     "engines": [
+      {
+       "path": "4496/121",
+       "name": "1.8T 20V 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 192,
+       "nmStock": 210,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4497/124",
+       "name": "1.9 TDI 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 235,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4498/93",
+       "name": "1.9 TDI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 202,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11323/7854",
+       "name": "1.9 TDI 90hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 125,
+       "nmStock": 170,
+       "nmTuned": 185,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2000-2010",
+     "from": 2000,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "11324/7456",
+       "name": "1.8T 20v 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 220,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4499/164",
+       "name": "1.9 TDI 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 145,
+       "nmStock": 285,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4500/125",
+       "name": "1.9 TDI 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 165,
+       "nmStock": 310,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16726/7445",
+       "name": "1.9 TDI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11327/7854",
+       "name": "1.9 TDI 90hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 125,
+       "nmStock": 170,
+       "nmTuned": 185,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4501/131",
+       "name": "2.0 TDI 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 175,
+       "nmStock": 320,
+       "nmTuned": 395,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4502/2796",
+       "name": "2.0i 8v 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 125,
+       "nmStock": 170,
+       "nmTuned": 185,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11328/7828",
+       "name": "2.0i 8v 115hp",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 180,
+       "nmStock": 170,
+       "nmTuned": 185,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2010-0",
+     "from": 2010,
+     "to": null,
+     "engines": [
+      {
+       "path": "4503/2797",
+       "name": "1.4 TSI 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 170,
+       "nmStock": 240,
+       "nmTuned": 285,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4504/2798",
+       "name": "2.0 TDI CR 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 185,
+       "nmStock": 280,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4505/140",
+       "name": "2.0 TDI CR 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 185,
+       "nmStock": 320,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4506/154",
+       "name": "2.0 TDI CR 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 185,
+       "nmStock": 320,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4507/142",
+       "name": "2.0 TDI CR 170hp",
+       "fuel": "diesel",
+       "hpStock": 170,
+       "hpTuned": 205,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4508/194",
+       "name": "2.0 TDI CR 177hp",
+       "fuel": "diesel",
+       "hpStock": 177,
+       "hpTuned": 215,
+       "nmStock": 380,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4509/155",
+       "name": "2.0 TDI CR 184hp",
+       "fuel": "diesel",
+       "hpStock": 184,
+       "hpTuned": 220,
+       "nmStock": 380,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4510/2799",
+       "name": "2.0 TSI 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 240,
+       "nmStock": 280,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11334/7797",
+       "name": "2.0 TSI 200hp",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 250,
+       "nmStock": 280,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4511/2800",
+       "name": "2.0 TSI 220hp",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 300,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "altea-xl-1105",
+   "name": "Altea / XL",
+   "generations": [
+    {
+     "slug": "2004-2009",
+     "from": 2004,
+     "to": 2009,
+     "engines": [
+      {
+       "path": "11335/2801",
+       "name": "1.2 TSI 125hp",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 150,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11336/7754",
+       "name": "1.4 TSI 125hp",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 145,
+       "nmStock": 220,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11337/119",
+       "name": "1.6i 102hp",
+       "fuel": "petrol",
+       "hpStock": 102,
+       "hpTuned": 112,
+       "nmStock": 148,
+       "nmTuned": 163,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11338/2803",
+       "name": "1.8 TSI 160hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 200,
+       "nmStock": 250,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11339/128",
+       "name": "1.9 TDI 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 140,
+       "nmStock": 250,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11340/129",
+       "name": "2.0 FSI 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 165,
+       "nmStock": 200,
+       "nmTuned": 215,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11341/131",
+       "name": "2.0 TDI 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 175,
+       "nmStock": 320,
+       "nmTuned": 395,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11342/239",
+       "name": "2.0 TDI 170hp",
+       "fuel": "diesel",
+       "hpStock": 170,
+       "hpTuned": 200,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11343/2804",
+       "name": "FR 2.0 TFSI 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 240,
+       "nmStock": 280,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2009-0",
+     "from": 2009,
+     "to": null,
+     "engines": [
+      {
+       "path": "11344/7769",
+       "name": "1.2 TSI 105hp",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 140,
+       "nmStock": 275,
+       "nmTuned": 235,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11345/7754",
+       "name": "1.4 TSI 125hp",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 145,
+       "nmStock": 220,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11346/138",
+       "name": "1.6 TDI 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 135,
+       "nmStock": 250,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11347/139",
+       "name": "1.6 TDI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 135,
+       "nmStock": 230,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11348/119",
+       "name": "1.6i 102hp",
+       "fuel": "petrol",
+       "hpStock": 102,
+       "hpTuned": 112,
+       "nmStock": 148,
+       "nmTuned": 163,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11349/2803",
+       "name": "1.8 TSI 160hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 200,
+       "nmStock": 250,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11350/6106",
+       "name": "2.0 TDI CR 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 185,
+       "nmStock": 340,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11351/142",
+       "name": "2.0 TDI CR 170hp",
+       "fuel": "diesel",
+       "hpStock": 170,
+       "hpTuned": 205,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11352/2805",
+       "name": "2.0 TSI 211hp",
+       "fuel": "petrol",
+       "hpStock": 211,
+       "hpTuned": 250,
+       "nmStock": 280,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "altea-free-track-1106",
+   "name": "Altea Free Track",
+   "generations": [
+    {
+     "slug": "2007-2009",
+     "from": 2007,
+     "to": 2009,
+     "engines": [
+      {
+       "path": "11357/131",
+       "name": "2.0 TDI 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 175,
+       "nmStock": 320,
+       "nmTuned": 395,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11358/239",
+       "name": "2.0 TDI 170hp",
+       "fuel": "diesel",
+       "hpStock": 170,
+       "hpTuned": 200,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11359/7797",
+       "name": "2.0 TSI 200hp",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 250,
+       "nmStock": 280,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2009-2013",
+     "from": 2009,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "16119/2802",
+       "name": "1.4 TSI 125hp",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 150,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11361/138",
+       "name": "1.6 TDI 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 135,
+       "nmStock": 250,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11362/139",
+       "name": "1.6 TDI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 135,
+       "nmStock": 230,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11363/6106",
+       "name": "2.0 TDI CR 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 185,
+       "nmStock": 340,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11364/142",
+       "name": "2.0 TDI CR 170hp",
+       "fuel": "diesel",
+       "hpStock": 170,
+       "hpTuned": 205,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11365/2805",
+       "name": "2.0 TSI 211hp",
+       "fuel": "petrol",
+       "hpStock": 211,
+       "hpTuned": 250,
+       "nmStock": 280,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "arona-599",
+   "name": "Arona",
+   "generations": [
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "11366/7447",
+       "name": "1.0 TGI - 90hp",
+       "fuel": "petrol",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 170,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4535/2806",
+       "name": "1.0 TSI - 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 130,
+       "nmStock": 200,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4536/2807",
+       "name": "1.0 TSI - 95hp",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 130,
+       "nmStock": 160,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4537/2808",
+       "name": "1.5 TSI - 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 170,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4538/2809",
+       "name": "1.6 TDI - 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 145,
+       "nmStock": 250,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4539/2810",
+       "name": "1.6 TDI - 95hp",
+       "fuel": "diesel",
+       "hpStock": 95,
+       "hpTuned": 140,
+       "nmStock": 250,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "arosa-600",
+   "name": "Arosa",
+   "generations": [
+    {
+     "slug": "1997-2001",
+     "from": 1997,
+     "to": 2001,
+     "engines": [
+      {
+       "path": "4540/2811",
+       "name": "1.0i 8v 50hp",
+       "fuel": "petrol",
+       "hpStock": 50,
+       "hpTuned": 56,
+       "nmStock": 86,
+       "nmTuned": 96,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4541/115",
+       "name": "1.4 TDI 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 100,
+       "nmStock": 175,
+       "nmTuned": 245,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4542/1202",
+       "name": "1.4i 16v 100hp",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 112,
+       "nmStock": 131,
+       "nmTuned": 150,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4543/2812",
+       "name": "1.4i 8v 60hp",
+       "fuel": "petrol",
+       "hpStock": 60,
+       "hpTuned": 67,
+       "nmStock": 116,
+       "nmTuned": 126,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4544/2813",
+       "name": "1.7 SDI 60hp",
+       "fuel": "petrol",
+       "hpStock": 60,
+       "hpTuned": 70,
+       "nmStock": 115,
+       "nmTuned": 135,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2001-2004",
+     "from": 2001,
+     "to": 2004,
+     "engines": [
+      {
+       "path": "11370/2811",
+       "name": "1.0i 8v 50hp",
+       "fuel": "petrol",
+       "hpStock": 50,
+       "hpTuned": 56,
+       "nmStock": 86,
+       "nmTuned": 96,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11371/7459",
+       "name": "1.4 TDI 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 115,
+       "nmStock": 210,
+       "nmTuned": 280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11372/1202",
+       "name": "1.4i 16v 100hp",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 112,
+       "nmStock": 131,
+       "nmTuned": 150,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11373/2812",
+       "name": "1.4i 8v 60hp",
+       "fuel": "petrol",
+       "hpStock": 60,
+       "hpTuned": 67,
+       "nmStock": 116,
+       "nmTuned": 126,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11374/2813",
+       "name": "1.7 SDI 60hp",
+       "fuel": "petrol",
+       "hpStock": 60,
+       "hpTuned": 70,
+       "nmStock": 115,
+       "nmTuned": 135,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "ateca-601",
+   "name": "Ateca",
+   "generations": [
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "4545/2814",
+       "name": "1.0 EcoTSI - 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4546/2815",
+       "name": "1.4 EcoTSI - 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 170,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11375/2879",
+       "name": "1.4 TSI - 125hp",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 145,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4547/2809",
+       "name": "1.6 TDI - 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 145,
+       "nmStock": 250,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4548/219",
+       "name": "2.0 TDI - 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 320,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4549/2816",
+       "name": "FR 2.0 TDI - 190hp",
+       "fuel": "diesel",
+       "hpStock": 190,
+       "hpTuned": 220,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11377/7451",
+       "name": "FR 2.0 TSI - 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 235,
+       "nmStock": 320,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "cordoba-602",
+   "name": "Cordoba",
+   "generations": [
+    {
+     "slug": "1999-2003",
+     "from": 1999,
+     "to": 2003,
+     "engines": [
+      {
+       "path": "4550/2812",
+       "name": "1.4i 8v 60hp",
+       "fuel": "petrol",
+       "hpStock": 60,
+       "hpTuned": 67,
+       "nmStock": 116,
+       "nmTuned": 126,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4551/1319",
+       "name": "1.6i 16v 100hp",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 110,
+       "nmStock": 157,
+       "nmTuned": 174,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4552/2817",
+       "name": "1.6i 8v 75hp",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 82,
+       "nmStock": 135,
+       "nmTuned": 145,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4553/2818",
+       "name": "1.8 T 20v 156hp",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 192,
+       "nmStock": 210,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4554/2819",
+       "name": "1.9 SDI 68hp",
+       "fuel": "petrol",
+       "hpStock": 68,
+       "hpTuned": 80,
+       "nmStock": 133,
+       "nmTuned": 153,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4555/124",
+       "name": "1.9 TDI 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 235,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4556/93",
+       "name": "1.9 TDI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 202,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11380/7854",
+       "name": "1.9 TDI 90hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 125,
+       "nmStock": 170,
+       "nmTuned": 185,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2003-2009",
+     "from": 2003,
+     "to": 2009,
+     "engines": [
+      {
+       "path": "4557/2820",
+       "name": "1.2i 12v 70hp",
+       "fuel": "petrol",
+       "hpStock": 70,
+       "hpTuned": 77,
+       "nmStock": 112,
+       "nmTuned": 122,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4558/2821",
+       "name": "1.4 TDI 70hp",
+       "fuel": "diesel",
+       "hpStock": 70,
+       "hpTuned": 90,
+       "nmStock": 155,
+       "nmTuned": 200,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4559/115",
+       "name": "1.4 TDI 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 100,
+       "nmStock": 175,
+       "nmTuned": 245,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4560/2822",
+       "name": "1.4 TDI 80hp",
+       "fuel": "diesel",
+       "hpStock": 80,
+       "hpTuned": 105,
+       "nmStock": 195,
+       "nmTuned": 245,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4561/1202",
+       "name": "1.4i 16v 100hp",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 112,
+       "nmStock": 131,
+       "nmTuned": 150,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4562/117",
+       "name": "1.4i 16v 75hp",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 82,
+       "nmStock": 126,
+       "nmTuned": 140,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4563/2823",
+       "name": "1.4i 16v 85hp",
+       "fuel": "petrol",
+       "hpStock": 85,
+       "hpTuned": 95,
+       "nmStock": 130,
+       "nmTuned": 145,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4564/1124",
+       "name": "1.6i 16v 105hp",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 113,
+       "nmStock": 148,
+       "nmTuned": 164,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4565/2824",
+       "name": "1.9 SDI 64hp",
+       "fuel": "petrol",
+       "hpStock": 64,
+       "hpTuned": 80,
+       "nmStock": 125,
+       "nmTuned": 153,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4566/123",
+       "name": "1.9 TDI 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 140,
+       "nmStock": 240,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4567/125",
+       "name": "1.9 TDI 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 165,
+       "nmStock": 310,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "exeo-603",
+   "name": "Exeo",
+   "generations": [
+    {
+     "slug": "2009-0",
+     "from": 2009,
+     "to": null,
+     "engines": [
+      {
+       "path": "4568/109",
+       "name": "1.4 TFSI 125hp",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 150,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4569/2825",
+       "name": "1.8 TSI 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 210,
+       "nmStock": 230,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4570/2826",
+       "name": "1.8 TSI 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 192,
+       "nmStock": 220,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4571/2803",
+       "name": "1.8 TSI 160hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 200,
+       "nmStock": 250,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4572/183",
+       "name": "2.0 TDI CR 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 185,
+       "nmStock": 290,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4573/102",
+       "name": "2.0 TDI CR 143hp",
+       "fuel": "diesel",
+       "hpStock": 143,
+       "hpTuned": 185,
+       "nmStock": 320,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4574/141",
+       "name": "2.0 TDI CR 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 205,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4575/142",
+       "name": "2.0 TDI CR 170hp",
+       "fuel": "diesel",
+       "hpStock": 170,
+       "hpTuned": 205,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4576/2799",
+       "name": "2.0 TSI 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 240,
+       "nmStock": 280,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11355/7797",
+       "name": "2.0 TSI 200hp",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 250,
+       "nmStock": 280,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4577/2827",
+       "name": "2.0 TSI 210hp",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 260,
+       "nmStock": 320,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11356/7813",
+       "name": "2.0 TSI 210hp",
+       "fuel": "petrol",
+       "hpStock": 211,
+       "hpTuned": 260,
+       "nmStock": 280,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "ibiza-604",
+   "name": "Ibiza",
+   "generations": [
+    {
+     "slug": "1999-2002",
+     "from": 1999,
+     "to": 2002,
+     "engines": [
+      {
+       "path": "4578/117",
+       "name": "1.4i 16v 75hp",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 82,
+       "nmStock": 126,
+       "nmTuned": 140,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4579/2828",
+       "name": "1.6i 8v 100hp",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 107,
+       "nmStock": 145,
+       "nmTuned": 155,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4580/2829",
+       "name": "1.8T 20v 156hp",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 192,
+       "nmStock": 210,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4581/122",
+       "name": "1.8T 20V 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 211,
+       "nmStock": 235,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4582/124",
+       "name": "1.9 TDI 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 235,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4583/93",
+       "name": "1.9 TDI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 202,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11390/7854",
+       "name": "1.9 TDI 90hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 125,
+       "nmStock": 170,
+       "nmTuned": 185,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2002-2008",
+     "from": 2002,
+     "to": 2008,
+     "engines": [
+      {
+       "path": "4584/2821",
+       "name": "1.4 TDI 70hp",
+       "fuel": "diesel",
+       "hpStock": 70,
+       "hpTuned": 90,
+       "nmStock": 155,
+       "nmTuned": 200,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4585/2822",
+       "name": "1.4 TDI 80hp",
+       "fuel": "diesel",
+       "hpStock": 80,
+       "hpTuned": 105,
+       "nmStock": 195,
+       "nmTuned": 245,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4586/1202",
+       "name": "1.4i 16v 100hp",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 112,
+       "nmStock": 131,
+       "nmTuned": 150,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11391/7461",
+       "name": "1.4i 16v 75hp",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 85,
+       "nmStock": 128,
+       "nmTuned": 140,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4587/2823",
+       "name": "1.4i 16v 85hp",
+       "fuel": "petrol",
+       "hpStock": 85,
+       "hpTuned": 95,
+       "nmStock": 130,
+       "nmTuned": 145,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4588/1124",
+       "name": "1.6i 16v 105hp",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 113,
+       "nmStock": 148,
+       "nmTuned": 164,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4589/121",
+       "name": "1.8T 20V 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 192,
+       "nmStock": 210,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11395/7457",
+       "name": "1.8T 20v 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 210,
+       "nmStock": 245,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4590/2824",
+       "name": "1.9 SDI 64hp",
+       "fuel": "petrol",
+       "hpStock": 64,
+       "hpTuned": 80,
+       "nmStock": 125,
+       "nmTuned": 153,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4591/123",
+       "name": "1.9 TDI 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 140,
+       "nmStock": 240,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4592/125",
+       "name": "1.9 TDI 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 165,
+       "nmStock": 310,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4593/2796",
+       "name": "2.0i 8v 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 125,
+       "nmStock": 170,
+       "nmTuned": 185,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11398/7828",
+       "name": "2.0i 8v 115hp",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 180,
+       "nmStock": 170,
+       "nmTuned": 185,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4594/2830",
+       "name": "Cupra 1.9 TDI 160hp",
+       "fuel": "diesel",
+       "hpStock": 160,
+       "hpTuned": 190,
+       "nmStock": 330,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2008-2015",
+     "from": 2008,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "4595/2831",
+       "name": "1.2 70hp",
+       "fuel": "petrol",
+       "hpStock": 70,
+       "hpTuned": 77,
+       "nmStock": 112,
+       "nmTuned": 122,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4596/2832",
+       "name": "1.2 TDI 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 95,
+       "nmStock": 180,
+       "nmTuned": 210,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4597/144",
+       "name": "1.2 TSI 105hp",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 140,
+       "nmStock": 175,
+       "nmTuned": 235,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4598/2833",
+       "name": "1.2 TSI 85hp",
+       "fuel": "petrol",
+       "hpStock": 85,
+       "hpTuned": 130,
+       "nmStock": 160,
+       "nmTuned": 215,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11400/7466",
+       "name": "1.2 TSI 85hp",
+       "fuel": "petrol",
+       "hpStock": 86,
+       "hpTuned": 140,
+       "nmStock": 160,
+       "nmTuned": 235,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4599/2834",
+       "name": "1.2i 60hp",
+       "fuel": "petrol",
+       "hpStock": 60,
+       "hpTuned": 67,
+       "nmStock": 108,
+       "nmTuned": 118,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11401/2822",
+       "name": "1.4 TDI 80hp",
+       "fuel": "diesel",
+       "hpStock": 80,
+       "hpTuned": 105,
+       "nmStock": 195,
+       "nmTuned": 245,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4600/2835",
+       "name": "1.4 TSI 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4601/2836",
+       "name": "1.4 TSI 150hp (CAVF)",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 220,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4602/2837",
+       "name": "1.4 TSI 150hp (CTHF-CTJC)",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 220,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4603/2838",
+       "name": "1.4 TSI 180hp (CAVE)",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4604/2839",
+       "name": "1.4 TSI 180hp (CTHE-CTJC)",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11402/7455",
+       "name": "1.4i 16v 85hp",
+       "fuel": "petrol",
+       "hpStock": 85,
+       "hpTuned": 94,
+       "nmStock": 132,
+       "nmTuned": 151,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4605/138",
+       "name": "1.6 TDI 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 135,
+       "nmStock": 250,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4606/2840",
+       "name": "1.6 TDI 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 135,
+       "nmStock": 195,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4607/139",
+       "name": "1.6 TDI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 135,
+       "nmStock": 230,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11403/7458",
+       "name": "1.6i 16v 105hp",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 140,
+       "nmStock": 250,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4608/128",
+       "name": "1.9 TDI 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 140,
+       "nmStock": 250,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16724/15453",
+       "name": "1.9 TDI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 140,
+       "nmStock": 210,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11404/7854",
+       "name": "1.9 TDI 90hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 125,
+       "nmStock": 170,
+       "nmTuned": 185,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4609/2841",
+       "name": "2.0 TDI 143hp",
+       "fuel": "diesel",
+       "hpStock": 143,
+       "hpTuned": 180,
+       "nmStock": 320,
+       "nmTuned": 395,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-2017",
+     "from": 2015,
+     "to": 2017,
+     "engines": [
+      {
+       "path": "4610/2842",
+       "name": "1.0 TSI 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 200,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4611/2843",
+       "name": "1.0 TSI 75hp",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 120,
+       "nmStock": 160,
+       "nmTuned": 200,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4612/2844",
+       "name": "1.0 TSI 95hp",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 120,
+       "nmStock": 160,
+       "nmTuned": 200,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4613/2845",
+       "name": "1.2 TSI 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 130,
+       "nmStock": 175,
+       "nmTuned": 215,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4614/2846",
+       "name": "1.2 TSI 90hp",
+       "fuel": "petrol",
+       "hpStock": 90,
+       "hpTuned": 130,
+       "nmStock": 160,
+       "nmTuned": 215,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4615/2847",
+       "name": "1.4 EcoTSI 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 170,
+       "nmStock": 250,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4616/2848",
+       "name": "1.4 TDI 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 130,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4617/115",
+       "name": "1.4 TDI 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 100,
+       "nmStock": 175,
+       "nmTuned": 245,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4618/116",
+       "name": "1.4 TDI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 110,
+       "nmStock": 230,
+       "nmTuned": 280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4619/2849",
+       "name": "1.8 TSI Cupra 192hp",
+       "fuel": "petrol",
+       "hpStock": 192,
+       "hpTuned": 220,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "4620/2806",
+       "name": "1.0 TSI - 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 130,
+       "nmStock": 200,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4621/2807",
+       "name": "1.0 TSI - 95hp",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 130,
+       "nmStock": 160,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11409/2808",
+       "name": "1.5 TSI - 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 170,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4622/2850",
+       "name": "1.6 TDI - 80hp",
+       "fuel": "diesel",
+       "hpStock": 80,
+       "hpTuned": 150,
+       "nmStock": 230,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4623/2810",
+       "name": "1.6 TDI - 95hp",
+       "fuel": "diesel",
+       "hpStock": 95,
+       "hpTuned": 140,
+       "nmStock": 250,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "leon-605",
+   "name": "Leon",
+   "generations": [
+    {
+     "slug": "2000-2006",
+     "from": 2000,
+     "to": 2006,
+     "engines": [
+      {
+       "path": "4624/117",
+       "name": "1.4i 16v 75hp",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 82,
+       "nmStock": 126,
+       "nmTuned": 140,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4625/1124",
+       "name": "1.6i 16v 105hp",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 113,
+       "nmStock": 148,
+       "nmTuned": 164,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4626/2828",
+       "name": "1.6i 8v 100hp",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 107,
+       "nmStock": 145,
+       "nmTuned": 155,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4627/120",
+       "name": "1.8i 20v 125hp",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 135,
+       "nmStock": 170,
+       "nmTuned": 190,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4628/122",
+       "name": "1.8T 20V 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 211,
+       "nmStock": 235,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4629/315",
+       "name": "1.8T 20V 210hp",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 250,
+       "nmStock": 270,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4630/316",
+       "name": "1.8T 20V 225hp",
+       "fuel": "petrol",
+       "hpStock": 225,
+       "hpTuned": 252,
+       "nmStock": 280,
+       "nmTuned": 355,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4631/2819",
+       "name": "1.9 SDI 68hp",
+       "fuel": "petrol",
+       "hpStock": 68,
+       "hpTuned": 80,
+       "nmStock": 133,
+       "nmTuned": 153,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4632/124",
+       "name": "1.9 TDI 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 235,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4633/125",
+       "name": "1.9 TDI 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 165,
+       "nmStock": 310,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4634/1428",
+       "name": "1.9 TDI 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 185,
+       "nmStock": 310,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4635/93",
+       "name": "1.9 TDI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 202,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11419/7854",
+       "name": "1.9 TDI 90hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 125,
+       "nmStock": 170,
+       "nmTuned": 185,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2005-2012",
+     "from": 2005,
+     "to": 2012,
+     "engines": [
+      {
+       "path": "11420/7463",
+       "name": "1.2 TSI 105hp",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 140,
+       "nmStock": 175,
+       "nmTuned": 225,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4637/2851",
+       "name": "1.2 TSI 86hp",
+       "fuel": "petrol",
+       "hpStock": 86,
+       "hpTuned": 130,
+       "nmStock": 160,
+       "nmTuned": 215,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4638/2802",
+       "name": "1.4 TSI 125hp",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 150,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4639/2823",
+       "name": "1.4i 16v 85hp",
+       "fuel": "petrol",
+       "hpStock": 85,
+       "hpTuned": 95,
+       "nmStock": 130,
+       "nmTuned": 145,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4640/138",
+       "name": "1.6 TDI 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 135,
+       "nmStock": 250,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4641/139",
+       "name": "1.6 TDI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 135,
+       "nmStock": 230,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4642/2852",
+       "name": "1.6i 8v 102hp",
+       "fuel": "petrol",
+       "hpStock": 102,
+       "hpTuned": 112,
+       "nmStock": 148,
+       "nmTuned": 165,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4643/2803",
+       "name": "1.8 TSI 160hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 200,
+       "nmStock": 250,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4644/128",
+       "name": "1.9 TDI 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 140,
+       "nmStock": 250,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11423/7854",
+       "name": "1.9 TDI 90hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 125,
+       "nmStock": 170,
+       "nmTuned": 185,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4645/129",
+       "name": "2.0 FSI 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 165,
+       "nmStock": 200,
+       "nmTuned": 215,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4646/131",
+       "name": "2.0 TDI 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 175,
+       "nmStock": 320,
+       "nmTuned": 395,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4647/239",
+       "name": "2.0 TDI 170hp",
+       "fuel": "diesel",
+       "hpStock": 170,
+       "hpTuned": 200,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4648/2853",
+       "name": "2.0 TFSI 185hp",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 240,
+       "nmStock": 270,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4649/136",
+       "name": "2.0 TFSI 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 240,
+       "nmStock": 280,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4650/2854",
+       "name": "2.0 TFSI 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 300,
+       "nmStock": 300,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4651/317",
+       "name": "2.0 TFSI 265hp",
+       "fuel": "petrol",
+       "hpStock": 265,
+       "hpTuned": 300,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4652/319",
+       "name": "2.0 TFSI 310hp",
+       "fuel": "petrol",
+       "hpStock": 310,
+       "hpTuned": 360,
+       "nmStock": 400,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4653/2855",
+       "name": "2.0 TFSI FR 210hp",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 260,
+       "nmStock": 280,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2012-2017",
+     "from": 2012,
+     "to": 2017,
+     "engines": [
+      {
+       "path": "4654/2842",
+       "name": "1.0 TSI 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 200,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4655/2844",
+       "name": "1.0 TSI 95hp",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 120,
+       "nmStock": 160,
+       "nmTuned": 200,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11427/7769",
+       "name": "1.2 TSI 105hp",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 140,
+       "nmStock": 275,
+       "nmTuned": 235,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4656/2845",
+       "name": "1.2 TSI 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 130,
+       "nmStock": 175,
+       "nmTuned": 215,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4657/2833",
+       "name": "1.2 TSI 85hp",
+       "fuel": "petrol",
+       "hpStock": 85,
+       "hpTuned": 130,
+       "nmStock": 160,
+       "nmTuned": 215,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11429/7466",
+       "name": "1.2 TSI 85hp",
+       "fuel": "petrol",
+       "hpStock": 86,
+       "hpTuned": 140,
+       "nmStock": 160,
+       "nmTuned": 235,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4658/2856",
+       "name": "1.4 TGI 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 135,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4659/2857",
+       "name": "1.4 TSI 122hp (CMBA-CXSA)",
+       "fuel": "petrol",
+       "hpStock": 122,
+       "hpTuned": 145,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4660/2858",
+       "name": "1.4 TSI 125hp (CZCA)",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 150,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4661/2859",
+       "name": "1.4 TSI 140hp (CHPA)",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4662/2860",
+       "name": "1.4 TSI 150hp FR",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 170,
+       "nmStock": 250,
+       "nmTuned": 285,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4663/99",
+       "name": "1.6 TDI CR 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 135,
+       "nmStock": 250,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11432/7811",
+       "name": "1.6 TDI CR 105hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 250,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4664/2861",
+       "name": "1.6 TDI CR 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 250,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4665/100",
+       "name": "1.6 TDI CR 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 135,
+       "nmStock": 230,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4666/2862",
+       "name": "1.8 TSI 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 220,
+       "nmStock": 250,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4667/154",
+       "name": "2.0 TDI CR 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 185,
+       "nmStock": 320,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4668/155",
+       "name": "2.0 TDI CR 184hp",
+       "fuel": "diesel",
+       "hpStock": 184,
+       "hpTuned": 220,
+       "nmStock": 380,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11435/7469",
+       "name": "2.0 TFSI 265hp",
+       "fuel": "petrol",
+       "hpStock": 265,
+       "hpTuned": 360,
+       "nmStock": 380,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4669/2863",
+       "name": "2.0 TFSI 280hp",
+       "fuel": "petrol",
+       "hpStock": 280,
+       "hpTuned": 350,
+       "nmStock": 350,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11437/7471",
+       "name": "2.0 TFSI 290hp",
+       "fuel": "petrol",
+       "hpStock": 290,
+       "hpTuned": 355,
+       "nmStock": 380,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "4670/2864",
+       "name": "1.0 TSI 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 130,
+       "nmStock": 200,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4671/2797",
+       "name": "1.4 TSI 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 170,
+       "nmStock": 240,
+       "nmTuned": 285,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11439/7473",
+       "name": "1.5 TSi 130hp",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 180,
+       "nmStock": 200,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4672/2865",
+       "name": "1.6 TDI 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 250,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11440/7505",
+       "name": "1.8 TSI 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 240,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4673/161",
+       "name": "2.0 TDI 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 195,
+       "nmStock": 340,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4674/162",
+       "name": "2.0 TDI 184hp",
+       "fuel": "diesel",
+       "hpStock": 184,
+       "hpTuned": 220,
+       "nmStock": 380,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11442/7474",
+       "name": "2.0 TSI 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 235,
+       "nmStock": 320,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4675/2866",
+       "name": "2.0 TSI Cupra 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 350,
+       "nmStock": 350,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "mii-606",
+   "name": "Mii",
+   "generations": [
+    {
+     "slug": "2012-0",
+     "from": 2012,
+     "to": null,
+     "engines": [
+      {
+       "path": "4676/2867",
+       "name": "1.0i 60hp",
+       "fuel": "petrol",
+       "hpStock": 60,
+       "hpTuned": 80,
+       "nmStock": 92,
+       "nmTuned": 100,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11444/7479",
+       "name": "1.0i 60hp",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 85,
+       "nmStock": 95,
+       "nmTuned": 105,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4677/2868",
+       "name": "1.0i 75hp",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 80,
+       "nmStock": 95,
+       "nmTuned": 100,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "terraco-1107",
+   "name": "Terraco",
+   "generations": [
+    {
+     "slug": "2019-0",
+     "from": 2019,
+     "to": null,
+     "engines": [
+      {
+       "path": "11445/4610",
+       "name": "1.5 TSI 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 250,
+       "nmTuned": 345,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17028/14874",
+       "name": "2.0 TDI 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 195,
+       "nmStock": 320,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11447/202",
+       "name": "2.0 TDI 190hp",
+       "fuel": "diesel",
+       "hpStock": 190,
+       "hpTuned": 215,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11448/7474",
+       "name": "2.0 TSI 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 235,
+       "nmStock": 320,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "toledo-607",
+   "name": "Toledo",
+   "generations": [
+    {
+     "slug": "1999-2004",
+     "from": 1999,
+     "to": 2004,
+     "engines": [
+      {
+       "path": "4678/1124",
+       "name": "1.6i 16v 105hp",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 113,
+       "nmStock": 148,
+       "nmTuned": 164,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4679/120",
+       "name": "1.8i 20v 125hp",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 135,
+       "nmStock": 170,
+       "nmTuned": 190,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4680/122",
+       "name": "1.8T 20V 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 211,
+       "nmStock": 235,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4681/124",
+       "name": "1.9 TDI 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 235,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4682/125",
+       "name": "1.9 TDI 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 165,
+       "nmStock": 310,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4683/1428",
+       "name": "1.9 TDI 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 185,
+       "nmStock": 310,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4684/93",
+       "name": "1.9 TDI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 202,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11455/7854",
+       "name": "1.9 TDI 90hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 125,
+       "nmStock": 170,
+       "nmTuned": 185,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4685/2869",
+       "name": "2.3 V5 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 160,
+       "nmStock": 210,
+       "nmTuned": 225,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4686/2870",
+       "name": "2.3 V5 170hp",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 180,
+       "nmStock": 225,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2004-2009",
+     "from": 2004,
+     "to": 2009,
+     "engines": [
+      {
+       "path": "4687/2852",
+       "name": "1.6i 8v 102hp",
+       "fuel": "petrol",
+       "hpStock": 102,
+       "hpTuned": 112,
+       "nmStock": 148,
+       "nmTuned": 165,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4688/2803",
+       "name": "1.8 TSI 160hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 200,
+       "nmStock": 250,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4689/128",
+       "name": "1.9 TDI 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 140,
+       "nmStock": 250,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4690/129",
+       "name": "2.0 FSI 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 165,
+       "nmStock": 200,
+       "nmTuned": 215,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4691/131",
+       "name": "2.0 TDI 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 175,
+       "nmStock": 320,
+       "nmTuned": 395,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2013-0",
+     "from": 2013,
+     "to": null,
+     "engines": [
+      {
+       "path": "4692/144",
+       "name": "1.2 TSI 105hp",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 140,
+       "nmStock": 175,
+       "nmTuned": 235,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4693/2833",
+       "name": "1.2 TSI 85hp",
+       "fuel": "petrol",
+       "hpStock": 85,
+       "hpTuned": 130,
+       "nmStock": 160,
+       "nmTuned": 215,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11457/7466",
+       "name": "1.2 TSI 85hp",
+       "fuel": "petrol",
+       "hpStock": 86,
+       "hpTuned": 140,
+       "nmStock": 160,
+       "nmTuned": 235,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4694/116",
+       "name": "1.4 TDI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 110,
+       "nmStock": 230,
+       "nmTuned": 280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4695/2871",
+       "name": "1.4 TSI 122hp",
+       "fuel": "petrol",
+       "hpStock": 122,
+       "hpTuned": 145,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11458/7754",
+       "name": "1.4 TSI 125hp",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 145,
+       "nmStock": 220,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4696/2835",
+       "name": "1.4 TSI 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4697/138",
+       "name": "1.6 TDI 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 135,
+       "nmStock": 250,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4698/2865",
+       "name": "1.6 TDI 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 250,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4699/154",
+       "name": "2.0 TDI CR 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 185,
+       "nmStock": 320,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

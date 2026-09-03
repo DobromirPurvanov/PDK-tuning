@@ -1,0 +1,12 @@
+---
+import { t, type Lang } from '@/i18n';
+import business from '@/data/business.json';
+import { icons } from '@/lib/icons';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+---
+<div class="bar" role="navigation" aria-label={d.nav.phone}>
+  <a class="call" href={`tel:${business.phone}`} data-ev="tel_click" data-ev-label="sticky"><Fragment set:html={icons.phone} />{d.nav.call}</a>
+  <a href={`viber://chat?number=%2B${business.viber.replace('+', '')}`} data-ev="viber_click" data-ev-label="sticky"><Fragment set:html={icons.viber} />{d.nav.viber}</a>
+</div>

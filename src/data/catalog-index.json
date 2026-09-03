@@ -1,0 +1,786 @@
+[
+ {
+  "slug": "abarth",
+  "name": "Abarth",
+  "logo": "abarth.png",
+  "models": 2,
+  "engines": 13
+ },
+ {
+  "slug": "acura",
+  "name": "Acura",
+  "logo": "acura.png",
+  "models": 2,
+  "engines": 2
+ },
+ {
+  "slug": "alfa-romeo",
+  "name": "Alfa Romeo",
+  "logo": "alfa-romeo.png",
+  "models": 14,
+  "engines": 153
+ },
+ {
+  "slug": "alpina",
+  "name": "Alpina",
+  "logo": "alpina.png",
+  "models": 13,
+  "engines": 22
+ },
+ {
+  "slug": "alpine",
+  "name": "Alpine",
+  "logo": null,
+  "models": 1,
+  "engines": 2
+ },
+ {
+  "slug": "ariel-motors",
+  "name": "Ariel Motors",
+  "logo": "ariel-motors.png",
+  "models": 2,
+  "engines": 2
+ },
+ {
+  "slug": "aston-martin",
+  "name": "Aston Martin",
+  "logo": "aston-martin.png",
+  "models": 6,
+  "engines": 15
+ },
+ {
+  "slug": "audi",
+  "name": "Audi",
+  "logo": "audi.png",
+  "models": 37,
+  "engines": 722
+ },
+ {
+  "slug": "bentley",
+  "name": "Bentley",
+  "logo": "bentley.png",
+  "models": 7,
+  "engines": 25
+ },
+ {
+  "slug": "bmw",
+  "name": "BMW",
+  "logo": "bmw.png",
+  "models": 41,
+  "engines": 881
+ },
+ {
+  "slug": "borgward",
+  "name": "Borgward",
+  "logo": "borgward.png",
+  "models": 2,
+  "engines": 2
+ },
+ {
+  "slug": "bugatti",
+  "name": "Bugatti",
+  "logo": "bugatti.png",
+  "models": 2,
+  "engines": 2
+ },
+ {
+  "slug": "buick",
+  "name": "Buick",
+  "logo": "buick.png",
+  "models": 15,
+  "engines": 56
+ },
+ {
+  "slug": "cadillac",
+  "name": "Cadillac",
+  "logo": "cadillac.png",
+  "models": 14,
+  "engines": 50
+ },
+ {
+  "slug": "case",
+  "name": "Case",
+  "logo": "case.png",
+  "models": 23,
+  "engines": 253
+ },
+ {
+  "slug": "caterpillar",
+  "name": "Caterpillar",
+  "logo": "caterpillar.png",
+  "models": 23,
+  "engines": 160
+ },
+ {
+  "slug": "challenger",
+  "name": "Challenger",
+  "logo": "challenger.jpg",
+  "models": 6,
+  "engines": 114
+ },
+ {
+  "slug": "changan",
+  "name": "Changan",
+  "logo": "changan.png",
+  "models": 1,
+  "engines": 1
+ },
+ {
+  "slug": "chevrolet",
+  "name": "Chevrolet",
+  "logo": "chevrolet.png",
+  "models": 38,
+  "engines": 194
+ },
+ {
+  "slug": "chrysler",
+  "name": "Chrysler",
+  "logo": "chrysler.png",
+  "models": 13,
+  "engines": 54
+ },
+ {
+  "slug": "citroen",
+  "name": "Citroen",
+  "logo": "citroen.png",
+  "models": 29,
+  "engines": 381
+ },
+ {
+  "slug": "claas",
+  "name": "Claas",
+  "logo": "claas.png",
+  "models": 13,
+  "engines": 154
+ },
+ {
+  "slug": "cupra",
+  "name": "Cupra",
+  "logo": "cupra.png",
+  "models": 4,
+  "engines": 7
+ },
+ {
+  "slug": "dacia",
+  "name": "Dacia",
+  "logo": "dacia.png",
+  "models": 5,
+  "engines": 48
+ },
+ {
+  "slug": "daewoo",
+  "name": "Daewoo",
+  "logo": "daewoo.png",
+  "models": 2,
+  "engines": 2
+ },
+ {
+  "slug": "daf",
+  "name": "DAF",
+  "logo": "daf.png",
+  "models": 3,
+  "engines": 46
+ },
+ {
+  "slug": "deutz",
+  "name": "Deutz",
+  "logo": "deutz.png",
+  "models": 3,
+  "engines": 90
+ },
+ {
+  "slug": "dodge",
+  "name": "Dodge",
+  "logo": "dodge.png",
+  "models": 14,
+  "engines": 60
+ },
+ {
+  "slug": "doosan",
+  "name": "Doosan",
+  "logo": "doosan.png",
+  "models": 3,
+  "engines": 12
+ },
+ {
+  "slug": "ds",
+  "name": "DS",
+  "logo": "ds.png",
+  "models": 4,
+  "engines": 16
+ },
+ {
+  "slug": "fendt",
+  "name": "Fendt",
+  "logo": "fendt.png",
+  "models": 2,
+  "engines": 89
+ },
+ {
+  "slug": "ferrari",
+  "name": "Ferrari",
+  "logo": "ferrari.png",
+  "models": 20,
+  "engines": 25
+ },
+ {
+  "slug": "fiat",
+  "name": "Fiat",
+  "logo": "fiat.png",
+  "models": 32,
+  "engines": 291
+ },
+ {
+  "slug": "ford",
+  "name": "Ford",
+  "logo": "ford.png",
+  "models": 45,
+  "engines": 538
+ },
+ {
+  "slug": "geely",
+  "name": "Geely",
+  "logo": "geely.jpg",
+  "models": 3,
+  "engines": 10
+ },
+ {
+  "slug": "gmc",
+  "name": "GMC",
+  "logo": "gmc.png",
+  "models": 9,
+  "engines": 56
+ },
+ {
+  "slug": "gwm",
+  "name": "GWM",
+  "logo": "gwm.png",
+  "models": 7,
+  "engines": 8
+ },
+ {
+  "slug": "hitachi",
+  "name": "Hitachi",
+  "logo": "hitachi.jpg",
+  "models": 2,
+  "engines": 28
+ },
+ {
+  "slug": "holden",
+  "name": "Holden",
+  "logo": "holden.png",
+  "models": 7,
+  "engines": 21
+ },
+ {
+  "slug": "honda",
+  "name": "Honda",
+  "logo": "honda.png",
+  "models": 16,
+  "engines": 70
+ },
+ {
+  "slug": "hummer",
+  "name": "Hummer",
+  "logo": "hummer.png",
+  "models": 3,
+  "engines": 6
+ },
+ {
+  "slug": "hyundai",
+  "name": "Hyundai",
+  "logo": "hyundai.png",
+  "models": 29,
+  "engines": 146
+ },
+ {
+  "slug": "infiniti",
+  "name": "Infiniti",
+  "logo": "infiniti.png",
+  "models": 17,
+  "engines": 49
+ },
+ {
+  "slug": "isuzu",
+  "name": "Isuzu",
+  "logo": "isuzu.png",
+  "models": 4,
+  "engines": 14
+ },
+ {
+  "slug": "isuzu-trucks",
+  "name": "Isuzu Trucks",
+  "logo": "isuzu-trucks.png",
+  "models": 1,
+  "engines": 1
+ },
+ {
+  "slug": "iveco",
+  "name": "Iveco",
+  "logo": "iveco.png",
+  "models": 6,
+  "engines": 77
+ },
+ {
+  "slug": "jac",
+  "name": "Jac",
+  "logo": "jac.png",
+  "models": 1,
+  "engines": 1
+ },
+ {
+  "slug": "jaguar",
+  "name": "Jaguar",
+  "logo": "jaguar.png",
+  "models": 10,
+  "engines": 121
+ },
+ {
+  "slug": "jcb",
+  "name": "JCB",
+  "logo": "jcb.png",
+  "models": 7,
+  "engines": 42
+ },
+ {
+  "slug": "jeep",
+  "name": "Jeep",
+  "logo": "jeep.png",
+  "models": 9,
+  "engines": 98
+ },
+ {
+  "slug": "john-deere",
+  "name": "John Deere",
+  "logo": "john-deere.png",
+  "models": 15,
+  "engines": 451
+ },
+ {
+  "slug": "kia",
+  "name": "Kia",
+  "logo": "kia.png",
+  "models": 18,
+  "engines": 116
+ },
+ {
+  "slug": "krone",
+  "name": "Krone",
+  "logo": "krone.jpg",
+  "models": 1,
+  "engines": 12
+ },
+ {
+  "slug": "ktm",
+  "name": "KTM",
+  "logo": "ktm.png",
+  "models": 1,
+  "engines": 4
+ },
+ {
+  "slug": "kubota",
+  "name": "Kubota",
+  "logo": "kubota.png",
+  "models": 4,
+  "engines": 20
+ },
+ {
+  "slug": "lamborghini",
+  "name": "Lamborghini",
+  "logo": "lamborghini.png",
+  "models": 5,
+  "engines": 16
+ },
+ {
+  "slug": "lancia",
+  "name": "Lancia",
+  "logo": "lancia.png",
+  "models": 9,
+  "engines": 44
+ },
+ {
+  "slug": "land-rover",
+  "name": "Land-Rover",
+  "logo": "land-rover.png",
+  "models": 7,
+  "engines": 90
+ },
+ {
+  "slug": "lexus",
+  "name": "Lexus",
+  "logo": "lexus.png",
+  "models": 6,
+  "engines": 26
+ },
+ {
+  "slug": "lincoln",
+  "name": "Lincoln",
+  "logo": "lincoln.png",
+  "models": 6,
+  "engines": 10
+ },
+ {
+  "slug": "lindner",
+  "name": "Lindner",
+  "logo": "lindner.jpg",
+  "models": 3,
+  "engines": 22
+ },
+ {
+  "slug": "lotus",
+  "name": "Lotus",
+  "logo": "lotus.jpg",
+  "models": 4,
+  "engines": 11
+ },
+ {
+  "slug": "luxgen",
+  "name": "Luxgen",
+  "logo": "luxgen.png",
+  "models": 2,
+  "engines": 4
+ },
+ {
+  "slug": "mahindra",
+  "name": "Mahindra",
+  "logo": "mahindra.png",
+  "models": 5,
+  "engines": 10
+ },
+ {
+  "slug": "man",
+  "name": "MAN",
+  "logo": "man.png",
+  "models": 12,
+  "engines": 83
+ },
+ {
+  "slug": "maserati",
+  "name": "Maserati",
+  "logo": "maserati.png",
+  "models": 6,
+  "engines": 35
+ },
+ {
+  "slug": "massey-ferguson",
+  "name": "Massey Ferguson",
+  "logo": "massey-ferguson.png",
+  "models": 7,
+  "engines": 128
+ },
+ {
+  "slug": "mazda",
+  "name": "Mazda",
+  "logo": "mazda.png",
+  "models": 14,
+  "engines": 95
+ },
+ {
+  "slug": "mc-cormick",
+  "name": "Mc Cormick",
+  "logo": "mc-cormick.png",
+  "models": 10,
+  "engines": 50
+ },
+ {
+  "slug": "mclaren",
+  "name": "McLaren",
+  "logo": "mclaren.png",
+  "models": 15,
+  "engines": 16
+ },
+ {
+  "slug": "mercedes-benz",
+  "name": "Mercedes-Benz",
+  "logo": "mercedes-benz.png",
+  "models": 35,
+  "engines": 877
+ },
+ {
+  "slug": "mercedes-benz-trucks",
+  "name": "Mercedes-Benz Trucks",
+  "logo": "mercedes-benz-trucks.png",
+  "models": 4,
+  "engines": 155
+ },
+ {
+  "slug": "mercury",
+  "name": "Mercury",
+  "logo": "mercury.png",
+  "models": 4,
+  "engines": 7
+ },
+ {
+  "slug": "mg",
+  "name": "MG",
+  "logo": "mg.png",
+  "models": 5,
+  "engines": 12
+ },
+ {
+  "slug": "mini",
+  "name": "Mini",
+  "logo": "mini.png",
+  "models": 8,
+  "engines": 176
+ },
+ {
+  "slug": "mitsubishi",
+  "name": "Mitsubishi",
+  "logo": "mitsubishi.png",
+  "models": 14,
+  "engines": 47
+ },
+ {
+  "slug": "new-holland",
+  "name": "New Holland",
+  "logo": "new-holland.png",
+  "models": 33,
+  "engines": 262
+ },
+ {
+  "slug": "nissan",
+  "name": "Nissan",
+  "logo": "nissan.png",
+  "models": 31,
+  "engines": 149
+ },
+ {
+  "slug": "oldsmobile",
+  "name": "OldsMobile",
+  "logo": "oldsmobile.png",
+  "models": 3,
+  "engines": 6
+ },
+ {
+  "slug": "opel-vauxhall",
+  "name": "Opel / Vauxhall",
+  "logo": "opel-vauxhall.png",
+  "models": 25,
+  "engines": 372
+ },
+ {
+  "slug": "pagani",
+  "name": "Pagani",
+  "logo": "pagani.png",
+  "models": 1,
+  "engines": 8
+ },
+ {
+  "slug": "peugeot",
+  "name": "Peugeot",
+  "logo": "peugeot.png",
+  "models": 30,
+  "engines": 368
+ },
+ {
+  "slug": "pgo",
+  "name": "PGO",
+  "logo": "pgo.png",
+  "models": 2,
+  "engines": 4
+ },
+ {
+  "slug": "piaggio",
+  "name": "Piaggio",
+  "logo": "piaggio.png",
+  "models": 1,
+  "engines": 1
+ },
+ {
+  "slug": "pontiac",
+  "name": "Pontiac",
+  "logo": "pontiac.png",
+  "models": 12,
+  "engines": 31
+ },
+ {
+  "slug": "porsche",
+  "name": "Porsche",
+  "logo": "porsche.png",
+  "models": 11,
+  "engines": 212
+ },
+ {
+  "slug": "renault",
+  "name": "Renault",
+  "logo": "renault.png",
+  "models": 23,
+  "engines": 354
+ },
+ {
+  "slug": "renault-truck",
+  "name": "Renault truck",
+  "logo": "renault-truck.png",
+  "models": 4,
+  "engines": 25
+ },
+ {
+  "slug": "roewe",
+  "name": "Roewe",
+  "logo": "roewe.jpg",
+  "models": 1,
+  "engines": 1
+ },
+ {
+  "slug": "rolls-royce",
+  "name": "Rolls Royce",
+  "logo": "rolls-royce.png",
+  "models": 3,
+  "engines": 4
+ },
+ {
+  "slug": "rover",
+  "name": "Rover",
+  "logo": "rover.png",
+  "models": 1,
+  "engines": 1
+ },
+ {
+  "slug": "saab",
+  "name": "Saab",
+  "logo": "saab.png",
+  "models": 6,
+  "engines": 85
+ },
+ {
+  "slug": "same",
+  "name": "Same",
+  "logo": "same.jpg",
+  "models": 13,
+  "engines": 66
+ },
+ {
+  "slug": "samsung",
+  "name": "Samsung",
+  "logo": "samsung.png",
+  "models": 1,
+  "engines": 5
+ },
+ {
+  "slug": "saturn",
+  "name": "Saturn",
+  "logo": "saturn.png",
+  "models": 7,
+  "engines": 14
+ },
+ {
+  "slug": "scania-trucks",
+  "name": "Scania Trucks",
+  "logo": "scania-trucks.png",
+  "models": 3,
+  "engines": 21
+ },
+ {
+  "slug": "scion",
+  "name": "Scion",
+  "logo": "scion.png",
+  "models": 1,
+  "engines": 1
+ },
+ {
+  "slug": "seat",
+  "name": "Seat",
+  "logo": "seat.png",
+  "models": 13,
+  "engines": 254
+ },
+ {
+  "slug": "skoda",
+  "name": "Skoda",
+  "logo": "skoda.png",
+  "models": 12,
+  "engines": 287
+ },
+ {
+  "slug": "smart",
+  "name": "Smart",
+  "logo": "smart.png",
+  "models": 5,
+  "engines": 34
+ },
+ {
+  "slug": "ssangyong",
+  "name": "SsangYong",
+  "logo": "ssangyong.png",
+  "models": 8,
+  "engines": 25
+ },
+ {
+  "slug": "steyr",
+  "name": "Steyr",
+  "logo": "steyr.png",
+  "models": 5,
+  "engines": 62
+ },
+ {
+  "slug": "subaru",
+  "name": "Subaru",
+  "logo": "subaru.png",
+  "models": 12,
+  "engines": 47
+ },
+ {
+  "slug": "suzuki",
+  "name": "Suzuki",
+  "logo": "suzuki.png",
+  "models": 13,
+  "engines": 44
+ },
+ {
+  "slug": "tata",
+  "name": "Tata",
+  "logo": "tata.png",
+  "models": 1,
+  "engines": 1
+ },
+ {
+  "slug": "tesla",
+  "name": "Tesla",
+  "logo": "tesla.png",
+  "models": 1,
+  "engines": 1
+ },
+ {
+  "slug": "toyota",
+  "name": "Toyota",
+  "logo": "toyota.png",
+  "models": 23,
+  "engines": 118
+ },
+ {
+  "slug": "valtra",
+  "name": "Valtra",
+  "logo": "valtra.png",
+  "models": 1,
+  "engines": 81
+ },
+ {
+  "slug": "volkswagen",
+  "name": "Volkswagen",
+  "logo": "volkswagen.png",
+  "models": 47,
+  "engines": 872
+ },
+ {
+  "slug": "volvo",
+  "name": "Volvo",
+  "logo": "volvo.png",
+  "models": 18,
+  "engines": 478
+ },
+ {
+  "slug": "westfield",
+  "name": "Westfield",
+  "logo": null,
+  "models": 1,
+  "engines": 1
+ },
+ {
+  "slug": "wiesmann",
+  "name": "Wiesmann",
+  "logo": "wiesmann.png",
+  "models": 1,
+  "engines": 6
+ }
+]

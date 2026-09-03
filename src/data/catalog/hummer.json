@@ -1,0 +1,113 @@
+{
+ "slug": "hummer",
+ "name": "Hummer",
+ "logo": "hummer.png",
+ "models": [
+  {
+   "slug": "h1-904",
+   "name": "H1",
+   "generations": [
+    {
+     "slug": "0-2006",
+     "from": 0,
+     "to": 2006,
+     "engines": [
+      {
+       "path": "8625/5194",
+       "name": "6.6 V8 305hp",
+       "fuel": "petrol",
+       "hpStock": 305,
+       "hpTuned": 325,
+       "nmStock": 820,
+       "nmTuned": 850,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "h2-905",
+   "name": "H2",
+   "generations": [
+    {
+     "slug": "2003-2007",
+     "from": 2003,
+     "to": 2007,
+     "engines": [
+      {
+       "path": "8626/5195",
+       "name": "6.0 V8 316hp",
+       "fuel": "petrol",
+       "hpStock": 316,
+       "hpTuned": 335,
+       "nmStock": 522,
+       "nmTuned": 545,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2008-2009",
+     "from": 2008,
+     "to": 2009,
+     "engines": [
+      {
+       "path": "8627/5196",
+       "name": "6.2 V8 393hp",
+       "fuel": "petrol",
+       "hpStock": 393,
+       "hpTuned": 415,
+       "nmStock": 574,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "h3-2839",
+   "name": "H3",
+   "generations": [
+    {
+     "slug": "2006-2010",
+     "from": 2006,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "17730/5197",
+       "name": "3.5 220hp",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 240,
+       "nmStock": 305,
+       "nmTuned": 325,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17770/5198",
+       "name": "3.7 242hp",
+       "fuel": "petrol",
+       "hpStock": 242,
+       "hpTuned": 260,
+       "nmStock": 328,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17999/5199",
+       "name": "5.3 V8 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 320,
+       "nmStock": 430,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

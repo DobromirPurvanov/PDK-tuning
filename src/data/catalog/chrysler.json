@@ -1,0 +1,758 @@
+{
+ "slug": "chrysler",
+ "name": "Chrysler",
+ "logo": "chrysler.png",
+ "models": [
+  {
+   "slug": "200-151",
+   "name": "200",
+   "generations": [
+    {
+     "slug": "2010-2016",
+     "from": 2010,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "1289/968",
+       "name": "3.6 V6 - 283hp",
+       "fuel": "petrol",
+       "hpStock": 283,
+       "hpTuned": 305,
+       "nmStock": 350,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "300c-152",
+   "name": "300C",
+   "generations": [
+    {
+     "slug": "2004-2011",
+     "from": 2004,
+     "to": 2011,
+     "engines": [
+      {
+       "path": "1290/969",
+       "name": "2.7 V6 - 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 210,
+       "nmStock": 258,
+       "nmTuned": 280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1291/970",
+       "name": "3.0 CRD 211hp",
+       "fuel": "diesel",
+       "hpStock": 211,
+       "hpTuned": 275,
+       "nmStock": 510,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1292/971",
+       "name": "3.0 CRD 218hp",
+       "fuel": "diesel",
+       "hpStock": 218,
+       "hpTuned": 275,
+       "nmStock": 510,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1293/972",
+       "name": "3.5 V6 - 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 270,
+       "nmStock": 339,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1294/973",
+       "name": "5.7 Hemi V8 - 340hp",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 360,
+       "nmStock": 525,
+       "nmTuned": 545,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1295/974",
+       "name": "SRT8 6.1 Hemi V8 - 425hp",
+       "fuel": "petrol",
+       "hpStock": 425,
+       "hpTuned": 445,
+       "nmStock": 569,
+       "nmTuned": 590,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2011-0",
+     "from": 2011,
+     "to": null,
+     "engines": [
+      {
+       "path": "7416/4366",
+       "name": "3 -240bhp",
+       "fuel": "petrol",
+       "hpStock": 237,
+       "hpTuned": 275,
+       "nmStock": 540,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1296/975",
+       "name": "3.6 V6 - 292hp",
+       "fuel": "petrol",
+       "hpStock": 292,
+       "hpTuned": 310,
+       "nmStock": 350,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1297/976",
+       "name": "5.7 Hemi V8 - 363hp",
+       "fuel": "petrol",
+       "hpStock": 363,
+       "hpTuned": 385,
+       "nmStock": 534,
+       "nmTuned": 555,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1298/977",
+       "name": "SRT8 6.4 Hemi V8 - 475hp",
+       "fuel": "petrol",
+       "hpStock": 475,
+       "hpTuned": 495,
+       "nmStock": 637,
+       "nmTuned": 655,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "aspen-153",
+   "name": "Aspen",
+   "generations": [
+    {
+     "slug": "2004-2009",
+     "from": 2004,
+     "to": 2009,
+     "engines": [
+      {
+       "path": "1299/978",
+       "name": "4.7 V8 - 234hp",
+       "fuel": "petrol",
+       "hpStock": 234,
+       "hpTuned": 255,
+       "nmStock": 393,
+       "nmTuned": 415,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1300/979",
+       "name": "4.7 V8 - 303hp",
+       "fuel": "petrol",
+       "hpStock": 303,
+       "hpTuned": 325,
+       "nmStock": 447,
+       "nmTuned": 465,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1301/980",
+       "name": "5.7 Hemi V8 - 335hp",
+       "fuel": "petrol",
+       "hpStock": 335,
+       "hpTuned": 355,
+       "nmStock": 502,
+       "nmTuned": 525,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "crossfire-154",
+   "name": "Crossfire",
+   "generations": [
+    {
+     "slug": "2003-2008",
+     "from": 2003,
+     "to": 2008,
+     "engines": [
+      {
+       "path": "1302/981",
+       "name": "3.2 SRT6 335hp",
+       "fuel": "petrol",
+       "hpStock": 335,
+       "hpTuned": 360,
+       "nmStock": 420,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1303/982",
+       "name": "3.2 V6 218hp",
+       "fuel": "petrol",
+       "hpStock": 218,
+       "hpTuned": 233,
+       "nmStock": 310,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "delta-2823",
+   "name": "Delta",
+   "generations": [
+    {
+     "slug": "2011-2013",
+     "from": 2011,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "16045/4367",
+       "name": "1.4 - 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 155,
+       "nmStock": 206,
+       "nmTuned": 265,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16046/4368",
+       "name": "1.4 - 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 230,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16432/4369",
+       "name": "1.6 MJet- 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 145,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16922/4370",
+       "name": "2.0 MJet- 165hp",
+       "fuel": "diesel",
+       "hpStock": 165,
+       "hpTuned": 190,
+       "nmStock": 360,
+       "nmTuned": 425,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "grand-voyager-155",
+   "name": "Grand Voyager",
+   "generations": [
+    {
+     "slug": "2008-2011",
+     "from": 2008,
+     "to": 2011,
+     "engines": [
+      {
+       "path": "1304/983",
+       "name": "2.8 CRDi",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 200,
+       "nmStock": 360,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "neon-2824",
+   "name": "Neon",
+   "generations": [
+    {
+     "slug": "1999-2004",
+     "from": 1999,
+     "to": 2004,
+     "engines": [
+      {
+       "path": "16769/4371",
+       "name": "2.0 - 152hp",
+       "fuel": "petrol",
+       "hpStock": 152,
+       "hpTuned": 167,
+       "nmStock": 226,
+       "nmTuned": 248,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "pacifica-156",
+   "name": "Pacifica",
+   "generations": [
+    {
+     "slug": "2004-2008",
+     "from": 2004,
+     "to": 2008,
+     "engines": [
+      {
+       "path": "1305/984",
+       "name": "4.0 V6 - 253hp",
+       "fuel": "petrol",
+       "hpStock": 253,
+       "hpTuned": 275,
+       "nmStock": 355,
+       "nmTuned": 375,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "1306/985",
+       "name": "3.6 V6 - 287hp",
+       "fuel": "petrol",
+       "hpStock": 287,
+       "hpTuned": 305,
+       "nmStock": 355,
+       "nmTuned": 375,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "pt-cruiser-157",
+   "name": "PT Cruiser",
+   "generations": [
+    {
+     "slug": "2004-2010",
+     "from": 2004,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "1307/986",
+       "name": "1.6i 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 124,
+       "nmStock": 157,
+       "nmTuned": 172,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1308/987",
+       "name": "2.0i 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 150,
+       "nmStock": 188,
+       "nmTuned": 205,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1309/988",
+       "name": "2.2 CRD 121hp",
+       "fuel": "diesel",
+       "hpStock": 121,
+       "hpTuned": 155,
+       "nmStock": 300,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1310/989",
+       "name": "2.2 CRD 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 300,
+       "nmTuned": 382,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1311/990",
+       "name": "GT 2.4 - 215hp",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 270,
+       "nmStock": 332,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1312/991",
+       "name": "GT 2.4 - 230hp",
+       "fuel": "petrol",
+       "hpStock": 230,
+       "hpTuned": 270,
+       "nmStock": 332,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "sebring-158",
+   "name": "Sebring",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "1313/992",
+       "name": "2.0 CRD 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 175,
+       "nmStock": 310,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1314/993",
+       "name": "2.0i - 156hp",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 175,
+       "nmStock": 190,
+       "nmTuned": 210,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1315/994",
+       "name": "2.4i - 143hp",
+       "fuel": "petrol",
+       "hpStock": 143,
+       "hpTuned": 153,
+       "nmStock": 210,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1316/995",
+       "name": "2.7 V6 - 203hp",
+       "fuel": "petrol",
+       "hpStock": 203,
+       "hpTuned": 225,
+       "nmStock": 262,
+       "nmTuned": 280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1317/996",
+       "name": "3.5 V6 - 235hp",
+       "fuel": "petrol",
+       "hpStock": 235,
+       "hpTuned": 255,
+       "nmStock": 315,
+       "nmTuned": 335,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "sebring-cabriolet-826",
+   "name": "Sebring Cabriolet",
+   "generations": [
+    {
+     "slug": "2001-2002",
+     "from": 2001,
+     "to": 2002,
+     "engines": [
+      {
+       "path": "7421/4372",
+       "name": "2.7 - 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 215,
+       "nmStock": 278,
+       "nmTuned": 299,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2008-2010",
+     "from": 2008,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "7422/4373",
+       "name": "2.0 CRD - 138hp",
+       "fuel": "diesel",
+       "hpStock": 138,
+       "hpTuned": 175,
+       "nmStock": 315,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "voyager-160",
+   "name": "Voyager",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "17428/1001",
+       "name": "2.5 CRD 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 176,
+       "nmStock": 343,
+       "nmTuned": 435,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17473/1002",
+       "name": "2.5TD 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 142,
+       "nmStock": 278,
+       "nmTuned": 315,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17493/1003",
+       "name": "2.8 CRD 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 360,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17494/1004",
+       "name": "2.8 CRD 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 200,
+       "nmStock": 360,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "0-2005",
+     "from": 0,
+     "to": 2005,
+     "engines": [
+      {
+       "path": "7424/1001",
+       "name": "2.5 CRD 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 176,
+       "nmStock": 343,
+       "nmTuned": 435,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7425/1002",
+       "name": "2.5TD 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 142,
+       "nmStock": 278,
+       "nmTuned": 315,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7426/1003",
+       "name": "2.8 CRD 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 360,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7427/5417",
+       "name": "2.8 CRD 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 197,
+       "nmStock": 400,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2005-0",
+     "from": 2005,
+     "to": null,
+     "engines": [
+      {
+       "path": "1322/1001",
+       "name": "2.5 CRD 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 176,
+       "nmStock": 343,
+       "nmTuned": 435,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1323/1002",
+       "name": "2.5TD 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 142,
+       "nmStock": 278,
+       "nmTuned": 315,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1324/1003",
+       "name": "2.8 CRD 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 360,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1325/1004",
+       "name": "2.8 CRD 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 200,
+       "nmStock": 360,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2011-0",
+     "from": 2011,
+     "to": null,
+     "engines": [
+      {
+       "path": "2674/1760",
+       "name": "2.8 Multijet 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 195,
+       "nmStock": 360,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2675/1761",
+       "name": "2.8 Multijet 178hp",
+       "fuel": "diesel",
+       "hpStock": 178,
+       "hpTuned": 215,
+       "nmStock": 360,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "ypsilon-2825",
+   "name": "Ypsilon",
+   "generations": [
+    {
+     "slug": "2011-2015",
+     "from": 2011,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "15873/4374",
+       "name": "0.9 - 86hp",
+       "fuel": "petrol",
+       "hpStock": 86,
+       "hpTuned": 95,
+       "nmStock": 145,
+       "nmTuned": 190,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "15938/4375",
+       "name": "1.2 - 70hp",
+       "fuel": "petrol",
+       "hpStock": 70,
+       "hpTuned": 76,
+       "nmStock": 102,
+       "nmTuned": 111,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16033/4376",
+       "name": "1.3 MJet - 95hp",
+       "fuel": "diesel",
+       "hpStock": 95,
+       "hpTuned": 120,
+       "nmStock": 201,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

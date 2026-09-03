@@ -1,0 +1,1096 @@
+{
+ "slug": "land-rover",
+ "name": "Land-Rover",
+ "logo": "land-rover.png",
+ "models": [
+  {
+   "slug": "defender-393",
+   "name": "Defender",
+   "generations": [
+    {
+     "slug": "2000-2007",
+     "from": 2000,
+     "to": 2007,
+     "engines": [
+      {
+       "path": "2686/1765",
+       "name": "2.5 TD5 122hp",
+       "fuel": "diesel",
+       "hpStock": 122,
+       "hpTuned": 150,
+       "nmStock": 300,
+       "nmTuned": 365,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2007-2011",
+     "from": 2007,
+     "to": 2011,
+     "engines": [
+      {
+       "path": "2687/1766",
+       "name": "TD4 122hp",
+       "fuel": "diesel",
+       "hpStock": 122,
+       "hpTuned": 155,
+       "nmStock": 360,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2011-0",
+     "from": 2011,
+     "to": null,
+     "engines": [
+      {
+       "path": "9132/1766",
+       "name": "TD4 122hp",
+       "fuel": "diesel",
+       "hpStock": 122,
+       "hpTuned": 155,
+       "nmStock": 360,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "discovery-394",
+   "name": "Discovery",
+   "generations": [
+    {
+     "slug": "1998-2004",
+     "from": 1998,
+     "to": 2004,
+     "engines": [
+      {
+       "path": "2688/1767",
+       "name": "2.5 TD5 137hp",
+       "fuel": "diesel",
+       "hpStock": 137,
+       "hpTuned": 160,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2689/1768",
+       "name": "TD5 aut 137hp",
+       "fuel": "diesel",
+       "hpStock": 137,
+       "hpTuned": 160,
+       "nmStock": 340,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2004-2016",
+     "from": 2004,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "2690/1769",
+       "name": "2.7 TDV6 190hp",
+       "fuel": "diesel",
+       "hpStock": 190,
+       "hpTuned": 225,
+       "nmStock": 440,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2691/1770",
+       "name": "3.0 SDV6 256hp",
+       "fuel": "diesel",
+       "hpStock": 256,
+       "hpTuned": 300,
+       "nmStock": 600,
+       "nmTuned": 660,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2692/1661",
+       "name": "3.0 TDV6 211hp",
+       "fuel": "diesel",
+       "hpStock": 211,
+       "hpTuned": 290,
+       "nmStock": 450,
+       "nmTuned": 570,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2693/1771",
+       "name": "3.0 TDV6 245hp",
+       "fuel": "diesel",
+       "hpStock": 245,
+       "hpTuned": 295,
+       "nmStock": 600,
+       "nmTuned": 660,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "2694/1772",
+       "name": "2.0 SD4 240hp",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 260,
+       "nmStock": 500,
+       "nmTuned": 550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2695/1773",
+       "name": "2.0 SI4 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 325,
+       "nmStock": 400,
+       "nmTuned": 448,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2696/1774",
+       "name": "2.0 TD4 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 210,
+       "nmStock": 420,
+       "nmTuned": 490,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2697/1775",
+       "name": "3.0 TD6 258hp",
+       "fuel": "diesel",
+       "hpStock": 258,
+       "hpTuned": 300,
+       "nmStock": 600,
+       "nmTuned": 650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2698/1776",
+       "name": "3.0 V6 Supercharged - 340hp",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 450,
+       "nmStock": 450,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-2020",
+     "from": 2017,
+     "to": 2020,
+     "engines": [
+      {
+       "path": "9134/1772",
+       "name": "2.0 SD4 240hp",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 260,
+       "nmStock": 500,
+       "nmTuned": 550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9135/1773",
+       "name": "2.0 SI4 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 325,
+       "nmStock": 400,
+       "nmTuned": 448,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9136/5965",
+       "name": "2.0 TD4 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 430,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9137/1775",
+       "name": "3.0 TD6 258hp",
+       "fuel": "diesel",
+       "hpStock": 258,
+       "hpTuned": 300,
+       "nmStock": 600,
+       "nmTuned": 650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9138/1776",
+       "name": "3.0 V6 Supercharged - 340hp",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 450,
+       "nmStock": 450,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "discovery-sport-395",
+   "name": "Discovery Sport",
+   "generations": [
+    {
+     "slug": "2014-0",
+     "from": 2014,
+     "to": null,
+     "engines": [
+      {
+       "path": "2699/1777",
+       "name": "2.0 ED4 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 380,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2700/1778",
+       "name": "2.0 SI4 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 340,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2701/1779",
+       "name": "2.0 TD4 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 380,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2702/1774",
+       "name": "2.0 TD4 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 210,
+       "nmStock": 420,
+       "nmTuned": 490,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2703/1780",
+       "name": "2.2 TD4 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 380,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2014-2019",
+     "from": 2014,
+     "to": 2019,
+     "engines": [
+      {
+       "path": "9143/1777",
+       "name": "2.0 ED4 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 380,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9144/1778",
+       "name": "2.0 SI4 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 340,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9145/1779",
+       "name": "2.0 TD4 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 380,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9146/5965",
+       "name": "2.0 TD4 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 430,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17340/1780",
+       "name": "2.2 TD4 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 380,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2019-0",
+     "from": 2019,
+     "to": null,
+     "engines": [
+      {
+       "path": "9148/1635",
+       "name": "D150 - 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 210,
+       "nmStock": 380,
+       "nmTuned": 490,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9149/1636",
+       "name": "D180 - 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 210,
+       "nmStock": 430,
+       "nmTuned": 490,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9150/1798",
+       "name": "D240 - 240hp",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 260,
+       "nmStock": 500,
+       "nmTuned": 550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9151/5972",
+       "name": "P200 - 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 300,
+       "nmStock": 520,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9152/5973",
+       "name": "P250 - 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 330,
+       "nmStock": 570,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "evoque-396",
+   "name": "Evoque",
+   "generations": [
+    {
+     "slug": "2011-2015",
+     "from": 2011,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "2704/1778",
+       "name": "2.0 SI4 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 340,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2705/1781",
+       "name": "2.2 ED4 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 380,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2706/1782",
+       "name": "2.2 SD4 190hp",
+       "fuel": "diesel",
+       "hpStock": 190,
+       "hpTuned": 215,
+       "nmStock": 420,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2707/1780",
+       "name": "2.2 TD4 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 380,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-2017",
+     "from": 2015,
+     "to": 2017,
+     "engines": [
+      {
+       "path": "2708/1777",
+       "name": "2.0 ED4 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 380,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2709/1779",
+       "name": "2.0 TD4 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 380,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2710/1774",
+       "name": "2.0 TD4 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 210,
+       "nmStock": 420,
+       "nmTuned": 490,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2018-0",
+     "from": 2018,
+     "to": null,
+     "engines": [
+      {
+       "path": "9155/1635",
+       "name": "D150 - 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 210,
+       "nmStock": 380,
+       "nmTuned": 490,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9156/1636",
+       "name": "D180 - 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 210,
+       "nmStock": 430,
+       "nmTuned": 490,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9157/1798",
+       "name": "D240 - 240hp",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 260,
+       "nmStock": 500,
+       "nmTuned": 550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9158/5972",
+       "name": "P200 - 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 300,
+       "nmStock": 520,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9159/5973",
+       "name": "P250 - 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 330,
+       "nmStock": 570,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9160/1638",
+       "name": "P300 - 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 320,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "freelander-397",
+   "name": "Freelander",
+   "generations": [
+    {
+     "slug": "2003-2007",
+     "from": 2003,
+     "to": 2007,
+     "engines": [
+      {
+       "path": "2711/1783",
+       "name": "2.0 TD4 112hp",
+       "fuel": "diesel",
+       "hpStock": 112,
+       "hpTuned": 140,
+       "nmStock": 260,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2712/1784",
+       "name": "2.5i V6 177hp",
+       "fuel": "petrol",
+       "hpStock": 177,
+       "hpTuned": 187,
+       "nmStock": 240,
+       "nmTuned": 255,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2007-2010",
+     "from": 2007,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "2713/1780",
+       "name": "2.2 TD4 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 380,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2714/1785",
+       "name": "2.2 TD4 160hp",
+       "fuel": "diesel",
+       "hpStock": 160,
+       "hpTuned": 185,
+       "nmStock": 400,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2010-0",
+     "from": 2010,
+     "to": null,
+     "engines": [
+      {
+       "path": "2715/1778",
+       "name": "2.0 SI4 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 340,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9170/5984",
+       "name": "2.2 TD4 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 215,
+       "nmStock": 420,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2716/1786",
+       "name": "2.2 TD4 190hp",
+       "fuel": "diesel",
+       "hpStock": 190,
+       "hpTuned": 215,
+       "nmStock": 420,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "range-rover-sport-946",
+   "name": "Range Rover / Sport",
+   "generations": [
+    {
+     "slug": "1994-2002",
+     "from": 1994,
+     "to": 2002,
+     "engines": [
+      {
+       "path": "9171/1787",
+       "name": "2.5 TD 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 165,
+       "nmStock": 270,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2002-2012",
+     "from": 2002,
+     "to": 2012,
+     "engines": [
+      {
+       "path": "9172/1769",
+       "name": "2.7 TDV6 190hp",
+       "fuel": "diesel",
+       "hpStock": 190,
+       "hpTuned": 225,
+       "nmStock": 440,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9173/1788",
+       "name": "3.0 TD6 177hp",
+       "fuel": "diesel",
+       "hpStock": 177,
+       "hpTuned": 205,
+       "nmStock": 390,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9174/5964",
+       "name": "3.0 TDV6 211hp",
+       "fuel": "diesel",
+       "hpStock": 211,
+       "hpTuned": 295,
+       "nmStock": 600,
+       "nmTuned": 660,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9175/1771",
+       "name": "3.0 TDV6 245hp",
+       "fuel": "diesel",
+       "hpStock": 245,
+       "hpTuned": 295,
+       "nmStock": 600,
+       "nmTuned": 660,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9176/1789",
+       "name": "3.6 TDV8 272hp",
+       "fuel": "diesel",
+       "hpStock": 272,
+       "hpTuned": 322,
+       "nmStock": 640,
+       "nmTuned": 780,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9177/1790",
+       "name": "4.2 V8 Supercharged 396hp",
+       "fuel": "petrol",
+       "hpStock": 396,
+       "hpTuned": 450,
+       "nmStock": 560,
+       "nmTuned": 650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9178/1791",
+       "name": "4.4 TDV8 313hp",
+       "fuel": "diesel",
+       "hpStock": 313,
+       "hpTuned": 380,
+       "nmStock": 700,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9179/1792",
+       "name": "5.0 Supercharged 510hp",
+       "fuel": "petrol",
+       "hpStock": 510,
+       "hpTuned": 560,
+       "nmStock": 625,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2012-2018",
+     "from": 2012,
+     "to": 2018,
+     "engines": [
+      {
+       "path": "9180/5985",
+       "name": "2.0 eD4 150 Evoque",
+       "fuel": "electric",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 380,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16928/15831",
+       "name": "2.0 Si4 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 320,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9181/1793",
+       "name": "3.0 SDV6 292hp",
+       "fuel": "diesel",
+       "hpStock": 292,
+       "hpTuned": 320,
+       "nmStock": 600,
+       "nmTuned": 660,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9182/1794",
+       "name": "3.0 SDV6 306hp",
+       "fuel": "diesel",
+       "hpStock": 306,
+       "hpTuned": 330,
+       "nmStock": 700,
+       "nmTuned": 760,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9183/5964",
+       "name": "3.0 TDV6 211hp",
+       "fuel": "diesel",
+       "hpStock": 211,
+       "hpTuned": 295,
+       "nmStock": 600,
+       "nmTuned": 660,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9184/1795",
+       "name": "3.0 TDV6 258hp",
+       "fuel": "diesel",
+       "hpStock": 258,
+       "hpTuned": 300,
+       "nmStock": 600,
+       "nmTuned": 650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9185/1641",
+       "name": "3.0 V6 Supercharged 340hp",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 400,
+       "nmStock": 450,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9186/1796",
+       "name": "4.4 SDV8 339hp",
+       "fuel": "diesel",
+       "hpStock": 339,
+       "hpTuned": 390,
+       "nmStock": 740,
+       "nmTuned": 820,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9187/1791",
+       "name": "4.4 TDV8 313hp",
+       "fuel": "diesel",
+       "hpStock": 313,
+       "hpTuned": 380,
+       "nmStock": 700,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9188/1792",
+       "name": "5.0 Supercharged 510hp",
+       "fuel": "petrol",
+       "hpStock": 510,
+       "hpTuned": 560,
+       "nmStock": 625,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9189/1797",
+       "name": "5.0 Supercharged SVR 550hp",
+       "fuel": "petrol",
+       "hpStock": 550,
+       "hpTuned": 570,
+       "nmStock": 680,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2018-0",
+     "from": 2018,
+     "to": null,
+     "engines": [
+      {
+       "path": "9161/5976",
+       "name": "2.0 Si4 - 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 320,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9162/5977",
+       "name": "3.0 SDV6 - 249hp",
+       "fuel": "diesel",
+       "hpStock": 249,
+       "hpTuned": 305,
+       "nmStock": 600,
+       "nmTuned": 675,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9163/5978",
+       "name": "3.0 SDV6 - 275hp",
+       "fuel": "diesel",
+       "hpStock": 275,
+       "hpTuned": 305,
+       "nmStock": 625,
+       "nmTuned": 675,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9164/5979",
+       "name": "3.0 SDV6 - 306hp",
+       "fuel": "diesel",
+       "hpStock": 306,
+       "hpTuned": 330,
+       "nmStock": 700,
+       "nmTuned": 750,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9165/5980",
+       "name": "4.4 SDV8 - 339hp",
+       "fuel": "diesel",
+       "hpStock": 339,
+       "hpTuned": 390,
+       "nmStock": 740,
+       "nmTuned": 820,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9166/5981",
+       "name": "5.0 V8 Supercharged - 525hp",
+       "fuel": "petrol",
+       "hpStock": 525,
+       "hpTuned": 570,
+       "nmStock": 680,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9167/5982",
+       "name": "5.0 V8 Supercharged SVR - 565hp",
+       "fuel": "petrol",
+       "hpStock": 565,
+       "hpTuned": 590,
+       "nmStock": 700,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9168/5983",
+       "name": "P400e - 404hp",
+       "fuel": "petrol",
+       "hpStock": 404,
+       "hpTuned": 430,
+       "nmStock": 640,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "velar-399",
+   "name": "Velar",
+   "generations": [
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "2733/1636",
+       "name": "D180 - 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 210,
+       "nmStock": 430,
+       "nmTuned": 490,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2734/1798",
+       "name": "D240 - 240hp",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 260,
+       "nmStock": 500,
+       "nmTuned": 550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9190/5987",
+       "name": "D275 - 275hp",
+       "fuel": "diesel",
+       "hpStock": 275,
+       "hpTuned": 305,
+       "nmStock": 625,
+       "nmTuned": 675,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2735/1799",
+       "name": "D300 - 300hp",
+       "fuel": "diesel",
+       "hpStock": 300,
+       "hpTuned": 350,
+       "nmStock": 700,
+       "nmTuned": 750,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2736/1637",
+       "name": "P250 - 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 270,
+       "nmStock": 365,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2737/1638",
+       "name": "P300 - 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 320,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9192/5988",
+       "name": "P340 - 340hp",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 400,
+       "nmStock": 450,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2738/1800",
+       "name": "P380 - 380hp",
+       "fuel": "petrol",
+       "hpStock": 380,
+       "hpTuned": 400,
+       "nmStock": 460,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

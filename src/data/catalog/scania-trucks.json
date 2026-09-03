@@ -1,0 +1,256 @@
+{
+ "slug": "scania-trucks",
+ "name": "Scania Trucks",
+ "logo": "scania-trucks.png",
+ "models": [
+  {
+   "slug": "p-series-1101",
+   "name": "P-Series",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11299/7429",
+       "name": "230",
+       "fuel": "petrol",
+       "hpStock": 230,
+       "hpTuned": 265,
+       "nmStock": 1050,
+       "nmTuned": 1210,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11300/7430",
+       "name": "270",
+       "fuel": "petrol",
+       "hpStock": 270,
+       "hpTuned": 310,
+       "nmStock": 1250,
+       "nmTuned": 1440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11301/7431",
+       "name": "310",
+       "fuel": "petrol",
+       "hpStock": 310,
+       "hpTuned": 355,
+       "nmStock": 1550,
+       "nmTuned": 1785,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11302/7432",
+       "name": "340",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 390,
+       "nmStock": 1700,
+       "nmTuned": 1955,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11303/7433",
+       "name": "380",
+       "fuel": "petrol",
+       "hpStock": 380,
+       "hpTuned": 435,
+       "nmStock": 1900,
+       "nmTuned": 2185,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11304/7434",
+       "name": "420",
+       "fuel": "petrol",
+       "hpStock": 420,
+       "hpTuned": 485,
+       "nmStock": 2100,
+       "nmTuned": 2415,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "r-series-1102",
+   "name": "R-Series",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11305/7429",
+       "name": "230",
+       "fuel": "petrol",
+       "hpStock": 230,
+       "hpTuned": 265,
+       "nmStock": 1050,
+       "nmTuned": 1210,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11306/7430",
+       "name": "270",
+       "fuel": "petrol",
+       "hpStock": 270,
+       "hpTuned": 310,
+       "nmStock": 1250,
+       "nmTuned": 1440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11307/7431",
+       "name": "310",
+       "fuel": "petrol",
+       "hpStock": 310,
+       "hpTuned": 355,
+       "nmStock": 1550,
+       "nmTuned": 1785,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11308/7432",
+       "name": "340",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 390,
+       "nmStock": 1700,
+       "nmTuned": 1955,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11309/7433",
+       "name": "380",
+       "fuel": "petrol",
+       "hpStock": 380,
+       "hpTuned": 435,
+       "nmStock": 1900,
+       "nmTuned": 2185,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11310/7434",
+       "name": "420",
+       "fuel": "petrol",
+       "hpStock": 420,
+       "hpTuned": 485,
+       "nmStock": 2100,
+       "nmTuned": 2415,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11311/7435",
+       "name": "470",
+       "fuel": "petrol",
+       "hpStock": 470,
+       "hpTuned": 560,
+       "nmStock": 2200,
+       "nmTuned": 2650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11312/6075",
+       "name": "480",
+       "fuel": "petrol",
+       "hpStock": 480,
+       "hpTuned": 550,
+       "nmStock": 2300,
+       "nmTuned": 2650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11313/7437",
+       "name": "500",
+       "fuel": "petrol",
+       "hpStock": 500,
+       "hpTuned": 595,
+       "nmStock": 2400,
+       "nmTuned": 2850,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11314/7438",
+       "name": "560",
+       "fuel": "petrol",
+       "hpStock": 560,
+       "hpTuned": 655,
+       "nmStock": 2700,
+       "nmTuned": 3130,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18036/7439",
+       "name": "580",
+       "fuel": "petrol",
+       "hpStock": 580,
+       "hpTuned": 670,
+       "nmStock": 2750,
+       "nmTuned": 3181,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "r-series-euro6-1103",
+   "name": "R-Series Euro6",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11316/7440",
+       "name": "370",
+       "fuel": "petrol",
+       "hpStock": 370,
+       "hpTuned": 430,
+       "nmStock": 1900,
+       "nmTuned": 2350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11317/7441",
+       "name": "450",
+       "fuel": "petrol",
+       "hpStock": 450,
+       "hpTuned": 510,
+       "nmStock": 2350,
+       "nmTuned": 2750,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11318/7442",
+       "name": "580",
+       "fuel": "petrol",
+       "hpStock": 580,
+       "hpTuned": 640,
+       "nmStock": 2950,
+       "nmTuned": 3200,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11319/7443",
+       "name": "730",
+       "fuel": "petrol",
+       "hpStock": 730,
+       "hpTuned": 810,
+       "nmStock": 3500,
+       "nmTuned": 3950,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

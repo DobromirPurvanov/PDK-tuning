@@ -1,0 +1,26 @@
+# Локално: docker compose up -d --build  →  http://localhost:8000
+# На сървъра: същата команда; new.pdktuning.com се проксира към порт 8000.
+# Променливите се четат от .env до този файл (виж .env.example).
+services:
+  web:
+    build:
+      context: .
+      args:
+        PUBLIC_GTM_ID: ${PUBLIC_GTM_ID:-}
+        PUBLIC_TURNSTILE_SITEKEY: ${PUBLIC_TURNSTILE_SITEKEY:-}
+    ports:
+      - "8000:80"
+    environment:
+      LEGACY_UPSTREAM: ${LEGACY_UPSTREAM:-https://www.pdktuning.com}
+    depends_on:
+      - api
+    restart: unless-stopped
+  api:
+    build: ./api
+    environment:
+      RESEND_API_KEY: ${RESEND_API_KEY:-}
+      MAIL_FROM: ${MAIL_FROM:-PDK Tuning <noreply@pdktuning.com>}
+      MAIL_TO: ${MAIL_TO:-}
+      MAIL_CC: ${MAIL_CC:-}
+      TURNSTILE_SECRET: ${TURNSTILE_SECRET:-}
+    restart: unless-stopped

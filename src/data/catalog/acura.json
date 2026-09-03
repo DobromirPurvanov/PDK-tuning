@@ -1,0 +1,53 @@
+{
+ "slug": "acura",
+ "name": "Acura",
+ "logo": "acura.png",
+ "models": [
+  {
+   "slug": "integra-730",
+   "name": "Integra",
+   "generations": [
+    {
+     "slug": "2022-0",
+     "from": 2022,
+     "to": null,
+     "engines": [
+      {
+       "path": "5915/5181",
+       "name": "1.5T VTEC 182hp",
+       "fuel": "petrol",
+       "hpStock": 182,
+       "hpTuned": 220,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "mdx-731",
+   "name": "MDX",
+   "generations": [
+    {
+     "slug": "2022-0",
+     "from": 2022,
+     "to": null,
+     "engines": [
+      {
+       "path": "5918/3361",
+       "name": "3.5 V6 -290hp",
+       "fuel": "petrol",
+       "hpStock": 290,
+       "hpTuned": 310,
+       "nmStock": 362,
+       "nmTuned": 282,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

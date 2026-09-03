@@ -1,0 +1,1417 @@
+{
+ "slug": "jaguar",
+ "name": "Jaguar",
+ "logo": "jaguar.png",
+ "models": [
+  {
+   "slug": "e-pace-346",
+   "name": "E Pace",
+   "generations": [
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "2414/1635",
+       "name": "D150 - 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 210,
+       "nmStock": 380,
+       "nmTuned": 490,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2415/1636",
+       "name": "D180 - 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 210,
+       "nmStock": 430,
+       "nmTuned": 490,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2416/1637",
+       "name": "P250 - 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 270,
+       "nmStock": 365,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2417/1638",
+       "name": "P300 - 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 320,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-2020",
+     "from": 2017,
+     "to": 2020,
+     "engines": [
+      {
+       "path": "8811/1635",
+       "name": "D150 - 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 210,
+       "nmStock": 380,
+       "nmTuned": 490,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8812/1636",
+       "name": "D180 - 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 210,
+       "nmStock": 430,
+       "nmTuned": 490,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8813/1798",
+       "name": "D240 - 240hp",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 260,
+       "nmStock": 500,
+       "nmTuned": 550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8814/5972",
+       "name": "P200 - 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 300,
+       "nmStock": 520,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8815/5973",
+       "name": "P250 - 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 330,
+       "nmStock": 570,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8816/1638",
+       "name": "P300 - 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 320,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2021-0",
+     "from": 2021,
+     "to": null,
+     "engines": [
+      {
+       "path": "15868/15229",
+       "name": "P300e (1.5T) 309hp",
+       "fuel": "petrol",
+       "hpStock": 309,
+       "hpTuned": 340,
+       "nmStock": 540,
+       "nmTuned": 595,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8818/5352",
+       "name": "P200 (2.0T) 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 230,
+       "nmStock": 320,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "f-pace-347",
+   "name": "F Pace",
+   "generations": [
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "2418/807",
+       "name": "2.0 Turbo 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 315,
+       "nmStock": 353,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2419/1639",
+       "name": "2.0 Turbo 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 325,
+       "nmStock": 400,
+       "nmTuned": 448,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2420/1640",
+       "name": "2.0D 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 210,
+       "nmStock": 430,
+       "nmTuned": 490,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2421/1641",
+       "name": "3.0 V6 Supercharged 340hp",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 400,
+       "nmStock": 450,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2422/1642",
+       "name": "3.0 V6 Supercharged 380hp",
+       "fuel": "petrol",
+       "hpStock": 380,
+       "hpTuned": 400,
+       "nmStock": 450,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2423/1643",
+       "name": "3.0D 300hp",
+       "fuel": "diesel",
+       "hpStock": 300,
+       "hpTuned": 350,
+       "nmStock": 700,
+       "nmTuned": 750,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-2019",
+     "from": 2015,
+     "to": 2019,
+     "engines": [
+      {
+       "path": "8820/7075",
+       "name": "2.0 Turbo 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 295,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8821/1639",
+       "name": "2.0 Turbo 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 325,
+       "nmStock": 400,
+       "nmTuned": 448,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8822/1640",
+       "name": "2.0D 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 210,
+       "nmStock": 430,
+       "nmTuned": 490,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8823/1641",
+       "name": "3.0 V6 Supercharged 340hp",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 400,
+       "nmStock": 450,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8824/5365",
+       "name": "3.0 V6 Supercharged 380hp",
+       "fuel": "petrol",
+       "hpStock": 380,
+       "hpTuned": 400,
+       "nmStock": 460,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8825/1643",
+       "name": "3.0D 300hp",
+       "fuel": "diesel",
+       "hpStock": 300,
+       "hpTuned": 350,
+       "nmStock": 700,
+       "nmTuned": 750,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8826/5355",
+       "name": "5.0 V8 SVR 550hp",
+       "fuel": "petrol",
+       "hpStock": 550,
+       "hpTuned": 570,
+       "nmStock": 680,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2020-0",
+     "from": 2020,
+     "to": null,
+     "engines": [
+      {
+       "path": "8836/925",
+       "name": "2.0T 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 295,
+       "nmStock": 350,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8842/5355",
+       "name": "5.0 V8 SVR 550hp",
+       "fuel": "petrol",
+       "hpStock": 550,
+       "hpTuned": 570,
+       "nmStock": 680,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "f-type-348",
+   "name": "F Type",
+   "generations": [
+    {
+     "slug": "2013-0",
+     "from": 2013,
+     "to": null,
+     "engines": [
+      {
+       "path": "2424/1639",
+       "name": "2.0 Turbo 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 325,
+       "nmStock": 400,
+       "nmTuned": 448,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2425/1641",
+       "name": "3.0 V6 Supercharged 340hp",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 400,
+       "nmStock": 450,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2426/1642",
+       "name": "3.0 V6 Supercharged 380hp",
+       "fuel": "petrol",
+       "hpStock": 380,
+       "hpTuned": 400,
+       "nmStock": 450,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2427/1644",
+       "name": "5.0 V8 Supercharged 'Project 7'",
+       "fuel": "petrol",
+       "hpStock": 575,
+       "hpTuned": 600,
+       "nmStock": 680,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2428/1645",
+       "name": "5.0 V8 Supercharged 495hp",
+       "fuel": "petrol",
+       "hpStock": 495,
+       "hpTuned": 560,
+       "nmStock": 625,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2429/1646",
+       "name": "5.0 V8 Supercharged 550hp",
+       "fuel": "petrol",
+       "hpStock": 550,
+       "hpTuned": 600,
+       "nmStock": 680,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2013-2019",
+     "from": 2013,
+     "to": 2019,
+     "engines": [
+      {
+       "path": "17688/5365",
+       "name": "3.0 V6 Supercharged 380hp",
+       "fuel": "petrol",
+       "hpStock": 380,
+       "hpTuned": 400,
+       "nmStock": 460,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17989/5366",
+       "name": "5.0 V8 Supercharged 'Project 7' 575hp",
+       "fuel": "petrol",
+       "hpStock": 575,
+       "hpTuned": 600,
+       "nmStock": 680,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17990/1645",
+       "name": "5.0 V8 Supercharged 495hp",
+       "fuel": "petrol",
+       "hpStock": 495,
+       "hpTuned": 560,
+       "nmStock": 625,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17991/1646",
+       "name": "5.0 V8 Supercharged 550hp",
+       "fuel": "petrol",
+       "hpStock": 550,
+       "hpTuned": 600,
+       "nmStock": 680,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "s-type-349",
+   "name": "S Type",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2430/1647",
+       "name": "2.2D 155hp",
+       "fuel": "diesel",
+       "hpStock": 155,
+       "hpTuned": 185,
+       "nmStock": 360,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2431/1648",
+       "name": "2.5 V6 201hp",
+       "fuel": "petrol",
+       "hpStock": 201,
+       "hpTuned": 215,
+       "nmStock": 250,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2432/1649",
+       "name": "2.7D 207hp",
+       "fuel": "diesel",
+       "hpStock": 207,
+       "hpTuned": 240,
+       "nmStock": 435,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2433/1650",
+       "name": "3.0 V6 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 255,
+       "nmStock": 300,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2434/1651",
+       "name": "4.2 V8 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 315,
+       "nmStock": 420,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2435/1652",
+       "name": "4.2 V8 R 400hp",
+       "fuel": "petrol",
+       "hpStock": 400,
+       "hpTuned": 420,
+       "nmStock": 541,
+       "nmTuned": 565,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "x-type-350",
+   "name": "X Type",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2436/932",
+       "name": "2.0D 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 160,
+       "nmStock": 315,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2437/1647",
+       "name": "2.2D 155hp",
+       "fuel": "diesel",
+       "hpStock": 155,
+       "hpTuned": 185,
+       "nmStock": 360,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2438/1653",
+       "name": "2.5 V6 194hp",
+       "fuel": "petrol",
+       "hpStock": 194,
+       "hpTuned": 210,
+       "nmStock": 244,
+       "nmTuned": 264,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2439/1654",
+       "name": "3.0 V6 231hp",
+       "fuel": "petrol",
+       "hpStock": 231,
+       "hpTuned": 245,
+       "nmStock": 284,
+       "nmTuned": 305,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "xe-351",
+   "name": "XE",
+   "generations": [
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "2440/1655",
+       "name": "2.0 Turbo 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 230,
+       "nmStock": 320,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2441/1422",
+       "name": "2.0 Turbo 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 366,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2442/1639",
+       "name": "2.0 Turbo 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 325,
+       "nmStock": 400,
+       "nmTuned": 448,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2443/680",
+       "name": "2.0D 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 210,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2444/1640",
+       "name": "2.0D 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 210,
+       "nmStock": 430,
+       "nmTuned": 490,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2445/1641",
+       "name": "3.0 V6 Supercharged 340hp",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 400,
+       "nmStock": 450,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-2018",
+     "from": 2015,
+     "to": 2018,
+     "engines": [
+      {
+       "path": "8844/1655",
+       "name": "2.0 Turbo 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 230,
+       "nmStock": 320,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8845/1422",
+       "name": "2.0 Turbo 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 366,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8846/1639",
+       "name": "2.0 Turbo 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 325,
+       "nmStock": 400,
+       "nmTuned": 448,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8847/3728",
+       "name": "2.0D 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 220,
+       "nmStock": 380,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8848/1640",
+       "name": "2.0D 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 210,
+       "nmStock": 430,
+       "nmTuned": 490,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8849/5368",
+       "name": "2.0D 240hp",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 260,
+       "nmStock": 500,
+       "nmTuned": 550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8850/1641",
+       "name": "3.0 V6 Supercharged 340hp",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 400,
+       "nmStock": 450,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2019-0",
+     "from": 2019,
+     "to": null,
+     "engines": [
+      {
+       "path": "8851/5369",
+       "name": "P250 (2.0T) 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 270,
+       "nmStock": 365,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8852/5370",
+       "name": "P300 (2.0T) 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 320,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "xf-352",
+   "name": "XF",
+   "generations": [
+    {
+     "slug": "0-2015",
+     "from": 0,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "8853/1656",
+       "name": "2.0 SC Turbo 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 340,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8854/1668",
+       "name": "2.2D 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 235,
+       "nmStock": 400,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8855/5371",
+       "name": "2.2D 190hp",
+       "fuel": "diesel",
+       "hpStock": 190,
+       "hpTuned": 235,
+       "nmStock": 450,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8856/1669",
+       "name": "2.2D 200hp",
+       "fuel": "diesel",
+       "hpStock": 200,
+       "hpTuned": 235,
+       "nmStock": 450,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8857/1660",
+       "name": "2.7 TDV6 207hp",
+       "fuel": "diesel",
+       "hpStock": 207,
+       "hpTuned": 240,
+       "nmStock": 435,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17664/1661",
+       "name": "3.0 TDV6 211hp",
+       "fuel": "diesel",
+       "hpStock": 211,
+       "hpTuned": 290,
+       "nmStock": 450,
+       "nmTuned": 570,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8859/1662",
+       "name": "3.0 TDV6 240hp",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 290,
+       "nmStock": 500,
+       "nmTuned": 575,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8860/1663",
+       "name": "3.0 TDV6 275hp",
+       "fuel": "diesel",
+       "hpStock": 275,
+       "hpTuned": 325,
+       "nmStock": 600,
+       "nmTuned": 675,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8861/1664",
+       "name": "3.0 V6 SC Turbo 340hp",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 400,
+       "nmStock": 450,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8862/1665",
+       "name": "4.2 V8 Supercharged 416hp",
+       "fuel": "petrol",
+       "hpStock": 416,
+       "hpTuned": 470,
+       "nmStock": 560,
+       "nmTuned": 650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8863/1666",
+       "name": "5.0 V8 385hp",
+       "fuel": "petrol",
+       "hpStock": 385,
+       "hpTuned": 405,
+       "nmStock": 515,
+       "nmTuned": 540,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8864/1674",
+       "name": "5.0 V8 Supercharged 510hp",
+       "fuel": "petrol",
+       "hpStock": 510,
+       "hpTuned": 560,
+       "nmStock": 625,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "2446/1656",
+       "name": "2.0 SC Turbo 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 340,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2458/1422",
+       "name": "2.0 Turbo 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 366,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2459/807",
+       "name": "2.0 Turbo 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 315,
+       "nmStock": 353,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2460/1639",
+       "name": "2.0 Turbo 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 325,
+       "nmStock": 400,
+       "nmTuned": 448,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2461/680",
+       "name": "2.0D 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 210,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2462/1640",
+       "name": "2.0D 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 210,
+       "nmStock": 430,
+       "nmTuned": 490,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2447/1657",
+       "name": "2.2 D 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 235,
+       "nmStock": 400,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2448/1658",
+       "name": "2.2 D 190hp",
+       "fuel": "diesel",
+       "hpStock": 190,
+       "hpTuned": 235,
+       "nmStock": 450,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2449/1659",
+       "name": "2.2 D 200hp",
+       "fuel": "diesel",
+       "hpStock": 200,
+       "hpTuned": 235,
+       "nmStock": 450,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2450/1660",
+       "name": "2.7 TDV6 207hp",
+       "fuel": "diesel",
+       "hpStock": 207,
+       "hpTuned": 240,
+       "nmStock": 435,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2451/1661",
+       "name": "3.0 TDV6 211hp",
+       "fuel": "diesel",
+       "hpStock": 211,
+       "hpTuned": 290,
+       "nmStock": 450,
+       "nmTuned": 570,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2452/1662",
+       "name": "3.0 TDV6 240hp",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 290,
+       "nmStock": 500,
+       "nmTuned": 575,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2453/1663",
+       "name": "3.0 TDV6 275hp",
+       "fuel": "diesel",
+       "hpStock": 275,
+       "hpTuned": 325,
+       "nmStock": 600,
+       "nmTuned": 675,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2454/1664",
+       "name": "3.0 V6 SC Turbo 340hp",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 400,
+       "nmStock": 450,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2463/1641",
+       "name": "3.0 V6 Supercharged 340hp",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 400,
+       "nmStock": 450,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2464/1642",
+       "name": "3.0 V6 Supercharged 380hp",
+       "fuel": "petrol",
+       "hpStock": 380,
+       "hpTuned": 400,
+       "nmStock": 450,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2465/1643",
+       "name": "3.0D 300hp",
+       "fuel": "diesel",
+       "hpStock": 300,
+       "hpTuned": 350,
+       "nmStock": 700,
+       "nmTuned": 750,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2455/1665",
+       "name": "4.2 V8 Supercharged 416hp",
+       "fuel": "petrol",
+       "hpStock": 416,
+       "hpTuned": 470,
+       "nmStock": 560,
+       "nmTuned": 650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2456/1666",
+       "name": "5.0 V8 385hp",
+       "fuel": "petrol",
+       "hpStock": 385,
+       "hpTuned": 405,
+       "nmStock": 515,
+       "nmTuned": 540,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2457/1667",
+       "name": "5.0 V8 supercharged 510 hp",
+       "fuel": "petrol",
+       "hpStock": 510,
+       "hpTuned": 560,
+       "nmStock": 625,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-2019",
+     "from": 2015,
+     "to": 2019,
+     "engines": [
+      {
+       "path": "8827/1422",
+       "name": "2.0 Turbo 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 366,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8828/7075",
+       "name": "2.0 Turbo 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 295,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8829/1639",
+       "name": "2.0 Turbo 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 325,
+       "nmStock": 400,
+       "nmTuned": 448,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8830/3728",
+       "name": "2.0D 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 220,
+       "nmStock": 380,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8831/1640",
+       "name": "2.0D 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 210,
+       "nmStock": 430,
+       "nmTuned": 490,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8832/1641",
+       "name": "3.0 V6 Supercharged 340hp",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 400,
+       "nmStock": 450,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8833/5365",
+       "name": "3.0 V6 Supercharged 380hp",
+       "fuel": "petrol",
+       "hpStock": 380,
+       "hpTuned": 400,
+       "nmStock": 460,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8834/1643",
+       "name": "3.0D 300hp",
+       "fuel": "diesel",
+       "hpStock": 300,
+       "hpTuned": 350,
+       "nmStock": 700,
+       "nmTuned": 750,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "xf-sportbrake-353",
+   "name": "XF Sportbrake",
+   "generations": [
+    {
+     "slug": "2012-0",
+     "from": 2012,
+     "to": null,
+     "engines": [
+      {
+       "path": "2466/1668",
+       "name": "2.2D 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 235,
+       "nmStock": 400,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2467/1669",
+       "name": "2.2D 200hp",
+       "fuel": "diesel",
+       "hpStock": 200,
+       "hpTuned": 235,
+       "nmStock": 450,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8865/5372",
+       "name": "25d 240hp",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 280,
+       "nmStock": 500,
+       "nmTuned": 550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2468/1643",
+       "name": "3.0D 300hp",
+       "fuel": "diesel",
+       "hpStock": 300,
+       "hpTuned": 350,
+       "nmStock": 700,
+       "nmTuned": 750,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2469/1670",
+       "name": "3.0D V6 240hp",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 290,
+       "nmStock": 500,
+       "nmTuned": 575,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2470/1671",
+       "name": "3.0D V6 S 275hp",
+       "fuel": "diesel",
+       "hpStock": 275,
+       "hpTuned": 325,
+       "nmStock": 600,
+       "nmTuned": 675,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "xj-354",
+   "name": "XJ",
+   "generations": [
+    {
+     "slug": "2003-2009",
+     "from": 2003,
+     "to": 2009,
+     "engines": [
+      {
+       "path": "2471/1660",
+       "name": "2.7 TDV6 207hp",
+       "fuel": "diesel",
+       "hpStock": 207,
+       "hpTuned": 240,
+       "nmStock": 435,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2472/1672",
+       "name": "4.2 V8 SC 400hp",
+       "fuel": "petrol",
+       "hpStock": 400,
+       "hpTuned": 470,
+       "nmStock": 540,
+       "nmTuned": 630,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2009-0",
+     "from": 2009,
+     "to": null,
+     "engines": [
+      {
+       "path": "2473/1656",
+       "name": "2.0 SC Turbo 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 340,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2474/1664",
+       "name": "3.0 V6 SC Turbo 340hp",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 400,
+       "nmStock": 450,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2475/1673",
+       "name": "3.0D 275hp",
+       "fuel": "diesel",
+       "hpStock": 275,
+       "hpTuned": 325,
+       "nmStock": 600,
+       "nmTuned": 675,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8866/1643",
+       "name": "3.0D 300hp",
+       "fuel": "diesel",
+       "hpStock": 300,
+       "hpTuned": 350,
+       "nmStock": 700,
+       "nmTuned": 750,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2476/1666",
+       "name": "5.0 V8 385hp",
+       "fuel": "petrol",
+       "hpStock": 385,
+       "hpTuned": 405,
+       "nmStock": 515,
+       "nmTuned": 540,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2477/1674",
+       "name": "5.0 V8 Supercharged 510hp",
+       "fuel": "petrol",
+       "hpStock": 510,
+       "hpTuned": 560,
+       "nmStock": 625,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2478/1675",
+       "name": "R 5.0 V8 Supercharged 550hp",
+       "fuel": "petrol",
+       "hpStock": 550,
+       "hpTuned": 570,
+       "nmStock": 680,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2479/1676",
+       "name": "R575 5.0 V8 Supercharged - 575hp",
+       "fuel": "petrol",
+       "hpStock": 575,
+       "hpTuned": 600,
+       "nmStock": 700,
+       "nmTuned": 750,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "xkr-355",
+   "name": "XKR",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2480/1665",
+       "name": "4.2 V8 Supercharged 416hp",
+       "fuel": "petrol",
+       "hpStock": 416,
+       "hpTuned": 470,
+       "nmStock": 560,
+       "nmTuned": 650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2481/1677",
+       "name": "5.0 V8 S Supercharged 550hp",
+       "fuel": "petrol",
+       "hpStock": 550,
+       "hpTuned": 570,
+       "nmStock": 680,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2482/1674",
+       "name": "5.0 V8 Supercharged 510hp",
+       "fuel": "petrol",
+       "hpStock": 510,
+       "hpTuned": 560,
+       "nmStock": 625,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

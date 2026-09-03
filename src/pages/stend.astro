@@ -1,0 +1,576 @@
+---
+// ЕКРАН ЗА ОДОБРЕНИЕ — сглобен от ТРИ компонента на 21st.dev + бранд таблото в Canva.
+//
+//   21st „Crypto Hero“ (@dhileepkumargm, id 8759)
+//        → тъмнозелено поле + радиално сияние в лайм + акцентната дума в заглавието + лаймов бутон
+//   21st „Experience Hero“ (@hardikkashiyani123456788, id 9724)
+//        → гигантска типография (clamp 3.5–11.5rem, font-black, leading .87), ВТОРИ РЕД С КОНТУР,
+//          дребни моно етикети с tracking .35em, „командни клетки“ 001 // ЗАГЛАВИЕ, кръгъл CTA със стрелка
+//   21st „Pixel Logo Grid“ (@smammar100, id 12815)
+//        → стена от лога: решетка с косъм-линии (gap-px), логата сиви на 50%, при посочване пълен цвят
+//          + сияние в цвета на марката + пикселен трепет на canvas
+//
+//   Canva бранд табло (DAHTkyRh7uQ): #080808 #232323 #999898 #05AD02 #52FB09, слоганът и думите.
+//
+// Портнато на чист Astro + CSS — проектът няма React/GSAP/three.
+import business from '@/data/business.json';
+import idx from '@/data/catalog-index.json';
+import prices from '@/data/prices.json';
+
+type B = { slug: string; name: string; logo: string | null; models: number; engines: number };
+const all = idx as B[];
+const N = (n: number) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+const engines = all.reduce((a, b) => a + b.engines, 0);
+
+const sample = { car: 'BMW 320d', years: '2015–2019', hpStock: 190, hpTuned: 220, nmStock: 400, nmTuned: 440 };
+const dHp = sample.hpTuned - sample.hpStock;
+const dNm = sample.nmTuned - sample.nmStock;
+
+// стената: 5×5 клетки, средният блок заема 3×2 → остават 19 лога (леки + камион + селско нарочно смесени)
+const wall = [
+  ['bmw', 'BMW'], ['audi', 'Audi'], ['volkswagen', 'Volkswagen'], ['mercedes-benz', 'Mercedes-Benz'], ['porsche', 'Porsche'],
+  ['ford', 'Ford'], ['john-deere', 'John Deere'], ['opel-vauxhall', 'Opel'], ['renault', 'Renault'], ['peugeot', 'Peugeot'],
+  ['citroen', 'Citroën'], ['daf', 'DAF'], ['fiat', 'Fiat'], ['volvo', 'Volvo'], ['skoda', 'Škoda'],
+  ['seat', 'SEAT'], ['toyota', 'Toyota'], ['man', 'MAN'], ['new-holland', 'New Holland'],
+];
+// ── услуги: имената и цените са от src/data/services.ts и src/data/prices.json ──
+const P = prices.items as Record<string, { from: number; time: string }>;
+const ic = {
+  chip: '<path d="M6 6h12v12H6zM10 10h4v4h-4zM9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/>',
+  stage: '<path d="M4 20h16M8 20v-5M12 20v-9M16 20v-13M16 7l-2.6 2.6M16 7l2.6 2.6"/>',
+  dpf: '<path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3v10c0 1.7-3.6 3-8 3s-8-1.3-8-3zM4 7c0 1.7 3.6 3 8 3s8-1.3 8-3M9 13v4M12 13.5v4M15 13v4"/>',
+  egr: '<path d="M4 12a8 8 0 0 1 13.7-5.6M20 12a8 8 0 0 1-13.7 5.6M18 3v4h-4M6 21v-4h4"/>',
+  adblue: '<path d="M12 3s6 6.4 6 10.2A6 6 0 0 1 6 13.2C6 9.4 12 3 12 3z"/>',
+  dyno: '<path d="M4 18a8 8 0 1 1 16 0M12 18l4.6-4.6M12 18h.01"/>',
+};
+const services = [
+  { k: 'chip-tuning', ico: ic.chip, lab: 'Мощност и разход', title: 'Чип тунинг', text: 'Индивидуален файл за конкретния блок. Мери се преди и след.' },
+  { k: 'stage-2', ico: ic.stage, lab: 'Хардуер и софтуер', title: 'Stage 2', text: 'За коли с променен хардуер — интеркулер, ауспух, турбо.' },
+  { k: 'dpf-fap', ico: ic.dpf, lab: 'Дизел', title: 'DPF / FAP', text: 'Първо диагностика. В една трета от случаите вината е датчик за 40 €.' },
+  { k: 'egr', ico: ic.egr, lab: 'Дизел', title: 'EGR и клапи', text: 'Задръстен клапан, паднали вихрови клапи: почистване, смяна или софтуер.' },
+  { k: 'adblue', ico: ic.adblue, lab: 'Дизел · SCR', title: 'AdBlue', text: 'Само за машини извън обществените пътища. Казваме кога няма смисъл.' },
+  { k: 'dyno', ico: ic.dyno, lab: 'Измерване', title: 'Стендът', text: 'Две криви — преди и след файла. Замерването е доказателството.' },
+];
+
+// ── избирачът: ВСИЧКИТЕ марки от базата; моделите се теглят при клик от /data/<марка>.json ──
+const pickBrands = all
+  .map((b) => ({ s: b.slug, n: b.name, m: b.models, e: b.engines }))
+  .sort((a, b) => b.e - a.e); // отпред тези с най-много двигатели
+
+// разположение около централния блок (колона 2–4, ред 2–3)
+const cells = [
+  { r: 1, c: 1 }, { r: 1, c: 2 }, { r: 1, c: 3 }, { r: 1, c: 4 }, { r: 1, c: 5 },
+  { r: 2, c: 1 }, { r: 2, c: 5 },
+  { r: 3, c: 1 }, { r: 3, c: 5 },
+  { r: 4, c: 1 }, { r: 4, c: 2 }, { r: 4, c: 3 }, { r: 4, c: 4 }, { r: 4, c: 5 },
+  { r: 5, c: 1 }, { r: 5, c: 2 }, { r: 5, c: 3 }, { r: 5, c: 4 }, { r: 5, c: 5 },
+];
+---
+
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>PDK Tuning — екран за одобрение</title>
+<meta name="robots" content="noindex" />
+<!-- is:global — избирачът създава бутоните с JS, а Astro обхваща стиловете по атрибут,
+     който динамичните възли нямат. Страницата е самостоятелен документ, няма изтичане. -->
+<style is:global>
+@font-face{font-family:'Oswald';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/oswald-500-cyrillic.woff2) format('woff2');unicode-range:U+0400-045F,U+0490-0491}
+@font-face{font-family:'Oswald';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/oswald-500-latin.woff2) format('woff2')}
+@font-face{font-family:'Oswald';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/oswald-700-cyrillic.woff2) format('woff2');unicode-range:U+0400-045F,U+0490-0491}
+@font-face{font-family:'Oswald';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/oswald-700-latin.woff2) format('woff2')}
+@font-face{font-family:'Golos Text';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/golos-text-400-cyrillic.woff2) format('woff2');unicode-range:U+0400-045F,U+0490-0491}
+@font-face{font-family:'Golos Text';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/golos-text-400-latin.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/jetbrains-mono-400-cyrillic.woff2) format('woff2');unicode-range:U+0400-045F,U+0490-0491}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/jetbrains-mono-400-latin.woff2) format('woff2')}
+
+:root{
+  --black:#080808; --grey9:#232323; --grey5:#999898; --white:#FFFFFF;
+  --green:#05AD02; --lime:#52FB09;
+  --head:'Oswald','Arial Narrow',sans-serif;
+  --body:'Golos Text',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --gut:22px; color-scheme:dark;
+}
+@media(min-width:900px){:root{--gut:56px}}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--black);color:var(--white);font:400 17px/1.55 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a,button{color:inherit;text-decoration:none;font:inherit}
+
+/* ── лента ─────────────────────────────────────────────── */
+.bar{position:absolute;top:0;left:0;right:0;z-index:40;display:flex;align-items:center;gap:26px;padding:26px var(--gut)}
+.logo{display:flex;align-items:center;gap:11px}
+.logo img{width:38px;height:38px;border-radius:2px}
+.logo span{font:400 11px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase}
+.menu{display:none;gap:26px;margin-left:16px}
+@media(min-width:1060px){.menu{display:flex}}
+.menu a{font:400 11px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.menu a:hover{color:var(--lime)}
+.right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.pill{font:400 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;padding:12px 16px;border:1px solid rgba(255,255,255,.14);border-radius:999px;white-space:nowrap}
+.pill:hover{border-color:rgba(255,255,255,.4)}
+.pill.go{background:var(--lime);border-color:var(--lime);color:#041000;font-weight:700}
+.pill.go:hover{filter:brightness(1.1)}
+@media(max-width:760px){.right .pill:not(.go){display:none}}
+
+/* ── хиро ──────────────────────────────────────────────── */
+.hero{position:relative;min-height:100vh;overflow:hidden;
+  background:linear-gradient(180deg,#0A1206 0%,#111B08 46%,var(--black) 100%)}
+.hero .shot{position:absolute;inset:0}
+.hero .shot img{width:100%;height:100%;object-fit:cover;object-position:60% 62%;
+  filter:grayscale(1) contrast(1.25) brightness(.34);mix-blend-mode:luminosity;opacity:.55}
+/* сиянието е от Crypto Hero — радиално петно в лайм, силно размито */
+.glow{position:absolute;width:900px;height:900px;left:6%;top:14%;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,rgba(82,251,9,.17) 0%,transparent 70%);filter:blur(90px);
+  animation:breathe 9s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:scale(1);opacity:.65}50%{transform:scale(1.18);opacity:1}}
+.hero::after{content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(8,8,8,.55) 0%,transparent 26%,rgba(8,8,8,.92) 92%)}
+
+.inner{position:relative;z-index:10;min-height:100vh;display:flex;flex-direction:column;
+  justify-content:space-between;padding:110px var(--gut) 54px;gap:40px}
+@media(min-width:1000px){.inner{flex-direction:row;align-items:stretch;padding-top:130px}}
+.left{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-between;gap:38px}
+
+/* жива точка + моно надпис — от Experience Hero */
+.live{display:flex;align-items:center;gap:11px}
+.dot{position:relative;width:9px;height:9px;border-radius:50%;background:var(--lime)}
+.dot::after{content:'';position:absolute;inset:0;border-radius:50%;background:var(--lime);animation:ping 1.9s cubic-bezier(0,0,.2,1) infinite}
+@keyframes ping{75%,100%{transform:scale(2.6);opacity:0}}
+.live span{font:400 10px/1 var(--mono);font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+
+.eyebrow{font:italic 400 clamp(15px,1.4vw,19px)/1.4 var(--body);color:rgba(255,255,255,.5);margin:0 0 16px}
+h1{margin:0;font-family:var(--head);font-weight:700;
+  font-size:clamp(3.2rem,8.6vw,9.5rem);line-height:.87;letter-spacing:-.025em;text-transform:uppercase}
+/* вторият ред е КОНТУР — ходът е от Experience Hero, цветът от таблото */
+h1 .out{-webkit-text-stroke:2px var(--lime);color:transparent;
+  paint-order:stroke fill;display:block}
+@media(min-width:900px){h1 .out{-webkit-text-stroke-width:3px}}
+.sub{margin:30px 0 0;font:400 10px/1.9 var(--mono);letter-spacing:.34em;text-transform:uppercase;
+  color:rgba(255,255,255,.42);max-width:52ch}
+
+.cta{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+.circle{display:flex;align-items:center;gap:18px;cursor:pointer}
+.circle i{width:62px;height:62px;border-radius:50%;border:1px solid rgba(255,255,255,.18);
+  display:grid;place-items:center;transition:.45s}
+.circle:hover i{background:var(--lime);border-color:var(--lime)}
+.circle svg{stroke:var(--white);transition:.45s}
+.circle:hover svg{stroke:#041000}
+.circle b{font:400 10px/1 var(--mono);font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.tel{font:400 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.tel b{color:var(--white);font-weight:400}
+
+/* командните клетки — от Experience Hero, съдържанието е нашето */
+.deck{width:100%;display:flex;flex-direction:column;gap:14px;justify-content:center}
+@media(min-width:1000px){.deck{width:340px;flex:0 0 340px}}
+@media(min-width:1240px){.deck{width:390px;flex:0 0 390px}}
+.cell{padding:24px 26px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);
+  backdrop-filter:blur(12px);border-radius:2px}
+.cell .id{display:block;margin-bottom:14px;font:400 9px/1 var(--mono);letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(255,255,255,.28)}
+.cell .row{display:flex;align-items:flex-end;gap:9px}
+.cell .track{margin-left:auto;margin-bottom:9px}
+.cell h4{margin:0;font:700 clamp(30px,3.2vw,42px)/1 var(--head);letter-spacing:-.02em;color:var(--lime);
+  font-variant-numeric:tabular-nums}
+.cell .unit{font:400 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.42);padding-bottom:5px}
+.track{height:2px;width:84px;background:rgba(255,255,255,.08);overflow:hidden}
+.track i{display:block;height:100%;background:var(--lime);width:62%}
+.cell .kv{display:flex;justify-content:space-between;font:400 10px/1 var(--mono);color:rgba(255,255,255,.45);padding:9px 0}
+.cell .kv + .kv{border-top:1px solid rgba(255,255,255,.06)}
+.cell .kv b{color:var(--white);font-weight:400}
+
+/* ── стената с логата — от Pixel Logo Grid ─────────────── */
+.wall{padding:84px var(--gut) 96px}
+.kick{display:flex;align-items:center;gap:14px;margin:0 auto 34px;max-width:1160px;
+  font:400 10px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.kick::after{content:'';flex:1;border-top:1px solid var(--grey9)}
+.grid{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);
+  grid-auto-rows:104px;gap:1px;background:var(--grey9);border:1px solid var(--grey9)}
+@media(max-width:760px){.grid{grid-template-columns:repeat(3,1fr);grid-auto-rows:92px}}
+.card{position:relative;display:grid;place-items:center;background:var(--black);overflow:hidden;isolation:isolate;
+  transition:box-shadow .3s}
+.card:hover{z-index:2;box-shadow:0 8px 26px -8px rgba(82,251,9,.3), 0 0 0 1px rgba(82,251,9,.42)}
+.card canvas{position:absolute;inset:0;width:100%;height:100%}
+/* Силует (brightness(0) invert) НЕ става: част от знаците са плочки с плътен фон
+   (DAF, MAN, John Deere, New Holland, Peugeot) и излизат като бели правоъгълници.
+   Затова само обезцветяване и приглушаване; при посочване се връща пълният цвят. */
+.card img{position:relative;z-index:1;max-width:58%;max-height:46px;width:auto;
+  filter:grayscale(1);opacity:.38;transition:filter .3s,opacity .3s,transform .3s}
+.card:hover img{filter:none;opacity:1;transform:scale(1.06)}
+.mid{grid-column:2 / span 3;grid-row:2 / span 2;background:var(--black);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:22px;text-align:center}
+@media(max-width:760px){.mid{grid-column:1 / span 3;grid-row:3 / span 2}}
+.mid span{font:400 9px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--lime);
+  border:1px solid rgba(82,251,9,.35);padding:7px 12px;border-radius:999px}
+.mid h2{margin:0;font:500 clamp(20px,2.3vw,30px)/1.12 var(--head);text-transform:uppercase;letter-spacing:.01em;max-width:22ch}
+.mid p{margin:0;font:400 11px/1.6 var(--mono);color:rgba(255,255,255,.4)}
+
+/* ── услуги — от Feature Velocity ───────────────────────── */
+.srv{position:relative;padding:96px var(--gut) 104px;overflow:hidden}
+/* диагоналните косъм-линии с радиална маска са техни; цветът е нашият */
+.srv::before{content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(45deg,#1A1A1A 0px 1px,transparent 1px 8px);
+  -webkit-mask-image:radial-gradient(ellipse 80% 50% at 50% 0%,#000 70%,transparent 110%);
+  mask-image:radial-gradient(ellipse 80% 50% at 50% 0%,#000 70%,transparent 110%)}
+.srv .in{position:relative;z-index:2;max-width:1160px;margin:0 auto}
+.srv .top{display:flex;flex-direction:column;gap:26px;justify-content:space-between;
+  border-bottom:1px solid var(--grey9);padding-bottom:40px;margin-bottom:56px}
+@media(min-width:860px){.srv .top{flex-direction:row;align-items:flex-end;gap:48px}}
+.srv h2{margin:0;font:700 clamp(2.4rem,5.2vw,4.4rem)/.94 var(--head);letter-spacing:-.025em;text-transform:uppercase}
+.srv .note{margin:0;max-width:22rem;font:400 10px/1.85 var(--mono);letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(255,255,255,.36)}
+.tiles{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:700px){.tiles{grid-template-columns:1fr 1fr}}
+@media(min-width:1060px){.tiles{grid-template-columns:repeat(3,1fr)}}
+.tile{position:relative;display:block;overflow:hidden;padding:38px 34px 34px;
+  background:#0C0C0C;border:1px solid var(--grey9);border-radius:14px;transition:border-color .5s}
+.tile:hover{border-color:transparent}
+.tile .wash{position:absolute;inset:0;opacity:0;transition:opacity .7s;
+  background:linear-gradient(135deg,rgba(82,251,9,.16) 0%,transparent 62%)}
+.tile:hover .wash{opacity:1}
+.tile .body{position:relative;z-index:2;display:flex;flex-direction:column;gap:52px}
+.tile .ic{width:54px;height:54px;border-radius:14px;background:rgba(255,255,255,.07);display:grid;place-items:center}
+.tile .ic svg{width:24px;height:24px;stroke:var(--lime);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.tile .lab{display:block;margin-bottom:12px;font:400 10px/1 var(--mono);letter-spacing:.3em;
+  text-transform:uppercase;color:rgba(255,255,255,.36)}
+.tile h3{margin:0 0 10px;font:700 clamp(22px,2.2vw,29px)/1.05 var(--head);letter-spacing:-.015em;text-transform:uppercase}
+.tile p{margin:0;font:400 13px/1.6 var(--mono);color:rgba(255,255,255,.5)}
+.tile p b{color:var(--lime);font-weight:400}
+
+/* ── избирачът — от Multi-Step Form ─────────────────────── */
+.pick{padding:0 var(--gut) 104px}
+.panel{max-width:1000px;margin:0 auto;background:#0C0C0C;border:1px solid var(--grey9);border-radius:14px;overflow:hidden}
+.ph{padding:30px 34px 26px;border-bottom:1px solid var(--grey9)}
+.ph .line{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
+.ph h2{margin:0;font:700 clamp(24px,2.6vw,32px)/1.05 var(--head);text-transform:uppercase;letter-spacing:-.01em}
+.ph p{margin:8px 0 0;font:400 13px/1.6 var(--mono);color:rgba(255,255,255,.42)}
+.x{width:34px;height:34px;border-radius:8px;border:1px solid var(--grey9);display:grid;place-items:center;flex:0 0 auto;color:rgba(255,255,255,.4)}
+.prog{display:flex;align-items:center;gap:16px;margin-top:22px}
+.prog .bar{flex:1;height:5px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden}
+.prog .bar i{display:block;height:100%;width:25%;border-radius:99px;background:var(--lime);transition:width .35s ease}
+.prog span{font:400 11px/1 var(--mono);color:rgba(255,255,255,.42);white-space:nowrap}
+.cols{display:grid;grid-template-columns:1fr;min-height:308px}
+@media(min-width:760px){.cols{grid-template-columns:repeat(4,1fr)}}
+.col{border-right:1px solid var(--grey9);display:flex;flex-direction:column;min-width:0}
+.col:last-child{border-right:0}
+@media(max-width:759px){.col{border-right:0;border-bottom:1px solid var(--grey9)}}
+.col > b{display:block;padding:16px 18px 12px;font:400 9px/1 var(--mono);letter-spacing:.24em;
+  text-transform:uppercase;color:rgba(255,255,255,.3);font-weight:400}
+.col .q{margin:0 14px 8px;padding:9px 11px;background:rgba(255,255,255,.04);border:1px solid var(--grey9);
+  border-radius:8px;color:var(--white);font:400 12px/1 var(--mono);outline:none;min-width:0}
+.col .q::placeholder{color:rgba(255,255,255,.26)}
+.col .q:focus{border-color:var(--green)}
+.col ul{margin:0;padding:0 0 12px;list-style:none;overflow-y:auto;max-height:246px;scrollbar-width:thin}
+.col li{margin:0}
+.col button{display:flex;width:100%;align-items:center;justify-content:space-between;gap:10px;
+  padding:10px 18px;background:none;border:0;text-align:left;cursor:pointer;
+  font:400 13px/1.35 var(--body);color:rgba(255,255,255,.62);transition:.14s}
+.col button:hover{color:var(--white);background:rgba(255,255,255,.04)}
+.col button.on{color:var(--lime);background:rgba(82,251,9,.08);box-shadow:inset 2px 0 0 var(--lime)}
+.col button em{font-style:normal;font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.3)}
+.col .empty{padding:16px 18px;font:400 11px/1.6 var(--mono);color:rgba(255,255,255,.22)}
+.result{padding:22px 18px;display:none}
+.result.on{display:block}
+.result .big{display:flex;align-items:baseline;gap:8px;margin-bottom:4px}
+.result .big b{font:700 40px/1 var(--head);color:var(--lime);font-variant-numeric:tabular-nums}
+.result .big span{font:400 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.result .kv{display:flex;justify-content:space-between;gap:10px;padding:9px 0;font:400 11px/1 var(--mono);color:rgba(255,255,255,.45)}
+.result .kv + .kv{border-top:1px solid rgba(255,255,255,.07)}
+.result .kv b{color:var(--white);font-weight:400}
+.pf{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  padding:20px 34px;border-top:1px solid var(--grey9)}
+.pf a.help{font:400 11px/1 var(--mono);color:var(--lime)}
+.pf .btns{display:flex;gap:10px;margin-left:auto}
+.pf button{padding:13px 22px;border-radius:9px;border:1px solid var(--grey9);background:none;cursor:pointer;
+  font:400 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--white)}
+.pf button:hover{border-color:rgba(255,255,255,.4)}
+.pf button.go{background:var(--lime);border-color:var(--lime);color:#041000;font-weight:700}
+.pf button:disabled{opacity:.3;cursor:not-allowed}
+
+.foot{border-top:1px solid var(--grey9);padding:20px var(--gut);display:flex;flex-wrap:wrap;gap:8px 24px;
+  justify-content:space-between;font:400 10px/1.6 var(--mono);letter-spacing:.06em;color:#4E544E}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="shot"><img src="/img/dyno.jpg" alt="" fetchpriority="high" /></div>
+  <div class="glow"></div>
+
+  <header class="bar">
+    <a class="logo" href="#"><img src="/pdk-logo.jpg" alt="PDK Tuning" /><span>PDK Tuning</span></a>
+    <nav class="menu"><a href="#">Каталог</a><a href="#">Услуги</a><a href="#">Стендът</a><a href="#">За нас</a><a href="#">Контакти</a></nav>
+    <div class="right">
+      <span class="pill">BG / EN</span>
+      <a class="pill" href="#">Вход</a>
+      <a class="pill go" href="#">Качи файл</a>
+    </div>
+  </header>
+
+  <div class="inner">
+    <div class="left">
+      <div class="live"><i class="dot"></i><span>PDK Tuning // Варна // {new Date().getFullYear() - business.yearsExperience}</span></div>
+
+      <div>
+        <p class="eyebrow">Всеки автомобил има потенциал</p>
+        <h1>Ние знаем<br />как да го<span class="out">отключим</span></h1>
+        <p class="sub">Анализ · Настройка · Оптимизация — измерено на собствен стенд</p>
+      </div>
+
+      <div class="cta">
+        <a class="circle" href="#">
+          <i><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H8M17 7V16" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i>
+          <b>Намери своя автомобил</b>
+        </a>
+        <a class="tel" href={`tel:${business.phone}`}><b>{business.phoneDisplay}</b></a>
+      </div>
+    </div>
+
+    <div class="deck">
+      <div class="cell">
+        <span class="id">001 // Мощност</span>
+        <div class="row"><h4>+{dHp}</h4><span class="unit">к.с.</span><span class="track"><i></i></span></div>
+      </div>
+      <div class="cell">
+        <span class="id">002 // Въртящ момент</span>
+        <div class="row"><h4>+{dNm}</h4><span class="unit">Nm</span><span class="track"><i style="width:74%"></i></span></div>
+      </div>
+      <div class="cell">
+        <span class="id">003 // {sample.car} · {sample.years}</span>
+        <div class="kv"><span>Мощност</span><span>{sample.hpStock} → <b>{sample.hpTuned}</b> к.с.</span></div>
+        <div class="kv"><span>Момент</span><span>{sample.nmStock} → <b>{sample.nmTuned}</b> Nm</span></div>
+        <div class="kv"><span>В базата</span><span><b>{N(engines)}</b> двигателя</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pick">
+  <div class="panel" id="picker">
+    <div class="ph">
+      <div class="line">
+        <div>
+          <h2>Намери своя автомобил</h2>
+          <p>Четири стъпки до реалните числа за твоя двигател.</p>
+        </div>
+        <button class="x" aria-label="Затвори">✕</button>
+      </div>
+      <div class="prog"><span class="bar"><i id="pbar"></i></span><span id="pstep">1 / 4 завършени</span></div>
+    </div>
+
+    <div class="cols">
+      <div class="col">
+        <b>Марка</b>
+        <input id="bq" class="q" type="search" placeholder="Търси марка…" autocomplete="off" />
+        <ul id="c1"></ul>
+      </div>
+      <div class="col"><b>Модел</b><ul id="c2"><li class="empty">Избери марка</li></ul></div>
+      <div class="col"><b>Година</b><ul id="c3"><li class="empty">Избери модел</li></ul></div>
+      <div class="col">
+        <b>Двигател</b>
+        <ul id="c4"><li class="empty">Избери година</li></ul>
+        <div class="result" id="res">
+          <div class="big"><b id="rhp">+0</b><span>к.с.</span></div>
+          <div class="kv"><span>Мощност</span><span id="rp">—</span></div>
+          <div class="kv"><span>Момент</span><span id="rn">—</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pf">
+      <a class="help" href="#">Нужна ти е помощ? ↗</a>
+      <div class="btns">
+        <button id="pback" disabled>Назад</button>
+        <button class="go" id="pnext">Запази час</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wall">
+  <p class="kick">Каталогът</p>
+  <div class="grid">
+    {wall.map(([slug, name], i) => (
+      <a class="card" href="#" data-pixel aria-label={name} style={`grid-row:${cells[i].r};grid-column:${cells[i].c}`}>
+        <canvas></canvas>
+        <img src={`/logos/${slug}.png`} alt={name} loading="lazy" />
+      </a>
+    ))}
+    <div class="mid">
+      <span>{all.length} марки</span>
+      <h2>Леки, камиони и селскостопанска техника</h2>
+      <p>{N(engines)} двигателя с реални стойности преди и след</p>
+    </div>
+  </div>
+</section>
+
+<section class="srv">
+  <div class="in">
+    <div class="top">
+      <h2>Чип тунинг<br />и софтуерни ремонти.</h2>
+      <p class="note">Диагностика преди файл. Ако проблемът е датчик, го казваме — и не пишем нищо.</p>
+    </div>
+    <div class="tiles">
+      {services.map((s) => (
+        <a class="tile" href="#">
+          <span class="wash"></span>
+          <div class="body">
+            <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><Fragment set:html={s.ico} /></svg></span>
+            <div>
+              <span class="lab">{s.lab}</span>
+              <h3>{s.title}</h3>
+              <p>{s.text}<br />{P[s.k] && <><b>от {P[s.k].from} €</b> · {P[s.k].time}</>}</p>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+<footer class="foot">
+  <span>{business.legalName} · {business.address.street}, {business.address.city} · {business.phoneDisplay}</span>
+  <span>21st: Crypto Hero + Experience Hero + Pixel Logo Grid · Canva бранд табло</span>
+</footer>
+
+<script>
+// пикселният трепет от Pixel Logo Grid, пренаписан на ванилен canvas в цвета на марката
+const LIME = '#52FB09';
+document.querySelectorAll('[data-pixel]').forEach((card) => {
+  const cv = card.querySelector('canvas');
+  const ctx = cv.getContext('2d');
+  let px = [], raf = 0, on = false;
+  const build = () => {
+    const r = card.getBoundingClientRect(), d = Math.min(devicePixelRatio || 1, 2);
+    cv.width = r.width * d; cv.height = r.height * d; ctx.scale(d, d);
+    px = [];
+    for (let x = 0; x < r.width; x += 6) for (let y = 0; y < r.height; y += 6) {
+      const dx = x - r.width / 2, dy = y - r.height / 2;
+      px.push({ x, y, s: 0, max: Math.random() * 1.6 + .4, sp: Math.random() * .35 + .06, wait: Math.sqrt(dx * dx + dy * dy) * .55 });
+    }
+  };
+  const draw = () => {
+    const r = card.getBoundingClientRect();
+    ctx.clearRect(0, 0, r.width, r.height);
+    ctx.fillStyle = LIME;
+    let busy = false;
+    for (const p of px) {
+      if (on) { if (p.wait > 0) { p.wait -= 7; busy = true; continue; } if (p.s < p.max) { p.s += p.sp; busy = true; } }
+      else if (p.s > 0) { p.s -= .12; busy = true; }
+      if (p.s > 0) { ctx.globalAlpha = .5; ctx.fillRect(p.x, p.y, p.s, p.s); }
+    }
+    raf = busy ? requestAnimationFrame(draw) : 0;
+  };
+  const start = (v) => { if (!px.length) build(); on = v; if (!on) px.forEach(p => p.wait = 0); if (!raf) raf = requestAnimationFrame(draw); };
+  card.addEventListener('mouseenter', () => start(true));
+  card.addEventListener('mouseleave', () => start(false));
+});
+</script>
+
+<script define:vars={{ pickBrands }}>
+// Избирачът работи с ЦЯЛАТА база: 112 марки стоят в страницата (само име и бройки),
+// а моделите се теглят при клик от /data/<марка>.json — ресурсът СЪЩЕСТВУВА от 01.09
+// (`src/pages/data/[brand].json.ts`, ползва се и от калкулатора). Не се прави втори.
+const $ = (id) => document.getElementById(id);
+const cols = [$('c1'), $('c2'), $('c3'), $('c4')];
+const state = { b: null, m: null, g: null, e: null };
+const cache = new Map();
+
+const fill = (ul, items, onPick) => {
+  ul.innerHTML = '';
+  const frag = document.createDocumentFragment();
+  for (const it of items) {
+    const li = document.createElement('li');
+    const btn = document.createElement('button');
+    btn.innerHTML = `<span>${it.label}</span>` + (it.right ? `<em>${it.right}</em>` : '');
+    btn.onclick = (ev) => {
+      ev.preventDefault();
+      ul.querySelectorAll('button').forEach((x) => x.classList.remove('on'));
+      btn.classList.add('on');
+      onPick(it.value);
+    };
+    li.appendChild(btn); frag.appendChild(li);
+  }
+  ul.appendChild(frag);
+};
+
+const note = (ul, txt) => { ul.innerHTML = `<li class="empty">${txt}</li>`; };
+
+const step = (n) => {
+  $('pbar').style.width = (n / 4 * 100) + '%';
+  $('pstep').textContent = `${n} / 4 завършени`;
+  $('pback').disabled = n <= 1;
+};
+
+const reset = (from) => {
+  const hints = ['', 'Избери марка', 'Избери модел', 'Избери година'];
+  for (let i = from; i < 4; i++) note(cols[i], hints[i]);
+  $('res').classList.remove('on');
+};
+
+// етикетът на годините е същият като в калкулатора, за да не се разминават
+const years = (g) => (!g.from ? (g.to ? 'до ' + g.to : 'всички години') : g.to ? g.from + '–' + g.to : g.from + '–…');
+
+const pickEngine = (e) => {
+  state.e = e; step(4);
+  $('rhp').textContent = '+' + (e.hp[1] - e.hp[0]);
+  $('rp').innerHTML = `${e.hp[0]} → <b>${e.hp[1]}</b> к.с.`;
+  $('rn').innerHTML = e.nm ? `${e.nm[0]} → <b>${e.nm[1]}</b> Nm` : '—';
+  // страницата на двигателя вече съществува — водим го към нея
+  $('pnext').dataset.href = `/bg/${state.b.s}/${state.m.slug}/${state.g.slug}/${e.path}`;
+  $('res').classList.add('on');
+};
+
+const pickGen = (g) => {
+  state.g = g; reset(3); step(3);
+  fill(cols[3], g.engines.map((e) => ({ label: e.name, right: '+' + (e.hp[1] - e.hp[0]), value: e })), pickEngine);
+};
+
+const pickModel = (m) => {
+  state.m = m; reset(2); step(2);
+  fill(cols[2], m.gens.map((g) => ({ label: years(g), right: String(g.engines.length), value: g })), pickGen);
+};
+
+const pickBrand = async (b) => {
+  state.b = b; reset(1); step(1);
+  note(cols[1], 'Тегли…');
+  let data = cache.get(b.s);
+  if (!data) {
+    try {
+      data = await fetch(`/data/${b.s}.json`).then((r) => r.json());
+      cache.set(b.s, data);
+    } catch {
+      note(cols[1], 'Не се зареди'); return;
+    }
+  }
+  if (state.b !== b) return; // междувременно е кликната друга марка
+  fill(cols[1], data.models.map((m) => ({ label: m.name, right: String(m.gens.length), value: m })), pickModel);
+};
+
+const brandItems = pickBrands.map((b) => ({ label: b.n, right: String(b.e), value: b, key: b.n.toLowerCase() }));
+fill(cols[0], brandItems, pickBrand);
+step(1);
+
+// търсачка — 112 марки са много за превъртане
+$('bq').addEventListener('input', (ev) => {
+  const q = ev.target.value.trim().toLowerCase();
+  const hit = q ? brandItems.filter((b) => b.key.includes(q)) : brandItems;
+  if (!hit.length) { note(cols[0], 'Няма такава марка'); return; }
+  fill(cols[0], hit, pickBrand);
+});
+
+$('pnext').onclick = () => { const h = $('pnext').dataset.href; if (h) location.href = h; };
+
+$('pback').onclick = () => {
+  if (state.e) { state.e = null; $('res').classList.remove('on'); step(3); }
+  else if (state.g) { state.g = null; reset(3); step(2); }
+  else if (state.m) { state.m = null; reset(2); step(1); }
+};
+</script>
+
+</body>
+</html>

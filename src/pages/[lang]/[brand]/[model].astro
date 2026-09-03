@@ -1,0 +1,90 @@
+---
+import Base from '@/layouts/Base.astro';
+import Crumbs from '@/components/Crumbs.astro';
+import ServiceTiles from '@/components/ServiceTiles.astro';
+import ContactForm from '@/components/ContactForm.astro';
+import { LANGS, t, routes, years, type Lang } from '@/i18n';
+import { brands, enginesOfModel, minMaxGain, topGains, dominantFuel, servicesForFuel, hpGain, hpPct, engineLabel, modelPath, genPath, enginePath, brandPath, yearSpan } from '@/lib/catalog';
+import { titles, descriptions, ldBreadcrumb, ldCollection } from '@/lib/seo';
+import { fuelName } from '@/lib/text';
+import business from '@/data/business.json';
+export function getStaticPaths() { return LANGS.flatMap((lang) => brands.flatMap((b) => b.models.map((m) => ({ params: { lang, brand: b.slug, model: m.slug }, props: { b, m } })))); }
+const lang = Astro.params.lang as Lang; const { b, m } = Astro.props;
+const d = t(lang);
+const list = enginesOfModel(m); const mm = minMaxGain(list); const ys = yearSpan(m); const fuel = dominantFuel(list); const best = topGains(list, 1)[0];
+const bestGen = m.generations.find((g) => g.engines.includes(best))!;
+const path = modelPath(lang, b, m);
+const idx = b.models.indexOf(m); const neighbors = b.models.filter((x, i) => x !== m && Math.abs(i - idx) <= 4).slice(0, 8);
+const crumbs = [{ name: d.crumbs.catalog, path: routes.home[lang] }, { name: b.name, path: brandPath(lang, b) }];
+const title = titles.model(lang, b, m), description = descriptions.model(lang, b, m);
+---
+<Base lang={lang} title={title} description={description} path={path} current="catalog" jsonld={[ldBreadcrumb([...crumbs, { name: m.name, path }]), ldCollection(lang, title, path, list.length)]}>
+  <div class="wrap">
+    <Crumbs items={crumbs} current={m.name} />
+    <p class="kicker">{b.name} · {d.catalog.genCount(m.generations.length)} · {d.catalog.engineCount(list.length)}</p>
+    <h1>{d.catalog.modelH1(b.name, m.name)}</h1>
+    <p class="lead">{lang === 'bg'
+      ? `${m.generations.length} ${m.generations.length === 1 ? 'поколение' : 'поколения'}, ${list.length} ${list.length === 1 ? 'двигател' : 'двигателя'}, години ${years(ys.from, ys.to, lang)}. Ръстът при този модел е между +${mm.min} и +${mm.max} к.с.`
+      : `${m.generations.length} generation${m.generations.length === 1 ? '' : 's'}, ${list.length} engine${list.length === 1 ? '' : 's'}, ${years(ys.from, ys.to, lang)}. Gains on this model range from +${mm.min} to +${mm.max} hp.`}</p>
+    <p>{lang === 'bg'
+      ? `Най-печелившият е ${engineLabel(best)} от поколението ${years(bestGen.from, bestGen.to, lang)}: ${best.hpStock} → ${best.hpTuned} к.с. (+${hpPct(best)}%). Всички числа в таблицата са от файлове, които сме писали за точно този двигател, и са измерени на стенда във Варна — не са преписани от каталог на производител.`
+      : `The best gain is the ${engineLabel(best)} from the ${years(bestGen.from, bestGen.to, lang)} generation: ${best.hpStock} → ${best.hpTuned} hp (+${hpPct(best)}%). Every figure in the table comes from a file written for exactly that engine and measured on our dyno in Varna — not copied from a manufacturer catalogue. Partner workshops receive the same files through the portal.`}</p>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="kicker">01 · {d.catalog.generations}</p>
+      <h2>{lang === 'bg' ? `Поколенията ${b.name} ${m.name}` : `${b.name} ${m.name} generations`}</h2>
+      <table class="ba">
+        <thead><tr><th>{d.catalog.years}</th><th class="num">{d.catalog.engines}</th><th>{d.catalog.bestInGen}</th><th class="num">{d.catalog.gain}</th></tr></thead>
+        <tbody>{m.generations.map((g) => { const bg = topGains(g.engines, 1)[0]; return (
+          <tr><td><a class="mono" href={genPath(lang, b, m, g)}>{years(g.from, g.to, lang)}</a></td><td class="num">{g.engines.length}</td><td>{engineLabel(bg)} <span class="muted">({bg.hpStock} {d.units.hp})</span></td><td class="num gain">+{hpGain(bg)} {d.units.hp}</td></tr>); })}</tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <p class="kicker">02 · {d.catalog.allEngines}</p>
+      <h2>{lang === 'bg' ? 'Всички двигатели — преди и след' : 'All engines — stock and tuned'}</h2>
+      <div style="overflow-x:auto">
+      <table class="ba">
+        <thead><tr><th>{d.catalog.engine}</th><th>{d.catalog.years}</th><th>{d.catalog.fuel}</th><th class="num">{d.units.hp} {d.catalog.before}</th><th class="num">{d.units.hp} {d.catalog.after}</th><th class="num">Nm {d.catalog.before}</th><th class="num">Nm {d.catalog.after}</th><th class="num">{d.catalog.gain}</th></tr></thead>
+        <tbody>{m.generations.flatMap((g) => g.engines.map((e) => (
+          <tr><td><a href={enginePath(lang, b, m, g, e)}>{engineLabel(e)}</a></td><td class="mono">{years(g.from, g.to, lang)}</td><td>{fuelName(lang, e.fuel)}</td><td class="num">{e.hpStock}</td><td class="num gain">{e.hpTuned}</td><td class="num">{e.nmStock ?? '—'}</td><td class="num gain">{e.nmTuned ?? '—'}</td><td class="num gain">+{hpPct(e)}%</td></tr>)))}</tbody>
+      </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <p class="kicker">03 · {d.catalog.suitable}</p>
+          <h2>{lang === 'bg' ? `Заедно с чип тунинга при ${m.name}` : `Alongside a ${m.name} remap`}</h2>
+          <ServiceTiles lang={lang} only={servicesForFuel(fuel)} cols={3} />
+        </div>
+        {neighbors.length > 0 && <div>
+          <p class="kicker">04 · {d.catalog.otherModels(b.name)}</p>
+          <h2>{lang === 'bg' ? 'Съседни модели' : 'Neighbouring models'}</h2>
+          <ul class="brands" style="columns:2">{neighbors.map((x) => <li><a href={modelPath(lang, b, x)}>{b.name} {x.name}<span class="c">{enginesOfModel(x).length}</span></a></li>)}</ul>
+        </div>}
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <p class="kicker">05 · {d.cta.book}</p>
+          <h2>{lang === 'bg' ? `Вашият ${b.name} ${m.name}` : `Your ${b.name} ${m.name}`}</h2>
+          <p class="lead" style="color:var(--g3)">{lang === 'bg' ? 'Кажете двигателя и годината — по телефона казваме числата, цената и свободния час.' : 'Tell us the engine and year — we give the figures, the price and a slot by phone. Workshops: portal upload.'}</p>
+          <div class="actions"><a class="btn primary" href={`tel:${business.phone}`} data-ev="tel_click" data-ev-label="model">{business.phoneDisplay}</a><a class="btn light" href={business.portal.login[lang]} rel="nofollow" data-ev="file_upload_click" data-ev-label="model">{d.cta.upload}</a></div>
+        </div>
+        <div style="background:#fff;color:var(--ink);padding:1.25rem"><ContactForm lang={lang} car={`${b.name} ${m.name}`} id="form-model" /></div>
+      </div>
+    </div>
+  </section>
+</Base>

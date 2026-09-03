@@ -1,0 +1,1027 @@
+{
+ "slug": "honda",
+ "name": "Honda",
+ "logo": "honda.png",
+ "models": [
+  {
+   "slug": "accord-295",
+   "name": "Accord",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "8580/5164",
+       "name": "1.5 Turbo 192hp",
+       "fuel": "petrol",
+       "hpStock": 192,
+       "hpTuned": 220,
+       "nmStock": 260,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8581/5165",
+       "name": "2.0 Turbo 252hp",
+       "fuel": "petrol",
+       "hpStock": 252,
+       "hpTuned": 280,
+       "nmStock": 370,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2239/1519",
+       "name": "2.2 CTDi 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 185,
+       "nmStock": 340,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2240/1520",
+       "name": "2.2 i-DTEC 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2241/1521",
+       "name": "2.2 i-DTEC 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 210,
+       "nmStock": 380,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8582/5166",
+       "name": "2.4i 188hp",
+       "fuel": "petrol",
+       "hpStock": 188,
+       "hpTuned": 200,
+       "nmStock": 245,
+       "nmTuned": 265,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "avencier-296",
+   "name": "Avencier",
+   "generations": [
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "2242/1522",
+       "name": "240 Turbo 193hp",
+       "fuel": "petrol",
+       "hpStock": 193,
+       "hpTuned": 220,
+       "nmStock": 243,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2243/1523",
+       "name": "370 Turbo 272hp",
+       "fuel": "petrol",
+       "hpStock": 272,
+       "hpTuned": 360,
+       "nmStock": 370,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-2020",
+     "from": 2016,
+     "to": 2020,
+     "engines": [
+      {
+       "path": "8583/1522",
+       "name": "240 Turbo 193hp",
+       "fuel": "petrol",
+       "hpStock": 193,
+       "hpTuned": 220,
+       "nmStock": 243,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8584/1523",
+       "name": "370 Turbo 272hp",
+       "fuel": "petrol",
+       "hpStock": 272,
+       "hpTuned": 360,
+       "nmStock": 370,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "br-v-898",
+   "name": "BR-V",
+   "generations": [
+    {
+     "slug": "2015-2019",
+     "from": 2015,
+     "to": 2019,
+     "engines": [
+      {
+       "path": "8585/5167",
+       "name": "1.5 i-DTEC 99hp",
+       "fuel": "diesel",
+       "hpStock": 99,
+       "hpTuned": 120,
+       "nmStock": 200,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8586/5168",
+       "name": "1.5i 119hp",
+       "fuel": "petrol",
+       "hpStock": 119,
+       "hpTuned": 131,
+       "nmStock": 145,
+       "nmTuned": 165,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2021-0",
+     "from": 2021,
+     "to": null,
+     "engines": [
+      {
+       "path": "8587/5169",
+       "name": "1.5i 121hp",
+       "fuel": "petrol",
+       "hpStock": 121,
+       "hpTuned": 131,
+       "nmStock": 141,
+       "nmTuned": 165,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "breeze-899",
+   "name": "Breeze",
+   "generations": [
+    {
+     "slug": "2020-0",
+     "from": 2020,
+     "to": null,
+     "engines": [
+      {
+       "path": "8588/5170",
+       "name": "1.5 Turbo 193hp",
+       "fuel": "petrol",
+       "hpStock": 193,
+       "hpTuned": 220,
+       "nmStock": 243,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "city-2837",
+   "name": "City",
+   "generations": [
+    {
+     "slug": "2017-2019",
+     "from": 2017,
+     "to": 2019,
+     "engines": [
+      {
+       "path": "16283/5167",
+       "name": "1.5 i-DTEC 99hp",
+       "fuel": "diesel",
+       "hpStock": 99,
+       "hpTuned": 120,
+       "nmStock": 200,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16324/5168",
+       "name": "1.5i 119hp",
+       "fuel": "petrol",
+       "hpStock": 119,
+       "hpTuned": 131,
+       "nmStock": 145,
+       "nmTuned": 165,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "civic-297",
+   "name": "Civic",
+   "generations": [
+    {
+     "slug": "2002-2005",
+     "from": 2002,
+     "to": 2005,
+     "engines": [
+      {
+       "path": "2244/1524",
+       "name": "1.7 CDTi 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 130,
+       "nmStock": 220,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2006-2012",
+     "from": 2006,
+     "to": 2012,
+     "engines": [
+      {
+       "path": "8605/5179",
+       "name": "1.4i 83hp",
+       "fuel": "petrol",
+       "hpStock": 83,
+       "hpTuned": 100,
+       "nmStock": 119,
+       "nmTuned": 132,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8606/2445",
+       "name": "1.8i 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 150,
+       "nmStock": 175,
+       "nmTuned": 190,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2245/1525",
+       "name": "2.0 Type R i-VTEC - 201hp",
+       "fuel": "petrol",
+       "hpStock": 201,
+       "hpTuned": 216,
+       "nmStock": 193,
+       "nmTuned": 210,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2246/1526",
+       "name": "2.2 CTDi - 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 185,
+       "nmStock": 340,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2247/1527",
+       "name": "2.2 i-DTEC - 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 185,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2013-2016",
+     "from": 2013,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "2248/1528",
+       "name": "1.6 i-DTEC 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 165,
+       "nmStock": 300,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2249/1529",
+       "name": "1.8 i-VTEC 142hp",
+       "fuel": "petrol",
+       "hpStock": 142,
+       "hpTuned": 155,
+       "nmStock": 174,
+       "nmTuned": 185,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2250/1530",
+       "name": "2.0 T Type R 310hp",
+       "fuel": "petrol",
+       "hpStock": 310,
+       "hpTuned": 350,
+       "nmStock": 400,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2251/1520",
+       "name": "2.2 i-DTEC 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "2252/1531",
+       "name": "1.0 VTEC - 129hp",
+       "fuel": "petrol",
+       "hpStock": 129,
+       "hpTuned": 150,
+       "nmStock": 180,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2253/1532",
+       "name": "1.5 VTEC - 182hp",
+       "fuel": "petrol",
+       "hpStock": 182,
+       "hpTuned": 220,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2254/1533",
+       "name": "1.6 i-DTEC - 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 165,
+       "nmStock": 300,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2255/1534",
+       "name": "2.0T Type-R - 320hp",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 360,
+       "nmStock": 400,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-2020",
+     "from": 2017,
+     "to": 2020,
+     "engines": [
+      {
+       "path": "8607/1531",
+       "name": "1.0 VTEC - 129hp",
+       "fuel": "petrol",
+       "hpStock": 129,
+       "hpTuned": 150,
+       "nmStock": 180,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8608/1532",
+       "name": "1.5 VTEC - 182hp",
+       "fuel": "petrol",
+       "hpStock": 182,
+       "hpTuned": 220,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8609/1533",
+       "name": "1.6 i-DTEC - 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 165,
+       "nmStock": 300,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8610/1534",
+       "name": "2.0T Type-R - 320hp",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 360,
+       "nmStock": 400,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2020-2022",
+     "from": 2020,
+     "to": 2022,
+     "engines": [
+      {
+       "path": "8611/5181",
+       "name": "1.5T VTEC 182hp",
+       "fuel": "petrol",
+       "hpStock": 182,
+       "hpTuned": 220,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8612/5182",
+       "name": "1.6 iDTEC 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 165,
+       "nmStock": 300,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8613/5183",
+       "name": "2.0T Type R 306hp",
+       "fuel": "petrol",
+       "hpStock": 306,
+       "hpTuned": 360,
+       "nmStock": 400,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "civic-type-r-304",
+   "name": "Civic Type R",
+   "generations": [
+    {
+     "slug": "2022-2024",
+     "from": 2022,
+     "to": 2024,
+     "engines": [
+      {
+       "path": "2267/1539",
+       "name": "2.0 Turbo 306hp",
+       "fuel": "petrol",
+       "hpStock": 306,
+       "hpTuned": 340,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "cr-v-298",
+   "name": "CR-V",
+   "generations": [
+    {
+     "slug": "2002-2006",
+     "from": 2002,
+     "to": 2006,
+     "engines": [
+      {
+       "path": "2256/1519",
+       "name": "2.2 CTDi 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 185,
+       "nmStock": 340,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2007-2012",
+     "from": 2007,
+     "to": 2012,
+     "engines": [
+      {
+       "path": "8590/5173",
+       "name": "2.0 Ex I-Vtec Auto 147hp",
+       "fuel": "petrol",
+       "hpStock": 147,
+       "hpTuned": 162,
+       "nmStock": 182,
+       "nmTuned": 197,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8591/1519",
+       "name": "2.2 CTDi 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 185,
+       "nmStock": 340,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2257/1520",
+       "name": "2.2 i-DTEC 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2012-2015",
+     "from": 2012,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "8592/1528",
+       "name": "1.6 i-DTEC 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 165,
+       "nmStock": 300,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8593/1535",
+       "name": "1.6 i-DTEC 160hp",
+       "fuel": "diesel",
+       "hpStock": 160,
+       "hpTuned": 190,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8594/5174",
+       "name": "2.0 i-VTEC 155hp",
+       "fuel": "petrol",
+       "hpStock": 155,
+       "hpTuned": 167,
+       "nmStock": 192,
+       "nmTuned": 207,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8595/1520",
+       "name": "2.2 i-DTEC 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2012-0",
+     "from": 2012,
+     "to": null,
+     "engines": [
+      {
+       "path": "2258/1528",
+       "name": "1.6 i-DTEC 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 165,
+       "nmStock": 300,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2259/1535",
+       "name": "1.6 i-DTEC 160hp",
+       "fuel": "diesel",
+       "hpStock": 160,
+       "hpTuned": 190,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-2016",
+     "from": 2015,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "8596/1528",
+       "name": "1.6 i-DTEC 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 165,
+       "nmStock": 300,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8597/1535",
+       "name": "1.6 i-DTEC 160hp",
+       "fuel": "diesel",
+       "hpStock": 160,
+       "hpTuned": 190,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-2019",
+     "from": 2017,
+     "to": 2019,
+     "engines": [
+      {
+       "path": "8598/5175",
+       "name": "1.5 VTEC Turbo 173hp",
+       "fuel": "petrol",
+       "hpStock": 173,
+       "hpTuned": 220,
+       "nmStock": 220,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8599/5176",
+       "name": "1.5 VTEC Turbo 193hp",
+       "fuel": "petrol",
+       "hpStock": 193,
+       "hpTuned": 220,
+       "nmStock": 243,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8600/1528",
+       "name": "1.6 i-DTEC 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 165,
+       "nmStock": 300,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8601/1535",
+       "name": "1.6 i-DTEC 160hp",
+       "fuel": "diesel",
+       "hpStock": 160,
+       "hpTuned": 190,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2019-0",
+     "from": 2019,
+     "to": null,
+     "engines": [
+      {
+       "path": "8602/5177",
+       "name": "1.5T VTEC 173hp",
+       "fuel": "petrol",
+       "hpStock": 173,
+       "hpTuned": 220,
+       "nmStock": 220,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8603/5178",
+       "name": "1.5T VTEC 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 220,
+       "nmStock": 243,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "crider-901",
+   "name": "Crider",
+   "generations": [
+    {
+     "slug": "2018-0",
+     "from": 2018,
+     "to": null,
+     "engines": [
+      {
+       "path": "8617/5188",
+       "name": "1.0T 122hp",
+       "fuel": "petrol",
+       "hpStock": 122,
+       "hpTuned": 150,
+       "nmStock": 173,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "fr-v-299",
+   "name": "FR-V",
+   "generations": [
+    {
+     "slug": "2004-2010",
+     "from": 2004,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "2260/1519",
+       "name": "2.2 CTDi 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 185,
+       "nmStock": 340,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "hr-v-300",
+   "name": "HR-V",
+   "generations": [
+    {
+     "slug": "2015-2018",
+     "from": 2015,
+     "to": 2018,
+     "engines": [
+      {
+       "path": "2261/1528",
+       "name": "1.6 i-DTEC 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 165,
+       "nmStock": 300,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2018-2020",
+     "from": 2018,
+     "to": 2020,
+     "engines": [
+      {
+       "path": "8618/5181",
+       "name": "1.5T VTEC 182hp",
+       "fuel": "petrol",
+       "hpStock": 182,
+       "hpTuned": 220,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8619/1528",
+       "name": "1.6 i-DTEC 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 165,
+       "nmStock": 300,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "jade-902",
+   "name": "Jade",
+   "generations": [
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "8620/5189",
+       "name": "1.5T VTEC 156hp",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 190,
+       "nmStock": 203,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "nsx-903",
+   "name": "NSX",
+   "generations": [
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "8621/5190",
+       "name": "3.5 V6 Bi-Turbo 580hp",
+       "fuel": "petrol",
+       "hpStock": 580,
+       "hpTuned": 630,
+       "nmStock": 645,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8622/5191",
+       "name": "Type S 3.5 V6 Bi-Turbo 607hp",
+       "fuel": "petrol",
+       "hpStock": 607,
+       "hpTuned": 630,
+       "nmStock": 645,
+       "nmTuned": 667,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "odyssey-301",
+   "name": "Odyssey",
+   "generations": [
+    {
+     "slug": "2003-2008",
+     "from": 2003,
+     "to": 2008,
+     "engines": [
+      {
+       "path": "2262/1536",
+       "name": "2.4i VTEC 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 218,
+       "nmStock": 232,
+       "nmTuned": 264,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2008-2013",
+     "from": 2008,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "2263/808",
+       "name": "2.4i 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 198,
+       "nmStock": 232,
+       "nmTuned": 249,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8623/1536",
+       "name": "2.4i VTEC 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 218,
+       "nmStock": 232,
+       "nmTuned": 264,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2013-0",
+     "from": 2013,
+     "to": null,
+     "engines": [
+      {
+       "path": "2264/1537",
+       "name": "2.4i 174hp",
+       "fuel": "petrol",
+       "hpStock": 174,
+       "hpTuned": 195,
+       "nmStock": 225,
+       "nmTuned": 267,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "s2000-302",
+   "name": "S2000",
+   "generations": [
+    {
+     "slug": "2003-0",
+     "from": 2003,
+     "to": null,
+     "engines": [
+      {
+       "path": "2265/1538",
+       "name": "2.2 VTEC 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 255,
+       "nmStock": 220,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "ur-v-303",
+   "name": "UR-V",
+   "generations": [
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "2266/821",
+       "name": "2.0 Turbo 272hp",
+       "fuel": "petrol",
+       "hpStock": 272,
+       "hpTuned": 300,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

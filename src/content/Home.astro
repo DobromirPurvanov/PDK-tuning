@@ -1,0 +1,153 @@
+---
+// Началната страница (план, стр. 15 и 24): 10 секции, телефонът е основната конверсия.
+import Base from '@/layouts/Base.astro';
+import Calculator from '@/components/Calculator.astro';
+import ServiceTiles from '@/components/ServiceTiles.astro';
+import Steps from '@/components/Steps.astro';
+import Trust from '@/components/Trust.astro';
+import PriceTable from '@/components/PriceTable.astro';
+import Faq from '@/components/Faq.astro';
+import BrandList from '@/components/BrandList.astro';
+import MapBlock from '@/components/MapBlock.astro';
+import PowerCurve from '@/components/PowerCurve.astro';
+import { t, routes, fmt, type Lang } from '@/i18n';
+import business from '@/data/business.json';
+import { FAQ } from '@/data/faq';
+import { brands, stats, brandBySlug, enginesOfBrand, topGains, engineLabel, enginePath } from '@/lib/catalog';
+import { ldLocalBusiness, ldWebSite, ldFaq } from '@/lib/seo';
+import { icons } from '@/lib/icons';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+// Примерът в секцията за стенда: BMW 730D 204 к.с. (планът го ползва навсякъде); резервно — най-големият ръст в базата
+const bmw = brandBySlug('bmw');
+let sample: { b: (typeof brands)[number]; m: any; g: any; e: any } | null = null;
+if (bmw) for (const m of bmw.models) for (const g of m.generations) for (const e of g.engines) if (/^730d/i.test(e.name) && e.hpStock === 204 && !sample) sample = { b: bmw, m, g, e };
+if (!sample) { const b = brands[0]; const m = b.models[0]; const g = m.generations[0]; sample = { b, m, g, e: g.engines[0] }; }
+const faq4 = [FAQ[0].items[lang][0], FAQ[0].items[lang][2], FAQ[3].items[lang][0], FAQ[2].items[lang][0]];
+const C = lang === 'bg' ? {
+  title: 'Чип тунинг Варна — измерване на стенд, DPF, EGR, AdBlue | PDK Tuning',
+  description: `Чип тунинг с измерване на стенд, DPF, EGR, AdBlue и софтуерни ремонти във Варна. Провери своята кола: реални числа преди и след за ${fmt(stats.engines)} двигателя.`,
+  h1: 'Чип тунинг и софтуерни ремонти във Варна',
+  lead: 'Пишем файлове от 15 години и ги мерим на собствен стенд. Изберете двигателя си и вижте числата преди и след — не обещания.',
+  s2: 'Какво печели колата ви', s3: 'Услуги', s3lead: 'Осем неща, които правим всеки ден. Всяко има страница с цена, време и честен раздел кога няма смисъл.',
+  s4: 'Как минава', s4lead: 'Четири стъпки, между 2 и 4 часа. Можете да гледате.',
+  s5: 'Стендът', s5lead: 'Замерването не е маркетинг, а доказателство. Всяка кола се мери преди и след файла и получавате двете криви.',
+  s5p: `Пример от каталога: ${sample.b.name} ${sample.m.name} ${engineLabel(sample.e)} — ${sample.e.hpStock} → ${sample.e.hpTuned} к.с.${sample.e.nmTuned ? `, ${sample.e.nmStock} → ${sample.e.nmTuned} Nm` : ''}. Числата са от файл, който сме писали, и от стенда във Варна.`,
+  s6: 'Защо при нас', s7: 'Цени накратко', s7lead: 'Начални цени. Крайната зависи от блока и се казва по телефона, преди да дойдете.',
+  s8: 'Чести въпроси', s9: 'Марките в базата', s9lead: `${stats.brands} марки, ${fmt(stats.models)} модела, ${fmt(stats.engines)} двигателя. Числото до марката е броят двигатели с реални стойности.`,
+  s10: 'Къде сме', dynoLink: 'Повече за стенда', allPrices: 'Всички цени', allFaq: 'Всички въпроси',
+} : {
+  title: 'Chip tuning files and ECU software repair — PDK Tuning, Varna',
+  description: `File service for tuning workshops across Europe and a dyno-equipped workshop in Varna. Stock and tuned figures for ${fmt(stats.engines)} engines. Upload a file or book a slot.`,
+  h1: 'Tuning files, dyno-measured. Varna, Bulgaria.',
+  lead: 'Fifteen years of writing files for our own workshop and for partner workshops in five countries. Pick an engine and see the stock and tuned figures — measured, not promised.',
+  s2: 'What your car gains', s3: 'Services', s3lead: 'Eight things we do every day — for local customers on the dyno and for partner workshops through the file portal.',
+  s4: 'How it works', s4lead: 'Four steps, 2 to 4 hours in the workshop. Partner workshops: upload, receive, flash.',
+  s5: 'The dyno', s5lead: 'Measurement is proof, not marketing. Every car is measured before and after the file and you get both curves.',
+  s5p: `Catalog example: ${sample.b.name} ${sample.m.name} ${engineLabel(sample.e)} — ${sample.e.hpStock} → ${sample.e.hpTuned} hp${sample.e.nmTuned ? `, ${sample.e.nmStock} → ${sample.e.nmTuned} Nm` : ''}. From a file we wrote and our dyno in Varna.`,
+  s6: 'Why us', s7: 'Prices in short', s7lead: 'Starting prices for the Varna workshop. Partner workshops have a separate file price list in the portal.',
+  s8: 'Questions', s9: 'Brands in the database', s9lead: `${stats.brands} brands, ${fmt(stats.models)} models, ${fmt(stats.engines)} engines. The number next to a brand is how many engines have real figures.`,
+  s10: 'Where we are', dynoLink: 'More about the dyno', allPrices: 'All prices', allFaq: 'All questions',
+};
+---
+<Base lang={lang} title={C.title} description={C.description} path={routes.home[lang]} current="home" jsonld={[ldLocalBusiness(lang), ldWebSite(lang), ldFaq(faq4)]}>
+  <div class="hero">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <p class="kicker">{business.name} · {lang === 'bg' ? 'Варна' : 'Varna'} · {lang === 'bg' ? 'от' : 'since'} {new Date().getFullYear() - business.yearsExperience}</p>
+          <h1>{C.h1}</h1>
+          <p class="lead">{C.lead}</p>
+          <div class="actions">
+            <a class="btn primary" href={`tel:${business.phone}`} data-ev="tel_click" data-ev-label="hero"><Fragment set:html={icons.phone} />{business.phoneDisplay}</a>
+            <a class="btn ghost" href={routes.chipTuningVarna[lang]}>{lang === 'bg' ? 'Чип тунинг Варна' : 'Chip tuning'}</a>
+          </div>
+          <div class="meta"><span>{d.misc.rated(business.rating.value, business.rating.count)}</span><span>{business.address.street}, {business.address.city}</span></div>
+        </div>
+        <div>
+          <Calculator lang={lang} />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="kicker">03 · {C.s3}</p>
+      <h2>{C.s3}</h2>
+      <p class="lead">{C.s3lead}</p>
+      <ServiceTiles lang={lang} />
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <p class="kicker">04 · {C.s4}</p>
+      <h2>{C.s4}</h2>
+      <p class="lead">{C.s4lead}</p>
+      <Steps lang={lang} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cols c64">
+        <div>
+          <PowerCurve lang={lang} hpStock={sample.e.hpStock} hpTuned={sample.e.hpTuned} nmStock={sample.e.nmStock} nmTuned={sample.e.nmTuned} fuel={sample.e.fuel} />
+        </div>
+        <div>
+          <p class="kicker">05 · {C.s5}</p>
+          <h2>{C.s5}</h2>
+          <p class="lead">{C.s5lead}</p>
+          <p>{C.s5p} <a href={enginePath(lang, sample.b, sample.m, sample.g, sample.e)}>{d.calc.full} →</a></p>
+          <a class="btn" href={routes.dyno[lang]}>{C.dynoLink}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="wrap">
+      <p class="kicker">06 · {C.s6}</p>
+      <Trust lang={lang} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <p class="kicker">07 · {C.s7}</p>
+          <h2>{C.s7}</h2>
+          <p class="lead">{C.s7lead}</p>
+          <PriceTable lang={lang} short />
+          <p style="margin-top:1rem"><a class="btn ghost" href={routes.prices[lang]}>{C.allPrices}</a></p>
+        </div>
+        <div>
+          <p class="kicker">08 · {C.s8}</p>
+          <h2>{C.s8}</h2>
+          <Faq items={faq4} />
+          <p style="margin-top:1rem"><a href={routes.faq[lang]}>{C.allFaq} →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <p class="kicker">09 · {C.s9}</p>
+      <h2>{C.s9}</h2>
+      <p class="lead">{C.s9lead}</p>
+      <BrandList lang={lang} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="kicker">10 · {C.s10}</p>
+      <h2>{C.s10}</h2>
+      <MapBlock lang={lang} />
+    </div>
+  </section>
+</Base>

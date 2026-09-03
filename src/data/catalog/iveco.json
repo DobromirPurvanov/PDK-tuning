@@ -1,0 +1,862 @@
+{
+ "slug": "iveco",
+ "name": "Iveco",
+ "logo": "iveco.png",
+ "models": [
+  {
+   "slug": "daily-918",
+   "name": "Daily",
+   "generations": [
+    {
+     "slug": "0-2016",
+     "from": 0,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "8732/5274",
+       "name": "2.3 HPI 116hp",
+       "fuel": "petrol",
+       "hpStock": 116,
+       "hpTuned": 145,
+       "nmStock": 270,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8734/5276",
+       "name": "2.3 HPI 96hp",
+       "fuel": "petrol",
+       "hpStock": 96,
+       "hpTuned": 125,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8735/5277",
+       "name": "2.3 HPT 136hp",
+       "fuel": "petrol",
+       "hpStock": 136,
+       "hpTuned": 170,
+       "nmStock": 320,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8736/5278",
+       "name": "2.3 M-jet II 106hp",
+       "fuel": "petrol",
+       "hpStock": 106,
+       "hpTuned": 180,
+       "nmStock": 270,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8737/5279",
+       "name": "2.3 M-jet II 126hp",
+       "fuel": "petrol",
+       "hpStock": 126,
+       "hpTuned": 180,
+       "nmStock": 320,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8738/5280",
+       "name": "2.3 M-jet II 146hp",
+       "fuel": "petrol",
+       "hpStock": 146,
+       "hpTuned": 180,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8739/5281",
+       "name": "3.0 CR (EUR 5) 146hp",
+       "fuel": "petrol",
+       "hpStock": 146,
+       "hpTuned": 180,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8740/5282",
+       "name": "3.0 CR (EUR 5) 170hp",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8741/5283",
+       "name": "3.0 CR (EUR 6) 156hp",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 185,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8742/5284",
+       "name": "3.0 CR TwintT euro5 205hp",
+       "fuel": "petrol",
+       "hpStock": 205,
+       "hpTuned": 250,
+       "nmStock": 470,
+       "nmTuned": 560,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8743/5285",
+       "name": "3.0 HPI 146hp",
+       "fuel": "petrol",
+       "hpStock": 146,
+       "hpTuned": 180,
+       "nmStock": 340,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8744/5286",
+       "name": "3.0 HPT 176hp",
+       "fuel": "petrol",
+       "hpStock": 176,
+       "hpTuned": 200,
+       "nmStock": 380,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "8745/5287",
+       "name": "120 2.3 (EUR 6) 116hp",
+       "fuel": "petrol",
+       "hpStock": 116,
+       "hpTuned": 145,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8746/5288",
+       "name": "140 2.3 (EUR 6) 136hp",
+       "fuel": "petrol",
+       "hpStock": 136,
+       "hpTuned": 170,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8747/5289",
+       "name": "150 3.0 (EUR 6) 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 185,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8748/5290",
+       "name": "160 2.3 (EUR 6) 156hp",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 185,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8749/5291",
+       "name": "180 3.0 (EUR 6) 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 430,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8750/5292",
+       "name": "210 3.0 (EUR 6) 205hp",
+       "fuel": "petrol",
+       "hpStock": 205,
+       "hpTuned": 250,
+       "nmStock": 470,
+       "nmTuned": 560,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8751/5293",
+       "name": "3.0 (EURO 6) 160hp",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 185,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "eurocargo-919",
+   "name": "EuroCargo",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "8752/5294",
+       "name": "130hp",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 160,
+       "nmStock": 440,
+       "nmTuned": 540,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8753/5295",
+       "name": "140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 460,
+       "nmTuned": 580,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8754/5296",
+       "name": "150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 185,
+       "nmStock": 500,
+       "nmTuned": 630,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8755/5297",
+       "name": "160hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 200,
+       "nmStock": 530,
+       "nmTuned": 650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8756/5298",
+       "name": "170hp",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 210,
+       "nmStock": 575,
+       "nmTuned": 740,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16765/5299",
+       "name": "180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 230,
+       "nmStock": 590,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8758/5300",
+       "name": "182hp",
+       "fuel": "petrol",
+       "hpStock": 182,
+       "hpTuned": 235,
+       "nmStock": 610,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8759/5301",
+       "name": "183hp",
+       "fuel": "petrol",
+       "hpStock": 183,
+       "hpTuned": 235,
+       "nmStock": 650,
+       "nmTuned": 840,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8760/5302",
+       "name": "210hp",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 260,
+       "nmStock": 690,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8761/5303",
+       "name": "217hp",
+       "fuel": "petrol",
+       "hpStock": 217,
+       "hpTuned": 295,
+       "nmStock": 680,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8762/5304",
+       "name": "241hp",
+       "fuel": "petrol",
+       "hpStock": 241,
+       "hpTuned": 290,
+       "nmStock": 840,
+       "nmTuned": 1055,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8763/5305",
+       "name": "251hp",
+       "fuel": "petrol",
+       "hpStock": 251,
+       "hpTuned": 305,
+       "nmStock": 850,
+       "nmTuned": 1070,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8764/5306",
+       "name": "279hp",
+       "fuel": "petrol",
+       "hpStock": 279,
+       "hpTuned": 335,
+       "nmStock": 950,
+       "nmTuned": 1170,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8765/5307",
+       "name": "299hp",
+       "fuel": "petrol",
+       "hpStock": 299,
+       "hpTuned": 360,
+       "nmStock": 1050,
+       "nmTuned": 1310,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "eurostar-920",
+   "name": "EuroStar",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "17868/5308",
+       "name": "375hp",
+       "fuel": "petrol",
+       "hpStock": 375,
+       "hpTuned": 435,
+       "nmStock": 1540,
+       "nmTuned": 1890,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8767/6068",
+       "name": "390hp",
+       "fuel": "petrol",
+       "hpStock": 390,
+       "hpTuned": 450,
+       "nmStock": 1900,
+       "nmTuned": 2250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8768/5310",
+       "name": "420hp",
+       "fuel": "petrol",
+       "hpStock": 420,
+       "hpTuned": 490,
+       "nmStock": 1900,
+       "nmTuned": 2280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8769/6070",
+       "name": "430hp",
+       "fuel": "petrol",
+       "hpStock": 430,
+       "hpTuned": 500,
+       "nmStock": 2100,
+       "nmTuned": 2450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8770/5312",
+       "name": "520hp",
+       "fuel": "petrol",
+       "hpStock": 520,
+       "hpTuned": 590,
+       "nmStock": 2300,
+       "nmTuned": 2700,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "eurotech-921",
+   "name": "EuroTech",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "17575/5313",
+       "name": "240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 290,
+       "nmStock": 840,
+       "nmTuned": 1055,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8772/5314",
+       "name": "266hp",
+       "fuel": "petrol",
+       "hpStock": 266,
+       "hpTuned": 320,
+       "nmStock": 930,
+       "nmTuned": 1140,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8773/5315",
+       "name": "272hp",
+       "fuel": "petrol",
+       "hpStock": 272,
+       "hpTuned": 330,
+       "nmStock": 950,
+       "nmTuned": 1170,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8774/5316",
+       "name": "300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 360,
+       "nmStock": 1050,
+       "nmTuned": 1300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17803/5317",
+       "name": "310hp",
+       "fuel": "petrol",
+       "hpStock": 310,
+       "hpTuned": 370,
+       "nmStock": 1115,
+       "nmTuned": 1435,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8776/5318",
+       "name": "352hp",
+       "fuel": "petrol",
+       "hpStock": 352,
+       "hpTuned": 410,
+       "nmStock": 1280,
+       "nmTuned": 1630,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8777/5319",
+       "name": "375hp",
+       "fuel": "petrol",
+       "hpStock": 375,
+       "hpTuned": 435,
+       "nmStock": 1700,
+       "nmTuned": 2060,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17873/5309",
+       "name": "390hp",
+       "fuel": "petrol",
+       "hpStock": 390,
+       "hpTuned": 450,
+       "nmStock": 1850,
+       "nmTuned": 2250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17951/5311",
+       "name": "430hp",
+       "fuel": "petrol",
+       "hpStock": 430,
+       "hpTuned": 495,
+       "nmStock": 1900,
+       "nmTuned": 2280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8780/5320",
+       "name": "470hp",
+       "fuel": "petrol",
+       "hpStock": 470,
+       "hpTuned": 540,
+       "nmStock": 2200,
+       "nmTuned": 2600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8781/5321",
+       "name": "E24 CURSOR 245hp",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 315,
+       "nmStock": 840,
+       "nmTuned": 1055,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8782/5322",
+       "name": "E27 CURSOR 273hp",
+       "fuel": "petrol",
+       "hpStock": 272,
+       "hpTuned": 343,
+       "nmStock": 950,
+       "nmTuned": 1160,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8783/5323",
+       "name": "E35 CURSOR 352hp",
+       "fuel": "petrol",
+       "hpStock": 352,
+       "hpTuned": 410,
+       "nmStock": 1280,
+       "nmTuned": 1635,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8784/5324",
+       "name": "E40 CURSOR 400hp",
+       "fuel": "petrol",
+       "hpStock": 400,
+       "hpTuned": 480,
+       "nmStock": 1800,
+       "nmTuned": 2200,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8785/5325",
+       "name": "E43 CURSOR 430hp",
+       "fuel": "petrol",
+       "hpStock": 430,
+       "hpTuned": 510,
+       "nmStock": 1900,
+       "nmTuned": 2300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "eurotrakker-922",
+   "name": "EuroTrakker",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "8786/5326",
+       "name": "245hp E3",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 290,
+       "nmStock": 950,
+       "nmTuned": 1160,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8787/5327",
+       "name": "273hp E3",
+       "fuel": "petrol",
+       "hpStock": 273,
+       "hpTuned": 330,
+       "nmStock": 950,
+       "nmTuned": 1170,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8788/5328",
+       "name": "300 E3",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 360,
+       "nmStock": 1050,
+       "nmTuned": 1300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8789/5329",
+       "name": "310 E3",
+       "fuel": "petrol",
+       "hpStock": 310,
+       "hpTuned": 370,
+       "nmStock": 1115,
+       "nmTuned": 1435,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8790/5330",
+       "name": "345 E3",
+       "fuel": "petrol",
+       "hpStock": 345,
+       "hpTuned": 405,
+       "nmStock": 1200,
+       "nmTuned": 1550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8791/5331",
+       "name": "350 E3",
+       "fuel": "petrol",
+       "hpStock": 350,
+       "hpTuned": 410,
+       "nmStock": 1280,
+       "nmTuned": 1630,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8792/5332",
+       "name": "375 E3",
+       "fuel": "petrol",
+       "hpStock": 375,
+       "hpTuned": 435,
+       "nmStock": 1540,
+       "nmTuned": 1890,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8793/5333",
+       "name": "380 E3",
+       "fuel": "petrol",
+       "hpStock": 380,
+       "hpTuned": 440,
+       "nmStock": 1800,
+       "nmTuned": 2200,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8794/5334",
+       "name": "420 E3",
+       "fuel": "petrol",
+       "hpStock": 420,
+       "hpTuned": 485,
+       "nmStock": 1900,
+       "nmTuned": 2275,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8795/5335",
+       "name": "440 E3",
+       "fuel": "petrol",
+       "hpStock": 440,
+       "hpTuned": 510,
+       "nmStock": 2100,
+       "nmTuned": 2500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8796/5336",
+       "name": "480 E3",
+       "fuel": "petrol",
+       "hpStock": 480,
+       "hpTuned": 550,
+       "nmStock": 2200,
+       "nmTuned": 2600,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "stralis-923",
+   "name": "Stralis",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "8797/5337",
+       "name": "273hp",
+       "fuel": "petrol",
+       "hpStock": 273,
+       "hpTuned": 330,
+       "nmStock": 950,
+       "nmTuned": 1160,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8798/5338",
+       "name": "310hp",
+       "fuel": "petrol",
+       "hpStock": 310,
+       "hpTuned": 370,
+       "nmStock": 1300,
+       "nmTuned": 1620,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8799/5339",
+       "name": "330hp",
+       "fuel": "petrol",
+       "hpStock": 330,
+       "hpTuned": 390,
+       "nmStock": 1400,
+       "nmTuned": 1720,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17865/5340",
+       "name": "350hp",
+       "fuel": "petrol",
+       "hpStock": 350,
+       "hpTuned": 410,
+       "nmStock": 1280,
+       "nmTuned": 1630,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17867/5341",
+       "name": "360hp",
+       "fuel": "petrol",
+       "hpStock": 360,
+       "hpTuned": 420,
+       "nmStock": 1500,
+       "nmTuned": 1850,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17937/5342",
+       "name": "400hp",
+       "fuel": "petrol",
+       "hpStock": 400,
+       "hpTuned": 465,
+       "nmStock": 1800,
+       "nmTuned": 2150,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8803/5310",
+       "name": "420hp",
+       "fuel": "petrol",
+       "hpStock": 420,
+       "hpTuned": 490,
+       "nmStock": 1900,
+       "nmTuned": 2280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8804/6070",
+       "name": "430hp",
+       "fuel": "petrol",
+       "hpStock": 430,
+       "hpTuned": 500,
+       "nmStock": 2100,
+       "nmTuned": 2450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8805/5343",
+       "name": "450hp",
+       "fuel": "petrol",
+       "hpStock": 450,
+       "hpTuned": 520,
+       "nmStock": 2100,
+       "nmTuned": 2500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17975/5344",
+       "name": "480hp",
+       "fuel": "petrol",
+       "hpStock": 480,
+       "hpTuned": 550,
+       "nmStock": 2200,
+       "nmTuned": 2600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8807/5345",
+       "name": "500hp",
+       "fuel": "petrol",
+       "hpStock": 500,
+       "hpTuned": 575,
+       "nmStock": 2300,
+       "nmTuned": 2700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8808/5346",
+       "name": "540hp",
+       "fuel": "petrol",
+       "hpStock": 540,
+       "hpTuned": 610,
+       "nmStock": 2350,
+       "nmTuned": 2800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8809/5347",
+       "name": "560hp",
+       "fuel": "petrol",
+       "hpStock": 560,
+       "hpTuned": 630,
+       "nmStock": 2500,
+       "nmTuned": 3000,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

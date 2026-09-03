@@ -1,0 +1,80 @@
+{
+ "slug": "wiesmann",
+ "name": "Wiesmann",
+ "logo": "wiesmann.png",
+ "models": [
+  {
+   "slug": "gt-roadster-1135",
+   "name": "GT / Roadster",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "12503/7919",
+       "name": "MF3 - 343hp",
+       "fuel": "petrol",
+       "hpStock": 343,
+       "hpTuned": 365,
+       "nmStock": 365,
+       "nmTuned": 387,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12504/7920",
+       "name": "MF4 - 367hp",
+       "fuel": "petrol",
+       "hpStock": 367,
+       "hpTuned": 388,
+       "nmStock": 490,
+       "nmTuned": 530,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12505/7921",
+       "name": "MF4 - 407hp",
+       "fuel": "petrol",
+       "hpStock": 407,
+       "hpTuned": 460,
+       "nmStock": 600,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12506/7922",
+       "name": "MF4/S - 420hp",
+       "fuel": "petrol",
+       "hpStock": 420,
+       "hpTuned": 439,
+       "nmStock": 400,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12507/7923",
+       "name": "MF5 - 507hp",
+       "fuel": "petrol",
+       "hpStock": 507,
+       "hpTuned": 537,
+       "nmStock": 520,
+       "nmTuned": 535,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12508/7924",
+       "name": "MF5 - 555hp",
+       "fuel": "petrol",
+       "hpStock": 555,
+       "hpTuned": 630,
+       "nmStock": 680,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

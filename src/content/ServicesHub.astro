@@ -1,0 +1,67 @@
+---
+import Base from '@/layouts/Base.astro';
+import Crumbs from '@/components/Crumbs.astro';
+import ServiceTiles from '@/components/ServiceTiles.astro';
+import ContactForm from '@/components/ContactForm.astro';
+import { t, routes, type Lang } from '@/i18n';
+import { ldBreadcrumb, ldLocalBusiness } from '@/lib/seo';
+import business from '@/data/business.json';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+const path = routes.services[lang];
+const C = lang === 'bg' ? {
+  title: 'Софтуерни ремонти Варна — DPF, EGR, AdBlue, Lambda, DTC | PDK Tuning',
+  description: 'Софтуерни ремонти във Варна: DPF/FAP, EGR, AdBlue, ламбда сонда, дебитомер, изключване на грешки, V-MAX. Диагностика първо, честно кога има смисъл, цена и време.',
+  h1: 'Софтуерни ремонти и услуги',
+  lead: 'Седем услуги плюс чип тунинга. При всяка първо е диагностиката — половината проблеми се оказват датчик, а не система. Казваме и кога не го правим.',
+  diesel: 'При дизел', dieselP: 'DPF, EGR и AdBlue са трите системи, които спират дизела в куц режим. Проверяваме ги заедно, защото грешката в едната често идва от другата.',
+  petrol: 'При бензин', petrolP: 'Ламбда сонда и катализатор, дебитомер, ограничител на скоростта. По-рядко куц режим, по-често „чек“ лампа и загуба на мощност.',
+  both: 'За всички', bothP: 'Изключване на конкретна грешка след ремонт или премахнат компонент — само след като проверим, че не крие истински проблем.',
+  legal: 'Закон и преглед', legalP: 'Емисионните системи на кола за обществените пътища в ЕС трябва да са изправни. Софтуерното им изключване е за автомобили извън пътя, спорт и износ. На всяка страница пише точно кога го правим и кога не.',
+} : {
+  title: 'ECU software repair — DPF, EGR, AdBlue, Lambda, DTC off | PDK Tuning',
+  description: 'ECU software repair file service: DPF/FAP, EGR, AdBlue/SCR, lambda, MAF, DTC off, V-MAX. Diagnosis first, honest about when it makes sense, price and turnaround.',
+  h1: 'ECU software repair and services',
+  lead: 'Seven services plus chip tuning. Diagnosis first every time — half the problems turn out to be a sensor, not a system. We also say when we do not do it.',
+  diesel: 'Diesel', dieselP: 'DPF, EGR and AdBlue are the three systems that put a diesel in limp mode. We check them together because a fault in one often comes from another.',
+  petrol: 'Petrol', petrolP: 'Lambda and catalyst, air-flow meter, speed limiter. Less limp mode, more check-engine light and lost power.',
+  both: 'Everything', bothP: 'Disabling a specific fault code after a repair or a removed component — only after we confirm it hides no real fault.',
+  legal: 'Law and inspection', legalP: 'Emission systems on a road car in the EU must be working. Switching them off in software is for off-road, motorsport and export vehicles. Each page states exactly when we do it and when not.',
+};
+const crumbs = [{ name: d.crumbs.home, path: routes.home[lang] }];
+---
+<Base lang={lang} title={C.title} description={C.description} path={path} current="services" jsonld={[ldBreadcrumb([...crumbs, { name: d.nav.services, path }]), ldLocalBusiness(lang)]}>
+  <div class="wrap">
+    <Crumbs items={crumbs} current={d.nav.services} />
+    <p class="kicker">{d.nav.services}</p>
+    <h1>{C.h1}</h1>
+    <p class="lead">{C.lead}</p>
+  </div>
+  <section class="section">
+    <div class="wrap"><ServiceTiles lang={lang} /></div>
+  </section>
+  <section class="section alt">
+    <div class="wrap">
+      <div class="grid g3">
+        <div><h3>{C.diesel}</h3><p>{C.dieselP}</p></div>
+        <div><h3>{C.petrol}</h3><p>{C.petrolP}</p></div>
+        <div><h3>{C.both}</h3><p>{C.bothP}</p></div>
+      </div>
+      <div class="article" style="margin-top:2rem"><div class="box warn"><h3>{C.legal}</h3><p style="margin:0">{C.legalP}</p></div></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <p class="kicker">{d.cta.book}</p>
+          <h2>{lang === 'bg' ? 'Кажете какво свети' : 'Tell us what the light says'}</h2>
+          <p class="lead">{lang === 'bg' ? 'По телефона за две минути казваме дали е за нас, колко струва и кога има час.' : 'Two minutes on the phone — or a portal upload for partner workshops.'}</p>
+          <div class="actions"><a class="btn primary" href={`tel:${business.phone}`} data-ev="tel_click" data-ev-label="services">{business.phoneDisplay}</a><a class="btn ghost" href={business.portal.login[lang]} rel="nofollow" data-ev="file_upload_click" data-ev-label="services">{d.cta.upload}</a></div>
+        </div>
+        <div><ContactForm lang={lang} id="form-services" /></div>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,376 @@
+{
+ "slug": "bentley",
+ "name": "Bentley",
+ "logo": "bentley.png",
+ "models": [
+  {
+   "slug": "bentayga-763",
+   "name": "Bentayga",
+   "generations": [
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "6405/3587",
+       "name": "6.0 W12 Bi-Turbo 608hp",
+       "fuel": "petrol",
+       "hpStock": 608,
+       "hpTuned": 670,
+       "nmStock": 900,
+       "nmTuned": 1000,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "continental-flying-spur-45",
+   "name": "Continental Flying Spur",
+   "generations": [
+    {
+     "slug": "0-2016",
+     "from": 0,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "6406/340",
+       "name": "4.0 TFSI V8 507hp",
+       "fuel": "petrol",
+       "hpStock": 507,
+       "hpTuned": 640,
+       "nmStock": 660,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "6407/341",
+       "name": "6.0 W12 Bi-Turbo 560hp",
+       "fuel": "petrol",
+       "hpStock": 560,
+       "hpTuned": 680,
+       "nmStock": 650,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "6408/342",
+       "name": "6.0 W12 Bi-Turbo 610hp",
+       "fuel": "petrol",
+       "hpStock": 610,
+       "hpTuned": 680,
+       "nmStock": 750,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "6409/343",
+       "name": "6.0 W12 Bi-Turbo 625hp",
+       "fuel": "petrol",
+       "hpStock": 625,
+       "hpTuned": 680,
+       "nmStock": 800,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "522/340",
+       "name": "4.0 TFSI V8 507hp",
+       "fuel": "petrol",
+       "hpStock": 507,
+       "hpTuned": 640,
+       "nmStock": 660,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "523/341",
+       "name": "6.0 W12 Bi-Turbo 560hp",
+       "fuel": "petrol",
+       "hpStock": 560,
+       "hpTuned": 680,
+       "nmStock": 650,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "524/342",
+       "name": "6.0 W12 Bi-Turbo 610hp",
+       "fuel": "petrol",
+       "hpStock": 610,
+       "hpTuned": 680,
+       "nmStock": 750,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "525/343",
+       "name": "6.0 W12 Bi-Turbo 625hp",
+       "fuel": "petrol",
+       "hpStock": 625,
+       "hpTuned": 680,
+       "nmStock": 800,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "526/344",
+       "name": "4.0 V8 S - 528hp",
+       "fuel": "petrol",
+       "hpStock": 528,
+       "hpTuned": 640,
+       "nmStock": 680,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "527/345",
+       "name": "6.0 TSI W12 - 635hp",
+       "fuel": "petrol",
+       "hpStock": 635,
+       "hpTuned": 665,
+       "nmStock": 820,
+       "nmTuned": 880,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "continental-gt-speed-46",
+   "name": "Continental GT Speed",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "528/346",
+       "name": "6.0 W12 Bi-Turbo 635hp",
+       "fuel": "petrol",
+       "hpStock": 635,
+       "hpTuned": 680,
+       "nmStock": 820,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "continental-gt-s-764",
+   "name": "Continental GT/S",
+   "generations": [
+    {
+     "slug": "2011-2016",
+     "from": 2011,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "6414/340",
+       "name": "4.0 TFSI V8 507hp",
+       "fuel": "petrol",
+       "hpStock": 507,
+       "hpTuned": 640,
+       "nmStock": 660,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "6415/348",
+       "name": "6.0 W12 Bi-Turbo 575hp",
+       "fuel": "petrol",
+       "hpStock": 575,
+       "hpTuned": 680,
+       "nmStock": 700,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "6416/343",
+       "name": "6.0 W12 Bi-Turbo 625hp",
+       "fuel": "petrol",
+       "hpStock": 625,
+       "hpTuned": 680,
+       "nmStock": 800,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "6417/346",
+       "name": "6.0 W12 Bi-Turbo 635hp",
+       "fuel": "petrol",
+       "hpStock": 635,
+       "hpTuned": 680,
+       "nmStock": 820,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "6413/3590",
+       "name": "6.0 TSI W12 626hp",
+       "fuel": "petrol",
+       "hpStock": 626,
+       "hpTuned": 680,
+       "nmStock": 900,
+       "nmTuned": 1000,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "continental-gt3-r-48",
+   "name": "Continental GT3-R",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "534/349",
+       "name": "4.0 TFSI V8 580hp",
+       "fuel": "petrol",
+       "hpStock": 580,
+       "hpTuned": 640,
+       "nmStock": 700,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "continental-gtc-49",
+   "name": "Continental GTC",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "535/340",
+       "name": "4.0 TFSI V8 507hp",
+       "fuel": "petrol",
+       "hpStock": 507,
+       "hpTuned": 640,
+       "nmStock": 660,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "536/347",
+       "name": "4.0 TFSi V8 S 528hp",
+       "fuel": "petrol",
+       "hpStock": 528,
+       "hpTuned": 640,
+       "nmStock": 680,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "537/341",
+       "name": "6.0 W12 Bi-Turbo 560hp",
+       "fuel": "petrol",
+       "hpStock": 560,
+       "hpTuned": 680,
+       "nmStock": 650,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "538/342",
+       "name": "6.0 W12 Bi-Turbo 610hp",
+       "fuel": "petrol",
+       "hpStock": 610,
+       "hpTuned": 680,
+       "nmStock": 750,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "539/350",
+       "name": "6.0 W12 Bi-Turbo 630hp",
+       "fuel": "petrol",
+       "hpStock": 630,
+       "hpTuned": 680,
+       "nmStock": 800,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "mulsanne-50",
+   "name": "Mulsanne",
+   "generations": [
+    {
+     "slug": "0-2016",
+     "from": 0,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "6410/351",
+       "name": "6.75 V8 Bi-Turbo 537hp",
+       "fuel": "petrol",
+       "hpStock": 537,
+       "hpTuned": 700,
+       "nmStock": 1100,
+       "nmTuned": 1400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "540/351",
+       "name": "6.75 V8 Bi-Turbo 537hp",
+       "fuel": "petrol",
+       "hpStock": 537,
+       "hpTuned": 700,
+       "nmStock": 1100,
+       "nmTuned": 1400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

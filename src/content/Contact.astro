@@ -1,0 +1,44 @@
+---
+import Base from '@/layouts/Base.astro';
+import Crumbs from '@/components/Crumbs.astro';
+import MapBlock from '@/components/MapBlock.astro';
+import ContactForm from '@/components/ContactForm.astro';
+import { t, routes, type Lang } from '@/i18n';
+import { ldBreadcrumb, ldLocalBusiness } from '@/lib/seo';
+import business from '@/data/business.json';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang); const path = routes.contact[lang];
+const C = lang === 'bg'
+  ? { title: 'Контакти — PDK Tuning, ул. Прилеп 96, Варна', description: `Сервизът на PDK Tuning във Варна: ${business.address.street}, телефон ${business.phoneDisplay}, Viber и WhatsApp, работно време и карта. Форма за запитване с полета за колата.`, h1: 'Контакти', lead: 'Най-бързо е по телефона. Формата е за тези, които пишат вечер — отговаряме сутринта.', how: 'Как да ни намерите', howP: 'Ул. „Прилеп“ е в квартал Приморски (Франга дере), срещу спирка на градския транспорт. Има паркинг пред сервиза. Ако ползвате навигация — търсете „PDK Chip Tuning“.', partners: 'За сервизи партньори', partnersP: 'Качването на файлове, поръчките и историята са в портала. Ако нямате профил — регистрацията е там.' }
+  : { title: 'Contact — PDK Tuning, 96 Prilep St., Varna, Bulgaria', description: `PDK Tuning workshop in Varna: ${business.address.streetEn}, phone ${business.phoneIntl}, Viber, opening hours and map. Enquiry form; file portal for partner workshops.`, h1: 'Contact', lead: 'Local customers: phone is fastest. Partner workshops: the portal. The form is for those who write in the evening — we answer in the morning.', how: 'How to find us', howP: 'Prilep Street is in the Primorski district (Franga dere). Parking in front of the workshop. In navigation apps search for “PDK Chip Tuning”.', partners: 'For partner workshops', partnersP: 'File uploads, orders and history live in the portal. No account yet — registration is there too.' };
+const crumbs = [{ name: d.crumbs.home, path: routes.home[lang] }];
+const ld = { ...ldLocalBusiness(lang), '@type': 'AutoRepair' };
+---
+<Base lang={lang} title={C.title} description={C.description} path={path} current="contact" jsonld={[ldBreadcrumb([...crumbs, { name: d.nav.contact, path }]), { '@context': 'https://schema.org', '@type': 'ContactPage', url: 'https://www.pdktuning.com' + path, mainEntity: ld }]}>
+  <div class="wrap">
+    <Crumbs items={crumbs} current={d.nav.contact} />
+    <p class="kicker">{d.nav.contact}</p>
+    <h1>{C.h1}</h1>
+    <p class="lead">{C.lead}</p>
+  </div>
+  <section class="section"><div class="wrap"><MapBlock lang={lang} /></div></section>
+  <section class="section alt">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <p class="kicker">{d.form.title}</p>
+          <ContactForm lang={lang} id="form-contact" />
+        </div>
+        <div>
+          <p class="kicker">{C.how}</p>
+          <h2>{C.how}</h2>
+          <p>{C.howP}</p>
+          <p class="kicker" style="margin-top:2rem">{C.partners}</p>
+          <p>{C.partnersP}</p>
+          <div class="actions"><a class="btn" href={business.portal.login[lang]} rel="nofollow" data-ev="file_upload_click" data-ev-label="contact">{d.footer.portal}</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

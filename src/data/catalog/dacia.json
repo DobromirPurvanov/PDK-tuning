@@ -1,0 +1,601 @@
+{
+ "slug": "dacia",
+ "name": "Dacia",
+ "logo": "dacia.png",
+ "models": [
+  {
+   "slug": "dokker-185",
+   "name": "Dokker",
+   "generations": [
+    {
+     "slug": "2013-0",
+     "from": 2013,
+     "to": null,
+     "engines": [
+      {
+       "path": "1556/1117",
+       "name": "1.2 TCE 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1557/1118",
+       "name": "1.5 DCI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 110,
+       "nmStock": 190,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "7784/1117",
+       "name": "1.2 TCE 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1558/1119",
+       "name": "1.5 DCI 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 115,
+       "nmStock": 200,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7785/4617",
+       "name": "1.5 DCI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 220,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "duster-186",
+   "name": "Duster",
+   "generations": [
+    {
+     "slug": "2010-2017",
+     "from": 2010,
+     "to": 2017,
+     "engines": [
+      {
+       "path": "1559/1120",
+       "name": "1.2 TCE 125hp",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 140,
+       "nmStock": 205,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1560/1121",
+       "name": "1.5 DCI 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 130,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1561/1122",
+       "name": "1.5 DCI 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 135,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1562/1123",
+       "name": "1.5 DCI 85hp",
+       "fuel": "diesel",
+       "hpStock": 85,
+       "hpTuned": 110,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1563/1118",
+       "name": "1.5 DCI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 110,
+       "nmStock": 190,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1564/1124",
+       "name": "1.6i 16v 105hp",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 113,
+       "nmStock": 148,
+       "nmTuned": 164,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1565/1125",
+       "name": "dCi 110Pk",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "15961/15199",
+       "name": "1.2 TCe 125hp",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 155,
+       "nmStock": 205,
+       "nmTuned": 265,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16237/15200",
+       "name": "1.5 dCi 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "lodgy-187",
+   "name": "Lodgy",
+   "generations": [
+    {
+     "slug": "2012-2017",
+     "from": 2012,
+     "to": 2017,
+     "engines": [
+      {
+       "path": "1566/1117",
+       "name": "1.2 TCE 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1567/1122",
+       "name": "1.5 DCI 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 135,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1568/1118",
+       "name": "1.5 DCI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 110,
+       "nmStock": 190,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "7790/1117",
+       "name": "1.2 TCE 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7791/1122",
+       "name": "1.5 DCI 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 135,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7792/4617",
+       "name": "1.5 DCI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 220,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "logan-188",
+   "name": "Logan",
+   "generations": [
+    {
+     "slug": "2004-2012",
+     "from": 2004,
+     "to": 2012,
+     "engines": [
+      {
+       "path": "1569/1126",
+       "name": "1.2i 16V 75hp",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 85,
+       "nmStock": 107,
+       "nmTuned": 120,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1570/1031",
+       "name": "1.4i 75hp",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 83,
+       "nmStock": 120,
+       "nmTuned": 134,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1571/1127",
+       "name": "1.5 DCI 70hp",
+       "fuel": "diesel",
+       "hpStock": 70,
+       "hpTuned": 90,
+       "nmStock": 160,
+       "nmTuned": 200,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1572/1119",
+       "name": "1.5 DCI 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 115,
+       "nmStock": 200,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1573/1123",
+       "name": "1.5 DCI 85hp",
+       "fuel": "diesel",
+       "hpStock": 85,
+       "hpTuned": 110,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1574/1118",
+       "name": "1.5 DCI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 110,
+       "nmStock": 190,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1575/1128",
+       "name": "1.6i 105hp",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 115,
+       "nmStock": 148,
+       "nmTuned": 165,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1576/1129",
+       "name": "1.6i 87hp",
+       "fuel": "petrol",
+       "hpStock": 87,
+       "hpTuned": 95,
+       "nmStock": 128,
+       "nmTuned": 145,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2013-2015",
+     "from": 2013,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "1577/1130",
+       "name": "0.9 TCE 90hp",
+       "fuel": "petrol",
+       "hpStock": 90,
+       "hpTuned": 107,
+       "nmStock": 135,
+       "nmTuned": 175,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7801/1119",
+       "name": "1.5 DCI 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 115,
+       "nmStock": 200,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7802/4617",
+       "name": "1.5 DCI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 220,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "7806/6998",
+       "name": "0.9 TCE 90hp",
+       "fuel": "petrol",
+       "hpStock": 90,
+       "hpTuned": 110,
+       "nmStock": 140,
+       "nmTuned": 190,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7807/1119",
+       "name": "1.5 DCI 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 115,
+       "nmStock": 200,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7808/4617",
+       "name": "1.5 DCI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 220,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "sandero-189",
+   "name": "Sandero",
+   "generations": [
+    {
+     "slug": "2008-2012",
+     "from": 2008,
+     "to": 2012,
+     "engines": [
+      {
+       "path": "1578/1126",
+       "name": "1.2i 16V 75hp",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 85,
+       "nmStock": 107,
+       "nmTuned": 120,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1579/1031",
+       "name": "1.4i 75hp",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 83,
+       "nmStock": 120,
+       "nmTuned": 134,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1580/1127",
+       "name": "1.5 DCI 70hp",
+       "fuel": "diesel",
+       "hpStock": 70,
+       "hpTuned": 90,
+       "nmStock": 160,
+       "nmTuned": 200,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1581/1119",
+       "name": "1.5 DCI 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 115,
+       "nmStock": 200,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1582/1123",
+       "name": "1.5 DCI 85hp",
+       "fuel": "diesel",
+       "hpStock": 85,
+       "hpTuned": 110,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1583/1118",
+       "name": "1.5 DCI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 110,
+       "nmStock": 190,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1584/1124",
+       "name": "1.6i 16v 105hp",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 113,
+       "nmStock": 148,
+       "nmTuned": 164,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1585/1131",
+       "name": "1.6i 8v 85hp",
+       "fuel": "petrol",
+       "hpStock": 85,
+       "hpTuned": 95,
+       "nmStock": 135,
+       "nmTuned": 150,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2013-2015",
+     "from": 2013,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "1586/1130",
+       "name": "0.9 TCE 90hp",
+       "fuel": "petrol",
+       "hpStock": 90,
+       "hpTuned": 107,
+       "nmStock": 135,
+       "nmTuned": 175,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7804/1119",
+       "name": "1.5 DCI 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 115,
+       "nmStock": 200,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7805/4617",
+       "name": "1.5 DCI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 220,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "15874/1130",
+       "name": "0.9 TCE 90hp",
+       "fuel": "petrol",
+       "hpStock": 90,
+       "hpTuned": 107,
+       "nmStock": 135,
+       "nmTuned": 175,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16245/1119",
+       "name": "1.5 DCI 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 115,
+       "nmStock": 200,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16260/15932",
+       "name": "1.5 DCi 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 200,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

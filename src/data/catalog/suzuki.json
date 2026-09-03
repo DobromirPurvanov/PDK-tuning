@@ -1,0 +1,651 @@
+{
+ "slug": "suzuki",
+ "name": "Suzuki",
+ "logo": "suzuki.png",
+ "models": [
+  {
+   "slug": "baleno-640",
+   "name": "Baleno",
+   "generations": [
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "4919/2959",
+       "name": "1.0 Boosterjet 112hp",
+       "fuel": "petrol",
+       "hpStock": 112,
+       "hpTuned": 130,
+       "nmStock": 170,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4920/2960",
+       "name": "RS 1.0 Turbo 100hp",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 120,
+       "nmStock": 150,
+       "nmTuned": 190,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "grand-vitara-641",
+   "name": "Grand Vitara",
+   "generations": [
+    {
+     "slug": "1999-2005",
+     "from": 1999,
+     "to": 2005,
+     "engines": [
+      {
+       "path": "4921/2961",
+       "name": "2.0 TD 109hp",
+       "fuel": "diesel",
+       "hpStock": 109,
+       "hpTuned": 135,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4922/2962",
+       "name": "2.0 TD 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 205,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4923/2963",
+       "name": "2.0 TDI 109hp",
+       "fuel": "diesel",
+       "hpStock": 109,
+       "hpTuned": 136,
+       "nmStock": 270,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2005-2012",
+     "from": 2005,
+     "to": 2012,
+     "engines": [
+      {
+       "path": "4924/2964",
+       "name": "1.9 DDiS 129hp",
+       "fuel": "diesel",
+       "hpStock": 129,
+       "hpTuned": 165,
+       "nmStock": 300,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4925/2965",
+       "name": "2.4i 169hp",
+       "fuel": "petrol",
+       "hpStock": 169,
+       "hpTuned": 180,
+       "nmStock": 227,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2012-0",
+     "from": 2012,
+     "to": null,
+     "engines": [
+      {
+       "path": "11727/2964",
+       "name": "1.9 DDiS 129hp",
+       "fuel": "diesel",
+       "hpStock": 129,
+       "hpTuned": 165,
+       "nmStock": 300,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11728/2965",
+       "name": "2.4i 169hp",
+       "fuel": "petrol",
+       "hpStock": 169,
+       "hpTuned": 180,
+       "nmStock": 227,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "ignis-642",
+   "name": "Ignis",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "4926/2966",
+       "name": "1.3 DDiS",
+       "fuel": "diesel",
+       "hpStock": 70,
+       "hpTuned": 95,
+       "nmStock": 170,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "jimny-643",
+   "name": "Jimny",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "4927/2967",
+       "name": "1.3i 85hp",
+       "fuel": "petrol",
+       "hpStock": 85,
+       "hpTuned": 95,
+       "nmStock": 110,
+       "nmTuned": 125,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4928/2968",
+       "name": "1.5 D 65hp",
+       "fuel": "diesel",
+       "hpStock": 65,
+       "hpTuned": 85,
+       "nmStock": 160,
+       "nmTuned": 200,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16268/7586",
+       "name": "1.5 DDiS 86hp",
+       "fuel": "diesel",
+       "hpStock": 65,
+       "hpTuned": 85,
+       "nmStock": 160,
+       "nmTuned": 200,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4929/2969",
+       "name": "1.5 DDiS 86hp",
+       "fuel": "diesel",
+       "hpStock": 86,
+       "hpTuned": 105,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "kizashi-644",
+   "name": "Kizashi",
+   "generations": [
+    {
+     "slug": "2010-0",
+     "from": 2010,
+     "to": null,
+     "engines": [
+      {
+       "path": "4930/2970",
+       "name": "2.4i 178hp",
+       "fuel": "petrol",
+       "hpStock": 178,
+       "hpTuned": 190,
+       "nmStock": 230,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "liana-645",
+   "name": "Liana",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "4931/2971",
+       "name": "1.4 DDiS 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 110,
+       "nmStock": 200,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "splash-646",
+   "name": "Splash",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "4932/2972",
+       "name": "1.2i 86hp",
+       "fuel": "petrol",
+       "hpStock": 86,
+       "hpTuned": 92,
+       "nmStock": 114,
+       "nmTuned": 124,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4933/2973",
+       "name": "1.2i 94hp",
+       "fuel": "petrol",
+       "hpStock": 94,
+       "hpTuned": 100,
+       "nmStock": 114,
+       "nmTuned": 124,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4934/2974",
+       "name": "1.3 DDiS 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 95,
+       "nmStock": 190,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "swift-647",
+   "name": "Swift",
+   "generations": [
+    {
+     "slug": "2005-2010",
+     "from": 2005,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "4935/2975",
+       "name": "1.3 DDiS 69hp",
+       "fuel": "diesel",
+       "hpStock": 69,
+       "hpTuned": 90,
+       "nmStock": 170,
+       "nmTuned": 210,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4936/2976",
+       "name": "1.6 Sport 125hp",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 140,
+       "nmStock": 148,
+       "nmTuned": 165,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2011-2016",
+     "from": 2011,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "4937/2977",
+       "name": "1.2i 12v 94hp",
+       "fuel": "petrol",
+       "hpStock": 94,
+       "hpTuned": 100,
+       "nmStock": 118,
+       "nmTuned": 128,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4938/2974",
+       "name": "1.3 DDiS 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 95,
+       "nmStock": 190,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4939/2978",
+       "name": "1.6 VVT S 136hp",
+       "fuel": "petrol",
+       "hpStock": 136,
+       "hpTuned": 150,
+       "nmStock": 160,
+       "nmTuned": 175,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "4940/2979",
+       "name": "1.0 Boosterjet - 112hp",
+       "fuel": "petrol",
+       "hpStock": 112,
+       "hpTuned": 130,
+       "nmStock": 170,
+       "nmTuned": 215,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4941/2980",
+       "name": "1.4 Boosterjet - 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 165,
+       "nmStock": 220,
+       "nmTuned": 280,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "sx4-648",
+   "name": "SX4",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "4942/2981",
+       "name": "1.6 DDiS 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 145,
+       "nmStock": 320,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4943/2982",
+       "name": "1.6 DDiS 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 215,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4944/2983",
+       "name": "1.6i 107hp",
+       "fuel": "petrol",
+       "hpStock": 107,
+       "hpTuned": 117,
+       "nmStock": 145,
+       "nmTuned": 160,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4945/13",
+       "name": "1.6i 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 133,
+       "nmStock": 146,
+       "nmTuned": 165,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4946/2984",
+       "name": "1.9 DDiS 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 280,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4947/2985",
+       "name": "2.0 DDiS 134hp",
+       "fuel": "diesel",
+       "hpStock": 134,
+       "hpTuned": 170,
+       "nmStock": 320,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "sx4-s-cross-649",
+   "name": "SX4 S-Cross",
+   "generations": [
+    {
+     "slug": "2013-0",
+     "from": 2013,
+     "to": null,
+     "engines": [
+      {
+       "path": "11730/7588",
+       "name": "1.0 Boosterjet - 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 130,
+       "nmStock": 170,
+       "nmTuned": 215,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11731/2980",
+       "name": "1.4 Boosterjet - 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 165,
+       "nmStock": 220,
+       "nmTuned": 280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4948/2986",
+       "name": "1.4T Boosterjet - 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 155,
+       "nmStock": 220,
+       "nmTuned": 280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4949/2987",
+       "name": "1.6 DDiS - 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 145,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4950/2988",
+       "name": "1.6i - 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 134,
+       "nmStock": 156,
+       "nmTuned": 170,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "vitara-650",
+   "name": "Vitara",
+   "generations": [
+    {
+     "slug": "2015-2017",
+     "from": 2015,
+     "to": 2017,
+     "engines": [
+      {
+       "path": "4951/2989",
+       "name": "1.4 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 220,
+       "nmTuned": 280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4952/2990",
+       "name": "1.6 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 135,
+       "nmStock": 156,
+       "nmTuned": 186,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4953/2981",
+       "name": "1.6 DDiS 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 145,
+       "nmStock": 320,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2018-0",
+     "from": 2018,
+     "to": null,
+     "engines": [
+      {
+       "path": "4954/2959",
+       "name": "1.0 Boosterjet 112hp",
+       "fuel": "petrol",
+       "hpStock": 112,
+       "hpTuned": 130,
+       "nmStock": 170,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4955/2991",
+       "name": "1.4 Boosterjet 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 165,
+       "nmStock": 220,
+       "nmTuned": 280,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "wagon-r-651",
+   "name": "Wagon R",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "4956/2975",
+       "name": "1.3 DDiS 69hp",
+       "fuel": "diesel",
+       "hpStock": 69,
+       "hpTuned": 90,
+       "nmStock": 170,
+       "nmTuned": 210,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "xl7-652",
+   "name": "XL7",
+   "generations": [
+    {
+     "slug": "2007-2009",
+     "from": 2007,
+     "to": 2009,
+     "engines": [
+      {
+       "path": "4957/923",
+       "name": "3.6 V6 252hp",
+       "fuel": "petrol",
+       "hpStock": 252,
+       "hpTuned": 270,
+       "nmStock": 340,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

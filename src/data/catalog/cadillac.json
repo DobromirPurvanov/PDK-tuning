@@ -1,0 +1,738 @@
+{
+ "slug": "cadillac",
+ "name": "Cadillac",
+ "logo": "cadillac.png",
+ "models": [
+  {
+   "slug": "ats-101",
+   "name": "ATS",
+   "generations": [
+    {
+     "slug": "2013-0",
+     "from": 2013,
+     "to": null,
+     "engines": [
+      {
+       "path": "1085/809",
+       "name": "2.0 Turbo 276hp",
+       "fuel": "petrol",
+       "hpStock": 276,
+       "hpTuned": 315,
+       "nmStock": 353,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1086/810",
+       "name": "2.5i - 202hp",
+       "fuel": "petrol",
+       "hpStock": 202,
+       "hpTuned": 225,
+       "nmStock": 259,
+       "nmTuned": 280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1087/811",
+       "name": "3.6 V6 321hp",
+       "fuel": "petrol",
+       "hpStock": 231,
+       "hpTuned": 250,
+       "nmStock": 358,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "6868/3794",
+       "name": "3.6 V6 321hp",
+       "fuel": "petrol",
+       "hpStock": 321,
+       "hpTuned": 350,
+       "nmStock": 358,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1088/812",
+       "name": "3.6 V6 335hp",
+       "fuel": "petrol",
+       "hpStock": 335,
+       "hpTuned": 350,
+       "nmStock": 386,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1089/813",
+       "name": "3.6 V6 480hp",
+       "fuel": "petrol",
+       "hpStock": 480,
+       "hpTuned": 510,
+       "nmStock": 600,
+       "nmTuned": 660,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "bls-102",
+   "name": "BLS",
+   "generations": [
+    {
+     "slug": "2006-2010",
+     "from": 2006,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "1090/814",
+       "name": "1.9D 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 320,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1091/815",
+       "name": "1.9D 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 210,
+       "nmStock": 400,
+       "nmTuned": 465,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1092/816",
+       "name": "2.0T 175hp",
+       "fuel": "petrol",
+       "hpStock": 175,
+       "hpTuned": 205,
+       "nmStock": 265,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1093/817",
+       "name": "2.0T 210hp",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 240,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "6870/5113",
+       "name": "2.0T 210hp",
+       "fuel": "petrol",
+       "hpStock": 218,
+       "hpTuned": 249,
+       "nmStock": 324,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "ct6-103",
+   "name": "CT6",
+   "generations": [
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "1094/818",
+       "name": "2.0T - 269hp",
+       "fuel": "petrol",
+       "hpStock": 269,
+       "hpTuned": 300,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1095/819",
+       "name": "3.0 V6 - 340hp",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 362,
+       "nmStock": 385,
+       "nmTuned": 413,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1096/820",
+       "name": "3.0T V6 - 409hp",
+       "fuel": "petrol",
+       "hpStock": 409,
+       "hpTuned": 443,
+       "nmStock": 542,
+       "nmTuned": 598,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "cts-104",
+   "name": "CTS",
+   "generations": [
+    {
+     "slug": "2002-2007",
+     "from": 2002,
+     "to": 2007,
+     "engines": [
+      {
+       "path": "1101/825",
+       "name": "2.8 V6 215hp",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 235,
+       "nmStock": 262,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1102/826",
+       "name": "3.2 V6 24V 223hp",
+       "fuel": "petrol",
+       "hpStock": 223,
+       "hpTuned": 243,
+       "nmStock": 298,
+       "nmTuned": 336,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1103/827",
+       "name": "3.6 V6 257hp",
+       "fuel": "petrol",
+       "hpStock": 257,
+       "hpTuned": 270,
+       "nmStock": 340,
+       "nmTuned": 365,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1104/828",
+       "name": "5.7 V8 405hp",
+       "fuel": "petrol",
+       "hpStock": 405,
+       "hpTuned": 430,
+       "nmStock": 533,
+       "nmTuned": 560,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1105/829",
+       "name": "6.0 V8 405hp",
+       "fuel": "petrol",
+       "hpStock": 405,
+       "hpTuned": 425,
+       "nmStock": 536,
+       "nmTuned": 555,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2008-2013",
+     "from": 2008,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "1106/830",
+       "name": "2.8 V6 211hp",
+       "fuel": "petrol",
+       "hpStock": 211,
+       "hpTuned": 228,
+       "nmStock": 246,
+       "nmTuned": 268,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1107/831",
+       "name": "3.0 V6 274hp",
+       "fuel": "petrol",
+       "hpStock": 274,
+       "hpTuned": 301,
+       "nmStock": 302,
+       "nmTuned": 331,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1108/832",
+       "name": "3.6 V6 304hp",
+       "fuel": "petrol",
+       "hpStock": 304,
+       "hpTuned": 325,
+       "nmStock": 370,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1109/833",
+       "name": "6.2 V8 556hp",
+       "fuel": "petrol",
+       "hpStock": 556,
+       "hpTuned": 600,
+       "nmStock": 747,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2014-0",
+     "from": 2014,
+     "to": null,
+     "engines": [
+      {
+       "path": "1097/821",
+       "name": "2.0 Turbo 272hp",
+       "fuel": "petrol",
+       "hpStock": 272,
+       "hpTuned": 300,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1098/822",
+       "name": "3.6 V6 325hp",
+       "fuel": "petrol",
+       "hpStock": 325,
+       "hpTuned": 347,
+       "nmStock": 373,
+       "nmTuned": 399,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1099/823",
+       "name": "3.6 V6 340hp",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 362,
+       "nmStock": 386,
+       "nmTuned": 402,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1100/824",
+       "name": "3.6 V6 426hp",
+       "fuel": "petrol",
+       "hpStock": 426,
+       "hpTuned": 465,
+       "nmStock": 583,
+       "nmTuned": 636,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "dts-105",
+   "name": "DTS",
+   "generations": [
+    {
+     "slug": "2006-2009",
+     "from": 2006,
+     "to": 2009,
+     "engines": [
+      {
+       "path": "1110/777",
+       "name": "3.6 V6 275hp",
+       "fuel": "petrol",
+       "hpStock": 275,
+       "hpTuned": 290,
+       "nmStock": 366,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "escalade-106",
+   "name": "Escalade",
+   "generations": [
+    {
+     "slug": "2002-2006",
+     "from": 2002,
+     "to": 2006,
+     "engines": [
+      {
+       "path": "1111/834",
+       "name": "5.3 V8 295hp",
+       "fuel": "petrol",
+       "hpStock": 295,
+       "hpTuned": 315,
+       "nmStock": 454,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1112/835",
+       "name": "6.0 V8 345hp",
+       "fuel": "petrol",
+       "hpStock": 345,
+       "hpTuned": 365,
+       "nmStock": 515,
+       "nmTuned": 540,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2007-2013",
+     "from": 2007,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "1113/836",
+       "name": "6.2 V8 403hp",
+       "fuel": "petrol",
+       "hpStock": 403,
+       "hpTuned": 425,
+       "nmStock": 565,
+       "nmTuned": 590,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2014-0",
+     "from": 2014,
+     "to": null,
+     "engines": [
+      {
+       "path": "1114/837",
+       "name": "6.2 V8 420hp",
+       "fuel": "petrol",
+       "hpStock": 420,
+       "hpTuned": 440,
+       "nmStock": 623,
+       "nmTuned": 645,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "seville-107",
+   "name": "Seville",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "1115/838",
+       "name": "4.6 STS 305hp",
+       "fuel": "petrol",
+       "hpStock": 305,
+       "hpTuned": 325,
+       "nmStock": 400,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "sls-108",
+   "name": "SLS",
+   "generations": [
+    {
+     "slug": "0-2012",
+     "from": 0,
+     "to": 2012,
+     "engines": [
+      {
+       "path": "6873/839",
+       "name": "2.0 Turbo 270hp",
+       "fuel": "petrol",
+       "hpStock": 270,
+       "hpTuned": 315,
+       "nmStock": 360,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "3273/2151",
+       "name": "6.2 V8 AMG 571hp",
+       "fuel": "petrol",
+       "hpStock": 571,
+       "hpTuned": 595,
+       "nmStock": 650,
+       "nmTuned": 670,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2012-0",
+     "from": 2012,
+     "to": null,
+     "engines": [
+      {
+       "path": "1116/839",
+       "name": "2.0 Turbo 270hp",
+       "fuel": "petrol",
+       "hpStock": 270,
+       "hpTuned": 315,
+       "nmStock": 360,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "srx-109",
+   "name": "SRX",
+   "generations": [
+    {
+     "slug": "2004-2009",
+     "from": 2004,
+     "to": 2009,
+     "engines": [
+      {
+       "path": "1117/840",
+       "name": "3.6 V6 255hp",
+       "fuel": "petrol",
+       "hpStock": 255,
+       "hpTuned": 275,
+       "nmStock": 344,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1118/841",
+       "name": "4.6 V8 320hp",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 340,
+       "nmStock": 427,
+       "nmTuned": 445,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2010-2016",
+     "from": 2010,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "1119/842",
+       "name": "3.0 V6 265hp",
+       "fuel": "petrol",
+       "hpStock": 265,
+       "hpTuned": 285,
+       "nmStock": 302,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1120/843",
+       "name": "3.6 V6 308hp",
+       "fuel": "petrol",
+       "hpStock": 308,
+       "hpTuned": 328,
+       "nmStock": 359,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "sts-110",
+   "name": "STS",
+   "generations": [
+    {
+     "slug": "2006-2010",
+     "from": 2006,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "1121/840",
+       "name": "3.6 V6 255hp",
+       "fuel": "petrol",
+       "hpStock": 255,
+       "hpTuned": 275,
+       "nmStock": 344,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1122/844",
+       "name": "4.4 V8 469hp",
+       "fuel": "petrol",
+       "hpStock": 469,
+       "hpTuned": 500,
+       "nmStock": 595,
+       "nmTuned": 680,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1123/841",
+       "name": "4.6 V8 320hp",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 340,
+       "nmStock": 427,
+       "nmTuned": 445,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "xlr-111",
+   "name": "XLR",
+   "generations": [
+    {
+     "slug": "2006-2009",
+     "from": 2006,
+     "to": 2009,
+     "engines": [
+      {
+       "path": "1124/845",
+       "name": "4.4 Supercharged V8 443hp",
+       "fuel": "petrol",
+       "hpStock": 443,
+       "hpTuned": 480,
+       "nmStock": 561,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1125/846",
+       "name": "4.6 V8 326hp",
+       "fuel": "petrol",
+       "hpStock": 326,
+       "hpTuned": 346,
+       "nmStock": 423,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "xt4-777",
+   "name": "XT4",
+   "generations": [
+    {
+     "slug": "2019-0",
+     "from": 2019,
+     "to": null,
+     "engines": [
+      {
+       "path": "6875/1808",
+       "name": "2.0 Turbo - 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "xt5-112",
+   "name": "XT5",
+   "generations": [
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "6876/3798",
+       "name": "2.0T 261hp",
+       "fuel": "petrol",
+       "hpStock": 261,
+       "hpTuned": 300,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1126/779",
+       "name": "3.6 V6 310hp",
+       "fuel": "petrol",
+       "hpStock": 310,
+       "hpTuned": 332,
+       "nmStock": 361,
+       "nmTuned": 394,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "xts-113",
+   "name": "XTS",
+   "generations": [
+    {
+     "slug": "2013-2016",
+     "from": 2013,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "1127/832",
+       "name": "3.6 V6 304hp",
+       "fuel": "petrol",
+       "hpStock": 304,
+       "hpTuned": 325,
+       "nmStock": 370,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1128/847",
+       "name": "3.6 V6 Twin Turbo 420hp",
+       "fuel": "petrol",
+       "hpStock": 420,
+       "hpTuned": 480,
+       "nmStock": 583,
+       "nmTuned": 680,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

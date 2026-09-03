@@ -1,0 +1,56 @@
+---
+import { t, routes, otherLang, servicePath, type Lang } from '@/i18n';
+import business from '@/data/business.json';
+import { SERVICES } from '@/data/services';
+import { icons } from '@/lib/icons';
+interface Props { lang: Lang; altPath: string; current?: string }
+const { lang, altPath, current } = Astro.props;
+const d = t(lang);
+const items: { key: string; label: string; href: string; children?: { label: string; href: string }[] }[] = [
+  { key: 'chipTuning', label: d.nav.chipTuning, href: routes.chipTuning[lang] },
+  { key: 'services', label: d.nav.services, href: routes.services[lang], children: SERVICES.map((s) => ({ label: s.name[lang], href: servicePath(lang, s.slug) })) },
+  { key: 'catalog', label: d.nav.catalog, href: routes.home[lang] + '#kalkulator' },
+  { key: 'dyno', label: d.nav.dyno, href: routes.dyno[lang] },
+  { key: 'prices', label: d.nav.prices, href: routes.prices[lang] },
+  { key: 'about', label: d.nav.about, href: routes.about[lang] },
+  { key: 'contact', label: d.nav.contact, href: routes.contact[lang] },
+];
+const other = otherLang(lang);
+---
+<header class="hdr">
+  <div class="wrap">
+    <a class="logo" href={routes.home[lang]} aria-label={business.name}><img src="/pdk-logo.jpg" alt="" width="36" height="36">PDK <span>TUNING</span></a>
+    <nav class="nav" aria-label={d.nav.menu}>
+      <ul>
+        {items.map((it) => it.children ? (
+          <li class:list={['dd', { cur: current === it.key }]}>
+            <a href={it.href} aria-current={current === it.key ? 'page' : undefined}>{it.label} ▾</a>
+            <ul>{it.children.map((c) => <li><a href={c.href}>{c.label}</a></li>)}</ul>
+          </li>
+        ) : (
+          <li><a href={it.href} aria-current={current === it.key ? 'page' : undefined}>{it.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+    <div class="right">
+      <a class="btn sm tel" href={`tel:${business.phone}`} data-ev="tel_click" data-ev-label="header"><Fragment set:html={icons.phone} />{business.phoneDisplay}</a>
+      <a class="tel-ic" href={`tel:${business.phone}`} aria-label={`${d.nav.call} ${business.phoneDisplay}`} data-ev="tel_click" data-ev-label="header-icon"><Fragment set:html={icons.phone} /></a>
+      <a class="btn sm ghost tel up" href={business.portal.login[lang]} data-ev="file_upload_click" data-ev-label="header" rel="nofollow">{d.nav.upload}</a>
+      <a class="lang" href={altPath} hreflang={other} lang={other} title={d.otherLang.title}>{d.otherLang.label}</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mnav" aria-label={d.nav.menu}><Fragment set:html={icons.menu} /></button>
+    </div>
+  </div>
+  <nav class="mnav" id="mnav" aria-label={d.nav.menu}>
+    <ul>
+      {items.map((it) => (
+        <li>
+          <a href={it.href}>{it.label}</a>
+          {it.children && <ul>{it.children.map((c) => <li><a href={c.href}>{c.label}</a></li>)}</ul>}
+        </li>
+      ))}
+      <li><a href={routes.faq[lang]}>{d.nav.faq}</a></li>
+      <li><a href={business.portal.login[lang]} data-ev="file_upload_click" data-ev-label="menu" rel="nofollow">{d.nav.upload} · {d.nav.login}</a></li>
+    </ul>
+  </nav>
+</header>
+<script is:inline set:html={`(function(){var b=document.querySelector('.burger'),m=document.getElementById('mnav');if(!b||!m)return;b.addEventListener('click',function(){var o=m.hasAttribute('data-open');if(o){m.removeAttribute('data-open');b.setAttribute('aria-expanded','false');}else{m.setAttribute('data-open','');b.setAttribute('aria-expanded','true');}});})();`} />

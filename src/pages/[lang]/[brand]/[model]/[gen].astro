@@ -1,0 +1,72 @@
+---
+import Base from '@/layouts/Base.astro';
+import Crumbs from '@/components/Crumbs.astro';
+import ServiceTiles from '@/components/ServiceTiles.astro';
+import Readout from '@/components/Readout.astro';
+import { LANGS, t, routes, years, type Lang } from '@/i18n';
+import { brands, topGains, dominantFuel, servicesForFuel, hpGain, hpPct, engineLabel, modelPath, genPath, enginePath, brandPath } from '@/lib/catalog';
+import { titles, descriptions, ldBreadcrumb, ldCollection } from '@/lib/seo';
+import { fuelName } from '@/lib/text';
+import business from '@/data/business.json';
+export function getStaticPaths() { return LANGS.flatMap((lang) => brands.flatMap((b) => b.models.flatMap((m) => m.generations.map((g) => ({ params: { lang, brand: b.slug, model: m.slug, gen: g.slug }, props: { b, m, g } }))))); }
+const lang = Astro.params.lang as Lang; const { b, m, g } = Astro.props;
+const d = t(lang);
+const best = topGains(g.engines, 1)[0]; const fuel = dominantFuel(g.engines); const y = years(g.from, g.to, lang);
+const path = genPath(lang, b, m, g);
+const crumbs = [{ name: d.crumbs.catalog, path: routes.home[lang] }, { name: b.name, path: brandPath(lang, b) }, { name: m.name, path: modelPath(lang, b, m) }];
+const title = titles.gen(lang, b, m, g), description = descriptions.gen(lang, b, m, g);
+const others = m.generations.filter((x) => x !== g);
+---
+<Base lang={lang} title={title} description={description} path={path} current="catalog" jsonld={[ldBreadcrumb([...crumbs, { name: y, path }]), ldCollection(lang, title, path, g.engines.length)]}>
+  <div class="wrap">
+    <Crumbs items={crumbs} current={y} />
+    <p class="kicker">{b.name} {m.name} · {d.catalog.engineCount(g.engines.length)}</p>
+    <h1>{d.catalog.genH1(b.name, m.name, y)}</h1>
+    <p class="lead">{lang === 'bg'
+      ? `${g.engines.length} ${g.engines.length === 1 ? 'двигател' : 'двигателя'} в поколението ${y}. Най-печелившият е ${engineLabel(best)}: ${best.hpStock} → ${best.hpTuned} к.с. (+${hpGain(best)} к.с., +${hpPct(best)}%).`
+      : `${g.engines.length} engine${g.engines.length === 1 ? '' : 's'} in the ${y} generation. The best gain is the ${engineLabel(best)}: ${best.hpStock} → ${best.hpTuned} hp (+${hpGain(best)} hp, +${hpPct(best)}%).`}</p>
+    <p>{lang === 'bg'
+      ? `Таблицата долу е с всички двигатели от това поколение на ${b.name} ${m.name}: гориво, мощност и момент преди и след файла, ръст в проценти. Всяко число е измерено на стенда във Варна. Отворете двигателя, за да видите кривата, цената и подходящите услуги.`
+      : `The table lists every engine of this ${b.name} ${m.name} generation: fuel, power and torque stock and tuned, gain in percent. Every figure is dyno-measured in Varna. Open an engine for the curve, the price and the matching services — or upload its file through the portal.`}</p>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="kicker">01 · {d.catalog.allEngines}</p>
+      <h2>{b.name} {m.name} {y}</h2>
+      <div style="overflow-x:auto">
+      <table class="ba">
+        <thead><tr><th>{d.catalog.engine}</th><th>{d.catalog.fuel}</th><th class="num">{d.units.hp} {d.catalog.before}</th><th class="num">{d.units.hp} {d.catalog.after}</th><th class="num">Nm {d.catalog.before}</th><th class="num">Nm {d.catalog.after}</th><th class="num">{d.catalog.gain}</th></tr></thead>
+        <tbody>{g.engines.map((e) => (
+          <tr><td><a href={enginePath(lang, b, m, g, e)}>{engineLabel(e)}</a></td><td>{fuelName(lang, e.fuel)}</td><td class="num">{e.hpStock}</td><td class="num gain">{e.hpTuned}</td><td class="num">{e.nmStock ?? '—'}</td><td class="num gain">{e.nmTuned ?? '—'}</td><td class="num gain">+{hpGain(e)} · +{hpPct(e)}%</td></tr>))}</tbody>
+      </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <p class="kicker">02 · {d.catalog.bestInGen}</p>
+          <h2><a href={enginePath(lang, b, m, g, best)}>{engineLabel(best)}</a></h2>
+          <Readout lang={lang} hpStock={best.hpStock} hpTuned={best.hpTuned} nmStock={best.nmStock} nmTuned={best.nmTuned} />
+          <div class="actions" style="margin-top:1rem"><a class="btn" href={enginePath(lang, b, m, g, best)}>{d.calc.full}</a></div>
+        </div>
+        <div>
+          {others.length > 0 && <><p class="kicker">03 · {d.catalog.otherGens}</p><h2>{b.name} {m.name}</h2>
+          <ul class="brands" style="columns:1">{others.map((x) => <li><a href={genPath(lang, b, m, x)}><span class="mono">{years(x.from, x.to, lang)}</span><span class="c">{d.catalog.engineCount(x.engines.length)}</span></a></li>)}</ul></>}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="kicker">04 · {d.catalog.suitable}</p>
+      <h2>{lang === 'bg' ? 'Заедно с чип тунинга' : 'Alongside the remap'}</h2>
+      <ServiceTiles lang={lang} only={servicesForFuel(fuel)} cols={3} />
+      <div class="actions" style="margin-top:2rem"><a class="btn primary" href={`tel:${business.phone}`} data-ev="tel_click" data-ev-label="generation">{d.cta.book} · {business.phoneDisplay}</a><a class="btn ghost" href={business.portal.login[lang]} rel="nofollow" data-ev="file_upload_click" data-ev-label="generation">{d.cta.upload}</a></div>
+    </div>
+  </section>
+</Base>

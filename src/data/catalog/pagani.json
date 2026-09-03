@@ -1,0 +1,100 @@
+{
+ "slug": "pagani",
+ "name": "Pagani",
+ "logo": "pagani.png",
+ "models": [
+  {
+   "slug": "zonda-1050",
+   "name": "Zonda",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "10660/7115",
+       "name": "C12 - 394hp",
+       "fuel": "petrol",
+       "hpStock": 394,
+       "hpTuned": 420,
+       "nmStock": 570,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10661/7116",
+       "name": "CinQue - 678hp",
+       "fuel": "petrol",
+       "hpStock": 678,
+       "hpTuned": 708,
+       "nmStock": 780,
+       "nmTuned": 810,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10662/7117",
+       "name": "CinQue Roadster - 678hp",
+       "fuel": "petrol",
+       "hpStock": 678,
+       "hpTuned": 708,
+       "nmStock": 780,
+       "nmTuned": 810,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10663/7118",
+       "name": "F \"Fangio\" - 650hp",
+       "fuel": "petrol",
+       "hpStock": 650,
+       "hpTuned": 680,
+       "nmStock": 780,
+       "nmTuned": 810,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10665/7120",
+       "name": "Roadster - 555hp",
+       "fuel": "petrol",
+       "hpStock": 555,
+       "hpTuned": 585,
+       "nmStock": 750,
+       "nmTuned": 850,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10666/7121",
+       "name": "Roadster F - 650hp",
+       "fuel": "petrol",
+       "hpStock": 650,
+       "hpTuned": 680,
+       "nmStock": 780,
+       "nmTuned": 810,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10667/7122",
+       "name": "S 7.3 - 555hp",
+       "fuel": "petrol",
+       "hpStock": 555,
+       "hpTuned": 585,
+       "nmStock": 750,
+       "nmTuned": 850,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10668/7123",
+       "name": "Tricolore - 678hp",
+       "fuel": "petrol",
+       "hpStock": 678,
+       "hpTuned": 708,
+       "nmStock": 780,
+       "nmTuned": 810,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

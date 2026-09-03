@@ -1,0 +1,1237 @@
+{
+ "slug": "mazda",
+ "name": "Mazda",
+ "logo": "mazda.png",
+ "models": [
+  {
+   "slug": "2-411",
+   "name": "2",
+   "generations": [
+    {
+     "slug": "2003-2006",
+     "from": 2003,
+     "to": 2006,
+     "engines": [
+      {
+       "path": "2767/1826",
+       "name": "1.4 CiTD 68hp",
+       "fuel": "petrol",
+       "hpStock": 68,
+       "hpTuned": 92,
+       "nmStock": 160,
+       "nmTuned": 210,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2007-2013",
+     "from": 2007,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "2768/1827",
+       "name": "1.3i 75hp",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 82,
+       "nmStock": 121,
+       "nmTuned": 133,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2769/1828",
+       "name": "1.3i 86hp",
+       "fuel": "petrol",
+       "hpStock": 86,
+       "hpTuned": 91,
+       "nmStock": 121,
+       "nmTuned": 133,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9408/1826",
+       "name": "1.4 CiTD 68hp",
+       "fuel": "petrol",
+       "hpStock": 68,
+       "hpTuned": 92,
+       "nmStock": 160,
+       "nmTuned": 210,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2770/1829",
+       "name": "1.5i 103hp",
+       "fuel": "petrol",
+       "hpStock": 103,
+       "hpTuned": 113,
+       "nmStock": 137,
+       "nmTuned": 150,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2014-0",
+     "from": 2014,
+     "to": null,
+     "engines": [
+      {
+       "path": "2771/1830",
+       "name": "1.5 SkyActiv-D 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 130,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2772/1831",
+       "name": "1.5 Skyactiv-G 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 125,
+       "nmStock": 148,
+       "nmTuned": 158,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2773/1832",
+       "name": "1.5 Skyactiv-G 75hp",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 125,
+       "nmStock": 148,
+       "nmTuned": 158,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2774/1833",
+       "name": "1.5 Skyactiv-G 90hp",
+       "fuel": "petrol",
+       "hpStock": 90,
+       "hpTuned": 125,
+       "nmStock": 148,
+       "nmTuned": 158,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "3-412",
+   "name": "3",
+   "generations": [
+    {
+     "slug": "2003-2009",
+     "from": 2003,
+     "to": 2009,
+     "engines": [
+      {
+       "path": "2775/1834",
+       "name": "1.4i 16v 84hp",
+       "fuel": "petrol",
+       "hpStock": 84,
+       "hpTuned": 90,
+       "nmStock": 122,
+       "nmTuned": 135,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2776/1835",
+       "name": "1.6 CiTD 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 245,
+       "nmTuned": 315,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2777/1836",
+       "name": "1.6 CiTD 90hp",
+       "fuel": "petrol",
+       "hpStock": 90,
+       "hpTuned": 120,
+       "nmStock": 210,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2778/1124",
+       "name": "1.6i 16v 105hp",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 113,
+       "nmStock": 148,
+       "nmTuned": 164,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2779/1837",
+       "name": "2.0 CiTD 143hp",
+       "fuel": "petrol",
+       "hpStock": 143,
+       "hpTuned": 170,
+       "nmStock": 360,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2780/1838",
+       "name": "2.2 CiTD 185hp",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 210,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2781/1839",
+       "name": "MPS 260hp",
+       "fuel": "petrol",
+       "hpStock": 260,
+       "hpTuned": 295,
+       "nmStock": 380,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2009-2013",
+     "from": 2009,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "2782/1840",
+       "name": "1.6 CiTD 109hp",
+       "fuel": "petrol",
+       "hpStock": 109,
+       "hpTuned": 140,
+       "nmStock": 240,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2783/1841",
+       "name": "1.6 CiTD 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2784/1842",
+       "name": "2.2 CITD 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 210,
+       "nmStock": 360,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9410/1838",
+       "name": "2.2 CiTD 185hp",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 210,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2785/1843",
+       "name": "2.3 DISI Turbo MPS",
+       "fuel": "petrol",
+       "hpStock": 260,
+       "hpTuned": 295,
+       "nmStock": 380,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2013-2015",
+     "from": 2013,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "2786/1830",
+       "name": "1.5 SkyActiv-D 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 130,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2787/1844",
+       "name": "2.0 SkyActiv-G - 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 175,
+       "nmStock": 210,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2788/1845",
+       "name": "2.0 SkyActiv-G - 165hp",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 175,
+       "nmStock": 210,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2789/1846",
+       "name": "2.2 SkyActiv-D - 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 210,
+       "nmStock": 380,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-2018",
+     "from": 2016,
+     "to": 2018,
+     "engines": [
+      {
+       "path": "9411/1830",
+       "name": "1.5 SkyActiv-D 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 130,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2790/1847",
+       "name": "1.5 Skyactiv-G 100hp",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 113,
+       "nmStock": 150,
+       "nmTuned": 160,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9412/1844",
+       "name": "2.0 SkyActiv-G - 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 175,
+       "nmStock": 210,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9413/1845",
+       "name": "2.0 SkyActiv-G - 165hp",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 175,
+       "nmStock": 210,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9414/1846",
+       "name": "2.2 SkyActiv-D - 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 210,
+       "nmStock": 380,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2019-0",
+     "from": 2019,
+     "to": null,
+     "engines": [
+      {
+       "path": "9415/6246",
+       "name": "1.8 Skyactiv-D - 116hp",
+       "fuel": "diesel",
+       "hpStock": 116,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9416/6247",
+       "name": "2.0 Skyactiv-G - 122hp",
+       "fuel": "petrol",
+       "hpStock": 122,
+       "hpTuned": 135,
+       "nmStock": 213,
+       "nmTuned": 235,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "5-413",
+   "name": "5",
+   "generations": [
+    {
+     "slug": "2004-0",
+     "from": 2004,
+     "to": null,
+     "engines": [
+      {
+       "path": "2791/1841",
+       "name": "1.6 CiTD 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2792/1848",
+       "name": "2.0 CiTD 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 170,
+       "nmStock": 310,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2793/1837",
+       "name": "2.0 CiTD 143hp",
+       "fuel": "petrol",
+       "hpStock": 143,
+       "hpTuned": 170,
+       "nmStock": 360,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "6-414",
+   "name": "6",
+   "generations": [
+    {
+     "slug": "2003-2008",
+     "from": 2003,
+     "to": 2008,
+     "engines": [
+      {
+       "path": "2794/1849",
+       "name": "1.8i 16v 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 130,
+       "nmStock": 165,
+       "nmTuned": 180,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2795/1850",
+       "name": "2.0 CiTD 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 170,
+       "nmStock": 310,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2796/1851",
+       "name": "2.0 CiTD 121hp",
+       "fuel": "petrol",
+       "hpStock": 121,
+       "hpTuned": 170,
+       "nmStock": 320,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2797/1852",
+       "name": "2.0 CiTD 136hp",
+       "fuel": "petrol",
+       "hpStock": 136,
+       "hpTuned": 170,
+       "nmStock": 310,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2798/1853",
+       "name": "2.0 CiTD 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 330,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2799/1837",
+       "name": "2.0 CiTD 143hp",
+       "fuel": "petrol",
+       "hpStock": 143,
+       "hpTuned": 170,
+       "nmStock": 360,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2800/1843",
+       "name": "2.3 DISI Turbo MPS",
+       "fuel": "petrol",
+       "hpStock": 260,
+       "hpTuned": 295,
+       "nmStock": 380,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2801/1854",
+       "name": "2.5 S-VT 170hp",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 180,
+       "nmStock": 226,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2008-2012",
+     "from": 2008,
+     "to": 2012,
+     "engines": [
+      {
+       "path": "9419/1853",
+       "name": "2.0 CiTD 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 330,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2802/1855",
+       "name": "2.0i 16v 155hp",
+       "fuel": "petrol",
+       "hpStock": 155,
+       "hpTuned": 165,
+       "nmStock": 193,
+       "nmTuned": 208,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2803/1856",
+       "name": "2.2 CiTD 129hp",
+       "fuel": "petrol",
+       "hpStock": 129,
+       "hpTuned": 200,
+       "nmStock": 340,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2804/1857",
+       "name": "2.2 CiTD 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 200,
+       "nmStock": 360,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2805/1858",
+       "name": "2.2 CiTD 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2806/1838",
+       "name": "2.2 CiTD 185hp",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 210,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9420/1843",
+       "name": "2.3 DISI Turbo MPS",
+       "fuel": "petrol",
+       "hpStock": 260,
+       "hpTuned": 295,
+       "nmStock": 380,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9421/1854",
+       "name": "2.5 S-VT 170hp",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 180,
+       "nmStock": 226,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2013-0",
+     "from": 2013,
+     "to": null,
+     "engines": [
+      {
+       "path": "2807/1859",
+       "name": "2.0 SkyActiv-G - 145hp",
+       "fuel": "petrol",
+       "hpStock": 145,
+       "hpTuned": 175,
+       "nmStock": 210,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2808/1845",
+       "name": "2.0 SkyActiv-G - 165hp",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 175,
+       "nmStock": 210,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2809/1846",
+       "name": "2.2 SkyActiv-D - 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 210,
+       "nmStock": 380,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2810/1860",
+       "name": "2.2 SkyActiv-D - 175hp",
+       "fuel": "diesel",
+       "hpStock": 175,
+       "hpTuned": 210,
+       "nmStock": 420,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2811/1861",
+       "name": "2.5 SkyActiv-G - 192hp",
+       "fuel": "petrol",
+       "hpStock": 192,
+       "hpTuned": 205,
+       "nmStock": 256,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "bt-50-415",
+   "name": "BT-50",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2812/1862",
+       "name": "2.5 CiTD 143hp",
+       "fuel": "petrol",
+       "hpStock": 143,
+       "hpTuned": 180,
+       "nmStock": 330,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2813/1477",
+       "name": "3.2 TDCi 200hp",
+       "fuel": "diesel",
+       "hpStock": 200,
+       "hpTuned": 230,
+       "nmStock": 470,
+       "nmTuned": 550,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "cx-3-416",
+   "name": "CX-3",
+   "generations": [
+    {
+     "slug": "2015-2018",
+     "from": 2015,
+     "to": 2018,
+     "engines": [
+      {
+       "path": "2814/1863",
+       "name": "1.5 SkyActiv-D - 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 130,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16929/1844",
+       "name": "2.0 SkyActiv-G - 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 175,
+       "nmStock": 210,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9422/6249",
+       "name": "2.0 Skyactiv-G - 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 175,
+       "nmStock": 204,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17435/15162",
+       "name": "2.5 Skyactiv-G - 192hp",
+       "fuel": "petrol",
+       "hpStock": 192,
+       "hpTuned": 205,
+       "nmStock": 256,
+       "nmTuned": 272,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2018-0",
+     "from": 2018,
+     "to": null,
+     "engines": [
+      {
+       "path": "9423/6250",
+       "name": "1.8 SkyActiv-D 116hp",
+       "fuel": "diesel",
+       "hpStock": 116,
+       "hpTuned": 140,
+       "nmStock": 240,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9424/1864",
+       "name": "2.0 Skyactiv-G 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 175,
+       "nmStock": 210,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9425/1865",
+       "name": "2.0 Skyactiv-G 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 175,
+       "nmStock": 204,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "cx-30-984",
+   "name": "CX-30",
+   "generations": [
+    {
+     "slug": "2019-0",
+     "from": 2019,
+     "to": null,
+     "engines": [
+      {
+       "path": "9417/6246",
+       "name": "1.8 Skyactiv-D - 116hp",
+       "fuel": "diesel",
+       "hpStock": 116,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9418/6247",
+       "name": "2.0 Skyactiv-G - 122hp",
+       "fuel": "petrol",
+       "hpStock": 122,
+       "hpTuned": 135,
+       "nmStock": 213,
+       "nmTuned": 235,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "cx-5-417",
+   "name": "CX-5",
+   "generations": [
+    {
+     "slug": "2012-2016",
+     "from": 2012,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "2818/1859",
+       "name": "2.0 SkyActiv-G - 145hp",
+       "fuel": "petrol",
+       "hpStock": 145,
+       "hpTuned": 175,
+       "nmStock": 210,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2819/1845",
+       "name": "2.0 SkyActiv-G - 165hp",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 175,
+       "nmStock": 210,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2820/1846",
+       "name": "2.2 SkyActiv-D - 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 210,
+       "nmStock": 380,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2821/1860",
+       "name": "2.2 SkyActiv-D - 175hp",
+       "fuel": "diesel",
+       "hpStock": 175,
+       "hpTuned": 210,
+       "nmStock": 420,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2822/1861",
+       "name": "2.5 SkyActiv-G - 192hp",
+       "fuel": "petrol",
+       "hpStock": 192,
+       "hpTuned": 205,
+       "nmStock": 256,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "2823/1867",
+       "name": "2.0 SkyActiv-G - 160hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 175,
+       "nmStock": 208,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9426/1845",
+       "name": "2.0 SkyActiv-G - 165hp",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 175,
+       "nmStock": 210,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9427/1846",
+       "name": "2.2 SkyActiv-D - 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 210,
+       "nmStock": 380,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9428/1860",
+       "name": "2.2 SkyActiv-D - 175hp",
+       "fuel": "diesel",
+       "hpStock": 175,
+       "hpTuned": 210,
+       "nmStock": 420,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9429/6251",
+       "name": "2.5 SkyActiv-G - 194hp",
+       "fuel": "petrol",
+       "hpStock": 194,
+       "hpTuned": 205,
+       "nmStock": 258,
+       "nmTuned": 272,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9430/6252",
+       "name": "2.5 SkyActiv-G - 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 279,
+       "nmStock": 420,
+       "nmTuned": 468,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2022-2024",
+     "from": 2022,
+     "to": 2024,
+     "engines": [
+      {
+       "path": "2836/1878",
+       "name": "2.5 Turbo 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 280,
+       "nmStock": 420,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "cx-7-418",
+   "name": "CX-7",
+   "generations": [
+    {
+     "slug": "2006-2009",
+     "from": 2006,
+     "to": 2009,
+     "engines": [
+      {
+       "path": "2825/1869",
+       "name": "2.3 Turbo MPS 260hp",
+       "fuel": "petrol",
+       "hpStock": 260,
+       "hpTuned": 295,
+       "nmStock": 380,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2009-2012",
+     "from": 2009,
+     "to": 2012,
+     "engines": [
+      {
+       "path": "2826/1870",
+       "name": "2.2 CiTD 173hp",
+       "fuel": "petrol",
+       "hpStock": 173,
+       "hpTuned": 205,
+       "nmStock": 400,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9431/1869",
+       "name": "2.3 Turbo MPS 260hp",
+       "fuel": "petrol",
+       "hpStock": 260,
+       "hpTuned": 295,
+       "nmStock": 380,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "cx-9-419",
+   "name": "CX-9",
+   "generations": [
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "2827/1871",
+       "name": "2.5 SkyActiv-G - 230hp",
+       "fuel": "petrol",
+       "hpStock": 230,
+       "hpTuned": 260,
+       "nmStock": 420,
+       "nmTuned": 492,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "mps-420",
+   "name": "MPS",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2828/1843",
+       "name": "2.3 DISI Turbo MPS",
+       "fuel": "petrol",
+       "hpStock": 260,
+       "hpTuned": 295,
+       "nmStock": 380,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "mpv-421",
+   "name": "MPV",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2829/1852",
+       "name": "2.0 CiTD 136hp",
+       "fuel": "petrol",
+       "hpStock": 136,
+       "hpTuned": 170,
+       "nmStock": 310,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "mx-5-422",
+   "name": "MX-5",
+   "generations": [
+    {
+     "slug": "2005-2009",
+     "from": 2005,
+     "to": 2009,
+     "engines": [
+      {
+       "path": "2830/1872",
+       "name": "1.8i 16v 126hp",
+       "fuel": "petrol",
+       "hpStock": 126,
+       "hpTuned": 136,
+       "nmStock": 167,
+       "nmTuned": 182,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2831/1873",
+       "name": "2.0i 16v 160hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 172,
+       "nmStock": 188,
+       "nmTuned": 203,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2005-2015",
+     "from": 2005,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "9432/1874",
+       "name": "1.5 SkyActiv-G 131hp",
+       "fuel": "petrol",
+       "hpStock": 131,
+       "hpTuned": 141,
+       "nmStock": 150,
+       "nmTuned": 158,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9433/1872",
+       "name": "1.8i 16v 126hp",
+       "fuel": "petrol",
+       "hpStock": 126,
+       "hpTuned": 136,
+       "nmStock": 167,
+       "nmTuned": 182,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9434/1875",
+       "name": "2.0 SkyActiv-G 160hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 175,
+       "nmStock": 200,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9435/1873",
+       "name": "2.0i 16v 160hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 172,
+       "nmStock": 188,
+       "nmTuned": 203,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "2832/1874",
+       "name": "1.5 SkyActiv-G 131hp",
+       "fuel": "petrol",
+       "hpStock": 131,
+       "hpTuned": 141,
+       "nmStock": 150,
+       "nmTuned": 158,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2833/1875",
+       "name": "2.0 SkyActiv-G 160hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 175,
+       "nmStock": 200,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "rx-8-423",
+   "name": "RX-8",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2834/1876",
+       "name": "1.3 192hp",
+       "fuel": "petrol",
+       "hpStock": 192,
+       "hpTuned": 207,
+       "nmStock": 216,
+       "nmTuned": 236,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2835/1877",
+       "name": "1.3 231hp",
+       "fuel": "petrol",
+       "hpStock": 231,
+       "hpTuned": 246,
+       "nmStock": 216,
+       "nmTuned": 236,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

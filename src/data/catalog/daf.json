@@ -1,0 +1,506 @@
+{
+ "slug": "daf",
+ "name": "DAF",
+ "logo": "daf.png",
+ "models": [
+  {
+   "slug": "cf-848",
+   "name": "CF",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7815/4625",
+       "name": "180 5.9L",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 227,
+       "nmStock": 770,
+       "nmTuned": 850,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7816/4626",
+       "name": "220 5.9L",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 260,
+       "nmStock": 820,
+       "nmTuned": 950,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7817/4627",
+       "name": "250",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 950,
+       "nmStock": 950,
+       "nmTuned": 1150,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17801/4628",
+       "name": "310",
+       "fuel": "petrol",
+       "hpStock": 310,
+       "hpTuned": 360,
+       "nmStock": 1275,
+       "nmTuned": 1455,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17836/4629",
+       "name": "340",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 400,
+       "nmStock": 1600,
+       "nmTuned": 1890,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7820/4630",
+       "name": "360",
+       "fuel": "petrol",
+       "hpStock": 360,
+       "hpTuned": 412,
+       "nmStock": 1450,
+       "nmTuned": 1640,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17869/4631",
+       "name": "380",
+       "fuel": "petrol",
+       "hpStock": 380,
+       "hpTuned": 445,
+       "nmStock": 1750,
+       "nmTuned": 2100,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7822/4632",
+       "name": "430",
+       "fuel": "petrol",
+       "hpStock": 430,
+       "hpTuned": 498,
+       "nmStock": 1950,
+       "nmTuned": 2300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17972/4633",
+       "name": "480",
+       "fuel": "petrol",
+       "hpStock": 480,
+       "hpTuned": 560,
+       "nmStock": 2100,
+       "nmTuned": 2490,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7824/4634",
+       "name": "65 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 224,
+       "nmStock": 700,
+       "nmTuned": 820,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7825/4635",
+       "name": "65 220hp",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 260,
+       "nmStock": 820,
+       "nmTuned": 960,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7826/4636",
+       "name": "65 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 950,
+       "nmStock": 950,
+       "nmTuned": 1150,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7827/4637",
+       "name": "75 310hp",
+       "fuel": "petrol",
+       "hpStock": 310,
+       "hpTuned": 355,
+       "nmStock": 1275,
+       "nmTuned": 1455,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7828/4638",
+       "name": "75 360hp",
+       "fuel": "petrol",
+       "hpStock": 360,
+       "hpTuned": 410,
+       "nmStock": 1450,
+       "nmTuned": 1650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7829/4639",
+       "name": "75 380hp",
+       "fuel": "petrol",
+       "hpStock": 380,
+       "hpTuned": 445,
+       "nmStock": 1750,
+       "nmTuned": 2100,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7830/4640",
+       "name": "85 410hp",
+       "fuel": "petrol",
+       "hpStock": 410,
+       "hpTuned": 475,
+       "nmStock": 2000,
+       "nmTuned": 2340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7831/4641",
+       "name": "85 420hp",
+       "fuel": "petrol",
+       "hpStock": 420,
+       "hpTuned": 500,
+       "nmStock": 1950,
+       "nmTuned": 2300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7832/4642",
+       "name": "85 460hp",
+       "fuel": "petrol",
+       "hpStock": 460,
+       "hpTuned": 535,
+       "nmStock": 2300,
+       "nmTuned": 2680,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7833/4643",
+       "name": "85 480hp",
+       "fuel": "petrol",
+       "hpStock": 480,
+       "hpTuned": 560,
+       "nmStock": 2100,
+       "nmTuned": 2490,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "lf-849",
+   "name": "LF",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7834/4644",
+       "name": "45 135hp",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 175,
+       "nmStock": 500,
+       "nmTuned": 620,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7835/4645",
+       "name": "45 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 180,
+       "nmStock": 550,
+       "nmTuned": 665,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7836/4646",
+       "name": "45 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 550,
+       "nmTuned": 670,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7837/4647",
+       "name": "45 160hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 200,
+       "nmStock": 600,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7838/4648",
+       "name": "45 170hp",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 210,
+       "nmStock": 600,
+       "nmTuned": 725,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7839/4649",
+       "name": "45 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 220,
+       "nmStock": 700,
+       "nmTuned": 820,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7840/4650",
+       "name": "45 220hp",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 260,
+       "nmStock": 820,
+       "nmTuned": 945,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7841/4651",
+       "name": "45 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 290,
+       "nmStock": 950,
+       "nmTuned": 1080,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7842/4652",
+       "name": "45 285hp",
+       "fuel": "petrol",
+       "hpStock": 285,
+       "hpTuned": 330,
+       "nmStock": 1020,
+       "nmTuned": 1165,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7843/4653",
+       "name": "55 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 180,
+       "nmStock": 550,
+       "nmTuned": 665,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7844/4654",
+       "name": "55 160hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 200,
+       "nmStock": 600,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7845/4655",
+       "name": "55 170hp",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 210,
+       "nmStock": 600,
+       "nmTuned": 725,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7846/4656",
+       "name": "55 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 700,
+       "nmStock": 700,
+       "nmTuned": 820,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7847/4657",
+       "name": "55 220hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 260,
+       "nmStock": 820,
+       "nmTuned": 945,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7848/4658",
+       "name": "55 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 290,
+       "nmStock": 950,
+       "nmTuned": 1080,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7849/4659",
+       "name": "55 280hp",
+       "fuel": "petrol",
+       "hpStock": 280,
+       "hpTuned": 330,
+       "nmStock": 1020,
+       "nmTuned": 1165,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "xf-2830",
+   "name": "XF",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "16735/4660",
+       "name": "105 410hp",
+       "fuel": "petrol",
+       "hpStock": 410,
+       "hpTuned": 490,
+       "nmStock": 2000,
+       "nmTuned": 2300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16736/4661",
+       "name": "105 460hp",
+       "fuel": "petrol",
+       "hpStock": 460,
+       "hpTuned": 540,
+       "nmStock": 2300,
+       "nmTuned": 2600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16737/4662",
+       "name": "105 510hp",
+       "fuel": "petrol",
+       "hpStock": 510,
+       "hpTuned": 590,
+       "nmStock": 2500,
+       "nmTuned": 2800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17872/4663",
+       "name": "381 381hp",
+       "fuel": "petrol",
+       "hpStock": 381,
+       "hpTuned": 455,
+       "nmStock": 1750,
+       "nmTuned": 2050,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17949/4664",
+       "name": "430 428hp",
+       "fuel": "petrol",
+       "hpStock": 428,
+       "hpTuned": 490,
+       "nmStock": 1950,
+       "nmTuned": 2300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17974/4665",
+       "name": "480 480hp",
+       "fuel": "petrol",
+       "hpStock": 480,
+       "hpTuned": 557,
+       "nmStock": 2100,
+       "nmTuned": 2480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18023/4666",
+       "name": "530 530hp",
+       "fuel": "petrol",
+       "hpStock": 530,
+       "hpTuned": 605,
+       "nmStock": 2350,
+       "nmTuned": 2800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18103/4667",
+       "name": "95 380hp",
+       "fuel": "petrol",
+       "hpStock": 380,
+       "hpTuned": 465,
+       "nmStock": 1750,
+       "nmTuned": 2050,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18104/4668",
+       "name": "95 430hp",
+       "fuel": "petrol",
+       "hpStock": 430,
+       "hpTuned": 490,
+       "nmStock": 1950,
+       "nmTuned": 2250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18105/4669",
+       "name": "95 480hp",
+       "fuel": "petrol",
+       "hpStock": 480,
+       "hpTuned": 555,
+       "nmStock": 2100,
+       "nmTuned": 2490,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18106/4670",
+       "name": "95 530hp",
+       "fuel": "petrol",
+       "hpStock": 530,
+       "hpTuned": 610,
+       "nmStock": 2350,
+       "nmTuned": 2830,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

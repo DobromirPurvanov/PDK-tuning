@@ -1,0 +1,1906 @@
+{
+ "slug": "caterpillar",
+ "name": "Caterpillar",
+ "logo": "caterpillar.png",
+ "models": [
+  {
+   "slug": "3126b-799",
+   "name": "3126B",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7085/4054",
+       "name": "3126B - 7.2 - 193 pk - 705 Nm",
+       "fuel": "petrol",
+       "hpStock": 193,
+       "hpTuned": 235,
+       "nmStock": 705,
+       "nmTuned": 850,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7086/4055",
+       "name": "3126B - 7.2 - 214 pk - 705 Nm",
+       "fuel": "petrol",
+       "hpStock": 214,
+       "hpTuned": 260,
+       "nmStock": 705,
+       "nmTuned": 850,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7087/4056",
+       "name": "3126B - 7.2 - 214 pk - 820 Nm",
+       "fuel": "petrol",
+       "hpStock": 214,
+       "hpTuned": 260,
+       "nmStock": 820,
+       "nmTuned": 988,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7088/4057",
+       "name": "3126B - 7.2 - 234 pk - 832 Nm",
+       "fuel": "petrol",
+       "hpStock": 234,
+       "hpTuned": 285,
+       "nmStock": 832,
+       "nmTuned": 1050,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7089/4058",
+       "name": "3126B - 7.2 - 234 pk - 895 Nm",
+       "fuel": "petrol",
+       "hpStock": 234,
+       "hpTuned": 290,
+       "nmStock": 895,
+       "nmTuned": 1090,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7090/4059",
+       "name": "3126B - 7.2 - 253 pk - 1085 Nm",
+       "fuel": "petrol",
+       "hpStock": 253,
+       "hpTuned": 310,
+       "nmStock": 1085,
+       "nmTuned": 1302,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7091/4060",
+       "name": "3126B - 7.2 - 253 pk - 895 Nm",
+       "fuel": "petrol",
+       "hpStock": 253,
+       "hpTuned": 310,
+       "nmStock": 895,
+       "nmTuned": 1090,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7092/4061",
+       "name": "3126B - 7.2 - 279 pk - 1085 Nm",
+       "fuel": "petrol",
+       "hpStock": 279,
+       "hpTuned": 340,
+       "nmStock": 1085,
+       "nmTuned": 1350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7093/4062",
+       "name": "3126B - 7.2 - 279 pk - 1166 Nm",
+       "fuel": "petrol",
+       "hpStock": 279,
+       "hpTuned": 350,
+       "nmStock": 1166,
+       "nmTuned": 1450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7094/4063",
+       "name": "3126B - 7.2 - 305 pk - 1085 Nm",
+       "fuel": "petrol",
+       "hpStock": 305,
+       "hpTuned": 355,
+       "nmStock": 1085,
+       "nmTuned": 1350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7095/4064",
+       "name": "3126B - 7.2 - 305 pk - 1166 Nm",
+       "fuel": "petrol",
+       "hpStock": 305,
+       "hpTuned": 355,
+       "nmStock": 1166,
+       "nmTuned": 1450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7096/4065",
+       "name": "3126B - 7.2 - 335 pk - 1166 Nm",
+       "fuel": "petrol",
+       "hpStock": 335,
+       "hpTuned": 420,
+       "nmStock": 1166,
+       "nmTuned": 1450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "3126e-800",
+   "name": "3126E",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7097/4066",
+       "name": "3126E - 7.2 - 193 pk",
+       "fuel": "petrol",
+       "hpStock": 193,
+       "hpTuned": 240,
+       "nmStock": 705,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7098/4067",
+       "name": "3126E - 7.2 - 193 pk - 820 Nm",
+       "fuel": "petrol",
+       "hpStock": 193,
+       "hpTuned": 260,
+       "nmStock": 820,
+       "nmTuned": 1010,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7099/4068",
+       "name": "3126E - 7.2 - 214 pk",
+       "fuel": "petrol",
+       "hpStock": 214,
+       "hpTuned": 260,
+       "nmStock": 705,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7100/4069",
+       "name": "3126E - 7.2 - 214 pk - 821 Nm",
+       "fuel": "petrol",
+       "hpStock": 214,
+       "hpTuned": 260,
+       "nmStock": 821,
+       "nmTuned": 1020,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7101/4070",
+       "name": "3126E - 7.2 - 234 pk",
+       "fuel": "petrol",
+       "hpStock": 234,
+       "hpTuned": 285,
+       "nmStock": 732,
+       "nmTuned": 920,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7102/4071",
+       "name": "3126E - 7.2 - 234 pk - 896 Nm",
+       "fuel": "petrol",
+       "hpStock": 234,
+       "hpTuned": 285,
+       "nmStock": 896,
+       "nmTuned": 1090,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7103/4072",
+       "name": "3126E - 7.2 - 253 pk",
+       "fuel": "petrol",
+       "hpStock": 253,
+       "hpTuned": 310,
+       "nmStock": 895,
+       "nmTuned": 1090,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7104/4073",
+       "name": "3126E - 7.2 - 253 pk - 1086 Nm",
+       "fuel": "petrol",
+       "hpStock": 253,
+       "hpTuned": 310,
+       "nmStock": 1086,
+       "nmTuned": 1340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7105/4074",
+       "name": "3126E - 7.2 - 279 pk",
+       "fuel": "petrol",
+       "hpStock": 279,
+       "hpTuned": 345,
+       "nmStock": 1085,
+       "nmTuned": 1341,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7106/4075",
+       "name": "3126E - 7.2 - 279 pk - 1167 Nm",
+       "fuel": "petrol",
+       "hpStock": 279,
+       "hpTuned": 345,
+       "nmStock": 1167,
+       "nmTuned": 1450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7107/4076",
+       "name": "3126E - 7.2 - 305 pk",
+       "fuel": "petrol",
+       "hpStock": 305,
+       "hpTuned": 370,
+       "nmStock": 1085,
+       "nmTuned": 1350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7108/4077",
+       "name": "3126E - 7.2 - 305 pk - 1167 Nm",
+       "fuel": "petrol",
+       "hpStock": 305,
+       "hpTuned": 370,
+       "nmStock": 1167,
+       "nmTuned": 1450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7109/4078",
+       "name": "3126E - 7.2 - 335 pk - 1167 Nm",
+       "fuel": "petrol",
+       "hpStock": 335,
+       "hpTuned": 410,
+       "nmStock": 1167,
+       "nmTuned": 1450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "3406e-801",
+   "name": "3406E",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7110/4079",
+       "name": "3406E - 14.6 - 360 pk - 1836 Nm",
+       "fuel": "petrol",
+       "hpStock": 360,
+       "hpTuned": 440,
+       "nmStock": 1836,
+       "nmTuned": 2250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7111/4080",
+       "name": "3406E - 14.6 - 360 pk - 1972 Nm",
+       "fuel": "petrol",
+       "hpStock": 360,
+       "hpTuned": 440,
+       "nmStock": 1972,
+       "nmTuned": 2380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7112/4081",
+       "name": "3406E - 14.6 - 381 pk - 1972 Nm",
+       "fuel": "petrol",
+       "hpStock": 381,
+       "hpTuned": 465,
+       "nmStock": 1972,
+       "nmTuned": 2380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7113/4082",
+       "name": "3406E - 14.6 - 381 pk - 2108 Nm",
+       "fuel": "petrol",
+       "hpStock": 381,
+       "hpTuned": 465,
+       "nmStock": 2108,
+       "nmTuned": 2650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7114/4083",
+       "name": "3406E - 14.6 - 441 pk - 2108 Nm",
+       "fuel": "petrol",
+       "hpStock": 441,
+       "hpTuned": 565,
+       "nmStock": 2108,
+       "nmTuned": 2650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7115/4084",
+       "name": "3406E - 14.6 - 441 pk - 2244 Nm",
+       "fuel": "petrol",
+       "hpStock": 441,
+       "hpTuned": 540,
+       "nmStock": 2244,
+       "nmTuned": 2750,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7116/4085",
+       "name": "3406E - 14.6 - 441 pk - 2380 Nm",
+       "fuel": "petrol",
+       "hpStock": 441,
+       "hpTuned": 520,
+       "nmStock": 2380,
+       "nmTuned": 2650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7117/4086",
+       "name": "3406E - 14.6 - 481 pk - 2244 Nm",
+       "fuel": "petrol",
+       "hpStock": 481,
+       "hpTuned": 590,
+       "nmStock": 2244,
+       "nmTuned": 2750,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7118/4087",
+       "name": "3406E - 14.6 - 481 pk - 2380 Nm",
+       "fuel": "petrol",
+       "hpStock": 481,
+       "hpTuned": 570,
+       "nmStock": 2380,
+       "nmTuned": 2700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7119/4088",
+       "name": "3406E - 14.6 - 481 pk - 2516 Nm",
+       "fuel": "petrol",
+       "hpStock": 481,
+       "hpTuned": 580,
+       "nmStock": 2516,
+       "nmTuned": 3000,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7120/4089",
+       "name": "3406E - 14.6 - 507 pk - 2380 Nm",
+       "fuel": "petrol",
+       "hpStock": 507,
+       "hpTuned": 590,
+       "nmStock": 2380,
+       "nmTuned": 2700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7121/4090",
+       "name": "3406E - 14.6 - 507 pk - 2516 Nm",
+       "fuel": "petrol",
+       "hpStock": 507,
+       "hpTuned": 590,
+       "nmStock": 2516,
+       "nmTuned": 3000,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7122/4091",
+       "name": "3406E - 14.6 - 558 pk - 2516 Nm",
+       "fuel": "petrol",
+       "hpStock": 558,
+       "hpTuned": 610,
+       "nmStock": 2516,
+       "nmTuned": 3000,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c10ohe-802",
+   "name": "C10OHE",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7123/4092",
+       "name": "C10OHE - 10.3 - 305 PK - 1050Nm",
+       "fuel": "petrol",
+       "hpStock": 305,
+       "hpTuned": 370,
+       "nmStock": 1050,
+       "nmTuned": 1280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7124/4093",
+       "name": "C10OHE - 10.3 - 305 PK - 1250Nm",
+       "fuel": "petrol",
+       "hpStock": 305,
+       "hpTuned": 410,
+       "nmStock": 1250,
+       "nmTuned": 1520,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c11ohe-803",
+   "name": "C11OHE",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7125/4094",
+       "name": "C11OHE - 11.1 - 310 PK - 1424 Nm",
+       "fuel": "petrol",
+       "hpStock": 310,
+       "hpTuned": 370,
+       "nmStock": 1424,
+       "nmTuned": 1700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7126/4095",
+       "name": "C11OHE - 11.1 - 340 PK - 1695 Nm",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 400,
+       "nmStock": 1695,
+       "nmTuned": 1980,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7127/4096",
+       "name": "C11OHE - 11.1 - 355 PK - 1830 Nm",
+       "fuel": "petrol",
+       "hpStock": 355,
+       "hpTuned": 410,
+       "nmStock": 1830,
+       "nmTuned": 2150,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7128/4097",
+       "name": "C11OHE - 11.1 - 355 PK - 1966 Nm",
+       "fuel": "petrol",
+       "hpStock": 355,
+       "hpTuned": 410,
+       "nmStock": 1966,
+       "nmTuned": 2250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7129/4098",
+       "name": "C11OHE - 11.1 - 375 PK - 1830 Nm",
+       "fuel": "petrol",
+       "hpStock": 375,
+       "hpTuned": 425,
+       "nmStock": 1830,
+       "nmTuned": 2180,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7130/4099",
+       "name": "C11OHE - 11.1 - 375 PK - 1966 Nm",
+       "fuel": "petrol",
+       "hpStock": 375,
+       "hpTuned": 430,
+       "nmStock": 1966,
+       "nmTuned": 2300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c12ohe-804",
+   "name": "C12OHE",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7131/4100",
+       "name": "C12OHE - 12.0 - 335 pk - 1350 Nm",
+       "fuel": "petrol",
+       "hpStock": 335,
+       "hpTuned": 395,
+       "nmStock": 1350,
+       "nmTuned": 1600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7132/4101",
+       "name": "C12OHE - 12.0 - 355 pk - 1350 Nm",
+       "fuel": "petrol",
+       "hpStock": 355,
+       "hpTuned": 400,
+       "nmStock": 1350,
+       "nmTuned": 1600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7133/4102",
+       "name": "C12OHE - 12.0 - 379 pk - 1450 Nm",
+       "fuel": "petrol",
+       "hpStock": 379,
+       "hpTuned": 430,
+       "nmStock": 1450,
+       "nmTuned": 1650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7134/4103",
+       "name": "C12OHE - 12.0 - 409 pk - 1450 Nm",
+       "fuel": "petrol",
+       "hpStock": 409,
+       "hpTuned": 470,
+       "nmStock": 1450,
+       "nmTuned": 1650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7135/4104",
+       "name": "C12OHE - 12.0 - 426 pk - 1550 Nm",
+       "fuel": "petrol",
+       "hpStock": 426,
+       "hpTuned": 485,
+       "nmStock": 1550,
+       "nmTuned": 1800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7136/4105",
+       "name": "C12OHE - 12.0 - 430 pk - 1550 Nm",
+       "fuel": "petrol",
+       "hpStock": 430,
+       "hpTuned": 500,
+       "nmStock": 1550,
+       "nmTuned": 1830,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7137/4106",
+       "name": "C12OHE - 12.0 - 456 pk - 1550 Nm",
+       "fuel": "petrol",
+       "hpStock": 456,
+       "hpTuned": 510,
+       "nmStock": 1550,
+       "nmTuned": 1830,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7138/4107",
+       "name": "C12OHE - 12.0 - 505 pk - 1550 Nm",
+       "fuel": "petrol",
+       "hpStock": 505,
+       "hpTuned": 570,
+       "nmStock": 1550,
+       "nmTuned": 1830,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c13ohe-805",
+   "name": "C13OHE",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7139/4108",
+       "name": "C13OHE - 12.5 - 309 pk - DPF - 1559 Nm",
+       "fuel": "petrol",
+       "hpStock": 309,
+       "hpTuned": 370,
+       "nmStock": 1559,
+       "nmTuned": 1800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7140/4109",
+       "name": "C13OHE - 12.5 - 340 pk - 2102 Nm",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 400,
+       "nmStock": 2102,
+       "nmTuned": 2350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7141/4110",
+       "name": "C13OHE - 12.5 - 340 pk - DPF - 1659 Nm",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 410,
+       "nmStock": 1695,
+       "nmTuned": 2050,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7142/4111",
+       "name": "C13OHE - 12.5 - 355 pk - DPF - 1830 Nm",
+       "fuel": "petrol",
+       "hpStock": 355,
+       "hpTuned": 420,
+       "nmStock": 1830,
+       "nmTuned": 2100,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7143/4112",
+       "name": "C13OHE - 12.5 - 375 pk - DPF - 1830 Nm",
+       "fuel": "petrol",
+       "hpStock": 375,
+       "hpTuned": 430,
+       "nmStock": 1830,
+       "nmTuned": 2150,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7144/4113",
+       "name": "C13OHE - 12.5 - 385 pk - 1966 Nm",
+       "fuel": "petrol",
+       "hpStock": 385,
+       "hpTuned": 455,
+       "nmStock": 1966,
+       "nmTuned": 2300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7145/4114",
+       "name": "C13OHE - 12.5 - 385 pk - DPF - 1966 Nm",
+       "fuel": "petrol",
+       "hpStock": 385,
+       "hpTuned": 455,
+       "nmStock": 1966,
+       "nmTuned": 2300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7146/4115",
+       "name": "C13OHE - 12.5 - 416 pk - 1966 Nm",
+       "fuel": "petrol",
+       "hpStock": 416,
+       "hpTuned": 480,
+       "nmStock": 1966,
+       "nmTuned": 2350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7147/4116",
+       "name": "C13OHE - 12.5 - 416 pk - DPF - 1966 Nm",
+       "fuel": "petrol",
+       "hpStock": 416,
+       "hpTuned": 480,
+       "nmStock": 1966,
+       "nmTuned": 2350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7148/4117",
+       "name": "C13OHE - 12.5 - 428 pk - DPF - 2237 Nm",
+       "fuel": "petrol",
+       "hpStock": 428,
+       "hpTuned": 500,
+       "nmStock": 2237,
+       "nmTuned": 2550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7149/4118",
+       "name": "C13OHE - 12.5 - 437 pk - 2102 Nm",
+       "fuel": "petrol",
+       "hpStock": 437,
+       "hpTuned": 510,
+       "nmStock": 2102,
+       "nmTuned": 2400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7150/4119",
+       "name": "C13OHE - 12.5 - 437 pk - 2237 Nm",
+       "fuel": "petrol",
+       "hpStock": 437,
+       "hpTuned": 510,
+       "nmStock": 2237,
+       "nmTuned": 2510,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7151/4120",
+       "name": "C13OHE - 12.5 - 437 pk - 2373 Nm",
+       "fuel": "petrol",
+       "hpStock": 437,
+       "hpTuned": 510,
+       "nmStock": 2373,
+       "nmTuned": 2510,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7152/4121",
+       "name": "C13OHE - 12.5 - 437 pk - DPF - 2102 Nm",
+       "fuel": "petrol",
+       "hpStock": 437,
+       "hpTuned": 510,
+       "nmStock": 2102,
+       "nmTuned": 2400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7153/4122",
+       "name": "C13OHE - 12.5 - 476 pk - 2102 Nm",
+       "fuel": "petrol",
+       "hpStock": 476,
+       "hpTuned": 530,
+       "nmStock": 2102,
+       "nmTuned": 2400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7154/4123",
+       "name": "C13OHE - 12.5 - 476 pk - 2237 Nm",
+       "fuel": "petrol",
+       "hpStock": 476,
+       "hpTuned": 560,
+       "nmStock": 2237,
+       "nmTuned": 2580,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7155/4124",
+       "name": "C13OHE - 12.5 - 476 pk - DPF - 2102 Nm",
+       "fuel": "petrol",
+       "hpStock": 476,
+       "hpTuned": 530,
+       "nmStock": 2102,
+       "nmTuned": 2400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7156/4125",
+       "name": "C13OHE - 12.5 - 492 pk - DPF - 2237 Nm",
+       "fuel": "petrol",
+       "hpStock": 492,
+       "hpTuned": 565,
+       "nmStock": 2237,
+       "nmTuned": 2560,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7157/4126",
+       "name": "C13OHE - 12.5 - 532 pk - DPF - 2373 Nm",
+       "fuel": "petrol",
+       "hpStock": 532,
+       "hpTuned": 590,
+       "nmStock": 2373,
+       "nmTuned": 2650,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c15ohe-806",
+   "name": "C15OHE",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7158/4127",
+       "name": "C15OHE - 14.6 - 435 pk - 1550 Nm",
+       "fuel": "petrol",
+       "hpStock": 435,
+       "hpTuned": 500,
+       "nmStock": 1550,
+       "nmTuned": 1800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7159/4128",
+       "name": "C15OHE - 14.6 - 475 pk - 1650 Nm",
+       "fuel": "petrol",
+       "hpStock": 475,
+       "hpTuned": 550,
+       "nmStock": 1650,
+       "nmTuned": 2000,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7160/4129",
+       "name": "C15OHE - 14.6 - 500 pk - 1650 Nm",
+       "fuel": "petrol",
+       "hpStock": 500,
+       "hpTuned": 590,
+       "nmStock": 1650,
+       "nmTuned": 2000,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7161/4130",
+       "name": "C15OHE - 14.6 - 514 pk - 1850 Nm",
+       "fuel": "petrol",
+       "hpStock": 514,
+       "hpTuned": 600,
+       "nmStock": 1850,
+       "nmTuned": 2200,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7162/4131",
+       "name": "C15OHE - 14.6 - 515 pk - 1650 Nm",
+       "fuel": "petrol",
+       "hpStock": 515,
+       "hpTuned": 610,
+       "nmStock": 1650,
+       "nmTuned": 2000,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7163/4132",
+       "name": "C15OHE - 14.6 - 525 pk - 1850 Nm",
+       "fuel": "petrol",
+       "hpStock": 525,
+       "hpTuned": 620,
+       "nmStock": 1850,
+       "nmTuned": 2200,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7164/4133",
+       "name": "C15OHE - 15.2 - Acert - 441 pk - 2102 Nm",
+       "fuel": "petrol",
+       "hpStock": 441,
+       "hpTuned": 520,
+       "nmStock": 2102,
+       "nmTuned": 2500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7165/4134",
+       "name": "C15OHE - 15.2 - Acert - 441 pk - 2373 Nm",
+       "fuel": "petrol",
+       "hpStock": 441,
+       "hpTuned": 520,
+       "nmStock": 3473,
+       "nmTuned": 2700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7166/4135",
+       "name": "C15OHE - 15.2 - Acert - 481 pk - 2238 Nm",
+       "fuel": "petrol",
+       "hpStock": 481,
+       "hpTuned": 560,
+       "nmStock": 2238,
+       "nmTuned": 2500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7167/4136",
+       "name": "C15OHE - 15.2 - Acert - 481 pk - 2509 Nm",
+       "fuel": "petrol",
+       "hpStock": 481,
+       "hpTuned": 560,
+       "nmStock": 2509,
+       "nmTuned": 2890,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7168/4137",
+       "name": "C15OHE - 15.2 - Acert - 507 pk - 2238 Nm",
+       "fuel": "petrol",
+       "hpStock": 507,
+       "hpTuned": 580,
+       "nmStock": 2238,
+       "nmTuned": 2500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7169/4138",
+       "name": "C15OHE - 15.2 - Acert - 507 pk - 2509 Nm",
+       "fuel": "petrol",
+       "hpStock": 507,
+       "hpTuned": 580,
+       "nmStock": 2509,
+       "nmTuned": 2890,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7170/4139",
+       "name": "C15OHE - 15.2 - Acert - 558 pk - 2509 Nm",
+       "fuel": "petrol",
+       "hpStock": 558,
+       "hpTuned": 650,
+       "nmStock": 2509,
+       "nmTuned": 2890,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7171/4140",
+       "name": "C15OHE - 15.2 - Acert - 608 pk - 2509 Nm",
+       "fuel": "petrol",
+       "hpStock": 608,
+       "hpTuned": 690,
+       "nmStock": 2509,
+       "nmTuned": 2890,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7172/4141",
+       "name": "C15OHE - 15.2 - Acert - 634 pk - 2780 Nm",
+       "fuel": "petrol",
+       "hpStock": 634,
+       "hpTuned": 715,
+       "nmStock": 2779,
+       "nmTuned": 3150,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7173/4142",
+       "name": "C15OHE - 15.2 - DPF - 441 pk - 2102 Nm",
+       "fuel": "petrol",
+       "hpStock": 441,
+       "hpTuned": 510,
+       "nmStock": 2102,
+       "nmTuned": 2410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7174/4143",
+       "name": "C15OHE - 15.2 - DPF - 481 pk - 2238 Nm",
+       "fuel": "petrol",
+       "hpStock": 481,
+       "hpTuned": 550,
+       "nmStock": 2238,
+       "nmTuned": 2550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7175/4144",
+       "name": "C15OHE - 15.2 - DPF - 507 pk - 2509 Nm",
+       "fuel": "petrol",
+       "hpStock": 507,
+       "hpTuned": 590,
+       "nmStock": 2509,
+       "nmTuned": 2890,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7176/4145",
+       "name": "C15OHE - 15.2 - DPF - 558 pk - 2509 Nm",
+       "fuel": "petrol",
+       "hpStock": 558,
+       "hpTuned": 629,
+       "nmStock": 2509,
+       "nmTuned": 2890,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7177/4146",
+       "name": "C15OHE - 15.2 - DPF - 608 pk - 2509 Nm",
+       "fuel": "petrol",
+       "hpStock": 608,
+       "hpTuned": 690,
+       "nmStock": 2509,
+       "nmTuned": 2890,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7178/4147",
+       "name": "C15OHE - 15.2 - DPF - 634 pk - 2779 Nm",
+       "fuel": "petrol",
+       "hpStock": 634,
+       "hpTuned": 715,
+       "nmStock": 2779,
+       "nmTuned": 3150,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c16ohe-807",
+   "name": "C16OHE",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7179/4148",
+       "name": "C16OHE - 15.8 - 582 pk - 1850 Nm",
+       "fuel": "petrol",
+       "hpStock": 582,
+       "hpTuned": 660,
+       "nmStock": 1850,
+       "nmTuned": 2200,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7180/4149",
+       "name": "C16OHE - 15.8 - 609 pk - 2050 Nm",
+       "fuel": "petrol",
+       "hpStock": 609,
+       "hpTuned": 698,
+       "nmStock": 2050,
+       "nmTuned": 2350,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c4-2818",
+   "name": "C4",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "18120/4150",
+       "name": "C4 - TH336 - Acert 126 pk",
+       "fuel": "petrol",
+       "hpStock": 128,
+       "hpTuned": 155,
+       "nmStock": 499,
+       "nmTuned": 615,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18121/4151",
+       "name": "C4 - TH337 - Acert 126 pk",
+       "fuel": "petrol",
+       "hpStock": 128,
+       "hpTuned": 155,
+       "nmStock": 499,
+       "nmTuned": 615,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18122/4152",
+       "name": "C4 - TH406 - Acert 126 pk",
+       "fuel": "petrol",
+       "hpStock": 126,
+       "hpTuned": 155,
+       "nmStock": 499,
+       "nmTuned": 615,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18123/4153",
+       "name": "C4 - TH407 - Acert 126 pk",
+       "fuel": "petrol",
+       "hpStock": 126,
+       "hpTuned": 155,
+       "nmStock": 499,
+       "nmTuned": 615,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c7ohe-808",
+   "name": "C7OHE",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7181/4154",
+       "name": "C7OHE - 7.2 - Acert - 193 pk - 705 Nm",
+       "fuel": "petrol",
+       "hpStock": 193,
+       "hpTuned": 250,
+       "nmStock": 705,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7182/4155",
+       "name": "C7OHE - 7.2 - Acert - 214 pk - 820 Nm",
+       "fuel": "petrol",
+       "hpStock": 214,
+       "hpTuned": 260,
+       "nmStock": 820,
+       "nmTuned": 1000,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7183/4156",
+       "name": "C7OHE - 7.2 - Acert - 234 pk - 732 Nm",
+       "fuel": "petrol",
+       "hpStock": 234,
+       "hpTuned": 280,
+       "nmStock": 732,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7184/4157",
+       "name": "C7OHE - 7.2 - Acert - 234 pk - 895 Nm",
+       "fuel": "petrol",
+       "hpStock": 234,
+       "hpTuned": 280,
+       "nmStock": 895,
+       "nmTuned": 1150,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7185/4158",
+       "name": "C7OHE - 7.2 - Acert - 253 pk - 1085 Nm",
+       "fuel": "petrol",
+       "hpStock": 253,
+       "hpTuned": 310,
+       "nmStock": 1085,
+       "nmTuned": 1290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7186/4159",
+       "name": "C7OHE - 7.2 - Acert - 279 pk - 1085 Nm",
+       "fuel": "petrol",
+       "hpStock": 279,
+       "hpTuned": 325,
+       "nmStock": 1085,
+       "nmTuned": 1290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7187/4160",
+       "name": "C7OHE - 7.2 - Acert - 305 pk - 1085 Nm",
+       "fuel": "petrol",
+       "hpStock": 305,
+       "hpTuned": 360,
+       "nmStock": 1085,
+       "nmTuned": 1280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7188/4161",
+       "name": "C7OHE - 7.2 - Acert - 335 pk - 1166 Nm",
+       "fuel": "petrol",
+       "hpStock": 335,
+       "hpTuned": 400,
+       "nmStock": 1166,
+       "nmTuned": 1350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7189/4162",
+       "name": "C7OHE - 7.2 - DPF - 193 pk - 705 Nm",
+       "fuel": "petrol",
+       "hpStock": 193,
+       "hpTuned": 240,
+       "nmStock": 705,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7190/4163",
+       "name": "C7OHE - 7.2 - DPF - 214 pk - 705 Nm",
+       "fuel": "petrol",
+       "hpStock": 214,
+       "hpTuned": 299,
+       "nmStock": 705,
+       "nmTuned": 1035,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7191/4164",
+       "name": "C7OHE - 7.2 - DPF - 234 pk - 759 Nm",
+       "fuel": "petrol",
+       "hpStock": 234,
+       "hpTuned": 285,
+       "nmStock": 759,
+       "nmTuned": 950,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7192/4165",
+       "name": "C7OHE - 7.2 - DPF - 253 pk - 1085 Nm",
+       "fuel": "petrol",
+       "hpStock": 253,
+       "hpTuned": 315,
+       "nmStock": 1085,
+       "nmTuned": 1300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7193/4166",
+       "name": "C7OHE - 7.2 - DPF - 279 pk - 1085 Nm",
+       "fuel": "petrol",
+       "hpStock": 279,
+       "hpTuned": 340,
+       "nmStock": 1085,
+       "nmTuned": 1300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7194/4167",
+       "name": "C7OHE - 7.2 - DPF - 305 pk - 1166 Nm",
+       "fuel": "petrol",
+       "hpStock": 305,
+       "hpTuned": 365,
+       "nmStock": 1166,
+       "nmTuned": 1390,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7195/4168",
+       "name": "C7OHE - 7.2 - DPF - 335 pk - 1166 Nm",
+       "fuel": "petrol",
+       "hpStock": 335,
+       "hpTuned": 400,
+       "nmStock": 1166,
+       "nmTuned": 1350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7196/4169",
+       "name": "C7OHE - 7.2 - DPF - 355 pk - 1166 Nm",
+       "fuel": "petrol",
+       "hpStock": 355,
+       "hpTuned": 410,
+       "nmStock": 1166,
+       "nmTuned": 1350,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c9ohe-809",
+   "name": "C9OHE",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7197/4170",
+       "name": "C9OHE - 8.8 - Acert - 219 pk - 1496 Nm",
+       "fuel": "petrol",
+       "hpStock": 219,
+       "hpTuned": 265,
+       "nmStock": 1496,
+       "nmTuned": 1800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7198/4171",
+       "name": "C9OHE - 8.8 - Acert - 340 pk - 1428 Nm",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 400,
+       "nmStock": 1428,
+       "nmTuned": 1700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7199/4172",
+       "name": "C9OHE - 8.8 - Acert - 356 pk - 1562 Nm",
+       "fuel": "petrol",
+       "hpStock": 356,
+       "hpTuned": 420,
+       "nmStock": 1562,
+       "nmTuned": 1800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7200/4173",
+       "name": "C9OHE - 9.3 - DPF - 290 pk - 1206 Nm",
+       "fuel": "petrol",
+       "hpStock": 290,
+       "hpTuned": 355,
+       "nmStock": 1206,
+       "nmTuned": 1500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7201/4174",
+       "name": "C9OHE - 9.3 - DPF - 340 pk - 1559 Nm",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 400,
+       "nmStock": 1559,
+       "nmTuned": 1800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7202/4175",
+       "name": "C9OHE - 9.3 - DPF - 355 pk - 1695 Nm",
+       "fuel": "petrol",
+       "hpStock": 355,
+       "hpTuned": 400,
+       "nmStock": 1695,
+       "nmTuned": 2000,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7203/4176",
+       "name": "C9OHE - 9.3 - DPF - 370 pk - 1695 Nm",
+       "fuel": "petrol",
+       "hpStock": 370,
+       "hpTuned": 430,
+       "nmStock": 1695,
+       "nmTuned": 2000,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7204/4177",
+       "name": "C9OHE - 9.3 - DPF - 409 pk - 1695 Nm",
+       "fuel": "petrol",
+       "hpStock": 409,
+       "hpTuned": 460,
+       "nmStock": 1695,
+       "nmTuned": 2000,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7205/4178",
+       "name": "C9OHE - 9.3 - DPF - 431 pk - 1695 Nm",
+       "fuel": "petrol",
+       "hpStock": 431,
+       "hpTuned": 490,
+       "nmStock": 1695,
+       "nmTuned": 2000,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "challenger-2819",
+   "name": "Challenger",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "18125/4179",
+       "name": "Challenger - MT745B - 8.8L - 273pk - Tier3",
+       "fuel": "petrol",
+       "hpStock": 273,
+       "hpTuned": 300,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "dozer-810",
+   "name": "Dozer",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7206/4180",
+       "name": "Dozer - D10T - 27L - 589pk - Tier3",
+       "fuel": "petrol",
+       "hpStock": 589,
+       "hpTuned": 650,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7207/4181",
+       "name": "Dozer - D6T - 6.6L - 152pk - Tier3",
+       "fuel": "petrol",
+       "hpStock": 152,
+       "hpTuned": 170,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7208/4182",
+       "name": "Dozer - D6T - 9.3L - 206pk - Tier3",
+       "fuel": "petrol",
+       "hpStock": 206,
+       "hpTuned": 230,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7209/4183",
+       "name": "Dozer - D8T - 15.2L - 330pk - Tier3",
+       "fuel": "petrol",
+       "hpStock": 330,
+       "hpTuned": 370,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7210/4184",
+       "name": "Dozer - D8T - 9.3L - 320pk - Tier3",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 355,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "dump-811",
+   "name": "Dump",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7211/4185",
+       "name": "Dump Truck - 745C - 18.1L - 518pk - Tier3",
+       "fuel": "petrol",
+       "hpStock": 518,
+       "hpTuned": 570,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "excavator-812",
+   "name": "Excavator",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7212/4186",
+       "name": "Excavator - 311F - 3.4L - 71pk - Tier4",
+       "fuel": "petrol",
+       "hpStock": 71,
+       "hpTuned": 90,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7213/4187",
+       "name": "Excavator - 315D - 4.2L - 117pk - Tier3",
+       "fuel": "diesel",
+       "hpStock": 117,
+       "hpTuned": 140,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7214/4188",
+       "name": "Excavator - 319D - 4.2L - 126pk - Tier3",
+       "fuel": "diesel",
+       "hpStock": 126,
+       "hpTuned": 150,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7215/4189",
+       "name": "Excavator - 320D - 6.4L - 140pk - Tier3",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7216/4190",
+       "name": "Excavator - 323D - 6.4L - 159pk - Tier3",
+       "fuel": "diesel",
+       "hpStock": 159,
+       "hpTuned": 185,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7217/4191",
+       "name": "Excavator - 324E - 7.1L - 243pk - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 243,
+       "hpTuned": 270,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7218/4192",
+       "name": "Excavator - 325D - 7.2L - 190pk - Tier3",
+       "fuel": "diesel",
+       "hpStock": 190,
+       "hpTuned": 220,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7219/4193",
+       "name": "Excavator - 329E - 7.1L - 243pk - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 243,
+       "hpTuned": 270,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7220/4194",
+       "name": "Excavator - 336D - 8.8L - 272pk - Tier3",
+       "fuel": "diesel",
+       "hpStock": 272,
+       "hpTuned": 300,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7221/4195",
+       "name": "Excavator - M318D - 6.6L - 175pk - Tier3",
+       "fuel": "petrol",
+       "hpStock": 175,
+       "hpTuned": 200,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "feller-813",
+   "name": "Feller",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7222/4196",
+       "name": "Feller Buncher - 553C - 6.6L - 177pk - Tier3",
+       "fuel": "petrol",
+       "hpStock": 177,
+       "hpTuned": 200,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "grader-2820",
+   "name": "Grader",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "18168/4197",
+       "name": "Grader - 12H - 8.8L - 167pk - Tier3",
+       "fuel": "petrol",
+       "hpStock": 167,
+       "hpTuned": 195,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18169/4198",
+       "name": "Grader - 140M - 7.2L - 182pk - Tier3",
+       "fuel": "petrol",
+       "hpStock": 182,
+       "hpTuned": 205,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18170/4199",
+       "name": "Grader - 140M2 - 9.3L - 196pk - Tier3",
+       "fuel": "petrol",
+       "hpStock": 196,
+       "hpTuned": 220,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "highway-814",
+   "name": "Highway",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7223/4200",
+       "name": "Highway Truck - CT660 - 13L - 557pk - Euro4",
+       "fuel": "petrol",
+       "hpStock": 557,
+       "hpTuned": 615,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7224/4201",
+       "name": "Highway Truck - CT660S - 13L - 455pk - Euro5",
+       "fuel": "petrol",
+       "hpStock": 455,
+       "hpTuned": 510,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7225/4202",
+       "name": "Highway Truck - CT660S - 13L - 481pk - Euro5",
+       "fuel": "petrol",
+       "hpStock": 481,
+       "hpTuned": 530,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "scraper-815",
+   "name": "Scraper",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7226/4203",
+       "name": "Scraper - 627H - 12.5L - 413pk - Tier3",
+       "fuel": "petrol",
+       "hpStock": 413,
+       "hpTuned": 455,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "skid-816",
+   "name": "Skid",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7227/4204",
+       "name": "Skid Steer Loader - 259D - 3.3L - 73pk - Tier4i",
+       "fuel": "diesel",
+       "hpStock": 73,
+       "hpTuned": 95,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7228/4205",
+       "name": "Skid Steer Loader - 289D - 3.3L - 73pk - Tier4i",
+       "fuel": "diesel",
+       "hpStock": 73,
+       "hpTuned": 95,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "telehandler-817",
+   "name": "Telehandler",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7229/4206",
+       "name": "Telehandler - TH337C - 4.4L - 150pk - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 170,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7230/4207",
+       "name": "Telehandler - TH408D - 4.4L - 131pk - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 131,
+       "hpTuned": 160,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7231/4208",
+       "name": "Telehandler - TL943C - 3.4L - 98pk - Tier4",
+       "fuel": "petrol",
+       "hpStock": 98,
+       "hpTuned": 115,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "wheel-loader-2821",
+   "name": "Wheel Loader",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "18859/4209",
+       "name": "Wheel Loader - 928H - 6.6L - 151pk - Tier3",
+       "fuel": "petrol",
+       "hpStock": 151,
+       "hpTuned": 180,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18860/4210",
+       "name": "Wheel Loader - 938H - 6.6L - 182pk - Tier3",
+       "fuel": "petrol",
+       "hpStock": 182,
+       "hpTuned": 200,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18861/4211",
+       "name": "Wheel Loader - 938K - 6.6L - 171pk - Tier3",
+       "fuel": "petrol",
+       "hpStock": 171,
+       "hpTuned": 195,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18862/4212",
+       "name": "Wheel Loader - 966M - 9.3L - 302pk - Tier3",
+       "fuel": "petrol",
+       "hpStock": 302,
+       "hpTuned": 335,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18863/4213",
+       "name": "Wheel Loader - 980H - 15.2L - 354pk - Tier3",
+       "fuel": "petrol",
+       "hpStock": 354,
+       "hpTuned": 390,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,3480 @@
+{
+ "slug": "fiat",
+ "name": "Fiat",
+ "logo": "fiat.png",
+ "models": [
+  {
+   "slug": "124-spider-222",
+   "name": "124 Spider",
+   "generations": [
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "1668/1195",
+       "name": "1.4 MultiAir Turbo 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 180,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1669/1196",
+       "name": "1.4 MultiAir Turbo 170hp",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 180,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "500-595-695-870",
+   "name": "500 / 595 / 695",
+   "generations": [
+    {
+     "slug": "2007-2015",
+     "from": 2007,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "8093/1197",
+       "name": "0.9 Twinair 60hp",
+       "fuel": "petrol",
+       "hpStock": 60,
+       "hpTuned": 70,
+       "nmStock": 88,
+       "nmTuned": 100,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8094/1198",
+       "name": "0.9 Twinair 80hp",
+       "fuel": "petrol",
+       "hpStock": 80,
+       "hpTuned": 90,
+       "nmStock": 140,
+       "nmTuned": 190,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8095/65",
+       "name": "0.9 Twinair 85hp",
+       "fuel": "petrol",
+       "hpStock": 85,
+       "hpTuned": 95,
+       "nmStock": 145,
+       "nmTuned": 190,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8096/1199",
+       "name": "1.2i 8v 69hp",
+       "fuel": "petrol",
+       "hpStock": 69,
+       "hpTuned": 75,
+       "nmStock": 102,
+       "nmTuned": 112,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8097/1200",
+       "name": "1.3 JTDM 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 95,
+       "nmStock": 190,
+       "nmTuned": 245,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8098/66",
+       "name": "1.3 JTDM 85hp",
+       "fuel": "diesel",
+       "hpStock": 85,
+       "hpTuned": 110,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8099/68",
+       "name": "1.3 JTDM 95hp",
+       "fuel": "diesel",
+       "hpStock": 95,
+       "hpTuned": 115,
+       "nmStock": 200,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8100/4901",
+       "name": "1.4 T-Jet 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 155,
+       "nmStock": 215,
+       "nmTuned": 280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8101/1202",
+       "name": "1.4i 16v 100hp",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 112,
+       "nmStock": 131,
+       "nmTuned": 150,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8102/4921",
+       "name": "1.4i 16v 95hp",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 105,
+       "nmStock": 128,
+       "nmTuned": 145,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16424/14681",
+       "name": "1.6 JTDM 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 135,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8103/1203",
+       "name": "Abarth 1.4 T-Jet 135hp",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 170,
+       "nmStock": 206,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8104/1204",
+       "name": "Abarth 1.4 T-Jet 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 206,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8105/1205",
+       "name": "Abarth 1.4 T-Jet 160hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 170,
+       "nmStock": 234,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8106/1206",
+       "name": "Abarth 1.4 T-Jet 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 230,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8107/4890",
+       "name": "Abarth 595 Competizione 1.4 T-Jet 160hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 170,
+       "nmStock": 234,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8108/4891",
+       "name": "Abarth 595 Competizione 1.4 T-Jet 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 230,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8109/4892",
+       "name": "Abarth 695 Tributo Ferrari 1.4 T-Jet 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 230,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8110/4893",
+       "name": "Abarth 695 Tributo Maserati 1.4 T-Jet 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 230,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8111/4894",
+       "name": "Abarth Assetto Corse 1.4 T-Jet 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 220,
+       "nmStock": 250,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8112/1211",
+       "name": "Abarth Biposto 1.4 T-Jet 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 220,
+       "nmStock": 250,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "8124/84",
+       "name": "0.9 TwinAir 105hp",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 110,
+       "nmStock": 145,
+       "nmTuned": 190,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8125/4896",
+       "name": "0.9 TwinAir 80hp",
+       "fuel": "petrol",
+       "hpStock": 80,
+       "hpTuned": 95,
+       "nmStock": 145,
+       "nmTuned": 190,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16003/14683",
+       "name": "1.2i 8V 69hp",
+       "fuel": "petrol",
+       "hpStock": 69,
+       "hpTuned": 80,
+       "nmStock": 102,
+       "nmTuned": 113,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8126/68",
+       "name": "1.3 JTDM 95hp",
+       "fuel": "diesel",
+       "hpStock": 95,
+       "hpTuned": 115,
+       "nmStock": 200,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8127/1203",
+       "name": "Abarth 1.4 T-Jet 135hp",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 170,
+       "nmStock": 206,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8128/1204",
+       "name": "Abarth 1.4 T-Jet 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 206,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8129/1212",
+       "name": "Abarth 1.4 T-Jet 145hp",
+       "fuel": "petrol",
+       "hpStock": 145,
+       "hpTuned": 170,
+       "nmStock": 210,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8130/4891",
+       "name": "Abarth 595 Competizione 1.4 T-Jet 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 230,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8131/4897",
+       "name": "Abarth 595 Essesse 1.4 T-Jet 160hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 170,
+       "nmStock": 234,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8132/1214",
+       "name": "Abarth 595 Pista 1.4 T-Jet 160hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 170,
+       "nmStock": 234,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8133/4898",
+       "name": "Abarth 595 Turismo 1.4 T-Jet 160hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 170,
+       "nmStock": 234,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8134/4899",
+       "name": "Abarth 595 Turismo 1.4 T-Jet 165hp",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 200,
+       "nmStock": 230,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8135/1217",
+       "name": "Abarth 695 XSR 1.4 T-Jet 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 180,
+       "nmStock": 230,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8136/4900",
+       "name": "Abarth Biposto / Rivale 1.4 T-Jet 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 220,
+       "nmStock": 250,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "500-l-224",
+   "name": "500 L",
+   "generations": [
+    {
+     "slug": "2012-0",
+     "from": 2012,
+     "to": null,
+     "engines": [
+      {
+       "path": "1699/84",
+       "name": "0.9 TwinAir 105hp",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 110,
+       "nmStock": 145,
+       "nmTuned": 190,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1700/1198",
+       "name": "0.9 Twinair 80hp",
+       "fuel": "petrol",
+       "hpStock": 80,
+       "hpTuned": 90,
+       "nmStock": 140,
+       "nmTuned": 190,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1701/66",
+       "name": "1.3 JTDM 85hp",
+       "fuel": "diesel",
+       "hpStock": 85,
+       "hpTuned": 110,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1702/68",
+       "name": "1.3 JTDM 95hp",
+       "fuel": "diesel",
+       "hpStock": 95,
+       "hpTuned": 115,
+       "nmStock": 200,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1703/1201",
+       "name": "1.4 T-Jet 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 206,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1704/76",
+       "name": "1.4i 16v 95hp",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 100,
+       "nmStock": 120,
+       "nmTuned": 130,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1705/54",
+       "name": "1.6 JTDm 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 130,
+       "nmStock": 320,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1706/59",
+       "name": "1.6 JTDm 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 145,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "500-x-225",
+   "name": "500 X",
+   "generations": [
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "1707/1219",
+       "name": "1.3 Multijet 95hp",
+       "fuel": "diesel",
+       "hpStock": 95,
+       "hpTuned": 120,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1708/1220",
+       "name": "1.4T MultiAir 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 230,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1709/1221",
+       "name": "1.4T MultiAir 170hp",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 180,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1710/1222",
+       "name": "1.6 Multijet 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 155,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1711/1223",
+       "name": "2.0 Multijet 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 185,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-2018",
+     "from": 2015,
+     "to": 2018,
+     "engines": [
+      {
+       "path": "8140/1219",
+       "name": "1.3 Multijet 95hp",
+       "fuel": "diesel",
+       "hpStock": 95,
+       "hpTuned": 120,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8141/1220",
+       "name": "1.4T MultiAir 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 230,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8142/1221",
+       "name": "1.4T MultiAir 170hp",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 180,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8143/1222",
+       "name": "1.6 Multijet 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 155,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8144/1223",
+       "name": "2.0 Multijet 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 185,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2019-0",
+     "from": 2019,
+     "to": null,
+     "engines": [
+      {
+       "path": "8145/4903",
+       "name": "1.0 Firefly Turbo 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 140,
+       "nmStock": 190,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8146/4904",
+       "name": "1.3 Firefly Turbo 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 170,
+       "nmStock": 270,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8147/1222",
+       "name": "1.6 Multijet 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 155,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8148/4905",
+       "name": "2.0 Multijet 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 185,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "brava-226",
+   "name": "Brava",
+   "generations": [
+    {
+     "slug": "1998-2001",
+     "from": 1998,
+     "to": 2001,
+     "engines": [
+      {
+       "path": "1712/3",
+       "name": "1.9 JTD 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 135,
+       "nmStock": 200,
+       "nmTuned": 265,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1713/15",
+       "name": "1.9 JTD 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 140,
+       "nmStock": 255,
+       "nmTuned": 315,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1714/16",
+       "name": "1.9 JTD 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 275,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "bravo-227",
+   "name": "Bravo",
+   "generations": [
+    {
+     "slug": "2001-2007",
+     "from": 2001,
+     "to": 2007,
+     "engines": [
+      {
+       "path": "1715/3",
+       "name": "1.9 JTD 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 135,
+       "nmStock": 200,
+       "nmTuned": 265,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1716/15",
+       "name": "1.9 JTD 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 140,
+       "nmStock": 255,
+       "nmTuned": 315,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1717/4",
+       "name": "1.9 JTD 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 145,
+       "nmStock": 275,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2007-0",
+     "from": 2007,
+     "to": null,
+     "engines": [
+      {
+       "path": "1718/1201",
+       "name": "1.4 T-Jet 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 206,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1719/1224",
+       "name": "1.4 T-Jet 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 165,
+       "nmStock": 230,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1720/1225",
+       "name": "1.4 T-Jet 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 175,
+       "nmStock": 230,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1721/1030",
+       "name": "1.4i 16v 90hp",
+       "fuel": "petrol",
+       "hpStock": 90,
+       "hpTuned": 102,
+       "nmStock": 133,
+       "nmTuned": 148,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1722/1226",
+       "name": "1.6 M-JTD 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 130,
+       "nmStock": 290,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1723/1227",
+       "name": "1.6 M-JTD 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 300,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1724/1228",
+       "name": "1.6 M-JTD 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 130,
+       "nmStock": 280,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1725/1229",
+       "name": "1.9 M-JTD 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 160,
+       "nmStock": 255,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1726/1230",
+       "name": "1.9 M-JTD 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 160,
+       "nmStock": 255,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1727/1231",
+       "name": "1.9 M-JTD 16v 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 185,
+       "nmStock": 305,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1728/1232",
+       "name": "2.0 M-JTD 165hp",
+       "fuel": "diesel",
+       "hpStock": 165,
+       "hpTuned": 200,
+       "nmStock": 360,
+       "nmTuned": 425,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2007-2015",
+     "from": 2007,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "8113/4901",
+       "name": "1.4 T-Jet 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 155,
+       "nmStock": 215,
+       "nmTuned": 280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8114/1224",
+       "name": "1.4 T-Jet 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 165,
+       "nmStock": 230,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8115/4930",
+       "name": "1.4 T-Jet 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 175,
+       "nmStock": 231,
+       "nmTuned": 280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8116/1030",
+       "name": "1.4i 16v 90hp",
+       "fuel": "petrol",
+       "hpStock": 90,
+       "hpTuned": 102,
+       "nmStock": 133,
+       "nmTuned": 148,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8117/1226",
+       "name": "1.6 M-JTD 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 130,
+       "nmStock": 290,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8118/1227",
+       "name": "1.6 M-JTD 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 300,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8119/1228",
+       "name": "1.6 M-JTD 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 130,
+       "nmStock": 280,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8120/1229",
+       "name": "1.9 M-JTD 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 160,
+       "nmStock": 255,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8121/1230",
+       "name": "1.9 M-JTD 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 160,
+       "nmStock": 255,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8122/1231",
+       "name": "1.9 M-JTD 16v 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 185,
+       "nmStock": 305,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8123/1232",
+       "name": "2.0 M-JTD 165hp",
+       "fuel": "diesel",
+       "hpStock": 165,
+       "hpTuned": 200,
+       "nmStock": 360,
+       "nmTuned": 425,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "croma-228",
+   "name": "Croma",
+   "generations": [
+    {
+     "slug": "2005-2008",
+     "from": 2005,
+     "to": 2008,
+     "engines": [
+      {
+       "path": "1729/24",
+       "name": "1.9 JTDm 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 145,
+       "nmStock": 275,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1730/25",
+       "name": "1.9 JTDm 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 145,
+       "nmStock": 280,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1731/26",
+       "name": "1.9 JTDm 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 180,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1732/1233",
+       "name": "1.9 JTDm 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 185,
+       "nmStock": 305,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1733/32",
+       "name": "2.4 JTD 200hp",
+       "fuel": "diesel",
+       "hpStock": 200,
+       "hpTuned": 235,
+       "nmStock": 400,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2008-2011",
+     "from": 2008,
+     "to": 2011,
+     "engines": [
+      {
+       "path": "8154/4910",
+       "name": "1.9 JTDm 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 160,
+       "nmStock": 280,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8155/25",
+       "name": "1.9 JTDm 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 145,
+       "nmStock": 280,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8156/26",
+       "name": "1.9 JTDm 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 180,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8157/4911",
+       "name": "1.9 JTDm 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 320,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8158/32",
+       "name": "2.4 JTD 200hp",
+       "fuel": "diesel",
+       "hpStock": 200,
+       "hpTuned": 235,
+       "nmStock": 400,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "cronos-229",
+   "name": "Cronos",
+   "generations": [
+    {
+     "slug": "2018-0",
+     "from": 2018,
+     "to": null,
+     "engines": [
+      {
+       "path": "1734/1234",
+       "name": "1.8 E-torq 130hp",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 150,
+       "nmStock": 182,
+       "nmTuned": 210,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "doblo-230",
+   "name": "Doblo",
+   "generations": [
+    {
+     "slug": "2001-2010",
+     "from": 2001,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "1735/1235",
+       "name": "1.3 JTD 70hp",
+       "fuel": "diesel",
+       "hpStock": 70,
+       "hpTuned": 85,
+       "nmStock": 180,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1736/1236",
+       "name": "1.3 JTD 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 95,
+       "nmStock": 190,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1737/1237",
+       "name": "1.3 JTD 85hp",
+       "fuel": "diesel",
+       "hpStock": 85,
+       "hpTuned": 110,
+       "nmStock": 190,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1738/76",
+       "name": "1.4i 16v 95hp",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 100,
+       "nmStock": 120,
+       "nmTuned": 130,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1739/1124",
+       "name": "1.6i 16v 105hp",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 113,
+       "nmStock": 148,
+       "nmTuned": 164,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1740/3",
+       "name": "1.9 JTD 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 135,
+       "nmStock": 200,
+       "nmTuned": 265,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1741/15",
+       "name": "1.9 JTD 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 140,
+       "nmStock": 255,
+       "nmTuned": 315,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1742/9",
+       "name": "1.9 JTD 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 155,
+       "nmStock": 285,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2010-2015",
+     "from": 2010,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "8163/4914",
+       "name": "1.3 M-JTD 75HP",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 95,
+       "nmStock": 190,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1743/1238",
+       "name": "1.3 M-JTD 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1744/1201",
+       "name": "1.4 T-Jet 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 206,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8165/4921",
+       "name": "1.4i 16v 95hp",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 105,
+       "nmStock": 128,
+       "nmTuned": 145,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1745/1226",
+       "name": "1.6 M-JTD 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 130,
+       "nmStock": 290,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1746/1228",
+       "name": "1.6 M-JTD 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 130,
+       "nmStock": 280,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8166/7458",
+       "name": "1.6i 16v 105hp",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 140,
+       "nmStock": 250,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1747/1239",
+       "name": "2.0 M-JTD 135hp",
+       "fuel": "diesel",
+       "hpStock": 135,
+       "hpTuned": 165,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-2021",
+     "from": 2015,
+     "to": 2021,
+     "engines": [
+      {
+       "path": "8167/1240",
+       "name": "1.3 Multijet 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8168/4901",
+       "name": "1.4 T-Jet 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 155,
+       "nmStock": 215,
+       "nmTuned": 280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8169/4915",
+       "name": "1.6 MULTIJET 100HP",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 140,
+       "nmStock": 320,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8170/1241",
+       "name": "1.6 Multijet 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 140,
+       "nmStock": 290,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8171/1222",
+       "name": "1.6 Multijet 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 155,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8172/1242",
+       "name": "1.6 Multijet 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 120,
+       "nmStock": 200,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8173/4916",
+       "name": "1.6 Multijet II 93 bhp",
+       "fuel": "diesel",
+       "hpStock": 93,
+       "hpTuned": 130,
+       "nmStock": 221,
+       "nmTuned": 265,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8174/1239",
+       "name": "2.0 M-JTD 135hp",
+       "fuel": "diesel",
+       "hpStock": 135,
+       "hpTuned": 165,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "1748/1240",
+       "name": "1.3 Multijet 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1749/1241",
+       "name": "1.6 Multijet 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 140,
+       "nmStock": 290,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1750/1242",
+       "name": "1.6 Multijet 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 120,
+       "nmStock": 200,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "ducato-231",
+   "name": "Ducato",
+   "generations": [
+    {
+     "slug": "2001-2011",
+     "from": 2001,
+     "to": 2011,
+     "engines": [
+      {
+       "path": "1751/1243",
+       "name": "2.0 JTD 84hp",
+       "fuel": "diesel",
+       "hpStock": 84,
+       "hpTuned": 115,
+       "nmStock": 192,
+       "nmTuned": 265,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1752/1244",
+       "name": "2.2 JTDM 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 130,
+       "nmStock": 250,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1753/1245",
+       "name": "2.3 JTD 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 315,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1754/1246",
+       "name": "2.3 JTDM 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 155,
+       "nmStock": 320,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1755/1247",
+       "name": "2.3 JTDM 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 160,
+       "nmStock": 320,
+       "nmTuned": 412,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1756/1248",
+       "name": "2.8 JTD 127hp",
+       "fuel": "diesel",
+       "hpStock": 127,
+       "hpTuned": 150,
+       "nmStock": 300,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1757/1249",
+       "name": "2.8 JTD 145hp",
+       "fuel": "diesel",
+       "hpStock": 145,
+       "hpTuned": 175,
+       "nmStock": 310,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1758/1250",
+       "name": "3.0 JTDM 158hp",
+       "fuel": "diesel",
+       "hpStock": 160,
+       "hpTuned": 190,
+       "nmStock": 400,
+       "nmTuned": 510,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2011-2016",
+     "from": 2011,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "1759/1251",
+       "name": "115 Multijet - 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 150,
+       "nmStock": 280,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1760/1252",
+       "name": "120 Multijet - 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1761/1253",
+       "name": "130 Multijet - 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 180,
+       "nmStock": 320,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1762/1254",
+       "name": "150 Multijet - 148hp",
+       "fuel": "diesel",
+       "hpStock": 148,
+       "hpTuned": 180,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1763/1255",
+       "name": "160 Multijet - 160hp",
+       "fuel": "diesel",
+       "hpStock": 160,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1764/1256",
+       "name": "180 Multijet - 177hp",
+       "fuel": "diesel",
+       "hpStock": 177,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "1765/1257",
+       "name": "115 Multijet (EUR6) - 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 145,
+       "nmStock": 280,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1766/1258",
+       "name": "130 Multijet (EUR6) - 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 160,
+       "nmStock": 320,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1767/1259",
+       "name": "150 Multijet (EUR6) - 148hp",
+       "fuel": "diesel",
+       "hpStock": 148,
+       "hpTuned": 180,
+       "nmStock": 380,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1768/1260",
+       "name": "180 Multijet (EUR6) - 177hp",
+       "fuel": "diesel",
+       "hpStock": 177,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-2019",
+     "from": 2016,
+     "to": 2019,
+     "engines": [
+      {
+       "path": "8175/1257",
+       "name": "115 Multijet (EUR6) - 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 145,
+       "nmStock": 280,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8176/1258",
+       "name": "130 Multijet (EUR6) - 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 160,
+       "nmStock": 320,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8177/1259",
+       "name": "150 Multijet (EUR6) - 148hp",
+       "fuel": "diesel",
+       "hpStock": 148,
+       "hpTuned": 180,
+       "nmStock": 380,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8178/1260",
+       "name": "180 Multijet (EUR6) - 177hp",
+       "fuel": "diesel",
+       "hpStock": 177,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2019-2021",
+     "from": 2019,
+     "to": 2021,
+     "engines": [
+      {
+       "path": "8184/4917",
+       "name": "2.3 Multijet 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 200,
+       "nmStock": 320,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8185/4918",
+       "name": "2.3 Multijet 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 200,
+       "nmStock": 350,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8186/4919",
+       "name": "2.3 Multijet 160hp",
+       "fuel": "diesel",
+       "hpStock": 160,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8187/4920",
+       "name": "2.3 Multijet 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "fiorino-232",
+   "name": "Fiorino",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "1769/1261",
+       "name": "1.3 MJTD 75hp",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 95,
+       "nmStock": 190,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1770/1262",
+       "name": "1.3 MJTD 95hp",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 115,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "freemont-233",
+   "name": "Freemont",
+   "generations": [
+    {
+     "slug": "2012-0",
+     "from": 2012,
+     "to": null,
+     "engines": [
+      {
+       "path": "1771/1263",
+       "name": "2.0 JTDm 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 185,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1772/29",
+       "name": "2.0 JTDm 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 180,
+       "nmStock": 320,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1773/41",
+       "name": "2.0 JTDm 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 195,
+       "nmStock": 360,
+       "nmTuned": 425,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1774/30",
+       "name": "2.0 JTDm 170hp",
+       "fuel": "diesel",
+       "hpStock": 170,
+       "hpTuned": 200,
+       "nmStock": 360,
+       "nmTuned": 425,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "fullback-234",
+   "name": "Fullback",
+   "generations": [
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "1775/1264",
+       "name": "2.4D 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 205,
+       "nmStock": 380,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1776/1265",
+       "name": "2.4D 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 205,
+       "nmStock": 430,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "grande-punto-235",
+   "name": "Grande Punto",
+   "generations": [
+    {
+     "slug": "2005-0",
+     "from": 2005,
+     "to": null,
+     "engines": [
+      {
+       "path": "1777/1235",
+       "name": "1.3 JTD 70hp",
+       "fuel": "diesel",
+       "hpStock": 70,
+       "hpTuned": 85,
+       "nmStock": 180,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1778/1236",
+       "name": "1.3 JTD 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 95,
+       "nmStock": 190,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1779/1266",
+       "name": "1.3 JTD 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 110,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1780/1267",
+       "name": "1.3 Mjet 85hp",
+       "fuel": "diesel",
+       "hpStock": 85,
+       "hpTuned": 110,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1781/1268",
+       "name": "1.3 Mjet 95hp",
+       "fuel": "diesel",
+       "hpStock": 95,
+       "hpTuned": 115,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1782/1201",
+       "name": "1.4 T-Jet 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 206,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1783/1225",
+       "name": "1.4 T-Jet 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 175,
+       "nmStock": 230,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1784/76",
+       "name": "1.4i 16v 95hp",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 100,
+       "nmStock": 120,
+       "nmTuned": 130,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1785/59",
+       "name": "1.6 JTDm 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 145,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1786/9",
+       "name": "1.9 JTD 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 155,
+       "nmStock": 285,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1787/1269",
+       "name": "1.9 JTD 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 160,
+       "nmStock": 280,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1788/1270",
+       "name": "Abarth 1.4 T-Jet 155hp",
+       "fuel": "petrol",
+       "hpStock": 155,
+       "hpTuned": 180,
+       "nmStock": 230,
+       "nmTuned": 280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1789/1271",
+       "name": "Abarth 1.4 T-Jet 165hp",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 190,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1790/1272",
+       "name": "Abarth Supersport 1.4 T-Jet 180h",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8198/4928",
+       "name": "Abarth Supersport 1.4 T-Jet 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "idea-236",
+   "name": "Idea",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "1791/1235",
+       "name": "1.3 JTD 70hp",
+       "fuel": "diesel",
+       "hpStock": 70,
+       "hpTuned": 85,
+       "nmStock": 180,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1792/1266",
+       "name": "1.3 JTD 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 110,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1793/1219",
+       "name": "1.3 Multijet 95hp",
+       "fuel": "diesel",
+       "hpStock": 95,
+       "hpTuned": 120,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1794/76",
+       "name": "1.4i 16v 95hp",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 100,
+       "nmStock": 120,
+       "nmTuned": 130,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1795/3",
+       "name": "1.9 JTD 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 135,
+       "nmStock": 200,
+       "nmTuned": 265,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "marea-237",
+   "name": "Marea",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "1796/3",
+       "name": "1.9 JTD 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 135,
+       "nmStock": 200,
+       "nmTuned": 265,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1797/16",
+       "name": "1.9 JTD 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 275,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1798/4",
+       "name": "1.9 JTD 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 145,
+       "nmStock": 275,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1799/1273",
+       "name": "2.4 JTD 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 165,
+       "nmStock": 310,
+       "nmTuned": 365,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "multipla-238",
+   "name": "Multipla",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "1800/3",
+       "name": "1.9 JTD 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 135,
+       "nmStock": 200,
+       "nmTuned": 265,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1801/15",
+       "name": "1.9 JTD 105hp",
+       "fuel": "diesel",
+       "hpStock": 105,
+       "hpTuned": 140,
+       "nmStock": 255,
+       "nmTuned": 315,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1802/16",
+       "name": "1.9 JTD 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 275,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1803/4",
+       "name": "1.9 JTD 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 145,
+       "nmStock": 275,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1804/1274",
+       "name": "1.9 Multijet 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 206,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "ottimo-239",
+   "name": "Ottimo",
+   "generations": [
+    {
+     "slug": "2014-0",
+     "from": 2014,
+     "to": null,
+     "engines": [
+      {
+       "path": "1805/1201",
+       "name": "1.4 T-Jet 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 206,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1806/1225",
+       "name": "1.4 T-Jet 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 175,
+       "nmStock": 230,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "panda-240",
+   "name": "Panda",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "1807/1198",
+       "name": "0.9 Twinair 80hp",
+       "fuel": "petrol",
+       "hpStock": 80,
+       "hpTuned": 90,
+       "nmStock": 140,
+       "nmTuned": 190,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1808/65",
+       "name": "0.9 Twinair 85hp",
+       "fuel": "petrol",
+       "hpStock": 85,
+       "hpTuned": 95,
+       "nmStock": 145,
+       "nmTuned": 190,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1809/1275",
+       "name": "1.2i 60 hp",
+       "fuel": "petrol",
+       "hpStock": 60,
+       "hpTuned": 70,
+       "nmStock": 102,
+       "nmTuned": 114,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8193/2834",
+       "name": "1.2i 60hp",
+       "fuel": "petrol",
+       "hpStock": 60,
+       "hpTuned": 67,
+       "nmStock": 108,
+       "nmTuned": 118,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1810/1235",
+       "name": "1.3 JTD 70hp",
+       "fuel": "diesel",
+       "hpStock": 70,
+       "hpTuned": 85,
+       "nmStock": 180,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1811/1200",
+       "name": "1.3 JTDM 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 95,
+       "nmStock": 190,
+       "nmTuned": 245,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1812/68",
+       "name": "1.3 JTDM 95hp",
+       "fuel": "diesel",
+       "hpStock": 95,
+       "hpTuned": 115,
+       "nmStock": 200,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1813/1276",
+       "name": "1.4 100hp SPORT",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 110,
+       "nmStock": 131,
+       "nmTuned": 150,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "punto-241",
+   "name": "Punto",
+   "generations": [
+    {
+     "slug": "2003-0",
+     "from": 2003,
+     "to": null,
+     "engines": [
+      {
+       "path": "1814/1277",
+       "name": "1.2i 16v 80hp",
+       "fuel": "petrol",
+       "hpStock": 80,
+       "hpTuned": 87,
+       "nmStock": 114,
+       "nmTuned": 124,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1815/1278",
+       "name": "1.2i 8v 60hp",
+       "fuel": "petrol",
+       "hpStock": 60,
+       "hpTuned": 67,
+       "nmStock": 102,
+       "nmTuned": 112,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1816/1235",
+       "name": "1.3 JTD 70hp",
+       "fuel": "diesel",
+       "hpStock": 70,
+       "hpTuned": 85,
+       "nmStock": 180,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1817/1279",
+       "name": "1.3 M-Jet 75hp",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 95,
+       "nmStock": 190,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1818/1280",
+       "name": "1.3 M-Jet 85hp",
+       "fuel": "petrol",
+       "hpStock": 85,
+       "hpTuned": 105,
+       "nmStock": 204,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1819/76",
+       "name": "1.4i 16v 95hp",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 100,
+       "nmStock": 120,
+       "nmTuned": 130,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1820/59",
+       "name": "1.6 JTDm 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 145,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1821/3",
+       "name": "1.9 JTD 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 135,
+       "nmStock": 200,
+       "nmTuned": 265,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1822/1281",
+       "name": "1.9 JTD 80hp",
+       "fuel": "diesel",
+       "hpStock": 80,
+       "hpTuned": 115,
+       "nmStock": 196,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1823/1282",
+       "name": "1.9 JTD 85hp",
+       "fuel": "diesel",
+       "hpStock": 85,
+       "hpTuned": 115,
+       "nmStock": 196,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2012-0",
+     "from": 2012,
+     "to": null,
+     "engines": [
+      {
+       "path": "1824/79",
+       "name": "0.9 TwinAir 100hp",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 110,
+       "nmStock": 145,
+       "nmTuned": 190,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1825/65",
+       "name": "0.9 Twinair 85hp",
+       "fuel": "petrol",
+       "hpStock": 85,
+       "hpTuned": 95,
+       "nmStock": 145,
+       "nmTuned": 190,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1826/1283",
+       "name": "1.3 Mjet 80hp",
+       "fuel": "diesel",
+       "hpStock": 80,
+       "hpTuned": 110,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1827/1267",
+       "name": "1.3 Mjet 85hp",
+       "fuel": "diesel",
+       "hpStock": 85,
+       "hpTuned": 110,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1828/1268",
+       "name": "1.3 Mjet 95hp",
+       "fuel": "diesel",
+       "hpStock": 95,
+       "hpTuned": 115,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1829/1284",
+       "name": "1.6 Mjet 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 155,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "punto-evo-242",
+   "name": "Punto EVO",
+   "generations": [
+    {
+     "slug": "2009-0",
+     "from": 2009,
+     "to": null,
+     "engines": [
+      {
+       "path": "1830/1285",
+       "name": "1.3 Mjet 70hp",
+       "fuel": "diesel",
+       "hpStock": 70,
+       "hpTuned": 95,
+       "nmStock": 190,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1831/1283",
+       "name": "1.3 Mjet 80hp",
+       "fuel": "diesel",
+       "hpStock": 80,
+       "hpTuned": 110,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1832/1267",
+       "name": "1.3 Mjet 85hp",
+       "fuel": "diesel",
+       "hpStock": 85,
+       "hpTuned": 110,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1833/1268",
+       "name": "1.3 Mjet 95hp",
+       "fuel": "diesel",
+       "hpStock": 95,
+       "hpTuned": 115,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1834/1286",
+       "name": "1.4 T-jet 135hp",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 165,
+       "nmStock": 206,
+       "nmTuned": 280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1835/1284",
+       "name": "1.6 Mjet 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 155,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1836/1271",
+       "name": "Abarth 1.4 T-Jet 165hp",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 190,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1837/1287",
+       "name": "Abarth 1.4 T-jet Essesse 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1838/1288",
+       "name": "Abarth 1.4 T-jet Scorpione 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1839/1289",
+       "name": "Abarth 1.4 T-jet Supersport 180h",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8205/4931",
+       "name": "Abarth 1.4 T-jet Supersport 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "qubo-243",
+   "name": "Qubo",
+   "generations": [
+    {
+     "slug": "2008-0",
+     "from": 2008,
+     "to": null,
+     "engines": [
+      {
+       "path": "1840/1290",
+       "name": "1.3 Mjet 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 95,
+       "nmStock": 190,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8206/1283",
+       "name": "1.3 Mjet 80hp",
+       "fuel": "diesel",
+       "hpStock": 80,
+       "hpTuned": 110,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1841/1268",
+       "name": "1.3 Mjet 95hp",
+       "fuel": "diesel",
+       "hpStock": 95,
+       "hpTuned": 115,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "scudo-244",
+   "name": "Scudo",
+   "generations": [
+    {
+     "slug": "1995-2007",
+     "from": 1995,
+     "to": 2007,
+     "engines": [
+      {
+       "path": "1842/1291",
+       "name": "2.0 JTD 109hp",
+       "fuel": "diesel",
+       "hpStock": 109,
+       "hpTuned": 132,
+       "nmStock": 250,
+       "nmTuned": 295,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2007-0",
+     "from": 2007,
+     "to": null,
+     "engines": [
+      {
+       "path": "1843/59",
+       "name": "1.6 JTDm 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 145,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1844/1292",
+       "name": "1.6 JTDm 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 120,
+       "nmStock": 180,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1845/1293",
+       "name": "2.0 JTD 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 132,
+       "nmStock": 250,
+       "nmTuned": 295,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1846/1294",
+       "name": "2.0 JTDm 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 300,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1847/1263",
+       "name": "2.0 JTDm 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 185,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1848/41",
+       "name": "2.0 JTDm 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 195,
+       "nmStock": 360,
+       "nmTuned": 425,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2007-2020",
+     "from": 2007,
+     "to": 2020,
+     "engines": [
+      {
+       "path": "8207/59",
+       "name": "1.6 JTDm 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 145,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8208/1292",
+       "name": "1.6 JTDm 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 120,
+       "nmStock": 180,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8209/1293",
+       "name": "2.0 JTD 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 132,
+       "nmStock": 250,
+       "nmTuned": 295,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8210/1294",
+       "name": "2.0 JTDm 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 300,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8211/4932",
+       "name": "2.0 JTDm 128hp",
+       "fuel": "diesel",
+       "hpStock": 128,
+       "hpTuned": 185,
+       "nmStock": 300,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8212/1263",
+       "name": "2.0 JTDm 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 185,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8213/41",
+       "name": "2.0 JTDm 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 195,
+       "nmStock": 360,
+       "nmTuned": 425,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2021-0",
+     "from": 2021,
+     "to": null,
+     "engines": [
+      {
+       "path": "8214/2563",
+       "name": "2.0 BlueHDI 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 200,
+       "nmStock": 340,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16779/4934",
+       "name": "2.0 BlueHDI 145hp",
+       "fuel": "diesel",
+       "hpStock": 145,
+       "hpTuned": 205,
+       "nmStock": 370,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8216/1073",
+       "name": "2.0 BlueHDI 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "sedici-245",
+   "name": "Sedici",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "1849/9",
+       "name": "1.9 JTD 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 155,
+       "nmStock": 285,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1850/1295",
+       "name": "2.0 Mjet 135hp",
+       "fuel": "diesel",
+       "hpStock": 135,
+       "hpTuned": 165,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1851/1296",
+       "name": "2.0 Mjet 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 367,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "stilo-246",
+   "name": "Stilo",
+   "generations": [
+    {
+     "slug": "2001-2007",
+     "from": 2001,
+     "to": 2007,
+     "engines": [
+      {
+       "path": "1852/3",
+       "name": "1.9 JTD 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 135,
+       "nmStock": 200,
+       "nmTuned": 265,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1853/4",
+       "name": "1.9 JTD 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 145,
+       "nmStock": 275,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1854/9",
+       "name": "1.9 JTD 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 155,
+       "nmStock": 285,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1855/6",
+       "name": "1.9 JTD 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 175,
+       "nmStock": 305,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1856/11",
+       "name": "1.9 JTD 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 185,
+       "nmStock": 305,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1857/1281",
+       "name": "1.9 JTD 80hp",
+       "fuel": "diesel",
+       "hpStock": 80,
+       "hpTuned": 115,
+       "nmStock": 196,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1858/1297",
+       "name": "2.4i 20v 170hp",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 185,
+       "nmStock": 221,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "strada-247",
+   "name": "Strada",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "1859/1298",
+       "name": "1.3 MJTD 85hp",
+       "fuel": "petrol",
+       "hpStock": 85,
+       "hpTuned": 110,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1860/1262",
+       "name": "1.3 MJTD 95hp",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 115,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1861/1281",
+       "name": "1.9 JTD 80hp",
+       "fuel": "diesel",
+       "hpStock": 80,
+       "hpTuned": 115,
+       "nmStock": 196,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "talento-248",
+   "name": "Talento",
+   "generations": [
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "1862/1299",
+       "name": "1.6 Ecojet 95hp",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 140,
+       "nmStock": 260,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1863/1300",
+       "name": "1.6 EcoJet TwinTurbo 125hp",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 165,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1864/1301",
+       "name": "1.6 EcoJet TwinTurbo 145hp",
+       "fuel": "petrol",
+       "hpStock": 145,
+       "hpTuned": 165,
+       "nmStock": 340,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1865/1302",
+       "name": "1.6 MultJet 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 145,
+       "nmStock": 300,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1866/1303",
+       "name": "1.6 MultJet 95hp",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 140,
+       "nmStock": 260,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-2019",
+     "from": 2016,
+     "to": 2019,
+     "engines": [
+      {
+       "path": "8181/1299",
+       "name": "1.6 Ecojet 95hp",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 140,
+       "nmStock": 260,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8179/1300",
+       "name": "1.6 EcoJet TwinTurbo 125hp",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 165,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8180/1301",
+       "name": "1.6 EcoJet TwinTurbo 145hp",
+       "fuel": "petrol",
+       "hpStock": 145,
+       "hpTuned": 165,
+       "nmStock": 340,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8182/1302",
+       "name": "1.6 MultJet 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 145,
+       "nmStock": 300,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8183/1303",
+       "name": "1.6 MultJet 95hp",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 140,
+       "nmStock": 260,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2020-0",
+     "from": 2020,
+     "to": null,
+     "engines": [
+      {
+       "path": "8221/1299",
+       "name": "1.6 Ecojet 95hp",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 140,
+       "nmStock": 260,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8222/4939",
+       "name": "2.0 Ecojet 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 200,
+       "nmStock": 320,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8223/4940",
+       "name": "2.0 Ecojet 145hp",
+       "fuel": "petrol",
+       "hpStock": 145,
+       "hpTuned": 200,
+       "nmStock": 350,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8224/4941",
+       "name": "2.0 Ecojet 170hp",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 200,
+       "nmStock": 380,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "tipo-249",
+   "name": "Tipo",
+   "generations": [
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "1867/1268",
+       "name": "1.3 Mjet 95hp",
+       "fuel": "diesel",
+       "hpStock": 95,
+       "hpTuned": 115,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1868/1304",
+       "name": "1.4i 95hp",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 105,
+       "nmStock": 127,
+       "nmTuned": 140,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1869/1284",
+       "name": "1.6 Mjet 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 155,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1870/1305",
+       "name": "1.6i 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 120,
+       "nmStock": 152,
+       "nmTuned": 182,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-2020",
+     "from": 2016,
+     "to": 2020,
+     "engines": [
+      {
+       "path": "8225/1268",
+       "name": "1.3 Mjet 95hp",
+       "fuel": "diesel",
+       "hpStock": 95,
+       "hpTuned": 115,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16081/16054",
+       "name": "1.4 T-JET 120HP",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 160,
+       "nmStock": 215,
+       "nmTuned": 280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8226/6706",
+       "name": "1.4i 95hp",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 105,
+       "nmStock": 140,
+       "nmTuned": 150,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8227/1284",
+       "name": "1.6 Mjet 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 155,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8228/7002",
+       "name": "1.6i 110hp",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 120,
+       "nmStock": 153,
+       "nmTuned": 168,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2021-0",
+     "from": 2021,
+     "to": null,
+     "engines": [
+      {
+       "path": "15864/16055",
+       "name": "1.0T 100hp",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 120,
+       "nmStock": 190,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8218/1219",
+       "name": "1.3 Multijet 95hp",
+       "fuel": "diesel",
+       "hpStock": 95,
+       "hpTuned": 120,
+       "nmStock": 200,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8220/4938",
+       "name": "1.6 Multijet 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 155,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "toro-869",
+   "name": "Toro",
+   "generations": [
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "8092/4888",
+       "name": "2.0 Multijet 170hp",
+       "fuel": "diesel",
+       "hpStock": 170,
+       "hpTuned": 205,
+       "nmStock": 350,
+       "nmTuned": 425,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "ulysse-250",
+   "name": "Ulysse",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "1871/1293",
+       "name": "2.0 JTD 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 132,
+       "nmStock": 250,
+       "nmTuned": 295,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1872/1306",
+       "name": "2.0 JTD 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 165,
+       "nmStock": 320,
+       "nmTuned": 375,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1873/1307",
+       "name": "2.2 JTD 128hp",
+       "fuel": "diesel",
+       "hpStock": 128,
+       "hpTuned": 155,
+       "nmStock": 314,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "uno-251",
+   "name": "Uno",
+   "generations": [
+    {
+     "slug": "2010-0",
+     "from": 2010,
+     "to": null,
+     "engines": [
+      {
+       "path": "1874/1308",
+       "name": "1.4 8v 85hp",
+       "fuel": "petrol",
+       "hpStock": 85,
+       "hpTuned": 95,
+       "nmStock": 122,
+       "nmTuned": 135,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "viaggio-252",
+   "name": "Viaggio",
+   "generations": [
+    {
+     "slug": "2014-0",
+     "from": 2014,
+     "to": null,
+     "engines": [
+      {
+       "path": "1875/1201",
+       "name": "1.4 T-Jet 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 206,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "1876/1225",
+       "name": "1.4 T-Jet 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 175,
+       "nmStock": 230,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

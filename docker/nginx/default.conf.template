@@ -1,0 +1,71 @@
+# Сервира dist/ от Astro (build.format = directory: /bg/bmw → /bg/bmw/index.html, /bg/ → /bg/index.html).
+# ${LEGACY_UPSTREAM} се замества при старт на контейнера (env).
+server {
+  listen 80;
+  server_name _;
+  root /usr/share/nginx/html;
+  absolute_redirect off;
+  include /etc/nginx/headers.inc;
+
+  # R2: коренът → българската версия; R3 за началните: /bg → /bg/
+  location = / { return 301 /bg/; }
+  location = /bg { return 301 /bg/; }
+  location = /en { return 301 /en/; }
+
+  # R4: главни букви → малки (един път)
+  if ($uri != $uri_lc) { return 301 $uri_lc$is_args$args; }
+  # матрицата на пренасочванията
+  if ($redir) { return 301 $redir; }
+
+  # R3: наклонената черта в края се маха (освен /bg/ и /en/)
+  location ~ ^/(bg|en)/(.+)/$ { return 301 /$1/$2$is_args$args; }
+
+  # Порталът за файлове остава на стария сървър (план, стр. 34, вариант А — прокси)
+  location ~ ^/(bg|en)/(login|logout|sign-up|signup|register|forgot-password|reset-password|profile|account|orders|order|upload|files|file|dashboard|google-login|oauth)(/.*)?$ {
+    proxy_pass ${LEGACY_UPSTREAM};
+    proxy_set_header Host www.pdktuning.com;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto https;
+    proxy_ssl_server_name on;
+    proxy_redirect off;
+  }
+
+  # Формата
+  location /api/ {
+    proxy_pass http://api:3000/api/;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $host;
+  }
+
+  # Активи с версия в името: една година
+  location ~* ^/(_astro|fonts|logos)/ {
+    include /etc/nginx/headers.inc;
+    add_header Cache-Control "public, max-age=31536000, immutable";
+    try_files $uri =404;
+  }
+  location ~* ^/data/.*\.json$ {
+    include /etc/nginx/headers.inc;
+    add_header Cache-Control "public, max-age=86400";
+    try_files $uri =404;
+  }
+
+  # Страниците: кратък кеш, собствена 404 на езика
+  location /bg/ {
+    include /etc/nginx/headers.inc;
+    add_header Cache-Control "public, max-age=600";
+    error_page 404 /bg/404/index.html;
+    try_files $uri $uri/index.html =404;
+  }
+  location /en/ {
+    include /etc/nginx/headers.inc;
+    add_header Cache-Control "public, max-age=600";
+    error_page 404 /en/404/index.html;
+    try_files $uri $uri/index.html =404;
+  }
+  location / {
+    error_page 404 /bg/404/index.html;
+    try_files $uri $uri/index.html =404;
+  }
+  location = /bg/404/index.html { internal; }
+  location = /en/404/index.html { internal; }
+}

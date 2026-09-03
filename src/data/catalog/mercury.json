@@ -1,0 +1,129 @@
+{
+ "slug": "mercury",
+ "name": "Mercury",
+ "logo": "mercury.png",
+ "models": [
+  {
+   "slug": "grand-marquis-1004",
+   "name": "Grand Marquis",
+   "generations": [
+    {
+     "slug": "2003-2012",
+     "from": 2003,
+     "to": 2012,
+     "engines": [
+      {
+       "path": "10072/6022",
+       "name": "4.6 V8 - 239hp",
+       "fuel": "petrol",
+       "hpStock": 239,
+       "hpTuned": 260,
+       "nmStock": 389,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "mariner-1005",
+   "name": "Mariner",
+   "generations": [
+    {
+     "slug": "2005-2012",
+     "from": 2005,
+     "to": 2012,
+     "engines": [
+      {
+       "path": "10073/6668",
+       "name": "2.5i - 171hp",
+       "fuel": "petrol",
+       "hpStock": 171,
+       "hpTuned": 190,
+       "nmStock": 232,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10074/6669",
+       "name": "3.0 V6 - 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 260,
+       "nmStock": 316,
+       "nmTuned": 335,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "mountaineer-1006",
+   "name": "Mountaineer",
+   "generations": [
+    {
+     "slug": "2005-2010",
+     "from": 2005,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "10075/1475",
+       "name": "4.0 V6 - 210hp",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 230,
+       "nmStock": 344,
+       "nmTuned": 365,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10076/1357",
+       "name": "4.6 V8 - 292hp",
+       "fuel": "petrol",
+       "hpStock": 292,
+       "hpTuned": 310,
+       "nmStock": 427,
+       "nmTuned": 455,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "sable-1007",
+   "name": "Sable",
+   "generations": [
+    {
+     "slug": "2004-2009",
+     "from": 2004,
+     "to": 2009,
+     "engines": [
+      {
+       "path": "10077/6670",
+       "name": "3.0 V6 - 201hp",
+       "fuel": "petrol",
+       "hpStock": 201,
+       "hpTuned": 220,
+       "nmStock": 281,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10078/1484",
+       "name": "3.5 V6 - 263hp",
+       "fuel": "petrol",
+       "hpStock": 263,
+       "hpTuned": 285,
+       "nmStock": 338,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

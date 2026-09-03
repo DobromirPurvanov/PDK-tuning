@@ -1,0 +1,166 @@
+{
+ "slug": "doosan",
+ "name": "Doosan",
+ "logo": "doosan.png",
+ "models": [
+  {
+   "slug": "dl-853",
+   "name": "DL",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7957/4773",
+       "name": "DL - 250 - 5.9L - 174HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 174,
+       "hpTuned": 210,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7958/4774",
+       "name": "DL - 300 - 7.6L - 220HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 265,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7956/4772",
+       "name": "DL - 500 - 10.8L - 360HP - Euro5",
+       "fuel": "petrol",
+       "hpStock": 360,
+       "hpTuned": 400,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "dx-854",
+   "name": "DX",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7962/4778",
+       "name": "DX - 140LC - 5.9L - 117HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 117,
+       "hpTuned": 155,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7963/4779",
+       "name": "DX - 180LC-5 - 5.9L - 133HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 133,
+       "hpTuned": 175,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7964/4780",
+       "name": "DX - 190W-3 - 5.9L - 176HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 176,
+       "hpTuned": 210,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7965/4781",
+       "name": "DX - 225LC - 5.9L - 169HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 169,
+       "hpTuned": 205,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7966/4782",
+       "name": "DX - 235LC - 5.9L - 169HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 169,
+       "hpTuned": 205,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7967/4783",
+       "name": "DX - 255LC-3 - 5.9L - 258HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 258,
+       "hpTuned": 275,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7959/4775",
+       "name": "DX - 300LC - 203HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 203,
+       "hpTuned": 240,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7960/4776",
+       "name": "DX - 340LC - 7.6L - 250HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 280,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "moxy-855",
+   "name": "Moxy",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7961/4777",
+       "name": "Moxy - MT31 - 9.0L - 347HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 347,
+       "hpTuned": 385,
+       "nmStock": 1550,
+       "nmTuned": 1700,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

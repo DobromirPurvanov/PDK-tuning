@@ -1,0 +1,30 @@
+{
+ "slug": "tesla",
+ "name": "Tesla",
+ "logo": "tesla.png",
+ "models": [
+  {
+   "slug": "model-s-plaid-653",
+   "name": "Model S Plaid",
+   "generations": [
+    {
+     "slug": "2022-2024",
+     "from": 2022,
+     "to": 2024,
+     "engines": [
+      {
+       "path": "4958/2992",
+       "name": "Electric 1000hp",
+       "fuel": "electric",
+       "hpStock": 1000,
+       "hpTuned": 1150,
+       "nmStock": 2000,
+       "nmTuned": 2500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

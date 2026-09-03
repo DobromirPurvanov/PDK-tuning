@@ -1,0 +1,178 @@
+{
+ "slug": "gwm",
+ "name": "GWM",
+ "logo": "gwm.png",
+ "models": [
+  {
+   "slug": "c50-886",
+   "name": "C50",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "8533/5108",
+       "name": "1.5 Turbo 126hp",
+       "fuel": "petrol",
+       "hpStock": 131,
+       "hpTuned": 160,
+       "nmStock": 188,
+       "nmTuned": 245,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "h3-888",
+   "name": "H3",
+   "generations": [
+    {
+     "slug": "2005-2012",
+     "from": 2005,
+     "to": 2012,
+     "engines": [
+      {
+       "path": "8535/5110",
+       "name": "2.5 TCI 107hp",
+       "fuel": "petrol",
+       "hpStock": 107,
+       "hpTuned": 130,
+       "nmStock": 300,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "h5-889",
+   "name": "H5",
+   "generations": [
+    {
+     "slug": "2010-0",
+     "from": 2010,
+     "to": null,
+     "engines": [
+      {
+       "path": "8536/5111",
+       "name": "2.0 16V TD 127hp",
+       "fuel": "diesel",
+       "hpStock": 127,
+       "hpTuned": 150,
+       "nmStock": 310,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8537/5112",
+       "name": "2.0 VGT diesel 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 310,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "h6-887",
+   "name": "H6",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "8534/5109",
+       "name": "1.5T 150hp",
+       "fuel": "petrol",
+       "hpStock": 141,
+       "hpTuned": 181,
+       "nmStock": 210,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "haval-h9-890",
+   "name": "Haval H9",
+   "generations": [
+    {
+     "slug": "2014-0",
+     "from": 2014,
+     "to": null,
+     "engines": [
+      {
+       "path": "8538/5113",
+       "name": "2.0T 210hp",
+       "fuel": "petrol",
+       "hpStock": 218,
+       "hpTuned": 249,
+       "nmStock": 324,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "steed-5-891",
+   "name": "Steed 5",
+   "generations": [
+    {
+     "slug": "2012-0",
+     "from": 2012,
+     "to": null,
+     "engines": [
+      {
+       "path": "8539/5114",
+       "name": "2.0 VGT diesel 141hp",
+       "fuel": "diesel",
+       "hpStock": 141,
+       "hpTuned": 171,
+       "nmStock": 305,
+       "nmTuned": 375,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "v80-892",
+   "name": "V80",
+   "generations": [
+    {
+     "slug": "2008-0",
+     "from": 2008,
+     "to": null,
+     "engines": [
+      {
+       "path": "8540/5115",
+       "name": "1.5 Turbo 135hp",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 160,
+       "nmStock": 188,
+       "nmTuned": 245,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

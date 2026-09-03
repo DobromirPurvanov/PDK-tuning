@@ -1,0 +1,313 @@
+{
+ "slug": "hitachi",
+ "name": "Hitachi",
+ "logo": "hitachi.jpg",
+ "models": [
+  {
+   "slug": "za-893",
+   "name": "ZA",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "8541/5116",
+       "name": "ZA - 130 - 3 - 94 HP",
+       "fuel": "petrol",
+       "hpStock": 94,
+       "hpTuned": 120,
+       "nmStock": 372,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "zx-894",
+   "name": "ZX",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "8542/5117",
+       "name": "ZX - 135US - 3 - 94 HP",
+       "fuel": "petrol",
+       "hpStock": 94,
+       "hpTuned": 120,
+       "nmStock": 372,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8543/5118",
+       "name": "ZX - 140W - 3 - 123 HP",
+       "fuel": "petrol",
+       "hpStock": 123,
+       "hpTuned": 155,
+       "nmStock": 402,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8544/5119",
+       "name": "ZX - 145W - 3 - 123 HP",
+       "fuel": "petrol",
+       "hpStock": 123,
+       "hpTuned": 155,
+       "nmStock": 402,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8545/5120",
+       "name": "ZX - 160LC - 3 - 123 HP",
+       "fuel": "petrol",
+       "hpStock": 123,
+       "hpTuned": 155,
+       "nmStock": 402,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8546/5121",
+       "name": "ZX - 170W - 3 - 145 HP",
+       "fuel": "petrol",
+       "hpStock": 145,
+       "hpTuned": 178,
+       "nmStock": 540,
+       "nmTuned": 610,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8547/5122",
+       "name": "ZX - 180LC - 3 - 123 HP",
+       "fuel": "petrol",
+       "hpStock": 123,
+       "hpTuned": 155,
+       "nmStock": 402,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8548/5123",
+       "name": "ZX - 190W - 3 - 166 HP",
+       "fuel": "petrol",
+       "hpStock": 166,
+       "hpTuned": 200,
+       "nmStock": 655,
+       "nmTuned": 710,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8549/5124",
+       "name": "ZX - 210LC - 3 - 166 HP",
+       "fuel": "petrol",
+       "hpStock": 166,
+       "hpTuned": 210,
+       "nmStock": 655,
+       "nmTuned": 710,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8550/5125",
+       "name": "ZX - 225USLC - 3 - 166 HP",
+       "fuel": "petrol",
+       "hpStock": 166,
+       "hpTuned": 210,
+       "nmStock": 655,
+       "nmTuned": 710,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8551/5126",
+       "name": "ZX - 225USRLC - 3 - 166 HP",
+       "fuel": "petrol",
+       "hpStock": 166,
+       "hpTuned": 210,
+       "nmStock": 655,
+       "nmTuned": 710,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8552/5127",
+       "name": "ZX - 250LCN - 3 - 180 HP",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 225,
+       "nmStock": 673,
+       "nmTuned": 740,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8553/5128",
+       "name": "ZX - 250LCN - 5 - 180 HP",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 220,
+       "nmStock": 652,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8554/5129",
+       "name": "ZX - 280LCN - 3 - 190 HP",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 230,
+       "nmStock": 676,
+       "nmTuned": 740,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8555/5130",
+       "name": "ZX - 290LCN - 5 - 190 HP",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 240,
+       "nmStock": 652,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8556/5131",
+       "name": "ZX - 350LCN - 3 - 275 HP",
+       "fuel": "petrol",
+       "hpStock": 275,
+       "hpTuned": 310,
+       "nmStock": 1080,
+       "nmTuned": 1150,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8557/5132",
+       "name": "ZX - 350LCN - 5 - 275 HP",
+       "fuel": "petrol",
+       "hpStock": 275,
+       "hpTuned": 310,
+       "nmStock": 1080,
+       "nmTuned": 1150,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8558/5133",
+       "name": "ZX - 400LCN - 3 - 275 HP",
+       "fuel": "petrol",
+       "hpStock": 275,
+       "hpTuned": 310,
+       "nmStock": 1080,
+       "nmTuned": 1130,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8559/5134",
+       "name": "ZX - 450 - 3 - 353 HP",
+       "fuel": "petrol",
+       "hpStock": 353,
+       "hpTuned": 390,
+       "nmStock": 1580,
+       "nmTuned": 1660,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8560/5135",
+       "name": "ZX - 470H - 3 - LD - 353 HP",
+       "fuel": "petrol",
+       "hpStock": 353,
+       "hpTuned": 390,
+       "nmStock": 1580,
+       "nmTuned": 1660,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8561/5136",
+       "name": "ZX - 470LCH - 3 - 353 HP",
+       "fuel": "petrol",
+       "hpStock": 353,
+       "hpTuned": 390,
+       "nmStock": 1580,
+       "nmTuned": 1660,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8562/5137",
+       "name": "ZX - 500LC - 3 - 353 HP",
+       "fuel": "petrol",
+       "hpStock": 353,
+       "hpTuned": 390,
+       "nmStock": 1580,
+       "nmTuned": 1660,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8563/5138",
+       "name": "ZX - 520LCH - 3 - 353 HP",
+       "fuel": "petrol",
+       "hpStock": 353,
+       "hpTuned": 390,
+       "nmStock": 1580,
+       "nmTuned": 1660,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8564/5139",
+       "name": "ZX - 650LC - 3 - 469 HP",
+       "fuel": "petrol",
+       "hpStock": 469,
+       "hpTuned": 510,
+       "nmStock": 1980,
+       "nmTuned": 2100,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8565/5140",
+       "name": "ZX - 670LCH - 3 - 469 HP",
+       "fuel": "petrol",
+       "hpStock": 469,
+       "hpTuned": 510,
+       "nmStock": 1980,
+       "nmTuned": 2100,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8566/5141",
+       "name": "ZX - 850LC - 3 - 540 HP",
+       "fuel": "petrol",
+       "hpStock": 540,
+       "hpTuned": 600,
+       "nmStock": 2250,
+       "nmTuned": 2400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8567/5142",
+       "name": "ZX - 870H - 3 - 540 HP",
+       "fuel": "petrol",
+       "hpStock": 540,
+       "hpTuned": 600,
+       "nmStock": 2250,
+       "nmTuned": 2400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8568/5143",
+       "name": "ZX - 870LCH - 3 - 540 HP",
+       "fuel": "petrol",
+       "hpStock": 540,
+       "hpTuned": 600,
+       "nmStock": 2250,
+       "nmTuned": 2400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

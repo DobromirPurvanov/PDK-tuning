@@ -1,0 +1,401 @@
+{
+ "slug": "lexus",
+ "name": "Lexus",
+ "logo": "lexus.png",
+ "models": [
+  {
+   "slug": "gs-400",
+   "name": "GS",
+   "generations": [
+    {
+     "slug": "2005-2012",
+     "from": 2005,
+     "to": 2012,
+     "engines": [
+      {
+       "path": "2739/1801",
+       "name": "300 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 270,
+       "nmStock": 310,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9194/5990",
+       "name": "460 347hp",
+       "fuel": "petrol",
+       "hpStock": 347,
+       "hpTuned": 360,
+       "nmStock": 460,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "is-401",
+   "name": "IS",
+   "generations": [
+    {
+     "slug": "2005-2013",
+     "from": 2005,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "2740/1802",
+       "name": "200d - 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 205,
+       "nmStock": 340,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9202/6383",
+       "name": "200d - 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 360,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2741/1803",
+       "name": "220d - 177hp",
+       "fuel": "diesel",
+       "hpStock": 177,
+       "hpTuned": 205,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2742/1804",
+       "name": "250 - 208hp",
+       "fuel": "petrol",
+       "hpStock": 208,
+       "hpTuned": 228,
+       "nmStock": 252,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2743/1805",
+       "name": "F 5.0 V8 423hp",
+       "fuel": "petrol",
+       "hpStock": 423,
+       "hpTuned": 448,
+       "nmStock": 505,
+       "nmTuned": 525,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2013-2016",
+     "from": 2013,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "9204/5998",
+       "name": "200t - 245hp",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 300,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9206/1806",
+       "name": "350 - 311hp",
+       "fuel": "petrol",
+       "hpStock": 311,
+       "hpTuned": 320,
+       "nmStock": 376,
+       "nmTuned": 399,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2013-2017",
+     "from": 2013,
+     "to": 2017,
+     "engines": [
+      {
+       "path": "2744/1806",
+       "name": "350 - 311hp",
+       "fuel": "petrol",
+       "hpStock": 311,
+       "hpTuned": 320,
+       "nmStock": 376,
+       "nmTuned": 399,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "9207/5999",
+       "name": "(2.0T) 241hp",
+       "fuel": "petrol",
+       "hpStock": 241,
+       "hpTuned": 265,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9208/6000",
+       "name": "350i V6 311hp",
+       "fuel": "petrol",
+       "hpStock": 311,
+       "hpTuned": 320,
+       "nmStock": 376,
+       "nmTuned": 399,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2021-0",
+     "from": 2021,
+     "to": null,
+     "engines": [
+      {
+       "path": "9209/6001",
+       "name": "300 (2.0T) 241hp",
+       "fuel": "petrol",
+       "hpStock": 241,
+       "hpTuned": 265,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9210/6002",
+       "name": "300i V6 260hp",
+       "fuel": "petrol",
+       "hpStock": 260,
+       "hpTuned": 277,
+       "nmStock": 320,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9211/6000",
+       "name": "350i V6 311hp",
+       "fuel": "petrol",
+       "hpStock": 311,
+       "hpTuned": 320,
+       "nmStock": 376,
+       "nmTuned": 399,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "ls-402",
+   "name": "LS",
+   "generations": [
+    {
+     "slug": "2018-0",
+     "from": 2018,
+     "to": null,
+     "engines": [
+      {
+       "path": "2745/1807",
+       "name": "500 - 420hp",
+       "fuel": "petrol",
+       "hpStock": 420,
+       "hpTuned": 450,
+       "nmStock": 600,
+       "nmTuned": 670,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2018-2020",
+     "from": 2018,
+     "to": 2020,
+     "engines": [
+      {
+       "path": "9213/1807",
+       "name": "500 - 420hp",
+       "fuel": "petrol",
+       "hpStock": 420,
+       "hpTuned": 450,
+       "nmStock": 600,
+       "nmTuned": 670,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "nx-403",
+   "name": "NX",
+   "generations": [
+    {
+     "slug": "2015-2017",
+     "from": 2015,
+     "to": 2017,
+     "engines": [
+      {
+       "path": "9214/6004",
+       "name": "200t 238hp",
+       "fuel": "petrol",
+       "hpStock": 238,
+       "hpTuned": 270,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9215/6005",
+       "name": "300h 155hp",
+       "fuel": "petrol",
+       "hpStock": 155,
+       "hpTuned": 170,
+       "nmStock": 210,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "2746/1808",
+       "name": "2.0 Turbo - 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-2020",
+     "from": 2017,
+     "to": 2020,
+     "engines": [
+      {
+       "path": "9216/1808",
+       "name": "2.0 Turbo - 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "rc-404",
+   "name": "RC",
+   "generations": [
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "9217/6006",
+       "name": "200t 245hp",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 265,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9218/6007",
+       "name": "300h - 233hp",
+       "fuel": "petrol",
+       "hpStock": 233,
+       "hpTuned": 250,
+       "nmStock": 221,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2747/1809",
+       "name": "350 - 306hp",
+       "fuel": "petrol",
+       "hpStock": 306,
+       "hpTuned": 325,
+       "nmStock": 377,
+       "nmTuned": 401,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "rx-405",
+   "name": "RX",
+   "generations": [
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "2748/1810",
+       "name": "2.0T - 235hp",
+       "fuel": "petrol",
+       "hpStock": 235,
+       "hpTuned": 265,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-2019",
+     "from": 2015,
+     "to": 2019,
+     "engines": [
+      {
+       "path": "9221/1810",
+       "name": "2.0T - 235hp",
+       "fuel": "petrol",
+       "hpStock": 235,
+       "hpTuned": 265,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

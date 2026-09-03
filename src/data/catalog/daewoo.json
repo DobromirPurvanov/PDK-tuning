@@ -1,0 +1,53 @@
+{
+ "slug": "daewoo",
+ "name": "Daewoo",
+ "logo": "daewoo.png",
+ "models": [
+  {
+   "slug": "matiz-847",
+   "name": "Matiz",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7814/4623",
+       "name": "0.8 51hp",
+       "fuel": "petrol",
+       "hpStock": 51,
+       "hpTuned": 60,
+       "nmStock": 69,
+       "nmTuned": 80,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "nubira-2829",
+   "name": "Nubira",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "17274/4624",
+       "name": "2.0i 133hp",
+       "fuel": "petrol",
+       "hpStock": 133,
+       "hpTuned": 143,
+       "nmStock": 184,
+       "nmTuned": 199,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,20 @@
+---
+import type { Lang } from '@/i18n';
+interface Props { lang: Lang; items?: { h: string; p: string; t?: string }[] }
+const { lang } = Astro.props;
+const def = lang === 'bg' ? [
+  { h: 'Диагностика', p: 'Четем грешките и проверяваме дали двигателят е здрав. Чип тунинг на болен двигател не правим.', t: '20–30 мин' },
+  { h: 'Сваляне на софтуера', p: 'Оригиналният файл се чете през OBD или, при по-новите блокове, на маса. Пази се, за да може всичко да се върне.', t: '30–60 мин' },
+  { h: 'Писане на файла', p: 'Файлът се прави за точно този двигател и точно тази мощност — не се качва „универсален“ файл.', t: '60–90 мин' },
+  { h: 'Замерване на стенда', p: 'Колата се мери преди и след. Получавате двете криви — числата, не обещанията.', t: '30–45 мин' },
+] : [
+  { h: 'Diagnostics', p: 'We read the fault memory and check the engine is healthy. We do not tune a sick engine.', t: '20–30 min' },
+  { h: 'Reading the ECU', p: 'The original file is read via OBD or, on newer ECUs, on the bench. It is kept so everything can be restored.', t: '30–60 min' },
+  { h: 'Writing the file', p: 'The file is made for exactly this engine and this power output — no “universal” maps.', t: '60–90 min' },
+  { h: 'Dyno run', p: 'The car is measured before and after. You get both curves — figures, not promises.', t: '30–45 min' },
+];
+const items = Astro.props.items ?? def;
+---
+<ol class="steps">
+  {items.map((s) => <li><h3>{s.h}</h3><p>{s.p}</p>{s.t && <span class="t">{s.t}</span>}</li>)}
+</ol>

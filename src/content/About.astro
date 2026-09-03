@@ -1,0 +1,43 @@
+---
+// За нас (план, стр. 18): 400–500 думи — кой е екипът, откога, 5 държави, какво е файловата услуга. AboutPage + Organization.
+import Base from '@/layouts/Base.astro';
+import Crumbs from '@/components/Crumbs.astro';
+import Trust from '@/components/Trust.astro';
+import MapBlock from '@/components/MapBlock.astro';
+import { t, routes, fmt, type Lang } from '@/i18n';
+import business from '@/data/business.json';
+import { stats } from '@/lib/catalog';
+import { ldBreadcrumb, ldLocalBusiness, SITE } from '@/lib/seo';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang); const path = routes.about[lang];
+const since = new Date().getFullYear() - business.yearsExperience;
+const C = lang === 'bg' ? {
+  title: 'За нас — PDK Tuning, чип тунинг и файлове от 15 години | Варна',
+  description: `PDK Tuning: сервиз във Варна с дино стенд и екип, който пише тунинг файлове от ${since} г. за сервизи в ${business.countries} държави. Кой сме, какво правим и какво не правим.`,
+  h1: 'За нас', lead: `Сервиз на ул. „Прилеп“ във Варна и екип, който пише файлове за двигатели от ${since} г. Числата, не думите, са нашата визитка.`,
+  s: [
+    ['Кои сме', [`PDK Tuning започна като двама души с програматор и стенд под наем. Днес е сервиз във Варна със собствен динамометричен стенд и екип, който пише файлове за двигатели — за нашите клиенти на място и за сервизи партньори в ${business.countries} европейски държави, които качват файловете си през нашия портал.`, `Зад сайта стои БОЛИД АУТО ООД. Телефонът, на който отговаряме, е един — ${business.phoneDisplay} — и на него се обаждате директно на човек, който пише файлове, а не на оператор.`]],
+    ['Какво правим', [`Две неща. Първо, чип тунинг и софтуерни ремонти на място във Варна: диагностика, файл, измерване на стенда преди и след. Второ, файлова услуга: сервиз от България или Европа сваля оригиналния софтуер от колата на своя клиент, качва го в портала и получава обработен файл в рамките на работния ден.`, `И двете стъпват на една база — ${fmt(stats.engines)} двигателя от ${stats.brands} марки с мощност и момент преди и след, от файлове, които сме писали. Каталогът на сайта е тази база, отворена за всеки.`]],
+    ['Какво не правим', ['Не пишем „универсални“ файлове от интернет. Не правим чип тунинг на двигател с механичен проблем. Не изключваме емисионни системи на кола за обществените пътища. Не обещаваме проценти разход и не пипаме нищо по спирачки и въздушни възглавници. Това е кратък списък, но е половината от доверието.']],
+    ['Стендът и опитът', [`Стендът е на място от години и е причината числата в каталога да са сравними: един и същ протокол, загрят двигател, записани условия. Опитът е от ${business.yearsExperience}+ години с файлове — включително пистови коли и двигатели, построени по поръчка — и от отзивите: ${String(business.rating.value).replace('.', ',')} от 5 при ${business.rating.count} мнения в Google, повечето от хора, които са стояли до колата си, докато я мерим.`]],
+  ],
+} : {
+  title: 'About — PDK Tuning, tuning files and dyno since 2011 | Varna, Bulgaria',
+  description: `PDK Tuning: a dyno-equipped workshop in Varna and a team writing tuning files since ${since} for workshops in ${business.countries} countries and partners through a file portal.`,
+  h1: 'About us', lead: `A workshop on Prilep Street in Varna and a team that has written engine files since ${since}. Figures, not words, are our business card.`,
+  s: [
+    ['Who we are', [`PDK Tuning started as two people with a programmer and a rented dyno. Today it is a workshop in Varna with its own chassis dynamometer and a team writing engine files — for local customers on site and for partner workshops in ${business.countries} European countries that upload their files through our portal.`, `The company behind the site is BOLID AUTO Ltd. There is one phone number — ${business.phoneIntl} — and it is answered by someone who writes files, not by an operator.`]],
+    ['What we do', [`Two things. First, chip tuning and ECU software repair on site in Varna: diagnostics, file, before/after dyno run. Second, the file service: a workshop in Bulgaria or elsewhere in Europe reads the original software from its customer’s car, uploads it to the portal and receives the processed file within the working day.`, `Both rest on one database — ${fmt(stats.engines)} engines from ${stats.brands} brands with stock and tuned power and torque, from files we have written. The catalog on this site is that database, open to everyone.`]],
+    ['What we do not do', ['We do not use “universal” files from the internet. We do not remap an engine with a mechanical fault. We do not switch off emission systems on road cars. We do not promise consumption percentages and we do not touch brakes or airbags. A short list, but half of the trust.']],
+    ['The dyno and the experience', [`The dyno has been on site for years and is the reason the catalog figures are comparable: same protocol, warm engine, logged conditions. The experience is ${business.yearsExperience}+ years of files — including track cars and custom-built engines — and the reviews: ${business.rating.value} of 5 from ${business.rating.count} Google reviews, most from people who stood next to their car while we measured it.`]],
+  ],
+};
+const crumbs = [{ name: d.crumbs.home, path: routes.home[lang] }];
+---
+<Base lang={lang} title={C.title} description={C.description} path={path} current="about" jsonld={[ldBreadcrumb([...crumbs, { name: d.nav.about, path }]), { '@context': 'https://schema.org', '@type': 'AboutPage', url: SITE + path, mainEntity: { '@id': SITE + '/#org' } }, ldLocalBusiness(lang)]}>
+  <div class="wrap"><Crumbs items={crumbs} current={d.nav.about} /><p class="kicker">{d.nav.about} · {lang === 'bg' ? 'от' : 'since'} {since}</p><h1>{C.h1}</h1><p class="lead">{C.lead}</p></div>
+  <section class="section"><div class="wrap-narrow"><article class="article">{C.s.map(([h, ps], i) => <><p class="kicker">{String(i + 1).padStart(2, '0')}</p><h2>{h}</h2>{(ps as string[]).map((x) => <p>{x}</p>)}</>)}</article></div></section>
+  <section class="section dark"><div class="wrap"><Trust lang={lang} /></div></section>
+  <section class="section"><div class="wrap"><p class="kicker">{d.nav.contact}</p><h2>{d.misc.ourWorkshop}</h2><MapBlock lang={lang} /></div></section>
+</Base>

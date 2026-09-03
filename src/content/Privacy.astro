@@ -1,0 +1,24 @@
+---
+import Base from '@/layouts/Base.astro';
+import Crumbs from '@/components/Crumbs.astro';
+import { t, routes, type Lang } from '@/i18n';
+import bg from '@/content/privacy.bg.html?raw';
+import en from '@/content/privacy.en.html?raw';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang); const path = routes.privacy[lang];
+const C = lang === 'bg'
+  ? { title: 'Политика за поверителност | PDK Tuning', description: 'Политика за поверителност на pdktuning.com: какви данни събират сайтът и порталът, за какво се ползват, бисквитки и права. Администратор: БОЛИД АУТО ООД.', h1: 'Политика за поверителност', note: 'Формата на сайта събира име, телефон и по избор имейл — само за отговор на запитването. Данните отиват по имейл и не се пазят в база.' }
+  : { title: 'Privacy policy | PDK Tuning', description: 'Privacy policy of pdktuning.com: what data the website and the file portal collect, what it is used for, cookies and user rights. Controller: BOLID AUTO Ltd., Varna.', h1: 'Privacy policy', note: 'The enquiry form collects a name, a phone number and optionally an email — only to answer the enquiry. Data goes by email and is not stored in a database.' };
+const crumbs = [{ name: d.crumbs.home, path: routes.home[lang] }];
+---
+<Base lang={lang} title={C.title} description={C.description} path={path}>
+  <div class="wrap">
+    <Crumbs items={crumbs} current={d.form.privacy} />
+    <h1>{C.h1}</h1>
+    <div class="article">
+      <div class="box"><p style="margin:0">{C.note}</p></div>
+      <div set:html={lang === 'bg' ? bg : en} />
+    </div>
+  </div>
+</Base>

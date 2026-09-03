@@ -1,0 +1,70 @@
+{
+ "slug": "samsung",
+ "name": "Samsung",
+ "logo": "samsung.png",
+ "models": [
+  {
+   "slug": "sm6-1094",
+   "name": "SM6",
+   "generations": [
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "11283/2361",
+       "name": "1.5 DCi - 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 130,
+       "nmStock": 260,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11284/2362",
+       "name": "1.6 DCi - 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 160,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11285/7418",
+       "name": "1.6 DCi - 160hp",
+       "fuel": "diesel",
+       "hpStock": 160,
+       "hpTuned": 180,
+       "nmStock": 380,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11286/7419",
+       "name": "1.6 TCe - 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 220,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11287/7420",
+       "name": "1.6 TCe - 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 220,
+       "nmStock": 260,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

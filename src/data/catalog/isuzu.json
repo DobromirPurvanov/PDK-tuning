@@ -1,0 +1,199 @@
+{
+ "slug": "isuzu",
+ "name": "Isuzu",
+ "logo": "isuzu.png",
+ "models": [
+  {
+   "slug": "ascender-913",
+   "name": "Ascender",
+   "generations": [
+    {
+     "slug": "2003-2008",
+     "from": 2003,
+     "to": 2008,
+     "engines": [
+      {
+       "path": "8717/5260",
+       "name": "4.2 275hp",
+       "fuel": "petrol",
+       "hpStock": 275,
+       "hpTuned": 295,
+       "nmStock": 373,
+       "nmTuned": 395,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8718/951",
+       "name": "5.3 V8 305hp",
+       "fuel": "petrol",
+       "hpStock": 305,
+       "hpTuned": 325,
+       "nmStock": 449,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "d-max-914",
+   "name": "D-Max",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "8719/5261",
+       "name": "1.9D 164hp",
+       "fuel": "diesel",
+       "hpStock": 164,
+       "hpTuned": 200,
+       "nmStock": 360,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8720/3079",
+       "name": "2.5 TDI 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 166,
+       "nmStock": 300,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8721/5263",
+       "name": "2.5D twinturbo 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 195,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8722/5264",
+       "name": "3.0 TD 131hp",
+       "fuel": "diesel",
+       "hpStock": 131,
+       "hpTuned": 165,
+       "nmStock": 278,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8723/5265",
+       "name": "3.0 TDI 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 190,
+       "nmStock": 360,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8724/5266",
+       "name": "3.0D 177hp",
+       "fuel": "diesel",
+       "hpStock": 177,
+       "hpTuned": 190,
+       "nmStock": 360,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "i-series-915",
+   "name": "I-Series",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "8725/5267",
+       "name": "I-280 2.8 175hp",
+       "fuel": "petrol",
+       "hpStock": 175,
+       "hpTuned": 195,
+       "nmStock": 250,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8726/5268",
+       "name": "I-290 2.9 185hp",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 205,
+       "nmStock": 258,
+       "nmTuned": 275,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8727/5269",
+       "name": "I-350 3.5 220hp",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 240,
+       "nmStock": 305,
+       "nmTuned": 325,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8728/5270",
+       "name": "I-370 3.7 242hp",
+       "fuel": "petrol",
+       "hpStock": 242,
+       "hpTuned": 260,
+       "nmStock": 328,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "mu-x-916",
+   "name": "MU-X",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "8729/5271",
+       "name": "2.5d 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 195,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8730/5272",
+       "name": "3.0d 177hp",
+       "fuel": "diesel",
+       "hpStock": 177,
+       "hpTuned": 205,
+       "nmStock": 430,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

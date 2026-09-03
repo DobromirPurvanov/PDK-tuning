@@ -1,0 +1,362 @@
+{
+ "slug": "mclaren",
+ "name": "McLaren",
+ "logo": "mclaren.png",
+ "models": [
+  {
+   "slug": "540c-424",
+   "name": "540C",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2837/1879",
+       "name": "3.8 V8 540hp",
+       "fuel": "petrol",
+       "hpStock": 540,
+       "hpTuned": 620,
+       "nmStock": 540,
+       "nmTuned": 680,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "570-s-sprint-gt4-991",
+   "name": "570 S Sprint GT4",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "9464/1880",
+       "name": "3.8 V8 570hp",
+       "fuel": "petrol",
+       "hpStock": 570,
+       "hpTuned": 620,
+       "nmStock": 600,
+       "nmTuned": 680,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "570gt-426",
+   "name": "570GT",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2839/1880",
+       "name": "3.8 V8 570hp",
+       "fuel": "petrol",
+       "hpStock": 570,
+       "hpTuned": 620,
+       "nmStock": 600,
+       "nmTuned": 680,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "600lt-427",
+   "name": "600LT",
+   "generations": [
+    {
+     "slug": "2018-0",
+     "from": 2018,
+     "to": null,
+     "engines": [
+      {
+       "path": "2840/1881",
+       "name": "3.8 V8 600hp",
+       "fuel": "petrol",
+       "hpStock": 600,
+       "hpTuned": 620,
+       "nmStock": 620,
+       "nmTuned": 680,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "620r-992",
+   "name": "620R",
+   "generations": [
+    {
+     "slug": "2020-0",
+     "from": 2020,
+     "to": null,
+     "engines": [
+      {
+       "path": "9465/6309",
+       "name": "3.8 V8 620hp",
+       "fuel": "petrol",
+       "hpStock": 620,
+       "hpTuned": 660,
+       "nmStock": 620,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "625c-428",
+   "name": "625C",
+   "generations": [
+    {
+     "slug": "2014-0",
+     "from": 2014,
+     "to": null,
+     "engines": [
+      {
+       "path": "2841/1882",
+       "name": "3.8 V8 625hp",
+       "fuel": "petrol",
+       "hpStock": 625,
+       "hpTuned": 680,
+       "nmStock": 610,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "650s-429",
+   "name": "650S",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2842/1883",
+       "name": "3.8 V8 650hp",
+       "fuel": "petrol",
+       "hpStock": 650,
+       "hpTuned": 700,
+       "nmStock": 678,
+       "nmTuned": 740,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "675lt-430",
+   "name": "675LT",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2843/1884",
+       "name": "3.8 V8 675hp",
+       "fuel": "petrol",
+       "hpStock": 675,
+       "hpTuned": 700,
+       "nmStock": 700,
+       "nmTuned": 750,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "720s-431",
+   "name": "720S",
+   "generations": [
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "2844/1885",
+       "name": "4.0 V8 720hp",
+       "fuel": "petrol",
+       "hpStock": 720,
+       "hpTuned": 820,
+       "nmStock": 770,
+       "nmTuned": 880,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "765lt-993",
+   "name": "765LT",
+   "generations": [
+    {
+     "slug": "2020-0",
+     "from": 2020,
+     "to": null,
+     "engines": [
+      {
+       "path": "9466/6310",
+       "name": "4.0 V8 765hp",
+       "fuel": "petrol",
+       "hpStock": 765,
+       "hpTuned": 820,
+       "nmStock": 800,
+       "nmTuned": 880,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "elva-994",
+   "name": "Elva",
+   "generations": [
+    {
+     "slug": "2020-0",
+     "from": 2020,
+     "to": null,
+     "engines": [
+      {
+       "path": "9467/6311",
+       "name": "4.0 TT 815hp",
+       "fuel": "petrol",
+       "hpStock": 815,
+       "hpTuned": 850,
+       "nmStock": 800,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "gt-2861",
+   "name": "GT",
+   "generations": [
+    {
+     "slug": "2019-0",
+     "from": 2019,
+     "to": null,
+     "engines": [
+      {
+       "path": "17889/6313",
+       "name": "4.0 V8 620hp",
+       "fuel": "petrol",
+       "hpStock": 620,
+       "hpTuned": 820,
+       "nmStock": 630,
+       "nmTuned": 880,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "mp4-12c-432",
+   "name": "MP4-12C",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2845/1882",
+       "name": "3.8 V8 625hp",
+       "fuel": "petrol",
+       "hpStock": 625,
+       "hpTuned": 680,
+       "nmStock": 610,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "p1-433",
+   "name": "P1",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "17782/6308",
+       "name": "3.8 V8 916hp",
+       "fuel": "petrol",
+       "hpStock": 625,
+       "hpTuned": 1000,
+       "nmStock": 900,
+       "nmTuned": 1000,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2846/1886",
+       "name": "3.8 V8 916hp",
+       "fuel": "petrol",
+       "hpStock": 916,
+       "hpTuned": 1000,
+       "nmStock": 900,
+       "nmTuned": 1000,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "senna-434",
+   "name": "Senna",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2847/1887",
+       "name": "4.0 V8 800hp",
+       "fuel": "petrol",
+       "hpStock": 800,
+       "hpTuned": 850,
+       "nmStock": 800,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
