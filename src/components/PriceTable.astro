@@ -1,0 +1,22 @@
+---
+import { t, routes, servicePath, type Lang } from '@/i18n';
+import { SERVICES } from '@/data/services';
+import prices from '@/data/prices.json';
+interface Props { lang: Lang; short?: boolean }
+const { lang, short = false } = Astro.props;
+const d = t(lang);
+const P = prices.items as Record<string, { from: number; time: string }>;
+const timeEn = (s: string) => s.replace('ч', 'h').replace('мин', 'min').replace('по уговорка', 'by arrangement');
+const rows: { name: string; href: string; key: string; note?: string }[] = [
+  { name: lang === 'bg' ? 'Чип тунинг Stage 1' : 'Chip tuning Stage 1', href: routes.chipTuningVarna[lang], key: 'chip-tuning' },
+  ...(short ? [] : [{ name: lang === 'bg' ? 'Чип тунинг Stage 2' : 'Chip tuning Stage 2', href: routes.chipTuning[lang] + '#vidove', key: 'stage-2', note: lang === 'bg' ? 'с хардуерни промени, след разговор' : 'with hardware changes, after a call' }]),
+  ...SERVICES.filter((s) => !short || ['dpf-fap', 'egr'].includes(s.slug)).map((s) => ({ name: s.name[lang], href: servicePath(lang, s.slug), key: s.priceKey })),
+  ...(short ? [] : [{ name: lang === 'bg' ? 'Замерване на дино стенд' : 'Dyno measurement', href: routes.dyno[lang], key: 'dyno' }, { name: lang === 'bg' ? 'Диагностика' : 'Diagnostics', href: routes.contact[lang], key: 'diagnostics', note: lang === 'bg' ? 'приспада се от цената на услугата' : 'deducted from the service price' }]),
+];
+---
+<table class="prices">
+  <thead><tr><th>{lang === 'bg' ? 'Услуга' : 'Service'}</th><th class="num">{lang === 'bg' ? 'Цена от' : 'From'}</th><th>{lang === 'bg' ? 'Време' : 'Time'}</th></tr></thead>
+  <tbody>
+    {rows.map((r) => <tr><td><a href={r.href}>{r.name}</a>{r.note && <span class="muted"> · {r.note}</span>}</td><td class="num from">{P[r.key].from} €</td><td>{lang === 'bg' ? P[r.key].time : timeEn(P[r.key].time)}</td></tr>)}
+  </tbody>
+</table>

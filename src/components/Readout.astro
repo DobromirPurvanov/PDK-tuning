@@ -1,0 +1,26 @@
+---
+import { t, type Lang } from '@/i18n';
+interface Props { lang: Lang; hpStock: number; hpTuned: number; nmStock: number | null; nmTuned: number | null; small?: boolean }
+const { lang, hpStock, hpTuned, nmStock, nmTuned } = Astro.props;
+const d = t(lang);
+const hpG = hpTuned - hpStock; const pct = Math.round((hpG / hpStock) * 100);
+const nmG = nmStock != null && nmTuned != null ? nmTuned - nmStock : null;
+---
+<div class="readout">
+  <div>
+    <div class="l">{d.readout.power}</div>
+    <div class="v"><span class="num">{hpStock}</span><span class="arrow">→</span><span class="to">{hpTuned}</span><span class="u">{d.units.hp}</span></div>
+    <div class="d">+{hpG} {d.units.hp} · +{pct}%</div>
+  </div>
+  <div>
+    <div class="l">{d.readout.torque}</div>
+    {nmStock != null && nmTuned != null ? (
+      <>
+        <div class="v"><span class="num">{nmStock}</span><span class="arrow">→</span><span class="to">{nmTuned}</span><span class="u">Nm</span></div>
+        <div class="d">{nmG != null && nmG > 0 ? `+${nmG} Nm · +${Math.round((nmG / nmStock) * 100)}%` : '—'}</div>
+      </>
+    ) : (
+      <div class="v muted">—</div>
+    )}
+  </div>
+</div>

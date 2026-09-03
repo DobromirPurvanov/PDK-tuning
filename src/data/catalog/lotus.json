@@ -1,0 +1,169 @@
+{
+ "slug": "lotus",
+ "name": "Lotus",
+ "logo": "lotus.jpg",
+ "models": [
+  {
+   "slug": "elise-957",
+   "name": "Elise",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "9256/6045",
+       "name": "R 192hp",
+       "fuel": "petrol",
+       "hpStock": 192,
+       "hpTuned": 205,
+       "nmStock": 181,
+       "nmTuned": 196,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9257/6046",
+       "name": "S 136hp",
+       "fuel": "petrol",
+       "hpStock": 136,
+       "hpTuned": 150,
+       "nmStock": 160,
+       "nmTuned": 180,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9258/6047",
+       "name": "SC 220hp",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 240,
+       "nmStock": 250,
+       "nmTuned": 280,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "europa-958",
+   "name": "Europa",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "18377/6048",
+       "name": "SC 220hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 240,
+       "nmStock": 272,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9259/6047",
+       "name": "SC 220hp",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 240,
+       "nmStock": 250,
+       "nmTuned": 280,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "evora-959",
+   "name": "Evora",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "9260/6049",
+       "name": "3.5 V6 280hp",
+       "fuel": "petrol",
+       "hpStock": 280,
+       "hpTuned": 305,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9261/6050",
+       "name": "3.5 V6 S / SR 350hp",
+       "fuel": "petrol",
+       "hpStock": 350,
+       "hpTuned": 360,
+       "nmStock": 400,
+       "nmTuned": 415,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "exige-960",
+   "name": "Exige",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "9262/6051",
+       "name": "1.8 192hp",
+       "fuel": "petrol",
+       "hpStock": 192,
+       "hpTuned": 205,
+       "nmStock": 185,
+       "nmTuned": 200,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9263/6052",
+       "name": "Cup R 3.5 V6 366hp",
+       "fuel": "petrol",
+       "hpStock": 366,
+       "hpTuned": 375,
+       "nmStock": 413,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9264/6053",
+       "name": "S 221hp",
+       "fuel": "petrol",
+       "hpStock": 221,
+       "hpTuned": 240,
+       "nmStock": 215,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9265/6054",
+       "name": "S 3.5 V6 350hp",
+       "fuel": "petrol",
+       "hpStock": 350,
+       "hpTuned": 360,
+       "nmStock": 400,
+       "nmTuned": 415,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

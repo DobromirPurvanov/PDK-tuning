@@ -1,0 +1,27 @@
+{
+  "name": "PDK Tuning",
+  "legalName": "БОЛИД АУТО ООД",
+  "legalAddress": "ул. „Прилеп“ 164, Варна",
+  "phone": "+359883331609",
+  "phoneDisplay": "088 333 1609",
+  "phoneIntl": "+359 88 333 1609",
+  "viber": "+359883331609",
+  "email": "office@pdktuning.com",
+  "address": { "street": "ул. „Прилеп“ 96", "streetEn": "96 Prilep St.", "city": "Варна", "cityEn": "Varna", "postalCode": "9000", "country": "BG" },
+  "geo": { "lat": 43.2356446, "lng": 27.9054829 },
+  "hours": [
+    { "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "18:00" },
+    { "days": ["Saturday"], "opens": "09:00", "closes": "14:00" }
+  ],
+  "rating": { "value": 4.8, "count": 118, "_note": "Google профил 25.08.2026: 4,8 / 118; oink.bg: 4,80 / 114" },
+  "yearsExperience": 15,
+  "countries": 5,
+  "social": {
+    "facebook": "https://www.facebook.com/ChipTuningPDK/",
+    "instagram": "https://www.instagram.com/pdktuning/",
+    "youtube": "https://www.youtube.com/@pdktuning",
+    "maps": "https://www.google.com/maps/search/?api=1&query=PDK+Chip+Tuning+Varna"
+  },
+  "portal": { "login": { "bg": "https://www.pdktuning.com/bg/login", "en": "https://www.pdktuning.com/en/login" } },
+  "_todo": "Координатите са от oink.bg (профилът в Google сочи ул. Прилеп 96). Адресът (96 срещу 164), работното време и координатите се потвърждават от възложителя преди пускане (план, стр. 18 и 43). Имейлът е предположение."
+}

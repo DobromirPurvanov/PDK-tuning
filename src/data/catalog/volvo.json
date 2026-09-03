@@ -1,0 +1,5210 @@
+{
+ "slug": "volvo",
+ "name": "Volvo",
+ "logo": "volvo.png",
+ "models": [
+  {
+   "slug": "c30-710",
+   "name": "C30",
+   "generations": [
+    {
+     "slug": "2006-2008",
+     "from": 2006,
+     "to": 2008,
+     "engines": [
+      {
+       "path": "5541/2225",
+       "name": "1.6D 109hp",
+       "fuel": "diesel",
+       "hpStock": 109,
+       "hpTuned": 140,
+       "nmStock": 240,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5542/2235",
+       "name": "2.0D 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 180,
+       "nmStock": 305,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12311/7861",
+       "name": "2.0D 136hp",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5543/3204",
+       "name": "2.4 D5 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 205,
+       "nmStock": 340,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5544/3205",
+       "name": "2.4 D5 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 205,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5545/3206",
+       "name": "2.4 D5 180hp aut",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 205,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5546/3207",
+       "name": "2.5 T5 220hp",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5547/3208",
+       "name": "2.5 T5 230hp",
+       "fuel": "petrol",
+       "hpStock": 230,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2009-2013",
+     "from": 2009,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "5548/3209",
+       "name": "1.6 D2 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12313/2225",
+       "name": "1.6D 109hp",
+       "fuel": "diesel",
+       "hpStock": 109,
+       "hpTuned": 140,
+       "nmStock": 240,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5549/3210",
+       "name": "2.0 D3 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5550/3211",
+       "name": "2.0 D4 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5551/3212",
+       "name": "2.0 D4 177hp",
+       "fuel": "petrol",
+       "hpStock": 177,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12314/7861",
+       "name": "2.0D 136hp",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12315/3205",
+       "name": "2.4 D5 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 205,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12316/3208",
+       "name": "2.5 T5 230hp",
+       "fuel": "petrol",
+       "hpStock": 230,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "c70-711",
+   "name": "C70",
+   "generations": [
+    {
+     "slug": "1999-2005",
+     "from": 1999,
+     "to": 2005,
+     "engines": [
+      {
+       "path": "5552/2231",
+       "name": "2.0T 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 230,
+       "nmStock": 280,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5553/3213",
+       "name": "2.4T 193hp",
+       "fuel": "petrol",
+       "hpStock": 193,
+       "hpTuned": 230,
+       "nmStock": 270,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5554/3214",
+       "name": "T5 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 310,
+       "nmStock": 330,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2006-2009",
+     "from": 2006,
+     "to": 2009,
+     "engines": [
+      {
+       "path": "5555/2235",
+       "name": "2.0D 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 180,
+       "nmStock": 305,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12317/7861",
+       "name": "2.0D 136hp",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5556/3204",
+       "name": "2.4 D5 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 205,
+       "nmStock": 340,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5557/3205",
+       "name": "2.4 D5 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 205,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5558/3206",
+       "name": "2.4 D5 180hp aut",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 205,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5559/3215",
+       "name": "2.4i 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 220,
+       "nmTuned": 235,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5560/3216",
+       "name": "T5 220hp",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 250,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5561/3217",
+       "name": "T5 230hp",
+       "fuel": "petrol",
+       "hpStock": 230,
+       "hpTuned": 250,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2009-0",
+     "from": 2009,
+     "to": null,
+     "engines": [
+      {
+       "path": "5562/3210",
+       "name": "2.0 D3 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5563/3212",
+       "name": "2.0 D4 177hp",
+       "fuel": "petrol",
+       "hpStock": 177,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12319/7861",
+       "name": "2.0D 136hp",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12320/3205",
+       "name": "2.4 D5 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 205,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12321/3206",
+       "name": "2.4 D5 180hp aut",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 205,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12322/3215",
+       "name": "2.4i 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 220,
+       "nmTuned": 235,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5564/3207",
+       "name": "2.5 T5 220hp",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5565/3208",
+       "name": "2.5 T5 230hp",
+       "fuel": "petrol",
+       "hpStock": 230,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "s40-712",
+   "name": "S40",
+   "generations": [
+    {
+     "slug": "2000-2004",
+     "from": 2000,
+     "to": 2004,
+     "engines": [
+      {
+       "path": "5566/3218",
+       "name": "1.9D 102hp",
+       "fuel": "diesel",
+       "hpStock": 102,
+       "hpTuned": 130,
+       "nmStock": 215,
+       "nmTuned": 265,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5567/3219",
+       "name": "1.9D 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 160,
+       "nmStock": 265,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5568/3220",
+       "name": "2.0T 165hp",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 190,
+       "nmStock": 240,
+       "nmTuned": 295,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5569/3221",
+       "name": "T4 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 235,
+       "nmStock": 300,
+       "nmTuned": 345,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2004-2007",
+     "from": 2004,
+     "to": 2007,
+     "engines": [
+      {
+       "path": "5570/2225",
+       "name": "1.6D 109hp",
+       "fuel": "diesel",
+       "hpStock": 109,
+       "hpTuned": 140,
+       "nmStock": 240,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5571/2235",
+       "name": "2.0D 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 180,
+       "nmStock": 305,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12325/7861",
+       "name": "2.0D 136hp",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5572/3204",
+       "name": "2.4 D5 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 205,
+       "nmStock": 340,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5573/3205",
+       "name": "2.4 D5 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 205,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5574/3206",
+       "name": "2.4 D5 180hp aut",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 205,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5575/3215",
+       "name": "2.4i 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 220,
+       "nmTuned": 235,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5576/3216",
+       "name": "T5 220hp",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 250,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2007-2012",
+     "from": 2007,
+     "to": 2012,
+     "engines": [
+      {
+       "path": "5577/3209",
+       "name": "1.6 D2 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12328/2225",
+       "name": "1.6D 109hp",
+       "fuel": "diesel",
+       "hpStock": 109,
+       "hpTuned": 140,
+       "nmStock": 240,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5578/3210",
+       "name": "2.0 D3 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5579/3212",
+       "name": "2.0 D4 177hp",
+       "fuel": "petrol",
+       "hpStock": 177,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12329/7861",
+       "name": "2.0D 136hp",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12330/7859",
+       "name": "2.4 D5 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 205,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12331/3205",
+       "name": "2.4 D5 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 205,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12332/3206",
+       "name": "2.4 D5 180hp aut",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 205,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12333/3215",
+       "name": "2.4i 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 220,
+       "nmTuned": 235,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12334/3216",
+       "name": "T5 220hp",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 250,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5580/3217",
+       "name": "T5 230hp",
+       "fuel": "petrol",
+       "hpStock": 230,
+       "hpTuned": 250,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "s60-713",
+   "name": "S60",
+   "generations": [
+    {
+     "slug": "2000-2004",
+     "from": 2000,
+     "to": 2004,
+     "engines": [
+      {
+       "path": "5581/3222",
+       "name": "2.0T 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 225,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5582/3204",
+       "name": "2.4 D5 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 205,
+       "nmStock": 340,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5583/3223",
+       "name": "2.4D 130hp",
+       "fuel": "diesel",
+       "hpStock": 126,
+       "hpTuned": 195,
+       "nmStock": 280,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12324/7860",
+       "name": "2.4D 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 195,
+       "nmStock": 280,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5584/3215",
+       "name": "2.4i 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 220,
+       "nmTuned": 235,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5585/3224",
+       "name": "2.4T 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 235,
+       "nmStock": 285,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17468/7858",
+       "name": "2.5T 210hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 240,
+       "nmStock": 285,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5586/3225",
+       "name": "2.5T 210hp",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 240,
+       "nmStock": 320,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5587/3226",
+       "name": "R 2.5T",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 335,
+       "nmStock": 400,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5588/3227",
+       "name": "T5 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 310,
+       "nmStock": 330,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2004-2009",
+     "from": 2004,
+     "to": 2009,
+     "engines": [
+      {
+       "path": "12343/3222",
+       "name": "2.0T 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 225,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12344/7859",
+       "name": "2.4 D5 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 205,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5589/3228",
+       "name": "2.4 D5 185hp",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 205,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5590/3229",
+       "name": "2.4D 126hp",
+       "fuel": "diesel",
+       "hpStock": 126,
+       "hpTuned": 185,
+       "nmStock": 300,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12345/7860",
+       "name": "2.4D 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 195,
+       "nmStock": 280,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12347/3215",
+       "name": "2.4i 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 220,
+       "nmTuned": 235,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12346/3224",
+       "name": "2.4T 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 235,
+       "nmStock": 285,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12348/3225",
+       "name": "2.5T 210hp",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 240,
+       "nmStock": 320,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5591/3230",
+       "name": "R 2.5T 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 335,
+       "nmStock": 400,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5592/3231",
+       "name": "T5 260hp",
+       "fuel": "petrol",
+       "hpStock": 260,
+       "hpTuned": 310,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2010-2014",
+     "from": 2010,
+     "to": 2014,
+     "engines": [
+      {
+       "path": "5593/3209",
+       "name": "1.6 D2 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5594/3232",
+       "name": "1.6 T3 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5595/3233",
+       "name": "1.6 T4 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5596/3234",
+       "name": "2.0 D3 136hp",
+       "fuel": "petrol",
+       "hpStock": 136,
+       "hpTuned": 185,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5597/3235",
+       "name": "2.0 D3 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 185,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5598/3211",
+       "name": "2.0 D4 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5599/3236",
+       "name": "2.0 T5 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5600/2235",
+       "name": "2.0D 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 180,
+       "nmStock": 305,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12351/7861",
+       "name": "2.0D 136hp",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5601/3237",
+       "name": "2.0T 203hp",
+       "fuel": "petrol",
+       "hpStock": 203,
+       "hpTuned": 270,
+       "nmStock": 300,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12352/7891",
+       "name": "2.0T 203hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5602/3238",
+       "name": "2.4 D5 205hp",
+       "fuel": "petrol",
+       "hpStock": 205,
+       "hpTuned": 225,
+       "nmStock": 420,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5603/3239",
+       "name": "2.4 D5 215hp",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 230,
+       "nmStock": 420,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5604/3240",
+       "name": "2.4 D5 215hp aut",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 230,
+       "nmStock": 440,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17612/7862",
+       "name": "3.0 T6 304hp",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 230,
+       "nmStock": 440,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5605/3241",
+       "name": "3.0 T6 304hp",
+       "fuel": "petrol",
+       "hpStock": 304,
+       "hpTuned": 330,
+       "nmStock": 440,
+       "nmTuned": 495,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-2017",
+     "from": 2015,
+     "to": 2017,
+     "engines": [
+      {
+       "path": "5606/3242",
+       "name": "1.5 T3 152hp",
+       "fuel": "petrol",
+       "hpStock": 152,
+       "hpTuned": 190,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12359/3209",
+       "name": "1.6 D2 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12360/7882",
+       "name": "1.6 T3 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 270,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12361/7883",
+       "name": "1.6 T4 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 270,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12362/3288",
+       "name": "2.0 D2 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 178,
+       "nmStock": 280,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5607/3210",
+       "name": "2.0 D3 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5608/3243",
+       "name": "2.0 D3 Polestar 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 185,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12364/3211",
+       "name": "2.0 D4 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5609/3244",
+       "name": "2.0 D4 181hp",
+       "fuel": "petrol",
+       "hpStock": 181,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5610/3245",
+       "name": "2.0 D4 Polestar 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 235,
+       "nmStock": 440,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5611/3246",
+       "name": "2.0 D5 225hp",
+       "fuel": "petrol",
+       "hpStock": 225,
+       "hpTuned": 260,
+       "nmStock": 470,
+       "nmTuned": 530,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5612/3247",
+       "name": "2.0 T3 152hp",
+       "fuel": "petrol",
+       "hpStock": 152,
+       "hpTuned": 185,
+       "nmStock": 250,
+       "nmTuned": 305,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12366/3236",
+       "name": "2.0 T5 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5613/3248",
+       "name": "2.0 T5 245hp",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 270,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5614/3249",
+       "name": "2.0 T5 Polestar 253hp",
+       "fuel": "petrol",
+       "hpStock": 253,
+       "hpTuned": 275,
+       "nmStock": 400,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5615/3250",
+       "name": "2.0 T6 306hp",
+       "fuel": "petrol",
+       "hpStock": 306,
+       "hpTuned": 340,
+       "nmStock": 400,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5616/3251",
+       "name": "2.0 T6 Polestar 310hp",
+       "fuel": "petrol",
+       "hpStock": 310,
+       "hpTuned": 340,
+       "nmStock": 430,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5617/3252",
+       "name": "2.0 T6 Polestar 367hp",
+       "fuel": "petrol",
+       "hpStock": 367,
+       "hpTuned": 400,
+       "nmStock": 470,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12369/7875",
+       "name": "2.4 D5 215hp",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 245,
+       "nmStock": 440,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12370/3240",
+       "name": "2.4 D5 215hp aut",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 230,
+       "nmStock": 440,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2018-0",
+     "from": 2018,
+     "to": null,
+     "engines": [
+      {
+       "path": "5618/3253",
+       "name": "2.0 D3 - 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 178,
+       "nmStock": 320,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5619/3254",
+       "name": "2.0 D4 - 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 235,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5620/3255",
+       "name": "2.0 T4 - 197hp",
+       "fuel": "petrol",
+       "hpStock": 197,
+       "hpTuned": 225,
+       "nmStock": 300,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16945/7869",
+       "name": "2.0 T5 - 250hp",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 275,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5621/3256",
+       "name": "2.0 T5 - 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 275,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12375/3248",
+       "name": "2.0 T5 245hp",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 270,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5622/3257",
+       "name": "2.0 T6 - 310hp",
+       "fuel": "petrol",
+       "hpStock": 310,
+       "hpTuned": 330,
+       "nmStock": 400,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "s70-714",
+   "name": "S70",
+   "generations": [
+    {
+     "slug": "1997-2000",
+     "from": 1997,
+     "to": 2000,
+     "engines": [
+      {
+       "path": "5623/3215",
+       "name": "2.4i 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 220,
+       "nmTuned": 235,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5624/3258",
+       "name": "2.5 TDI 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 175,
+       "nmStock": 290,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12378/7870",
+       "name": "2.5 TDI 140hp",
+       "fuel": "diesel",
+       "hpStock": 170,
+       "hpTuned": 175,
+       "nmStock": 290,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5625/3259",
+       "name": "2.5D 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 175,
+       "nmStock": 290,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12379/7871",
+       "name": "2.5T 193hp",
+       "fuel": "petrol",
+       "hpStock": 193,
+       "hpTuned": 230,
+       "nmStock": 270,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5627/3261",
+       "name": "R 240hp aut",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 310,
+       "nmStock": 330,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5628/3262",
+       "name": "R 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 310,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5629/3263",
+       "name": "T5 241hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 310,
+       "nmStock": 330,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12380/7872",
+       "name": "T5 241hp",
+       "fuel": "petrol",
+       "hpStock": 241,
+       "hpTuned": 310,
+       "nmStock": 330,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "s80-715",
+   "name": "S80",
+   "generations": [
+    {
+     "slug": "1998-2006",
+     "from": 1998,
+     "to": 2006,
+     "engines": [
+      {
+       "path": "5630/3204",
+       "name": "2.4 D5 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 205,
+       "nmStock": 340,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5631/3223",
+       "name": "2.4D 130hp",
+       "fuel": "diesel",
+       "hpStock": 126,
+       "hpTuned": 195,
+       "nmStock": 280,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12384/7860",
+       "name": "2.4D 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 195,
+       "nmStock": 280,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5632/3215",
+       "name": "2.4i 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 220,
+       "nmTuned": 235,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5633/3224",
+       "name": "2.4T 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 235,
+       "nmStock": 285,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5634/3259",
+       "name": "2.5D 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 175,
+       "nmStock": 290,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5635/3225",
+       "name": "2.5T 210hp",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 240,
+       "nmStock": 320,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5636/3264",
+       "name": "T6 272hp",
+       "fuel": "petrol",
+       "hpStock": 272,
+       "hpTuned": 320,
+       "nmStock": 380,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2006-2011",
+     "from": 2006,
+     "to": 2011,
+     "engines": [
+      {
+       "path": "5637/2225",
+       "name": "1.6D 109hp",
+       "fuel": "diesel",
+       "hpStock": 109,
+       "hpTuned": 140,
+       "nmStock": 240,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5638/3235",
+       "name": "2.0 D3 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 185,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5639/3265",
+       "name": "2.0 T4 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5640/3236",
+       "name": "2.0 T5 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5641/2235",
+       "name": "2.0D 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 180,
+       "nmStock": 305,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12386/7861",
+       "name": "2.0D 136hp",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17298/7874",
+       "name": "2.0T 203hp",
+       "fuel": "petrol",
+       "hpStock": 136,
+       "hpTuned": 172,
+       "nmStock": 320,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5642/3237",
+       "name": "2.0T 203hp",
+       "fuel": "petrol",
+       "hpStock": 203,
+       "hpTuned": 270,
+       "nmStock": 300,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12387/7891",
+       "name": "2.0T 203hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5643/3228",
+       "name": "2.4 D5 185hp",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 205,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5644/3238",
+       "name": "2.4 D5 205hp",
+       "fuel": "petrol",
+       "hpStock": 205,
+       "hpTuned": 225,
+       "nmStock": 420,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5645/3266",
+       "name": "2.4D 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 205,
+       "nmStock": 340,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5646/3267",
+       "name": "2.4D 175hp",
+       "fuel": "diesel",
+       "hpStock": 175,
+       "hpTuned": 200,
+       "nmStock": 420,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5647/3268",
+       "name": "2.5T 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 245,
+       "nmStock": 300,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5648/3269",
+       "name": "2.5T 231hp",
+       "fuel": "petrol",
+       "hpStock": 231,
+       "hpTuned": 260,
+       "nmStock": 340,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5649/3270",
+       "name": "T6 285hp",
+       "fuel": "petrol",
+       "hpStock": 285,
+       "hpTuned": 310,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5650/3271",
+       "name": "T6 304hp",
+       "fuel": "petrol",
+       "hpStock": 304,
+       "hpTuned": 335,
+       "nmStock": 440,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2012-0",
+     "from": 2012,
+     "to": null,
+     "engines": [
+      {
+       "path": "5651/3209",
+       "name": "1.6 D2 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5652/3234",
+       "name": "2.0 D3 136hp",
+       "fuel": "petrol",
+       "hpStock": 136,
+       "hpTuned": 185,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12389/3235",
+       "name": "2.0 D3 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 185,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5653/3211",
+       "name": "2.0 D4 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5654/3244",
+       "name": "2.0 D4 181hp",
+       "fuel": "petrol",
+       "hpStock": 181,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16941/3265",
+       "name": "2.0 T4 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12392/3236",
+       "name": "2.0 T5 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5655/3239",
+       "name": "2.4 D5 215hp",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 230,
+       "nmStock": 420,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5656/3240",
+       "name": "2.4 D5 215hp aut",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 230,
+       "nmStock": 440,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12394/3271",
+       "name": "T6 304hp",
+       "fuel": "petrol",
+       "hpStock": 304,
+       "hpTuned": 335,
+       "nmStock": 440,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "s90-716",
+   "name": "S90",
+   "generations": [
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "5657/3210",
+       "name": "2.0 D3 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5658/3272",
+       "name": "2.0 D4 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 230,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5659/3273",
+       "name": "2.0 D4 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 230,
+       "nmStock": 440,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5660/3245",
+       "name": "2.0 D4 Polestar 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 235,
+       "nmStock": 440,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5661/3274",
+       "name": "2.0 D5 235hp",
+       "fuel": "petrol",
+       "hpStock": 235,
+       "hpTuned": 286,
+       "nmStock": 480,
+       "nmTuned": 545,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16844/7876",
+       "name": "2.0 D5 Polestar 240hp",
+       "fuel": "petrol",
+       "hpStock": 235,
+       "hpTuned": 286,
+       "nmStock": 480,
+       "nmTuned": 545,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5662/3275",
+       "name": "2.0 D5 Polestar 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 286,
+       "nmStock": 500,
+       "nmTuned": 545,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5663/3276",
+       "name": "2.0 T4 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 230,
+       "nmStock": 300,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5664/3277",
+       "name": "2.0 T5 254hp",
+       "fuel": "petrol",
+       "hpStock": 254,
+       "hpTuned": 290,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5665/3278",
+       "name": "2.0 T5 Polestar 261hp",
+       "fuel": "petrol",
+       "hpStock": 261,
+       "hpTuned": 290,
+       "nmStock": 400,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12401/3333",
+       "name": "2.0 T6 320hp",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 340,
+       "nmStock": 400,
+       "nmTuned": 475,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "v40-717",
+   "name": "V40",
+   "generations": [
+    {
+     "slug": "1998-2004",
+     "from": 1998,
+     "to": 2004,
+     "engines": [
+      {
+       "path": "5666/3279",
+       "name": "1.9 TD 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 110,
+       "nmStock": 176,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5667/3218",
+       "name": "1.9D 102hp",
+       "fuel": "diesel",
+       "hpStock": 102,
+       "hpTuned": 130,
+       "nmStock": 215,
+       "nmTuned": 265,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5668/3219",
+       "name": "1.9D 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 160,
+       "nmStock": 265,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5669/3280",
+       "name": "1.9D 95hp",
+       "fuel": "diesel",
+       "hpStock": 95,
+       "hpTuned": 115,
+       "nmStock": 190,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5670/3281",
+       "name": "2.0 T 160hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 195,
+       "nmStock": 230,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5671/3282",
+       "name": "2.0 T 165hp",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 195,
+       "nmStock": 240,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5672/3221",
+       "name": "T4 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 235,
+       "nmStock": 300,
+       "nmTuned": 345,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2012-2015",
+     "from": 2012,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "5673/3209",
+       "name": "1.6 D2 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5674/3283",
+       "name": "1.6 T2 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 200,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5675/3232",
+       "name": "1.6 T3 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5676/3233",
+       "name": "1.6 T4 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5677/3210",
+       "name": "2.0 D3 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5678/3212",
+       "name": "2.0 D4 177hp",
+       "fuel": "petrol",
+       "hpStock": 177,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5679/3244",
+       "name": "2.0 D4 181hp",
+       "fuel": "petrol",
+       "hpStock": 181,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5680/3272",
+       "name": "2.0 D4 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 230,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5681/3265",
+       "name": "2.0 T4 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5682/3284",
+       "name": "2.0 T5 213hp",
+       "fuel": "petrol",
+       "hpStock": 213,
+       "hpTuned": 235,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5683/3285",
+       "name": "2.5 T5 254hp",
+       "fuel": "petrol",
+       "hpStock": 254,
+       "hpTuned": 285,
+       "nmStock": 360,
+       "nmTuned": 405,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "5684/3286",
+       "name": "1.5T T2 - 122hp",
+       "fuel": "petrol",
+       "hpStock": 122,
+       "hpTuned": 165,
+       "nmStock": 220,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5685/3287",
+       "name": "1.5T T3 - 152hp",
+       "fuel": "petrol",
+       "hpStock": 152,
+       "hpTuned": 190,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5686/3288",
+       "name": "2.0 D2 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 178,
+       "nmStock": 280,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12411/3210",
+       "name": "2.0 D3 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12412/3272",
+       "name": "2.0 D4 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 230,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5687/3289",
+       "name": "2.0 T2 122hp",
+       "fuel": "petrol",
+       "hpStock": 122,
+       "hpTuned": 200,
+       "nmStock": 240,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5688/3247",
+       "name": "2.0 T3 152hp",
+       "fuel": "petrol",
+       "hpStock": 152,
+       "hpTuned": 185,
+       "nmStock": 250,
+       "nmTuned": 305,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5689/3276",
+       "name": "2.0 T4 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 230,
+       "nmStock": 300,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5690/3248",
+       "name": "2.0 T5 245hp",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 270,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "v40-cross-country-718",
+   "name": "V40 Cross Country",
+   "generations": [
+    {
+     "slug": "2013-0",
+     "from": 2013,
+     "to": null,
+     "engines": [
+      {
+       "path": "5691/3209",
+       "name": "1.6 D2 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5692/3232",
+       "name": "1.6 T3 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5693/3233",
+       "name": "1.6 T4 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12416/3288",
+       "name": "2.0 D2 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 178,
+       "nmStock": 280,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5694/3210",
+       "name": "2.0 D3 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5695/3212",
+       "name": "2.0 D4 177hp",
+       "fuel": "petrol",
+       "hpStock": 177,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12417/3272",
+       "name": "2.0 D4 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 230,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12418/3247",
+       "name": "2.0 T3 152hp",
+       "fuel": "petrol",
+       "hpStock": 152,
+       "hpTuned": 185,
+       "nmStock": 250,
+       "nmTuned": 305,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5696/3265",
+       "name": "2.0 T4 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5697/3284",
+       "name": "2.0 T5 213hp",
+       "fuel": "petrol",
+       "hpStock": 213,
+       "hpTuned": 235,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12420/3248",
+       "name": "2.0 T5 245hp",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 270,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5698/3285",
+       "name": "2.5 T5 254hp",
+       "fuel": "petrol",
+       "hpStock": 254,
+       "hpTuned": 285,
+       "nmStock": 360,
+       "nmTuned": 405,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "v50-719",
+   "name": "V50",
+   "generations": [
+    {
+     "slug": "2004-2007",
+     "from": 2004,
+     "to": 2007,
+     "engines": [
+      {
+       "path": "5699/2225",
+       "name": "1.6D 109hp",
+       "fuel": "diesel",
+       "hpStock": 109,
+       "hpTuned": 140,
+       "nmStock": 240,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5700/2235",
+       "name": "2.0D 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 180,
+       "nmStock": 305,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12327/7861",
+       "name": "2.0D 136hp",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5701/3205",
+       "name": "2.4 D5 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 205,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5702/3206",
+       "name": "2.4 D5 180hp aut",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 205,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5703/3215",
+       "name": "2.4i 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 220,
+       "nmTuned": 235,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5704/3207",
+       "name": "2.5 T5 220hp",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5705/3208",
+       "name": "2.5 T5 230hp",
+       "fuel": "petrol",
+       "hpStock": 230,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2007-2012",
+     "from": 2007,
+     "to": 2012,
+     "engines": [
+      {
+       "path": "5706/3209",
+       "name": "1.6 D2 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12335/2225",
+       "name": "1.6D 109hp",
+       "fuel": "diesel",
+       "hpStock": 109,
+       "hpTuned": 140,
+       "nmStock": 240,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5707/3210",
+       "name": "2.0 D3 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5708/3211",
+       "name": "2.0 D4 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5709/3212",
+       "name": "2.0 D4 177hp",
+       "fuel": "petrol",
+       "hpStock": 177,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12336/7861",
+       "name": "2.0D 136hp",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5710/3204",
+       "name": "2.4 D5 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 205,
+       "nmStock": 340,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12338/3205",
+       "name": "2.4 D5 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 205,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12339/3206",
+       "name": "2.4 D5 180hp aut",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 205,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12340/3215",
+       "name": "2.4i 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 220,
+       "nmTuned": 235,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12341/3207",
+       "name": "2.5 T5 220hp",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12342/3208",
+       "name": "2.5 T5 230hp",
+       "fuel": "petrol",
+       "hpStock": 230,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "v60-720",
+   "name": "V60",
+   "generations": [
+    {
+     "slug": "2010-2014",
+     "from": 2010,
+     "to": 2014,
+     "engines": [
+      {
+       "path": "5711/3209",
+       "name": "1.6 D2 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5712/3232",
+       "name": "1.6 T3 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5713/3233",
+       "name": "1.6 T4 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5714/3234",
+       "name": "2.0 D3 136hp",
+       "fuel": "petrol",
+       "hpStock": 136,
+       "hpTuned": 185,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5715/3235",
+       "name": "2.0 D3 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 185,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5716/3211",
+       "name": "2.0 D4 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5717/3244",
+       "name": "2.0 D4 181hp",
+       "fuel": "petrol",
+       "hpStock": 181,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5718/3236",
+       "name": "2.0 T5 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5719/3237",
+       "name": "2.0T 203hp",
+       "fuel": "petrol",
+       "hpStock": 203,
+       "hpTuned": 270,
+       "nmStock": 300,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12357/7891",
+       "name": "2.0T 203hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5720/3290",
+       "name": "2.4 D4 163hp aut",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 230,
+       "nmStock": 420,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5721/3291",
+       "name": "2.4 D4 181hp",
+       "fuel": "petrol",
+       "hpStock": 181,
+       "hpTuned": 250,
+       "nmStock": 420,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5722/3238",
+       "name": "2.4 D5 205hp",
+       "fuel": "petrol",
+       "hpStock": 205,
+       "hpTuned": 225,
+       "nmStock": 420,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5723/3239",
+       "name": "2.4 D5 215hp",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 230,
+       "nmStock": 420,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5724/3240",
+       "name": "2.4 D5 215hp aut",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 230,
+       "nmStock": 440,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5725/3292",
+       "name": "2.4 D6 Hybrid 285hp",
+       "fuel": "petrol",
+       "hpStock": 285,
+       "hpTuned": 315,
+       "nmStock": 620,
+       "nmTuned": 680,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5726/3271",
+       "name": "T6 304hp",
+       "fuel": "petrol",
+       "hpStock": 304,
+       "hpTuned": 335,
+       "nmStock": 440,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-2017",
+     "from": 2015,
+     "to": 2017,
+     "engines": [
+      {
+       "path": "5727/3293",
+       "name": "1.5T T2 122hp",
+       "fuel": "petrol",
+       "hpStock": 122,
+       "hpTuned": 190,
+       "nmStock": 240,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5728/3294",
+       "name": "1.5T T3 152hp",
+       "fuel": "petrol",
+       "hpStock": 152,
+       "hpTuned": 190,
+       "nmStock": 250,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5729/3288",
+       "name": "2.0 D2 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 178,
+       "nmStock": 280,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5730/3210",
+       "name": "2.0 D3 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5731/3243",
+       "name": "2.0 D3 Polestar 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 185,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12372/7863",
+       "name": "2.0 D4 181hp",
+       "fuel": "petrol",
+       "hpStock": 181,
+       "hpTuned": 250,
+       "nmStock": 420,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5732/3272",
+       "name": "2.0 D4 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 230,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5733/3245",
+       "name": "2.0 D4 Polestar 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 235,
+       "nmStock": 440,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5734/3246",
+       "name": "2.0 D5 225hp",
+       "fuel": "petrol",
+       "hpStock": 225,
+       "hpTuned": 260,
+       "nmStock": 470,
+       "nmTuned": 530,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5735/3247",
+       "name": "2.0 T3 152hp",
+       "fuel": "petrol",
+       "hpStock": 152,
+       "hpTuned": 185,
+       "nmStock": 250,
+       "nmTuned": 305,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5736/3276",
+       "name": "2.0 T4 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 230,
+       "nmStock": 300,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5737/3248",
+       "name": "2.0 T5 245hp",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 270,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5738/3249",
+       "name": "2.0 T5 Polestar 253hp",
+       "fuel": "petrol",
+       "hpStock": 253,
+       "hpTuned": 275,
+       "nmStock": 400,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5739/3250",
+       "name": "2.0 T6 306hp",
+       "fuel": "petrol",
+       "hpStock": 306,
+       "hpTuned": 340,
+       "nmStock": 400,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5740/3251",
+       "name": "2.0 T6 Polestar 310hp",
+       "fuel": "petrol",
+       "hpStock": 310,
+       "hpTuned": 340,
+       "nmStock": 430,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5741/3252",
+       "name": "2.0 T6 Polestar 367hp",
+       "fuel": "petrol",
+       "hpStock": 367,
+       "hpTuned": 400,
+       "nmStock": 470,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5742/3295",
+       "name": "2.4 D6 290hp",
+       "fuel": "petrol",
+       "hpStock": 290,
+       "hpTuned": 315,
+       "nmStock": 640,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2018-0",
+     "from": 2018,
+     "to": null,
+     "engines": [
+      {
+       "path": "5743/3253",
+       "name": "2.0 D3 - 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 178,
+       "nmStock": 320,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5744/3254",
+       "name": "2.0 D4 - 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 235,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5745/3255",
+       "name": "2.0 T4 - 197hp",
+       "fuel": "petrol",
+       "hpStock": 197,
+       "hpTuned": 225,
+       "nmStock": 300,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5746/3296",
+       "name": "2.0 T5 - 254hp",
+       "fuel": "petrol",
+       "hpStock": 254,
+       "hpTuned": 275,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5747/3257",
+       "name": "2.0 T6 - 310hp",
+       "fuel": "petrol",
+       "hpStock": 310,
+       "hpTuned": 330,
+       "nmStock": 400,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12377/3252",
+       "name": "2.0 T6 Polestar 367hp",
+       "fuel": "petrol",
+       "hpStock": 367,
+       "hpTuned": 400,
+       "nmStock": 470,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "v60-cross-country-721",
+   "name": "V60 Cross Country",
+   "generations": [
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "5748/3286",
+       "name": "1.5T T2 - 122hp",
+       "fuel": "petrol",
+       "hpStock": 122,
+       "hpTuned": 165,
+       "nmStock": 220,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5749/3287",
+       "name": "1.5T T3 - 152hp",
+       "fuel": "petrol",
+       "hpStock": 152,
+       "hpTuned": 190,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5750/3288",
+       "name": "2.0 D2 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 178,
+       "nmStock": 280,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5751/3210",
+       "name": "2.0 D3 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5752/3272",
+       "name": "2.0 D4 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 230,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5753/3246",
+       "name": "2.0 D5 225hp",
+       "fuel": "petrol",
+       "hpStock": 225,
+       "hpTuned": 260,
+       "nmStock": 470,
+       "nmTuned": 530,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5754/3297",
+       "name": "2.0 T3 - 152hp",
+       "fuel": "petrol",
+       "hpStock": 152,
+       "hpTuned": 190,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5755/3298",
+       "name": "2.0 T4 - 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 290,
+       "nmStock": 300,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5756/3248",
+       "name": "2.0 T5 245hp",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 270,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12413/7881",
+       "name": "2.4 D4 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 230,
+       "nmStock": 420,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "v70-722",
+   "name": "V70",
+   "generations": [
+    {
+     "slug": "1997-2000",
+     "from": 1997,
+     "to": 2000,
+     "engines": [
+      {
+       "path": "5757/3299",
+       "name": "2.0 T5 225hp",
+       "fuel": "petrol",
+       "hpStock": 225,
+       "hpTuned": 275,
+       "nmStock": 310,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5758/3300",
+       "name": "2.3 R 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 320,
+       "nmStock": 330,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5759/3301",
+       "name": "2.3 R 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 300,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5760/3302",
+       "name": "2.3 R 265hp",
+       "fuel": "petrol",
+       "hpStock": 265,
+       "hpTuned": 330,
+       "nmStock": 350,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5761/3303",
+       "name": "2.3 T5 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 280,
+       "nmStock": 330,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5762/3215",
+       "name": "2.4i 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 220,
+       "nmTuned": 235,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5763/3213",
+       "name": "2.4T 193hp",
+       "fuel": "petrol",
+       "hpStock": 193,
+       "hpTuned": 230,
+       "nmStock": 270,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5764/3258",
+       "name": "2.5 TDI 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 175,
+       "nmStock": 290,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12381/7870",
+       "name": "2.5 TDI 140hp",
+       "fuel": "diesel",
+       "hpStock": 170,
+       "hpTuned": 175,
+       "nmStock": 290,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5765/3259",
+       "name": "2.5D 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 175,
+       "nmStock": 290,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5766/3260",
+       "name": "2.5T 193hp",
+       "fuel": "petrol",
+       "hpStock": 193,
+       "hpTuned": 230,
+       "nmStock": 270,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12382/7873",
+       "name": "2.5T 193hp",
+       "fuel": "petrol",
+       "hpStock": 197,
+       "hpTuned": 230,
+       "nmStock": 270,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2000-2008",
+     "from": 2000,
+     "to": 2008,
+     "engines": [
+      {
+       "path": "5767/3222",
+       "name": "2.0T 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 225,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5768/3304",
+       "name": "2.3 T5 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 310,
+       "nmStock": 330,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5769/3305",
+       "name": "2.3 T5 260hp",
+       "fuel": "petrol",
+       "hpStock": 260,
+       "hpTuned": 300,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5770/3204",
+       "name": "2.4 D5 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 205,
+       "nmStock": 340,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5771/3229",
+       "name": "2.4D 126hp",
+       "fuel": "diesel",
+       "hpStock": 126,
+       "hpTuned": 185,
+       "nmStock": 300,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5772/3223",
+       "name": "2.4D 130hp",
+       "fuel": "diesel",
+       "hpStock": 126,
+       "hpTuned": 195,
+       "nmStock": 280,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12422/7860",
+       "name": "2.4D 130hp",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 195,
+       "nmStock": 280,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5773/3266",
+       "name": "2.4D 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 205,
+       "nmStock": 340,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12424/3215",
+       "name": "2.4i 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 220,
+       "nmTuned": 235,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5774/3224",
+       "name": "2.4T 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 235,
+       "nmStock": 285,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5775/3306",
+       "name": "2.5 R 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 335,
+       "nmStock": 400,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12425/3259",
+       "name": "2.5D 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 175,
+       "nmStock": 290,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5776/3225",
+       "name": "2.5T 210hp",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 240,
+       "nmStock": 320,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5777/3307",
+       "name": "D5 185hp",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 215,
+       "nmStock": 400,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2007-2011",
+     "from": 2007,
+     "to": 2011,
+     "engines": [
+      {
+       "path": "5778/3233",
+       "name": "1.6 T4 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5779/2225",
+       "name": "1.6D 109hp",
+       "fuel": "diesel",
+       "hpStock": 109,
+       "hpTuned": 140,
+       "nmStock": 240,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5780/3235",
+       "name": "2.0 D3 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 185,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5781/3236",
+       "name": "2.0 T5 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5782/2235",
+       "name": "2.0D 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 180,
+       "nmStock": 305,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12427/7861",
+       "name": "2.0D 136hp",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5783/3237",
+       "name": "2.0T 203hp",
+       "fuel": "petrol",
+       "hpStock": 203,
+       "hpTuned": 270,
+       "nmStock": 300,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12428/7891",
+       "name": "2.0T 203hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12429/7885",
+       "name": "2.4D 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 225,
+       "nmStock": 420,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5784/3267",
+       "name": "2.4D 175hp",
+       "fuel": "diesel",
+       "hpStock": 175,
+       "hpTuned": 200,
+       "nmStock": 420,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5785/3268",
+       "name": "2.5T 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 245,
+       "nmStock": 300,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5786/3269",
+       "name": "2.5T 231hp",
+       "fuel": "petrol",
+       "hpStock": 231,
+       "hpTuned": 260,
+       "nmStock": 340,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12430/3307",
+       "name": "D5 185hp",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 215,
+       "nmStock": 400,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5787/3308",
+       "name": "D5 205hp",
+       "fuel": "petrol",
+       "hpStock": 205,
+       "hpTuned": 245,
+       "nmStock": 420,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5788/3270",
+       "name": "T6 285hp",
+       "fuel": "petrol",
+       "hpStock": 285,
+       "hpTuned": 310,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5789/3271",
+       "name": "T6 304hp",
+       "fuel": "petrol",
+       "hpStock": 304,
+       "hpTuned": 335,
+       "nmStock": 440,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2011-0",
+     "from": 2011,
+     "to": null,
+     "engines": [
+      {
+       "path": "5790/3209",
+       "name": "1.6 D2 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16448/3233",
+       "name": "1.6 T4 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5791/3288",
+       "name": "2.0 D2 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 178,
+       "nmStock": 280,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5792/3234",
+       "name": "2.0 D3 136hp",
+       "fuel": "petrol",
+       "hpStock": 136,
+       "hpTuned": 185,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5793/3210",
+       "name": "2.0 D3 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12435/3235",
+       "name": "2.0 D3 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 185,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5794/3243",
+       "name": "2.0 D3 Polestar 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 185,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5795/3211",
+       "name": "2.0 D4 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5796/3244",
+       "name": "2.0 D4 181hp",
+       "fuel": "petrol",
+       "hpStock": 181,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5797/3276",
+       "name": "2.0 T4 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 230,
+       "nmStock": 300,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12438/3236",
+       "name": "2.0 T5 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5798/3248",
+       "name": "2.0 T5 245hp",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 270,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5799/3249",
+       "name": "2.0 T5 Polestar 253hp",
+       "fuel": "petrol",
+       "hpStock": 253,
+       "hpTuned": 275,
+       "nmStock": 400,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5800/3290",
+       "name": "2.4 D4 163hp aut",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 230,
+       "nmStock": 420,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5801/3309",
+       "name": "2.4 D4 181hp 5 cyl",
+       "fuel": "petrol",
+       "hpStock": 181,
+       "hpTuned": 230,
+       "nmStock": 420,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5802/3239",
+       "name": "2.4 D5 215hp",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 230,
+       "nmStock": 420,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5803/3240",
+       "name": "2.4 D5 215hp aut",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 230,
+       "nmStock": 440,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12440/3271",
+       "name": "T6 304hp",
+       "fuel": "petrol",
+       "hpStock": 304,
+       "hpTuned": 335,
+       "nmStock": 440,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "v90-723",
+   "name": "V90",
+   "generations": [
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "5804/3210",
+       "name": "2.0 D3 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5805/3272",
+       "name": "2.0 D4 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 230,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5806/3245",
+       "name": "2.0 D4 Polestar 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 235,
+       "nmStock": 440,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5807/3274",
+       "name": "2.0 D5 235hp",
+       "fuel": "petrol",
+       "hpStock": 235,
+       "hpTuned": 286,
+       "nmStock": 480,
+       "nmTuned": 545,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5808/3310",
+       "name": "2.0 D5 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 286,
+       "nmStock": 500,
+       "nmTuned": 545,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5809/3275",
+       "name": "2.0 D5 Polestar 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 286,
+       "nmStock": 500,
+       "nmTuned": 545,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5810/3276",
+       "name": "2.0 T4 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 230,
+       "nmStock": 300,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5811/3277",
+       "name": "2.0 T5 254hp",
+       "fuel": "petrol",
+       "hpStock": 254,
+       "hpTuned": 290,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5812/3278",
+       "name": "2.0 T5 Polestar 261hp",
+       "fuel": "petrol",
+       "hpStock": 261,
+       "hpTuned": 290,
+       "nmStock": 400,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16960/7879",
+       "name": "2.0 T6 320hp",
+       "fuel": "petrol",
+       "hpStock": 261,
+       "hpTuned": 290,
+       "nmStock": 400,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12404/3333",
+       "name": "2.0 T6 320hp",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 340,
+       "nmStock": 400,
+       "nmTuned": 475,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "xc40-724",
+   "name": "XC40",
+   "generations": [
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "12441/7887",
+       "name": "1.5 T2 129hp",
+       "fuel": "petrol",
+       "hpStock": 129,
+       "hpTuned": 190,
+       "nmStock": 245,
+       "nmTuned": 305,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12442/7888",
+       "name": "1.5 T3 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 190,
+       "nmStock": 265,
+       "nmTuned": 305,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5813/3253",
+       "name": "2.0 D3 - 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 178,
+       "nmStock": 320,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5814/3254",
+       "name": "2.0 D4 - 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 235,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5815/3311",
+       "name": "2.0 T3 - 156hp",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 185,
+       "nmStock": 265,
+       "nmTuned": 305,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5816/3298",
+       "name": "2.0 T4 - 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 290,
+       "nmStock": 300,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16947/7889",
+       "name": "2.0 T5 - 254hp",
+       "fuel": "petrol",
+       "hpStock": 247,
+       "hpTuned": 290,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5817/3296",
+       "name": "2.0 T5 - 254hp",
+       "fuel": "petrol",
+       "hpStock": 254,
+       "hpTuned": 275,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "xc60-725",
+   "name": "XC60",
+   "generations": [
+    {
+     "slug": "2008-2013",
+     "from": 2008,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "5818/3234",
+       "name": "2.0 D3 136hp",
+       "fuel": "petrol",
+       "hpStock": 136,
+       "hpTuned": 185,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5819/3235",
+       "name": "2.0 D3 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 185,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5820/3211",
+       "name": "2.0 D4 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5821/3236",
+       "name": "2.0 T5 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5822/3237",
+       "name": "2.0T 203hp",
+       "fuel": "petrol",
+       "hpStock": 203,
+       "hpTuned": 270,
+       "nmStock": 300,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12445/7891",
+       "name": "2.0T 203hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5823/3228",
+       "name": "2.4 D5 185hp",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 205,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5824/3238",
+       "name": "2.4 D5 205hp",
+       "fuel": "petrol",
+       "hpStock": 205,
+       "hpTuned": 225,
+       "nmStock": 420,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5825/3239",
+       "name": "2.4 D5 215hp",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 230,
+       "nmStock": 420,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5826/3240",
+       "name": "2.4 D5 215hp aut",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 230,
+       "nmStock": 440,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5827/3266",
+       "name": "2.4D 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 205,
+       "nmStock": 340,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5828/3312",
+       "name": "2.4D 163hp >2011",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 225,
+       "nmStock": 420,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12448/7892",
+       "name": "2.4D 163hp >2011",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 205,
+       "nmStock": 340,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5829/3267",
+       "name": "2.4D 175hp",
+       "fuel": "diesel",
+       "hpStock": 175,
+       "hpTuned": 200,
+       "nmStock": 420,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5830/3270",
+       "name": "T6 285hp",
+       "fuel": "petrol",
+       "hpStock": 285,
+       "hpTuned": 310,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5831/3271",
+       "name": "T6 304hp",
+       "fuel": "petrol",
+       "hpStock": 304,
+       "hpTuned": 335,
+       "nmStock": 440,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2013-2017",
+     "from": 2013,
+     "to": 2017,
+     "engines": [
+      {
+       "path": "12449/3234",
+       "name": "2.0 D3 136hp",
+       "fuel": "petrol",
+       "hpStock": 136,
+       "hpTuned": 185,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5832/3210",
+       "name": "2.0 D3 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5833/3243",
+       "name": "2.0 D3 Polestar 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 185,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12451/3211",
+       "name": "2.0 D4 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5834/3244",
+       "name": "2.0 D4 181hp",
+       "fuel": "petrol",
+       "hpStock": 181,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5835/3272",
+       "name": "2.0 D4 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 230,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5836/3245",
+       "name": "2.0 D4 Polestar 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 235,
+       "nmStock": 440,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12453/3236",
+       "name": "2.0 T5 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5837/3248",
+       "name": "2.0 T5 245hp",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 270,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5838/3278",
+       "name": "2.0 T5 Polestar 261hp",
+       "fuel": "petrol",
+       "hpStock": 261,
+       "hpTuned": 290,
+       "nmStock": 400,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12454/3320",
+       "name": "2.4 D3 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 230,
+       "nmStock": 420,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5839/3309",
+       "name": "2.4 D4 181hp 5 cyl",
+       "fuel": "petrol",
+       "hpStock": 181,
+       "hpTuned": 230,
+       "nmStock": 420,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12455/7881",
+       "name": "2.4 D4 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 230,
+       "nmStock": 420,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12456/7875",
+       "name": "2.4 D5 215hp",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 245,
+       "nmStock": 440,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12457/3240",
+       "name": "2.4 D5 215hp aut",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 230,
+       "nmStock": 440,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5840/3313",
+       "name": "2.4 D5 220hp",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 245,
+       "nmStock": 440,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5841/3314",
+       "name": "2.4 D5 Polestar 230hp",
+       "fuel": "petrol",
+       "hpStock": 230,
+       "hpTuned": 245,
+       "nmStock": 470,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5842/3315",
+       "name": "T6 306hp",
+       "fuel": "petrol",
+       "hpStock": 306,
+       "hpTuned": 345,
+       "nmStock": 400,
+       "nmTuned": 490,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5843/3316",
+       "name": "T6 Polestar 310hp",
+       "fuel": "petrol",
+       "hpStock": 310,
+       "hpTuned": 345,
+       "nmStock": 430,
+       "nmTuned": 490,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-2020",
+     "from": 2017,
+     "to": 2020,
+     "engines": [
+      {
+       "path": "12461/7898",
+       "name": "2.0 D3 - 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 225,
+       "nmStock": 350,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12462/3254",
+       "name": "2.0 D4 - 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 235,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12463/3317",
+       "name": "2.0 D4 Polestar - 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 230,
+       "nmStock": 440,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12464/3318",
+       "name": "2.0 D5 - 235hp",
+       "fuel": "petrol",
+       "hpStock": 235,
+       "hpTuned": 286,
+       "nmStock": 480,
+       "nmTuned": 545,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12465/3276",
+       "name": "2.0 T4 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 230,
+       "nmStock": 300,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12466/3256",
+       "name": "2.0 T5 - 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 275,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12467/3248",
+       "name": "2.0 T5 245hp",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 270,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12468/3319",
+       "name": "2.0 T5 Polestar - 261hp",
+       "fuel": "petrol",
+       "hpStock": 261,
+       "hpTuned": 290,
+       "nmStock": 400,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "5844/3253",
+       "name": "2.0 D3 - 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 178,
+       "nmStock": 320,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5845/3254",
+       "name": "2.0 D4 - 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 235,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5846/3317",
+       "name": "2.0 D4 Polestar - 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 230,
+       "nmStock": 440,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5847/3318",
+       "name": "2.0 D5 - 235hp",
+       "fuel": "petrol",
+       "hpStock": 235,
+       "hpTuned": 286,
+       "nmStock": 480,
+       "nmTuned": 545,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5848/3296",
+       "name": "2.0 T5 - 254hp",
+       "fuel": "petrol",
+       "hpStock": 254,
+       "hpTuned": 275,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5849/3319",
+       "name": "2.0 T5 Polestar - 261hp",
+       "fuel": "petrol",
+       "hpStock": 261,
+       "hpTuned": 290,
+       "nmStock": 400,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "xc70-726",
+   "name": "XC70",
+   "generations": [
+    {
+     "slug": "2002-2007",
+     "from": 2002,
+     "to": 2007,
+     "engines": [
+      {
+       "path": "5850/3204",
+       "name": "2.4 D5 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 205,
+       "nmStock": 340,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5851/3228",
+       "name": "2.4 D5 185hp",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 205,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5852/3224",
+       "name": "2.4T 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 235,
+       "nmStock": 285,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5853/3260",
+       "name": "2.5T 193hp",
+       "fuel": "petrol",
+       "hpStock": 193,
+       "hpTuned": 230,
+       "nmStock": 270,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12481/7873",
+       "name": "2.5T 193hp",
+       "fuel": "petrol",
+       "hpStock": 197,
+       "hpTuned": 230,
+       "nmStock": 270,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5854/3225",
+       "name": "2.5T 210hp",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 240,
+       "nmStock": 320,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2007-2011",
+     "from": 2007,
+     "to": 2011,
+     "engines": [
+      {
+       "path": "5855/3235",
+       "name": "2.0 D3 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 185,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5856/3320",
+       "name": "2.4 D3 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 230,
+       "nmStock": 420,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12431/3228",
+       "name": "2.4 D5 185hp",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 205,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5857/3238",
+       "name": "2.4 D5 205hp",
+       "fuel": "petrol",
+       "hpStock": 205,
+       "hpTuned": 225,
+       "nmStock": 420,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5858/3239",
+       "name": "2.4 D5 215hp",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 230,
+       "nmStock": 420,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5859/3266",
+       "name": "2.4D 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 205,
+       "nmStock": 340,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5860/3267",
+       "name": "2.4D 175hp",
+       "fuel": "diesel",
+       "hpStock": 175,
+       "hpTuned": 200,
+       "nmStock": 420,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5861/3321",
+       "name": "3.2 - 238hp",
+       "fuel": "petrol",
+       "hpStock": 238,
+       "hpTuned": 265,
+       "nmStock": 320,
+       "nmTuned": 355,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5862/3322",
+       "name": "3.2 - 243hp",
+       "fuel": "petrol",
+       "hpStock": 243,
+       "hpTuned": 266,
+       "nmStock": 320,
+       "nmTuned": 355,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5863/3270",
+       "name": "T6 285hp",
+       "fuel": "petrol",
+       "hpStock": 285,
+       "hpTuned": 310,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5864/3271",
+       "name": "T6 304hp",
+       "fuel": "petrol",
+       "hpStock": 304,
+       "hpTuned": 335,
+       "nmStock": 440,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2012-0",
+     "from": 2012,
+     "to": null,
+     "engines": [
+      {
+       "path": "12395/3235",
+       "name": "2.0 D3 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 185,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5865/3211",
+       "name": "2.0 D4 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5866/3244",
+       "name": "2.0 D4 181hp",
+       "fuel": "petrol",
+       "hpStock": 181,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5867/3248",
+       "name": "2.0 T5 245hp",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 270,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5868/3323",
+       "name": "2.4 D3/D4 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 230,
+       "nmStock": 420,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5869/3324",
+       "name": "2.4 D3/D4 163hp aut",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 230,
+       "nmStock": 420,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5870/3325",
+       "name": "2.4 D3/D4 Polestar 215hp",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 245,
+       "nmStock": 440,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12397/3291",
+       "name": "2.4 D4 181hp",
+       "fuel": "petrol",
+       "hpStock": 181,
+       "hpTuned": 250,
+       "nmStock": 420,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12398/3228",
+       "name": "2.4 D5 185hp",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 205,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12399/7875",
+       "name": "2.4 D5 215hp",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 245,
+       "nmStock": 440,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5871/3240",
+       "name": "2.4 D5 215hp aut",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 230,
+       "nmStock": 440,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5872/3314",
+       "name": "2.4 D5 Polestar 230hp",
+       "fuel": "petrol",
+       "hpStock": 230,
+       "hpTuned": 245,
+       "nmStock": 470,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12400/3271",
+       "name": "T6 304hp",
+       "fuel": "petrol",
+       "hpStock": 304,
+       "hpTuned": 335,
+       "nmStock": 440,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5873/3326",
+       "name": "T6 Polestar 329hp",
+       "fuel": "petrol",
+       "hpStock": 329,
+       "hpTuned": 340,
+       "nmStock": 480,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "xc90-727",
+   "name": "XC90",
+   "generations": [
+    {
+     "slug": "2002-2014",
+     "from": 2002,
+     "to": 2014,
+     "engines": [
+      {
+       "path": "5874/3211",
+       "name": "2.0 D4 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5875/3320",
+       "name": "2.4 D3 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 230,
+       "nmStock": 420,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5876/3327",
+       "name": "2.4 D4 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 225,
+       "nmStock": 340,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12482/7909",
+       "name": "2.4 D5 163hp eur3",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 205,
+       "nmStock": 340,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12483/3228",
+       "name": "2.4 D5 185hp",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 205,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5877/3328",
+       "name": "2.4 D5 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 225,
+       "nmStock": 420,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5878/3238",
+       "name": "2.4 D5 205hp",
+       "fuel": "petrol",
+       "hpStock": 205,
+       "hpTuned": 225,
+       "nmStock": 420,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5879/3239",
+       "name": "2.4 D5 215hp",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 230,
+       "nmStock": 420,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5880/3329",
+       "name": "2.4D 163hp eur4",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 205,
+       "nmStock": 340,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5881/3225",
+       "name": "2.5T 210hp",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 240,
+       "nmStock": 320,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5882/3321",
+       "name": "3.2 - 238hp",
+       "fuel": "petrol",
+       "hpStock": 238,
+       "hpTuned": 265,
+       "nmStock": 320,
+       "nmTuned": 355,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5883/3322",
+       "name": "3.2 - 243hp",
+       "fuel": "petrol",
+       "hpStock": 243,
+       "hpTuned": 266,
+       "nmStock": 320,
+       "nmTuned": 355,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12485/7910",
+       "name": "3.2 238hp",
+       "fuel": "petrol",
+       "hpStock": 238,
+       "hpTuned": 245,
+       "nmStock": 320,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12486/7911",
+       "name": "3.2 243hp",
+       "fuel": "petrol",
+       "hpStock": 243,
+       "hpTuned": 245,
+       "nmStock": 320,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5884/3330",
+       "name": "D5 163hp eur3",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 200,
+       "nmStock": 340,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5885/3331",
+       "name": "D5 185hp eur4",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 225,
+       "nmStock": 400,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5886/3264",
+       "name": "T6 272hp",
+       "fuel": "petrol",
+       "hpStock": 272,
+       "hpTuned": 320,
+       "nmStock": 380,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5887/3270",
+       "name": "T6 285hp",
+       "fuel": "petrol",
+       "hpStock": 285,
+       "hpTuned": 310,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5888/3332",
+       "name": "V8 315hp",
+       "fuel": "petrol",
+       "hpStock": 315,
+       "hpTuned": 345,
+       "nmStock": 440,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2014-0",
+     "from": 2014,
+     "to": null,
+     "engines": [
+      {
+       "path": "5889/3272",
+       "name": "2.0 D4 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 230,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5890/3246",
+       "name": "2.0 D5 225hp",
+       "fuel": "petrol",
+       "hpStock": 225,
+       "hpTuned": 260,
+       "nmStock": 470,
+       "nmTuned": 530,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5891/3275",
+       "name": "2.0 D5 Polestar 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 286,
+       "nmStock": 500,
+       "nmTuned": 545,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5892/3277",
+       "name": "2.0 T5 254hp",
+       "fuel": "petrol",
+       "hpStock": 254,
+       "hpTuned": 290,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5893/3333",
+       "name": "2.0 T6 320hp",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 340,
+       "nmStock": 400,
+       "nmTuned": 475,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5894/3334",
+       "name": "2.0 T8 TE AWD Hybrid 407hp",
+       "fuel": "petrol",
+       "hpStock": 407,
+       "hpTuned": 450,
+       "nmStock": 640,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2014-2019",
+     "from": 2014,
+     "to": 2019,
+     "engines": [
+      {
+       "path": "12487/3272",
+       "name": "2.0 D4 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 230,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12488/3246",
+       "name": "2.0 D5 225hp",
+       "fuel": "petrol",
+       "hpStock": 225,
+       "hpTuned": 260,
+       "nmStock": 470,
+       "nmTuned": 530,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12489/3274",
+       "name": "2.0 D5 235hp",
+       "fuel": "petrol",
+       "hpStock": 235,
+       "hpTuned": 286,
+       "nmStock": 480,
+       "nmTuned": 545,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12490/3275",
+       "name": "2.0 D5 Polestar 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 286,
+       "nmStock": 500,
+       "nmTuned": 545,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12491/3277",
+       "name": "2.0 T5 254hp",
+       "fuel": "petrol",
+       "hpStock": 254,
+       "hpTuned": 290,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12492/3333",
+       "name": "2.0 T6 320hp",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 340,
+       "nmStock": 400,
+       "nmTuned": 475,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12493/3334",
+       "name": "2.0 T8 TE AWD Hybrid 407hp",
+       "fuel": "petrol",
+       "hpStock": 407,
+       "hpTuned": 450,
+       "nmStock": 640,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2019-0",
+     "from": 2019,
+     "to": null,
+     "engines": [
+      {
+       "path": "12497/3274",
+       "name": "2.0 D5 235hp",
+       "fuel": "petrol",
+       "hpStock": 235,
+       "hpTuned": 286,
+       "nmStock": 480,
+       "nmTuned": 545,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "12498/7914",
+       "name": "2.0 T5 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 275,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

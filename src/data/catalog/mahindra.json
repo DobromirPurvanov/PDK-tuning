@@ -1,0 +1,172 @@
+{
+ "slug": "mahindra",
+ "name": "Mahindra",
+ "logo": "mahindra.png",
+ "models": [
+  {
+   "slug": "genio-962",
+   "name": "Genio",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "9268/6059",
+       "name": "2.2 CRDi 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 160,
+       "nmStock": 290,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9269/6062",
+       "name": "2.2 CRDi 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 220,
+       "nmStock": 330,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "quanto-963",
+   "name": "Quanto",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "9270/6059",
+       "name": "2.2 CRDi 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 160,
+       "nmStock": 290,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9271/6062",
+       "name": "2.2 CRDi 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 220,
+       "nmStock": 330,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "scorpio-964",
+   "name": "Scorpio",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "9272/6061",
+       "name": "2.2 CR diesel 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 145,
+       "nmStock": 270,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "xuv500-965",
+   "name": "XUV500",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "9273/6062",
+       "name": "2.2 CRDi 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 220,
+       "nmStock": 330,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9274/6063",
+       "name": "2.2 CRDi 170hp",
+       "fuel": "diesel",
+       "hpStock": 170,
+       "hpTuned": 220,
+       "nmStock": 340,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "xylo-966",
+   "name": "Xylo",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "9275/6059",
+       "name": "2.2 CRDi 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 160,
+       "nmStock": 290,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17314/6060",
+       "name": "2.2 CRDi 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 160,
+       "nmStock": 290,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9277/6064",
+       "name": "2.5 CRDI 95hp",
+       "fuel": "diesel",
+       "hpStock": 95,
+       "hpTuned": 140,
+       "nmStock": 218,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

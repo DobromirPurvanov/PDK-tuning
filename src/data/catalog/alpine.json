@@ -1,0 +1,40 @@
+{
+ "slug": "alpine",
+ "name": "Alpine",
+ "logo": null,
+ "models": [
+  {
+   "slug": "a110-2815",
+   "name": "A110",
+   "generations": [
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "16635/3406",
+       "name": "1.8T (GPF) - 252hp",
+       "fuel": "petrol",
+       "hpStock": 252,
+       "hpTuned": 280,
+       "nmStock": 320,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18360/3407",
+       "name": "S - 1.8T (GPF) - 292hp",
+       "fuel": "petrol",
+       "hpStock": 292,
+       "hpTuned": 310,
+       "nmStock": 320,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

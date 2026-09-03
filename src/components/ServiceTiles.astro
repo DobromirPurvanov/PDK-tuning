@@ -1,0 +1,28 @@
+---
+import { t, routes, servicePath, type Lang } from '@/i18n';
+import { SERVICES } from '@/data/services';
+import prices from '@/data/prices.json';
+interface Props { lang: Lang; only?: string[]; cols?: 3 | 4; withChip?: boolean }
+const { lang, only, cols = 4, withChip = true } = Astro.props;
+const d = t(lang);
+const list = only ? SERVICES.filter((s) => only.includes(s.slug)) : SERVICES;
+const p = (k: string) => (prices.items as Record<string, { from: number }>)[k]?.from;
+---
+<div class:list={['grid', cols === 3 ? 'g3' : 'g4']}>
+  {withChip && !only && (
+    <a class="tile" href={routes.chipTuningVarna[lang]}>
+      <span class="n">01</span>
+      <h3>{lang === 'bg' ? 'Чип тунинг' : 'Chip tuning'}</h3>
+      <p>{lang === 'bg' ? 'Stage 1 и Stage 2. Повече мощност и момент, измерени на стенда.' : 'Stage 1 and Stage 2. More power and torque, measured on the dyno.'}</p>
+      <span class="price">{lang === 'bg' ? 'от' : 'from'} {p('chip-tuning')} €</span>
+    </a>
+  )}
+  {list.map((s, i) => (
+    <a class="tile" href={servicePath(lang, s.slug)}>
+      <span class="n">{String(i + (withChip && !only ? 2 : 1)).padStart(2, '0')}</span>
+      <h3>{s.name[lang]}</h3>
+      <p>{s.short[lang]}</p>
+      <span class="price">{lang === 'bg' ? 'от' : 'from'} {p(s.priceKey)} €</span>
+    </a>
+  ))}
+</div>

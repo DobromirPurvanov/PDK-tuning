@@ -1,0 +1,1378 @@
+{
+ "slug": "massey-ferguson",
+ "name": "Massey Ferguson",
+ "logo": "massey-ferguson.png",
+ "models": [
+  {
+   "slug": "activa-980",
+   "name": "Activa",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "9378/6117",
+       "name": "Activa - 7240 - 177 HP",
+       "fuel": "petrol",
+       "hpStock": 177,
+       "hpTuned": 215,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9379/6118",
+       "name": "Activa - 7244 - 222 HP",
+       "fuel": "petrol",
+       "hpStock": 222,
+       "hpTuned": 260,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9380/6119",
+       "name": "Activa - 7245 - 245 HP",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 285,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9381/6120",
+       "name": "Activa - 7246 - 245 HP",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 285,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9382/6121",
+       "name": "Activa - 7247S - 7.4 - SISU - 277 HP",
+       "fuel": "petrol",
+       "hpStock": 277,
+       "hpTuned": 350,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9383/6122",
+       "name": "Activa - 7340 - 176 HP",
+       "fuel": "petrol",
+       "hpStock": 176,
+       "hpTuned": 206,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9384/6123",
+       "name": "Activa - 7344 - 218 HP",
+       "fuel": "petrol",
+       "hpStock": 218,
+       "hpTuned": 248,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "beta-981",
+   "name": "Beta",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "9385/6124",
+       "name": "Beta - 7260 - 7.4 - SISU - 277 HP",
+       "fuel": "petrol",
+       "hpStock": 277,
+       "hpTuned": 350,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9386/6125",
+       "name": "Beta - 7270 - 8.4 - SISU - 337 HP",
+       "fuel": "petrol",
+       "hpStock": 337,
+       "hpTuned": 390,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9387/6126",
+       "name": "Beta - 7360 - 306HP",
+       "fuel": "petrol",
+       "hpStock": 306,
+       "hpTuned": 336,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9388/6127",
+       "name": "Beta - 7370 - 306 HP",
+       "fuel": "petrol",
+       "hpStock": 306,
+       "hpTuned": 336,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "centora-982",
+   "name": "Centora",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "9389/6128",
+       "name": "Centora - 7280 - 8.4 - SISU - 349 HP",
+       "fuel": "petrol",
+       "hpStock": 349,
+       "hpTuned": 410,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9390/6129",
+       "name": "Centora - 7282 - 8.4 - SISU - 386 HP",
+       "fuel": "petrol",
+       "hpStock": 386,
+       "hpTuned": 450,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9391/6130",
+       "name": "Centora - 7380 - 379 HP",
+       "fuel": "petrol",
+       "hpStock": 379,
+       "hpTuned": 409,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9392/6131",
+       "name": "Centora - 7382 - 404 HP",
+       "fuel": "petrol",
+       "hpStock": 404,
+       "hpTuned": 434,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "combine-2854",
+   "name": "Combine",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "18126/6166",
+       "name": "Combine - 7370 - 8.4L - 360HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 360,
+       "hpTuned": 400,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18127/6196",
+       "name": "Combine - 9560 - 9.8L - 466HP - Tier4B",
+       "fuel": "petrol",
+       "hpStock": 466,
+       "hpTuned": 510,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18128/6134",
+       "name": "Combine - 9590 - 305HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 305,
+       "hpTuned": 335,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18129/6132",
+       "name": "Combine - 9690 - 8.4L - 303HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 303,
+       "hpTuned": 330,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18130/6133",
+       "name": "Combine - 9790 - 8.4L - 385HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 385,
+       "hpTuned": 425,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18131/6167",
+       "name": "Combine - 9790 - 8.4L - 385HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 385,
+       "hpTuned": 425,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18132/6197",
+       "name": "Combine - 9895 - 9.8L - 465HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 465,
+       "hpTuned": 510,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "harvester-2855",
+   "name": "Harvester",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "18188/6198",
+       "name": "Harverster - 7340 - 4.9L - 175HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 175,
+       "hpTuned": 200,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18189/6199",
+       "name": "Harverster - 7360 - 7.4L - 275HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 275,
+       "hpTuned": 305,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18190/6200",
+       "name": "Harverster - WR9840 - 4.4L - 150HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 170,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18191/6201",
+       "name": "Harverster - WR9870 - 6.6L - 243HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 243,
+       "hpTuned": 270,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "tractor-2856",
+   "name": "Tractor",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "18420/6168",
+       "name": "Tractor - 1736 - 1.7L - 37HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 37,
+       "hpTuned": 45,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18421/6169",
+       "name": "Tractor - 1758 - 2.2L - 60HP - Tire4A",
+       "fuel": "petrol",
+       "hpStock": 60,
+       "hpTuned": 75,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18422/6135",
+       "name": "Tractor - 3630 - 3.3L - 76HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 76,
+       "hpTuned": 96,
+       "nmStock": 315,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18423/6136",
+       "name": "Tractor - 3640 - 3.3L - 84HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 84,
+       "hpTuned": 100,
+       "nmStock": 345,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18424/6137",
+       "name": "Tractor - 3650 - 3.3L - 92HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 92,
+       "hpTuned": 110,
+       "nmStock": 360,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18425/6138",
+       "name": "Tractor - 3660 - 3.3L - 102HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 102,
+       "hpTuned": 115,
+       "nmStock": 405,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18427/6170",
+       "name": "Tractor - 4610 - 3.3L - 102HP - Tire4A",
+       "fuel": "petrol",
+       "hpStock": 102,
+       "hpTuned": 115,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18428/6202",
+       "name": "Tractor - 4610 - 3.3L - 102HP - Tire4F",
+       "fuel": "petrol",
+       "hpStock": 102,
+       "hpTuned": 115,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18429/6171",
+       "name": "Tractor - 4707 - 3.3L - 75HP - Tire4A",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 100,
+       "nmStock": 312,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18430/6203",
+       "name": "Tractor - 4708 - 3.3L - 80HP - Tire4F",
+       "fuel": "petrol",
+       "hpStock": 80,
+       "hpTuned": 100,
+       "nmStock": 347,
+       "nmTuned": 347,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18431/6172",
+       "name": "Tractor - 4708 - 3.3L - 85HP - Tire4A",
+       "fuel": "petrol",
+       "hpStock": 85,
+       "hpTuned": 105,
+       "nmStock": 347,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18432/6204",
+       "name": "Tractor - 4709 - 3.3L - 90HP - Tire4F",
+       "fuel": "petrol",
+       "hpStock": 90,
+       "hpTuned": 110,
+       "nmStock": 355,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18433/6173",
+       "name": "Tractor - 4709 - 3.3L - 95HP - Tire4A",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 115,
+       "nmStock": 355,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18434/6205",
+       "name": "Tractor - 4710 - 3.3L - 102HP - Tire4F",
+       "fuel": "petrol",
+       "hpStock": 102,
+       "hpTuned": 115,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18459/6139",
+       "name": "Tractor - 5445 - 4.4L - 100HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 130,
+       "nmStock": 420,
+       "nmTuned": 580,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18460/6140",
+       "name": "Tractor - 5455 - 4.4L - 110HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 670,
+       "nmTuned": 860,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18461/6141",
+       "name": "Tractor - 5460 - 4.4L - 124HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 124,
+       "hpTuned": 165,
+       "nmStock": 471,
+       "nmTuned": 595,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18462/6142",
+       "name": "Tractor - 5465 - 4.4L - 125HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 165,
+       "nmStock": 471,
+       "nmTuned": 590,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18463/6226",
+       "name": "Tractor - 5465 - 6.0L - 120HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 155,
+       "nmStock": 500,
+       "nmTuned": 670,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18464/6143",
+       "name": "Tractor - 5465 - 6.6L - 131HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 131,
+       "hpTuned": 165,
+       "nmStock": 500,
+       "nmTuned": 670,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18465/6144",
+       "name": "Tractor - 5470 - 4.4L - 135HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 165,
+       "nmStock": 540,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18466/6145",
+       "name": "Tractor - 5475 - 6.6L - 144HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 144,
+       "hpTuned": 178,
+       "nmStock": 607,
+       "nmTuned": 770,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18467/6161",
+       "name": "Tractor - 5480 - 4.9L - 144HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 144,
+       "hpTuned": 170,
+       "nmStock": 625,
+       "nmTuned": 790,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18468/6174",
+       "name": "Tractor - 5608 - 3.3L - 85HP - Tire4A",
+       "fuel": "petrol",
+       "hpStock": 85,
+       "hpTuned": 110,
+       "nmStock": 363,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18469/6175",
+       "name": "Tractor - 5609 - 3.3L - 95HP - Tire4A",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 125,
+       "nmStock": 405,
+       "nmTuned": 530,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18470/6176",
+       "name": "Tractor - 5610 - 3.3L - 105HP - Tire4A",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 133,
+       "nmStock": 413,
+       "nmTuned": 530,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18471/6177",
+       "name": "Tractor - 5611 - 4.4L - 110HP - Tire4A",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 135,
+       "nmStock": 468,
+       "nmTuned": 580,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18472/6178",
+       "name": "Tractor - 5612 - 4.4L - 120HP - Tire4A",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 502,
+       "nmTuned": 630,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18473/6179",
+       "name": "Tractor - 5613 - 4.4L - 130HP - Tire4A",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 160,
+       "nmStock": 545,
+       "nmTuned": 630,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18474/6206",
+       "name": "Tractor - 5709 - 4.4L - 95HP - Tire4F",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 120,
+       "nmStock": 405,
+       "nmTuned": 510,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18475/6207",
+       "name": "Tractor - 5710 - 4.4L - 100HP - Tire4F",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 125,
+       "nmStock": 420,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18476/6208",
+       "name": "Tractor - 5711 - 4.4L - 110HP - Tire4F",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 468,
+       "nmTuned": 590,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18477/6209",
+       "name": "Tractor - 5712 - 4.4L - 120HP - Tire4F",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 502,
+       "nmTuned": 630,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18478/6210",
+       "name": "Tractor - 5713 - 4.4L - 130HP - Tire4F",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 160,
+       "nmStock": 545,
+       "nmTuned": 670,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18559/6146",
+       "name": "Tractor - 6445 - 4.4L - 95HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 125,
+       "nmStock": 400,
+       "nmTuned": 570,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18560/6147",
+       "name": "Tractor - 6455 - 4.4L - 105HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 135,
+       "nmStock": 463,
+       "nmTuned": 590,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18561/6148",
+       "name": "Tractor - 6460 - 4.4L - 115HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 538,
+       "nmTuned": 690,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18562/6227",
+       "name": "Tractor - 6465 - 6.0L - 118HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 118,
+       "hpTuned": 137,
+       "nmStock": 471,
+       "nmTuned": 610,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18563/6149",
+       "name": "Tractor - 6465 - 6.6L - 120HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 165,
+       "nmStock": 500,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18564/6228",
+       "name": "Tractor - 6475 - 6.0L - 133HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 133,
+       "hpTuned": 160,
+       "nmStock": 600,
+       "nmTuned": 760,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18565/6150",
+       "name": "Tractor - 6475 - 6.6L - 135HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 185,
+       "nmStock": 565,
+       "nmTuned": 680,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18566/6229",
+       "name": "Tractor - 6480 - 6.0L - 143HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 160,
+       "nmStock": 492,
+       "nmTuned": 640,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18567/6151",
+       "name": "Tractor - 6480 - 6.6L - 145HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 145,
+       "hpTuned": 220,
+       "nmStock": 590,
+       "nmTuned": 710,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18568/6230",
+       "name": "Tractor - 6485 - 6.6L - 153HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 153,
+       "hpTuned": 182,
+       "nmStock": 650,
+       "nmTuned": 810,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18569/6152",
+       "name": "Tractor - 6485 - 6.6L - 160HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 200,
+       "nmStock": 750,
+       "nmTuned": 920,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18570/6231",
+       "name": "Tractor - 6490 - 6.6L - 168HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 168,
+       "hpTuned": 210,
+       "nmStock": 720,
+       "nmTuned": 880,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18571/6153",
+       "name": "Tractor - 6490 - 6.6L - 170HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 215,
+       "nmStock": 861,
+       "nmTuned": 1010,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18572/6232",
+       "name": "Tractor - 6495 - 6.6L - 183HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 183,
+       "hpTuned": 220,
+       "nmStock": 780,
+       "nmTuned": 950,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18573/6154",
+       "name": "Tractor - 6495 - 6.6L - 185HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 250,
+       "nmStock": 904,
+       "nmTuned": 1100,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18580/6180",
+       "name": "Tractor - 6612 - 4.9L - 120HP - Tire4A",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 511,
+       "nmTuned": 566,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18581/6181",
+       "name": "Tractor - 6613 - 4.9L - 130HP - Tire4A",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 160,
+       "nmStock": 553,
+       "nmTuned": 608,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18582/6182",
+       "name": "Tractor - 6614 - 4.9L - 140HP - Tire4A",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 645,
+       "nmTuned": 682,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18583/6183",
+       "name": "Tractor - 6615 - 4.9L - 150HP - Tire4A",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 660,
+       "nmTuned": 715,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18585/6184",
+       "name": "Tractor - 6616 - 4.9L - 160HP - Tire4A",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 190,
+       "nmStock": 677,
+       "nmTuned": 732,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18589/6211",
+       "name": "Tractor - 6712S - 4.9L - 120HP - Tire4F",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 160,
+       "nmStock": 502,
+       "nmTuned": 607,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18590/6212",
+       "name": "Tractor - 6713S - 4.9L - 130HP - Tire4F",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 170,
+       "nmStock": 540,
+       "nmTuned": 644,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18591/6213",
+       "name": "Tractor - 6714S - 4.9L - 140HP - Tire4F",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 180,
+       "nmStock": 691,
+       "nmTuned": 795,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18592/6214",
+       "name": "Tractor - 6715S - 4.9L - 150HP - Tire4F",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 745,
+       "nmTuned": 850,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18593/6215",
+       "name": "Tractor - 6716S - 4.9L - 160HP - Tire4F",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 200,
+       "nmStock": 790,
+       "nmTuned": 898,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18594/6216",
+       "name": "Tractor - 6718S - 4.9L - 200HP - Tire4F",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 220,
+       "nmStock": 840,
+       "nmTuned": 950,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18641/6233",
+       "name": "Tractor - 7465 - 6.0L - 118HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 118,
+       "hpTuned": 165,
+       "nmStock": 585,
+       "nmTuned": 685,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18642/6234",
+       "name": "Tractor - 7475 - 6.0L - 133HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 133,
+       "hpTuned": 180,
+       "nmStock": 590,
+       "nmTuned": 730,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18643/6235",
+       "name": "Tractor - 7480 - 6.0L - 143HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 143,
+       "hpTuned": 185,
+       "nmStock": 590,
+       "nmTuned": 750,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18644/6236",
+       "name": "Tractor - 7485 - 6.6L - 153HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 153,
+       "hpTuned": 190,
+       "nmStock": 650,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18645/6237",
+       "name": "Tractor - 7490 - 6.6L - 168HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 168,
+       "hpTuned": 220,
+       "nmStock": 720,
+       "nmTuned": 860,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18646/6238",
+       "name": "Tractor - 7495 - 6.6L - 183HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 183,
+       "hpTuned": 235,
+       "nmStock": 780,
+       "nmTuned": 950,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18647/6155",
+       "name": "Tractor - 7497 - 7.4L - 205HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 205,
+       "hpTuned": 290,
+       "nmStock": 928,
+       "nmTuned": 1064,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18648/6156",
+       "name": "Tractor - 7499 - 7.4L - 220HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 245,
+       "nmStock": 970,
+       "nmTuned": 1101,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18652/6185",
+       "name": "Tractor - 7618 - 6.6L - 175HP - Tire4A",
+       "fuel": "petrol",
+       "hpStock": 175,
+       "hpTuned": 200,
+       "nmStock": 840,
+       "nmTuned": 960,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18653/6186",
+       "name": "Tractor - 7619 - 6.6L - 185HP - Tire4A",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 210,
+       "nmStock": 925,
+       "nmTuned": 1050,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18654/6187",
+       "name": "Tractor - 7620 - 6.6L - 200HP - Tire4A",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 240,
+       "nmStock": 980,
+       "nmTuned": 1110,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18655/6188",
+       "name": "Tractor - 7622 - 7.4L - 215HP - Tire4A",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 255,
+       "nmStock": 1035,
+       "nmTuned": 1180,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18656/6189",
+       "name": "Tractor - 7624 - 7.4L - 215HP - Tire4A",
+       "fuel": "petrol",
+       "hpStock": 235,
+       "hpTuned": 275,
+       "nmStock": 1120,
+       "nmTuned": 1250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18657/6190",
+       "name": "Tractor - 7626 - 7.4L - 255HP - Tire4A",
+       "fuel": "petrol",
+       "hpStock": 255,
+       "hpTuned": 290,
+       "nmStock": 1145,
+       "nmTuned": 1290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18661/6217",
+       "name": "Tractor - 7714S - 6.6L - 140HP - Tire4F",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 687,
+       "nmTuned": 820,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18663/6218",
+       "name": "Tractor - 7715S - 6.6L - 150HP - Tire4F",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 745,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18664/6219",
+       "name": "Tractor - 7716S - 6.6L - 160HP - Tire4F",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 190,
+       "nmStock": 790,
+       "nmTuned": 1000,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18665/6220",
+       "name": "Tractor - 7718S - 6.6L - 175HP - Tire4F",
+       "fuel": "petrol",
+       "hpStock": 175,
+       "hpTuned": 200,
+       "nmStock": 840,
+       "nmTuned": 1050,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18666/6221",
+       "name": "Tractor - 7719S - 6.6L - 185HP - Tire4F",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 210,
+       "nmStock": 925,
+       "nmTuned": 210,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18668/6222",
+       "name": "Tractor - 7720S - 6.6L - 185HP - Tire4F",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 220,
+       "nmStock": 980,
+       "nmTuned": 1250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18669/6223",
+       "name": "Tractor - 7722S - 7.4L - 215HP - Tire4F",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 260,
+       "nmStock": 1050,
+       "nmTuned": 1300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18670/6224",
+       "name": "Tractor - 7724S - 7.4L - 235HP - Tire4F",
+       "fuel": "petrol",
+       "hpStock": 235,
+       "hpTuned": 270,
+       "nmStock": 1120,
+       "nmTuned": 1300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18671/6225",
+       "name": "Tractor - 7726S - 7.4L - 255HP - Tire4F",
+       "fuel": "petrol",
+       "hpStock": 255,
+       "hpTuned": 280,
+       "nmStock": 1146,
+       "nmTuned": 1300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18726/6157",
+       "name": "Tractor - 8650 - 8.4L - 270HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 270,
+       "hpTuned": 320,
+       "nmStock": 1185,
+       "nmTuned": 1345,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18727/6158",
+       "name": "Tractor - 8660 - 8.4L - 295HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 295,
+       "hpTuned": 340,
+       "nmStock": 1295,
+       "nmTuned": 1455,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18728/6159",
+       "name": "Tractor - 8670 - 8.4L - 320HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 370,
+       "nmStock": 1400,
+       "nmTuned": 1555,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18729/6160",
+       "name": "Tractor - 8680 - 8.4L - 350HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 350,
+       "hpTuned": 385,
+       "nmStock": 1492,
+       "nmTuned": 1630,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "traktor-983",
+   "name": "Traktor",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "9393/6162",
+       "name": "Traktor - 8450 - 7.4L - 215HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 250,
+       "nmStock": 970,
+       "nmTuned": 1130,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9394/6163",
+       "name": "Traktor - 8460 - 7.4L - 215HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 235,
+       "hpTuned": 260,
+       "nmStock": 1071,
+       "nmTuned": 1200,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9395/6164",
+       "name": "Traktor - 8470 - 7.4L - 260HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 260,
+       "hpTuned": 290,
+       "nmStock": 1195,
+       "nmTuned": 1350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9396/6165",
+       "name": "Traktor - 8480 - 7.4L - 290HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 290,
+       "hpTuned": 335,
+       "nmStock": 1280,
+       "nmTuned": 1450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9402/6239",
+       "name": "Traktor - 8727 - 8.4L - 270HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 270,
+       "hpTuned": 300,
+       "nmStock": 1300,
+       "nmTuned": 1500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9397/6191",
+       "name": "Traktor - 8727 - 8.4L - 270HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 270,
+       "hpTuned": 310,
+       "nmStock": 1185,
+       "nmTuned": 1345,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9403/6240",
+       "name": "Traktor - 8730 - 8.4L - 295HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 295,
+       "hpTuned": 340,
+       "nmStock": 1390,
+       "nmTuned": 1550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9398/6192",
+       "name": "Traktor - 8730 - 8.4L - 295HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 295,
+       "hpTuned": 330,
+       "nmStock": 1295,
+       "nmTuned": 1455,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9404/6241",
+       "name": "Traktor - 8732 - 8.4L - 320HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 360,
+       "nmStock": 1500,
+       "nmTuned": 1700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9399/6193",
+       "name": "Traktor - 8732 - 8.4L - 320HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 360,
+       "nmStock": 1400,
+       "nmTuned": 1555,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9405/6242",
+       "name": "Traktor - 8735 - 8.4L - 350HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 350,
+       "hpTuned": 390,
+       "nmStock": 1590,
+       "nmTuned": 1800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9400/6194",
+       "name": "Traktor - 8735 - 8.4L - 350HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 350,
+       "hpTuned": 386,
+       "nmStock": 1492,
+       "nmTuned": 1630,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9406/6243",
+       "name": "Traktor - 8737 - 8.4L - 370HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 370,
+       "hpTuned": 410,
+       "nmStock": 1600,
+       "nmTuned": 1800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9401/6195",
+       "name": "Traktor - 8737 - 8.4L - 370HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 370,
+       "hpTuned": 400,
+       "nmStock": 1540,
+       "nmTuned": 1700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9407/6244",
+       "name": "Traktor - 8740 - 8.4L - 400HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 400,
+       "hpTuned": 450,
+       "nmStock": 1600,
+       "nmTuned": 1800,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

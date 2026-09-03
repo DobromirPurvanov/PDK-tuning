@@ -1,0 +1,9 @@
+node_modules
+dist
+.astro
+.crawl
+.git
+.github
+*.log
+.env
+.env.*

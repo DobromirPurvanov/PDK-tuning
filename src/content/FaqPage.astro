@@ -1,0 +1,26 @@
+---
+import Base from '@/layouts/Base.astro';
+import Crumbs from '@/components/Crumbs.astro';
+import Faq from '@/components/Faq.astro';
+import { t, routes, type Lang } from '@/i18n';
+import { ldBreadcrumb, ldFaq } from '@/lib/seo';
+import { FAQ, faqFlat } from '@/data/faq';
+import business from '@/data/business.json';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang); const path = routes.faq[lang];
+const C = lang === 'bg'
+  ? { title: 'Чести въпроси за чип тунинг — гаранция, време, цена | PDK Tuning', description: 'Отговори от сервиза във Варна: за коя кола има смисъл, колко трае, губи ли се гаранцията, връща ли се фабричният софтуер, колко струва и как се плаща.', h1: 'Чести въпроси', lead: 'Въпросите, които чуваме по телефона всеки ден — преди, по време, след и за парите. Ако вашият го няма, обадете се.' }
+  : { title: 'Chip tuning FAQ — warranty, time, price, file service | PDK Tuning', description: 'Answers from the Varna workshop and the file service: which cars, how long, warranty, back to stock, what partner workshops send, prices and payment.', h1: 'Questions', lead: 'What we hear on the phone every day — before, during, after and about money. If yours is missing, call or write.' };
+const crumbs = [{ name: d.crumbs.home, path: routes.home[lang] }];
+---
+<Base lang={lang} title={C.title} description={C.description} path={path} current="faq" jsonld={[ldBreadcrumb([...crumbs, { name: d.nav.faq, path }]), ldFaq(faqFlat(lang))]}>
+  <div class="wrap">
+    <Crumbs items={crumbs} current={d.nav.faq} />
+    <p class="kicker">{d.nav.faq} · {faqFlat(lang).length}</p>
+    <h1>{C.h1}</h1>
+    <p class="lead">{C.lead}</p>
+    <div class="actions" style="margin-bottom:2rem"><a class="btn primary" href={`tel:${business.phone}`} data-ev="tel_click" data-ev-label="faq">{business.phoneDisplay}</a></div>
+  </div>
+  {FAQ.map((g, i) => <section class:list={['section', { alt: i % 2 === 1 }]}><div class="wrap-narrow"><p class="kicker">{String(i + 1).padStart(2, '0')} · {g.title[lang]}</p><h2>{g.title[lang]}</h2><Faq items={g.items[lang]} firstOpen={i === 0} /></div></section>)}
+</Base>

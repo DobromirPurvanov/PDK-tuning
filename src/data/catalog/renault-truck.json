@@ -1,0 +1,309 @@
+{
+ "slug": "renault-truck",
+ "name": "Renault truck",
+ "logo": "renault-truck.png",
+ "models": [
+  {
+   "slug": "kerax-1072",
+   "name": "Kerax",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11151/7316",
+       "name": "215hp",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 258,
+       "nmStock": 700,
+       "nmTuned": 950,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11152/7317",
+       "name": "265hp",
+       "fuel": "petrol",
+       "hpStock": 265,
+       "hpTuned": 315,
+       "nmStock": 900,
+       "nmTuned": 1230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11153/7318",
+       "name": "361hp",
+       "fuel": "petrol",
+       "hpStock": 361,
+       "hpTuned": 421,
+       "nmStock": 1210,
+       "nmTuned": 1600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11154/7319",
+       "name": "370 DXI-11",
+       "fuel": "petrol",
+       "hpStock": 370,
+       "hpTuned": 445,
+       "nmStock": 1735,
+       "nmTuned": 2090,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11155/7320",
+       "name": "410 DXI-11",
+       "fuel": "petrol",
+       "hpStock": 410,
+       "hpTuned": 490,
+       "nmStock": 1900,
+       "nmTuned": 2280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11156/7321",
+       "name": "412hp",
+       "fuel": "petrol",
+       "hpStock": 412,
+       "hpTuned": 490,
+       "nmStock": 1870,
+       "nmTuned": 2300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "magnum-2874",
+   "name": "Magnum",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "17938/7322",
+       "name": "400hp",
+       "fuel": "petrol",
+       "hpStock": 400,
+       "hpTuned": 481,
+       "nmStock": 1850,
+       "nmTuned": 2250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17957/7323",
+       "name": "440hp",
+       "fuel": "petrol",
+       "hpStock": 440,
+       "hpTuned": 520,
+       "nmStock": 2050,
+       "nmTuned": 2550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17958/7324",
+       "name": "440hp OPTIDRIVER",
+       "fuel": "petrol",
+       "hpStock": 440,
+       "hpTuned": 520,
+       "nmStock": 2240,
+       "nmTuned": 2600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17971/7325",
+       "name": "460hp DXI-13",
+       "fuel": "petrol",
+       "hpStock": 460,
+       "hpTuned": 535,
+       "nmStock": 2300,
+       "nmTuned": 2680,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17976/7326",
+       "name": "480hp",
+       "fuel": "petrol",
+       "hpStock": 480,
+       "hpTuned": 554,
+       "nmStock": 2250,
+       "nmTuned": 2712,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17978/7327",
+       "name": "480hp OPTIDRIVER",
+       "fuel": "petrol",
+       "hpStock": 480,
+       "hpTuned": 560,
+       "nmStock": 2440,
+       "nmTuned": 2800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18017/7328",
+       "name": "500hp DXI-13",
+       "fuel": "petrol",
+       "hpStock": 500,
+       "hpTuned": 577,
+       "nmStock": 2450,
+       "nmTuned": 2805,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18025/7329",
+       "name": "530hp",
+       "fuel": "petrol",
+       "hpStock": 530,
+       "hpTuned": 600,
+       "nmStock": 2300,
+       "nmTuned": 2650,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "midlum-1073",
+   "name": "Midlum",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11157/7330",
+       "name": "160hp DXI-5",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 200,
+       "nmStock": 580,
+       "nmTuned": 829,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11158/7331",
+       "name": "190hp DXI-5",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 235,
+       "nmStock": 690,
+       "nmTuned": 930,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11159/7332",
+       "name": "220hp",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 265,
+       "nmStock": 700,
+       "nmTuned": 950,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11160/7333",
+       "name": "220hp DXI-5",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 265,
+       "nmStock": 800,
+       "nmTuned": 1050,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11161/7334",
+       "name": "240hp DXI-7",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 300,
+       "nmStock": 920,
+       "nmTuned": 1230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11162/7335",
+       "name": "270hp",
+       "fuel": "petrol",
+       "hpStock": 270,
+       "hpTuned": 350,
+       "nmStock": 900,
+       "nmTuned": 1277,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11163/7336",
+       "name": "280 DXI-7",
+       "fuel": "petrol",
+       "hpStock": 280,
+       "hpTuned": 350,
+       "nmStock": 1050,
+       "nmTuned": 1380,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "premium-1074",
+   "name": "Premium",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11164/7335",
+       "name": "270hp",
+       "fuel": "petrol",
+       "hpStock": 270,
+       "hpTuned": 350,
+       "nmStock": 900,
+       "nmTuned": 1277,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11165/6065",
+       "name": "320hp",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 380,
+       "nmStock": 1600,
+       "nmTuned": 1950,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11166/7338",
+       "name": "370hp",
+       "fuel": "petrol",
+       "hpStock": 370,
+       "hpTuned": 450,
+       "nmStock": 1670,
+       "nmTuned": 2100,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11167/5310",
+       "name": "420hp",
+       "fuel": "petrol",
+       "hpStock": 420,
+       "hpTuned": 490,
+       "nmStock": 1900,
+       "nmTuned": 2280,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

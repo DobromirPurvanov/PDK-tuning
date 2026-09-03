@@ -1,0 +1,1716 @@
+{
+ "slug": "claas",
+ "name": "Claas",
+ "logo": "claas.png",
+ "models": [
+  {
+   "slug": "ares-832",
+   "name": "Ares",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7614/4443",
+       "name": "Ares - 546 - 4.5L - 90HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 90,
+       "hpTuned": 110,
+       "nmStock": 368,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7615/4444",
+       "name": "Ares - 547 - 4.5L - 96HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 368,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7616/4445",
+       "name": "Ares - 556 - 4.5L - 100HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 120,
+       "nmStock": 415,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7617/4446",
+       "name": "Ares - 557 - 4.5L - 104HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 104,
+       "hpTuned": 125,
+       "nmStock": 415,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7618/4447",
+       "name": "Ares - 566 - 4.5L - 110HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 125,
+       "nmStock": 430,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7619/4448",
+       "name": "Ares - 567 - 4.5L - 114HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 114,
+       "hpTuned": 140,
+       "nmStock": 430,
+       "nmTuned": 515,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7620/4449",
+       "name": "Ares - 577 - 4.5L - 123HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 123,
+       "hpTuned": 150,
+       "nmStock": 485,
+       "nmTuned": 580,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7621/4450",
+       "name": "Ares - 616 - 6.8L - 110HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 457,
+       "nmTuned": 550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7622/4451",
+       "name": "Ares - 617 - 6.8L - 112HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 112,
+       "hpTuned": 140,
+       "nmStock": 463,
+       "nmTuned": 555,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7623/4452",
+       "name": "Ares - 656 - 6.8L - 125HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 155,
+       "nmStock": 528,
+       "nmTuned": 635,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7624/4453",
+       "name": "Ares - 657 - 6.8L - 128HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 128,
+       "hpTuned": 160,
+       "nmStock": 533,
+       "nmTuned": 640,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7625/4454",
+       "name": "Ares - 696 - 6.8L - 141HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 141,
+       "hpTuned": 175,
+       "nmStock": 585,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7626/4455",
+       "name": "Ares - 697 - 6.8L - 143HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 143,
+       "hpTuned": 180,
+       "nmStock": 591,
+       "nmTuned": 710,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7627/4456",
+       "name": "Ares - 816 - 6.8L - 156HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 195,
+       "nmStock": 664,
+       "nmTuned": 795,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7628/4457",
+       "name": "Ares - 826 - 6.8L - 175HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 175,
+       "hpTuned": 220,
+       "nmStock": 759,
+       "nmTuned": 910,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7629/4458",
+       "name": "Ares - 836 - 6.8L - 194HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 194,
+       "hpTuned": 245,
+       "nmStock": 820,
+       "nmTuned": 985,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "arion-834",
+   "name": "Arion",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7634/4463",
+       "name": "Arion - 410 - 4.5L - 90HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 90,
+       "hpTuned": 120,
+       "nmStock": 420,
+       "nmTuned": 530,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7660/4489",
+       "name": "Arion - 410 - 4.5L - 90HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 90,
+       "hpTuned": 120,
+       "nmStock": 405,
+       "nmTuned": 510,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7635/4464",
+       "name": "Arion - 420 - 4.5L - 100HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 130,
+       "nmStock": 465,
+       "nmTuned": 582,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7661/4490",
+       "name": "Arion - 420 - 4.5L - 100HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 130,
+       "nmStock": 435,
+       "nmTuned": 550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7636/4465",
+       "name": "Arion - 430 - 4.5L - 110HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 144,
+       "nmStock": 495,
+       "nmTuned": 620,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7662/4491",
+       "name": "Arion - 430 - 4.5L - 110HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 140,
+       "nmStock": 480,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7663/4492",
+       "name": "Arion - 440 - 4.5L - 120HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 520,
+       "nmTuned": 640,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7664/4493",
+       "name": "Arion - 450 - 4.5L - 130HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 170,
+       "nmStock": 550,
+       "nmTuned": 660,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7665/4494",
+       "name": "Arion - 460 - 4.5L - 140HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 570,
+       "nmTuned": 680,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7637/4466",
+       "name": "Arion - 510 - 4.5L - 110HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 145,
+       "nmStock": 477,
+       "nmTuned": 535,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7666/4495",
+       "name": "Arion - 510 - 4.5L - 125HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 160,
+       "nmStock": 562,
+       "nmTuned": 684,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7638/4467",
+       "name": "Arion - 520 - 4.5L - 120HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 526,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7639/4468",
+       "name": "Arion - 530 - 4.5L - 130HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 160,
+       "nmStock": 540,
+       "nmTuned": 620,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7667/4496",
+       "name": "Arion - 530 - 4.5L - 145HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 145,
+       "hpTuned": 175,
+       "nmStock": 581,
+       "nmTuned": 676,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7685/4514",
+       "name": "Arion - 530 - 4.5L - 145HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 581,
+       "nmTuned": 676,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7640/4469",
+       "name": "Arion - 540 - 4.5L - 135HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 165,
+       "nmStock": 585,
+       "nmTuned": 660,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7686/4515",
+       "name": "Arion - 540 - 4.5L - 155HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 155,
+       "hpTuned": 180,
+       "nmStock": 618,
+       "nmTuned": 713,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7687/4516",
+       "name": "Arion - 550 - 4.5L - 163HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 190,
+       "nmStock": 636,
+       "nmTuned": 711,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7668/4497",
+       "name": "Arion - 550 - 4.5L - 165HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 185,
+       "nmStock": 636,
+       "nmTuned": 711,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7641/4470",
+       "name": "Arion - 610 - 6.8L - 120HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 580,
+       "nmTuned": 640,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7669/4498",
+       "name": "Arion - 610 - 6.8L - 145PS - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 145,
+       "hpTuned": 190,
+       "nmStock": 640,
+       "nmTuned": 710,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7642/4471",
+       "name": "Arion - 610C - 6.8L - 120HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 527,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7643/4472",
+       "name": "Arion - 620 - 6.8L - 135HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 165,
+       "nmStock": 580,
+       "nmTuned": 640,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7688/4517",
+       "name": "Arion - 620 - 6.8L - 158HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 158,
+       "hpTuned": 180,
+       "nmStock": 659,
+       "nmTuned": 719,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7644/4473",
+       "name": "Arion - 620C - 6.8L - 135HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 165,
+       "nmStock": 580,
+       "nmTuned": 640,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7645/4474",
+       "name": "Arion - 630 - 6.8L - 146HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 146,
+       "hpTuned": 176,
+       "nmStock": 633,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7689/4518",
+       "name": "Arion - 630 - 6.8L - 165HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 190,
+       "nmStock": 689,
+       "nmTuned": 749,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7670/4499",
+       "name": "Arion - 630 - 6.8L - 165PS - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 205,
+       "nmStock": 689,
+       "nmTuned": 749,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7646/4475",
+       "name": "Arion - 630C - 6.8L - 146HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 146,
+       "hpTuned": 175,
+       "nmStock": 630,
+       "nmTuned": 710,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7647/4476",
+       "name": "Arion - 640 - 6.8L - 155HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 155,
+       "hpTuned": 185,
+       "nmStock": 657,
+       "nmTuned": 730,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7690/4519",
+       "name": "Arion - 640 - 6.8L - 177HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 177,
+       "hpTuned": 200,
+       "nmStock": 714,
+       "nmTuned": 774,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7691/4520",
+       "name": "Arion - 650 - 6.8L - 184HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 184,
+       "hpTuned": 205,
+       "nmStock": 754,
+       "nmTuned": 804,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7671/4500",
+       "name": "Arion - 650 - 6.8L - 185PS - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 215,
+       "nmStock": 754,
+       "nmTuned": 804,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7672/4501",
+       "name": "Arion - 660 - 6.8L - 205PS - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 205,
+       "hpTuned": 225,
+       "nmStock": 833,
+       "nmTuned": 883,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "atos-840",
+   "name": "Atos",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7692/4521",
+       "name": "Atos - 220 - 2.9L - 76HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 76,
+       "hpTuned": 100,
+       "nmStock": 341,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7693/4522",
+       "name": "Atos - 230 - 2.9L - 84HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 84,
+       "hpTuned": 105,
+       "nmStock": 354,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7694/4523",
+       "name": "Atos - 240 - 2.9L - 92HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 92,
+       "hpTuned": 120,
+       "nmStock": 371,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7695/4524",
+       "name": "Atos - 330 - 3.8L - 84HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 84,
+       "hpTuned": 110,
+       "nmStock": 354,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7696/4525",
+       "name": "Atos - 340 - 3.8L - 97HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 97,
+       "hpTuned": 130,
+       "nmStock": 405,
+       "nmTuned": 510,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7697/4526",
+       "name": "Atos - 350 - 3.8L - 103HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 103,
+       "hpTuned": 130,
+       "nmStock": 435,
+       "nmTuned": 540,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "axion-835",
+   "name": "Axion",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7673/4502",
+       "name": "Axion - 800 - 6.7L - 205HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 205,
+       "hpTuned": 240,
+       "nmStock": 896,
+       "nmTuned": 1020,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7674/4503",
+       "name": "Axion - 810 - 6.7L - 215HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 240,
+       "nmStock": 941,
+       "nmTuned": 1030,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7648/4477",
+       "name": "Axion - 810 - 6.8L - 170HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 190,
+       "nmStock": 792,
+       "nmTuned": 950,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7675/4504",
+       "name": "Axion - 820 - 6.7L - 225HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 225,
+       "hpTuned": 260,
+       "nmStock": 987,
+       "nmTuned": 1100,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7649/4478",
+       "name": "Axion - 820 - 6.8L - 189HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 189,
+       "hpTuned": 210,
+       "nmStock": 895,
+       "nmTuned": 1050,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7676/4505",
+       "name": "Axion - 830 - 6.7L - 235HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 235,
+       "hpTuned": 270,
+       "nmStock": 1016,
+       "nmTuned": 1130,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7650/4479",
+       "name": "Axion - 830 - 6.8L - 203HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 203,
+       "hpTuned": 230,
+       "nmStock": 905,
+       "nmTuned": 1080,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7677/4506",
+       "name": "Axion - 840 - 6.7L - 250HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 290,
+       "nmStock": 1071,
+       "nmTuned": 1190,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7651/4480",
+       "name": "Axion - 840 - 6.8L - 216HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 216,
+       "hpTuned": 235,
+       "nmStock": 950,
+       "nmTuned": 1100,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7678/4507",
+       "name": "Axion - 850 - 6.7L - 264HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 264,
+       "hpTuned": 300,
+       "nmStock": 1132,
+       "nmTuned": 1230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7652/4481",
+       "name": "Axion - 850 - 6.8L - 232HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 232,
+       "hpTuned": 250,
+       "nmStock": 1020,
+       "nmTuned": 1130,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7679/4508",
+       "name": "Axion - 870 - 6.7L - 295HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 295,
+       "hpTuned": 335,
+       "nmStock": 1276,
+       "nmTuned": 1380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7702/4531",
+       "name": "Axion - 920 - 8.7L - 315HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 315,
+       "hpTuned": 400,
+       "nmStock": 1350,
+       "nmTuned": 1688,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7680/4509",
+       "name": "Axion - 920 - 8.7L - 321HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 321,
+       "hpTuned": 390,
+       "nmStock": 1350,
+       "nmTuned": 1600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7703/4532",
+       "name": "Axion - 930 - 8.7L - 345HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 345,
+       "hpTuned": 440,
+       "nmStock": 1450,
+       "nmTuned": 1813,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7681/4510",
+       "name": "Axion - 930 - 8.7L - 350HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 350,
+       "hpTuned": 420,
+       "nmStock": 1450,
+       "nmTuned": 1813,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7704/4533",
+       "name": "Axion - 940 - 8.7L - 375HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 375,
+       "hpTuned": 480,
+       "nmStock": 1550,
+       "nmTuned": 1938,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7682/4511",
+       "name": "Axion - 940 - 8.7L - 380HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 380,
+       "hpTuned": 440,
+       "nmStock": 1550,
+       "nmTuned": 1938,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7683/4512",
+       "name": "Axion - 950 - 8.7L - 404HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 404,
+       "hpTuned": 465,
+       "nmStock": 1650,
+       "nmTuned": 2063,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7705/4534",
+       "name": "Axion - 950 - 8.7L - 405HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 405,
+       "hpTuned": 521,
+       "nmStock": 1650,
+       "nmTuned": 2063,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7684/4513",
+       "name": "Axion - 960 - 8.7L - 439HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 439,
+       "hpTuned": 480,
+       "nmStock": 1860,
+       "nmTuned": 1987,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "celtis-833",
+   "name": "Celtis",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7630/4459",
+       "name": "Celtis - 426 - 4.5L - 75HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 90,
+       "nmStock": 283,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7631/4460",
+       "name": "Celtis - 436 - 4.5L - 84HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 84,
+       "hpTuned": 100,
+       "nmStock": 333,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7632/4461",
+       "name": "Celtis - 446 - 4.5L - 92HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 92,
+       "hpTuned": 115,
+       "nmStock": 365,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7633/4462",
+       "name": "Celtis - 456 - 4.5L - 102HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 102,
+       "hpTuned": 125,
+       "nmStock": 390,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "elios-836",
+   "name": "ELIOS",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7653/4482",
+       "name": "ELIOS - 210 - 3.2L - 72HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 72,
+       "hpTuned": 100,
+       "nmStock": 277,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7698/4527",
+       "name": "ELIOS - 210 - 3.4L - 75HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 100,
+       "nmStock": 309,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7654/4483",
+       "name": "ELIOS - 220 - 3.2L - 78HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 78,
+       "hpTuned": 115,
+       "nmStock": 330,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7699/4528",
+       "name": "ELIOS - 220 - 3.4L - 84HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 84,
+       "hpTuned": 110,
+       "nmStock": 334,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7655/4484",
+       "name": "ELIOS - 230 - 3.2L - 88HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 88,
+       "hpTuned": 115,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7700/4529",
+       "name": "ELIOS - 230 - 3.4L - 92HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 92,
+       "hpTuned": 120,
+       "nmStock": 366,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7701/4530",
+       "name": "ELIOS - 240 - 3.4L - 103HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 103,
+       "hpTuned": 130,
+       "nmStock": 406,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "jaguar-841",
+   "name": "Jaguar",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7706/4535",
+       "name": "Jaguar - 830 - 12.8L - 321HP",
+       "fuel": "petrol",
+       "hpStock": 321,
+       "hpTuned": 430,
+       "nmStock": 1450,
+       "nmTuned": 1680,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7707/4536",
+       "name": "Jaguar - 840 - 12.8L - 400HP",
+       "fuel": "petrol",
+       "hpStock": 400,
+       "hpTuned": 480,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7708/4537",
+       "name": "Jaguar - 850 - 12.8L - 412HP",
+       "fuel": "petrol",
+       "hpStock": 412,
+       "hpTuned": 515,
+       "nmStock": 1630,
+       "nmTuned": 1840,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7709/4538",
+       "name": "Jaguar - 850 - 12.8L - 462HP",
+       "fuel": "petrol",
+       "hpStock": 462,
+       "hpTuned": 510,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7710/4539",
+       "name": "Jaguar - 860 - 16L - 510HP",
+       "fuel": "petrol",
+       "hpStock": 510,
+       "hpTuned": 600,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7711/4540",
+       "name": "Jaguar - 870 - 16L - 453HP",
+       "fuel": "petrol",
+       "hpStock": 453,
+       "hpTuned": 565,
+       "nmStock": 1800,
+       "nmTuned": 2140,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7712/4541",
+       "name": "Jaguar - 870 - 16L - 585HP",
+       "fuel": "petrol",
+       "hpStock": 585,
+       "hpTuned": 640,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7713/4542",
+       "name": "Jaguar - 890 - 16L - 503HP",
+       "fuel": "petrol",
+       "hpStock": 503,
+       "hpTuned": 635,
+       "nmStock": 2100,
+       "nmTuned": 2460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7714/4543",
+       "name": "Jaguar - 900 - 16L - 623HP",
+       "fuel": "petrol",
+       "hpStock": 623,
+       "hpTuned": 780,
+       "nmStock": 2500,
+       "nmTuned": 2910,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7715/4544",
+       "name": "Jaguar - 930 - 12.8L - 412HP",
+       "fuel": "petrol",
+       "hpStock": 412,
+       "hpTuned": 484,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7718/4547",
+       "name": "Jaguar - 940 - 16L - 453HP",
+       "fuel": "petrol",
+       "hpStock": 453,
+       "hpTuned": 538,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7720/4549",
+       "name": "Jaguar - 950 - 16L - 506HP",
+       "fuel": "petrol",
+       "hpStock": 506,
+       "hpTuned": 596,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7722/4551",
+       "name": "Jaguar - 960 - 16L - 623HP",
+       "fuel": "petrol",
+       "hpStock": 623,
+       "hpTuned": 714,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7723/4552",
+       "name": "Jaguar - 970 - 16L - 730HP",
+       "fuel": "petrol",
+       "hpStock": 730,
+       "hpTuned": 877,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7725/4554",
+       "name": "Jaguar - 980 - 24L - 830HP",
+       "fuel": "petrol",
+       "hpStock": 830,
+       "hpTuned": 998,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "lexion-837",
+   "name": "Lexion",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7727/4556",
+       "name": "Lexion - 410 - 321 HP",
+       "fuel": "petrol",
+       "hpStock": 321,
+       "hpTuned": 389,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7656/4485",
+       "name": "Lexion - 510 - 8.8L - 220HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 275,
+       "nmStock": 1000,
+       "nmTuned": 1180,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7728/4557",
+       "name": "Lexion - 520 - 260 HP",
+       "fuel": "petrol",
+       "hpStock": 260,
+       "hpTuned": 325,
+       "nmStock": 1200,
+       "nmTuned": 1390,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7729/4558",
+       "name": "Lexion - 530 - 295 HP",
+       "fuel": "petrol",
+       "hpStock": 295,
+       "hpTuned": 370,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7730/4559",
+       "name": "Lexion - 540 - 295 HP",
+       "fuel": "petrol",
+       "hpStock": 295,
+       "hpTuned": 370,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7731/4560",
+       "name": "Lexion - 540 C - 260 HP",
+       "fuel": "petrol",
+       "hpStock": 260,
+       "hpTuned": 325,
+       "nmStock": 1200,
+       "nmTuned": 1390,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7732/4561",
+       "name": "Lexion - 550 - 330 HP",
+       "fuel": "petrol",
+       "hpStock": 330,
+       "hpTuned": 415,
+       "nmStock": 1400,
+       "nmTuned": 1680,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7733/4562",
+       "name": "Lexion - 580 - 430 HP",
+       "fuel": "petrol",
+       "hpStock": 430,
+       "hpTuned": 540,
+       "nmStock": 1650,
+       "nmTuned": 1960,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7734/4563",
+       "name": "Lexion - 600 - 586 HP",
+       "fuel": "petrol",
+       "hpStock": 586,
+       "hpTuned": 735,
+       "nmStock": 2400,
+       "nmTuned": 2700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7735/4564",
+       "name": "Lexion - 620 - 313 HP",
+       "fuel": "petrol",
+       "hpStock": 313,
+       "hpTuned": 360,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7736/4565",
+       "name": "Lexion - 630 - 354 HP",
+       "fuel": "petrol",
+       "hpStock": 354,
+       "hpTuned": 410,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7737/4566",
+       "name": "Lexion - 650 - 354 HP",
+       "fuel": "petrol",
+       "hpStock": 354,
+       "hpTuned": 410,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7738/4567",
+       "name": "Lexion - 660 - 408 HP",
+       "fuel": "petrol",
+       "hpStock": 408,
+       "hpTuned": 480,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7739/4568",
+       "name": "Lexion - 670 - 435 HP",
+       "fuel": "petrol",
+       "hpStock": 435,
+       "hpTuned": 510,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7740/4569",
+       "name": "Lexion - 740 - 408 HP",
+       "fuel": "petrol",
+       "hpStock": 408,
+       "hpTuned": 470,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7741/4570",
+       "name": "Lexion - 750 - 435 HP",
+       "fuel": "petrol",
+       "hpStock": 435,
+       "hpTuned": 510,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7742/4571",
+       "name": "Lexion - 760 - 503 HP",
+       "fuel": "petrol",
+       "hpStock": 503,
+       "hpTuned": 580,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7743/4572",
+       "name": "Lexion - 770 - 585 HP",
+       "fuel": "petrol",
+       "hpStock": 585,
+       "hpTuned": 670,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7744/4573",
+       "name": "Lexion - 780 - 626 HP",
+       "fuel": "petrol",
+       "hpStock": 626,
+       "hpTuned": 700,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "medion-842",
+   "name": "Medion",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7745/4574",
+       "name": "Medion - 310 - 6.3L - 185HP",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 230,
+       "nmStock": 850,
+       "nmTuned": 1020,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7746/4575",
+       "name": "Medion - 330 - 6.3L - 220HP",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 263,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7747/4576",
+       "name": "Medion - 340 - 6.3L - 245HP",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 291,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "mega-843",
+   "name": "Mega",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7748/4577",
+       "name": "Mega - 350 - 6.3L - 220HP",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 275,
+       "nmStock": 950,
+       "nmTuned": 1190,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7749/4578",
+       "name": "Mega - 360 - 6.3L - 245HP",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 305,
+       "nmStock": 1010,
+       "nmTuned": 1320,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "scorpion-838",
+   "name": "Scorpion",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7768/4597",
+       "name": "Scorpion - 6030 - 3.6L - 122HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 136,
+       "hpTuned": 170,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7769/4598",
+       "name": "Scorpion - 6035 - 3.6L - 136HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 136,
+       "hpTuned": 170,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7770/4599",
+       "name": "Scorpion - 7030 - 3.6L - 136HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 136,
+       "hpTuned": 170,
+       "nmStock": 420,
+       "nmTuned": 510,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7771/4600",
+       "name": "Scorpion - 7035 - 3.6L - 136HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 136,
+       "hpTuned": 170,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7657/4486",
+       "name": "Scorpion - 7044 - 3.6L - 136HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7772/4601",
+       "name": "Scorpion - 7050 - 3.6L - 136HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 136,
+       "hpTuned": 170,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7773/4602",
+       "name": "Scorpion - 7055 - 4.1L - 156HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 180,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7774/4603",
+       "name": "Scorpion - 9055 - 4.1L - 156HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 180,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "tucano-845",
+   "name": "Tucano",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7754/4583",
+       "name": "Tucano - 320 - 190HP",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 240,
+       "nmStock": 750,
+       "nmTuned": 897,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7755/4584",
+       "name": "Tucano - 320 - 245HP",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 280,
+       "nmStock": 810,
+       "nmTuned": 946,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7756/4585",
+       "name": "Tucano - 330 - 241HP",
+       "fuel": "petrol",
+       "hpStock": 241,
+       "hpTuned": 284,
+       "nmStock": 810,
+       "nmTuned": 886,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7757/4586",
+       "name": "Tucano - 340 - 260HP",
+       "fuel": "petrol",
+       "hpStock": 260,
+       "hpTuned": 306,
+       "nmStock": 1100,
+       "nmTuned": 1257,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7758/4587",
+       "name": "Tucano - 340 - 286HP",
+       "fuel": "petrol",
+       "hpStock": 286,
+       "hpTuned": 315,
+       "nmStock": 810,
+       "nmTuned": 875,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7759/4588",
+       "name": "Tucano - 420 - 245HP",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 280,
+       "nmStock": 810,
+       "nmTuned": 946,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7760/4589",
+       "name": "Tucano - 430 - 241HP",
+       "fuel": "petrol",
+       "hpStock": 241,
+       "hpTuned": 284,
+       "nmStock": 810,
+       "nmTuned": 886,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7761/4590",
+       "name": "Tucano - 430 - 286HP",
+       "fuel": "petrol",
+       "hpStock": 286,
+       "hpTuned": 315,
+       "nmStock": 970,
+       "nmTuned": 1120,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7762/4591",
+       "name": "Tucano - 440 - 260HP",
+       "fuel": "petrol",
+       "hpStock": 260,
+       "hpTuned": 306,
+       "nmStock": 1100,
+       "nmTuned": 1257,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7763/4592",
+       "name": "Tucano - 440 - 286HP",
+       "fuel": "petrol",
+       "hpStock": 286,
+       "hpTuned": 315,
+       "nmStock": 810,
+       "nmTuned": 875,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7764/4593",
+       "name": "Tucano - 450 - 275HP",
+       "fuel": "petrol",
+       "hpStock": 275,
+       "hpTuned": 325,
+       "nmStock": 1200,
+       "nmTuned": 1360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7765/4594",
+       "name": "Tucano - 450 - 313HP",
+       "fuel": "petrol",
+       "hpStock": 313,
+       "hpTuned": 360,
+       "nmStock": 1200,
+       "nmTuned": 1360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7766/4595",
+       "name": "Tucano - 560 - 313HP",
+       "fuel": "petrol",
+       "hpStock": 313,
+       "hpTuned": 360,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7767/4596",
+       "name": "Tucano - 570 - 354HP",
+       "fuel": "petrol",
+       "hpStock": 354,
+       "hpTuned": 400,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "xerion-839",
+   "name": "Xerion",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7658/4487",
+       "name": "Xerion - 3300 - 8.8L - 305HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 305,
+       "hpTuned": 420,
+       "nmStock": 1450,
+       "nmTuned": 1740,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7659/4488",
+       "name": "Xerion - 3800 - 8.8L - 344HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 344,
+       "hpTuned": 400,
+       "nmStock": 1620,
+       "nmTuned": 2000,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7775/4604",
+       "name": "Xerion - 4000 - 10.6L - 419HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 419,
+       "hpTuned": 470,
+       "nmStock": 2100,
+       "nmTuned": 2300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7776/4605",
+       "name": "Xerion - 4000 - 12.5L - 449HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 449,
+       "hpTuned": 500,
+       "nmStock": 2300,
+       "nmTuned": 2550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7777/4606",
+       "name": "Xerion - 4000 - 12.5L - 487HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 520,
+       "hpTuned": 580,
+       "nmStock": 2450,
+       "nmTuned": 2650,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

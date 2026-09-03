@@ -1,0 +1,104 @@
+---
+// Пиларът (план, стр. 17): съществуващият текст, редактиран, + 4 нови секции с котви. 1 200–1 500 думи.
+import Base from '@/layouts/Base.astro';
+import Crumbs from '@/components/Crumbs.astro';
+import ServiceTiles from '@/components/ServiceTiles.astro';
+import ContactForm from '@/components/ContactForm.astro';
+import { t, routes, fmt, type Lang } from '@/i18n';
+import business from '@/data/business.json';
+import prices from '@/data/prices.json';
+import { stats } from '@/lib/catalog';
+import { ldBreadcrumb, ldLocalBusiness } from '@/lib/seo';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang); const path = routes.chipTuning[lang]; const p = prices.items['chip-tuning'];
+const A = lang === 'bg' ? { what: 'kakvo-e', types: 'vidove', how: 'montaj', effect: 'efekt', risks: 'riskove' } : { what: 'what-is', types: 'types', how: 'how', effect: 'effect', risks: 'risks' };
+const C = lang === 'bg' ? {
+  title: 'Какво е чип тунинг — видове, как се прави, ефект, рискове | PDK Tuning',
+  description: 'Чип тунинг обяснен без реклама: какво се променя в софтуера, Stage 1 / Stage 2 / eco, по OBD или на маса, реални числа от каталога и кога не го препоръчваме.',
+  h1: 'Какво е чип тунинг', lead: 'Обяснено така, че да го разбере човек, който не е техник — без да го правим на глупак. С реални числа, с рисковете и с това, което не правим.',
+  toc: [['Какво е чип тунинг', A.what], ['Видове: Stage 1, Stage 2, eco', A.types], ['Как се прави: по OBD или на маса', A.how], ['Какъв е ефектът', A.effect], ['Рискове и какво не правим', A.risks]],
+  h_what: 'Какво е чип тунинг', what: [
+    'Чип тунингът е повишение на мощността на автомобила единствено чрез промяна в управляващата електроника на двигателя. Всеки модерен двигател се управлява от електронен блок — ECU (Electronic Control Unit), „компютърът на колата“. В него има записана програма, която определя как работи двигателят при всеки режим: колко гориво се впръсква, кога, при какво налягане на турбото, при какъв ъгъл на запалване.',
+    'При чип тунинга се променят параметрите на тази програма — управляващият софтуер, „файлът“. Двигателят започва да работи по нов алгоритъм и дава повече мощност и момент, при повечето двигатели с по-нисък разход при спокойно каране. Механично нищо не се пипа. Названието идва от времето, когато програмата е била в чип, който физически се е сменял; днес всичко минава през диагностичния куплунг или през блока на маса.',
+    'Защо производителят не го е направил сам? Защото продава един двигател в няколко мощности за няколко пазара, с резерв за лошо гориво, екстремни температури и собственици, които никога не сменят масло. Файлът ползва част от този резерв. Затова има граница — и затова числата в нашия каталог са различни за всеки двигател, а не „+30% за всички“.',
+  ],
+  h_types: 'Видове чип тунинг', types: [
+    ['Stage 1', 'Само софтуер, без механични промени. Мощност +15–30% при дизел с турбо, +10–20% при бензин с турбо. Това е услугата за 9 от 10 клиенти: колата остава сервизируема, гумите и спирачките са достатъчни, разходът пада при спокойно каране.'],
+    ['Stage 2', 'Софтуер плюс хардуер: спортна изпускателна система без катализатор или DPF, по-голям интеркулер, спортен въздушен филтър, при някои двигатели и по-голямо турбо. Ръстът е по-голям, но колата вече не е за обществените пътища в ЕС — това е решение за писта и спорт, и го уговаряме след разговор.'],
+    ['Eco', 'Файл, насочен към момента при ниски обороти и към разхода, а не към върховата мощност. Подходящ за товарни автомобили, ванове и коли, които се карат предимно с натоварване. Мощността расте малко, моментът — осезаемо, разходът пада.'],
+    ['Специални', 'Файлове за селскостопанска и строителна техника, лодки, генератори. Различни цели: момент, ограничения, емисионни системи. Работим ги по конкретен случай.'],
+  ],
+  h_how: 'Как се прави', how: [
+    ['По OBD', 'При повечето автомобили до 2016 г. блокът се чете и записва през диагностичния куплунг в купето. Половин час четене, файлът, половин час запис. Нищо не се разглобява.'],
+    ['На маса (bench)', 'При защитените блокове след 2016 г. (Bosch MD1/MG1, някои Continental и Denso) четенето през куплунга е заключено. Блокът се сваля, свързва се на маса към програматор, чете се и се записва там, после се връща. Това е 1–2 часа повече и се казва предварително.'],
+    ['Boot / отваряне', 'При най-старите и при някои специални блокове се отваря кутията и се чете директно от паметта. Рядко, но се случва — и е една от причините да питаме за модела и годината по телефона, преди да дойдете.'],
+  ],
+  howP: 'Във всички случаи оригиналният файл се чете и се пази, преди да се запише каквото и да е. Това е правило без изключение: без оригинал няма връщане назад.',
+  h_effect: 'Какъв е ефектът', effect: [
+    `Реални числа, не обещания. В базата ни има ${fmt(stats.engines)} двигателя с мощност и момент преди и след файла — всяка страница в каталога ги показва. Примери от нея: BMW 730d (2002–2008) 204 → 250 к.с. и 410 → 500 Nm; средният ръст при дизелите с турбо е между +40 и +60 к.с., при бензиновите с турбо — между +30 и +50 к.с.`,
+    'Какво се усеща: по-лесно изпреварване (моментът в средния диапазон, 1 800–3 500 оборота, е това, което карате всеки ден), по-ниски обороти при същата скорост (оттам и по-ниският разход при спокойно каране), по-остра реакция на педала. Какво не се усеща: „нова кола“ при атмосферен бензин — там ръстът е няколко процента и го казваме предварително.',
+    'Замерването на стенда преди и след е част от услугата, а не екстра. Ако числата не съвпадат с очакваните, ще знаете и вие, и ние.',
+  ],
+  h_risks: 'Рискове и какво не правим', risks: [
+    'Гаранция. Всяка промяна в софтуера е основание производителят да откаже заводска гаранция. При кола в гаранция не препоръчваме намеса и ще ви кажем защо.',
+    'Механично състояние. Файлът ползва резерва на двигателя; ако двигателят е болен (маслоядене, турбо на края на живота си, грешки по впръскването), файлът ще го довърши. Затова диагностиката преди работа е задължителна и понякога отговорът е „първо ремонт“.',
+    'Гориво. При бензин с турбо файлът е за 98/100 октана. С 95 блокът дърпа запалването и ръстът се губи — не е опасно, но е безсмислено.',
+    'Какво не правим: „универсални“ файлове от интернет; чип тунинг на двигател с механичен проблем; изключване на емисионни системи на кола за обществените пътища; обещания за конкретен процент разход; каквото и да е по спирачки, ABS, въздушни възглавници.',
+  ],
+  cta: 'Проверете своя двигател', ctaP: 'Числата за вашата кола са в каталога — марка, модел, двигател. После се обадете.',
+} : {
+  title: 'What is chip tuning — types, OBD vs bench, effect, risks | PDK Tuning',
+  description: 'Chip tuning explained without the sales pitch: what changes in the software, Stage 1 / Stage 2 / eco, OBD or bench, catalog figures and when we advise against it.',
+  h1: 'What is chip tuning', lead: 'Explained so a non-technical owner understands it — and detailed enough for a workshop. Real figures, the risks and what we do not do.',
+  toc: [['What chip tuning is', A.what], ['Types: Stage 1, Stage 2, eco', A.types], ['How it is done: OBD or bench', A.how], ['The effect', A.effect], ['Risks and what we do not do', A.risks]],
+  h_what: 'What chip tuning is', what: [
+    'Chip tuning raises the output of a car by changing only the engine control software. Every modern engine is run by an electronic control unit — the ECU, “the car’s computer”. It holds a program that defines how the engine behaves in every condition: how much fuel is injected, when, at what boost pressure, at what ignition angle.',
+    'Chip tuning changes the parameters of that program — the calibration, “the file”. The engine runs on a new map and produces more power and torque, on most engines with lower consumption at normal driving. Nothing mechanical is touched. The name dates from the time the program lived in a chip that was physically swapped; today everything goes through the diagnostic port or the ECU on the bench.',
+    'Why did the manufacturer not do it? Because one engine is sold in several outputs for several markets, with margin for bad fuel, extreme temperatures and owners who never change oil. A file uses part of that margin. That is why there is a limit — and why the figures in our catalog differ per engine instead of “+30% for everyone”.',
+  ],
+  h_types: 'Types of chip tuning', types: [
+    ['Stage 1', 'Software only, no mechanical changes. +15–30% on turbo diesels, +10–20% on turbo petrols. The service for 9 in 10 customers: the car stays serviceable, tyres and brakes are adequate, consumption drops at normal driving.'],
+    ['Stage 2', 'Software plus hardware: sports exhaust without catalyst or DPF, bigger intercooler, sports air filter, on some engines a bigger turbo. Larger gains, but the car is no longer for public roads in the EU — a track and motorsport decision, agreed after a call.'],
+    ['Eco', 'A file aimed at low-rpm torque and consumption rather than peak power. For vans, trucks and cars driven mostly under load. Power rises a little, torque noticeably, consumption drops.'],
+    ['Special', 'Files for agricultural and construction machinery, boats, generators. Different goals: torque, limiters, emission systems. Handled case by case.'],
+  ],
+  h_how: 'How it is done', how: [
+    ['OBD', 'On most cars up to 2016 the ECU is read and written through the diagnostic port in the cabin. Half an hour to read, the file, half an hour to write. Nothing is taken apart.'],
+    ['Bench', 'On protected ECUs after 2016 (Bosch MD1/MG1, some Continental and Denso) reading through the port is locked. The ECU comes out, is connected on the bench to a programmer, read and written there, then refitted. 1–2 hours more, stated in advance.'],
+    ['Boot / open', 'On the oldest and on some special ECUs the housing is opened and the memory read directly. Rare, but it happens — one reason we ask for model and year by phone before you come.'],
+  ],
+  howP: 'In every case the original file is read and kept before anything is written. A rule without exception: no original, no way back.',
+  h_effect: 'The effect', effect: [
+    `Real figures, not promises. Our database holds ${fmt(stats.engines)} engines with power and torque before and after the file — every catalog page shows them. Examples: BMW 730d (2002–2008) 204 → 250 hp and 410 → 500 Nm; the average gain on turbo diesels is between +40 and +60 hp, on turbo petrols between +30 and +50 hp.`,
+    'What is felt: easier overtaking (mid-range torque, 1,800–3,500 rpm, is what you drive every day), lower revs at the same speed (hence lower consumption at normal driving), a sharper throttle. What is not felt: “a new car” on a naturally aspirated petrol — a few percent, said in advance.',
+    'The before/after dyno run is part of the service, not an extra. If the figures do not match expectations, both you and we will know.',
+  ],
+  h_risks: 'Risks and what we do not do', risks: [
+    'Warranty. Any software change is grounds for a manufacturer to refuse factory warranty. On a car under warranty we do not recommend it.',
+    'Mechanical condition. The file uses the engine’s margin; a sick engine (oil consumption, a turbo at the end of its life, injection faults) will be finished off by it. Diagnostics before the work is mandatory and sometimes the answer is “repair first”.',
+    'Fuel. Turbo petrol files are for 98/100 octane. On 95 the ECU pulls timing and the gain is lost — not dangerous, but pointless.',
+    'What we do not do: “universal” files from the internet; remaps on engines with mechanical faults; switching off emission systems on road cars; promises of a specific consumption figure; anything on brakes, ABS, airbags.',
+  ],
+  cta: 'Check your engine', ctaP: 'The figures for your car are in the catalog — brand, model, engine. Then call, or upload through the portal.',
+};
+const crumbs = [{ name: d.crumbs.home, path: routes.home[lang] }];
+---
+<Base lang={lang} title={C.title} description={C.description} path={path} current="chipTuning" jsonld={[ldBreadcrumb([...crumbs, { name: C.h1, path }]), ldLocalBusiness(lang)]}>
+  <div class="wrap">
+    <Crumbs items={crumbs} current={d.nav.chipTuning} />
+    <p class="kicker">{d.nav.chipTuning}</p>
+    <h1>{C.h1}</h1>
+    <p class="lead">{C.lead}</p>
+  </div>
+  <section class="section"><div class="wrap"><div class="two"><article class="article">
+    <nav class="toc" aria-label="toc"><ol>{C.toc.map(([l, a]) => <li><a href={`#${a}`}>{l}</a></li>)}</ol></nav>
+    <h2 id={A.what}>{C.h_what}</h2>{C.what.map((x) => <p>{x}</p>)}
+    <h2 id={A.types}>{C.h_types}</h2>{C.types.map(([h, x]) => <><h3>{h}</h3><p>{x}</p></>)}
+    <h2 id={A.how}>{C.h_how}</h2>{C.how.map(([h, x]) => <><h3>{h}</h3><p>{x}</p></>)}<div class="box"><p style="margin:0">{C.howP}</p></div>
+    <h2 id={A.effect}>{C.h_effect}</h2>{C.effect.map((x) => <p>{x}</p>)}
+    <h2 id={A.risks}>{C.h_risks}</h2><div class="box warn">{C.risks.map((x) => <p>{x}</p>)}</div>
+  </article><aside><div class="side sticky"><h3>{C.cta}</h3><p style="font-size:var(--s16)">{C.ctaP}</p><div class="actions" style="flex-direction:column;align-items:stretch"><a class="btn" href={routes.home[lang] + '#kalkulator'}>{d.cta.catalog}</a><a class="btn primary" href={`tel:${business.phone}`} data-ev="tel_click" data-ev-label="pillar">{business.phoneDisplay}</a><a class="btn ghost" href={routes.chipTuningVarna[lang]}>{lang === 'bg' ? 'Чип тунинг Варна · от' : 'Chip tuning Varna · from'} {p.from} €</a></div></div></aside></div></div></section>
+  <section class="section alt"><div class="wrap"><p class="kicker">{d.nav.services}</p><h2>{lang === 'bg' ? 'Какво още правим' : 'What else we do'}</h2><ServiceTiles lang={lang} withChip={false} /></div></section>
+  <section class="section"><div class="wrap"><div class="cols"><div><p class="kicker">{d.cta.book}</p><h2>{C.cta}</h2><p class="lead">{C.ctaP}</p><div class="actions"><a class="btn primary" href={`tel:${business.phone}`} data-ev="tel_click" data-ev-label="pillar-bottom">{business.phoneDisplay}</a></div></div><div><ContactForm lang={lang} service="chip-tuning" id="form-pillar" /></div></div></div></section>
+</Base>

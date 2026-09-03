@@ -1,0 +1,113 @@
+{
+ "slug": "oldsmobile",
+ "name": "OldsMobile",
+ "logo": "oldsmobile.png",
+ "models": [
+  {
+   "slug": "alero-1043",
+   "name": "Alero",
+   "generations": [
+    {
+     "slug": "1998-2004",
+     "from": 1998,
+     "to": 2004,
+     "engines": [
+      {
+       "path": "10482/875",
+       "name": "2.2i - 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 155,
+       "nmStock": 203,
+       "nmTuned": 225,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10483/7023",
+       "name": "2.4i - 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 170,
+       "nmStock": 210,
+       "nmTuned": 235,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10484/7024",
+       "name": "3.4 V6 170hp",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 190,
+       "nmStock": 271,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "bravada-1044",
+   "name": "Bravada",
+   "generations": [
+    {
+     "slug": "1996-2001",
+     "from": 1996,
+     "to": 2001,
+     "engines": [
+      {
+       "path": "10485/7025",
+       "name": "4.3 V6 203hp",
+       "fuel": "petrol",
+       "hpStock": 203,
+       "hpTuned": 225,
+       "nmStock": 353,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2002-2004",
+     "from": 2002,
+     "to": 2004,
+     "engines": [
+      {
+       "path": "10486/5084",
+       "name": "4.2i - 270hp",
+       "fuel": "petrol",
+       "hpStock": 270,
+       "hpTuned": 290,
+       "nmStock": 373,
+       "nmTuned": 395,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "silhousette-1045",
+   "name": "Silhousette",
+   "generations": [
+    {
+     "slug": "1997-2004",
+     "from": 1997,
+     "to": 2004,
+     "engines": [
+      {
+       "path": "10487/802",
+       "name": "3.4 V6 185hp",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 200,
+       "nmStock": 285,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

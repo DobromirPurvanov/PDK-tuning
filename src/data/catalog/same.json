@@ -1,0 +1,836 @@
+{
+ "slug": "same",
+ "name": "Same",
+ "logo": "same.jpg",
+ "models": [
+  {
+   "slug": "argon-classic-1082",
+   "name": "Argon Classic",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11224/7352",
+       "name": "Argon Classic - 55 - 3.0L - 55HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 55,
+       "hpTuned": 80,
+       "nmStock": 205,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11225/7353",
+       "name": "Argon Classic - 70 - 3.0L - 70HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 70,
+       "hpTuned": 90,
+       "nmStock": 260,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "diamond-1083",
+   "name": "Diamond",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11226/7354",
+       "name": "Diamond - 215 - 7.1L - 226HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 226,
+       "hpTuned": 250,
+       "nmStock": 865,
+       "nmTuned": 1040,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11227/7355",
+       "name": "Diamond - 230 - 7.1L - 245HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 270,
+       "nmStock": 961,
+       "nmTuned": 1200,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11228/7356",
+       "name": "Diamond - 260 - 7.1L - 260HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 260,
+       "hpTuned": 295,
+       "nmStock": 1010,
+       "nmTuned": 1260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11229/7357",
+       "name": "Diamond - 265 - 7.1L - 277HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 277,
+       "hpTuned": 296,
+       "nmStock": 1028,
+       "nmTuned": 1320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11230/7358",
+       "name": "Diamond - 270 - 7.1L - 275HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 275,
+       "hpTuned": 300,
+       "nmStock": 1052,
+       "nmTuned": 1290,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "dorado-1084",
+   "name": "Dorado",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11231/7359",
+       "name": "Dorado - 100.4 - 3.8L - 97HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 97,
+       "hpTuned": 127,
+       "nmStock": 408,
+       "nmTuned": 683,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11232/7360",
+       "name": "Dorado - 90 - 2.9L - 88HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 88,
+       "hpTuned": 114,
+       "nmStock": 354,
+       "nmTuned": 629,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11233/7361",
+       "name": "Dorado - 90.4 - 3.8L - 88HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 88,
+       "hpTuned": 114,
+       "nmStock": 354,
+       "nmTuned": 629,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "explorer-2876",
+   "name": "Explorer",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "18151/7362",
+       "name": "Explorer - 100 - 2.8L - 92HP",
+       "fuel": "petrol",
+       "hpStock": 92,
+       "hpTuned": 122,
+       "nmStock": 369,
+       "nmTuned": 644,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18152/7363",
+       "name": "Explorer - 100 - 2.9L - 92HP",
+       "fuel": "petrol",
+       "hpStock": 92,
+       "hpTuned": 122,
+       "nmStock": 369,
+       "nmTuned": 644,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18153/7364",
+       "name": "Explorer - 105.4 - 3.8L - 97HP",
+       "fuel": "petrol",
+       "hpStock": 97,
+       "hpTuned": 127,
+       "nmStock": 408,
+       "nmTuned": 683,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18154/7365",
+       "name": "Explorer - 115.4 - 3.8L - 103HP",
+       "fuel": "petrol",
+       "hpStock": 103,
+       "hpTuned": 133,
+       "nmStock": 436,
+       "nmTuned": 711,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18155/7366",
+       "name": "Explorer - 80 - 2.9L - 75HP",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 105,
+       "nmStock": 342,
+       "nmTuned": 617,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18156/7367",
+       "name": "Explorer - 90 - 2.9L - 84HP",
+       "fuel": "petrol",
+       "hpStock": 84,
+       "hpTuned": 114,
+       "nmStock": 354,
+       "nmTuned": 629,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18157/7368",
+       "name": "Explorer - 90.4 - 3.8L - 84HP",
+       "fuel": "petrol",
+       "hpStock": 84,
+       "hpTuned": 114,
+       "nmStock": 354,
+       "nmTuned": 629,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "explorer3-1085",
+   "name": "Explorer3",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11234/7369",
+       "name": "Explorer3 - 100 - 96HP",
+       "fuel": "petrol",
+       "hpStock": 96,
+       "hpTuned": 120,
+       "nmStock": 352,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11235/7370",
+       "name": "Explorer3 - 105 - 4.0L - 102HP",
+       "fuel": "petrol",
+       "hpStock": 102,
+       "hpTuned": 132,
+       "nmStock": 376,
+       "nmTuned": 651,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11236/7371",
+       "name": "Explorer3 - 105TB - 4.0L - 102HP",
+       "fuel": "petrol",
+       "hpStock": 102,
+       "hpTuned": 132,
+       "nmStock": 390,
+       "nmTuned": 665,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11237/7372",
+       "name": "Explorer3 - 85 - 82HP",
+       "fuel": "petrol",
+       "hpStock": 82,
+       "hpTuned": 115,
+       "nmStock": 325,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11238/7373",
+       "name": "Explorer3 - 90 - 4.0L - 88HP",
+       "fuel": "petrol",
+       "hpStock": 88,
+       "hpTuned": 118,
+       "nmStock": 345,
+       "nmTuned": 620,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11239/7374",
+       "name": "Explorer3 - 95 - 91HP",
+       "fuel": "petrol",
+       "hpStock": 91,
+       "hpTuned": 110,
+       "nmStock": 367,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11240/7375",
+       "name": "Explorer3 - 95TB - 4.0L - 95HP",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 125,
+       "nmStock": 373,
+       "nmTuned": 648,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "fortis-1086",
+   "name": "Fortis",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11241/7376",
+       "name": "Fortis - 120.4 - 4.1 - 118HP",
+       "fuel": "petrol",
+       "hpStock": 118,
+       "hpTuned": 148,
+       "nmStock": 481,
+       "nmTuned": 756,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11242/7377",
+       "name": "Fortis - 130.4 - 4.1 - 128HP",
+       "fuel": "petrol",
+       "hpStock": 128,
+       "hpTuned": 158,
+       "nmStock": 481,
+       "nmTuned": 756,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11243/7378",
+       "name": "Fortis - 140 - 6.0 - 135HP",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 165,
+       "nmStock": 481,
+       "nmTuned": 756,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11244/7379",
+       "name": "Fortis - 140.4 - 4.1 - 135HP",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 165,
+       "nmStock": 481,
+       "nmTuned": 756,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11245/7380",
+       "name": "Fortis - 150 - 6.1 - 137HP",
+       "fuel": "petrol",
+       "hpStock": 137,
+       "hpTuned": 167,
+       "nmStock": 605,
+       "nmTuned": 880,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11246/7381",
+       "name": "Fortis - 150.4 - 4.1 - 137HP",
+       "fuel": "petrol",
+       "hpStock": 137,
+       "hpTuned": 167,
+       "nmStock": 605,
+       "nmTuned": 880,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11247/7382",
+       "name": "Fortis - 160 - 6.0 - 166HP",
+       "fuel": "petrol",
+       "hpStock": 166,
+       "hpTuned": 196,
+       "nmStock": 481,
+       "nmTuned": 756,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11248/7383",
+       "name": "Fortis - 160.4 - 4.1 - 156HP",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 186,
+       "nmStock": 672,
+       "nmTuned": 947,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11249/7384",
+       "name": "Fortis - 180 - 6.1 - 167HP",
+       "fuel": "petrol",
+       "hpStock": 167,
+       "hpTuned": 197,
+       "nmStock": 740,
+       "nmTuned": 1015,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11250/7385",
+       "name": "Fortis - 190 - 6.1 - 184HP",
+       "fuel": "petrol",
+       "hpStock": 184,
+       "hpTuned": 214,
+       "nmStock": 820,
+       "nmTuned": 1095,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11251/7386",
+       "name": "Fortis - 210 - 6.0 - 210HP",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 240,
+       "nmStock": 481,
+       "nmTuned": 756,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "frutteto-1087",
+   "name": "Frutteto",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11252/7387",
+       "name": "Frutteto - II - 100 - 90 HP",
+       "fuel": "petrol",
+       "hpStock": 90,
+       "hpTuned": 110,
+       "nmStock": 351,
+       "nmTuned": 411,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11253/7388",
+       "name": "Frutteto - II - 55 - 53 HP",
+       "fuel": "petrol",
+       "hpStock": 53,
+       "hpTuned": 80,
+       "nmStock": 190,
+       "nmTuned": 245,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11254/7389",
+       "name": "Frutteto - II - 70 - 68 HP",
+       "fuel": "petrol",
+       "hpStock": 68,
+       "hpTuned": 90,
+       "nmStock": 243,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11255/7390",
+       "name": "Frutteto - II - 75 - 71 HP",
+       "fuel": "petrol",
+       "hpStock": 71,
+       "hpTuned": 95,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11256/7391",
+       "name": "Frutteto - II - 90 - 83 HP",
+       "fuel": "petrol",
+       "hpStock": 83,
+       "hpTuned": 110,
+       "nmStock": 324,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "iron-1088",
+   "name": "Iron",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11257/7392",
+       "name": "Iron - 100 - 101HP",
+       "fuel": "petrol",
+       "hpStock": 101,
+       "hpTuned": 129,
+       "nmStock": 396,
+       "nmTuned": 468,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11258/7393",
+       "name": "Iron - 110 - 110HP",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 130,
+       "nmStock": 418,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11259/7394",
+       "name": "Iron - 120 - 120HP",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 477,
+       "nmTuned": 540,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11260/7395",
+       "name": "Iron - 130 - 132HP",
+       "fuel": "petrol",
+       "hpStock": 132,
+       "hpTuned": 160,
+       "nmStock": 527,
+       "nmTuned": 590,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11261/7396",
+       "name": "Iron - 140 - 143HP",
+       "fuel": "petrol",
+       "hpStock": 143,
+       "hpTuned": 170,
+       "nmStock": 574,
+       "nmTuned": 650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11262/7397",
+       "name": "Iron - 150 - 150HP",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 185,
+       "nmStock": 556,
+       "nmTuned": 620,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11263/7398",
+       "name": "Iron - 160 - 163HP",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 190,
+       "nmStock": 655,
+       "nmTuned": 730,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11264/7399",
+       "name": "Iron - 165 - 170HP",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 195,
+       "nmStock": 683,
+       "nmTuned": 750,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11265/7400",
+       "name": "Iron - 175 - 176HP",
+       "fuel": "petrol",
+       "hpStock": 176,
+       "hpTuned": 200,
+       "nmStock": 717,
+       "nmTuned": 780,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11266/7401",
+       "name": "Iron - 185 - 184HP",
+       "fuel": "petrol",
+       "hpStock": 184,
+       "hpTuned": 220,
+       "nmStock": 749,
+       "nmTuned": 840,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11267/7402",
+       "name": "Iron - 200 - 204HP",
+       "fuel": "petrol",
+       "hpStock": 204,
+       "hpTuned": 250,
+       "nmStock": 820,
+       "nmTuned": 1030,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11268/7403",
+       "name": "Iron - 210 - 214HP",
+       "fuel": "petrol",
+       "hpStock": 214,
+       "hpTuned": 256,
+       "nmStock": 836,
+       "nmTuned": 1050,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "laser-1089",
+   "name": "Laser",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11269/7404",
+       "name": "Laser - 140 - 6.0 - 6Zyl - 140HP",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 510,
+       "nmTuned": 785,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11270/7405",
+       "name": "Laser - 160 - 6.0 - 6Zyl - 163HP",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 193,
+       "nmStock": 624,
+       "nmTuned": 899,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "silver-1090",
+   "name": "Silver",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11271/7406",
+       "name": "Silver - 105 - 100 HP",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 125,
+       "nmStock": 391,
+       "nmTuned": 465,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11272/7407",
+       "name": "Silver - 110 - 109 HP",
+       "fuel": "petrol",
+       "hpStock": 109,
+       "hpTuned": 130,
+       "nmStock": 395,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11273/7408",
+       "name": "Silver - 95 - 91 HP",
+       "fuel": "petrol",
+       "hpStock": 91,
+       "hpTuned": 118,
+       "nmStock": 367,
+       "nmTuned": 435,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "solaris-1091",
+   "name": "Solaris",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11274/7409",
+       "name": "Solaris - 35 - 35 HP",
+       "fuel": "petrol",
+       "hpStock": 35,
+       "hpTuned": 55,
+       "nmStock": 83,
+       "nmTuned": 100,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11275/7410",
+       "name": "Solaris - 45 - 45 HP",
+       "fuel": "petrol",
+       "hpStock": 41,
+       "hpTuned": 75,
+       "nmStock": 100,
+       "nmTuned": 125,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11276/7411",
+       "name": "Solaris - 55 - 47 HP",
+       "fuel": "petrol",
+       "hpStock": 47,
+       "hpTuned": 65,
+       "nmStock": 122,
+       "nmTuned": 150,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "tiger-1092",
+   "name": "Tiger",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11277/7412",
+       "name": "Tiger - 60 - 52 HP",
+       "fuel": "petrol",
+       "hpStock": 52,
+       "hpTuned": 76,
+       "nmStock": 204,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11278/7413",
+       "name": "Tiger - 70 - 67 HP",
+       "fuel": "petrol",
+       "hpStock": 67,
+       "hpTuned": 90,
+       "nmStock": 261,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "virtus-1093",
+   "name": "Virtus",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11279/7414",
+       "name": "Virtus - 100 - 3.6 - 95HP",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 125,
+       "nmStock": 397,
+       "nmTuned": 672,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11280/7415",
+       "name": "Virtus - 110 - 3.6 - 105HP",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 135,
+       "nmStock": 440,
+       "nmTuned": 715,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11281/7416",
+       "name": "Virtus - 120 - 3.6 - 113HP",
+       "fuel": "petrol",
+       "hpStock": 113,
+       "hpTuned": 143,
+       "nmStock": 460,
+       "nmTuned": 735,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11282/7417",
+       "name": "Virtus - 130 - 3.6 - 120HP",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 480,
+       "nmTuned": 755,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,219 @@
+{
+ "slug": "ds",
+ "name": "DS",
+ "logo": "ds.png",
+ "models": [
+  {
+   "slug": "3-cabrio-856",
+   "name": "3 / Cabrio",
+   "generations": [
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "16344/14574",
+       "name": "1.6 BlueHDI 8V 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 130,
+       "nmStock": 254,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7968/7143",
+       "name": "1.6 BlueHDI 8V 100hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7969/1019",
+       "name": "1.6 BlueHDI 8V 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 140,
+       "nmStock": 300,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7970/1095",
+       "name": "1.6 THP 165hp",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 215,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7971/4784",
+       "name": "1.6 THP Performance 208hp",
+       "fuel": "petrol",
+       "hpStock": 208,
+       "hpTuned": 220,
+       "nmStock": 300,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "4-857",
+   "name": "4",
+   "generations": [
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "7972/1054",
+       "name": "1.2 PureTech 130hp",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 145,
+       "nmStock": 230,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7973/7143",
+       "name": "1.6 BlueHDI 8V 100hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7974/1095",
+       "name": "1.6 THP 165hp",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 215,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7975/1089",
+       "name": "1.6 THP 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 240,
+       "nmStock": 275,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7976/1097",
+       "name": "1.6 THP 210hp",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 230,
+       "nmStock": 285,
+       "nmTuned": 305,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7977/7156",
+       "name": "2.0 BlueHDi 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 340,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "4-crossback-858",
+   "name": "4 Crossback",
+   "generations": [
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "7978/1054",
+       "name": "1.2 PureTech 130hp",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 145,
+       "nmStock": 230,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7979/7143",
+       "name": "1.6 BlueHDI 8V 100hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7980/1019",
+       "name": "1.6 BlueHDI 8V 120hp",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 140,
+       "nmStock": 300,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7981/1095",
+       "name": "1.6 THP 165hp",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 215,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "7-crossback-859",
+   "name": "7 Crossback",
+   "generations": [
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "7982/1073",
+       "name": "2.0 BlueHDI 180hp",
+       "fuel": "diesel",
+       "hpStock": 180,
+       "hpTuned": 200,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

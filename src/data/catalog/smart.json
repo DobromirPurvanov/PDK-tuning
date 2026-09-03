@@ -1,0 +1,426 @@
+{
+ "slug": "smart",
+ "name": "Smart",
+ "logo": "smart.png",
+ "models": [
+  {
+   "slug": "city-617",
+   "name": "City",
+   "generations": [
+    {
+     "slug": "2002-2004",
+     "from": 2002,
+     "to": 2004,
+     "engines": [
+      {
+       "path": "4842/2900",
+       "name": "0.8 CDI 45hp",
+       "fuel": "diesel",
+       "hpStock": 45,
+       "hpTuned": 65,
+       "nmStock": 110,
+       "nmTuned": 150,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4843/2901",
+       "name": "1.0 Turbo 84hp",
+       "fuel": "petrol",
+       "hpStock": 84,
+       "hpTuned": 110,
+       "nmStock": 120,
+       "nmTuned": 160,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4844/2902",
+       "name": "1.0 Turbo Brabus 98hp",
+       "fuel": "petrol",
+       "hpStock": 98,
+       "hpTuned": 120,
+       "nmStock": 140,
+       "nmTuned": 160,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "crossblade-618",
+   "name": "Crossblade",
+   "generations": [
+    {
+     "slug": "2002-2003",
+     "from": 2002,
+     "to": 2003,
+     "engines": [
+      {
+       "path": "4845/2903",
+       "name": "0.6 Turbo 70hp",
+       "fuel": "petrol",
+       "hpStock": 70,
+       "hpTuned": 82,
+       "nmStock": 108,
+       "nmTuned": 125,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "forfour-619",
+   "name": "ForFour",
+   "generations": [
+    {
+     "slug": "2004-2014",
+     "from": 2004,
+     "to": 2014,
+     "engines": [
+      {
+       "path": "4846/2904",
+       "name": "1.5 CDI 68hp",
+       "fuel": "diesel",
+       "hpStock": 68,
+       "hpTuned": 92,
+       "nmStock": 160,
+       "nmTuned": 210,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11630/7507",
+       "name": "1.5 CDI 95hp",
+       "fuel": "diesel",
+       "hpStock": 95,
+       "hpTuned": 115,
+       "nmStock": 210,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4847/2744",
+       "name": "1.5 DCi 95hp",
+       "fuel": "diesel",
+       "hpStock": 95,
+       "hpTuned": 115,
+       "nmStock": 240,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4848/2905",
+       "name": "1.5 Turbo 177hp",
+       "fuel": "petrol",
+       "hpStock": 177,
+       "hpTuned": 180,
+       "nmStock": 230,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2014-0",
+     "from": 2014,
+     "to": null,
+     "engines": [
+      {
+       "path": "4849/2906",
+       "name": "0.9 Turbo 90hp",
+       "fuel": "petrol",
+       "hpStock": 90,
+       "hpTuned": 110,
+       "nmStock": 135,
+       "nmTuned": 155,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4850/2907",
+       "name": "1.0i - 61hp",
+       "fuel": "petrol",
+       "hpStock": 61,
+       "hpTuned": 69,
+       "nmStock": 91,
+       "nmTuned": 105,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4851/2908",
+       "name": "1.0i - 71hp",
+       "fuel": "petrol",
+       "hpStock": 71,
+       "hpTuned": 79,
+       "nmStock": 91,
+       "nmTuned": 105,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "fortwo-620",
+   "name": "ForTwo",
+   "generations": [
+    {
+     "slug": "0-2014",
+     "from": 0,
+     "to": 2014,
+     "engines": [
+      {
+       "path": "11631/2909",
+       "name": "0.8 CDI 41hp",
+       "fuel": "diesel",
+       "hpStock": 41,
+       "hpTuned": 61,
+       "nmStock": 100,
+       "nmTuned": 135,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11632/2900",
+       "name": "0.8 CDI 45hp",
+       "fuel": "diesel",
+       "hpStock": 45,
+       "hpTuned": 65,
+       "nmStock": 110,
+       "nmTuned": 150,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11633/2910",
+       "name": "0.8 CDI 54hp",
+       "fuel": "diesel",
+       "hpStock": 54,
+       "hpTuned": 73,
+       "nmStock": 130,
+       "nmTuned": 170,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11634/2901",
+       "name": "1.0 Turbo 84hp",
+       "fuel": "petrol",
+       "hpStock": 84,
+       "hpTuned": 110,
+       "nmStock": 120,
+       "nmTuned": 160,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11635/2911",
+       "name": "1.0 Turbo Brabus 102hp",
+       "fuel": "petrol",
+       "hpStock": 102,
+       "hpTuned": 115,
+       "nmStock": 147,
+       "nmTuned": 165,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11636/2902",
+       "name": "1.0 Turbo Brabus 98hp",
+       "fuel": "petrol",
+       "hpStock": 98,
+       "hpTuned": 120,
+       "nmStock": 140,
+       "nmTuned": 160,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11637/2912",
+       "name": "1.0i 61hp",
+       "fuel": "petrol",
+       "hpStock": 61,
+       "hpTuned": 67,
+       "nmStock": 92,
+       "nmTuned": 102,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11638/2913",
+       "name": "1.0i 71hp",
+       "fuel": "petrol",
+       "hpStock": 71,
+       "hpTuned": 79,
+       "nmStock": 89,
+       "nmTuned": 105,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11639/2914",
+       "name": "Ultimate 112 - 112hp",
+       "fuel": "petrol",
+       "hpStock": 112,
+       "hpTuned": 120,
+       "nmStock": 150,
+       "nmTuned": 170,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2014-0",
+     "from": 2014,
+     "to": null,
+     "engines": [
+      {
+       "path": "4852/2909",
+       "name": "0.8 CDI 41hp",
+       "fuel": "diesel",
+       "hpStock": 41,
+       "hpTuned": 61,
+       "nmStock": 100,
+       "nmTuned": 135,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4853/2900",
+       "name": "0.8 CDI 45hp",
+       "fuel": "diesel",
+       "hpStock": 45,
+       "hpTuned": 65,
+       "nmStock": 110,
+       "nmTuned": 150,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4854/2910",
+       "name": "0.8 CDI 54hp",
+       "fuel": "diesel",
+       "hpStock": 54,
+       "hpTuned": 73,
+       "nmStock": 130,
+       "nmTuned": 170,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4861/2906",
+       "name": "0.9 Turbo 90hp",
+       "fuel": "petrol",
+       "hpStock": 90,
+       "hpTuned": 110,
+       "nmStock": 135,
+       "nmTuned": 155,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4862/2915",
+       "name": "0.9 Turbo Brabus 109hp",
+       "fuel": "petrol",
+       "hpStock": 109,
+       "hpTuned": 120,
+       "nmStock": 170,
+       "nmTuned": 190,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4855/2901",
+       "name": "1.0 Turbo 84hp",
+       "fuel": "petrol",
+       "hpStock": 84,
+       "hpTuned": 110,
+       "nmStock": 120,
+       "nmTuned": 160,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4856/2911",
+       "name": "1.0 Turbo Brabus 102hp",
+       "fuel": "petrol",
+       "hpStock": 102,
+       "hpTuned": 115,
+       "nmStock": 147,
+       "nmTuned": 165,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4857/2902",
+       "name": "1.0 Turbo Brabus 98hp",
+       "fuel": "petrol",
+       "hpStock": 98,
+       "hpTuned": 120,
+       "nmStock": 140,
+       "nmTuned": 160,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4858/2912",
+       "name": "1.0i 61hp",
+       "fuel": "petrol",
+       "hpStock": 61,
+       "hpTuned": 67,
+       "nmStock": 92,
+       "nmTuned": 102,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4859/2913",
+       "name": "1.0i 71hp",
+       "fuel": "petrol",
+       "hpStock": 71,
+       "hpTuned": 79,
+       "nmStock": 89,
+       "nmTuned": 105,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4860/2914",
+       "name": "Ultimate 112 - 112hp",
+       "fuel": "petrol",
+       "hpStock": 112,
+       "hpTuned": 120,
+       "nmStock": 150,
+       "nmTuned": 170,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "roadster-2878",
+   "name": "Roadster",
+   "generations": [
+    {
+     "slug": "2003-2006",
+     "from": 2003,
+     "to": 2006,
+     "engines": [
+      {
+       "path": "15869/2916",
+       "name": "0.7 Turbo 62hp",
+       "fuel": "petrol",
+       "hpStock": 62,
+       "hpTuned": 78,
+       "nmStock": 95,
+       "nmTuned": 125,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "15870/2917",
+       "name": "0.7 Turbo 82hp",
+       "fuel": "petrol",
+       "hpStock": 82,
+       "hpTuned": 102,
+       "nmStock": 110,
+       "nmTuned": 135,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "15871/2918",
+       "name": "0.7 Turbo Brabus 101hp",
+       "fuel": "petrol",
+       "hpStock": 101,
+       "hpTuned": 121,
+       "nmStock": 130,
+       "nmTuned": 160,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+{
+ "slug": "isuzu-trucks",
+ "name": "Isuzu Trucks",
+ "logo": "isuzu-trucks.png",
+ "models": [
+  {
+   "slug": "grafter-917",
+   "name": "Grafter",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "8731/5273",
+       "name": "3.0D",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 145,
+       "nmStock": 320,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

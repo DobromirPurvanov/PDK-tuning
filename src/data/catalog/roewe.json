@@ -1,0 +1,30 @@
+{
+ "slug": "roewe",
+ "name": "Roewe",
+ "logo": "roewe.jpg",
+ "models": [
+  {
+   "slug": "550-2875",
+   "name": "550",
+   "generations": [
+    {
+     "slug": "2008-0",
+     "from": 2008,
+     "to": null,
+     "engines": [
+      {
+       "path": "16626/7340",
+       "name": "1.8i 130hp",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 140,
+       "nmStock": 168,
+       "nmTuned": 185,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

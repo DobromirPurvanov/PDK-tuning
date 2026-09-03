@@ -1,0 +1,1534 @@
+{
+ "slug": "kia",
+ "name": "Kia",
+ "logo": "kia.png",
+ "models": [
+  {
+   "slug": "carens-364",
+   "name": "Carens",
+   "generations": [
+    {
+     "slug": "2002-2011",
+     "from": 2002,
+     "to": 2011,
+     "engines": [
+      {
+       "path": "2545/1544",
+       "name": "2.0 CRDi 112hp",
+       "fuel": "diesel",
+       "hpStock": 112,
+       "hpTuned": 140,
+       "nmStock": 235,
+       "nmTuned": 285,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2546/1569",
+       "name": "2.0 CRDi 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 170,
+       "nmStock": 304,
+       "nmTuned": 365,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2547/1570",
+       "name": "2.0 CRDi 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 304,
+       "nmTuned": 365,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2013-2016",
+     "from": 2013,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "2548/1713",
+       "name": "1.7 CRDi 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 145,
+       "nmStock": 260,
+       "nmTuned": 325,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2549/1580",
+       "name": "1.7 CRDi 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 170,
+       "nmStock": 330,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "2550/1607",
+       "name": "1.7 CRDi 141hp",
+       "fuel": "diesel",
+       "hpStock": 141,
+       "hpTuned": 170,
+       "nmStock": 340,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "carnival-365",
+   "name": "Carnival",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2551/1590",
+       "name": "2.2 CRDi 200hp",
+       "fuel": "diesel",
+       "hpStock": 200,
+       "hpTuned": 230,
+       "nmStock": 430,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2552/1714",
+       "name": "2.9 CRDi 144hp",
+       "fuel": "diesel",
+       "hpStock": 144,
+       "hpTuned": 170,
+       "nmStock": 310,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2553/1715",
+       "name": "2.9 CRDi 185hp",
+       "fuel": "diesel",
+       "hpStock": 185,
+       "hpTuned": 215,
+       "nmStock": 343,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "ceed-366",
+   "name": "Ceed",
+   "generations": [
+    {
+     "slug": "2007-2010",
+     "from": 2007,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "2554/1568",
+       "name": "1.6 CRDi 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 145,
+       "nmStock": 255,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2555/1543",
+       "name": "1.6 CRDI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 130,
+       "nmStock": 235,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2556/1569",
+       "name": "2.0 CRDi 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 170,
+       "nmStock": 304,
+       "nmTuned": 365,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2557/1570",
+       "name": "2.0 CRDi 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 304,
+       "nmTuned": 365,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2010-2015",
+     "from": 2010,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "2558/1716",
+       "name": "1.4 CRDi 100hp",
+       "fuel": "diesel",
+       "hpStock": 100,
+       "hpTuned": 125,
+       "nmStock": 220,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2559/1571",
+       "name": "1.4 CRDi 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 125,
+       "nmStock": 220,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2560/1572",
+       "name": "1.6 CRDi 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 160,
+       "nmStock": 255,
+       "nmTuned": 325,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9062/5251",
+       "name": "1.6 CRDi 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 160,
+       "nmStock": 260,
+       "nmTuned": 325,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2561/1563",
+       "name": "1.6 CRDi 128hp",
+       "fuel": "diesel",
+       "hpStock": 128,
+       "hpTuned": 160,
+       "nmStock": 260,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16374/1543",
+       "name": "1.6 CRDI 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 130,
+       "nmStock": 235,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2562/1585",
+       "name": "1.6 GDI 135hp",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 145,
+       "nmStock": 165,
+       "nmTuned": 180,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2563/1546",
+       "name": "1.6 T-GDi 204hp",
+       "fuel": "petrol",
+       "hpStock": 204,
+       "hpTuned": 220,
+       "nmStock": 264,
+       "nmTuned": 325,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-2017",
+     "from": 2015,
+     "to": 2017,
+     "engines": [
+      {
+       "path": "2564/1717",
+       "name": "1.0 T-GDI 100hp",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 140,
+       "nmStock": 170,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2565/1593",
+       "name": "1.0 T-GDI 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 135,
+       "nmStock": 172,
+       "nmTuned": 210,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16360/15077",
+       "name": "1.6 CRDI 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 145,
+       "nmStock": 260,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2566/1594",
+       "name": "1.6 CRDi 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 160,
+       "nmStock": 320,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2567/1718",
+       "name": "1.6 T-GDI GT 204hp",
+       "fuel": "petrol",
+       "hpStock": 204,
+       "hpTuned": 240,
+       "nmStock": 265,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2018-0",
+     "from": 2018,
+     "to": null,
+     "engines": [
+      {
+       "path": "2568/1565",
+       "name": "1.0 T-GDi - 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 140,
+       "nmStock": 172,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2569/1577",
+       "name": "1.4 T-GDI - 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 175,
+       "nmStock": 242,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2570/1719",
+       "name": "1.4i - 100hp",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 110,
+       "nmStock": 134,
+       "nmTuned": 150,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2571/1720",
+       "name": "1.6 CRDi - 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 145,
+       "nmStock": 280,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2572/1574",
+       "name": "1.6 CRDi - 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 160,
+       "nmStock": 280,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2573/1721",
+       "name": "1.6 GDi - 132hp",
+       "fuel": "petrol",
+       "hpStock": 132,
+       "hpTuned": 145,
+       "nmStock": 161,
+       "nmTuned": 175,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9067/1718",
+       "name": "1.6 T-GDI GT 204hp",
+       "fuel": "petrol",
+       "hpStock": 204,
+       "hpTuned": 240,
+       "nmStock": 265,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "cerato-367",
+   "name": "Cerato",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2574/1596",
+       "name": "1.5 CRDi 102hp",
+       "fuel": "diesel",
+       "hpStock": 102,
+       "hpTuned": 130,
+       "nmStock": 235,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2575/1568",
+       "name": "1.6 CRDi 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 145,
+       "nmStock": 255,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2576/1544",
+       "name": "2.0 CRDi 112hp",
+       "fuel": "diesel",
+       "hpStock": 112,
+       "hpTuned": 140,
+       "nmStock": 235,
+       "nmTuned": 285,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "k5-368",
+   "name": "K5",
+   "generations": [
+    {
+     "slug": "2010-2015",
+     "from": 2010,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "2577/1580",
+       "name": "1.7 CRDi 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 170,
+       "nmStock": 330,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2578/1722",
+       "name": "2.0 T-GDi 278hp",
+       "fuel": "petrol",
+       "hpStock": 278,
+       "hpTuned": 300,
+       "nmStock": 365,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2579/1547",
+       "name": "2.0i 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 179,
+       "nmStock": 203,
+       "nmTuned": 225,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9064/5903",
+       "name": "2.0i 163hp",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 180,
+       "nmStock": 196,
+       "nmTuned": 227,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2580/1723",
+       "name": "2.4 GDI 204hp",
+       "fuel": "petrol",
+       "hpStock": 204,
+       "hpTuned": 229,
+       "nmStock": 252,
+       "nmTuned": 271,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2581/808",
+       "name": "2.4i 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 198,
+       "nmStock": 232,
+       "nmTuned": 249,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "2582/1724",
+       "name": "1.6 T-GDI 178hp",
+       "fuel": "petrol",
+       "hpStock": 178,
+       "hpTuned": 220,
+       "nmStock": 265,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2583/1607",
+       "name": "1.7 CRDi 141hp",
+       "fuel": "diesel",
+       "hpStock": 141,
+       "hpTuned": 170,
+       "nmStock": 340,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2584/1725",
+       "name": "2.0 T-GDI 245hp",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 270,
+       "nmStock": 350,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2585/1726",
+       "name": "2.4i 185hp",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 203,
+       "nmStock": 241,
+       "nmTuned": 265,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "k7-941",
+   "name": "K7",
+   "generations": [
+    {
+     "slug": "2010-2016",
+     "from": 2010,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "9072/5908",
+       "name": "2.4i 181hp",
+       "fuel": "petrol",
+       "hpStock": 181,
+       "hpTuned": 200,
+       "nmStock": 231,
+       "nmTuned": 254,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9073/5909",
+       "name": "2.7 V6 166hp",
+       "fuel": "petrol",
+       "hpStock": 166,
+       "hpTuned": 188,
+       "nmStock": 246,
+       "nmTuned": 272,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9074/5910",
+       "name": "2.7 V6 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 219,
+       "nmStock": 254,
+       "nmTuned": 278,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9075/5911",
+       "name": "3.5 V6 290hp",
+       "fuel": "petrol",
+       "hpStock": 290,
+       "hpTuned": 312,
+       "nmStock": 338,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "9079/5913",
+       "name": "2.4i 192hp",
+       "fuel": "petrol",
+       "hpStock": 192,
+       "hpTuned": 218,
+       "nmStock": 245,
+       "nmTuned": 267,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9080/5914",
+       "name": "3.3 GDI V6 294hp",
+       "fuel": "petrol",
+       "hpStock": 294,
+       "hpTuned": 315,
+       "nmStock": 343,
+       "nmTuned": 367,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "magentis-369",
+   "name": "Magentis",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2586/1570",
+       "name": "2.0 CRDi 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 304,
+       "nmTuned": 365,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "mohave-370",
+   "name": "Mohave",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2587/1727",
+       "name": "3.0 CRDI 250hp",
+       "fuel": "diesel",
+       "hpStock": 250,
+       "hpTuned": 290,
+       "nmStock": 540,
+       "nmTuned": 620,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9054/5898",
+       "name": "3.8 24v V6 274hp",
+       "fuel": "petrol",
+       "hpStock": 274,
+       "hpTuned": 295,
+       "nmStock": 369,
+       "nmTuned": 399,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "optima-371",
+   "name": "Optima",
+   "generations": [
+    {
+     "slug": "2012-2015",
+     "from": 2012,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "2588/1580",
+       "name": "1.7 CRDi 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 170,
+       "nmStock": 330,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "2589/1594",
+       "name": "1.6 CRDi 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 160,
+       "nmStock": 320,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9047/5893",
+       "name": "1.6 T-GDI 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 220,
+       "nmStock": 265,
+       "nmTuned": 325,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2590/1607",
+       "name": "1.7 CRDi 141hp",
+       "fuel": "diesel",
+       "hpStock": 141,
+       "hpTuned": 170,
+       "nmStock": 340,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2591/1728",
+       "name": "2.0T 245hp",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 270,
+       "nmStock": 350,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "picanto-372",
+   "name": "Picanto",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2592/1729",
+       "name": "1.0 66hp",
+       "fuel": "petrol",
+       "hpStock": 66,
+       "hpTuned": 78,
+       "nmStock": 96,
+       "nmTuned": 110,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2593/1717",
+       "name": "1.0 T-GDI 100hp",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 140,
+       "nmStock": 170,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2594/1559",
+       "name": "1.1 CRDi 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 95,
+       "nmStock": 153,
+       "nmTuned": 190,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "rio-373",
+   "name": "Rio",
+   "generations": [
+    {
+     "slug": "2005-2008",
+     "from": 2005,
+     "to": 2008,
+     "engines": [
+      {
+       "path": "2595/1540",
+       "name": "1.5 CRDi 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 135,
+       "nmStock": 240,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2011-2014",
+     "from": 2011,
+     "to": 2014,
+     "engines": [
+      {
+       "path": "2596/1559",
+       "name": "1.1 CRDi 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 95,
+       "nmStock": 153,
+       "nmTuned": 190,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2597/1730",
+       "name": "1.2 CVVT 86hp",
+       "fuel": "petrol",
+       "hpStock": 86,
+       "hpTuned": 97,
+       "nmStock": 121,
+       "nmTuned": 143,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2598/1571",
+       "name": "1.4 CRDi 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 125,
+       "nmStock": 220,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-2016",
+     "from": 2015,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "9085/5249",
+       "name": "1.1 CRDi 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 95,
+       "nmStock": 180,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9086/1571",
+       "name": "1.4 CRDi 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 125,
+       "nmStock": 220,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "2599/1717",
+       "name": "1.0 T-GDI 100hp",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 140,
+       "nmStock": 170,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2600/1593",
+       "name": "1.0 T-GDI 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 135,
+       "nmStock": 172,
+       "nmTuned": 210,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9082/1571",
+       "name": "1.4 CRDi 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 125,
+       "nmStock": 220,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "sorento-374",
+   "name": "Sorento",
+   "generations": [
+    {
+     "slug": "2002-2007",
+     "from": 2002,
+     "to": 2007,
+     "engines": [
+      {
+       "path": "2601/1601",
+       "name": "2.5 CRDi 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 343,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2602/1602",
+       "name": "2.5 CRDi 170hp",
+       "fuel": "diesel",
+       "hpStock": 170,
+       "hpTuned": 200,
+       "nmStock": 392,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2007-2009",
+     "from": 2007,
+     "to": 2009,
+     "engines": [
+      {
+       "path": "2603/1731",
+       "name": "2.5 CRDi 163hp",
+       "fuel": "diesel",
+       "hpStock": 163,
+       "hpTuned": 200,
+       "nmStock": 392,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9087/1602",
+       "name": "2.5 CRDi 170hp",
+       "fuel": "diesel",
+       "hpStock": 170,
+       "hpTuned": 200,
+       "nmStock": 392,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2009-0",
+     "from": 2009,
+     "to": null,
+     "engines": [
+      {
+       "path": "2604/1599",
+       "name": "2.2 CRDi 197hp",
+       "fuel": "diesel",
+       "hpStock": 197,
+       "hpTuned": 230,
+       "nmStock": 422,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2605/1590",
+       "name": "2.2 CRDi 200hp",
+       "fuel": "diesel",
+       "hpStock": 200,
+       "hpTuned": 230,
+       "nmStock": 430,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9090/1602",
+       "name": "2.5 CRDi 170hp",
+       "fuel": "diesel",
+       "hpStock": 170,
+       "hpTuned": 200,
+       "nmStock": 392,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "soul-375",
+   "name": "Soul",
+   "generations": [
+    {
+     "slug": "2008-2013",
+     "from": 2008,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "2606/1568",
+       "name": "1.6 CRDi 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 145,
+       "nmStock": 255,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2607/1563",
+       "name": "1.6 CRDi 128hp",
+       "fuel": "diesel",
+       "hpStock": 128,
+       "hpTuned": 160,
+       "nmStock": 260,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2608/1609",
+       "name": "1.6 GDI 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 155,
+       "nmStock": 167,
+       "nmTuned": 185,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2609/1546",
+       "name": "1.6 T-GDi 204hp",
+       "fuel": "petrol",
+       "hpStock": 204,
+       "hpTuned": 220,
+       "nmStock": 264,
+       "nmTuned": 325,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2014-2015",
+     "from": 2014,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "9095/1563",
+       "name": "1.6 CRDi 128hp",
+       "fuel": "diesel",
+       "hpStock": 128,
+       "hpTuned": 160,
+       "nmStock": 260,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9096/5920",
+       "name": "1.6 GDi 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 150,
+       "nmStock": 166,
+       "nmTuned": 180,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "2610/1594",
+       "name": "1.6 CRDi 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 160,
+       "nmStock": 320,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9049/5895",
+       "name": "1.6 T-GDI 204hp",
+       "fuel": "petrol",
+       "hpStock": 204,
+       "hpTuned": 220,
+       "nmStock": 265,
+       "nmTuned": 325,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "sportage-376",
+   "name": "Sportage",
+   "generations": [
+    {
+     "slug": "2004-2007",
+     "from": 2004,
+     "to": 2007,
+     "engines": [
+      {
+       "path": "2611/1544",
+       "name": "2.0 CRDi 112hp",
+       "fuel": "diesel",
+       "hpStock": 112,
+       "hpTuned": 140,
+       "nmStock": 235,
+       "nmTuned": 285,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2612/1570",
+       "name": "2.0 CRDi 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 304,
+       "nmTuned": 365,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2007-2010",
+     "from": 2007,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "9060/5203",
+       "name": "2.0 CRDi 140hp",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 305,
+       "nmTuned": 365,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2613/1589",
+       "name": "2.0 CRDi 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 380,
+       "nmTuned": 435,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2010-2016",
+     "from": 2010,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "2614/1585",
+       "name": "1.6 GDI 135hp",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 145,
+       "nmStock": 165,
+       "nmTuned": 180,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2615/1713",
+       "name": "1.7 CRDi 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 145,
+       "nmStock": 260,
+       "nmTuned": 325,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2616/1569",
+       "name": "2.0 CRDi 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 170,
+       "nmStock": 304,
+       "nmTuned": 365,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2617/1587",
+       "name": "2.0 CRDi 184hp",
+       "fuel": "diesel",
+       "hpStock": 184,
+       "hpTuned": 205,
+       "nmStock": 383,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-2018",
+     "from": 2016,
+     "to": 2018,
+     "engines": [
+      {
+       "path": "2618/1595",
+       "name": "1.6 T-GDI 177hp",
+       "fuel": "petrol",
+       "hpStock": 177,
+       "hpTuned": 210,
+       "nmStock": 265,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9099/1713",
+       "name": "1.7 CRDi 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 145,
+       "nmStock": 260,
+       "nmTuned": 325,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9100/5238",
+       "name": "2.0 CRDi 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 175,
+       "nmStock": 373,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9101/5912",
+       "name": "2.0 CRDi 184hp",
+       "fuel": "diesel",
+       "hpStock": 184,
+       "hpTuned": 200,
+       "nmStock": 392,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2018-0",
+     "from": 2018,
+     "to": null,
+     "engines": [
+      {
+       "path": "2619/1568",
+       "name": "1.6 CRDi 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 145,
+       "nmStock": 255,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2620/1594",
+       "name": "1.6 CRDi 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 160,
+       "nmStock": 320,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9070/1595",
+       "name": "1.6 T-GDI 177hp",
+       "fuel": "petrol",
+       "hpStock": 177,
+       "hpTuned": 210,
+       "nmStock": 265,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2621/1608",
+       "name": "2.0 CRDi 185hp",
+       "fuel": "diesel",
+       "hpStock": 185,
+       "hpTuned": 205,
+       "nmStock": 400,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9071/5236",
+       "name": "2.2 CRDI 200hp",
+       "fuel": "diesel",
+       "hpStock": 200,
+       "hpTuned": 230,
+       "nmStock": 440,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "stinger-377",
+   "name": "Stinger",
+   "generations": [
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "2622/799",
+       "name": "2.0 Turbo - 255hp",
+       "fuel": "petrol",
+       "hpStock": 255,
+       "hpTuned": 290,
+       "nmStock": 400,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2623/1732",
+       "name": "2.2 CRDi - 200hp",
+       "fuel": "diesel",
+       "hpStock": 200,
+       "hpTuned": 230,
+       "nmStock": 440,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2624/1733",
+       "name": "3.3 V6 Bi-Turbo - 370hp",
+       "fuel": "petrol",
+       "hpStock": 370,
+       "hpTuned": 400,
+       "nmStock": 510,
+       "nmTuned": 610,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "stinger-gt-380",
+   "name": "Stinger GT",
+   "generations": [
+    {
+     "slug": "2022-2024",
+     "from": 2022,
+     "to": 2024,
+     "engines": [
+      {
+       "path": "2633/1736",
+       "name": "3.3 Turbo 365hp",
+       "fuel": "petrol",
+       "hpStock": 365,
+       "hpTuned": 400,
+       "nmStock": 510,
+       "nmTuned": 560,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "stonic-378",
+   "name": "Stonic",
+   "generations": [
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "2625/1565",
+       "name": "1.0 T-GDi - 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 140,
+       "nmStock": 172,
+       "nmTuned": 230,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2626/1734",
+       "name": "1.2 MPI - 84hp",
+       "fuel": "petrol",
+       "hpStock": 84,
+       "hpTuned": 100,
+       "nmStock": 122,
+       "nmTuned": 140,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2627/1578",
+       "name": "1.6 CRDi - 110hp",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 145,
+       "nmStock": 270,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "venga-379",
+   "name": "Venga",
+   "generations": [
+    {
+     "slug": "2009-0",
+     "from": 2009,
+     "to": null,
+     "engines": [
+      {
+       "path": "2628/1562",
+       "name": "1.4 CRDi 75hp",
+       "fuel": "diesel",
+       "hpStock": 75,
+       "hpTuned": 125,
+       "nmStock": 220,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2629/1735",
+       "name": "1.4 CRDi 77hp",
+       "fuel": "diesel",
+       "hpStock": 77,
+       "hpTuned": 125,
+       "nmStock": 220,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2630/1571",
+       "name": "1.4 CRDi 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 125,
+       "nmStock": 220,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2631/1568",
+       "name": "1.6 CRDi 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 145,
+       "nmStock": 255,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2632/1563",
+       "name": "1.6 CRDi 128hp",
+       "fuel": "diesel",
+       "hpStock": 128,
+       "hpTuned": 160,
+       "nmStock": 260,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

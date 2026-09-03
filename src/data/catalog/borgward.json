@@ -1,0 +1,53 @@
+{
+ "slug": "borgward",
+ "name": "Borgward",
+ "logo": "borgward.png",
+ "models": [
+  {
+   "slug": "bx5-771",
+   "name": "BX5",
+   "generations": [
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "6838/3780",
+       "name": "25 TGDI 1.8T - 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 210,
+       "nmStock": 280,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "bx7-bx7-ts-772",
+   "name": "BX7 / BX7 TS",
+   "generations": [
+    {
+     "slug": "2018-0",
+     "from": 2018,
+     "to": null,
+     "engines": [
+      {
+       "path": "6839/3781",
+       "name": "28 TGDi 2.0T - 225hp",
+       "fuel": "petrol",
+       "hpStock": 225,
+       "hpTuned": 260,
+       "nmStock": 300,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+# PDK Tuning
+
+> Чип тунинг сервиз и файлова услуга във Варна, България. Дино стенд, софтуерни ремонти (DPF, EGR, AdBlue, Lambda, MAF, DTC, V-MAX), каталог с реални стойности преди/след за над 100 марки.
+
+PDK Tuning (БОЛИД АУТО ООД) пише тунинг файлове от 15+ години, има сервизи в 5 европейски държави и обслужва два вида клиенти: собственици на автомобили във Варна (чип тунинг с измерване на стенд) и сервизи партньори в Европа (файлова услуга през портал). Телефон: +359 88 333 1609. Адрес: ул. „Прилеп“ 96, 9000 Варна.
+
+## Услуги (български)
+- [Чип тунинг Варна](https://www.pdktuning.com/bg/chip-tuning-varna): Stage 1 от 250 €, колата остава 2–4 ч, измерване преди и след.
+- [Какво е чип тунинг](https://www.pdktuning.com/bg/tuning/chip-tuning): видове, как се прави, ефект, рискове.
+- [Услуги](https://www.pdktuning.com/bg/uslugi): DPF/FAP, EGR, AdBlue, Lambda, MAF, DTC, V-MAX.
+- [Дино стенд](https://www.pdktuning.com/bg/dino-stend): замерване на мощност от 50 €.
+- [Цени](https://www.pdktuning.com/bg/tseni): всички начални цени.
+- [Чести въпроси](https://www.pdktuning.com/bg/chesti-vaprosi)
+- [Контакти](https://www.pdktuning.com/bg/contact)
+
+## Services (English, for partner workshops)
+- [Chip tuning](https://www.pdktuning.com/en/chip-tuning-varna)
+- [Services](https://www.pdktuning.com/en/services)
+- [Prices](https://www.pdktuning.com/en/prices)
+- [File portal](https://www.pdktuning.com/en/login)
+
+## Каталог
+- [Всички марки](https://www.pdktuning.com/bg/): марка → модел → поколение → двигател, с мощност и момент преди и след.

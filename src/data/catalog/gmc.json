@@ -1,0 +1,733 @@
+{
+ "slug": "gmc",
+ "name": "GMC",
+ "logo": "gmc.png",
+ "models": [
+  {
+   "slug": "acadia-877",
+   "name": "Acadia",
+   "generations": [
+    {
+     "slug": "2007-2008",
+     "from": 2007,
+     "to": 2008,
+     "engines": [
+      {
+       "path": "8477/3796",
+       "name": "3.6 V6 275hp",
+       "fuel": "petrol",
+       "hpStock": 275,
+       "hpTuned": 295,
+       "nmStock": 400,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8478/778",
+       "name": "3.6 V6 288hp",
+       "fuel": "petrol",
+       "hpStock": 288,
+       "hpTuned": 300,
+       "nmStock": 366,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "8479/3799",
+       "name": "3.6 V6 310hp",
+       "fuel": "petrol",
+       "hpStock": 310,
+       "hpTuned": 330,
+       "nmStock": 367,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "canyon-879",
+   "name": "Canyon",
+   "generations": [
+    {
+     "slug": "2003-2012",
+     "from": 2003,
+     "to": 2012,
+     "engines": [
+      {
+       "path": "8485/883",
+       "name": "2.8i - 175hp",
+       "fuel": "petrol",
+       "hpStock": 175,
+       "hpTuned": 190,
+       "nmStock": 251,
+       "nmTuned": 275,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8486/884",
+       "name": "2.9i - 185hp",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 200,
+       "nmStock": 258,
+       "nmTuned": 280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8487/5080",
+       "name": "3.5 V6 220hp",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 240,
+       "nmStock": 305,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8488/5081",
+       "name": "3.7 V6 242hp",
+       "fuel": "petrol",
+       "hpStock": 242,
+       "hpTuned": 265,
+       "nmStock": 328,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8489/5085",
+       "name": "5.3 V8 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 320,
+       "nmStock": 447,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "8490/5082",
+       "name": "2.8 Duramax 181hp",
+       "fuel": "petrol",
+       "hpStock": 181,
+       "hpTuned": 210,
+       "nmStock": 500,
+       "nmTuned": 540,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8491/5083",
+       "name": "3.6 V6 308hp",
+       "fuel": "petrol",
+       "hpStock": 308,
+       "hpTuned": 330,
+       "nmStock": 373,
+       "nmTuned": 395,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "envoy-880",
+   "name": "Envoy",
+   "generations": [
+    {
+     "slug": "2002-2010",
+     "from": 2002,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "8492/5084",
+       "name": "4.2i - 270hp",
+       "fuel": "petrol",
+       "hpStock": 270,
+       "hpTuned": 290,
+       "nmStock": 373,
+       "nmTuned": 395,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8493/905",
+       "name": "5.3 V8 290hp",
+       "fuel": "petrol",
+       "hpStock": 290,
+       "hpTuned": 310,
+       "nmStock": 441,
+       "nmTuned": 465,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8494/5085",
+       "name": "5.3 V8 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 320,
+       "nmStock": 447,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "safari-881",
+   "name": "Safari",
+   "generations": [
+    {
+     "slug": "2001-2005",
+     "from": 2001,
+     "to": 2005,
+     "engines": [
+      {
+       "path": "8495/5086",
+       "name": "4.3i - 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 210,
+       "nmStock": 339,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "savana-882",
+   "name": "Savana",
+   "generations": [
+    {
+     "slug": "2003-0",
+     "from": 2003,
+     "to": null,
+     "engines": [
+      {
+       "path": "8496/5087",
+       "name": "4.3 V6 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 220,
+       "nmStock": 353,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8497/904",
+       "name": "4.8 V8 275hp",
+       "fuel": "petrol",
+       "hpStock": 275,
+       "hpTuned": 295,
+       "nmStock": 393,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8498/5088",
+       "name": "5.3 V8 310hp",
+       "fuel": "petrol",
+       "hpStock": 310,
+       "hpTuned": 330,
+       "nmStock": 453,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8499/5089",
+       "name": "5.7 V8 255hp",
+       "fuel": "petrol",
+       "hpStock": 255,
+       "hpTuned": 275,
+       "nmStock": 447,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8500/5090",
+       "name": "6.0 V8 342hp",
+       "fuel": "petrol",
+       "hpStock": 342,
+       "hpTuned": 360,
+       "nmStock": 506,
+       "nmTuned": 530,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8501/5091",
+       "name": "6.6 V8 365hp",
+       "fuel": "petrol",
+       "hpStock": 365,
+       "hpTuned": 390,
+       "nmStock": 894,
+       "nmTuned": 930,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "sierra-878",
+   "name": "Sierra",
+   "generations": [
+    {
+     "slug": "1999-2007",
+     "from": 1999,
+     "to": 2007,
+     "engines": [
+      {
+       "path": "8502/5087",
+       "name": "4.3 V6 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 220,
+       "nmStock": 353,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8503/941",
+       "name": "4.8 V8 295hp",
+       "fuel": "petrol",
+       "hpStock": 295,
+       "hpTuned": 314,
+       "nmStock": 414,
+       "nmTuned": 439,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8504/834",
+       "name": "5.3 V8 295hp",
+       "fuel": "petrol",
+       "hpStock": 295,
+       "hpTuned": 315,
+       "nmStock": 454,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8505/4359",
+       "name": "6.0 V8 360hp",
+       "fuel": "petrol",
+       "hpStock": 360,
+       "hpTuned": 380,
+       "nmStock": 542,
+       "nmTuned": 570,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8506/5095",
+       "name": "6.6 Duramax 365hp",
+       "fuel": "petrol",
+       "hpStock": 365,
+       "hpTuned": 395,
+       "nmStock": 894,
+       "nmTuned": 945,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8507/940",
+       "name": "8.1 V8 330hp",
+       "fuel": "petrol",
+       "hpStock": 330,
+       "hpTuned": 350,
+       "nmStock": 610,
+       "nmTuned": 630,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2008-2013",
+     "from": 2008,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "8508/936",
+       "name": "4.3 V6 195hp",
+       "fuel": "petrol",
+       "hpStock": 195,
+       "hpTuned": 215,
+       "nmStock": 353,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8509/5096",
+       "name": "4.8 V8 302hp",
+       "fuel": "petrol",
+       "hpStock": 302,
+       "hpTuned": 320,
+       "nmStock": 414,
+       "nmTuned": 435,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8510/5097",
+       "name": "5.3 V8 326hp",
+       "fuel": "petrol",
+       "hpStock": 326,
+       "hpTuned": 345,
+       "nmStock": 472,
+       "nmTuned": 495,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8511/4359",
+       "name": "6.0 V8 360hp",
+       "fuel": "petrol",
+       "hpStock": 360,
+       "hpTuned": 380,
+       "nmStock": 542,
+       "nmTuned": 570,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8512/836",
+       "name": "6.2 V8 403hp",
+       "fuel": "petrol",
+       "hpStock": 403,
+       "hpTuned": 425,
+       "nmStock": 565,
+       "nmTuned": 590,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8513/5095",
+       "name": "6.6 Duramax 365hp",
+       "fuel": "petrol",
+       "hpStock": 365,
+       "hpTuned": 395,
+       "nmStock": 894,
+       "nmTuned": 945,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2014-2016",
+     "from": 2014,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "8514/946",
+       "name": "4.3 V6 285hp",
+       "fuel": "petrol",
+       "hpStock": 285,
+       "hpTuned": 305,
+       "nmStock": 414,
+       "nmTuned": 435,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8515/947",
+       "name": "5.3 V8 355hp",
+       "fuel": "petrol",
+       "hpStock": 355,
+       "hpTuned": 375,
+       "nmStock": 519,
+       "nmTuned": 540,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8516/837",
+       "name": "6.2 V8 420hp",
+       "fuel": "petrol",
+       "hpStock": 420,
+       "hpTuned": 440,
+       "nmStock": 623,
+       "nmTuned": 645,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8517/5095",
+       "name": "6.6 Duramax 365hp",
+       "fuel": "petrol",
+       "hpStock": 365,
+       "hpTuned": 395,
+       "nmStock": 894,
+       "nmTuned": 945,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "8480/946",
+       "name": "4.3 V6 285hp",
+       "fuel": "petrol",
+       "hpStock": 285,
+       "hpTuned": 305,
+       "nmStock": 414,
+       "nmTuned": 435,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8481/947",
+       "name": "5.3 V8 355hp",
+       "fuel": "petrol",
+       "hpStock": 355,
+       "hpTuned": 375,
+       "nmStock": 519,
+       "nmTuned": 540,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8482/4359",
+       "name": "6.0 V8 360hp",
+       "fuel": "petrol",
+       "hpStock": 360,
+       "hpTuned": 380,
+       "nmStock": 542,
+       "nmTuned": 570,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8483/837",
+       "name": "6.2 V8 420hp",
+       "fuel": "petrol",
+       "hpStock": 420,
+       "hpTuned": 440,
+       "nmStock": 623,
+       "nmTuned": 645,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8484/5079",
+       "name": "6.6 V8 445hp",
+       "fuel": "petrol",
+       "hpStock": 445,
+       "hpTuned": 500,
+       "nmStock": 1234,
+       "nmTuned": 1350,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "sonoma-883",
+   "name": "Sonoma",
+   "generations": [
+    {
+     "slug": "1997-2004",
+     "from": 1997,
+     "to": 2004,
+     "engines": [
+      {
+       "path": "8518/5098",
+       "name": "2.2i - 120hp",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 140,
+       "nmStock": 190,
+       "nmTuned": 210,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8519/936",
+       "name": "4.3 V6 195hp",
+       "fuel": "petrol",
+       "hpStock": 195,
+       "hpTuned": 215,
+       "nmStock": 353,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "terrain-884",
+   "name": "Terrain",
+   "generations": [
+    {
+     "slug": "2009-0",
+     "from": 2009,
+     "to": null,
+     "engines": [
+      {
+       "path": "8520/789",
+       "name": "2.4i - 182hp",
+       "fuel": "petrol",
+       "hpStock": 182,
+       "hpTuned": 195,
+       "nmStock": 233,
+       "nmTuned": 250,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8521/903",
+       "name": "3.0 V6 264hp",
+       "fuel": "petrol",
+       "hpStock": 264,
+       "hpTuned": 285,
+       "nmStock": 301,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8522/5100",
+       "name": "3.6 V6 301hp",
+       "fuel": "petrol",
+       "hpStock": 301,
+       "hpTuned": 320,
+       "nmStock": 369,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "yukon-885",
+   "name": "Yukon",
+   "generations": [
+    {
+     "slug": "2000-2006",
+     "from": 2000,
+     "to": 2006,
+     "engines": [
+      {
+       "path": "8523/904",
+       "name": "4.8 V8 275hp",
+       "fuel": "petrol",
+       "hpStock": 275,
+       "hpTuned": 295,
+       "nmStock": 393,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8524/834",
+       "name": "5.3 V8 295hp",
+       "fuel": "petrol",
+       "hpStock": 295,
+       "hpTuned": 315,
+       "nmStock": 454,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8525/5101",
+       "name": "6.0 V8 329hp",
+       "fuel": "petrol",
+       "hpStock": 329,
+       "hpTuned": 350,
+       "nmStock": 495,
+       "nmTuned": 515,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8526/954",
+       "name": "8.1 V8 325hp",
+       "fuel": "petrol",
+       "hpStock": 325,
+       "hpTuned": 345,
+       "nmStock": 606,
+       "nmTuned": 635,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2007-2013",
+     "from": 2007,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "8527/941",
+       "name": "4.8 V8 295hp",
+       "fuel": "petrol",
+       "hpStock": 295,
+       "hpTuned": 314,
+       "nmStock": 414,
+       "nmTuned": 439,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8528/5104",
+       "name": "5.3 V8 320hp",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 340,
+       "nmStock": 481,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8529/5105",
+       "name": "6.0 V8 Hybrid 332hp",
+       "fuel": "petrol",
+       "hpStock": 332,
+       "hpTuned": 335,
+       "nmStock": 498,
+       "nmTuned": 530,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8530/4342",
+       "name": "6.2 V8 405hp",
+       "fuel": "petrol",
+       "hpStock": 405,
+       "hpTuned": 425,
+       "nmStock": 565,
+       "nmTuned": 585,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2014-0",
+     "from": 2014,
+     "to": null,
+     "engines": [
+      {
+       "path": "8531/5106",
+       "name": "5.3 V8 340hp",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 360,
+       "nmStock": 519,
+       "nmTuned": 540,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8532/837",
+       "name": "6.2 V8 420hp",
+       "fuel": "petrol",
+       "hpStock": 420,
+       "hpTuned": 440,
+       "nmStock": 623,
+       "nmTuned": 645,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

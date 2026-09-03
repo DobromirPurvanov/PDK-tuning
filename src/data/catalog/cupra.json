@@ -1,0 +1,129 @@
+{
+ "slug": "cupra",
+ "name": "Cupra",
+ "logo": "cupra.png",
+ "models": [
+  {
+   "slug": "ateca-2826",
+   "name": "Ateca",
+   "generations": [
+    {
+     "slug": "2020-0",
+     "from": 2020,
+     "to": null,
+     "engines": [
+      {
+       "path": "17209/4607",
+       "name": "2.0 TSI 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 350,
+       "nmStock": 380,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "formentor-846",
+   "name": "Formentor",
+   "generations": [
+    {
+     "slug": "2020-0",
+     "from": 2020,
+     "to": null,
+     "engines": [
+      {
+       "path": "7780/4610",
+       "name": "1.5 TSI 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 250,
+       "nmTuned": 345,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17036/4611",
+       "name": "2.0 TDI 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 200,
+       "nmStock": 360,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7782/4612",
+       "name": "2.0 TSI 310hp",
+       "fuel": "petrol",
+       "hpStock": 310,
+       "hpTuned": 380,
+       "nmStock": 400,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "ibiza-2827",
+   "name": "Ibiza",
+   "generations": [
+    {
+     "slug": "2018-0",
+     "from": 2018,
+     "to": null,
+     "engines": [
+      {
+       "path": "17195/4615",
+       "name": "2.0 TSI 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 240,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "leon-2828",
+   "name": "Leon",
+   "generations": [
+    {
+     "slug": "2020-0",
+     "from": 2020,
+     "to": null,
+     "engines": [
+      {
+       "path": "16199/4613",
+       "name": "1.4T e-Hybrid 204hp",
+       "fuel": "petrol",
+       "hpStock": 204,
+       "hpTuned": 230,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17166/15545",
+       "name": "2.0 TFSI 310hp",
+       "fuel": "petrol",
+       "hpStock": 310,
+       "hpTuned": 380,
+       "nmStock": 400,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

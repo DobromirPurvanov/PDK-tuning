@@ -1,0 +1,140 @@
+{
+ "slug": "krone",
+ "name": "Krone",
+ "logo": "krone.jpg",
+ "models": [
+  {
+   "slug": "big-942",
+   "name": "BIG",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "9102/5921",
+       "name": "BIG - M420 - 10.5L - 423HP",
+       "fuel": "petrol",
+       "hpStock": 423,
+       "hpTuned": 457,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9103/5922",
+       "name": "BIG - M450 - 10.5L - 449HP",
+       "fuel": "petrol",
+       "hpStock": 449,
+       "hpTuned": 484,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9104/5923",
+       "name": "BIG - X1100 - 1034 HP",
+       "fuel": "petrol",
+       "hpStock": 1034,
+       "hpTuned": 1064,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9105/5924",
+       "name": "BIG - X1100 - 24.2L - 1078HP",
+       "fuel": "petrol",
+       "hpStock": 1078,
+       "hpTuned": 1108,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9106/5925",
+       "name": "BIG - X480 - 12.8L - 489HP",
+       "fuel": "petrol",
+       "hpStock": 489,
+       "hpTuned": 590,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9107/5926",
+       "name": "BIG - X500 - 12.8L - 488HP",
+       "fuel": "petrol",
+       "hpStock": 488,
+       "hpTuned": 590,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9108/5927",
+       "name": "BIG - X530 - 530 HP",
+       "fuel": "petrol",
+       "hpStock": 530,
+       "hpTuned": 600,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9109/5928",
+       "name": "BIG - X580 - 15.6L - 585 HP",
+       "fuel": "petrol",
+       "hpStock": 585,
+       "hpTuned": 680,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9110/5929",
+       "name": "BIG - X630 - 626 HP",
+       "fuel": "petrol",
+       "hpStock": 626,
+       "hpTuned": 720,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9111/5930",
+       "name": "BIG - X650 - 16L - 626 HP",
+       "fuel": "petrol",
+       "hpStock": 626,
+       "hpTuned": 760,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9112/5931",
+       "name": "BIG - X700 - 16.1L - 775 HP",
+       "fuel": "petrol",
+       "hpStock": 775,
+       "hpTuned": 805,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9113/5932",
+       "name": "BIG - X850 - 24.2L - 850 HP",
+       "fuel": "petrol",
+       "hpStock": 850,
+       "hpTuned": 880,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

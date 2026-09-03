@@ -1,0 +1,259 @@
+{
+ "slug": "kubota",
+ "name": "Kubota",
+ "logo": "kubota.png",
+ "models": [
+  {
+   "slug": "excavator-2848",
+   "name": "Excavator",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "18144/5936",
+       "name": "Excavator - KX040 - 1.8L - 39HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 39,
+       "hpTuned": 50,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18145/5937",
+       "name": "Excavator - RX506 - 1.8L - 41HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 41,
+       "hpTuned": 50,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18146/5938",
+       "name": "Excavator - U55-4 - 2.6L - 45HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 45,
+       "hpTuned": 60,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "harvester-2849",
+   "name": "Harvester",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "18262/5939",
+       "name": "Harvester - DR120 - 3.8L - 120HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 140,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "skeed-944",
+   "name": "Skeed",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "9118/5940",
+       "name": "Skeed Steer Loader - SVL90-2 - 3.7L - 92HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 92,
+       "hpTuned": 110,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "tractor-2850",
+   "name": "Tractor",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "18773/5941",
+       "name": "Tractor - L6060 - 2.4L - 63HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 63,
+       "hpTuned": 80,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18774/5942",
+       "name": "Tractor - M100GX - 3.7L - 107HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 97,
+       "hpTuned": 120,
+       "nmStock": 351,
+       "nmTuned": 413,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18775/5943",
+       "name": "Tractor - M100GX - 3.7L - 97HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 107,
+       "hpTuned": 125,
+       "nmStock": 375,
+       "nmTuned": 413,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18776/5951",
+       "name": "Tractor - M108S - 3.8L - 110HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 130,
+       "nmStock": 366,
+       "nmTuned": 366,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18777/5952",
+       "name": "Tractor - M126 - 6.1L - 131HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 131,
+       "hpTuned": 155,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18778/5953",
+       "name": "Tractor - M128 - 6.1L - 131HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 131,
+       "hpTuned": 155,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18779/5954",
+       "name": "Tractor - M130X - 6.1L - 140HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 160,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18780/5955",
+       "name": "Tractor - M135 - 6.1L - 135HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 155,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18781/5944",
+       "name": "Tractor - M4062 - 3.3L - 65HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 65,
+       "hpTuned": 85,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18782/5945",
+       "name": "Tractor - M5091 - 3.8L - 94HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 94,
+       "hpTuned": 110,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18783/5946",
+       "name": "Tractor - M5111 - 3.8L - 114HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 114,
+       "hpTuned": 120,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18784/5947",
+       "name": "Tractor - M6060 - 3.3L - 65HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 65,
+       "hpTuned": 85,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18785/5948",
+       "name": "Tractor - M7060 - 3.3L - 73HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 73,
+       "hpTuned": 90,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18786/5949",
+       "name": "Tractor - M8560 - 3.3L - 87HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 87,
+       "hpTuned": 110,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18787/5950",
+       "name": "Tractor - M9960 - 3.8L - 101HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 101,
+       "hpTuned": 115,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

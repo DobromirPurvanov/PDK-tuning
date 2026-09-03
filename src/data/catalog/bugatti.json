@@ -1,0 +1,53 @@
+{
+ "slug": "bugatti",
+ "name": "Bugatti",
+ "logo": "bugatti.png",
+ "models": [
+  {
+   "slug": "chiron-773",
+   "name": "Chiron",
+   "generations": [
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "6840/3782",
+       "name": "8.0 W16 - 1500hp",
+       "fuel": "petrol",
+       "hpStock": 1500,
+       "hpTuned": 1750,
+       "nmStock": 1600,
+       "nmTuned": 1800,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "veyron-774",
+   "name": "Veyron",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "6842/3784",
+       "name": "8.0L - 1001hp",
+       "fuel": "petrol",
+       "hpStock": 1001,
+       "hpTuned": 1200,
+       "nmStock": 1250,
+       "nmTuned": 1400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,830 @@
+{
+ "slug": "valtra",
+ "name": "Valtra",
+ "logo": "valtra.png",
+ "models": [
+  {
+   "slug": "tractor-2880",
+   "name": "Tractor",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "18760/7678",
+       "name": "Tractor - A104 - 4.4L - 100HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 135,
+       "nmStock": 410,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18761/7679",
+       "name": "Tractor - A114 - 4.4L - 110HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 135,
+       "nmStock": 417,
+       "nmTuned": 530,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18762/7680",
+       "name": "Tractor - A124 - 4.4L - 120HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 510,
+       "nmTuned": 630,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18763/7681",
+       "name": "Tractor - A134 - 4.4L - 130HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 160,
+       "nmStock": 540,
+       "nmTuned": 650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18764/7682",
+       "name": "Tractor - A74 - 3.3L - 75HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 105,
+       "nmStock": 312,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18765/7658",
+       "name": "Tractor - A83 - 3.3L - 88HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 88,
+       "hpTuned": 110,
+       "nmStock": 325,
+       "nmTuned": 415,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18766/7683",
+       "name": "Tractor - A84 - 3.3L - 85HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 85,
+       "hpTuned": 110,
+       "nmStock": 347,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18767/7659",
+       "name": "Tractor - A93 - 3.3L - 101HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 101,
+       "hpTuned": 130,
+       "nmStock": 370,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18768/7684",
+       "name": "Tractor - A94 - 3.3L - 95HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 125,
+       "nmStock": 355,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18769/7642",
+       "name": "Tractor - C120 - 4.4L - 120HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 500,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18770/7643",
+       "name": "Tractor - C120e - 4.4L - 120HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 500,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18771/7644",
+       "name": "Tractor - C130 - 4.4L - 135HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 170,
+       "nmStock": 510,
+       "nmTuned": 610,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18772/7645",
+       "name": "Tractor - C150 - 4.4L - 150HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 580,
+       "nmTuned": 695,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18788/7646",
+       "name": "Tractor - N101 - 4.4L - 112HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 112,
+       "hpTuned": 140,
+       "nmStock": 460,
+       "nmTuned": 560,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18789/7660",
+       "name": "Tractor - N101 - 4.4L - 112HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 112,
+       "hpTuned": 135,
+       "nmStock": 460,
+       "nmTuned": 560,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18790/7697",
+       "name": "Tractor - N103 - 3.3L - 110HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 135,
+       "nmStock": 500,
+       "nmTuned": 570,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18791/7698",
+       "name": "Tractor - N103.4 - 4.4L - 110HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 135,
+       "nmStock": 500,
+       "nmTuned": 590,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18792/7685",
+       "name": "Tractor - N104 - 4.4L - 115HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 510,
+       "nmTuned": 620,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18793/7647",
+       "name": "Tractor - N111 - 4.4L - 124HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 124,
+       "hpTuned": 150,
+       "nmStock": 500,
+       "nmTuned": 620,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18794/7661",
+       "name": "Tractor - N111e - 4.4L - 112HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 124,
+       "hpTuned": 150,
+       "nmStock": 500,
+       "nmTuned": 620,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18795/7699",
+       "name": "Tractor - N113 - 4.4L - 124HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 124,
+       "hpTuned": 160,
+       "nmStock": 510,
+       "nmTuned": 590,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18796/7686",
+       "name": "Tractor - N114e - 4.4L - 125HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 160,
+       "nmStock": 570,
+       "nmTuned": 690,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18797/7648",
+       "name": "Tractor - N121 - 4.4L - 133HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 133,
+       "hpTuned": 165,
+       "nmStock": 540,
+       "nmTuned": 650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18798/7662",
+       "name": "Tractor - N121 - 4.4L - 133HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 165,
+       "nmStock": 560,
+       "nmTuned": 688,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18799/7663",
+       "name": "Tractor - N122 - 4.4L - 135HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 170,
+       "nmStock": 540,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18800/7700",
+       "name": "Tractor - N123 - 4.4L - 137HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 137,
+       "hpTuned": 170,
+       "nmStock": 540,
+       "nmTuned": 620,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18801/7687",
+       "name": "Tractor - N124 - 4.4L - 135HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 170,
+       "nmStock": 580,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18802/7688",
+       "name": "Tractor - N134 - 4.9L - 145HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 145,
+       "hpTuned": 175,
+       "nmStock": 620,
+       "nmTuned": 750,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18803/7664",
+       "name": "Tractor - N141 - 4.4L - 150HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 580,
+       "nmTuned": 695,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18804/7649",
+       "name": "Tractor - N141 - 4.9L - 150HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 190,
+       "nmStock": 580,
+       "nmTuned": 695,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18805/7665",
+       "name": "Tractor - N142 - 4.9L - 152HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 152,
+       "hpTuned": 180,
+       "nmStock": 600,
+       "nmTuned": 730,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18806/7701",
+       "name": "Tractor - N143 - 4.9L - 152HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 152,
+       "hpTuned": 190,
+       "nmStock": 600,
+       "nmTuned": 685,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18807/7689",
+       "name": "Tractor - N154e - 4.9L - 165HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 190,
+       "nmStock": 700,
+       "nmTuned": 820,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18808/7702",
+       "name": "Tractor - N163 - 4.9L - 163HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 190,
+       "nmStock": 650,
+       "nmTuned": 755,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18809/7690",
+       "name": "Tractor - N174 - 4.9L - 185HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 215,
+       "nmStock": 730,
+       "nmTuned": 850,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18810/7703",
+       "name": "Tractor - N93 - 4.4L - 100HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 104,
+       "hpTuned": 130,
+       "nmStock": 405,
+       "nmTuned": 530,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18811/7704",
+       "name": "Tractor - S233 - 8.4L - 270HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 270,
+       "hpTuned": 340,
+       "nmStock": 1195,
+       "nmTuned": 1310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18812/7705",
+       "name": "Tractor - S263 - 8.4L - 295HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 295,
+       "hpTuned": 360,
+       "nmStock": 1310,
+       "nmTuned": 1465,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18813/7691",
+       "name": "Tractor - S274 - 8.4L - 270HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 270,
+       "hpTuned": 300,
+       "nmStock": 1220,
+       "nmTuned": 1380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18814/7706",
+       "name": "Tractor - S293 - 8.4L - 320HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 380,
+       "nmStock": 1455,
+       "nmTuned": 1575,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18815/7692",
+       "name": "Tractor - S294 - 8.4L - 295HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 295,
+       "hpTuned": 335,
+       "nmStock": 1300,
+       "nmTuned": 1480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18816/7707",
+       "name": "Tractor - S323 - 8.4L - 350HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 390,
+       "nmStock": 1540,
+       "nmTuned": 1630,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18817/7693",
+       "name": "Tractor - S324 - 8.4L - 320HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 350,
+       "nmStock": 1390,
+       "nmTuned": 1550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18818/7708",
+       "name": "Tractor - S353 - 8.4L - 370HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 370,
+       "hpTuned": 405,
+       "nmStock": 1540,
+       "nmTuned": 1630,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18819/7694",
+       "name": "Tractor - S354 - 8.4L - 350HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 350,
+       "hpTuned": 380,
+       "nmStock": 1530,
+       "nmTuned": 1660,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18820/7695",
+       "name": "Tractor - S374 - 8.4L - 370HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 370,
+       "hpTuned": 410,
+       "nmStock": 1540,
+       "nmTuned": 1660,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18821/7696",
+       "name": "Tractor - S394 - 8.4L - 405HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 405,
+       "hpTuned": 450,
+       "nmStock": 1600,
+       "nmTuned": 1820,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18822/7650",
+       "name": "Tractor - T120 - 6.6L - 120HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 150,
+       "nmStock": 505,
+       "nmTuned": 605,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18823/7666",
+       "name": "Tractor - T121 - 6.6L - 133HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 133,
+       "hpTuned": 160,
+       "nmStock": 550,
+       "nmTuned": 610,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18824/7651",
+       "name": "Tractor - T130 - 6.6L - 135HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 170,
+       "nmStock": 550,
+       "nmTuned": 660,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18825/7667",
+       "name": "Tractor - T131 - 6.6L - 148HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 148,
+       "hpTuned": 170,
+       "nmStock": 580,
+       "nmTuned": 650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18826/7668",
+       "name": "Tractor - T132 - 6.6L - 141HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 122,
+       "hpTuned": 150,
+       "nmStock": 505,
+       "nmTuned": 630,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18827/7709",
+       "name": "Tractor - T133 - 6.6L - 141HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 170,
+       "nmStock": 580,
+       "nmTuned": 699,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18828/7652",
+       "name": "Tractor - T140e - 6.6L - 145HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 145,
+       "hpTuned": 185,
+       "nmStock": 655,
+       "nmTuned": 785,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18829/7717",
+       "name": "Tractor - T144 - 6.6L - 170HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 200,
+       "nmStock": 680,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18830/7653",
+       "name": "Tractor - T150 - 6.6L - 155HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 155,
+       "hpTuned": 180,
+       "nmStock": 625,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18831/7669",
+       "name": "Tractor - T151e - 6.6L - 159HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 159,
+       "hpTuned": 180,
+       "nmStock": 620,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18832/7670",
+       "name": "Tractor - T152 - 6.6L - 156HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 190,
+       "nmStock": 630,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18833/7710",
+       "name": "Tractor - T153 - 6.6L - 141HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 155,
+       "hpTuned": 180,
+       "nmStock": 640,
+       "nmTuned": 706,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18834/7718",
+       "name": "Tractor - T154 - 6.6L - 180HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 210,
+       "nmStock": 740,
+       "nmTuned": 860,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18835/7654",
+       "name": "Tractor - T160 - 6.6L - 165HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 200,
+       "nmStock": 650,
+       "nmTuned": 780,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18836/7671",
+       "name": "Tractor - T161 - 6.6L - 170HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 185,
+       "nmStock": 660,
+       "nmTuned": 740,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18837/7672",
+       "name": "Tractor - T162e - 6.6L - 167HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 167,
+       "hpTuned": 200,
+       "nmStock": 790,
+       "nmTuned": 1000,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18838/7711",
+       "name": "Tractor - T163e - 6.6L - 141HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 185,
+       "nmStock": 680,
+       "nmTuned": 760,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18839/7655",
+       "name": "Tractor - T170 - 7.4L - 184HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 184,
+       "hpTuned": 215,
+       "nmStock": 665,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18840/7673",
+       "name": "Tractor - T171 - 6.6L - 180HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 198,
+       "nmStock": 670,
+       "nmTuned": 750,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18841/7674",
+       "name": "Tractor - T172 - 6.6L - 177HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 177,
+       "hpTuned": 210,
+       "nmStock": 715,
+       "nmTuned": 880,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18842/7712",
+       "name": "Tractor - T173 - 7.4L - 141HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 175,
+       "hpTuned": 210,
+       "nmStock": 670,
+       "nmTuned": 744,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18843/7719",
+       "name": "Tractor - T174e - 7.4L - 190HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 220,
+       "nmStock": 780,
+       "nmTuned": 910,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18844/7656",
+       "name": "Tractor - T180 - 7.4L - 184HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 193,
+       "hpTuned": 220,
+       "nmStock": 660,
+       "nmTuned": 790,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18845/7675",
+       "name": "Tractor - T182 - 6.6L - 186HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 186,
+       "hpTuned": 220,
+       "nmStock": 750,
+       "nmTuned": 920,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18846/7713",
+       "name": "Tractor - T183 - 7.4L - 141HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 220,
+       "nmStock": 780,
+       "nmTuned": 851,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18847/7657",
+       "name": "Tractor - T190 - 7.4L - 189HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 211,
+       "hpTuned": 240,
+       "nmStock": 745,
+       "nmTuned": 895,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18848/7676",
+       "name": "Tractor - T191 - 6.6L - 185HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 215,
+       "nmStock": 680,
+       "nmTuned": 780,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18849/7714",
+       "name": "Tractor - T193 - 7.4L - 141HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 195,
+       "hpTuned": 230,
+       "nmStock": 680,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18850/7720",
+       "name": "Tractor - T194 - 7.4L - 210HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 240,
+       "nmStock": 870,
+       "nmTuned": 1000,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18851/7677",
+       "name": "Tractor - T202 - 6.6L - 200HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 240,
+       "nmStock": 800,
+       "nmTuned": 1010,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18853/7716",
+       "name": "Tractor - T213 - 7.4L - 141HP - Tier4A",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 240,
+       "nmStock": 850,
+       "nmTuned": 935,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18854/7721",
+       "name": "Tractor - T214 - 7.4L - 230HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 230,
+       "hpTuned": 260,
+       "nmStock": 910,
+       "nmTuned": 1040,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18855/7722",
+       "name": "Tractor - T234 - 7.4L - 250HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 280,
+       "nmStock": 1000,
+       "nmTuned": 1150,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18856/7723",
+       "name": "Tractor - T254 - 7.4L - 271HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 271,
+       "hpTuned": 300,
+       "nmStock": 1000,
+       "nmTuned": 1150,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

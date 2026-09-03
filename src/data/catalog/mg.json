@@ -1,0 +1,192 @@
+{
+ "slug": "mg",
+ "name": "MG",
+ "logo": "mg.png",
+ "models": [
+  {
+   "slug": "550-1008",
+   "name": "550",
+   "generations": [
+    {
+     "slug": "2008-0",
+     "from": 2008,
+     "to": null,
+     "engines": [
+      {
+       "path": "10079/6671",
+       "name": "1.8L 130hp",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 140,
+       "nmStock": 168,
+       "nmTuned": 185,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10080/6672",
+       "name": "1.8T 160hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 190,
+       "nmStock": 215,
+       "nmTuned": 285,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "6-2864",
+   "name": "6",
+   "generations": [
+    {
+     "slug": "2011-0",
+     "from": 2011,
+     "to": null,
+     "engines": [
+      {
+       "path": "16328/6673",
+       "name": "1.5T 169hp",
+       "fuel": "petrol",
+       "hpStock": 169,
+       "hpTuned": 200,
+       "nmStock": 250,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16636/14695",
+       "name": "1.8T 160hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 190,
+       "nmStock": 215,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "16732/6674",
+       "name": "1.9D 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "ehs-1009",
+   "name": "EHS",
+   "generations": [
+    {
+     "slug": "2020-0",
+     "from": 2020,
+     "to": null,
+     "engines": [
+      {
+       "path": "10081/6675",
+       "name": "1.5 Hybride 162hp",
+       "fuel": "petrol",
+       "hpStock": 162,
+       "hpTuned": 197,
+       "nmStock": 250,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "zs-1011",
+   "name": "ZS",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "10083/6677",
+       "name": "2.5 V6 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 195,
+       "nmStock": 240,
+       "nmTuned": 265,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "zt-1012",
+   "name": "ZT",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "10084/6678",
+       "name": "1.8i V4 160hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 180,
+       "nmStock": 215,
+       "nmTuned": 270,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10085/2463",
+       "name": "2.0 CDTi 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 145,
+       "nmStock": 290,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10086/6680",
+       "name": "2.0 CDTi 131hp",
+       "fuel": "diesel",
+       "hpStock": 131,
+       "hpTuned": 160,
+       "nmStock": 300,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10087/1784",
+       "name": "2.5i V6 177hp",
+       "fuel": "petrol",
+       "hpStock": 177,
+       "hpTuned": 187,
+       "nmStock": 240,
+       "nmTuned": 255,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10088/6681",
+       "name": "2.5i V6 190hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 200,
+       "nmStock": 245,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

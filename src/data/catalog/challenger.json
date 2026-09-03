@@ -1,0 +1,1225 @@
+{
+ "slug": "challenger",
+ "name": "Challenger",
+ "logo": "challenger.jpg",
+ "models": [
+  {
+   "slug": "1000-series-818",
+   "name": "1000 Series",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7232/4214",
+       "name": "1000Series - 1038 - 12.4L - 396HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 396,
+       "hpTuned": 441,
+       "nmStock": 1900,
+       "nmTuned": 2275,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7233/4215",
+       "name": "1000Series - 1042 - 12.4L - 435HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 435,
+       "hpTuned": 475,
+       "nmStock": 2100,
+       "nmTuned": 2455,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7234/4216",
+       "name": "1000Series - 1046 - 12.4L - 476HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 476,
+       "hpTuned": 511,
+       "nmStock": 2300,
+       "nmTuned": 2640,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7235/4217",
+       "name": "1000Series - 1050 - 12.4L - 517HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 517,
+       "hpTuned": 547,
+       "nmStock": 2420,
+       "nmTuned": 2720,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "harvester-2822",
+   "name": "Harvester",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "18203/4247",
+       "name": "Harvester - 660B - 8.4 - 303 HP",
+       "fuel": "petrol",
+       "hpStock": 303,
+       "hpTuned": 381,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18205/4248",
+       "name": "Harvester - 670B - 8.4 - 355 HP",
+       "fuel": "petrol",
+       "hpStock": 355,
+       "hpTuned": 446,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18207/4249",
+       "name": "Harvester - 680B - 12.5 - 431 HP",
+       "fuel": "petrol",
+       "hpStock": 431,
+       "hpTuned": 530,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "mt-819",
+   "name": "MT",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7281/4266",
+       "name": "MT - 425B - 4.4L - 75HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 95,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7300/4285",
+       "name": "MT - 425B - 4.4L - 80HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 80,
+       "hpTuned": 105,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7282/4267",
+       "name": "MT - 445B - 4.4L - 85HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 85,
+       "hpTuned": 110,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7301/4286",
+       "name": "MT - 445B - 4.4L - 95HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 115,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7302/4287",
+       "name": "MT - 455B - 4.4L - 105HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 125,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7283/4268",
+       "name": "MT - 455B - 4.4L - 95HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 115,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7332/4317",
+       "name": "MT - 455D - 4.9L - 110HP - Tier4i",
+       "fuel": "diesel",
+       "hpStock": 110,
+       "hpTuned": 150,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7236/4218",
+       "name": "MT - 455E - 4.9L - 110HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 145,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7284/4269",
+       "name": "MT - 465B - 4.4L - 105HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 125,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7303/4288",
+       "name": "MT - 465B - 4.4L - 115HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 135,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7333/4318",
+       "name": "MT - 465D - 4.9L - 120HP - Tier4i",
+       "fuel": "diesel",
+       "hpStock": 120,
+       "hpTuned": 160,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7237/4219",
+       "name": "MT - 465E - 4.9L - 115HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 150,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7304/4289",
+       "name": "MT - 475B - 6.6L - 120HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 145,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7334/4319",
+       "name": "MT - 475D - 4.9L - 130HP - Tier4i",
+       "fuel": "diesel",
+       "hpStock": 130,
+       "hpTuned": 160,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7238/4220",
+       "name": "MT - 475E - 4.9L - 130HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 155,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7335/4320",
+       "name": "MT - 485D - 4.9L - 135HP - Tier4i",
+       "fuel": "diesel",
+       "hpStock": 135,
+       "hpTuned": 160,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7336/4321",
+       "name": "MT - 485D - 4.9L - 140HP - Tier4i",
+       "fuel": "diesel",
+       "hpStock": 140,
+       "hpTuned": 165,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7239/4221",
+       "name": "MT - 485E - 4.9L - 140HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 165,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7337/4322",
+       "name": "MT - 495D - 4.9L - 150HP - Tier4i",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 170,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7240/4222",
+       "name": "MT - 495E - 4.9L - 150HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 170,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7241/4223",
+       "name": "MT - 515E - 6.6L - 130HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 170,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7305/4290",
+       "name": "MT - 525B - 6.6L - 120HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 160,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7242/4224",
+       "name": "MT - 525E - 6.6L - 140HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 175,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7306/4291",
+       "name": "MT - 535B - 6.6L - 135HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 175,
+       "nmStock": 607,
+       "nmTuned": 680,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7243/4225",
+       "name": "MT - 535E - 6.6L - 150HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7307/4292",
+       "name": "MT - 545B - 6.6L - 145HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 145,
+       "hpTuned": 180,
+       "nmStock": 649,
+       "nmTuned": 727,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7244/4226",
+       "name": "MT - 545E - 6.6L - 165HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 195,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7308/4293",
+       "name": "MT - 555B - 6.6L - 160HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 195,
+       "nmStock": 750,
+       "nmTuned": 840,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7245/4227",
+       "name": "MT - 555E - 6.6L - 170HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 200,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7309/4294",
+       "name": "MT - 565B - 6.6L - 170HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 200,
+       "nmStock": 796,
+       "nmTuned": 892,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7246/4228",
+       "name": "MT - 565E - 6.6L - 185HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 205,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7310/4295",
+       "name": "MT - 575B - 6.6L - 185HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 185,
+       "hpTuned": 205,
+       "nmStock": 841,
+       "nmTuned": 942,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7247/4229",
+       "name": "MT - 575E - 7.4L - 200HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 240,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7311/4296",
+       "name": "MT - 585B - 7.4L - 200HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 240,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7345/4330",
+       "name": "MT - 585D - 7.4L - 220HP - Tier4i",
+       "fuel": "diesel",
+       "hpStock": 220,
+       "hpTuned": 260,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7248/4230",
+       "name": "MT - 585E - 7.4L - 220HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 255,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7312/4297",
+       "name": "MT - 595B - 7.4L - 215HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 245,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7249/4231",
+       "name": "MT - 595E - 7.4L - 240HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 265,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7285/4270",
+       "name": "MT - 635B - 7.4L - 215HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 215,
+       "hpTuned": 255,
+       "nmStock": 970,
+       "nmTuned": 1086,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7286/4271",
+       "name": "MT - 645B - 7.4L - 235HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 235,
+       "hpTuned": 260,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "18331/4333",
+       "name": "MT - 645D - 8.4L - 240HP - Tier4i",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 280,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7347/4332",
+       "name": "MT - 645D - 8.4L - 240HP - Tier4i",
+       "fuel": "diesel",
+       "hpStock": 265,
+       "hpTuned": 310,
+       "nmStock": 1071,
+       "nmTuned": 1200,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7287/4272",
+       "name": "MT - 655B - 8.4L - 260HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 260,
+       "hpTuned": 310,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7288/4273",
+       "name": "MT - 655B - 8.4L - 290HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 290,
+       "hpTuned": 320,
+       "nmStock": 1280,
+       "nmTuned": 1434,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7330/4315",
+       "name": "MT - 655C - 8.4L - 265HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 290,
+       "hpTuned": 340,
+       "nmStock": 1195,
+       "nmTuned": 1338,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7251/4233",
+       "name": "MT - 655E - 8.4L - 265HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 295,
+       "hpTuned": 359,
+       "nmStock": 1295,
+       "nmTuned": 1450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7313/4298",
+       "name": "MT - 665C - 8.4L - 290HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 290,
+       "hpTuned": 340,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7348/4334",
+       "name": "MT - 665D - 8.4L - 290HP - Tier4i",
+       "fuel": "diesel",
+       "hpStock": 290,
+       "hpTuned": 340,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7252/4234",
+       "name": "MT - 665E - 8.4L - 290HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 390,
+       "nmStock": 1400,
+       "nmTuned": 1568,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7314/4299",
+       "name": "MT - 675C - 8.4L - 320HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 370,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7349/4335",
+       "name": "MT - 675D - 8.4L - 320HP - Tier4i",
+       "fuel": "diesel",
+       "hpStock": 320,
+       "hpTuned": 370,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7253/4235",
+       "name": "MT - 675E - 8.4L - 320HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 350,
+       "hpTuned": 426,
+       "nmStock": 1492,
+       "nmTuned": 1671,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7315/4300",
+       "name": "MT - 685C - 8.4L - 340HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 450,
+       "nmStock": 1540,
+       "nmTuned": 1725,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7350/4336",
+       "name": "MT - 685D - 8.4L - 340HP - Tier4i",
+       "fuel": "diesel",
+       "hpStock": 340,
+       "hpTuned": 380,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7254/4236",
+       "name": "MT - 685E - 8.4L - 340HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 380,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7289/4274",
+       "name": "MT - 745B - 8.8L - 269HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 269,
+       "hpTuned": 315,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7316/4301",
+       "name": "MT - 745C - 8.8L - 290HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 290,
+       "hpTuned": 335,
+       "nmStock": 1337,
+       "nmTuned": 1497,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7351/4337",
+       "name": "MT - 745D - 8.4L - 306HP - Tier4i",
+       "fuel": "diesel",
+       "hpStock": 306,
+       "hpTuned": 350,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7290/4275",
+       "name": "MT - 755B - 8.8L - 301HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 301,
+       "hpTuned": 345,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7317/4302",
+       "name": "MT - 755C - 8.8L - 301HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 301,
+       "hpTuned": 345,
+       "nmStock": 1498,
+       "nmTuned": 1678,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7352/4338",
+       "name": "MT - 755D - 8.4L - 327HP - Tier4i",
+       "fuel": "diesel",
+       "hpStock": 327,
+       "hpTuned": 375,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7255/4237",
+       "name": "MT - 755E - 9.8L - 350HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 350,
+       "hpTuned": 420,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7291/4276",
+       "name": "MT - 765B - 8.8L - 320HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 355,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7318/4303",
+       "name": "MT - 765C - 8.8L - 320HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 355,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7353/4339",
+       "name": "MT - 765D - 8.4L - 350HP - Tier4i",
+       "fuel": "diesel",
+       "hpStock": 350,
+       "hpTuned": 385,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7256/4238",
+       "name": "MT - 765E - 9.8L - 375HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 375,
+       "hpTuned": 430,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7257/4239",
+       "name": "MT - 775E - 9.8L - 400HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 400,
+       "hpTuned": 440,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7292/4277",
+       "name": "MT - 835B - 15.2L - 350HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 350,
+       "hpTuned": 450,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7319/4304",
+       "name": "MT - 835C - 15.1L - 410HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 410,
+       "hpTuned": 490,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7293/4278",
+       "name": "MT - 845B - 15.2L - 400HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 400,
+       "hpTuned": 480,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7320/4305",
+       "name": "MT - 845C - 15.1L - 440HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 440,
+       "hpTuned": 505,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7258/4240",
+       "name": "MT - 845E - 16.8L - 457HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 457,
+       "hpTuned": 550,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7294/4279",
+       "name": "MT - 855B - 15.2L - 460HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 460,
+       "hpTuned": 500,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7321/4306",
+       "name": "MT - 855C - 15.1L - 475HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 475,
+       "hpTuned": 520,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7259/4241",
+       "name": "MT - 855E - 16.8L - 496HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 496,
+       "hpTuned": 600,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7322/4307",
+       "name": "MT - 865B - 18.1L - 510HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 510,
+       "hpTuned": 610,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7323/4308",
+       "name": "MT - 865C - 18.1L - 525HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 525,
+       "hpTuned": 630,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7260/4242",
+       "name": "MT - 865E - 16.8L - 548HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 548,
+       "hpTuned": 650,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7324/4309",
+       "name": "MT - 875B - 18.1L - 570HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 570,
+       "hpTuned": 625,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7325/4310",
+       "name": "MT - 875C - 18.1L - 585HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 585,
+       "hpTuned": 645,
+       "nmStock": 2828,
+       "nmTuned": 3167,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7261/4243",
+       "name": "MT - 875E - 16.8L - 598HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 598,
+       "hpTuned": 660,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7295/4280",
+       "name": "MT - 945B - 15.1L - 430HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 430,
+       "hpTuned": 495,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7296/4281",
+       "name": "MT - 955B - 15.1L - 460HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 460,
+       "hpTuned": 505,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7262/4244",
+       "name": "MT - 955E - 16.8L - 500HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 500,
+       "hpTuned": 600,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7297/4282",
+       "name": "MT - 965B - 18.1L - 510HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 510,
+       "hpTuned": 610,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7263/4245",
+       "name": "MT - 965E - 16.8L - 550HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 550,
+       "hpTuned": 630,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7298/4283",
+       "name": "MT - 975B - 18.1L - 570HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 570,
+       "hpTuned": 625,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7329/4314",
+       "name": "MT - 975C - 18.1L - 585HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 585,
+       "hpTuned": 694,
+       "nmStock": 2828,
+       "nmTuned": 3167,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7264/4246",
+       "name": "MT - 975E - 16.8L - 600HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 600,
+       "hpTuned": 660,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "rogator-820",
+   "name": "RoGator",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7265/4250",
+       "name": "RoGator - 618S - 7.4L - 228HP",
+       "fuel": "petrol",
+       "hpStock": 228,
+       "hpTuned": 286,
+       "nmStock": 1,
+       "nmTuned": 1,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7266/4251",
+       "name": "RoGator - 900 - 8.4L - 280HP",
+       "fuel": "petrol",
+       "hpStock": 280,
+       "hpTuned": 392,
+       "nmStock": 1310,
+       "nmTuned": 1638,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7267/4252",
+       "name": "RoGator - RG1100 - 8.4L - 343HP",
+       "fuel": "petrol",
+       "hpStock": 343,
+       "hpTuned": 584,
+       "nmStock": 1455,
+       "nmTuned": 1820,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7268/4253",
+       "name": "RoGator - RG1300 - 8.4L - 375HP",
+       "fuel": "petrol",
+       "hpStock": 375,
+       "hpTuned": 4710,
+       "nmStock": 1539,
+       "nmTuned": 1925,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7269/4254",
+       "name": "RoGator - RG635D - 175HP",
+       "fuel": "petrol",
+       "hpStock": 175,
+       "hpTuned": 230,
+       "nmStock": 1,
+       "nmTuned": 1,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7270/4255",
+       "name": "RoGator - RG645 - 7.4L - 208HP",
+       "fuel": "petrol",
+       "hpStock": 208,
+       "hpTuned": 260,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7271/4256",
+       "name": "RoGator - RG645D - 224HP",
+       "fuel": "petrol",
+       "hpStock": 224,
+       "hpTuned": 280,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7272/4257",
+       "name": "RoGator - RG655 - 7.4L - 227HP",
+       "fuel": "petrol",
+       "hpStock": 227,
+       "hpTuned": 284,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7273/4258",
+       "name": "RoGator - RG655D - 242HP",
+       "fuel": "petrol",
+       "hpStock": 242,
+       "hpTuned": 300,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "spra-coupe-822",
+   "name": "Spra-Coupe",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7299/4284",
+       "name": "Spra-Coupe - 4450 - 4.4L - 125HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 150,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7331/4316",
+       "name": "Spra-Coupe - 4660 - 4.4L - 125HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 125,
+       "hpTuned": 150,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "terragator-821",
+   "name": "TerraGator",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7274/4259",
+       "name": "TerraGator - 2104 - 8.1L - 301HP",
+       "fuel": "petrol",
+       "hpStock": 301,
+       "hpTuned": 380,
+       "nmStock": 1413,
+       "nmTuned": 1768,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7275/4260",
+       "name": "TerraGator - 2244 - 8.4L - 301HP",
+       "fuel": "petrol",
+       "hpStock": 301,
+       "hpTuned": 380,
+       "nmStock": 1317,
+       "nmTuned": 1648,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7276/4261",
+       "name": "TerraGator - 3244 - 364HP",
+       "fuel": "petrol",
+       "hpStock": 364,
+       "hpTuned": 450,
+       "nmStock": 1750,
+       "nmTuned": 2100,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7277/4262",
+       "name": "TerraGator - 8333 - 8.4L - 334PS",
+       "fuel": "petrol",
+       "hpStock": 334,
+       "hpTuned": 420,
+       "nmStock": 1068,
+       "nmTuned": 1335,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7278/4263",
+       "name": "TerraGator - TG7300 - 8.4L - 366HP",
+       "fuel": "petrol",
+       "hpStock": 366,
+       "hpTuned": 460,
+       "nmStock": 1510,
+       "nmTuned": 1890,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7279/4264",
+       "name": "TerraGator - TG8300 - 8.4L - 398HP",
+       "fuel": "petrol",
+       "hpStock": 398,
+       "hpTuned": 500,
+       "nmStock": 1540,
+       "nmTuned": 1890,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7280/4265",
+       "name": "TerraGator - TG8400 - 8.4L - 398HP",
+       "fuel": "petrol",
+       "hpStock": 398,
+       "hpTuned": 500,
+       "nmStock": 1540,
+       "nmTuned": 1890,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

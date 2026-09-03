@@ -1,0 +1,242 @@
+{
+ "slug": "aston-martin",
+ "name": "Aston Martin",
+ "logo": "aston-martin.png",
+ "models": [
+  {
+   "slug": "db11-750",
+   "name": "DB11",
+   "generations": [
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "6002/3410",
+       "name": "4.0 V8 510hp",
+       "fuel": "petrol",
+       "hpStock": 510,
+       "hpTuned": 560,
+       "nmStock": 650,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "6003/3411",
+       "name": "5.2 V12 Twinturbo 608hp",
+       "fuel": "petrol",
+       "hpStock": 608,
+       "hpTuned": 700,
+       "nmStock": 700,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "db9-751",
+   "name": "DB9",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "6004/3412",
+       "name": "5.9 V12 450hp",
+       "fuel": "petrol",
+       "hpStock": 450,
+       "hpTuned": 480,
+       "nmStock": 570,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "6005/3413",
+       "name": "6.0 V12 470hp",
+       "fuel": "petrol",
+       "hpStock": 470,
+       "hpTuned": 500,
+       "nmStock": 600,
+       "nmTuned": 620,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "dbs-752",
+   "name": "DBS",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "6006/3414",
+       "name": "5.2 V8 Twinturbo Superleggera 725hp",
+       "fuel": "petrol",
+       "hpStock": 725,
+       "hpTuned": 760,
+       "nmStock": 900,
+       "nmTuned": 990,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "6007/3415",
+       "name": "5.9 V12 517hp",
+       "fuel": "petrol",
+       "hpStock": 517,
+       "hpTuned": 540,
+       "nmStock": 570,
+       "nmTuned": 590,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "rapide-753",
+   "name": "Rapide",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "6008/3416",
+       "name": "6.0 V12 476hp",
+       "fuel": "petrol",
+       "hpStock": 476,
+       "hpTuned": 500,
+       "nmStock": 600,
+       "nmTuned": 630,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "vantage-756",
+   "name": "Vantage",
+   "generations": [
+    {
+     "slug": "0-2018",
+     "from": 0,
+     "to": 2018,
+     "engines": [
+      {
+       "path": "6013/3421",
+       "name": "4.3 V8 380hp",
+       "fuel": "petrol",
+       "hpStock": 380,
+       "hpTuned": 410,
+       "nmStock": 410,
+       "nmTuned": 435,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "6014/3422",
+       "name": "4.3 V8 400hp",
+       "fuel": "petrol",
+       "hpStock": 400,
+       "hpTuned": 425,
+       "nmStock": 418,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "6015/3423",
+       "name": "4.7 V8 426hp",
+       "fuel": "petrol",
+       "hpStock": 426,
+       "hpTuned": 450,
+       "nmStock": 470,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "6016/3424",
+       "name": "4.7 V8 S 436hp",
+       "fuel": "petrol",
+       "hpStock": 436,
+       "hpTuned": 460,
+       "nmStock": 490,
+       "nmTuned": 515,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "6017/3425",
+       "name": "6.0 V12 517hp",
+       "fuel": "petrol",
+       "hpStock": 517,
+       "hpTuned": 542,
+       "nmStock": 570,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2018-0",
+     "from": 2018,
+     "to": null,
+     "engines": [
+      {
+       "path": "6018/3426",
+       "name": "4.0 V8 Bi-Turbo 510hp",
+       "fuel": "petrol",
+       "hpStock": 510,
+       "hpTuned": 570,
+       "nmStock": 685,
+       "nmTuned": 820,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "6019/3427",
+       "name": "4.0 V8 Bi-Turbo 535hp",
+       "fuel": "petrol",
+       "hpStock": 535,
+       "hpTuned": 570,
+       "nmStock": 685,
+       "nmTuned": 820,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "virage-754",
+   "name": "Virage",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "6009/3417",
+       "name": "6.0 liter V12 490hp",
+       "fuel": "petrol",
+       "hpStock": 490,
+       "hpTuned": 510,
+       "nmStock": 570,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

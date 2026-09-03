@@ -1,0 +1,25 @@
+---
+import { t, type Lang } from '@/i18n';
+import business from '@/data/business.json';
+import { icons } from '@/lib/icons';
+interface Props { lang: Lang; withMap?: boolean }
+const { lang, withMap = true } = Astro.props;
+const d = t(lang);
+const street = lang === 'bg' ? business.address.street : business.address.streetEn;
+const city = lang === 'bg' ? business.address.city : business.address.cityEn;
+const embed = `https://www.google.com/maps?q=${business.geo.lat},${business.geo.lng}&z=16&hl=${lang}&output=embed`;
+---
+<div class="cols">
+  <div>
+    <p class="kicker">{d.footer.contact}</p>
+    <p style="display:flex;gap:.6em;align-items:flex-start"><Fragment set:html={icons.pin} /><span><strong>{street}</strong>, {business.address.postalCode} {city}<br><a href={business.social.maps} target="_blank" rel="noopener">Google Maps</a></span></p>
+    <p style="display:flex;gap:.6em;align-items:flex-start"><Fragment set:html={icons.phone} /><span><a class="num" style="font-size:var(--s22)" href={`tel:${business.phone}`} data-ev="tel_click" data-ev-label="map">{business.phoneDisplay}</a><br><a href={`viber://chat?number=%2B${business.viber.replace('+', '')}`} data-ev="viber_click" data-ev-label="map">Viber</a> · <a href={`https://wa.me/${business.viber.replace('+', '')}`} data-ev="viber_click" data-ev-label="whatsapp" rel="noopener" target="_blank">WhatsApp</a></span></p>
+    <p class="kicker" style="margin-top:1.5rem">{d.footer.hours}</p>
+    <ul class="hours">
+      <li><span>{d.footer.weekdays}</span><span>{business.hours[0].opens}–{business.hours[0].closes}</span></li>
+      <li><span>{d.footer.sat}</span><span>{business.hours[1].opens}–{business.hours[1].closes}</span></li>
+      <li><span>{d.footer.sun}</span><span>{d.footer.closed}</span></li>
+    </ul>
+  </div>
+  {withMap && <div class="map"><iframe src={embed} loading="lazy" referrerpolicy="no-referrer-when-downgrade" title={`${business.name} — ${street}, ${city}`}></iframe></div>}
+</div>

@@ -1,0 +1,2417 @@
+{
+ "slug": "porsche",
+ "name": "Porsche",
+ "logo": "porsche.png",
+ "models": [
+  {
+   "slug": "911-562",
+   "name": "911",
+   "generations": [
+    {
+     "slug": "1997-2006",
+     "from": 1997,
+     "to": 2006,
+     "engines": [
+      {
+       "path": "4086/2568",
+       "name": "3.4i 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 320,
+       "nmStock": 340,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4087/2569",
+       "name": "3.6i 320hp",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 338,
+       "nmStock": 370,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4088/2570",
+       "name": "3.6i 345hp",
+       "fuel": "petrol",
+       "hpStock": 345,
+       "hpTuned": 355,
+       "nmStock": 370,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4089/2571",
+       "name": "3.6i GT2 Turbo 462hp",
+       "fuel": "petrol",
+       "hpStock": 462,
+       "hpTuned": 515,
+       "nmStock": 620,
+       "nmTuned": 725,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4090/2572",
+       "name": "3.6i GT3 360hp",
+       "fuel": "petrol",
+       "hpStock": 360,
+       "hpTuned": 380,
+       "nmStock": 370,
+       "nmTuned": 405,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4091/2573",
+       "name": "3.6i GT3 RS 381hp",
+       "fuel": "petrol",
+       "hpStock": 381,
+       "hpTuned": 400,
+       "nmStock": 385,
+       "nmTuned": 415,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4092/2574",
+       "name": "3.6i GT3 RS 400hp",
+       "fuel": "petrol",
+       "hpStock": 400,
+       "hpTuned": 420,
+       "nmStock": 385,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4093/2575",
+       "name": "3.6i Turbo 420hp",
+       "fuel": "petrol",
+       "hpStock": 420,
+       "hpTuned": 480,
+       "nmStock": 560,
+       "nmTuned": 650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4094/2576",
+       "name": "3.6i Turbo-S 450hp",
+       "fuel": "petrol",
+       "hpStock": 450,
+       "hpTuned": 495,
+       "nmStock": 620,
+       "nmTuned": 670,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2004-2011",
+     "from": 2004,
+     "to": 2011,
+     "engines": [
+      {
+       "path": "4095/2577",
+       "name": "3.6i Turbo 480hp",
+       "fuel": "petrol",
+       "hpStock": 480,
+       "hpTuned": 520,
+       "nmStock": 620,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4096/2578",
+       "name": "3.8i Turbo 500hp",
+       "fuel": "petrol",
+       "hpStock": 500,
+       "hpTuned": 550,
+       "nmStock": 650,
+       "nmTuned": 740,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4097/2579",
+       "name": "3.8i Turbo-S 530hp",
+       "fuel": "petrol",
+       "hpStock": 530,
+       "hpTuned": 580,
+       "nmStock": 700,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4098/2580",
+       "name": "Carrera 3.6i 325hp",
+       "fuel": "petrol",
+       "hpStock": 325,
+       "hpTuned": 340,
+       "nmStock": 370,
+       "nmTuned": 395,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4099/2581",
+       "name": "Carrera 3.6i 345hp",
+       "fuel": "petrol",
+       "hpStock": 345,
+       "hpTuned": 360,
+       "nmStock": 390,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4100/2582",
+       "name": "Carrera 3.8i 376hp",
+       "fuel": "petrol",
+       "hpStock": 376,
+       "hpTuned": 390,
+       "nmStock": 415,
+       "nmTuned": 435,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4101/2583",
+       "name": "Carrera GTS 3.8i 408hp",
+       "fuel": "petrol",
+       "hpStock": 408,
+       "hpTuned": 425,
+       "nmStock": 420,
+       "nmTuned": 445,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4102/2584",
+       "name": "Carrera S 3.8i 355hp",
+       "fuel": "petrol",
+       "hpStock": 355,
+       "hpTuned": 375,
+       "nmStock": 400,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4103/2585",
+       "name": "Carrera S 3.8i 385hp",
+       "fuel": "petrol",
+       "hpStock": 385,
+       "hpTuned": 405,
+       "nmStock": 420,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4104/2586",
+       "name": "GT2 3.6i 530hp",
+       "fuel": "petrol",
+       "hpStock": 530,
+       "hpTuned": 580,
+       "nmStock": 680,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4105/2587",
+       "name": "GT2 RS 3.6i 620hp",
+       "fuel": "petrol",
+       "hpStock": 620,
+       "hpTuned": 650,
+       "nmStock": 700,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4106/2588",
+       "name": "GT3 3.6i 415hp",
+       "fuel": "petrol",
+       "hpStock": 415,
+       "hpTuned": 435,
+       "nmStock": 405,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4107/2589",
+       "name": "GT3 3.8i 435hp",
+       "fuel": "petrol",
+       "hpStock": 435,
+       "hpTuned": 455,
+       "nmStock": 430,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4108/2590",
+       "name": "GT3 RS 3.6i 415hp",
+       "fuel": "petrol",
+       "hpStock": 415,
+       "hpTuned": 435,
+       "nmStock": 405,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4109/2591",
+       "name": "GT3 RS 3.8i 435hp",
+       "fuel": "petrol",
+       "hpStock": 435,
+       "hpTuned": 455,
+       "nmStock": 430,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4110/2592",
+       "name": "GT3 RS 3.8i 450hp",
+       "fuel": "petrol",
+       "hpStock": 450,
+       "hpTuned": 470,
+       "nmStock": 430,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4111/2593",
+       "name": "GT3 RS 4.0i 500hp",
+       "fuel": "petrol",
+       "hpStock": 500,
+       "hpTuned": 520,
+       "nmStock": 460,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2011-2015",
+     "from": 2011,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "4112/2594",
+       "name": "3.8i GTS 430hp",
+       "fuel": "petrol",
+       "hpStock": 430,
+       "hpTuned": 450,
+       "nmStock": 440,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4113/2595",
+       "name": "3.8i Turbo 520hp",
+       "fuel": "petrol",
+       "hpStock": 520,
+       "hpTuned": 600,
+       "nmStock": 710,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4114/2596",
+       "name": "3.8i Turbo S 560hp",
+       "fuel": "petrol",
+       "hpStock": 560,
+       "hpTuned": 600,
+       "nmStock": 750,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4115/2597",
+       "name": "4.0 GT3 RS 500hp",
+       "fuel": "petrol",
+       "hpStock": 500,
+       "hpTuned": 525,
+       "nmStock": 460,
+       "nmTuned": 485,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4116/2598",
+       "name": "Carrera 3.4i 350hp",
+       "fuel": "petrol",
+       "hpStock": 350,
+       "hpTuned": 370,
+       "nmStock": 390,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4117/2599",
+       "name": "Carrera S 3.8i 400hp",
+       "fuel": "petrol",
+       "hpStock": 400,
+       "hpTuned": 440,
+       "nmStock": 440,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4118/2600",
+       "name": "GT3 3.8i 475hp",
+       "fuel": "petrol",
+       "hpStock": 475,
+       "hpTuned": 500,
+       "nmStock": 440,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "4119/2601",
+       "name": "3.0T Carrera / 4 370hp",
+       "fuel": "petrol",
+       "hpStock": 370,
+       "hpTuned": 475,
+       "nmStock": 450,
+       "nmTuned": 620,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4120/2602",
+       "name": "3.0T Carrera GTS / 4 GTS 450hp",
+       "fuel": "petrol",
+       "hpStock": 450,
+       "hpTuned": 520,
+       "nmStock": 550,
+       "nmTuned": 660,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4121/2603",
+       "name": "3.0T Carrera S / 4S 420hp",
+       "fuel": "petrol",
+       "hpStock": 420,
+       "hpTuned": 475,
+       "nmStock": 500,
+       "nmTuned": 620,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4122/2604",
+       "name": "3.8 Turbo GT2 RS - 700hp",
+       "fuel": "petrol",
+       "hpStock": 700,
+       "hpTuned": 760,
+       "nmStock": 750,
+       "nmTuned": 830,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4123/2605",
+       "name": "R 500hp",
+       "fuel": "petrol",
+       "hpStock": 500,
+       "hpTuned": 525,
+       "nmStock": 460,
+       "nmTuned": 485,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4124/2606",
+       "name": "Turbo 540hp",
+       "fuel": "petrol",
+       "hpStock": 540,
+       "hpTuned": 650,
+       "nmStock": 660,
+       "nmTuned": 820,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4125/2607",
+       "name": "Turbo S 580hp",
+       "fuel": "petrol",
+       "hpStock": 580,
+       "hpTuned": 640,
+       "nmStock": 700,
+       "nmTuned": 820,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-2018",
+     "from": 2016,
+     "to": 2018,
+     "engines": [
+      {
+       "path": "10887/2601",
+       "name": "3.0T Carrera / 4 370hp",
+       "fuel": "petrol",
+       "hpStock": 370,
+       "hpTuned": 475,
+       "nmStock": 450,
+       "nmTuned": 620,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10888/2602",
+       "name": "3.0T Carrera GTS / 4 GTS 450hp",
+       "fuel": "petrol",
+       "hpStock": 450,
+       "hpTuned": 520,
+       "nmStock": 550,
+       "nmTuned": 660,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10889/2603",
+       "name": "3.0T Carrera S / 4S 420hp",
+       "fuel": "petrol",
+       "hpStock": 420,
+       "hpTuned": 475,
+       "nmStock": 500,
+       "nmTuned": 620,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10890/2604",
+       "name": "3.8 Turbo GT2 RS - 700hp",
+       "fuel": "petrol",
+       "hpStock": 700,
+       "hpTuned": 760,
+       "nmStock": 750,
+       "nmTuned": 830,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10891/7196",
+       "name": "4.0 GT3 RS - 520hp",
+       "fuel": "petrol",
+       "hpStock": 520,
+       "hpTuned": 545,
+       "nmStock": 470,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10892/7197",
+       "name": "GT3 500hp",
+       "fuel": "petrol",
+       "hpStock": 500,
+       "hpTuned": 525,
+       "nmStock": 460,
+       "nmTuned": 485,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10893/2605",
+       "name": "R 500hp",
+       "fuel": "petrol",
+       "hpStock": 500,
+       "hpTuned": 525,
+       "nmStock": 460,
+       "nmTuned": 485,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10894/2606",
+       "name": "Turbo 540hp",
+       "fuel": "petrol",
+       "hpStock": 540,
+       "hpTuned": 650,
+       "nmStock": 660,
+       "nmTuned": 820,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10895/2607",
+       "name": "Turbo S 580hp",
+       "fuel": "petrol",
+       "hpStock": 580,
+       "hpTuned": 640,
+       "nmStock": 700,
+       "nmTuned": 820,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2019-0",
+     "from": 2019,
+     "to": null,
+     "engines": [
+      {
+       "path": "10896/7198",
+       "name": "3.0 Carerra 4S 450hp",
+       "fuel": "petrol",
+       "hpStock": 450,
+       "hpTuned": 540,
+       "nmStock": 530,
+       "nmTuned": 635,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10897/7199",
+       "name": "3.0 Carrera 385hp",
+       "fuel": "petrol",
+       "hpStock": 450,
+       "hpTuned": 540,
+       "nmStock": 530,
+       "nmTuned": 635,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10898/7200",
+       "name": "3.0 Carrera GTS 480hp",
+       "fuel": "petrol",
+       "hpStock": 480,
+       "hpTuned": 510,
+       "nmStock": 570,
+       "nmTuned": 635,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10899/7201",
+       "name": "3.0 Carrera S 450hp",
+       "fuel": "petrol",
+       "hpStock": 450,
+       "hpTuned": 530,
+       "nmStock": 530,
+       "nmTuned": 623,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10900/7202",
+       "name": "3.8 Bi-Turbo 580hp",
+       "fuel": "petrol",
+       "hpStock": 580,
+       "hpTuned": 740,
+       "nmStock": 740,
+       "nmTuned": 840,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10901/7203",
+       "name": "3.8 Bi-Turbo S 650hp",
+       "fuel": "petrol",
+       "hpStock": 650,
+       "hpTuned": 740,
+       "nmStock": 800,
+       "nmTuned": 840,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10902/7204",
+       "name": "4.0 GT3 510hp",
+       "fuel": "petrol",
+       "hpStock": 510,
+       "hpTuned": 540,
+       "nmStock": 470,
+       "nmTuned": 490,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "911-carrera-569",
+   "name": "911 Carrera",
+   "generations": [
+    {
+     "slug": "2022-2024",
+     "from": 2022,
+     "to": 2024,
+     "engines": [
+      {
+       "path": "4209/2672",
+       "name": "3.0 Turbo 443hp",
+       "fuel": "petrol",
+       "hpStock": 443,
+       "hpTuned": 490,
+       "nmStock": 530,
+       "nmTuned": 590,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "918-1069",
+   "name": "918",
+   "generations": [
+    {
+     "slug": "2013-0",
+     "from": 2013,
+     "to": null,
+     "engines": [
+      {
+       "path": "10903/7205",
+       "name": "4.6 V8 + 2 E-Engines -887hp",
+       "fuel": "petrol",
+       "hpStock": 887,
+       "hpTuned": 924,
+       "nmStock": 1275,
+       "nmTuned": 1320,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "boxster-563",
+   "name": "Boxster",
+   "generations": [
+    {
+     "slug": "1996-2004",
+     "from": 1996,
+     "to": 2004,
+     "engines": [
+      {
+       "path": "4126/2608",
+       "name": "2.5i 204hp",
+       "fuel": "petrol",
+       "hpStock": 204,
+       "hpTuned": 220,
+       "nmStock": 245,
+       "nmTuned": 280,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4127/2609",
+       "name": "2.7i 211hp",
+       "fuel": "petrol",
+       "hpStock": 211,
+       "hpTuned": 245,
+       "nmStock": 260,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4128/2610",
+       "name": "2.7i 220hp",
+       "fuel": "petrol",
+       "hpStock": 220,
+       "hpTuned": 240,
+       "nmStock": 260,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4129/2611",
+       "name": "2.7i 228hp",
+       "fuel": "petrol",
+       "hpStock": 228,
+       "hpTuned": 245,
+       "nmStock": 260,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4130/2612",
+       "name": "3.2i 252hp",
+       "fuel": "petrol",
+       "hpStock": 252,
+       "hpTuned": 270,
+       "nmStock": 305,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4131/2613",
+       "name": "3.2i 260hp",
+       "fuel": "petrol",
+       "hpStock": 260,
+       "hpTuned": 275,
+       "nmStock": 310,
+       "nmTuned": 325,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2005-2011",
+     "from": 2005,
+     "to": 2011,
+     "engines": [
+      {
+       "path": "10905/7207",
+       "name": "2.7i 211hp",
+       "fuel": "petrol",
+       "hpStock": 211,
+       "hpTuned": 284,
+       "nmStock": 290,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4132/2614",
+       "name": "2.7i 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 255,
+       "nmStock": 270,
+       "nmTuned": 285,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4133/2615",
+       "name": "2.9i 211hp",
+       "fuel": "petrol",
+       "hpStock": 211,
+       "hpTuned": 275,
+       "nmStock": 290,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4134/2616",
+       "name": "2.9i 256hp",
+       "fuel": "petrol",
+       "hpStock": 256,
+       "hpTuned": 275,
+       "nmStock": 290,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4135/2617",
+       "name": "S 3.2i 280hp",
+       "fuel": "petrol",
+       "hpStock": 280,
+       "hpTuned": 295,
+       "nmStock": 320,
+       "nmTuned": 335,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4136/2618",
+       "name": "S 3.4i 295hp",
+       "fuel": "petrol",
+       "hpStock": 295,
+       "hpTuned": 310,
+       "nmStock": 340,
+       "nmTuned": 355,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4137/2619",
+       "name": "S 3.4i 310hp",
+       "fuel": "petrol",
+       "hpStock": 310,
+       "hpTuned": 337,
+       "nmStock": 360,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4138/2620",
+       "name": "Spyder 3.4i 320hp",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 338,
+       "nmStock": 360,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2011-2016",
+     "from": 2011,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "10907/7207",
+       "name": "2.7i 211hp",
+       "fuel": "petrol",
+       "hpStock": 211,
+       "hpTuned": 284,
+       "nmStock": 290,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4139/2621",
+       "name": "2.7i 265hp",
+       "fuel": "petrol",
+       "hpStock": 265,
+       "hpTuned": 300,
+       "nmStock": 280,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4140/2622",
+       "name": "3.8i Spyder 375hp",
+       "fuel": "petrol",
+       "hpStock": 375,
+       "hpTuned": 395,
+       "nmStock": 420,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4141/2623",
+       "name": "GTS 3.4i 330hp",
+       "fuel": "petrol",
+       "hpStock": 330,
+       "hpTuned": 350,
+       "nmStock": 360,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4142/2624",
+       "name": "S 3.4i 315hp",
+       "fuel": "petrol",
+       "hpStock": 315,
+       "hpTuned": 335,
+       "nmStock": 360,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "10908/925",
+       "name": "2.0T 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 295,
+       "nmStock": 350,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4143/2625",
+       "name": "2.0T 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 350,
+       "nmStock": 380,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10909/7209",
+       "name": "GT4 4.0 420hp",
+       "fuel": "petrol",
+       "hpStock": 420,
+       "hpTuned": 440,
+       "nmStock": 420,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4144/2626",
+       "name": "GTS 2.5T 365hp",
+       "fuel": "petrol",
+       "hpStock": 365,
+       "hpTuned": 400,
+       "nmStock": 430,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10910/7210",
+       "name": "GTS 4.0 400hp",
+       "fuel": "petrol",
+       "hpStock": 400,
+       "hpTuned": 440,
+       "nmStock": 420,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4145/2627",
+       "name": "S 2.5T 350hp",
+       "fuel": "petrol",
+       "hpStock": 350,
+       "hpTuned": 400,
+       "nmStock": 420,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "carrera-gt-564",
+   "name": "Carrera GT",
+   "generations": [
+    {
+     "slug": "2005-2007",
+     "from": 2005,
+     "to": 2007,
+     "engines": [
+      {
+       "path": "4146/2628",
+       "name": "5.7i V10 - 612hp",
+       "fuel": "petrol",
+       "hpStock": 612,
+       "hpTuned": 639,
+       "nmStock": 590,
+       "nmTuned": 628,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "cayenne-565",
+   "name": "Cayenne",
+   "generations": [
+    {
+     "slug": "2002-2007",
+     "from": 2002,
+     "to": 2007,
+     "engines": [
+      {
+       "path": "4147/137",
+       "name": "3.2 V6 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 265,
+       "nmStock": 320,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4148/2629",
+       "name": "4.5 V8 Turbo 450hp",
+       "fuel": "petrol",
+       "hpStock": 450,
+       "hpTuned": 500,
+       "nmStock": 620,
+       "nmTuned": 750,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4149/2630",
+       "name": "4.5 V8 Turbo 500hp",
+       "fuel": "petrol",
+       "hpStock": 500,
+       "hpTuned": 530,
+       "nmStock": 700,
+       "nmTuned": 780,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4150/2631",
+       "name": "S 4.5 Turbo 520hp",
+       "fuel": "petrol",
+       "hpStock": 520,
+       "hpTuned": 560,
+       "nmStock": 720,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4151/2632",
+       "name": "S 4.5 V8 340hp",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 360,
+       "nmStock": 420,
+       "nmTuned": 445,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2007-2010",
+     "from": 2007,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "4152/212",
+       "name": "3.0 TDI 211hp",
+       "fuel": "diesel",
+       "hpStock": 211,
+       "hpTuned": 290,
+       "nmStock": 500,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4153/213",
+       "name": "3.0 TDI 240hp",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 300,
+       "nmStock": 500,
+       "nmTuned": 625,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4154/2633",
+       "name": "3.6 V6 290hp",
+       "fuel": "petrol",
+       "hpStock": 290,
+       "hpTuned": 310,
+       "nmStock": 385,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4155/2634",
+       "name": "4.8 Turbo 500hp",
+       "fuel": "petrol",
+       "hpStock": 500,
+       "hpTuned": 550,
+       "nmStock": 700,
+       "nmTuned": 790,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4156/2635",
+       "name": "GTS 4.8 V8 405hp",
+       "fuel": "petrol",
+       "hpStock": 405,
+       "hpTuned": 425,
+       "nmStock": 500,
+       "nmTuned": 535,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4157/2636",
+       "name": "S 4.5 V8 385hp",
+       "fuel": "petrol",
+       "hpStock": 385,
+       "hpTuned": 405,
+       "nmStock": 500,
+       "nmTuned": 535,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4158/2637",
+       "name": "S 4.8 Turbo 550hp",
+       "fuel": "petrol",
+       "hpStock": 550,
+       "hpTuned": 600,
+       "nmStock": 750,
+       "nmTuned": 850,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2010-2014",
+     "from": 2010,
+     "to": 2014,
+     "engines": [
+      {
+       "path": "4159/2638",
+       "name": "3.0 S Hybrid 416hp",
+       "fuel": "petrol",
+       "hpStock": 416,
+       "hpTuned": 480,
+       "nmStock": 590,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10924/7219",
+       "name": "3.0 TDI 211hp",
+       "fuel": "diesel",
+       "hpStock": 211,
+       "hpTuned": 300,
+       "nmStock": 580,
+       "nmTuned": 630,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10925/3562",
+       "name": "3.0 TDI 240hp",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 295,
+       "nmStock": 550,
+       "nmTuned": 625,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4160/218",
+       "name": "3.0 TDI 245hp",
+       "fuel": "diesel",
+       "hpStock": 245,
+       "hpTuned": 300,
+       "nmStock": 500,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4161/2639",
+       "name": "3.6i 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 320,
+       "nmStock": 400,
+       "nmTuned": 425,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10927/2634",
+       "name": "4.8 Turbo 500hp",
+       "fuel": "petrol",
+       "hpStock": 500,
+       "hpTuned": 550,
+       "nmStock": 700,
+       "nmTuned": 790,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4162/2640",
+       "name": "GTS 4.8 V8 420hp",
+       "fuel": "petrol",
+       "hpStock": 420,
+       "hpTuned": 440,
+       "nmStock": 515,
+       "nmTuned": 540,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4163/2641",
+       "name": "S 4.2 TDI 382hp",
+       "fuel": "diesel",
+       "hpStock": 382,
+       "hpTuned": 450,
+       "nmStock": 850,
+       "nmTuned": 950,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10928/2637",
+       "name": "S 4.8 Turbo 550hp",
+       "fuel": "petrol",
+       "hpStock": 550,
+       "hpTuned": 600,
+       "nmStock": 750,
+       "nmTuned": 850,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4164/2642",
+       "name": "S 4.8 V8 400hp",
+       "fuel": "petrol",
+       "hpStock": 400,
+       "hpTuned": 425,
+       "nmStock": 500,
+       "nmTuned": 530,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2014-2017",
+     "from": 2014,
+     "to": 2017,
+     "engines": [
+      {
+       "path": "10929/7219",
+       "name": "3.0 TDI 211hp",
+       "fuel": "diesel",
+       "hpStock": 211,
+       "hpTuned": 300,
+       "nmStock": 580,
+       "nmTuned": 630,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4165/2643",
+       "name": "3.0 TDI 262hp",
+       "fuel": "diesel",
+       "hpStock": 262,
+       "hpTuned": 300,
+       "nmStock": 580,
+       "nmTuned": 630,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4166/279",
+       "name": "4.2 TDI 385hp",
+       "fuel": "diesel",
+       "hpStock": 385,
+       "hpTuned": 450,
+       "nmStock": 850,
+       "nmTuned": 1050,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4167/2644",
+       "name": "4.8 Turbo 520hp",
+       "fuel": "petrol",
+       "hpStock": 520,
+       "hpTuned": 590,
+       "nmStock": 750,
+       "nmTuned": 820,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4168/2645",
+       "name": "GTS 3.6T 440hp",
+       "fuel": "petrol",
+       "hpStock": 440,
+       "hpTuned": 460,
+       "nmStock": 600,
+       "nmTuned": 650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4169/2646",
+       "name": "S 3.0 E-Hybrid 416hp",
+       "fuel": "petrol",
+       "hpStock": 416,
+       "hpTuned": 480,
+       "nmStock": 590,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4170/2647",
+       "name": "S 3.6T 420hp",
+       "fuel": "petrol",
+       "hpStock": 420,
+       "hpTuned": 460,
+       "nmStock": 550,
+       "nmTuned": 620,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4171/2648",
+       "name": "S 4.8 Turbo 570hp",
+       "fuel": "petrol",
+       "hpStock": 570,
+       "hpTuned": 600,
+       "nmStock": 800,
+       "nmTuned": 820,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2018-0",
+     "from": 2018,
+     "to": null,
+     "engines": [
+      {
+       "path": "10915/7213",
+       "name": "3.0T E-Hybrid 462hp",
+       "fuel": "petrol",
+       "hpStock": 462,
+       "hpTuned": 520,
+       "nmStock": 700,
+       "nmTuned": 820,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10916/7214",
+       "name": "3.0T V6 - 340hp",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 400,
+       "nmStock": 450,
+       "nmTuned": 540,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10917/7220",
+       "name": "4.0 Turbo - 550hp",
+       "fuel": "petrol",
+       "hpStock": 550,
+       "hpTuned": 620,
+       "nmStock": 770,
+       "nmTuned": 870,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10918/7216",
+       "name": "4.0T GTS 460hp",
+       "fuel": "petrol",
+       "hpStock": 460,
+       "hpTuned": 620,
+       "nmStock": 620,
+       "nmTuned": 870,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10919/7217",
+       "name": "4.0T S E-Hybrid 680hp",
+       "fuel": "petrol",
+       "hpStock": 680,
+       "hpTuned": 750,
+       "nmStock": 900,
+       "nmTuned": 1000,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10920/7218",
+       "name": "S 2.9 Bi-Turbo V6 - 440hp",
+       "fuel": "petrol",
+       "hpStock": 440,
+       "hpTuned": 521,
+       "nmStock": 550,
+       "nmTuned": 649,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "cayenne-coupe-1070",
+   "name": "Cayenne Coupe",
+   "generations": [
+    {
+     "slug": "2019-0",
+     "from": 2019,
+     "to": null,
+     "engines": [
+      {
+       "path": "10930/7213",
+       "name": "3.0T E-Hybrid 462hp",
+       "fuel": "petrol",
+       "hpStock": 462,
+       "hpTuned": 520,
+       "nmStock": 700,
+       "nmTuned": 820,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10931/7214",
+       "name": "3.0T V6 - 340hp",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 400,
+       "nmStock": 450,
+       "nmTuned": 540,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10932/7220",
+       "name": "4.0 Turbo - 550hp",
+       "fuel": "petrol",
+       "hpStock": 550,
+       "hpTuned": 620,
+       "nmStock": 770,
+       "nmTuned": 870,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10934/7216",
+       "name": "4.0T GTS 460hp",
+       "fuel": "petrol",
+       "hpStock": 460,
+       "hpTuned": 620,
+       "nmStock": 620,
+       "nmTuned": 870,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10935/7217",
+       "name": "4.0T S E-Hybrid 680hp",
+       "fuel": "petrol",
+       "hpStock": 680,
+       "hpTuned": 750,
+       "nmStock": 900,
+       "nmTuned": 1000,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "cayman-566",
+   "name": "Cayman",
+   "generations": [
+    {
+     "slug": "2006-2013",
+     "from": 2006,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "4172/2609",
+       "name": "2.7i 211hp",
+       "fuel": "petrol",
+       "hpStock": 211,
+       "hpTuned": 245,
+       "nmStock": 260,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4173/2649",
+       "name": "2.7i 245hp",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 255,
+       "nmStock": 273,
+       "nmTuned": 285,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4174/2615",
+       "name": "2.9i 211hp",
+       "fuel": "petrol",
+       "hpStock": 211,
+       "hpTuned": 275,
+       "nmStock": 290,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4175/2650",
+       "name": "2.9i 265hp",
+       "fuel": "petrol",
+       "hpStock": 265,
+       "hpTuned": 280,
+       "nmStock": 300,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4176/2651",
+       "name": "3.4i 295hp",
+       "fuel": "petrol",
+       "hpStock": 295,
+       "hpTuned": 305,
+       "nmStock": 340,
+       "nmTuned": 355,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4177/2652",
+       "name": "R 3.4i 330hp",
+       "fuel": "petrol",
+       "hpStock": 330,
+       "hpTuned": 345,
+       "nmStock": 370,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4178/2653",
+       "name": "S 3.4i 303hp",
+       "fuel": "petrol",
+       "hpStock": 303,
+       "hpTuned": 318,
+       "nmStock": 340,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4179/2654",
+       "name": "S 3.4i 320hp",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 335,
+       "nmStock": 370,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2013-2015",
+     "from": 2013,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "10939/7207",
+       "name": "2.7i 211hp",
+       "fuel": "petrol",
+       "hpStock": 211,
+       "hpTuned": 284,
+       "nmStock": 290,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4180/2655",
+       "name": "2.7i 275hp",
+       "fuel": "petrol",
+       "hpStock": 275,
+       "hpTuned": 285,
+       "nmStock": 290,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4181/2656",
+       "name": "3.4i 325hp",
+       "fuel": "petrol",
+       "hpStock": 325,
+       "hpTuned": 340,
+       "nmStock": 370,
+       "nmTuned": 390,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4182/2657",
+       "name": "GT4 3.8i 385hp",
+       "fuel": "petrol",
+       "hpStock": 385,
+       "hpTuned": 405,
+       "nmStock": 420,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4183/2658",
+       "name": "GTS 3.4i 340hp",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 355,
+       "nmStock": 360,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "10911/925",
+       "name": "2.0T 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 295,
+       "nmStock": 350,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4184/2625",
+       "name": "2.0T 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 350,
+       "nmStock": 380,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4185/2626",
+       "name": "GTS 2.5T 365hp",
+       "fuel": "petrol",
+       "hpStock": 365,
+       "hpTuned": 400,
+       "nmStock": 430,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10914/7210",
+       "name": "GTS 4.0 400hp",
+       "fuel": "petrol",
+       "hpStock": 400,
+       "hpTuned": 440,
+       "nmStock": 420,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4186/2627",
+       "name": "S 2.5T 350hp",
+       "fuel": "petrol",
+       "hpStock": 350,
+       "hpTuned": 400,
+       "nmStock": 420,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "macan-567",
+   "name": "Macan",
+   "generations": [
+    {
+     "slug": "2014-0",
+     "from": 2014,
+     "to": null,
+     "engines": [
+      {
+       "path": "4187/205",
+       "name": "2.0 TFSI 252hp",
+       "fuel": "petrol",
+       "hpStock": 252,
+       "hpTuned": 320,
+       "nmStock": 370,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4188/2659",
+       "name": "3.6 Bi-Turbo 400hp",
+       "fuel": "petrol",
+       "hpStock": 400,
+       "hpTuned": 440,
+       "nmStock": 550,
+       "nmTuned": 640,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4189/2660",
+       "name": "3.6 Bi-Turbo Performance pack 44",
+       "fuel": "petrol",
+       "hpStock": 440,
+       "hpTuned": 460,
+       "nmStock": 600,
+       "nmTuned": 660,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4190/2661",
+       "name": "GTS 3.0 Bi-Turbo 360hp",
+       "fuel": "petrol",
+       "hpStock": 360,
+       "hpTuned": 400,
+       "nmStock": 500,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4191/2662",
+       "name": "S 3.0 Bi-Turbo 340hp",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 400,
+       "nmStock": 460,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4192/2663",
+       "name": "S Diesel 211hp",
+       "fuel": "diesel",
+       "hpStock": 211,
+       "hpTuned": 310,
+       "nmStock": 580,
+       "nmTuned": 650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4193/2664",
+       "name": "S Diesel 258hp",
+       "fuel": "diesel",
+       "hpStock": 258,
+       "hpTuned": 310,
+       "nmStock": 580,
+       "nmTuned": 650,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2014-2019",
+     "from": 2014,
+     "to": 2019,
+     "engines": [
+      {
+       "path": "10941/205",
+       "name": "2.0 TFSI 252hp",
+       "fuel": "petrol",
+       "hpStock": 252,
+       "hpTuned": 320,
+       "nmStock": 370,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10942/2659",
+       "name": "3.6 Bi-Turbo 400hp",
+       "fuel": "petrol",
+       "hpStock": 400,
+       "hpTuned": 440,
+       "nmStock": 550,
+       "nmTuned": 640,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10943/7227",
+       "name": "3.6 Bi-Turbo Performance Pack 440hp",
+       "fuel": "petrol",
+       "hpStock": 440,
+       "hpTuned": 460,
+       "nmStock": 600,
+       "nmTuned": 660,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10944/2661",
+       "name": "GTS 3.0 Bi-Turbo 360hp",
+       "fuel": "petrol",
+       "hpStock": 360,
+       "hpTuned": 400,
+       "nmStock": 500,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10945/2662",
+       "name": "S 3.0 Bi-Turbo 340hp",
+       "fuel": "petrol",
+       "hpStock": 340,
+       "hpTuned": 400,
+       "nmStock": 460,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10946/2663",
+       "name": "S Diesel 211hp",
+       "fuel": "diesel",
+       "hpStock": 211,
+       "hpTuned": 310,
+       "nmStock": 580,
+       "nmTuned": 650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10947/2664",
+       "name": "S Diesel 258hp",
+       "fuel": "diesel",
+       "hpStock": 258,
+       "hpTuned": 310,
+       "nmStock": 580,
+       "nmTuned": 650,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2019-2021",
+     "from": 2019,
+     "to": 2021,
+     "engines": [
+      {
+       "path": "10948/7228",
+       "name": "2.0 TFSI 245hp",
+       "fuel": "petrol",
+       "hpStock": 245,
+       "hpTuned": 300,
+       "nmStock": 370,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10949/205",
+       "name": "2.0 TFSI 252hp",
+       "fuel": "petrol",
+       "hpStock": 252,
+       "hpTuned": 320,
+       "nmStock": 370,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10950/7229",
+       "name": "2.9 GTS 380hp",
+       "fuel": "petrol",
+       "hpStock": 380,
+       "hpTuned": 510,
+       "nmStock": 520,
+       "nmTuned": 680,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10951/7230",
+       "name": "2.9 Turbo 440hp",
+       "fuel": "petrol",
+       "hpStock": 440,
+       "hpTuned": 510,
+       "nmStock": 550,
+       "nmTuned": 780,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10952/7231",
+       "name": "S 3.0T 355hp",
+       "fuel": "petrol",
+       "hpStock": 355,
+       "hpTuned": 400,
+       "nmStock": 480,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2021-0",
+     "from": 2021,
+     "to": null,
+     "engines": [
+      {
+       "path": "10953/7469",
+       "name": "2.0 TFSI 265hp",
+       "fuel": "petrol",
+       "hpStock": 265,
+       "hpTuned": 360,
+       "nmStock": 380,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10954/7233",
+       "name": "2.9 GTS 440hp",
+       "fuel": "petrol",
+       "hpStock": 440,
+       "hpTuned": 510,
+       "nmStock": 550,
+       "nmTuned": 730,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10955/7234",
+       "name": "2.9 S 380hp",
+       "fuel": "petrol",
+       "hpStock": 380,
+       "hpTuned": 510,
+       "nmStock": 520,
+       "nmTuned": 730,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "panamera-568",
+   "name": "Panamera",
+   "generations": [
+    {
+     "slug": "2009-2013",
+     "from": 2009,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "10956/7235",
+       "name": "3.0 Hybrid 380hp",
+       "fuel": "petrol",
+       "hpStock": 380,
+       "hpTuned": 450,
+       "nmStock": 580,
+       "nmTuned": 680,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4194/2665",
+       "name": "3.0 S E-Hybrid 416hp",
+       "fuel": "petrol",
+       "hpStock": 416,
+       "hpTuned": 480,
+       "nmStock": 590,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4195/213",
+       "name": "3.0 TDI 240hp",
+       "fuel": "diesel",
+       "hpStock": 240,
+       "hpTuned": 300,
+       "nmStock": 500,
+       "nmTuned": 625,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4196/273",
+       "name": "3.0 TDI 250hp",
+       "fuel": "diesel",
+       "hpStock": 250,
+       "hpTuned": 300,
+       "nmStock": 550,
+       "nmTuned": 650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4197/2639",
+       "name": "3.6i 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 320,
+       "nmStock": 400,
+       "nmTuned": 425,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4198/2634",
+       "name": "4.8 Turbo 500hp",
+       "fuel": "petrol",
+       "hpStock": 500,
+       "hpTuned": 550,
+       "nmStock": 700,
+       "nmTuned": 790,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4199/2666",
+       "name": "4S 4.8i 400hp",
+       "fuel": "petrol",
+       "hpStock": 400,
+       "hpTuned": 420,
+       "nmStock": 500,
+       "nmTuned": 525,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4200/2667",
+       "name": "GTS 4.8 V8 430hp",
+       "fuel": "petrol",
+       "hpStock": 430,
+       "hpTuned": 450,
+       "nmStock": 520,
+       "nmTuned": 540,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4201/2637",
+       "name": "S 4.8 Turbo 550hp",
+       "fuel": "petrol",
+       "hpStock": 550,
+       "hpTuned": 600,
+       "nmStock": 750,
+       "nmTuned": 850,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2013-2016",
+     "from": 2013,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "10958/273",
+       "name": "3.0 TDI 250hp",
+       "fuel": "diesel",
+       "hpStock": 250,
+       "hpTuned": 300,
+       "nmStock": 550,
+       "nmTuned": 650,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4202/2668",
+       "name": "3.0 V6 Bi TDI - 300hp",
+       "fuel": "diesel",
+       "hpStock": 300,
+       "hpTuned": 350,
+       "nmStock": 650,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4203/2669",
+       "name": "3.6i 310hp",
+       "fuel": "petrol",
+       "hpStock": 310,
+       "hpTuned": 330,
+       "nmStock": 400,
+       "nmTuned": 425,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4204/2644",
+       "name": "4.8 Turbo 520hp",
+       "fuel": "petrol",
+       "hpStock": 520,
+       "hpTuned": 590,
+       "nmStock": 750,
+       "nmTuned": 820,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4205/2670",
+       "name": "4S 4.8i 420hp",
+       "fuel": "petrol",
+       "hpStock": 420,
+       "hpTuned": 440,
+       "nmStock": 520,
+       "nmTuned": 540,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4206/2671",
+       "name": "GTS 4.8 V8 440hp",
+       "fuel": "petrol",
+       "hpStock": 440,
+       "hpTuned": 450,
+       "nmStock": 520,
+       "nmTuned": 540,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4207/2646",
+       "name": "S 3.0 E-Hybrid 416hp",
+       "fuel": "petrol",
+       "hpStock": 416,
+       "hpTuned": 480,
+       "nmStock": 590,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10959/7237",
+       "name": "S 3.0T 420hp",
+       "fuel": "petrol",
+       "hpStock": 420,
+       "hpTuned": 475,
+       "nmStock": 500,
+       "nmTuned": 570,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10960/7238",
+       "name": "S 4.8 Turbo 570hp",
+       "fuel": "petrol",
+       "hpStock": 570,
+       "hpTuned": 620,
+       "nmStock": 800,
+       "nmTuned": 850,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4208/2648",
+       "name": "S 4.8 Turbo 570hp",
+       "fuel": "petrol",
+       "hpStock": 570,
+       "hpTuned": 600,
+       "nmStock": 800,
+       "nmTuned": 820,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-2019",
+     "from": 2017,
+     "to": 2019,
+     "engines": [
+      {
+       "path": "10961/7239",
+       "name": "2.9 E-Hybrid 462hp",
+       "fuel": "petrol",
+       "hpStock": 462,
+       "hpTuned": 500,
+       "nmStock": 700,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10962/7240",
+       "name": "4 - 330hp",
+       "fuel": "petrol",
+       "hpStock": 330,
+       "hpTuned": 400,
+       "nmStock": 450,
+       "nmTuned": 540,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10963/7216",
+       "name": "4.0T GTS 460hp",
+       "fuel": "petrol",
+       "hpStock": 460,
+       "hpTuned": 620,
+       "nmStock": 620,
+       "nmTuned": 870,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10964/7217",
+       "name": "4.0T S E-Hybrid 680hp",
+       "fuel": "petrol",
+       "hpStock": 680,
+       "hpTuned": 750,
+       "nmStock": 900,
+       "nmTuned": 1000,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10965/7242",
+       "name": "4S - 440hp",
+       "fuel": "petrol",
+       "hpStock": 440,
+       "hpTuned": 524,
+       "nmStock": 550,
+       "nmTuned": 652,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10967/7244",
+       "name": "Turbo - 550hp",
+       "fuel": "petrol",
+       "hpStock": 550,
+       "hpTuned": 620,
+       "nmStock": 770,
+       "nmTuned": 870,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2020-0",
+     "from": 2020,
+     "to": null,
+     "engines": [
+      {
+       "path": "17511/7245",
+       "name": "2.9T V6 330hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 380,
+       "nmStock": 450,
+       "nmTuned": 550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10968/7256",
+       "name": "2.9T V6 330hp",
+       "fuel": "petrol",
+       "hpStock": 330,
+       "hpTuned": 380,
+       "nmStock": 450,
+       "nmTuned": 550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10969/7246",
+       "name": "2.9T V6 4 E-Hybrid 462hp",
+       "fuel": "petrol",
+       "hpStock": 462,
+       "hpTuned": 600,
+       "nmStock": 700,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10970/7247",
+       "name": "2.9T V6 4S 440hp",
+       "fuel": "petrol",
+       "hpStock": 440,
+       "hpTuned": 510,
+       "nmStock": 550,
+       "nmTuned": 780,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10971/7248",
+       "name": "2.9T V6 4S E-Hybrid 560hp",
+       "fuel": "petrol",
+       "hpStock": 560,
+       "hpTuned": 630,
+       "nmStock": 750,
+       "nmTuned": 820,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10972/7249",
+       "name": "4.0 Turbo 630hp",
+       "fuel": "petrol",
+       "hpStock": 630,
+       "hpTuned": 660,
+       "nmStock": 820,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10973/7250",
+       "name": "4.0 Turbo S E-Hybrid 700hp",
+       "fuel": "petrol",
+       "hpStock": 700,
+       "hpTuned": 750,
+       "nmStock": 850,
+       "nmTuned": 1000,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10974/7251",
+       "name": "4.0T GTS 480hp",
+       "fuel": "petrol",
+       "hpStock": 480,
+       "hpTuned": 620,
+       "nmStock": 620,
+       "nmTuned": 880,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "panamera-sport-turismo-1071",
+   "name": "Panamera Sport Turismo",
+   "generations": [
+    {
+     "slug": "2017-2019",
+     "from": 2017,
+     "to": 2019,
+     "engines": [
+      {
+       "path": "10975/7252",
+       "name": "2.9T 440hp",
+       "fuel": "petrol",
+       "hpStock": 440,
+       "hpTuned": 530,
+       "nmStock": 550,
+       "nmTuned": 660,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10976/7240",
+       "name": "4 - 330hp",
+       "fuel": "petrol",
+       "hpStock": 330,
+       "hpTuned": 400,
+       "nmStock": 450,
+       "nmTuned": 540,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10977/7253",
+       "name": "4 E-Hybrid - 462hp",
+       "fuel": "petrol",
+       "hpStock": 462,
+       "hpTuned": 500,
+       "nmStock": 700,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10978/7254",
+       "name": "4.0 Turbo 550hp",
+       "fuel": "petrol",
+       "hpStock": 550,
+       "hpTuned": 620,
+       "nmStock": 770,
+       "nmTuned": 870,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10979/7216",
+       "name": "4.0T GTS 460hp",
+       "fuel": "petrol",
+       "hpStock": 460,
+       "hpTuned": 620,
+       "nmStock": 620,
+       "nmTuned": 870,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10980/7242",
+       "name": "4S - 440hp",
+       "fuel": "petrol",
+       "hpStock": 440,
+       "hpTuned": 524,
+       "nmStock": 550,
+       "nmTuned": 652,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10981/7255",
+       "name": "Turbo S E-Hybrid 680hp",
+       "fuel": "petrol",
+       "hpStock": 680,
+       "hpTuned": 800,
+       "nmStock": 850,
+       "nmTuned": 1000,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2020-0",
+     "from": 2020,
+     "to": null,
+     "engines": [
+      {
+       "path": "10982/7256",
+       "name": "2.9T V6 330hp",
+       "fuel": "petrol",
+       "hpStock": 330,
+       "hpTuned": 380,
+       "nmStock": 450,
+       "nmTuned": 550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10983/7246",
+       "name": "2.9T V6 4 E-Hybrid 462hp",
+       "fuel": "petrol",
+       "hpStock": 462,
+       "hpTuned": 600,
+       "nmStock": 700,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10984/7247",
+       "name": "2.9T V6 4S 440hp",
+       "fuel": "petrol",
+       "hpStock": 440,
+       "hpTuned": 510,
+       "nmStock": 550,
+       "nmTuned": 780,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10985/7248",
+       "name": "2.9T V6 4S E-Hybrid 560hp",
+       "fuel": "petrol",
+       "hpStock": 560,
+       "hpTuned": 630,
+       "nmStock": 750,
+       "nmTuned": 820,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10986/7249",
+       "name": "4.0 Turbo 630hp",
+       "fuel": "petrol",
+       "hpStock": 630,
+       "hpTuned": 660,
+       "nmStock": 820,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10987/7250",
+       "name": "4.0 Turbo S E-Hybrid 700hp",
+       "fuel": "petrol",
+       "hpStock": 700,
+       "hpTuned": 750,
+       "nmStock": 850,
+       "nmTuned": 1000,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10988/7251",
+       "name": "4.0T GTS 480hp",
+       "fuel": "petrol",
+       "hpStock": 480,
+       "hpTuned": 620,
+       "nmStock": 620,
+       "nmTuned": 880,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,266 @@
+{
+ "slug": "lindner",
+ "name": "Lindner",
+ "logo": "lindner.jpg",
+ "models": [
+  {
+   "slug": "geotrac-954",
+   "name": "Geotrac",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "9234/6023",
+       "name": "Geotrac - 103 - 4.4L - 99HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 99,
+       "hpTuned": 120,
+       "nmStock": 404,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9237/6026",
+       "name": "Geotrac - 104 - 4.4L - 109HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 106,
+       "hpTuned": 129,
+       "nmStock": 460,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9243/6032",
+       "name": "Geotrac - 104ep - 3.4L - 113HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 113,
+       "hpTuned": 138,
+       "nmStock": 420,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9238/6027",
+       "name": "Geotrac - 114 - 4.4L - 116HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 116,
+       "hpTuned": 135,
+       "nmStock": 510,
+       "nmTuned": 570,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9244/6033",
+       "name": "Geotrac - 114ep - 4.4L - 133HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 133,
+       "hpTuned": 153,
+       "nmStock": 530,
+       "nmTuned": 805,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9239/6028",
+       "name": "Geotrac - 124 - 4.4L - 126HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 126,
+       "hpTuned": 160,
+       "nmStock": 550,
+       "nmTuned": 670,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9245/6034",
+       "name": "Geotrac - 134ep - 4.4L - 144HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 144,
+       "hpTuned": 160,
+       "nmStock": 560,
+       "nmTuned": 620,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9246/6035",
+       "name": "Geotrac - 64ep - 3.4L - 76HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 76,
+       "hpTuned": 100,
+       "nmStock": 318,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9247/6036",
+       "name": "Geotrac - 74ep - 3.4L - 76HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 76,
+       "hpTuned": 100,
+       "nmStock": 318,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9235/6024",
+       "name": "Geotrac - 83 - 4.4L - 82HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 82,
+       "hpTuned": 105,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9240/6029",
+       "name": "Geotrac - 84 - 3.3L - 92HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 92,
+       "hpTuned": 115,
+       "nmStock": 395,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9248/6037",
+       "name": "Geotrac - 84ep - 3.4L - 95HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 115,
+       "nmStock": 395,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9236/6025",
+       "name": "Geotrac - 93 - 4.4L - 91HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 91,
+       "hpTuned": 110,
+       "nmStock": 370,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9241/6030",
+       "name": "Geotrac - 94 - 4.4L - 102HP - Tier3 - Stage1",
+       "fuel": "petrol",
+       "hpStock": 102,
+       "hpTuned": 123,
+       "nmStock": 420,
+       "nmTuned": 550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9242/6031",
+       "name": "Geotrac - 94 - 4.4L - 102HP - Tier3 - Stage2",
+       "fuel": "petrol",
+       "hpStock": 102,
+       "hpTuned": 133,
+       "nmStock": 420,
+       "nmTuned": 605,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9249/6038",
+       "name": "Geotrac - 94ep - 3.4L - 102HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 102,
+       "hpTuned": 128,
+       "nmStock": 420,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "lintrac-955",
+   "name": "Lintrac",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "9250/6039",
+       "name": "Lintrac - 110 - 3.4L - 113HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 113,
+       "hpTuned": 135,
+       "nmStock": 450,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9251/6040",
+       "name": "Lintrac - 90 - 3.4L - 102HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 102,
+       "hpTuned": 130,
+       "nmStock": 420,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "unitrac-956",
+   "name": "Unitrac",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "9255/6044",
+       "name": "Unitrac - 112ep - 3.0L - 106HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 106,
+       "hpTuned": 128,
+       "nmStock": 420,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9252/6041",
+       "name": "Unitrac - 72ep - 3.4L - 76HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 76,
+       "hpTuned": 100,
+       "nmStock": 318,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9253/6042",
+       "name": "Unitrac - 82ep - 3.4L - 95HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 115,
+       "nmStock": 395,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9254/6043",
+       "name": "Unitrac - 92ep - 3.4L - 95HP - Tier3B",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 115,
+       "nmStock": 395,
+       "nmTuned": 470,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

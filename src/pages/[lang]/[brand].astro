@@ -1,0 +1,85 @@
+---
+import Base from '@/layouts/Base.astro';
+import Crumbs from '@/components/Crumbs.astro';
+import ServiceTiles from '@/components/ServiceTiles.astro';
+import ContactForm from '@/components/ContactForm.astro';
+import { LANGS, t, routes, fmt, years, type Lang } from '@/i18n';
+import { brands, enginesOfBrand, enginesOfModel, avgGain, topGains, dominantFuel, servicesForFuel, hpGain, hpPct, engineLabel, modelPath, enginePath, brandPath, yearSpan } from '@/lib/catalog';
+import { titles, descriptions, ldBreadcrumb, ldCollection } from '@/lib/seo';
+import { fuelName } from '@/lib/text';
+import business from '@/data/business.json';
+export function getStaticPaths() { return LANGS.flatMap((lang) => brands.map((b) => ({ params: { lang, brand: b.slug }, props: { b } }))); }
+const lang = Astro.params.lang as Lang; const { b } = Astro.props;
+const d = t(lang);
+const list = enginesOfBrand(b); const avg = avgGain(list); const top = topGains(list, 5); const fuel = dominantFuel(list);
+const dieselShare = Math.round((list.filter((e) => e.fuel === 'diesel').length / list.length) * 100);
+const path = brandPath(lang, b);
+const findEngine = (e: (typeof list)[number]) => { for (const m of b.models) for (const g of m.generations) if (g.engines.includes(e)) return { m, g }; return null; };
+const best = findEngine(top[0])!;
+const crumbs = [{ name: d.crumbs.catalog, path: routes.home[lang] }];
+const title = titles.brand(lang, b), description = descriptions.brand(lang, b);
+---
+<Base lang={lang} title={title} description={description} path={path} current="catalog" jsonld={[ldBreadcrumb([...crumbs, { name: b.name, path }]), ldCollection(lang, title, path, b.models.length)]}>
+  <div class="wrap">
+    <Crumbs items={crumbs} current={b.name} />
+    <div class="two">
+      <div>
+        <p class="kicker">{d.crumbs.catalog} · {d.catalog.modelCount(b.models.length)} · {d.catalog.engineCount(list.length)}</p>
+        <h1>{d.catalog.brandH1(b.name)}</h1>
+        <p class="lead">{lang === 'bg'
+          ? `${b.name}: ${fmt(b.models.length)} модела и ${fmt(list.length)} двигателя в базата ни. Средният ръст при ${b.name} е +${avg.hp} к.с.${avg.nm ? ` и +${avg.nm} Nm` : ''}.`
+          : `${b.name}: ${fmt(b.models.length)} models and ${fmt(list.length)} engines in our database. The average gain for ${b.name} is +${avg.hp} hp${avg.nm ? ` and +${avg.nm} Nm` : ''}.`}</p>
+        <p>{lang === 'bg'
+          ? `Най-големият ръст е при ${b.name} ${best.m.name} ${engineLabel(top[0])}: ${top[0].hpStock} → ${top[0].hpTuned} к.с. ${dieselShare >= 50 ? `${dieselShare}% от двигателите са дизелови — затова с чип тунинга при ${b.name} най-често вървят DPF, EGR и AdBlue.` : `${100 - dieselShare}% от двигателите са бензинови — при тях ръстът зависи от това дали има турбо.`} Всяко число долу е от файл, който сме писали, и е измерено на стенда във Варна.`
+          : `The biggest gain is on the ${b.name} ${best.m.name} ${engineLabel(top[0])}: ${top[0].hpStock} → ${top[0].hpTuned} hp. ${dieselShare >= 50 ? `${dieselShare}% of the engines are diesel — which is why DPF, EGR and AdBlue work usually go together with a ${b.name} remap.` : `${100 - dieselShare}% of the engines are petrol — the gain depends on whether there is a turbo.`} Every figure below comes from a file we have written and measured on the dyno in Varna. Partner workshops get the same file through the portal.`}</p>
+      </div>
+      {b.logo && <div class="side" style="text-align:center"><img src={`/logos/${b.logo}`} alt={`${b.name} — лого`} width="120" height="120" style="margin:0 auto;object-fit:contain"><p class="muted" style="margin:.75rem 0 0;font-family:var(--mono);font-size:var(--s12)">{b.name}</p></div>}
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="kicker">01 · {d.catalog.models}</p>
+      <h2>{lang === 'bg' ? `Моделите ${b.name}` : `${b.name} models`}</h2>
+      <table class="ba">
+        <thead><tr><th>{lang === 'bg' ? 'Модел' : 'Model'}</th><th>{d.catalog.years}</th><th class="num">{d.catalog.engines}</th><th class="num">{lang === 'bg' ? 'ръст до' : 'gain up to'}</th></tr></thead>
+        <tbody>{b.models.map((m) => { const es = enginesOfModel(m); const ys = yearSpan(m); const mx = Math.max(...es.map(hpGain)); return (
+          <tr><td><a href={modelPath(lang, b, m)}>{b.name} {m.name}</a></td><td class="mono">{years(ys.from, ys.to, lang)}</td><td class="num">{es.length}</td><td class="num gain">+{mx} {d.units.hp}</td></tr>); })}</tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <p class="kicker">02 · {d.catalog.topGains(b.name)}</p>
+      <h2>{lang === 'bg' ? `Топ 5 по ръст при ${b.name}` : `Top 5 gains for ${b.name}`}</h2>
+      <table class="ba">
+        <thead><tr><th>{d.catalog.engine}</th><th>{d.catalog.fuel}</th><th class="num">{d.catalog.before}</th><th class="num">{d.catalog.after}</th><th class="num">{d.catalog.gain}</th></tr></thead>
+        <tbody>{top.map((e) => { const f = findEngine(e)!; return (
+          <tr><td><a href={enginePath(lang, b, f.m, f.g, e)}>{b.name} {f.m.name} {engineLabel(e)}</a> <span class="muted mono" style="font-size:var(--s12)">{years(f.g.from, f.g.to, lang)}</span></td><td>{fuelName(lang, e.fuel)}</td><td class="num">{e.hpStock}</td><td class="num">{e.hpTuned}</td><td class="num gain">+{hpGain(e)} {d.units.hp} · +{hpPct(e)}%</td></tr>); })}</tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="kicker">03 · {d.catalog.suitable}</p>
+      <h2>{lang === 'bg' ? `Какво още правим по ${b.name}` : `What else we do on ${b.name}`}</h2>
+      <ServiceTiles lang={lang} only={servicesForFuel(fuel)} cols={3} />
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <p class="kicker">04 · {d.cta.book}</p>
+          <h2>{lang === 'bg' ? `Кажете кой ${b.name} карате` : `Tell us which ${b.name} you drive`}</h2>
+          <p class="lead" style="color:var(--g3)">{lang === 'bg' ? 'По телефона за две минути казваме какво ще даде вашият двигател, колко струва и кога има свободен час.' : 'Two minutes on the phone: what your engine will make, what it costs and when we have a slot. Workshops: upload the file through the portal.'}</p>
+          <div class="actions"><a class="btn primary" href={`tel:${business.phone}`} data-ev="tel_click" data-ev-label="brand">{business.phoneDisplay}</a><a class="btn light" href={business.portal.login[lang]} rel="nofollow" data-ev="file_upload_click" data-ev-label="brand">{d.cta.upload}</a></div>
+        </div>
+        <div style="background:#fff;color:var(--ink);padding:1.25rem"><ContactForm lang={lang} car={b.name} id="form-brand" /></div>
+      </div>
+    </div>
+  </section>
+</Base>

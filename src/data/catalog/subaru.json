@@ -1,0 +1,717 @@
+{
+ "slug": "subaru",
+ "name": "Subaru",
+ "logo": "subaru.png",
+ "models": [
+  {
+   "slug": "brz-629",
+   "name": "BRZ",
+   "generations": [
+    {
+     "slug": "2012-2016",
+     "from": 2012,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "4886/2932",
+       "name": "2.0i 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 215,
+       "nmStock": 205,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11709/7635",
+       "name": "2.0i 200hp",
+       "fuel": "petrol",
+       "hpStock": 235,
+       "hpTuned": 260,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "4887/2933",
+       "name": "2.0i - 205hp",
+       "fuel": "petrol",
+       "hpStock": 205,
+       "hpTuned": 215,
+       "nmStock": 211,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-2020",
+     "from": 2017,
+     "to": 2020,
+     "engines": [
+      {
+       "path": "11710/2933",
+       "name": "2.0i - 205hp",
+       "fuel": "petrol",
+       "hpStock": 205,
+       "hpTuned": 215,
+       "nmStock": 211,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "forester-630",
+   "name": "Forester",
+   "generations": [
+    {
+     "slug": "0-2008",
+     "from": 0,
+     "to": 2008,
+     "engines": [
+      {
+       "path": "11711/2934",
+       "name": "2.0 XT 177hp",
+       "fuel": "petrol",
+       "hpStock": 177,
+       "hpTuned": 210,
+       "nmStock": 245,
+       "nmTuned": 283,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11712/2935",
+       "name": "2.5 Turbo 210hp",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 240,
+       "nmStock": 320,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11713/2936",
+       "name": "2.5 Turbo 230hp",
+       "fuel": "petrol",
+       "hpStock": 230,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2008-0",
+     "from": 2008,
+     "to": null,
+     "engines": [
+      {
+       "path": "4888/2934",
+       "name": "2.0 XT 177hp",
+       "fuel": "petrol",
+       "hpStock": 177,
+       "hpTuned": 210,
+       "nmStock": 245,
+       "nmTuned": 283,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4889/2935",
+       "name": "2.5 Turbo 210hp",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 240,
+       "nmStock": 320,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4890/2936",
+       "name": "2.5 Turbo 230hp",
+       "fuel": "petrol",
+       "hpStock": 230,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2008-2017",
+     "from": 2008,
+     "to": 2017,
+     "engines": [
+      {
+       "path": "4891/2937",
+       "name": "2.0 D boxer 147hp",
+       "fuel": "diesel",
+       "hpStock": 147,
+       "hpTuned": 177,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4892/2938",
+       "name": "2.0 XT 240hp",
+       "fuel": "petrol",
+       "hpStock": 240,
+       "hpTuned": 270,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11714/2936",
+       "name": "2.5 Turbo 230hp",
+       "fuel": "petrol",
+       "hpStock": 230,
+       "hpTuned": 270,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2018-0",
+     "from": 2018,
+     "to": null,
+     "engines": [
+      {
+       "path": "4893/2939",
+       "name": "2.0 D boxer 148hp",
+       "fuel": "diesel",
+       "hpStock": 148,
+       "hpTuned": 177,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4894/2940",
+       "name": "2.0 XT 241hp",
+       "fuel": "petrol",
+       "hpStock": 241,
+       "hpTuned": 270,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "impreza-631",
+   "name": "Impreza",
+   "generations": [
+    {
+     "slug": "2003-2005",
+     "from": 2003,
+     "to": 2005,
+     "engines": [
+      {
+       "path": "4895/2941",
+       "name": "2.0T WRX 225hp",
+       "fuel": "petrol",
+       "hpStock": 225,
+       "hpTuned": 260,
+       "nmStock": 300,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4896/2942",
+       "name": "2.0T WRX STi 265hp",
+       "fuel": "petrol",
+       "hpStock": 265,
+       "hpTuned": 295,
+       "nmStock": 340,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2008-0",
+     "from": 2008,
+     "to": null,
+     "engines": [
+      {
+       "path": "4897/2943",
+       "name": "2.0 D Boxer 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11716/7576",
+       "name": "2.0T 268hp",
+       "fuel": "petrol",
+       "hpStock": 268,
+       "hpTuned": 300,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4898/2944",
+       "name": "2.5T WRX 230hp",
+       "fuel": "petrol",
+       "hpStock": 230,
+       "hpTuned": 260,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4899/2945",
+       "name": "2.5T WRX STI 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 330,
+       "nmStock": 407,
+       "nmTuned": 467,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "legacy-632",
+   "name": "Legacy",
+   "generations": [
+    {
+     "slug": "2008-2014",
+     "from": 2008,
+     "to": 2014,
+     "engines": [
+      {
+       "path": "4900/2943",
+       "name": "2.0 D Boxer 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4901/703",
+       "name": "2.0i 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 165,
+       "nmStock": 200,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4902/2946",
+       "name": "2.5 170hp",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 200,
+       "nmStock": 230,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11717/7578",
+       "name": "2.5T GT 265hp",
+       "fuel": "petrol",
+       "hpStock": 265,
+       "hpTuned": 272,
+       "nmStock": 350,
+       "nmTuned": 364,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-2018",
+     "from": 2015,
+     "to": 2018,
+     "engines": [
+      {
+       "path": "4903/2947",
+       "name": "2.0GT 295hp",
+       "fuel": "petrol",
+       "hpStock": 295,
+       "hpTuned": 325,
+       "nmStock": 400,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4904/2948",
+       "name": "3.6 170hp",
+       "fuel": "petrol",
+       "hpStock": 260,
+       "hpTuned": 290,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "levorg-633",
+   "name": "Levorg",
+   "generations": [
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "4905/2949",
+       "name": "1.6 GT - 170hp",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 190,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4906/2950",
+       "name": "2.0 GT-S 268hp",
+       "fuel": "petrol",
+       "hpStock": 268,
+       "hpTuned": 300,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-2019",
+     "from": 2015,
+     "to": 2019,
+     "engines": [
+      {
+       "path": "11718/2949",
+       "name": "1.6 GT - 170hp",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 190,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11719/7579",
+       "name": "2.0 GT 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 164,
+       "nmStock": 198,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11720/2950",
+       "name": "2.0 GT-S 268hp",
+       "fuel": "petrol",
+       "hpStock": 268,
+       "hpTuned": 300,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "liberty-2879",
+   "name": "Liberty",
+   "generations": [
+    {
+     "slug": "2014-0",
+     "from": 2014,
+     "to": null,
+     "engines": [
+      {
+       "path": "17270/2951",
+       "name": "2.0GT-S 295hp",
+       "fuel": "petrol",
+       "hpStock": 295,
+       "hpTuned": 325,
+       "nmStock": 400,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17769/2952",
+       "name": "3.6VCT 260hp",
+       "fuel": "petrol",
+       "hpStock": 260,
+       "hpTuned": 290,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "outback-634",
+   "name": "Outback",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "4909/2943",
+       "name": "2.0 D Boxer 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "trezia-635",
+   "name": "Trezia",
+   "generations": [
+    {
+     "slug": "2011-0",
+     "from": 2011,
+     "to": null,
+     "engines": [
+      {
+       "path": "4910/2953",
+       "name": "1.4D 90hp",
+       "fuel": "diesel",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 205,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "tribeca-636",
+   "name": "Tribeca",
+   "generations": [
+    {
+     "slug": "2008-2010",
+     "from": 2008,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "4911/2954",
+       "name": "3.6i 258hp",
+       "fuel": "petrol",
+       "hpStock": 258,
+       "hpTuned": 275,
+       "nmStock": 350,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "wrx-637",
+   "name": "WRX",
+   "generations": [
+    {
+     "slug": "2007-2014",
+     "from": 2007,
+     "to": 2014,
+     "engines": [
+      {
+       "path": "4912/2955",
+       "name": "2.0L - 304hp",
+       "fuel": "petrol",
+       "hpStock": 304,
+       "hpTuned": 334,
+       "nmStock": 422,
+       "nmTuned": 482,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "4913/2956",
+       "name": "2.5 STi 300 hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 330,
+       "nmStock": 407,
+       "nmTuned": 467,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-2017",
+     "from": 2015,
+     "to": 2017,
+     "engines": [
+      {
+       "path": "11722/7581",
+       "name": "2.0T 286hp",
+       "fuel": "petrol",
+       "hpStock": 286,
+       "hpTuned": 300,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11723/7582",
+       "name": "2.5 STi 300hp",
+       "fuel": "petrol",
+       "hpStock": 300,
+       "hpTuned": 330,
+       "nmStock": 407,
+       "nmTuned": 467,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2018-2020",
+     "from": 2018,
+     "to": 2020,
+     "engines": [
+      {
+       "path": "11724/7583",
+       "name": "2.5T 275hp",
+       "fuel": "petrol",
+       "hpStock": 275,
+       "hpTuned": 330,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "wrx-sti-639",
+   "name": "WRX STI",
+   "generations": [
+    {
+     "slug": "2022-2024",
+     "from": 2022,
+     "to": 2024,
+     "engines": [
+      {
+       "path": "4918/2958",
+       "name": "2.4 Turbo 310hp",
+       "fuel": "petrol",
+       "hpStock": 310,
+       "hpTuned": 350,
+       "nmStock": 430,
+       "nmTuned": 480,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "xv-638",
+   "name": "XV",
+   "generations": [
+    {
+     "slug": "2012-2016",
+     "from": 2012,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "4914/2943",
+       "name": "2.0 D Boxer 150hp",
+       "fuel": "diesel",
+       "hpStock": 150,
+       "hpTuned": 180,
+       "nmStock": 350,
+       "nmTuned": 410,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4915/703",
+       "name": "2.0i 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 165,
+       "nmStock": 200,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "4916/2957",
+       "name": "1.6i - 114hp",
+       "fuel": "petrol",
+       "hpStock": 114,
+       "hpTuned": 128,
+       "nmStock": 150,
+       "nmTuned": 174,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4917/993",
+       "name": "2.0i - 156hp",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 175,
+       "nmStock": 190,
+       "nmTuned": 210,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

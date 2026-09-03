@@ -1,0 +1,382 @@
+{
+ "slug": "ssangyong",
+ "name": "SsangYong",
+ "logo": "ssangyong.png",
+ "models": [
+  {
+   "slug": "actyon-621",
+   "name": "Actyon",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "4866/2919",
+       "name": "2.0 Xdi 136hp",
+       "fuel": "petrol",
+       "hpStock": 136,
+       "hpTuned": 170,
+       "nmStock": 310,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4867/2920",
+       "name": "2.0 Xdi 141hp",
+       "fuel": "petrol",
+       "hpStock": 141,
+       "hpTuned": 170,
+       "nmStock": 310,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4868/2921",
+       "name": "2.0 Xdi 155hp",
+       "fuel": "petrol",
+       "hpStock": 155,
+       "hpTuned": 200,
+       "nmStock": 360,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4869/2922",
+       "name": "2.2 e-XDI 178hp",
+       "fuel": "petrol",
+       "hpStock": 178,
+       "hpTuned": 220,
+       "nmStock": 400,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "korando-622",
+   "name": "Korando",
+   "generations": [
+    {
+     "slug": "2011-2018",
+     "from": 2011,
+     "to": 2018,
+     "engines": [
+      {
+       "path": "4870/2923",
+       "name": "2.0 XDi 150hp",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 195,
+       "nmStock": 360,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4871/2924",
+       "name": "2.0 XDi 175hp",
+       "fuel": "petrol",
+       "hpStock": 175,
+       "hpTuned": 200,
+       "nmStock": 360,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4872/2922",
+       "name": "2.2 e-XDI 178hp",
+       "fuel": "petrol",
+       "hpStock": 178,
+       "hpTuned": 220,
+       "nmStock": 400,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2019-0",
+     "from": 2019,
+     "to": null,
+     "engines": [
+      {
+       "path": "11640/7508",
+       "name": "1.5 T-GDI 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 190,
+       "nmStock": 280,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11641/7509",
+       "name": "1.6d 136hp",
+       "fuel": "diesel",
+       "hpStock": 136,
+       "hpTuned": 160,
+       "nmStock": 324,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "kyron-623",
+   "name": "Kyron",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "4873/2925",
+       "name": "200 XDi 141hp",
+       "fuel": "petrol",
+       "hpStock": 141,
+       "hpTuned": 170,
+       "nmStock": 310,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4874/2926",
+       "name": "270 XDi 165hp",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 185,
+       "nmStock": 345,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "musso-624",
+   "name": "Musso",
+   "generations": [
+    {
+     "slug": "2018-0",
+     "from": 2018,
+     "to": null,
+     "engines": [
+      {
+       "path": "4875/2927",
+       "name": "2.2 e-XDi 181hp",
+       "fuel": "petrol",
+       "hpStock": 181,
+       "hpTuned": 220,
+       "nmStock": 420,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "rexton-625",
+   "name": "Rexton",
+   "generations": [
+    {
+     "slug": "0-2016",
+     "from": 0,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "11642/2922",
+       "name": "2.2 e-XDI 178hp",
+       "fuel": "petrol",
+       "hpStock": 178,
+       "hpTuned": 220,
+       "nmStock": 400,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11643/2928",
+       "name": "270 XDi 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 185,
+       "nmStock": 345,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11644/2929",
+       "name": "270 XDi 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 205,
+       "nmStock": 402,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "4876/2921",
+       "name": "2.0 Xdi 155hp",
+       "fuel": "petrol",
+       "hpStock": 155,
+       "hpTuned": 200,
+       "nmStock": 360,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4877/2922",
+       "name": "2.2 e-XDI 178hp",
+       "fuel": "petrol",
+       "hpStock": 178,
+       "hpTuned": 220,
+       "nmStock": 400,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4878/2928",
+       "name": "270 XDi 163hp",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 185,
+       "nmStock": 345,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4879/2929",
+       "name": "270 XDi 180hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 205,
+       "nmStock": 402,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "4880/2930",
+       "name": "2.2 e-XDI - 181hp",
+       "fuel": "petrol",
+       "hpStock": 181,
+       "hpTuned": 220,
+       "nmStock": 420,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "rodius-626",
+   "name": "Rodius",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "4881/2921",
+       "name": "2.0 Xdi 155hp",
+       "fuel": "petrol",
+       "hpStock": 155,
+       "hpTuned": 200,
+       "nmStock": 360,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4882/2922",
+       "name": "2.2 e-XDI 178hp",
+       "fuel": "petrol",
+       "hpStock": 178,
+       "hpTuned": 220,
+       "nmStock": 400,
+       "nmTuned": 460,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "4883/2926",
+       "name": "270 XDi 165hp",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 185,
+       "nmStock": 345,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "tivoli-627",
+   "name": "Tivoli",
+   "generations": [
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "4884/2931",
+       "name": "1.6 e-XDI 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "xlv-628",
+   "name": "XLV",
+   "generations": [
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "4885/2931",
+       "name": "1.6 e-XDI 115hp",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 140,
+       "nmStock": 300,
+       "nmTuned": 350,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

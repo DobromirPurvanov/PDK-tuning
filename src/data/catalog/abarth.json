@@ -1,0 +1,177 @@
+{
+ "slug": "abarth",
+ "name": "Abarth",
+ "logo": "abarth.png",
+ "models": [
+  {
+   "slug": "124-728",
+   "name": "124",
+   "generations": [
+    {
+     "slug": "2017-0",
+     "from": 2017,
+     "to": null,
+     "engines": [
+      {
+       "path": "5897/3337",
+       "name": "1.4 Multi-Air - 170 hp (8GMF)",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 200,
+       "nmStock": 250,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5899/3339",
+       "name": "1.4 Multi-Air - 170 hp (8GMK.Fx)",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 200,
+       "nmStock": 250,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5898/3338",
+       "name": "1.4 Multi-Air - 170 hp (8GMK)",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 200,
+       "nmStock": 250,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "500-729",
+   "name": "500",
+   "generations": [
+    {
+     "slug": "2008-2013",
+     "from": 2008,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "5900/3346",
+       "name": "1.4 T-Jet - 135 hp",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 170,
+       "nmStock": 206,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5901/3347",
+       "name": "1.4 T-Jet - 140 hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 206,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5903/3349",
+       "name": "1.4 T-Jet - 180 hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 195,
+       "nmStock": 230,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2014-2016",
+     "from": 2014,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "5904/3344",
+       "name": "1.4 Multi-Air - 160 hp",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 170,
+       "nmStock": 234,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5906/3346",
+       "name": "1.4 T-Jet - 135 hp",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 170,
+       "nmStock": 206,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5907/3347",
+       "name": "1.4 T-Jet - 140 hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 206,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5908/3348",
+       "name": "1.4 T-Jet - 165 hp",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 195,
+       "nmStock": 230,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5909/3349",
+       "name": "1.4 T-Jet - 180 hp",
+       "fuel": "petrol",
+       "hpStock": 180,
+       "hpTuned": 195,
+       "nmStock": 230,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "5905/3345",
+       "name": "1.4 T-Jet (695 Biposto) - 190 hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 195,
+       "nmStock": 250,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "5914/3345",
+       "name": "1.4 T-Jet (695 Biposto) - 190 hp",
+       "fuel": "petrol",
+       "hpStock": 190,
+       "hpTuned": 195,
+       "nmStock": 250,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+{
+ "slug": "rover",
+ "name": "Rover",
+ "logo": "rover.png",
+ "models": [
+  {
+   "slug": "75-1078",
+   "name": "75",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "16791/14712",
+       "name": "2.0 CDTI 115hp",
+       "fuel": "diesel",
+       "hpStock": 115,
+       "hpTuned": 142,
+       "nmStock": 260,
+       "nmTuned": 302,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

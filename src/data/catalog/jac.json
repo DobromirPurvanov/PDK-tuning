@@ -1,0 +1,30 @@
+{
+ "slug": "jac",
+ "name": "Jac",
+ "logo": "jac.png",
+ "models": [
+  {
+   "slug": "t6-924",
+   "name": "T6",
+   "generations": [
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "8810/5348",
+       "name": "2.0 TDI 139hp",
+       "fuel": "diesel",
+       "hpStock": 139,
+       "hpTuned": 170,
+       "nmStock": 320,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

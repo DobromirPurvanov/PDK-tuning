@@ -1,0 +1,732 @@
+{
+ "slug": "infiniti",
+ "name": "Infiniti",
+ "logo": "infiniti.png",
+ "models": [
+  {
+   "slug": "ex-330",
+   "name": "EX",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2370/706",
+       "name": "3.0D 211hp",
+       "fuel": "diesel",
+       "hpStock": 211,
+       "hpTuned": 270,
+       "nmStock": 520,
+       "nmTuned": 580,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2371/1612",
+       "name": "3.0d 238hp",
+       "fuel": "diesel",
+       "hpStock": 238,
+       "hpTuned": 280,
+       "nmStock": 550,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2372/1613",
+       "name": "3.5 V6 295hp",
+       "fuel": "petrol",
+       "hpStock": 295,
+       "hpTuned": 317,
+       "nmStock": 366,
+       "nmTuned": 382,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2373/1614",
+       "name": "3.7 V6 320hp",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 339,
+       "nmStock": 366,
+       "nmTuned": 389,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "fx-331",
+   "name": "FX",
+   "generations": [
+    {
+     "slug": "2008-2013",
+     "from": 2008,
+     "to": 2013,
+     "engines": [
+      {
+       "path": "2374/706",
+       "name": "3.0D 211hp",
+       "fuel": "diesel",
+       "hpStock": 211,
+       "hpTuned": 270,
+       "nmStock": 520,
+       "nmTuned": 580,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2375/1612",
+       "name": "3.0d 238hp",
+       "fuel": "diesel",
+       "hpStock": 238,
+       "hpTuned": 280,
+       "nmStock": 550,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2376/1615",
+       "name": "3.5 V6 - 302hp",
+       "fuel": "petrol",
+       "hpStock": 302,
+       "hpTuned": 317,
+       "nmStock": 355,
+       "nmTuned": 382,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2377/1616",
+       "name": "3.7 V6 - 320hp",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 350,
+       "nmStock": 360,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2378/1617",
+       "name": "3.7 V6 - 331hp",
+       "fuel": "petrol",
+       "hpStock": 331,
+       "hpTuned": 350,
+       "nmStock": 366,
+       "nmTuned": 385,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2379/1618",
+       "name": "5.0 V8 390hp",
+       "fuel": "petrol",
+       "hpStock": 390,
+       "hpTuned": 417,
+       "nmStock": 500,
+       "nmTuned": 532,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "g25-332",
+   "name": "G25",
+   "generations": [
+    {
+     "slug": "2011-2012",
+     "from": 2011,
+     "to": 2012,
+     "engines": [
+      {
+       "path": "2380/1619",
+       "name": "2.5 V6 - 218hp",
+       "fuel": "petrol",
+       "hpStock": 218,
+       "hpTuned": 240,
+       "nmStock": 254,
+       "nmTuned": 273,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "g35-333",
+   "name": "G35",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2381/1620",
+       "name": "3.5 V6 - 306hp",
+       "fuel": "petrol",
+       "hpStock": 306,
+       "hpTuned": 317,
+       "nmStock": 363,
+       "nmTuned": 382,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "g37-m37-334",
+   "name": "G37-M37",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2382/727",
+       "name": "3.0D 235hp",
+       "fuel": "diesel",
+       "hpStock": 235,
+       "hpTuned": 280,
+       "nmStock": 520,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2383/1614",
+       "name": "3.7 V6 320hp",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 339,
+       "nmStock": 366,
+       "nmTuned": 389,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2384/1621",
+       "name": "3.7 V6 331hp",
+       "fuel": "petrol",
+       "hpStock": 331,
+       "hpTuned": 345,
+       "nmStock": 366,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "g37-m37-912",
+   "name": "G37/M37",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "8706/5256",
+       "name": "3.0d 235hp",
+       "fuel": "diesel",
+       "hpStock": 235,
+       "hpTuned": 250,
+       "nmStock": 550,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8707/1614",
+       "name": "3.7 V6 320hp",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 339,
+       "nmStock": 366,
+       "nmTuned": 389,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8708/1621",
+       "name": "3.7 V6 331hp",
+       "fuel": "petrol",
+       "hpStock": 331,
+       "hpTuned": 345,
+       "nmStock": 366,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "m-335",
+   "name": "M",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2385/706",
+       "name": "3.0D 211hp",
+       "fuel": "diesel",
+       "hpStock": 211,
+       "hpTuned": 270,
+       "nmStock": 520,
+       "nmTuned": 580,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2386/1612",
+       "name": "3.0d 238hp",
+       "fuel": "diesel",
+       "hpStock": 238,
+       "hpTuned": 280,
+       "nmStock": 550,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2387/1622",
+       "name": "5.6 V6 - 420hp",
+       "fuel": "petrol",
+       "hpStock": 420,
+       "hpTuned": 450,
+       "nmStock": 565,
+       "nmTuned": 591,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "q30-336",
+   "name": "Q30",
+   "generations": [
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "2388/1623",
+       "name": "1.5d 109hp",
+       "fuel": "diesel",
+       "hpStock": 109,
+       "hpTuned": 140,
+       "nmStock": 260,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2389/1624",
+       "name": "1.6 Turbo 122hp",
+       "fuel": "petrol",
+       "hpStock": 122,
+       "hpTuned": 175,
+       "nmStock": 200,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2390/1625",
+       "name": "1.6 Turbo 156hp",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 175,
+       "nmStock": 250,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2391/1626",
+       "name": "2.0T 211hp",
+       "fuel": "petrol",
+       "hpStock": 211,
+       "hpTuned": 250,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2392/1627",
+       "name": "2.2d 170hp",
+       "fuel": "diesel",
+       "hpStock": 170,
+       "hpTuned": 205,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "q50-337",
+   "name": "Q50",
+   "generations": [
+    {
+     "slug": "2013-0",
+     "from": 2013,
+     "to": null,
+     "engines": [
+      {
+       "path": "2393/1626",
+       "name": "2.0T 211hp",
+       "fuel": "petrol",
+       "hpStock": 211,
+       "hpTuned": 250,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2394/1627",
+       "name": "2.2d 170hp",
+       "fuel": "diesel",
+       "hpStock": 170,
+       "hpTuned": 205,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2395/1628",
+       "name": "3.0T 405hp",
+       "fuel": "petrol",
+       "hpStock": 405,
+       "hpTuned": 440,
+       "nmStock": 475,
+       "nmTuned": 620,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2396/1629",
+       "name": "3.5 V6 Hybrid 365hp",
+       "fuel": "petrol",
+       "hpStock": 365,
+       "hpTuned": 395,
+       "nmStock": 545,
+       "nmTuned": 605,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "q60-338",
+   "name": "Q60",
+   "generations": [
+    {
+     "slug": "0-2016",
+     "from": 0,
+     "to": 2016,
+     "engines": [
+      {
+       "path": "8714/1614",
+       "name": "3.7 V6 320hp",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 339,
+       "nmStock": 366,
+       "nmTuned": 389,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "2398/1626",
+       "name": "2.0T 211hp",
+       "fuel": "petrol",
+       "hpStock": 211,
+       "hpTuned": 250,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "8715/1628",
+       "name": "3.0T 405hp",
+       "fuel": "petrol",
+       "hpStock": 405,
+       "hpTuned": 440,
+       "nmStock": 475,
+       "nmTuned": 620,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2397/1614",
+       "name": "3.7 V6 320hp",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 339,
+       "nmStock": 366,
+       "nmTuned": 389,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "q70-339",
+   "name": "Q70",
+   "generations": [
+    {
+     "slug": "2014-2015",
+     "from": 2014,
+     "to": 2015,
+     "engines": [
+      {
+       "path": "2399/1612",
+       "name": "3.0d 238hp",
+       "fuel": "diesel",
+       "hpStock": 238,
+       "hpTuned": 280,
+       "nmStock": 550,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "2400/1627",
+       "name": "2.2d 170hp",
+       "fuel": "diesel",
+       "hpStock": 170,
+       "hpTuned": 205,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2401/1629",
+       "name": "3.5 V6 Hybrid 365hp",
+       "fuel": "petrol",
+       "hpStock": 365,
+       "hpTuned": 395,
+       "nmStock": 545,
+       "nmTuned": 605,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2402/1630",
+       "name": "3.7 V6 330hp",
+       "fuel": "petrol",
+       "hpStock": 330,
+       "hpTuned": 348,
+       "nmStock": 366,
+       "nmTuned": 383,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2403/1631",
+       "name": "5.6 V8 416hp",
+       "fuel": "petrol",
+       "hpStock": 416,
+       "hpTuned": 450,
+       "nmStock": 561,
+       "nmTuned": 591,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "qx30-340",
+   "name": "QX30",
+   "generations": [
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "2404/1626",
+       "name": "2.0T 211hp",
+       "fuel": "petrol",
+       "hpStock": 211,
+       "hpTuned": 250,
+       "nmStock": 350,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2405/1627",
+       "name": "2.2d 170hp",
+       "fuel": "diesel",
+       "hpStock": 170,
+       "hpTuned": 205,
+       "nmStock": 350,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "qx50-341",
+   "name": "QX50",
+   "generations": [
+    {
+     "slug": "2013-0",
+     "from": 2013,
+     "to": null,
+     "engines": [
+      {
+       "path": "2406/1612",
+       "name": "3.0d 238hp",
+       "fuel": "diesel",
+       "hpStock": 238,
+       "hpTuned": 280,
+       "nmStock": 550,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "qx56-342",
+   "name": "QX56",
+   "generations": [
+    {
+     "slug": "2010-0",
+     "from": 2010,
+     "to": null,
+     "engines": [
+      {
+       "path": "2407/1632",
+       "name": "5.6 V8 - 400hp",
+       "fuel": "petrol",
+       "hpStock": 400,
+       "hpTuned": 450,
+       "nmStock": 560,
+       "nmTuned": 591,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "qx60-343",
+   "name": "QX60",
+   "generations": [
+    {
+     "slug": "2016-0",
+     "from": 2016,
+     "to": null,
+     "engines": [
+      {
+       "path": "2408/1633",
+       "name": "3.5 V6 262hp",
+       "fuel": "petrol",
+       "hpStock": 262,
+       "hpTuned": 284,
+       "nmStock": 334,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2409/1613",
+       "name": "3.5 V6 295hp",
+       "fuel": "petrol",
+       "hpStock": 295,
+       "hpTuned": 317,
+       "nmStock": 366,
+       "nmTuned": 382,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "qx70-344",
+   "name": "QX70",
+   "generations": [
+    {
+     "slug": "2013-0",
+     "from": 2013,
+     "to": null,
+     "engines": [
+      {
+       "path": "2410/1612",
+       "name": "3.0d 238hp",
+       "fuel": "diesel",
+       "hpStock": 238,
+       "hpTuned": 280,
+       "nmStock": 550,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2411/1614",
+       "name": "3.7 V6 320hp",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 339,
+       "nmStock": 366,
+       "nmTuned": 389,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2412/1618",
+       "name": "5.0 V8 390hp",
+       "fuel": "petrol",
+       "hpStock": 390,
+       "hpTuned": 417,
+       "nmStock": 500,
+       "nmTuned": 532,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "qx80-345",
+   "name": "QX80",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2413/1634",
+       "name": "5.6 V8 - 405hp",
+       "fuel": "petrol",
+       "hpStock": 405,
+       "hpTuned": 450,
+       "nmStock": 560,
+       "nmTuned": 591,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

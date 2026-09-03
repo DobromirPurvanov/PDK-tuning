@@ -1,0 +1,30 @@
+{
+ "slug": "piaggio",
+ "name": "Piaggio",
+ "logo": "piaggio.png",
+ "models": [
+  {
+   "slug": "porter-maxxi-1056",
+   "name": "Porter Maxxi",
+   "generations": [
+    {
+     "slug": "2012-0",
+     "from": 2012,
+     "to": null,
+     "engines": [
+      {
+       "path": "10855/7174",
+       "name": "1.3 D120 - 64hp",
+       "fuel": "diesel",
+       "hpStock": 64,
+       "hpTuned": 85,
+       "nmStock": 140,
+       "nmTuned": 180,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

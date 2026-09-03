@@ -1,0 +1,74 @@
+---
+import { t, routes, otherLang, servicePath, type Lang } from '@/i18n';
+import business from '@/data/business.json';
+import { SERVICES } from '@/data/services';
+import { brandIndex } from '@/lib/catalog';
+interface Props { lang: Lang; altPath: string }
+const { lang, altPath } = Astro.props;
+const d = t(lang);
+const other = otherLang(lang);
+const street = lang === 'bg' ? business.address.street : business.address.streetEn;
+const city = lang === 'bg' ? business.address.city : business.address.cityEn;
+const popular = ['bmw', 'audi', 'volkswagen', 'mercedes-benz', 'ford', 'opel', 'skoda', 'toyota'].map((s) => brandIndex.find((b) => b.slug === s)).filter(Boolean) as typeof brandIndex;
+const year = new Date().getFullYear();
+---
+<footer class="ftr">
+  <div class="wrap">
+    <div class="cols4">
+      <div>
+        <h3>{business.name}</h3>
+        <address>
+          {street}, {business.address.postalCode} {city}<br>
+          <a class="big" href={`tel:${business.phone}`} data-ev="tel_click" data-ev-label="footer">{business.phoneDisplay}</a>
+          <a href={`viber://chat?number=%2B${business.viber.replace('+', '')}`} data-ev="viber_click" data-ev-label="footer">Viber</a> · <a href={business.social.maps} rel="noopener" target="_blank">Google Maps</a>
+        </address>
+        <h3 style="margin-top:1.5rem">{d.footer.hours}</h3>
+        <ul class="hours">
+          <li><span>{d.footer.weekdays}</span><span>{business.hours[0].opens}–{business.hours[0].closes}</span></li>
+          <li><span>{d.footer.sat}</span><span>{business.hours[1].opens}–{business.hours[1].closes}</span></li>
+          <li><span>{d.footer.sun}</span><span>{d.footer.closed}</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>{d.footer.services}</h3>
+        <ul>
+          <li><a href={routes.chipTuningVarna[lang]}>{lang === 'bg' ? 'Чип тунинг Варна' : 'Chip tuning Varna'}</a></li>
+          {SERVICES.map((s) => <li><a href={servicePath(lang, s.slug)}>{s.name[lang]}</a></li>)}
+          <li><a href={routes.dyno[lang]}>{d.nav.dyno}</a></li>
+          <li><a href={routes.prices[lang]}>{d.nav.prices}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>{d.footer.catalog}</h3>
+        <ul>
+          {popular.map((b) => <li><a href={`/${lang}/${b.slug}`}>{b.name}</a></li>)}
+          <li><a href={routes.home[lang] + '#marki'}>{d.catalog.brandsAll}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>{business.name}</h3>
+        <ul>
+          <li><a href={routes.chipTuning[lang]}>{d.nav.chipTuning}</a></li>
+          <li><a href={routes.faq[lang]}>{d.nav.faq}</a></li>
+          <li><a href={routes.about[lang]}>{d.nav.about}</a></li>
+          <li><a href={routes.contact[lang]}>{d.nav.contact}</a></li>
+          <li><a href={routes.privacy[lang]}>{d.form.privacy}</a></li>
+        </ul>
+        <h3 style="margin-top:1.5rem">{d.footer.partners}</h3>
+        <ul>
+          <li><a href={business.portal.login[lang]} rel="nofollow" data-ev="file_upload_click" data-ev-label="footer">{d.footer.portal}</a></li>
+        </ul>
+        <h3 style="margin-top:1.5rem">Social</h3>
+        <ul>
+          <li><a href={business.social.facebook} rel="noopener" target="_blank">Facebook</a></li>
+          <li><a href={business.social.instagram} rel="noopener" target="_blank">Instagram</a></li>
+          <li><a href={business.social.youtube} rel="noopener" target="_blank">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© {year} {business.legalName} · {d.footer.rights}</span>
+      <a href={altPath} hreflang={other} lang={other}>{d.otherLang.title}</a>
+    </div>
+  </div>
+</footer>

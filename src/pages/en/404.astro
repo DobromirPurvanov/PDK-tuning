@@ -1,0 +1,19 @@
+---
+import Base from '@/layouts/Base.astro';
+import BrandList from '@/components/BrandList.astro';
+import ServiceTiles from '@/components/ServiceTiles.astro';
+import { t, routes } from '@/i18n';
+const lang = 'en' as const; const d = t(lang);
+const title = lang === 'bg' ? 'Страницата не съществува — 404 | PDK Tuning' : 'Page not found — 404 | PDK Tuning';
+const description = lang === 'bg' ? 'Този адрес не съществува на pdktuning.com. Проверете своята кола в каталога или вижте услугите и цените на сервиза във Варна.' : 'This address does not exist on pdktuning.com. Check your car in the catalog or see the services and prices of the workshop in Varna.';
+---
+<Base lang={lang} title={title} description={description} path={`/${lang}/404`} altPath={null}>
+  <div class="wrap e404">
+    <p class="code">HTTP 404</p>
+    <h1>{lang === 'bg' ? 'Няма такава страница' : 'No such page'}</h1>
+    <p class="lead">{lang === 'bg' ? 'Адресът е сгрешен или страницата е преместена. Каталогът и услугите са тук:' : 'The address is wrong or the page has moved. The catalog and the services are here:'}</p>
+    <div class="actions"><a class="btn primary" href={routes.home[lang]}>{d.nav.catalog}</a><a class="btn ghost" href={routes.services[lang]}>{d.nav.services}</a><a class="btn ghost" href={routes.prices[lang]}>{d.nav.prices}</a></div>
+  </div>
+  <section class="section"><div class="wrap"><p class="kicker">{d.catalog.brandsAll}</p><BrandList lang={lang} collapsed={false} id="marki-404" /></div></section>
+  <section class="section alt"><div class="wrap"><p class="kicker">{d.nav.services}</p><ServiceTiles lang={lang} /></div></section>
+</Base>

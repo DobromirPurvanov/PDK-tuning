@@ -1,0 +1,30 @@
+{
+ "slug": "westfield",
+ "name": "Westfield",
+ "logo": null,
+ "models": [
+  {
+   "slug": "fw300-1134",
+   "name": "FW300",
+   "generations": [
+    {
+     "slug": "2011-0",
+     "from": 2011,
+     "to": null,
+     "engines": [
+      {
+       "path": "12502/7918",
+       "name": "1.6T - 192hp",
+       "fuel": "petrol",
+       "hpStock": 192,
+       "hpTuned": 210,
+       "nmStock": 266,
+       "nmTuned": 300,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

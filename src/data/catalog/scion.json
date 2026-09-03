@@ -1,0 +1,30 @@
+{
+ "slug": "scion",
+ "name": "Scion",
+ "logo": "scion.png",
+ "models": [
+  {
+   "slug": "fr-s-1104",
+   "name": "FR - S",
+   "generations": [
+    {
+     "slug": "2012-0",
+     "from": 2012,
+     "to": null,
+     "engines": [
+      {
+       "path": "11320/7444",
+       "name": "20i - 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 215,
+       "nmStock": 205,
+       "nmTuned": 220,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

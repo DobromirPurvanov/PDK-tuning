@@ -1,0 +1,245 @@
+{
+ "slug": "saturn",
+ "name": "Saturn",
+ "logo": "saturn.png",
+ "models": [
+  {
+   "slug": "aura-2877",
+   "name": "Aura",
+   "generations": [
+    {
+     "slug": "2007-2009",
+     "from": 2007,
+     "to": 2009,
+     "engines": [
+      {
+       "path": "17413/7421",
+       "name": "2.4i - 170hp",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 190,
+       "nmStock": 220,
+       "nmTuned": 240,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17736/14909",
+       "name": "3.5 V6 224hp",
+       "fuel": "petrol",
+       "hpStock": 224,
+       "hpTuned": 245,
+       "nmStock": 298,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "17751/14910",
+       "name": "3.6 V6 252hp",
+       "fuel": "petrol",
+       "hpStock": 252,
+       "hpTuned": 275,
+       "nmStock": 340,
+       "nmTuned": 370,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "ion-1095",
+   "name": "Ion",
+   "generations": [
+    {
+     "slug": "2003-2007",
+     "from": 2003,
+     "to": 2007,
+     "engines": [
+      {
+       "path": "11288/7422",
+       "name": "2.0 Supercharged 205hp",
+       "fuel": "petrol",
+       "hpStock": 205,
+       "hpTuned": 240,
+       "nmStock": 271,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11289/875",
+       "name": "2.2i - 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 155,
+       "nmStock": 203,
+       "nmTuned": 225,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11290/7424",
+       "name": "2.4i - 175hp",
+       "fuel": "petrol",
+       "hpStock": 175,
+       "hpTuned": 195,
+       "nmStock": 222,
+       "nmTuned": 245,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "l-series-1096",
+   "name": "L-Series",
+   "generations": [
+    {
+     "slug": "2000-2004",
+     "from": 2000,
+     "to": 2004,
+     "engines": [
+      {
+       "path": "11291/875",
+       "name": "2.2i - 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 155,
+       "nmStock": 203,
+       "nmTuned": 225,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "outlook-1097",
+   "name": "Outlook",
+   "generations": [
+    {
+     "slug": "2007-2010",
+     "from": 2007,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "11292/3796",
+       "name": "3.6 V6 275hp",
+       "fuel": "petrol",
+       "hpStock": 275,
+       "hpTuned": 295,
+       "nmStock": 400,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "relay-1099",
+   "name": "Relay",
+   "generations": [
+    {
+     "slug": "2004-2007",
+     "from": 2004,
+     "to": 2007,
+     "engines": [
+      {
+       "path": "11295/7427",
+       "name": "3.5 V6 200hp",
+       "fuel": "petrol",
+       "hpStock": 200,
+       "hpTuned": 220,
+       "nmStock": 300,
+       "nmTuned": 330,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "sky-1098",
+   "name": "Sky",
+   "generations": [
+    {
+     "slug": "2007-2010",
+     "from": 2007,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "11293/5223",
+       "name": "2.0 Turbo 260hp",
+       "fuel": "petrol",
+       "hpStock": 260,
+       "hpTuned": 290,
+       "nmStock": 353,
+       "nmTuned": 430,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11294/7426",
+       "name": "2.4i - 177hp",
+       "fuel": "petrol",
+       "hpStock": 177,
+       "hpTuned": 195,
+       "nmStock": 235,
+       "nmTuned": 260,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "vue-1100",
+   "name": "Vue",
+   "generations": [
+    {
+     "slug": "2002-2007",
+     "from": 2002,
+     "to": 2007,
+     "engines": [
+      {
+       "path": "11296/911",
+       "name": "2.4i - 170hp",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 180,
+       "nmStock": 222,
+       "nmTuned": 237,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "11297/7428",
+       "name": "3.5 V6 250hp",
+       "fuel": "petrol",
+       "hpStock": 250,
+       "hpTuned": 270,
+       "nmStock": 328,
+       "nmTuned": 360,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    },
+    {
+     "slug": "2008-2010",
+     "from": 2008,
+     "to": 2010,
+     "engines": [
+      {
+       "path": "11298/911",
+       "name": "2.4i - 170hp",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 180,
+       "nmStock": 222,
+       "nmTuned": 237,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

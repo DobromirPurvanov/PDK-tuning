@@ -1,0 +1,30 @@
+{
+ "slug": "tata",
+ "name": "Tata",
+ "logo": "tata.png",
+ "models": [
+  {
+   "slug": "safari-xenon-1116",
+   "name": "Safari / Xenon",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "11732/7590",
+       "name": "2.2 Dicor - 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 170,
+       "nmStock": 320,
+       "nmTuned": 380,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

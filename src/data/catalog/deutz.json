@@ -1,0 +1,946 @@
+{
+ "slug": "deutz",
+ "name": "Deutz",
+ "logo": "deutz.png",
+ "models": [
+  {
+   "slug": "agrocompact-850",
+   "name": "Agrocompact",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7850/4671",
+       "name": "Agrocompact - 100 - 4.0L - 90HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 90,
+       "hpTuned": 115,
+       "nmStock": 372,
+       "nmTuned": 445,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7851/4672",
+       "name": "Agrocompact - 75 - 4.0L - 71HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 71,
+       "hpTuned": 90,
+       "nmStock": 257,
+       "nmTuned": 310,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7852/4673",
+       "name": "Agrocompact - 90 - 4.0L - 83HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 83,
+       "hpTuned": 120,
+       "nmStock": 348,
+       "nmTuned": 420,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "agrofarm-852",
+   "name": "Agrofarm",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7881/4702",
+       "name": "Agrofarm - 410 - 4.0L - 85HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 85,
+       "hpTuned": 110,
+       "nmStock": 320,
+       "nmTuned": 400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7882/4703",
+       "name": "Agrofarm - 420 - 4.0L - 99HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 99,
+       "hpTuned": 125,
+       "nmStock": 380,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7883/4704",
+       "name": "Agrofarm - 430 - 4.0L - 109HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 109,
+       "hpTuned": 135,
+       "nmStock": 400,
+       "nmTuned": 465,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "agrotron-851",
+   "name": "Agrotron",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "7853/4674",
+       "name": "Agrotron - 100 - 4.0L - 101HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 101,
+       "hpTuned": 125,
+       "nmStock": 396,
+       "nmTuned": 475,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7854/4675",
+       "name": "Agrotron - 105 - 6.1L - 110HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 135,
+       "nmStock": 432,
+       "nmTuned": 518,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7855/4676",
+       "name": "Agrotron - 108 - 6.1L - 118HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 118,
+       "hpTuned": 140,
+       "nmStock": 418,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7856/4677",
+       "name": "Agrotron - 110 - 6.1L - 110HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 110,
+       "hpTuned": 145,
+       "nmStock": 417,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7857/4678",
+       "name": "Agrotron - 1130TTV - 7.1L - 130HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 160,
+       "nmStock": 530,
+       "nmTuned": 635,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7858/4679",
+       "name": "Agrotron - 1145TTV - 7.1L - 145HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 145,
+       "hpTuned": 185,
+       "nmStock": 565,
+       "nmTuned": 680,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7859/4680",
+       "name": "Agrotron - 1160TTV - 7.1L - 160HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 160,
+       "hpTuned": 200,
+       "nmStock": 615,
+       "nmTuned": 755,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7860/4681",
+       "name": "Agrotron - 118 - 6.1L - 128HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 128,
+       "hpTuned": 150,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7861/4682",
+       "name": "Agrotron - 120 - 6.1L - 118HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 118,
+       "hpTuned": 145,
+       "nmStock": 476,
+       "nmTuned": 570,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7862/4683",
+       "name": "Agrotron - 128 - 6.1L - 138HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 138,
+       "hpTuned": 175,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7863/4684",
+       "name": "Agrotron - 130 - 6.1L - 128HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 128,
+       "hpTuned": 150,
+       "nmStock": 512,
+       "nmTuned": 649,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7864/4685",
+       "name": "Agrotron - 130 - 7.1L - 136HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 136,
+       "hpTuned": 175,
+       "nmStock": 512,
+       "nmTuned": 615,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7865/4686",
+       "name": "Agrotron - 140 - 7.1L - 149HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 149,
+       "hpTuned": 180,
+       "nmStock": 580,
+       "nmTuned": 710,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7866/4687",
+       "name": "Agrotron - 150 - 6.1L - 150HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 170,
+       "nmStock": 590,
+       "nmTuned": 649,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7867/4688",
+       "name": "Agrotron - 150 - 7.1L - 150HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 150,
+       "hpTuned": 170,
+       "nmStock": 588,
+       "nmTuned": 705,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7868/4689",
+       "name": "Agrotron - 155 - 7.1L - 158HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 158,
+       "hpTuned": 200,
+       "nmStock": 610,
+       "nmTuned": 750,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7869/4690",
+       "name": "Agrotron - 165 - 7.1L - 170HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 215,
+       "nmStock": 660,
+       "nmTuned": 790,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7870/4691",
+       "name": "Agrotron - 180 - 7.1L - 170HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 170,
+       "hpTuned": 215,
+       "nmStock": 775,
+       "nmTuned": 930,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7871/4692",
+       "name": "Agrotron - 200 - 7.1L - 205HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 205,
+       "hpTuned": 250,
+       "nmStock": 820,
+       "nmTuned": 985,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7872/4693",
+       "name": "Agrotron - 210 - 7.1L - 211HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 211,
+       "hpTuned": 250,
+       "nmStock": 865,
+       "nmTuned": 1028,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7873/4694",
+       "name": "Agrotron - 215 - 7.1L - 211HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 211,
+       "hpTuned": 250,
+       "nmStock": 865,
+       "nmTuned": 1040,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7874/4695",
+       "name": "Agrotron - 235 - 7.1L - 235HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 235,
+       "hpTuned": 260,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7875/4696",
+       "name": "Agrotron - 265 - 7.1L - 262HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 262,
+       "hpTuned": 315,
+       "nmStock": 1028,
+       "nmTuned": 1235,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7884/4705",
+       "name": "Agrotron - 410TTV - 4.0L - 121HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 121,
+       "hpTuned": 146,
+       "nmStock": 521,
+       "nmTuned": 601,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7885/4706",
+       "name": "Agrotron - 420TTV - 4.0L - 130HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 130,
+       "hpTuned": 155,
+       "nmStock": 566,
+       "nmTuned": 646,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7886/4707",
+       "name": "Agrotron - 430TTV - 4.0L - 142HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 142,
+       "hpTuned": 160,
+       "nmStock": 611,
+       "nmTuned": 691,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7908/4729",
+       "name": "Agrotron - 5080 - 3.6L - 75HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 75,
+       "hpTuned": 95,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7909/4730",
+       "name": "Agrotron - 5090 - 3.6L - 88HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 88,
+       "hpTuned": 110,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7925/4746",
+       "name": "Agrotron - 5100 - 3.6L - 99HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 99,
+       "hpTuned": 128,
+       "nmStock": 397,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7910/4731",
+       "name": "Agrotron - 5105 - 3.6L - 105HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 105,
+       "hpTuned": 150,
+       "nmStock": 480,
+       "nmTuned": 600,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7926/4747",
+       "name": "Agrotron - 5110 - 3.6L - 108HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 108,
+       "hpTuned": 135,
+       "nmStock": 440,
+       "nmTuned": 550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7911/4732",
+       "name": "Agrotron - 5115 - 3.6L - 113HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 113,
+       "hpTuned": 145,
+       "nmStock": 460,
+       "nmTuned": 580,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7927/4748",
+       "name": "Agrotron - 5120 - 3.6L - 116HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 116,
+       "hpTuned": 145,
+       "nmStock": 460,
+       "nmTuned": 580,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7912/4733",
+       "name": "Agrotron - 5125 - 3.6L - 120HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 120,
+       "hpTuned": 135,
+       "nmStock": 0,
+       "nmTuned": 0,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7928/4749",
+       "name": "Agrotron - 5130 - 3.6L - 124HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 124,
+       "hpTuned": 155,
+       "nmStock": 480,
+       "nmTuned": 590,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7887/4708",
+       "name": "Agrotron - 610TTV - 6.1L - 157HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 157,
+       "hpTuned": 185,
+       "nmStock": 606,
+       "nmTuned": 746,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7929/4750",
+       "name": "Agrotron - 6120.4 - 4.0L - 118HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 118,
+       "hpTuned": 140,
+       "nmStock": 481,
+       "nmTuned": 560,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7930/4751",
+       "name": "Agrotron - 6130.4 - 4.0L - 128HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 128,
+       "hpTuned": 160,
+       "nmStock": 546,
+       "nmTuned": 630,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7931/4752",
+       "name": "Agrotron - 6140 - 6.1L - 135HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 135,
+       "hpTuned": 170,
+       "nmStock": 628,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7932/4753",
+       "name": "Agrotron - 6140.4 - 4.0L - 144HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 144,
+       "hpTuned": 170,
+       "nmStock": 628,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7933/4754",
+       "name": "Agrotron - 6150 - 6.1L - 153HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 153,
+       "hpTuned": 180,
+       "nmStock": 605,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7934/4755",
+       "name": "Agrotron - 6150.4 - 4.0L - 153HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 153,
+       "hpTuned": 180,
+       "nmStock": 624,
+       "nmTuned": 770,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7916/4737",
+       "name": "Agrotron - 6155 - 6.1L - 156HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 185,
+       "nmStock": 633,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7935/4756",
+       "name": "Agrotron - 6160 - 6.1L - 158HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 158,
+       "hpTuned": 195,
+       "nmStock": 692,
+       "nmTuned": 810,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7936/4757",
+       "name": "Agrotron - 6160.4 - 4.0L - 156HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 156,
+       "hpTuned": 195,
+       "nmStock": 658,
+       "nmTuned": 780,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7917/4738",
+       "name": "Agrotron - 6165 - 6.1L - 164HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 164,
+       "hpTuned": 190,
+       "nmStock": 699,
+       "nmTuned": 860,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7918/4739",
+       "name": "Agrotron - 6175 - 6.1L - 176HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 176,
+       "hpTuned": 205,
+       "nmStock": 739,
+       "nmTuned": 880,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7937/4758",
+       "name": "Agrotron - 6180 - 6.1L - 175HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 175,
+       "hpTuned": 205,
+       "nmStock": 740,
+       "nmTuned": 870,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7919/4740",
+       "name": "Agrotron - 6185 - 6.1L - 188HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 188,
+       "hpTuned": 225,
+       "nmStock": 818,
+       "nmTuned": 980,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7938/4759",
+       "name": "Agrotron - 6190 - 6.1L - 193HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 193,
+       "hpTuned": 240,
+       "nmStock": 820,
+       "nmTuned": 950,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7920/4741",
+       "name": "Agrotron - 6205 - 6.1L - 207HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 207,
+       "hpTuned": 240,
+       "nmStock": 850,
+       "nmTuned": 1000,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7888/4709",
+       "name": "Agrotron - 620TTV - 6.1L - 165HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 165,
+       "hpTuned": 195,
+       "nmStock": 693,
+       "nmTuned": 838,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7939/4760",
+       "name": "Agrotron - 6210 - 6.1L - 210HP - Tier4i",
+       "fuel": "petrol",
+       "hpStock": 210,
+       "hpTuned": 250,
+       "nmStock": 890,
+       "nmTuned": 1000,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7921/4742",
+       "name": "Agrotron - 6215 - 6.1L - 212HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 212,
+       "hpTuned": 260,
+       "nmStock": 889,
+       "nmTuned": 1050,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7889/4710",
+       "name": "Agrotron - 630TTV - 6.1L - 203HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 203,
+       "hpTuned": 225,
+       "nmStock": 851,
+       "nmTuned": 996,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7913/4734",
+       "name": "Agrotron - 7210TTV - 6.1L - 186HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 186,
+       "hpTuned": 250,
+       "nmStock": 806,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7914/4735",
+       "name": "Agrotron - 7230TTV - 6.1L - 204HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 204,
+       "hpTuned": 270,
+       "nmStock": 870,
+       "nmTuned": 1000,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7915/4736",
+       "name": "Agrotron - 7250TTV - 6.1L - 236HP - Tier4",
+       "fuel": "petrol",
+       "hpStock": 236,
+       "hpTuned": 290,
+       "nmStock": 934,
+       "nmTuned": 1100,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7876/4697",
+       "name": "Agrotron - 90 - 4.0L - 88HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 88,
+       "hpTuned": 110,
+       "nmStock": 328,
+       "nmTuned": 395,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7922/4743",
+       "name": "Agrotron - 9290TTV - 7.8L - 277HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 277,
+       "hpTuned": 305,
+       "nmStock": 1205,
+       "nmTuned": 1350,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7923/4744",
+       "name": "Agrotron - 9310TTV - 7.8L - 296HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 296,
+       "hpTuned": 316,
+       "nmStock": 1290,
+       "nmTuned": 1400,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7924/4745",
+       "name": "Agrotron - 9340TTV - 7.8L - 316HP - Tier4F",
+       "fuel": "petrol",
+       "hpStock": 316,
+       "hpTuned": 350,
+       "nmStock": 1372,
+       "nmTuned": 1520,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7877/4698",
+       "name": "Agrotron - K100 - 4.0L - 95HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 95,
+       "hpTuned": 140,
+       "nmStock": 396,
+       "nmTuned": 520,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7878/4699",
+       "name": "Agrotron - K110 - 4.0L - 104HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 104,
+       "hpTuned": 125,
+       "nmStock": 418,
+       "nmTuned": 478,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7879/4700",
+       "name": "Agrotron - K200 - 4.0L - 115HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 115,
+       "hpTuned": 130,
+       "nmStock": 447,
+       "nmTuned": 545,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7890/4711",
+       "name": "Agrotron - K410 - 4.0L - 89HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 89,
+       "hpTuned": 115,
+       "nmStock": 382,
+       "nmTuned": 450,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7891/4712",
+       "name": "Agrotron - K420 - 4.0L - 100HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 100,
+       "hpTuned": 125,
+       "nmStock": 413,
+       "nmTuned": 475,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7892/4713",
+       "name": "Agrotron - K430 - 4.0L - 112HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 112,
+       "hpTuned": 145,
+       "nmStock": 492,
+       "nmTuned": 550,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7893/4714",
+       "name": "Agrotron - K610 - 6.1L - 112HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 112,
+       "hpTuned": 145,
+       "nmStock": 436,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7880/4701",
+       "name": "Agrotron - K90 - 4.0L - 84HP - Tier2",
+       "fuel": "petrol",
+       "hpStock": 84,
+       "hpTuned": 110,
+       "nmStock": 372,
+       "nmTuned": 440,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7894/4715",
+       "name": "Agrotron - L 710 - 7.1L - 189 pk - Tier3",
+       "fuel": "petrol",
+       "hpStock": 189,
+       "hpTuned": 220,
+       "nmStock": 793,
+       "nmTuned": 877,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7895/4716",
+       "name": "Agrotron - L 720 - 7.1L - 197 pk - Tier3",
+       "fuel": "petrol",
+       "hpStock": 197,
+       "hpTuned": 225,
+       "nmStock": 836,
+       "nmTuned": 921,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7896/4717",
+       "name": "Agrotron - L 730 - 7.1L - 213 pk - Tier3",
+       "fuel": "petrol",
+       "hpStock": 213,
+       "hpTuned": 235,
+       "nmStock": 836,
+       "nmTuned": 921,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7897/4718",
+       "name": "Agrotron - M410 - 4.0L - 134HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 134,
+       "hpTuned": 160,
+       "nmStock": 610,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7898/4719",
+       "name": "Agrotron - M420 - 4.0L - 154HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 154,
+       "hpTuned": 180,
+       "nmStock": 659,
+       "nmTuned": 760,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7899/4720",
+       "name": "Agrotron - M600 - 6.1L - 121HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 121,
+       "hpTuned": 155,
+       "nmStock": 599,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7900/4721",
+       "name": "Agrotron - M610 - 6.1L - 132HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 132,
+       "hpTuned": 160,
+       "nmStock": 599,
+       "nmTuned": 700,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7901/4722",
+       "name": "Agrotron - M615 - 6.1L - 146HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 146,
+       "hpTuned": 175,
+       "nmStock": 599,
+       "nmTuned": 680,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7902/4723",
+       "name": "Agrotron - M620 - 6.1L - 155HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 155,
+       "hpTuned": 190,
+       "nmStock": 659,
+       "nmTuned": 765,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7903/4724",
+       "name": "Agrotron - M625 - 6.1L - 163HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 163,
+       "hpTuned": 198,
+       "nmStock": 659,
+       "nmTuned": 740,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7904/4725",
+       "name": "Agrotron - M640 - 6.1L - 171HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 171,
+       "hpTuned": 209,
+       "nmStock": 717,
+       "nmTuned": 800,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7905/4726",
+       "name": "Agrotron - M650 - 6.1L - 181HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 181,
+       "hpTuned": 210,
+       "nmStock": 749,
+       "nmTuned": 845,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7906/4727",
+       "name": "Agrotron - X710 - 7.1L - 219HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 219,
+       "hpTuned": 250,
+       "nmStock": 961,
+       "nmTuned": 1090,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "7907/4728",
+       "name": "Agrotron - X720 - 7.1L - 262HP - Tier3",
+       "fuel": "petrol",
+       "hpStock": 262,
+       "hpTuned": 292,
+       "nmStock": 1052,
+       "nmTuned": 1120,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

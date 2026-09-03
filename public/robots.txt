@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /bg/login
+Disallow: /en/login
+Disallow: /bg/sign-up
+Disallow: /en/sign-up
+Disallow: /bg/profile
+Disallow: /en/profile
+Disallow: /api/
+
+Sitemap: https://www.pdktuning.com/sitemap-index.xml

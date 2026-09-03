@@ -1,0 +1,73 @@
+{
+ "slug": "pgo",
+ "name": "PGO",
+ "logo": "pgo.png",
+ "models": [
+  {
+   "slug": "cevennes-1053",
+   "name": "Cevennes",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "10849/7172",
+       "name": "1.6 THP - 184hp",
+       "fuel": "petrol",
+       "hpStock": 184,
+       "hpTuned": 210,
+       "nmStock": 240,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10850/7173",
+       "name": "2.0 16v - 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 155,
+       "nmStock": 190,
+       "nmTuned": 205,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "hemera-1054",
+   "name": "Hemera",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "10851/7172",
+       "name": "1.6 THP - 184hp",
+       "fuel": "petrol",
+       "hpStock": 184,
+       "hpTuned": 210,
+       "nmStock": 240,
+       "nmTuned": 340,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "10852/7173",
+       "name": "2.0 16v - 140hp",
+       "fuel": "petrol",
+       "hpStock": 140,
+       "hpTuned": 155,
+       "nmStock": 190,
+       "nmTuned": 205,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

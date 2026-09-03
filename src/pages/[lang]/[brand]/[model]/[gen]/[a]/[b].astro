@@ -1,0 +1,93 @@
+---
+// Страницата на двигателя — главната страница на каталога (план, стр. 20 и 25).
+import Base from '@/layouts/Base.astro';
+import Crumbs from '@/components/Crumbs.astro';
+import Readout from '@/components/Readout.astro';
+import PowerCurve from '@/components/PowerCurve.astro';
+import ServiceTiles from '@/components/ServiceTiles.astro';
+import Faq from '@/components/Faq.astro';
+import ContactForm from '@/components/ContactForm.astro';
+import { LANGS, t, routes, years, type Lang } from '@/i18n';
+import { brands, servicesForFuel, hpGain, hpPct, engineLabel, modelPath, genPath, enginePath, brandPath } from '@/lib/catalog';
+import { titles, descriptions, ldBreadcrumb, ldProduct, ldFaq, ldLocalBusiness } from '@/lib/seo';
+import { whatChanges, timeAndPrice, engineFaq, fuelName } from '@/lib/text';
+import business from '@/data/business.json';
+export function getStaticPaths() {
+  return LANGS.flatMap((lang) => brands.flatMap((b) => b.models.flatMap((m) => m.generations.flatMap((g) => g.engines.map((e) => { const [a, bb] = e.path.split('/'); return { params: { lang, brand: b.slug, model: m.slug, gen: g.slug, a, b: bb }, props: { b, m, g, e } }; })))));
+}
+const lang = Astro.params.lang as Lang; const { b, m, g, e } = Astro.props;
+const d = t(lang);
+const path = enginePath(lang, b, m, g, e); const y = years(g.from, g.to, lang); const label = engineLabel(e);
+const crumbs = [{ name: d.crumbs.catalog, path: routes.home[lang] }, { name: b.name, path: brandPath(lang, b) }, { name: m.name, path: modelPath(lang, b, m) }, { name: y, path: genPath(lang, b, m, g) }];
+const title = titles.engine(lang, b, m, g, e), description = descriptions.engine(lang, b, m, g, e);
+const faq = engineFaq(lang, b.name, m.name, e);
+const neighbors = g.engines.filter((x) => x !== e).slice(0, 12);
+const car = `${b.name} ${m.name} ${label} ${e.hpStock} ${d.units.hp} (${y})`;
+---
+<Base lang={lang} title={title} description={description} path={path} current="catalog" jsonld={[ldBreadcrumb([...crumbs, { name: `${label} ${e.hpStock} ${d.units.hp}`, path }]), ldProduct(lang, b, m, g, e, path), ldFaq(faq), ldLocalBusiness(lang)]}>
+  <div class="engine-hero">
+    <div class="wrap">
+      <Crumbs items={crumbs} current={`${label} ${e.hpStock} ${d.units.hp}`} />
+      <p class="kicker">{fuelName(lang, e.fuel)} · {y} · {lang === 'bg' ? 'измерено на стенд' : 'dyno-measured'}</p>
+      <h1>{d.catalog.engineH1(b.name, m.name, label, e.hpStock)}</h1>
+      <Readout lang={lang} hpStock={e.hpStock} hpTuned={e.hpTuned} nmStock={e.nmStock} nmTuned={e.nmTuned} />
+      <div class="actions">
+        <a class="btn primary" href={`tel:${business.phone}`} data-ev="tel_click" data-ev-label="engine">{d.cta.book}</a>
+        <a class="btn ghost" href={business.portal.login[lang]} rel="nofollow" data-ev="file_upload_click" data-ev-label="engine">{d.cta.upload}</a>
+        <span class="muted" style="font-family:var(--mono);font-size:var(--s12)">{lang === 'bg' ? 'обаждане за местни клиенти · портал за сервизи' : 'call for local customers · portal for workshops'}</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cols c64">
+        <div>
+          <p class="kicker">01 · {d.catalog.whatChanges}</p>
+          <h2>{lang === 'bg' ? `Какво се променя при ${label}` : `What changes on the ${label}`}</h2>
+          <p>{whatChanges(lang, e)}</p>
+          <p class="kicker" style="margin-top:2rem">02 · {d.catalog.timeAndPrice}</p>
+          <p>{timeAndPrice(lang)}</p>
+        </div>
+        <div>
+          <PowerCurve lang={lang} hpStock={e.hpStock} hpTuned={e.hpTuned} nmStock={e.nmStock} nmTuned={e.nmTuned} fuel={e.fuel} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <p class="kicker">03 · {d.catalog.suitable}</p>
+      <h2>{lang === 'bg' ? 'Подходящи услуги за този двигател' : 'Suitable services for this engine'}</h2>
+      <ServiceTiles lang={lang} only={servicesForFuel(e.fuel)} cols={3} />
+    </div>
+  </section>
+
+  {neighbors.length > 0 && <section class="section">
+    <div class="wrap">
+      <p class="kicker">04 · {d.catalog.neighbors}</p>
+      <h2>{b.name} {m.name} {y}</h2>
+      <table class="ba">
+        <thead><tr><th>{d.catalog.engine}</th><th>{d.catalog.fuel}</th><th class="num">{d.units.hp} {d.catalog.before}</th><th class="num">{d.units.hp} {d.catalog.after}</th><th class="num">{d.catalog.gain}</th></tr></thead>
+        <tbody>{neighbors.map((x) => <tr><td><a href={enginePath(lang, b, m, g, x)}>{engineLabel(x)}</a></td><td>{fuelName(lang, x.fuel)}</td><td class="num">{x.hpStock}</td><td class="num gain">{x.hpTuned}</td><td class="num gain">+{hpGain(x)} · +{hpPct(x)}%</td></tr>)}</tbody>
+      </table>
+    </div>
+  </section>}
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <p class="kicker">05 · {d.catalog.questions}</p>
+          <h2>{label}</h2>
+          <Faq items={faq} />
+        </div>
+        <div>
+          <p class="kicker">06 · {d.form.title}</p>
+          <ContactForm lang={lang} car={car} service="chip-tuning" id="form-engine" />
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,30 @@
+{
+ "slug": "changan",
+ "name": "Changan",
+ "logo": "changan.png",
+ "models": [
+  {
+   "slug": "reaton-823",
+   "name": "Reaton",
+   "generations": [
+    {
+     "slug": "2013-0",
+     "from": 2013,
+     "to": null,
+     "engines": [
+      {
+       "path": "7354/4340",
+       "name": "1.8T 176hp",
+       "fuel": "petrol",
+       "hpStock": 176,
+       "hpTuned": 205,
+       "nmStock": 230,
+       "nmTuned": 290,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

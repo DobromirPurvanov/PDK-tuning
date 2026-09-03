@@ -1,0 +1,232 @@
+{
+ "slug": "lamborghini",
+ "name": "Lamborghini",
+ "logo": "lamborghini.png",
+ "models": [
+  {
+   "slug": "aventador-381",
+   "name": "Aventador",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2634/1737",
+       "name": "6.5 V12 700hp",
+       "fuel": "petrol",
+       "hpStock": 700,
+       "hpTuned": 730,
+       "nmStock": 690,
+       "nmTuned": 720,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9119/5956",
+       "name": "S 6.5 V12 740hp",
+       "fuel": "petrol",
+       "hpStock": 740,
+       "hpTuned": 750,
+       "nmStock": 690,
+       "nmTuned": 704,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9120/5957",
+       "name": "SVJ 6.5 V12 770hp",
+       "fuel": "petrol",
+       "hpStock": 770,
+       "hpTuned": 780,
+       "nmStock": 720,
+       "nmTuned": 735,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "gallardo-382",
+   "name": "Gallardo",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2635/1738",
+       "name": "5.0 V10 500hp",
+       "fuel": "petrol",
+       "hpStock": 500,
+       "hpTuned": 520,
+       "nmStock": 510,
+       "nmTuned": 530,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2636/1739",
+       "name": "5.0 V10 LP530-2 530hp",
+       "fuel": "petrol",
+       "hpStock": 530,
+       "hpTuned": 555,
+       "nmStock": 510,
+       "nmTuned": 535,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2637/1740",
+       "name": "5.2 V10 LP550-2 550hp",
+       "fuel": "petrol",
+       "hpStock": 550,
+       "hpTuned": 575,
+       "nmStock": 540,
+       "nmTuned": 565,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2638/1741",
+       "name": "5.2 V10 LP560-4 560hp",
+       "fuel": "petrol",
+       "hpStock": 560,
+       "hpTuned": 585,
+       "nmStock": 540,
+       "nmTuned": 565,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2639/1742",
+       "name": "5.2 V10 LP570-4 Superleggera 570",
+       "fuel": "petrol",
+       "hpStock": 570,
+       "hpTuned": 595,
+       "nmStock": 540,
+       "nmTuned": 565,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9121/5958",
+       "name": "5.2 V10 LP570-4 Superleggera 570hp",
+       "fuel": "petrol",
+       "hpStock": 570,
+       "hpTuned": 595,
+       "nmStock": 540,
+       "nmTuned": 565,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "huracan-383",
+   "name": "Huracan",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2640/1743",
+       "name": "5.2 V10 580-2 580hp",
+       "fuel": "petrol",
+       "hpStock": 580,
+       "hpTuned": 630,
+       "nmStock": 540,
+       "nmTuned": 580,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2641/1744",
+       "name": "5.2 V10 610-4 610hp",
+       "fuel": "petrol",
+       "hpStock": 610,
+       "hpTuned": 630,
+       "nmStock": 560,
+       "nmTuned": 580,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "9122/5959",
+       "name": "EVO 640hp",
+       "fuel": "electric",
+       "hpStock": 640,
+       "hpTuned": 655,
+       "nmStock": 600,
+       "nmTuned": 630,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2642/1745",
+       "name": "Performante 640hp",
+       "fuel": "petrol",
+       "hpStock": 640,
+       "hpTuned": 655,
+       "nmStock": 600,
+       "nmTuned": 630,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "murcielago-384",
+   "name": "Murcielago",
+   "generations": [
+    {
+     "slug": "0-0",
+     "from": 0,
+     "to": null,
+     "engines": [
+      {
+       "path": "2643/1746",
+       "name": "6.2 V12 580hp",
+       "fuel": "petrol",
+       "hpStock": 580,
+       "hpTuned": 602,
+       "nmStock": 650,
+       "nmTuned": 679,
+       "lastmod": "2026-09-01"
+      },
+      {
+       "path": "2644/1747",
+       "name": "6.5 V12 LP640-4 640hp",
+       "fuel": "petrol",
+       "hpStock": 640,
+       "hpTuned": 665,
+       "nmStock": 660,
+       "nmTuned": 688,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "urus-945",
+   "name": "Urus",
+   "generations": [
+    {
+     "slug": "2018-0",
+     "from": 2018,
+     "to": null,
+     "engines": [
+      {
+       "path": "9123/5961",
+       "name": "4.0 V8 650hp",
+       "fuel": "petrol",
+       "hpStock": 650,
+       "hpTuned": 680,
+       "nmStock": 850,
+       "nmTuned": 900,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

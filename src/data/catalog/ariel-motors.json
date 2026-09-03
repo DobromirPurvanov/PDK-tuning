@@ -1,0 +1,53 @@
+{
+ "slug": "ariel-motors",
+ "name": "Ariel Motors",
+ "logo": "ariel-motors.png",
+ "models": [
+  {
+   "slug": "atom-4-748",
+   "name": "Atom 4",
+   "generations": [
+    {
+     "slug": "2018-0",
+     "from": 2018,
+     "to": null,
+     "engines": [
+      {
+       "path": "6000/3408",
+       "name": "2.0T - 320hp",
+       "fuel": "petrol",
+       "hpStock": 320,
+       "hpTuned": 360,
+       "nmStock": 420,
+       "nmTuned": 500,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "nomad-749",
+   "name": "Nomad",
+   "generations": [
+    {
+     "slug": "2015-0",
+     "from": 2015,
+     "to": null,
+     "engines": [
+      {
+       "path": "6001/3409",
+       "name": "2.4 16v I-Vtec K24 (Honda) - 235hp",
+       "fuel": "petrol",
+       "hpStock": 235,
+       "hpTuned": 245,
+       "nmStock": 300,
+       "nmTuned": 320,
+       "lastmod": "2026-09-01"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

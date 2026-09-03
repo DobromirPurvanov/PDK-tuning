@@ -1,0 +1,38 @@
+---
+import { t, routes, type Lang } from '@/i18n';
+import business from '@/data/business.json';
+import { SERVICES } from '@/data/services';
+interface Props { lang: Lang; car?: string; service?: string; id?: string; title?: string }
+const { lang, car = '', service = '', id = 'form', title } = Astro.props;
+const d = t(lang);
+const TS = import.meta.env.PUBLIC_TURNSTILE_SITEKEY as string | undefined;
+---
+<form class="form" id={id} method="post" action="/api/contact" data-lang={lang} novalidate>
+  {title && <h2>{title}</h2>}
+  <div class="row">
+    <div class="field"><label for={`${id}-name`}>{d.form.name} <span class="req">*</span></label><input id={`${id}-name`} name="name" type="text" required autocomplete="name" maxlength="120"><div class="err">{d.form.errName}</div></div>
+    <div class="field"><label for={`${id}-phone`}>{d.form.phone} <span class="req">*</span></label><input id={`${id}-phone`} name="phone" type="tel" required autocomplete="tel" inputmode="tel" maxlength="40"><div class="err">{d.form.errPhone}</div></div>
+  </div>
+  <div class="row">
+    <div class="field"><label for={`${id}-email`}>{d.form.email} <span class="muted">({d.form.optional})</span></label><input id={`${id}-email`} name="email" type="email" autocomplete="email" maxlength="160"></div>
+    <div class="field"><label for={`${id}-service`}>{d.form.service}</label>
+      <select id={`${id}-service`} name="service">
+        <option value="" selected={!service}>{d.form.noService}</option>
+        <option value="chip-tuning" selected={service === 'chip-tuning'}>{lang === 'bg' ? 'Чип тунинг' : 'Chip tuning'}</option>
+        {SERVICES.map((s) => <option value={s.slug} selected={service === s.slug}>{s.name[lang]}</option>)}
+        <option value="dyno" selected={service === 'dyno'}>{d.nav.dyno}</option>
+      </select>
+    </div>
+  </div>
+  <div class="field"><label for={`${id}-car`}>{d.form.car}</label><input id={`${id}-car`} name="car" type="text" value={car} maxlength="160" placeholder={lang === 'bg' ? 'марка, модел, двигател, година' : 'brand, model, engine, year'}></div>
+  <div class="field"><label for={`${id}-message`}>{d.form.message} <span class="muted">({d.form.optional})</span></label><textarea id={`${id}-message`} name="message" maxlength="2000"></textarea></div>
+  <div class="field"><label class="consent"><input type="checkbox" name="consent" value="yes" required><span>{d.form.consent} <a href={routes.privacy[lang]}>{d.form.privacy}</a>.</span></label><div class="err">{d.form.errConsent}</div></div>
+  <input type="hidden" name="page" value="">
+  {TS && <div class="cf-turnstile" data-sitekey={TS} data-size="flexible"></div>}
+  <div class="actions"><button class="btn primary" type="submit">{d.form.submit}</button><span class="note">{d.form.note}</span></div>
+  <div class="status" role="status" aria-live="polite"></div>
+  <template data-ok>{d.form.ok} <a href={`tel:${business.phone}`}>{business.phoneDisplay}</a></template>
+  <template data-fail>{d.form.fail} <a href={`tel:${business.phone}`}>{business.phoneDisplay}</a></template>
+</form>
+{TS && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
+<script is:inline set:html={`(function(){var f=document.getElementById('${id}');if(!f)return;f.querySelector('[name=page]').value=location.pathname;f.addEventListener('submit',async function(e){e.preventDefault();var ok=true;f.querySelectorAll('.field').forEach(function(x){x.classList.remove('invalid')});['name','phone'].forEach(function(n){var i=f.elements[n];if(!i.value.trim()){i.closest('.field').classList.add('invalid');ok=false}});if(!f.elements.consent.checked){f.elements.consent.closest('.field').classList.add('invalid');ok=false}if(!ok)return;var st=f.querySelector('.status');st.className='status';f.classList.add('sending');var fd=new FormData(f),o={};fd.forEach(function(v,k){o[k]=v});try{var r=await fetch('/api/contact',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(o)});var j=await r.json().catch(function(){return{}});if(r.ok&&j.ok){st.innerHTML=f.querySelector('[data-ok]').innerHTML;st.classList.add('ok');(window.dataLayer=window.dataLayer||[]).push({event:'form_submit',service:o.service||'',car:o.car||''});f.reset();}else{st.innerHTML=f.querySelector('[data-fail]').innerHTML;st.classList.add('fail');}}catch(err){st.innerHTML=f.querySelector('[data-fail]').innerHTML;st.classList.add('fail');}f.classList.remove('sending');});})();`} />
