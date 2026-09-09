@@ -1,8 +1,8 @@
-# Портата за качеството. Тук се пускат SEO проверките от scripts/verify-build.mjs,
-# а не в образа: така отказът се вижда преди деплой и не оставя сайта на 502.
-# Пуска се на Linux — билдът на macOS минава, защото файловата система там не
-# различава главни от малки букви.
-name: Проверка на билда
+# The quality gate. The SEO checks from scripts/verify-build.mjs run here rather
+# than inside the image, so a failure shows up before deploy instead of leaving
+# the site on 502. Runs on Linux: a macOS build passes because that filesystem
+# is case-insensitive.
+name: Build check
 
 on:
   push:
@@ -23,10 +23,10 @@ jobs:
 
       - run: npm ci --no-audit --no-fund
 
-      - name: Astro билд
+      - name: Astro build
         run: npx astro build
         env:
           NODE_OPTIONS: --max-old-space-size=4096
 
-      - name: SEO проверки
+      - name: SEO checks
         run: node scripts/verify-build.mjs

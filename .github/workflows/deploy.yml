@@ -30,31 +30,34 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           port: ${{ secrets.SERVER_PORT }} # <-- Added Port
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          # Билдът на 30 885 страници е ~285 s на тази машина, плюс npm ci.
+          # Building 30,885 pages takes ~285s on this box, plus npm ci.
           command_timeout: 20m
           script: |
             set -e
             cd /home/pdk_new/website
-            # Тайните живеят САМО на сървъра (.env* са в .gitignore и не се качват).
-            # --env-file важи и за заместването на ${...}, значи и за build args.
-            # env_file: в compose файла НЕ върши тази работа — той е само по време
-            # на работа, а PUBLIC_TURNSTILE_SITEKEY се зашива в HTML-а при билда.
-            # if, а не [ ] && — при set -e неуспешният тест би убил скрипта.
+            # Secrets live ONLY on the server (.env* are gitignored, never shipped).
+            # --env-file also feeds ${...} interpolation, so it covers build args.
+            # env_file: in the compose file does NOT: it is runtime-only, while
+            # PUBLIC_TURNSTILE_SITEKEY is baked into the HTML at build time.
+            # Using if, not [ ] && — under set -e a failing test would kill the script.
             EF=""
             if [ -f .env ]; then EF="$EF --env-file .env"; fi
             if [ -f .env.local ]; then EF="$EF --env-file .env.local"; fi
-            if [ -z "$EF" ]; then echo "няма нито .env, нито .env.local до docker-compose.yml"; exit 1; fi
-            echo "променливите се четат от:$EF"
-            # Без това нищо не тръгва: копирането на файлове не вдига контейнери.
+            if [ -z "$EF" ]; then echo "no .env or .env.local next to docker-compose.yml"; exit 1; fi
+            echo "reading variables from:$EF"
+            # Without this nothing starts: copying files does not create containers.
             docker compose $EF build
-            # Счупен nginx.conf се хваща ПРЕДИ работещите контейнери да бъдат сменени.
-            docker compose $EF run --rm --no-deps web nginx -t
+            # Catch a broken nginx.conf BEFORE the running containers are replaced.
+            # No --no-deps here: nginx resolves proxy_pass http://api:3000 at config
+            # load time, so the api container must be up or the test dies with
+            # "host not found in upstream".
+            docker compose $EF run --rm web nginx -t
             docker compose $EF up -d --remove-orphans
             docker compose $EF ps
-            # Порт 8000 трябва да отговаря, иначе прокситo пред него дава 502.
+            # Port 8000 must answer, otherwise the proxy in front of it returns 502.
             for i in $(seq 1 30); do
               curl -fsS -o /dev/null http://127.0.0.1:8000/bg/ && break
-              [ "$i" = 30 ] && { docker compose logs --tail=50; exit 1; }
+              [ "$i" = 30 ] && { docker compose $EF logs --tail=50; exit 1; }
               sleep 2
             done
             echo "Successfully deployed PDK Chip Tuning Website - tag ${{ github.ref_name }}!"

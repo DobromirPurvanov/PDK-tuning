@@ -5,6 +5,6 @@ add_header X-Frame-Options SAMEORIGIN always;
 add_header X-Content-Type-Options nosniff always;
 add_header Referrer-Policy strict-origin-when-cross-origin always;
 add_header Permissions-Policy "camera=(), microphone=(), geolocation=()" always;
-# Само за new.pdktuning.com — виж map $host $robots_tag в nginx.conf.
+# new.pdktuning.com only - see map $host $robots_tag in nginx.conf.
 add_header X-Robots-Tag $robots_tag always;
 add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; font-src 'self'; connect-src 'self' https://*.google-analytics.com https://www.googletagmanager.com; frame-src https://www.google.com https://challenges.cloudflare.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'" always;
