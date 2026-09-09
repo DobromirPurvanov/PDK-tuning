@@ -475,6 +475,10 @@ document.querySelectorAll('[data-pixel]').forEach((card) => {
 // Избирачът работи с ЦЯЛАТА база: 112 марки стоят в страницата (само име и бройки),
 // а моделите се теглят при клик от /data/<марка>.json — ресурсът СЪЩЕСТВУВА от 01.09
 // (`src/pages/data/[brand].json.ts`, ползва се и от калкулатора). Не се прави втори.
+//
+// На самия сайт базата е на същия адрес. Макетът (pdk-mockup.pages.dev) няма своя база —
+// пита първо себе си, а при 404 отива на ИЗТОЧНИКА. Затова nginx дава CORS на /data/*.json.
+// Така макетът не носи копие на каталога, а ползва живата база.
 const $ = (id) => document.getElementById(id);
 const cols = [$('c1'), $('c2'), $('c3'), $('c4')];
 const state = { b: null, m: null, g: null, e: null };
@@ -535,16 +539,29 @@ const pickModel = (m) => {
   fill(cols[2], m.gens.map((g) => ({ label: years(g), right: String(g.engines.length), value: g })), pickGen);
 };
 
+// адресът на живата база; сменя се на едно място
+const SOURCE = 'https://new.pdktuning.com';
+const json = (r) => r && r.ok && (r.headers.get('content-type') || '').includes('json');
+const grab = async (slug) => {
+  // Cloudflare Pages връща index.html със СТАТУС 200 за непознат адрес, затова
+  // проверката е по типа на съдържанието, а не по r.ok.
+  const local = await fetch(`/data/${slug}.json`).catch(() => null);
+  if (json(local)) return local.json();
+  const r = await fetch(`${SOURCE}/data/${slug}.json`);
+  if (!json(r)) throw new Error('няма база');
+  return r.json();
+};
+
 const pickBrand = async (b) => {
   state.b = b; reset(1); step(1);
   note(cols[1], 'Тегли…');
   let data = cache.get(b.s);
   if (!data) {
     try {
-      data = await fetch(`/data/${b.s}.json`).then((r) => r.json());
+      data = await grab(b.s);
       cache.set(b.s, data);
     } catch {
-      note(cols[1], 'Не се зареди'); return;
+      note(cols[1], 'Базата не отговаря'); return;
     }
   }
   if (state.b !== b) return; // междувременно е кликната друга марка
