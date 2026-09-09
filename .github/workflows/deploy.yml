@@ -35,14 +35,22 @@ jobs:
           script: |
             set -e
             cd /home/pdk_new/website
-            # Тайните живеят САМО на сървъра (.env е в .gitignore и не се качва).
-            test -f .env || { echo "липсва .env до docker-compose.yml"; exit 1; }
+            # Тайните живеят САМО на сървъра (.env* са в .gitignore и не се качват).
+            # --env-file важи и за заместването на ${...}, значи и за build args.
+            # env_file: в compose файла НЕ върши тази работа — той е само по време
+            # на работа, а PUBLIC_TURNSTILE_SITEKEY се зашива в HTML-а при билда.
+            # if, а не [ ] && — при set -e неуспешният тест би убил скрипта.
+            EF=""
+            if [ -f .env ]; then EF="$EF --env-file .env"; fi
+            if [ -f .env.local ]; then EF="$EF --env-file .env.local"; fi
+            if [ -z "$EF" ]; then echo "няма нито .env, нито .env.local до docker-compose.yml"; exit 1; fi
+            echo "променливите се четат от:$EF"
             # Без това нищо не тръгва: копирането на файлове не вдига контейнери.
-            docker compose build
+            docker compose $EF build
             # Счупен nginx.conf се хваща ПРЕДИ работещите контейнери да бъдат сменени.
-            docker compose run --rm --no-deps web nginx -t
-            docker compose up -d --remove-orphans
-            docker compose ps
+            docker compose $EF run --rm --no-deps web nginx -t
+            docker compose $EF up -d --remove-orphans
+            docker compose $EF ps
             # Порт 8000 трябва да отговаря, иначе прокситo пред него дава 502.
             for i in $(seq 1 30); do
               curl -fsS -o /dev/null http://127.0.0.1:8000/bg/ && break
