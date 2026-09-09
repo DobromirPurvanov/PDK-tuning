@@ -30,6 +30,8 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           port: ${{ secrets.SERVER_PORT }} # <-- Added Port
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          # Билдът на 30 885 страници е ~285 s на тази машина, плюс npm ci.
+          command_timeout: 20m
           script: |
             set -e
             cd /home/pdk_new/website
