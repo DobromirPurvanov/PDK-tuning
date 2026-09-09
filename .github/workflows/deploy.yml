@@ -23,7 +23,7 @@ jobs:
           source: "."
           target: "/home/pdk_new/website"
           
-      - name: Verify Deployment via SSH
+      - name: Build and start containers via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SERVER_HOST }}
@@ -31,6 +31,20 @@ jobs:
           port: ${{ secrets.SERVER_PORT }} # <-- Added Port
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            set -e
             cd /home/pdk_new/website
+            # Тайните живеят САМО на сървъра (.env е в .gitignore и не се качва).
+            test -f .env || { echo "липсва .env до docker-compose.yml"; exit 1; }
+            # Без това нищо не тръгва: копирането на файлове не вдига контейнери.
+            docker compose build
+            # Счупен nginx.conf се хваща ПРЕДИ работещите контейнери да бъдат сменени.
+            docker compose run --rm --no-deps web nginx -t
+            docker compose up -d --remove-orphans
+            docker compose ps
+            # Порт 8000 трябва да отговаря, иначе прокситo пред него дава 502.
+            for i in $(seq 1 30); do
+              curl -fsS -o /dev/null http://127.0.0.1:8000/bg/ && break
+              [ "$i" = 30 ] && { docker compose logs --tail=50; exit 1; }
+              sleep 2
+            done
             echo "Successfully deployed PDK Chip Tuning Website - tag ${{ github.ref_name }}!"
-            ls -la

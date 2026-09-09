@@ -14,7 +14,7 @@ services:
       LEGACY_UPSTREAM: ${LEGACY_UPSTREAM:-https://www.pdktuning.com}
     depends_on:
       - api
-    restart: unless-stopped
+    restart: always
   api:
     build: ./api
     environment:
@@ -23,4 +23,4 @@ services:
       MAIL_TO: ${MAIL_TO:-}
       MAIL_CC: ${MAIL_CC:-}
       TURNSTILE_SECRET: ${TURNSTILE_SECRET:-}
-    restart: unless-stopped
+    restart: always
