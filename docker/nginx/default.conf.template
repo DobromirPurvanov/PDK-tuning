@@ -46,8 +46,8 @@ server {
   location ~* ^/data/.*\.json$ {
     include /etc/nginx/headers.inc;
     add_header Cache-Control "public, max-age=86400";
-    # Каталогът се чете и отвън — макетът на pdk-mockup.pages.dev ползва ТАЗИ база,
-    # вместо да си носи копие. Само четене на публични данни, затова е за всички.
+    # The catalogue is also read from outside instead of being copied. Public
+    # read-only data, so it is open to everyone.
     add_header Access-Control-Allow-Origin "*";
     add_header Access-Control-Allow-Methods "GET, HEAD, OPTIONS";
     if ($request_method = OPTIONS) { return 204; }
