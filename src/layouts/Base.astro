@@ -16,9 +16,10 @@ interface Props {
   altPath?: string | null; // същата страница на другия език; null = няма такава (превключвателят води към началната)
   jsonld?: object[];
   current?: string;        // ключ на менюто за маркиране на активния елемент
+  noindex?: boolean;       // страницата се сервира, но не се подава за индексиране
   ogImage?: string;
 }
-const { lang, title, description, path, altPath, jsonld = [], current, ogImage = '/og.png' } = Astro.props;
+const { lang, title, description, path, altPath, jsonld = [], current, ogImage = '/og.png', noindex = false } = Astro.props;
 const other = otherLang(lang);
 const hasAlt = altPath !== null;
 const pageDef = PAGES.find((p) => p.path[lang] === path);
@@ -39,6 +40,7 @@ if (description.length < 80 || description.length > 165) { const msg = `Опис
 <title>{title}</title>
 <meta name="description" content={description}>
 <link rel="canonical" href={canonical}>
+{noindex && <meta name="robots" content="noindex, follow" />}
 {hasAlt && <link rel="alternate" hreflang="bg" href={lang === 'bg' ? canonical : SITE + alt} />}
 {hasAlt && <link rel="alternate" hreflang="en" href={enUrl} />}
 {!hasAlt && <link rel="alternate" hreflang={lang} href={canonical} />}

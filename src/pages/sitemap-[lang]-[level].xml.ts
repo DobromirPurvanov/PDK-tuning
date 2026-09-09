@@ -13,7 +13,7 @@ function entries(lang: Lang, level: string): Entry[] {
   return [];
 }
 export function getStaticPaths() {
-  return LANGS.flatMap((lang) => { const c = allCatalogPaths(lang); const levels = ['pages', 'brands', 'models', 'generations', ...Array.from({ length: Math.ceil(c.engines.length / CHUNK) }, (_, i) => `engines-${i + 1}`)]; return levels.map((level) => ({ params: { lang, level } })); });
+  return LANGS.flatMap((lang) => { const c = allCatalogPaths(lang); const levels = ['pages', 'brands', 'models', 'generations']; return levels.map((level) => ({ params: { lang, level } })); });
 }
 export const GET: APIRoute = ({ params }) => {
   const list = entries(params.lang as Lang, params.level as string);

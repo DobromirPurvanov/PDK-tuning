@@ -8,8 +8,10 @@ export function sitemapFiles() {
   const files: string[] = [];
   for (const lang of LANGS) {
     const c = allCatalogPaths(lang);
+    // Двигателите НЕ се подават: 24 096 почти еднакви страници (76% съвпадение
+    // помежду им) само разреждат обхождането. Те са noindex и данните им живеят
+    // в страницата на поколението. Индексира се до ниво модел/поколение.
     files.push(`sitemap-${lang}-pages.xml`, `sitemap-${lang}-brands.xml`, `sitemap-${lang}-models.xml`, `sitemap-${lang}-generations.xml`);
-    for (let i = 0; i < Math.ceil(c.engines.length / CHUNK); i++) files.push(`sitemap-${lang}-engines-${i + 1}.xml`);
   }
   return files;
 }

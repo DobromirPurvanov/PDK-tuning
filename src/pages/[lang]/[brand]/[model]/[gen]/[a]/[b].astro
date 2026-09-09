@@ -24,7 +24,7 @@ const faq = engineFaq(lang, b.name, m.name, e);
 const neighbors = g.engines.filter((x) => x !== e).slice(0, 12);
 const car = `${b.name} ${m.name} ${label} ${e.hpStock} ${d.units.hp} (${y})`;
 ---
-<Base lang={lang} title={title} description={description} path={path} current="catalog" jsonld={[ldBreadcrumb([...crumbs, { name: `${label} ${e.hpStock} ${d.units.hp}`, path }]), ldProduct(lang, b, m, g, e, path), ldFaq(faq), ldLocalBusiness(lang)]}>
+<Base lang={lang} title={title} description={description} path={path} current="catalog" noindex jsonld={[ldBreadcrumb([...crumbs, { name: `${label} ${e.hpStock} ${d.units.hp}`, path }]), ldProduct(lang, b, m, g, e, path), ldFaq(faq), ldLocalBusiness(lang)]}>
   <div class="engine-hero">
     <div class="wrap">
       <Crumbs items={crumbs} current={`${label} ${e.hpStock} ${d.units.hp}`} />
