@@ -86,7 +86,7 @@ test('a full map preserves active limits and recovers after expiration', () => {
 
 test('rejects arbitrary header keys while allowing IPv4 and IPv6', () => {
   const { limiter } = fixture();
-  for (const key of ['', 'forged-address', 'x'.repeat(16_000), null, 123]) {
+  for (const key of ['', 'forged-address', 'x'.repeat(16_000), 'fe80::1%' + 'x'.repeat(16_000), null, 123]) {
     assert.equal(limiter.isLimited(key), true);
   }
   assert.equal(limiter.size, 0);

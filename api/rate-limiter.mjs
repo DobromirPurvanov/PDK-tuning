@@ -25,8 +25,8 @@ export function createRateLimiter({
   return {
     isLimited(ip) {
       // Only actual IPs become keys: an arbitrary forwarded header must not
-      // allocate a large string in the map.
-      if (typeof ip !== 'string' || !isIP(ip)) return true;
+      // allocate a large string in the map (including IPv6 zone identifiers).
+      if (typeof ip !== 'string' || ip.length > 64 || !isIP(ip)) return true;
       const time = now();
       expire(time);
       const timestamps = (hits.get(ip) || []).filter((t) => time - t < windowMs);
