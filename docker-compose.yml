@@ -1,5 +1,5 @@
 # Локално: docker compose up -d --build  →  http://localhost:8000
-# На сървъра: същата команда; new.pdktuning.com се проксира към порт 8000.
+# На сървъра: само готови имиджи чрез deploy.yml (виж README.md).
 # Променливите се четат от .env до този файл (виж .env.example).
 services:
   web:

@@ -2,62 +2,144 @@ name: Deploy PDK Chip Tuning Website
 
 on:
   push:
+    branches: [main]
     tags:
       - 'v*'
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pdk-images-${{ startsWith(github.ref, 'refs/tags/v') && 'production' || github.ref }}
+  cancel-in-progress: false
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+    timeout-minutes: 30
+    env:
+      WEB_IMAGE: pdk-tuning-web:${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+      API_IMAGE: pdk-tuning-api:${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+      PUBLIC_GTM_ID: ${{ vars.PUBLIC_GTM_ID }}
+      PUBLIC_TURNSTILE_SITEKEY: ${{ vars.PUBLIC_TURNSTILE_SITEKEY }}
+      RELEASE: releases/${{ github.run_id }}-${{ github.run_attempt }}
     steps:
-      - name: Checkout Tagged Code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Copy files to server via SCP
-        uses: appleboy/scp-action@master
+      - name: Deployment regression tests
+        run: python3 -m unittest discover -s scripts/deploy -p 'test_*.py' -v
+
+      # Read only the two PUBLIC build settings. Mail/Turnstile secrets stay on VPS.
+      - name: Read public build configuration and check architecture
+        if: startsWith(github.ref, 'refs/tags/v')
+        id: public-config
+        uses: appleboy/ssh-action@v1.2.2
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
-          port: ${{ secrets.SERVER_PORT }} # <-- Added Port
+          port: ${{ secrets.SERVER_PORT }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "."
-          target: "/home/pdk_new/website"
-          
-      - name: Build and start containers via SSH
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          port: ${{ secrets.SERVER_PORT }} # <-- Added Port
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          # Building 30,885 pages takes ~285s on this box, plus npm ci.
-          command_timeout: 20m
+          capture_stdout: true
           script: |
-            set -e
+            set -eu
+            test "$(uname -m)" = x86_64 || { echo 'Expected amd64 server' >&2; exit 1; }
             cd /home/pdk_new/website
-            # Secrets live ONLY on the server (.env* are gitignored, never shipped).
-            # --env-file also feeds ${...} interpolation, so it covers build args.
-            # env_file: in the compose file does NOT: it is runtime-only, while
-            # PUBLIC_TURNSTILE_SITEKEY is baked into the HTML at build time.
-            # Using if, not [ ] && — under set -e a failing test would kill the script.
-            EF=""
-            if [ -f .env ]; then EF="$EF --env-file .env"; fi
-            if [ -f .env.local ]; then EF="$EF --env-file .env.local"; fi
-            if [ -z "$EF" ]; then echo "no .env or .env.local next to docker-compose.yml"; exit 1; fi
-            echo "reading variables from:$EF"
-            # Without this nothing starts: copying files does not create containers.
-            docker compose $EF build
-            # Catch a broken nginx.conf BEFORE the running containers are replaced.
-            # No --no-deps here: nginx resolves proxy_pass http://api:3000 at config
-            # load time, so the api container must be up or the test dies with
-            # "host not found in upstream".
-            docker compose $EF run --rm web nginx -t
-            docker compose $EF up -d --remove-orphans
-            docker compose $EF ps
-            # Port 8000 must answer, otherwise the proxy in front of it returns 502.
-            for i in $(seq 1 30); do
-              curl -fsS -o /dev/null http://127.0.0.1:8000/bg/ && break
-              [ "$i" = 30 ] && { docker compose $EF logs --tail=50; exit 1; }
-              sleep 2
-            done
-            echo "Successfully deployed PDK Chip Tuning Website - tag ${{ github.ref_name }}!"
+            set --
+            if [ -f .env ]; then set -- "$@" --env-file .env; fi
+            if [ -f .env.local ]; then set -- "$@" --env-file .env.local; fi
+            test "$#" -gt 0 || { echo 'Missing .env or .env.local' >&2; exit 1; }
+            echo PDK_PUBLIC_CONFIG_BEGIN
+            docker compose "$@" -f - config --format json <<'CONFIG'
+            services:
+              config:
+                image: scratch
+                environment:
+                  PUBLIC_GTM_ID: ${PUBLIC_GTM_ID:-}
+                  PUBLIC_TURNSTILE_SITEKEY: ${PUBLIC_TURNSTILE_SITEKEY:-}
+            CONFIG
+            echo PDK_PUBLIC_CONFIG_END
+
+      - name: Prepare build arguments
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          PUBLIC_CONFIG: ${{ steps.public-config.outputs.stdout }}
+        run: python3 scripts/deploy/public-config.py
+
+      - uses: docker/setup-buildx-action@v4
+
+      - name: Build web image on GitHub runner
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          platforms: linux/amd64
+          load: true
+          tags: ${{ env.WEB_IMAGE }}
+          build-args: |
+            PUBLIC_GTM_ID=${{ env.PUBLIC_GTM_ID }}
+            PUBLIC_TURNSTILE_SITEKEY=${{ env.PUBLIC_TURNSTILE_SITEKEY }}
+          cache-from: type=gha,scope=pdk-web
+          cache-to: type=gha,mode=max,scope=pdk-web
+
+      - name: Build API image on GitHub runner
+        uses: docker/build-push-action@v7
+        with:
+          context: ./api
+          platforms: linux/amd64
+          load: true
+          tags: ${{ env.API_IMAGE }}
+          cache-from: type=gha,scope=pdk-api
+          cache-to: type=gha,mode=max,scope=pdk-api
+
+      - name: Verify images on GitHub runner
+        run: |
+          docker compose -p pdk-ci -f docker-compose.production.yml up -d --no-build --pull never api
+          docker compose -p pdk-ci -f docker-compose.production.yml run --rm --no-deps --pull never web nginx -t
+          docker compose -p pdk-ci -f docker-compose.production.yml up -d --no-build --pull never web api
+          for i in $(seq 1 30); do
+            if curl --connect-timeout 3 --max-time 5 -fsS -o /dev/null http://127.0.0.1:8000/bg/ && curl --connect-timeout 3 --max-time 5 -fsS -o /dev/null http://127.0.0.1:8000/api/health; then exit 0; fi
+            sleep 2
+          done
+          docker compose -p pdk-ci -f docker-compose.production.yml logs --tail=50
+          exit 1
+
+      - name: Package prebuilt images
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          mkdir -p "$RELEASE"
+          docker save --output "$RELEASE/images.tar" "$WEB_IMAGE" "$API_IMAGE"
+          (cd "$RELEASE" && sha256sum images.tar > images.tar.sha256)
+          printf 'WEB_IMAGE=%s\nAPI_IMAGE=%s\n' "$WEB_IMAGE" "$API_IMAGE" > "$RELEASE/images.env"
+          cp docker-compose.production.yml "$RELEASE/docker-compose.yml"
+          cp scripts/deploy/activate.sh "$RELEASE/activate.sh"
+
+      - name: Transfer only prebuilt images and runtime configuration
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: appleboy/scp-action@v1
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          port: ${{ secrets.SERVER_PORT }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: ${{ env.RELEASE }}
+          target: /home/pdk_new/website
+          timeout: 120s
+          command_timeout: 10m
+
+      - name: Load images and update only web and API
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: appleboy/ssh-action@v1.2.2
+        env:
+          RELEASE: ${{ env.RELEASE }}
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          port: ${{ secrets.SERVER_PORT }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          envs: RELEASE
+          command_timeout: 10m
+          script: |
+            set -eu
+            cd /home/pdk_new/website
+            bash "$RELEASE/activate.sh" "$RELEASE"

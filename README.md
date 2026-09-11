@@ -14,9 +14,41 @@ docker compose up -d --build  # → http://localhost:8000
 и портала за файлове (`/bg/login`, `/en/login`, профил…) към `LEGACY_UPSTREAM`. На сървъра `new.pdktuning.com`
 се проксира към порт 8000 на localhost.
 
-Билдът на сайта става вътре в образа (`Dockerfile`, етап 1) и включва проверките, които спират билда:
-повторено заглавие/описание, описание извън 80–165 знака, повече от един H1, счупена вътрешна връзка,
-`localhost` в HTML. Ако нещо от това не мине, образът не се строи и старият контейнер остава.
+## Деплой
+
+Push към `main` и pull request пускат регресионните тестове, билд на двата имиджа
+и проверки с реални контейнери на GitHub runner, без достъп до сървъра.
+Таг `v*` стартира `.github/workflows/deploy.yml` в GitHub Actions (`ubuntu-latest`).
+Runner-ът билдва двата имиджа за `linux/amd64`, проверява nginx и HTTP отговорите,
+и прехвърля готовите образи с `docker save`/SCP по съществуващите SSH secrets.
+Не е необходим registry. Сървърът изпълнява само `docker load` и
+`docker compose up -d --no-build --pull never web api`.
+Няма рестарт на Docker daemon, `compose down`, `--remove-orphans` или глобален prune.
+Подменят се само `web` и `api` в съществуващия Compose проект.
+
+`PUBLIC_GTM_ID` и `PUBLIC_TURNSTILE_SITEKEY` се прочитат преди билда от сървърните
+`.env` и `.env.local` (вторият е с предимство). Само тези публични настройки
+се връщат към runner-а; API тайните остават на сървъра.
+SSH secrets остават `SERVER_HOST`, `SERVER_USER`, `SERVER_PORT`, `SSH_PRIVATE_KEY`.
+Сървърът трябва да е amd64, с Docker Compose v2, Bash, flock, sha256sum и curl.
+Потребителят за SSH трябва да има достъп до Docker.
+
+Архивът се проверява със SHA-256 преди зареждане и се изтрива след успешен деплой.
+Деплоите са сериализирани; няма автоматично изтриване на имиджи на споделения хост.
+При неуспешна HTTP проверка pipeline-ът се проваля и показва логовете;
+няма автоматичен rollback. Предишните имиджи и release конфигурации остават налични.
+
+За ръчно стартиране след успешен деплой, в `/home/pdk_new/website`:
+
+```bash
+docker compose --env-file .env --env-file .images.env up -d --no-build --pull never web api
+# Ако има .env.local, добави --env-file .env.local преди --env-file .images.env.
+```
+
+Локалният `docker-compose.yml` остава за разработка с build.
+На сървъра pipeline-ът записва `docker-compose.production.yml` като `docker-compose.yml`
+без build секции. SEO проверките са отделна CI порта в `build-check.yml`;
+в Dockerfile резултатът им е диагностичен и не спира образа.
 
 ## Команди
 

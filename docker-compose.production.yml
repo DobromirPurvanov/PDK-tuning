@@ -1,0 +1,20 @@
+# Production: prebuilt images only. See README.md.
+services:
+  web:
+    image: ${WEB_IMAGE:?WEB_IMAGE is required}
+    ports:
+      - "8000:80"
+    environment:
+      LEGACY_UPSTREAM: ${LEGACY_UPSTREAM:-https://www.pdktuning.com}
+    depends_on:
+      - api
+    restart: always
+  api:
+    image: ${API_IMAGE:?API_IMAGE is required}
+    environment:
+      RESEND_API_KEY: ${RESEND_API_KEY:-}
+      MAIL_FROM: ${MAIL_FROM:-PDK Tuning <noreply@pdktuning.com>}
+      MAIL_TO: ${MAIL_TO:-}
+      MAIL_CC: ${MAIL_CC:-}
+      TURNSTILE_SECRET: ${TURNSTILE_SECRET:-}
+    restart: always
