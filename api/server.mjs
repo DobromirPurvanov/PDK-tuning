@@ -1,6 +1,7 @@
 // Формата (план, стр. 32): писмо до вас + копие до втори адрес, Turnstile, 5 изпращания на час от адрес.
 // Без ключ за Resend заявката се записва в лога и връща 503 — формата показва телефона.
 import http from 'node:http';
+import { createRateLimiter } from './rate-limiter.mjs';
 
 const PORT = Number(process.env.PORT || 3000);
 const RESEND = process.env.RESEND_API_KEY || '';
@@ -8,15 +9,14 @@ const TO = (process.env.MAIL_TO || '').split(',').map((s) => s.trim()).filter(Bo
 const CC = (process.env.MAIL_CC || '').split(',').map((s) => s.trim()).filter(Boolean);
 const FROM = process.env.MAIL_FROM || 'PDK Tuning <noreply@pdktuning.com>';
 const TURNSTILE = process.env.TURNSTILE_SECRET || '';
-const hits = new Map(); // ip → [timestamps]
+const rateLimiter = createRateLimiter();
+// Reclaim inactive addresses even if no more contact requests arrive.
+const rateLimitCleanup = setInterval(() => rateLimiter.sweep(), 60_000);
+rateLimitCleanup.unref();
 const json = (res, code, body) => { res.writeHead(code, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' }); res.end(JSON.stringify(body)); };
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const clean = (s, n) => String(s ?? '').replace(/[\x00-\x09\x0b-\x1f\x7f]+/g, ' ').trim().slice(0, n);
 
-function rateLimited(ip) {
-  const now = Date.now(); const arr = (hits.get(ip) || []).filter((t) => now - t < 3600_000);
-  if (arr.length >= 5) return true; arr.push(now); hits.set(ip, arr); return false;
-}
 async function verifyTurnstile(token, ip) {
   if (!TURNSTILE) return true;
   if (!token) return false;
@@ -36,7 +36,7 @@ const server = http.createServer(async (req, res) => {
   let b; try { b = JSON.parse(raw || '{}'); } catch { return json(res, 400, { ok: false, error: 'json' }); }
   const name = clean(b.name, 120), phone = clean(b.phone, 40), email = clean(b.email, 160), car = clean(b.car, 160), service = clean(b.service, 40), message = clean(b.message, 2000), page = clean(b.page, 200), lang = /^\/en/.test(page) ? 'en' : 'bg';
   if (!name || !phone || b.consent !== 'yes') return json(res, 422, { ok: false, error: 'fields' });
-  if (rateLimited(ip)) return json(res, 429, { ok: false, error: 'rate' });
+  if (rateLimiter.isLimited(ip)) return json(res, 429, { ok: false, error: 'rate' });
   if (!(await verifyTurnstile(b['cf-turnstile-response'], ip))) return json(res, 403, { ok: false, error: 'turnstile' });
   const subject = `Заявка · ${[car, service].filter(Boolean).join(' · ') || name}`;
   const html = `<h2>${esc(subject)}</h2><table cellpadding="6" style="font:14px system-ui"><tr><td><b>Име</b></td><td>${esc(name)}</td></tr><tr><td><b>Телефон</b></td><td><a href="tel:${esc(phone)}">${esc(phone)}</a></td></tr><tr><td><b>Имейл</b></td><td>${esc(email) || '—'}</td></tr><tr><td><b>Кола</b></td><td>${esc(car) || '—'}</td></tr><tr><td><b>Услуга</b></td><td>${esc(service) || '—'}</td></tr><tr><td><b>Съобщение</b></td><td>${esc(message).replace(/\n/g, '<br>') || '—'}</td></tr><tr><td><b>Страница</b></td><td>https://www.pdktuning.com${esc(page)}</td></tr><tr><td><b>Език</b></td><td>${lang}</td></tr><tr><td><b>IP</b></td><td>${esc(ip)}</td></tr></table>`;
@@ -45,4 +45,5 @@ const server = http.createServer(async (req, res) => {
   try { await send(subject, html, email || undefined); return json(res, 200, { ok: true }); }
   catch (e) { console.error(e.message); return json(res, 502, { ok: false, error: 'mail' }); }
 });
-server.listen(PORT, () => console.log(`pdktuning api on :${PORT} (mail ${RESEND && TO.length ? 'on' : 'OFF'}, turnstile ${TURNSTILE ? 'on' : 'off'})`));
+server.on('close', () => clearInterval(rateLimitCleanup));
+server.listen(PORT, () => console.log(`pdktuning api on :${server.address().port} (mail ${RESEND && TO.length ? 'on' : 'OFF'}, turnstile ${TURNSTILE ? 'on' : 'off'})`));

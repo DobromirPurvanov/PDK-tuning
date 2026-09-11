@@ -28,6 +28,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: API tests
+        run: npm test --prefix api
+
       - name: Deployment regression tests
         run: python3 -m unittest discover -s scripts/deploy -p 'test_*.py' -v
 
