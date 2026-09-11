@@ -27,6 +27,11 @@ class PublicConfigTests(unittest.TestCase):
         }))
         self.assertEqual(result, 'PUBLIC_GTM_ID=GTM-5MKF4JB\nPUBLIC_TURNSTILE_SITEKEY=0x4AAAA-test-key\n')
 
+    def test_compose_without_trailing_newline(self):
+        output = self.output({}).replace('}\nPDK_PUBLIC_CONFIG_END', '}PDK_PUBLIC_CONFIG_END')
+        self.assertEqual(public_config.build_settings(output),
+                         'PUBLIC_GTM_ID=\nPUBLIC_TURNSTILE_SITEKEY=\n')
+
     def test_empty_configuration(self):
         self.assertEqual(public_config.build_settings(self.output({})),
                          'PUBLIC_GTM_ID=\nPUBLIC_TURNSTILE_SITEKEY=\n')

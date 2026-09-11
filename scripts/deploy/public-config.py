@@ -5,7 +5,7 @@ import os
 
 def build_settings(output):
     begin = 'PDK_PUBLIC_CONFIG_BEGIN\n'
-    end = '\nPDK_PUBLIC_CONFIG_END'
+    end = 'PDK_PUBLIC_CONFIG_END'
     if output.count(begin) != 1 or output.count(end) != 1:
         raise ValueError('Missing or ambiguous public configuration markers')
     payload = output.split(begin, 1)[1].split(end, 1)[0]
