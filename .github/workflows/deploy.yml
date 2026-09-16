@@ -27,7 +27,10 @@ jobs:
       PUBLIC_GSC_VERIFY: ${{ vars.PUBLIC_GSC_VERIFY }}
       RELEASE: releases/${{ github.run_id }}-${{ github.run_attempt }}
     steps:
+      # Пълната история е нужна за пакета, с който сървърът си оправя гита.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -131,6 +134,9 @@ jobs:
           printf 'WEB_IMAGE=%s\nAPI_IMAGE=%s\n' "$WEB_IMAGE" "$API_IMAGE" > "$RELEASE/images.env"
           cp docker-compose.production.yml "$RELEASE/docker-compose.yml"
           cp scripts/deploy/activate.sh "$RELEASE/activate.sh"
+          # Сървърът е с HTTPS origin и без креденшъли за частното хранилище,
+          # затова историята пътува с деплоя вместо да се тегли оттам.
+          git bundle create "$RELEASE/repo.bundle" --all
 
       - name: Transfer only prebuilt images and runtime configuration
         if: startsWith(github.ref, 'refs/tags/v')
@@ -173,32 +179,30 @@ jobs:
         env:
           TAG: ${{ github.ref_name }}
           SHA: ${{ github.sha }}
+          RELEASE: ${{ env.RELEASE }}
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           port: ${{ secrets.SERVER_PORT }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          envs: TAG,SHA
+          envs: TAG,SHA,RELEASE
           command_timeout: 5m
           script: |
             set -u
             cd /home/pdk_new/website
             printf '%s %s %s\n' "$TAG" "$SHA" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > ACTIVE-VERSION
             echo "PDK_TREE_BEGIN"
-            git describe --tags --always || true
-            git remote -v || true
-            git status --porcelain | head -20 || true
-            if git fetch --tags --force origin; then
-              # Untracked файлове (.env, releases/, .compose.active.yml) не се
-              # пипат от checkout; следените са огледало на деплоя, не работно
-              # място, затова --force е безопасен тук.
-              if git checkout --detach --force "refs/tags/$TAG"; then
-                echo "Работното дърво вече сочи $TAG"
-              else
-                echo "Checkout не мина; дървото остава на стария таг" >&2
-              fi
+            echo "преди: $(git describe --tags --always 2>&1)"
+            # Untracked файлове (.env, releases/, .compose.active.yml) не се
+            # пипат от checkout; следените са огледало на деплоя, не работно
+            # място, затова --force е безопасен тук.
+            if git fetch --force "$RELEASE/repo.bundle" "refs/tags/$TAG:refs/tags/$TAG" \
+               && git checkout --detach --force "refs/tags/$TAG"; then
+              echo "след: $(git describe --tags)"
             else
-              echo "Сървърът не стига до origin; остава само ACTIVE-VERSION" >&2
+              echo "Дървото остава на стария таг; меродавен е ACTIVE-VERSION" >&2
             fi
+            rm -f "$RELEASE/repo.bundle"
+            git status --porcelain | head -20
             echo "PDK_TREE_END"
             exit 0
