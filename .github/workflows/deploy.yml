@@ -161,3 +161,44 @@ jobs:
             set -eu
             cd /home/pdk_new/website
             bash "$RELEASE/activate.sh" "$RELEASE"
+
+      # Кодът пътува в Docker образите, не с `git checkout`, затова работното
+      # дърво на сървъра оставаше заковано на тага, с който е клонирано, и
+      # всеки, който влезеше там, четеше стара версия при нов дизайн. Тази
+      # стъпка е след здравата проверка: сайтът вече работи, тук се оправя само
+      # какво показва сървърът. Затова тя не вали деплоя, ако не успее.
+      - name: Point the server working tree at the deployed tag
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: appleboy/ssh-action@v1.2.2
+        env:
+          TAG: ${{ github.ref_name }}
+          SHA: ${{ github.sha }}
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          port: ${{ secrets.SERVER_PORT }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          envs: TAG,SHA
+          command_timeout: 5m
+          script: |
+            set -u
+            cd /home/pdk_new/website
+            printf '%s %s %s\n' "$TAG" "$SHA" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > ACTIVE-VERSION
+            echo "PDK_TREE_BEGIN"
+            git describe --tags --always || true
+            git remote -v || true
+            git status --porcelain | head -20 || true
+            if git fetch --tags --force origin; then
+              # Untracked файлове (.env, releases/, .compose.active.yml) не се
+              # пипат от checkout; следените са огледало на деплоя, не работно
+              # място, затова --force е безопасен тук.
+              if git checkout --detach --force "refs/tags/$TAG"; then
+                echo "Работното дърво вече сочи $TAG"
+              else
+                echo "Checkout не мина; дървото остава на стария таг" >&2
+              fi
+            else
+              echo "Сървърът не стига до origin; остава само ACTIVE-VERSION" >&2
+            fi
+            echo "PDK_TREE_END"
+            exit 0

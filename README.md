@@ -56,6 +56,16 @@ Cloudflare Pages остава възможен отделен начин за х
 сайт, обновява само услугите `web` и `api`, и записва `.compose.active.yml` и
 `.images.env`. Другите проекти на сървъра не се променят.
 
-Git checkout-ът на сървъра може да остане на стар таг: кодът се доставя с
-Docker образите, не с `git checkout`. Активният таг се вижда в `version` на
-`/api/health` и в HTTP заглавката `X-PDK-Version`; `release` е точният комит.
+Кодът се доставя с Docker образите, не с `git checkout`. За да не чете никой
+стара версия при нов дизайн, деплоят накрая изравнява и работното дърво на
+сървъра с пуснатия таг и записва `ACTIVE-VERSION` в `/home/pdk_new/website`:
+
+```
+cat /home/pdk_new/website/ACTIVE-VERSION   # таг, комит, час на деплоя
+git -C /home/pdk_new/website describe --tags
+curl -sI https://new.pdktuning.com/ | grep -i x-pdk-version
+```
+
+Трите трябва да съвпадат. Ако дървото изостане (сървърът не е стигнал до
+`origin`), меродавни са `ACTIVE-VERSION` и заглавката `X-PDK-Version` —
+`version` в `/api/health` показва същото, а `release` е точният комит.
