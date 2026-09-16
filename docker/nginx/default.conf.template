@@ -50,7 +50,12 @@ server {
 # Сервира dist/ от Astro (build.format = directory: /bg/bmw → /bg/bmw/index.html, /bg/ → /bg/index.html).
 # ${LEGACY_UPSTREAM} се замества при старт на контейнера (env).
 server {
-  listen 80;
+  # `default_server` е ЗАДЪЛЖИТЕЛЕН, откакто над този блок стои друг.
+  # Без него nginx взима за подразбиране ПЪРВИЯ `listen 80` в конфига, а той
+  # вече е проксито за new.pdktuning.com — тоест всяка заявка с непознат Host
+  # (включително health check-а на 127.0.0.1:8000) тръгваше към Cloudflare и
+  # деплоят падаше. Хванато в CI, не на сървъра.
+  listen 80 default_server;
   server_name _;
   root /usr/share/nginx/html;
   absolute_redirect off;
