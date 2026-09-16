@@ -43,6 +43,11 @@ LEGACY_ORIGIN = https://www.pdktuning.com
 `new` и `www` биха показвали едно и също съдържание под две имена и биха се
 били за едни и същи думи, а по-силният адрес е техният.
 
+`PUBLIC_GA_ID` и `PUBLIC_GSC_VERIFY` също остават празни тук — няма какво да
+се индексира и няма трафик за мерене. Те се вдигат на етап 2, заедно с
+`PUBLIC_INDEXABLE`. Какво трябва да е уредено дотогава и от кого е в
+[mereneto.md](mereneto.md).
+
 ### Билдът
 
 ```bash
@@ -92,9 +97,14 @@ www  CNAME  new-pdk.pages.dev   Proxy: включен
 @    CNAME  new-pdk.pages.dev   Proxy: включен
 ```
 
-Средата се сменя на `LEGACY_ORIGIN=https://catalog.pdktuning.com` и се добавя
-`PUBLIC_INDEXABLE=true`. Билдът минава без `PUBLIC_SITE_URL` (по подразбиране
-е `www`).
+Средата се сменя на `LEGACY_ORIGIN=https://catalog.pdktuning.com` и се добавят
+`PUBLIC_INDEXABLE=true`, `PUBLIC_GA_ID` (маркерът на клиента) и
+`PUBLIC_GSC_VERIFY`, ако собствеността се потвърждава с мета таг. Билдът
+минава без `PUBLIC_SITE_URL` (по подразбиране е `www`).
+
+Трите вървят ЗАЕДНО: сайт, който Google вижда, но не се мери, или сайт, който
+се мери, но не се вижда, е половин превключване. Кой ключ откъде идва и какво
+трябва да е поискано от клиента предварително — [mereneto.md](mereneto.md).
 
 ---
 

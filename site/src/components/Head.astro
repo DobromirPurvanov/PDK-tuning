@@ -6,7 +6,7 @@
  * Каноникълът се смята от `site` в astro.config.mjs, а НЕ от адреса, на който
  * страницата е отворена — така макетът никога не сочи към localhost.
  */
-import { SITE, INDEXABLE } from '../config/site';
+import { SITE, INDEXABLE, GSC_VERIFY } from '../config/site';
 
 interface Props {
   title: string;
@@ -37,6 +37,11 @@ const robots = noindex || !INDEXABLE ? 'noindex, nofollow' : 'index, follow, max
 {/* 404 няма собствен адрес — каноникъл към „/404/“ би сочил страница, която не е съдържание */}
 {!noindex && <link rel="canonical" href={canonical} />}
 <meta name="robots" content={robots} />
+{/*
+  Удостоверяването за Search Console. Празен ключ = тагът го няма изобщо —
+  чужд или сгрешен код е по-лошо от липсващ. Виж бележката при GSC_VERIFY.
+*/}
+{GSC_VERIFY && <meta name="google-site-verification" content={GSC_VERIFY} />}
 
 <meta property="og:site_name" content={SITE.name} />
 <meta property="og:title" content={title} />
