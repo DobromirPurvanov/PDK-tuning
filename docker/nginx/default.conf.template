@@ -1,65 +1,52 @@
-# ═════════════════════════════════════════════════════════════════════════════
-# `new.pdktuning.com` ПОКАЗВА НОВИЯ САЙТ, не този.
-#
-# Новият сайт живее на Cloudflare Pages (проект `new-pdk`). Правилният път
-# натам е един CNAME запис, но зоната `pdktuning.com` не е в нашия акаунт и
-# записът минава през IT-то на клиента — тоест не зависи от нас и чакаше.
-#
-# Дотогава заявките за това име се ПРЕПРЕДАВАТ оттук. Адресът в браузъра
-# остава `new.pdktuning.com`, съдържанието е новото. Когато CNAME-ът се
-# направи, този блок спира да се задейства сам — заявките вече няма да
-# стигат до този сървър — и се маха при първото чистене.
-#
-# Прокси, не 301: пренасочване щеше да смени адреса в браузъра и всеки, на
-# когото се показва сайтът, щеше да вижда друго име.
-#
-# `Host` е `new-pdk.pages.dev`, защото Pages избира проекта по него. Порталът
-# на дилърите НЕ се пипа тук — новият сайт сам препредава `/bg/login` към
-# стария сървър, а двойно проксиране би изгубило сесията.
-#
-# Заглавките за сигурност НЕ се добавят: Pages праща свои и вторият комплект
-# ги дублира (nginx не замества чужди `add_header`, а трупа).
-# ═════════════════════════════════════════════════════════════════════════════
+# Сервира dist/ от Astro (build.format = directory: /bg/bmw → /bg/bmw/index.html, /bg/ → /bg/index.html).
+# ${LEGACY_UPSTREAM} се замества при старт на контейнера (env).
 server {
-  listen 80;
-  server_name new.pdktuning.com;
+  # Единственият server блок; `default_server` е изричен, за да не се появи
+  # мълчаливо подразбиране, ако някой ден се добави втори.
+  listen 80 default_server;
+  server_name _;
+  root /usr/share/nginx/html;
+  absolute_redirect off;
+  include /etc/nginx/headers.inc;
 
-  # Cloudflare Pages иска SNI и валиден Host; резолверът е нужен, защото името
-  # се разрешава при заявката, а не при зареждане на конфига.
+  # ── ВСИЧКО, КОЕТО НЕ Е `www`/apex, ОТИВА НА НОВИЯ САЙТ ──────────────────
+  #
+  # Виж `map $host $to_new_site` в nginx.conf за това кой хост къде отива и
+  # защо проверката не е по `server_name`.
+  #
+  # Прокси, не 301: пренасочване щеше да смени адреса в адресната лента и
+  # всеки, на когото се показва сайтът, щеше да вижда друго име.
+  #
+  # `return 418` + `error_page` е стандартният начин за условно проксиране в
+  # nginx: `proxy_pass` вътре в `if` не е позволен, а `if` на ниво server
+  # изпълнява само пренасочване и връщане на код.
   resolver 1.1.1.1 8.8.8.8 valid=300s;
   resolver_timeout 5s;
+  recursive_error_pages on;
+  error_page 418 = @new_site;
 
-  location / {
+  location @new_site {
     set $pages "new-pdk.pages.dev";
     proxy_pass https://$pages$request_uri;
     proxy_http_version 1.1;
     proxy_set_header Host $pages;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header X-Forwarded-Proto https;
+    # без компресия: иначе тялото идва сгъстено, а тук няма кой да го разгъне
     proxy_set_header Accept-Encoding "";
     proxy_ssl_server_name on;
     proxy_ssl_name $pages;
-    # `manual`: 301/302 от новия сайт стигат до браузъра както са — той сам
-    # знае кои са неговите адреси, а пренаписването тук би счупило портала.
+    # 301/302 от новия сайт стигат до браузъра както са — той знае кои са
+    # неговите адреси, а пренаписване тук би счупило портала на дилърите
     proxy_redirect off;
-    proxy_read_timeout 30s;
     proxy_connect_timeout 10s;
+    proxy_read_timeout 30s;
   }
-}
 
-# Сервира dist/ от Astro (build.format = directory: /bg/bmw → /bg/bmw/index.html, /bg/ → /bg/index.html).
-# ${LEGACY_UPSTREAM} се замества при старт на контейнера (env).
-server {
-  # `default_server` е ЗАДЪЛЖИТЕЛЕН, откакто над този блок стои друг.
-  # Без него nginx взима за подразбиране ПЪРВИЯ `listen 80` в конфига, а той
-  # вече е проксито за new.pdktuning.com — тоест всяка заявка с непознат Host
-  # (включително health check-а на 127.0.0.1:8000) тръгваше към Cloudflare и
-  # деплоят падаше. Хванато в CI, не на сървъра.
-  listen 80 default_server;
-  server_name _;
-  root /usr/share/nginx/html;
-  absolute_redirect off;
-  include /etc/nginx/headers.inc;
+  # Условието стои ПРЕДИ всички правила на стария сайт: пренасочванията,
+  # смъкването на главните букви и матрицата нямат работа по заявка, която
+  # отива другаде.
+  if ($to_new_site) { return 418; }
 
   # R2: коренът → българската версия; R3 за началните: /bg → /bg/
   location = / { return 301 /bg/; }
