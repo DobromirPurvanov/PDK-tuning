@@ -1,3 +1,52 @@
+# ═════════════════════════════════════════════════════════════════════════════
+# `new.pdktuning.com` ПОКАЗВА НОВИЯ САЙТ, не този.
+#
+# Новият сайт живее на Cloudflare Pages (проект `new-pdk`). Правилният път
+# натам е един CNAME запис, но зоната `pdktuning.com` не е в нашия акаунт и
+# записът минава през IT-то на клиента — тоест не зависи от нас и чакаше.
+#
+# Дотогава заявките за това име се ПРЕПРЕДАВАТ оттук. Адресът в браузъра
+# остава `new.pdktuning.com`, съдържанието е новото. Когато CNAME-ът се
+# направи, този блок спира да се задейства сам — заявките вече няма да
+# стигат до този сървър — и се маха при първото чистене.
+#
+# Прокси, не 301: пренасочване щеше да смени адреса в браузъра и всеки, на
+# когото се показва сайтът, щеше да вижда друго име.
+#
+# `Host` е `new-pdk.pages.dev`, защото Pages избира проекта по него. Порталът
+# на дилърите НЕ се пипа тук — новият сайт сам препредава `/bg/login` към
+# стария сървър, а двойно проксиране би изгубило сесията.
+#
+# Заглавките за сигурност НЕ се добавят: Pages праща свои и вторият комплект
+# ги дублира (nginx не замества чужди `add_header`, а трупа).
+# ═════════════════════════════════════════════════════════════════════════════
+server {
+  listen 80;
+  server_name new.pdktuning.com;
+
+  # Cloudflare Pages иска SNI и валиден Host; резолверът е нужен, защото името
+  # се разрешава при заявката, а не при зареждане на конфига.
+  resolver 1.1.1.1 8.8.8.8 valid=300s;
+  resolver_timeout 5s;
+
+  location / {
+    set $pages "new-pdk.pages.dev";
+    proxy_pass https://$pages$request_uri;
+    proxy_http_version 1.1;
+    proxy_set_header Host $pages;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto https;
+    proxy_set_header Accept-Encoding "";
+    proxy_ssl_server_name on;
+    proxy_ssl_name $pages;
+    # `manual`: 301/302 от новия сайт стигат до браузъра както са — той сам
+    # знае кои са неговите адреси, а пренаписването тук би счупило портала.
+    proxy_redirect off;
+    proxy_read_timeout 30s;
+    proxy_connect_timeout 10s;
+  }
+}
+
 # Сервира dist/ от Astro (build.format = directory: /bg/bmw → /bg/bmw/index.html, /bg/ → /bg/index.html).
 # ${LEGACY_UPSTREAM} се замества при старт на контейнера (env).
 server {
