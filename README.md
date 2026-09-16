@@ -1,11 +1,11 @@
 # pdktuning.com
 
-> **В това хранилище има ДВА сайта.** Този в корена и този в `site/`. Не се
-> строят заедно и не се деплойват заедно.
+> **В това хранилище има ДВА сайта.** Този в корена и този в
+> [`site/`](site/README.md). Не се строят заедно и не се деплойват заедно.
 >
 > | | корен | [`site/`](site/README.md) |
 > |---|---|---|
-> | какво е | Astro сайт с ~30 000 страници от изнесен каталог | новият сайт, 183 страници |
+> | какво е | Astro сайт с 30 885 страници от изнесен каталог | новият сайт, 183 страници |
 > | къде отива | VPS-ът, Docker + nginx | Cloudflare Pages, проект `new-pdk` |
 > | какво го пуска | таг `v*` → `.github/workflows/deploy.yml` | `npm run deploy:etap1` от `site/` |
 >
@@ -14,8 +14,36 @@
 
 ## Сайтът в корена
 
-Статичен сайт (Astro 7) + nginx в Docker + малък API за формата. Строи се по „Пълен план за изпълнение“ от 25.08.2026 (Just Pablo).
-Адресите на стария сайт се запазват 1:1; каталогът е извлечен от него и живее като JSON в хранилището.
+Статичен сайт (Astro 7) + nginx в Docker + малък API за формата. Строи се по
+„Пълен план за изпълнение“ от 25.08.2026 (Just Pablo). Адресите на стария сайт
+се запазват 1:1; каталогът е извлечен от него и живее като JSON в хранилището.
+
+### Какво показва днес
+
+Контейнерът обслужва **два различни отговора според хоста**:
+
+| хост | какво връща |
+|---|---|
+| `www.pdktuning.com`, `pdktuning.com` | този сайт — каталогът с 30 885 страници |
+| всичко останало (включително `new.pdktuning.com`) | **препредава към новия сайт** на `new-pdk.pages.dev` |
+
+Правилото е `map $host $to_new_site` в `docker/nginx/nginx.conf`. Логиката е
+**обърната нарочно**: изброени са хостовете, които остават тук, а всичко друго
+отива към новия сайт.
+
+Причината е научена два пъти. Пред контейнера стои прокси, което **не предава
+`Host` като `new.pdktuning.com`** — затова нито `server_name new.pdktuning.com`,
+нито `map`, ключиран по това име, се задействат. Същата бележка стои и над
+`map $host $robots_tag`, където индексирането е обърнато по същата причина.
+
+`127.0.0.1` и `localhost` са изключени, за да остане health check-ът на деплоя
+местен; иначе проверката тръгва през интернет и деплоят зависи от това дали
+Cloudflare отговаря.
+
+Проксирането е **временно**. Правилният път за `new.pdktuning.com` е CNAME към
+Pages, но зоната `pdktuning.com` не е в нашия Cloudflare акаунт и записът
+минава през IT-то на клиента. Щом се направи, заявките спират да стигат дотук
+и блокът се маха при първото чистене.
 
 ## Пускане
 
@@ -24,33 +52,81 @@ cp .env.example .env          # ключовете (виж вътре); праз
 docker compose up -d --build  # → http://localhost:8000
 ```
 
-Контейнерът `web` (nginx, порт 8000 на хоста) сервира сайта и проксира `/api/` към `api` (Node, формата)
-и портала за файлове (`/bg/login`, `/en/login`, профил…) към `LEGACY_UPSTREAM`. На сървъра `new.pdktuning.com`
-се проксира към порт 8000 на localhost.
+Контейнерът `web` (nginx, порт 8000 на хоста) сервира сайта, проксира `/api/`
+към `api` (Node, формата) и портала за файлове (`/bg/login`, `/en/login`,
+профил…) към `LEGACY_UPSTREAM`.
+
+## Заглавки за сигурност
+
+`docker/nginx/headers.inc` влиза във **всеки** location, който има свой
+`add_header` — nginx иначе ги губи, защото `add_header` в location замества
+наследените, вместо да ги допълва.
+
+**CSP-то се генерира, не се пише на ръка.** `script-src` носи SHA-256 хешовете
+на inline скриптовете вместо `'unsafe-inline'`:
+
+```bash
+node scripts/csp-hashes.mjs   # чете dist/, пише docker/nginx/csp.inc
+```
+
+Стъпката е задължителна в `Dockerfile` след билда. Липсващ `csp.inc` спира
+nginx — нарочно: образ с тихо разрешен inline е по-лош от образ, който не се
+сглобява. Файлът е в `.gitignore`; комитнат, той щеше да остарее при първата
+промяна по скрипт и да спре точно тези скриптове, мълчаливо и само в браузъра.
+
+Хешове, а не nonce: страниците са статични и nginx ги подава както са, тоест
+nonce нямаше да се сменя и щеше да е по-лош от нищо.
+
+`style-src` остава с `'unsafe-inline'`. `style="…"` атрибутите не се хешират
+без `'unsafe-hashes'`, което връща голяма част от риска обратно, а вписан стил
+не изпълнява код.
+
+**HSTS не се управлява оттук.** Конфигът казва една година, но живият отговор
+е `max-age=0` — и `www`, и `new` дават същото, а те са различни сървъри, тоест
+стойността идва от Cloudflare (SSL/TLS → Edge Certificates → HSTS). Оправя се
+от този, който държи зоната.
 
 ## Деплой
 
-Push към `main` и pull request пускат регресионните тестове, билд на двата имиджа
-и проверки с реални контейнери на GitHub runner, без достъп до сървъра.
-Таг `v*` стартира `.github/workflows/deploy.yml` в GitHub Actions (`ubuntu-latest`).
-Runner-ът билдва двата имиджа за `linux/amd64`, проверява nginx и HTTP отговорите,
-и прехвърля готовите образи с `docker save`/SCP по съществуващите SSH secrets.
-Не е необходим registry. Сървърът изпълнява само `docker load` и
-`docker compose up -d --no-build --pull never web api`.
-Няма рестарт на Docker daemon, `compose down`, `--remove-orphans` или глобален prune.
-Подменят се само `web` и `api` в съществуващия Compose проект.
+Push към `main` и pull request пускат регресионните тестове, билд на двата
+образа и проверки с реални контейнери на GitHub runner, **без** достъп до
+сървъра. Истинският деплой се пуска САМО от таг `v*` — петте стъпки, които
+пипат сървъра, са зад `if: startsWith(github.ref, 'refs/tags/v')`.
 
-`PUBLIC_GTM_ID` и `PUBLIC_TURNSTILE_SITEKEY` се прочитат преди билда от сървърните
-`.env` и `.env.local` (вторият е с предимство). Само тези публични настройки
-се връщат към runner-а; API тайните остават на сървъра.
-SSH secrets остават `SERVER_HOST`, `SERVER_USER`, `SERVER_PORT`, `SSH_PRIVATE_KEY`.
-Сървърът трябва да е amd64, с Docker Compose v2, Bash, flock, sha256sum и curl.
-Потребителят за SSH трябва да има достъп до Docker.
+```bash
+git tag -a v1.2.0 -m "какво се променя" && git push origin v1.2.0
+```
 
-Архивът се проверява със SHA-256 преди зареждане и се изтрива след успешен деплой.
-Деплоите са сериализирани; няма автоматично изтриване на имиджи на споделения хост.
-При неуспешна HTTP проверка pipeline-ът се проваля и показва логовете;
-няма автоматичен rollback. Предишните имиджи и release конфигурации остават налични.
+Runner-ът билдва двата образа за `linux/amd64`, проверява nginx (`nginx -t`) и
+HTTP отговорите, и прехвърля готовите образи с `docker save`/SCP по
+съществуващите SSH secrets. Не е необходим registry. Сървърът изпълнява само
+`docker load` и `docker compose up -d --no-build --pull never web api`.
+
+Няма рестарт на Docker daemon, `compose down`, `--remove-orphans` или глобален
+prune. Подменят се само `web` и `api` в съществуващия Compose проект.
+
+`PUBLIC_GTM_ID` и `PUBLIC_TURNSTILE_SITEKEY` се прочитат преди билда от
+сървърните `.env` и `.env.local` (вторият е с предимство). Само тези публични
+настройки се връщат към runner-а; API тайните остават на сървъра. SSH secrets:
+`SERVER_HOST`, `SERVER_USER`, `SERVER_PORT`, `SSH_PRIVATE_KEY`. Сървърът трябва
+да е amd64, с Docker Compose v2, Bash, flock, sha256sum и curl; потребителят за
+SSH — с достъп до Docker.
+
+Архивът се проверява със SHA-256 преди зареждане и се изтрива след успешен
+деплой. Деплоите са сериализирани. При неуспешна проверка конвейерът се
+проваля и показва логовете; **няма автоматичен rollback**, но предишните образи
+и release конфигурации остават налични.
+
+### Версии
+
+Правилото на Пламен: `1.0.0` основна · `1.0.1` малък фикс · `1.1.0` първа
+работеща след основната · `1.2.0` цялостна промяна · `2.0.0` след като сайтът
+тръгне. Комитите на клон се **squash**-ват при създаване на PR, после merge;
+не се бута направо в `main`.
+
+Версията в `package.json` **не се вдига** и не означава нищо — истинската е
+тагът. Какво върви на сървъра се вижда в `.images.env`, не в GitHub Releases
+(там има само `v1.0.0` и `v1.0.1`; за 1.1.x са правени само тагове).
 
 За ръчно стартиране след успешен деплой, в `/home/pdk_new/website`:
 
@@ -71,13 +147,11 @@ docker compose -f .compose.active.yml --env-file .env --env-file .images.env \
 | `.deploy.lock` | заключване срещу два едновременни деплоя |
 | `releases/` | стоварените пакети |
 
-**Следеният `docker-compose.yml` не се пипа.** Той е за локална работа с `build:`;
-продукционният е `docker-compose.production.yml` и се стоварва под `releases/`.
-По-рано продукционният се копираше върху следения и `git status` на сървъра
-оставаше вечно „modified“ — всяко влизане там изглеждаше като че някой е пипал
-хранилището на ръка.
-
-Ако на сървъра още стои старото копие, връща се с:
+**Следеният `docker-compose.yml` не се пипа.** Той е за локална работа с
+`build:`; продукционният е `docker-compose.production.yml` и се стоварва под
+`releases/`. По-рано продукционният се копираше върху следения и `git status`
+на сървъра оставаше вечно „modified“ — всяко влизане там изглеждаше като че
+някой е пипал хранилището на ръка. Ако още стои старото копие:
 
 ```bash
 git checkout -- docker-compose.yml
@@ -85,20 +159,19 @@ git checkout -- docker-compose.yml
 
 Работното дърво там е **замръзнало** от стария начин на деплой (`HEAD detached`
 на някакъв стар таг) и не показва коя версия работи. Днешният конвейер не прави
-`checkout` — кодът идва от образите. Какво върви наистина се вижда в
-`.images.env` и в `docker compose -f .compose.active.yml ps`.
+`checkout` — кодът идва от образите.
 
-SEO проверките са отделна CI порта в `build-check.yml`; в Dockerfile резултатът
-им е диагностичен и не спира образа.
+SEO проверките са отделна CI порта в `build-check.yml`; в `Dockerfile`
+резултатът им е диагностичен и не спира образа.
 
 ## Памет на API-то
 
 Ограничителят на формата пази до 10 000 IP адреса и до 5 заявки за всеки адрес
 в плъзгащ прозорец от един час. Изтеклите записи се премахват при заявки и на
 всеки 60 секунди, включително когато няма трафик. При запълване новите адреси
-получават HTTP 429 до освобождаване на място; активните ограничения се запазват.
-Това ограничава паметта на rate limiter-а, не общата памет на целия процес.
-Тестовете се изпълняват с `npm test --prefix api` и в двата CI workflow-а.
+получават HTTP 429 до освобождаване на място; активните ограничения се
+запазват. Това ограничава паметта на rate limiter-а, не общата памет на
+процеса. Тестовете: `npm test --prefix api`, и в двата CI workflow-а.
 
 ## Команди
 
@@ -106,7 +179,8 @@ SEO проверките са отделна CI порта в `build-check.yml`;
 |---|---|
 | `npm run crawl` | сваля стария сайт в `.crawl/` (3 нишки, 300 ms пауза; не се тегли повторно) — след него `node scripts/crawl-engines.mjs` за двигателите, които картата на сайта не показва |
 | `npm run parse` | прави `src/data/catalog/*.json`, `catalog-index.json`, `lastmod.json`, `redirects-catalog.json`, логата в `public/logos/` и `.crawl/anomalies.csv` |
-| `node scripts/build-redirects.mjs` | генерира `docker/nginx/redirects.map` (матрицата от плана + каталожни клонове без данни) |
+| `node scripts/build-redirects.mjs` | генерира `docker/nginx/redirects.map` |
+| `node scripts/csp-hashes.mjs` | генерира `docker/nginx/csp.inc` от готовия `dist/` |
 | `npm run dev` | местен сървър (Astro) |
 | `npm run build` | генерира `dist/` и пуска проверките |
 | `npm run verify` | само проверките, върху готов `dist/` |
@@ -115,16 +189,16 @@ SEO проверките са отделна CI порта в `build-check.yml`;
 
 - **Цена** — `src/data/prices.json`. Единственото място; влиза в таблиците, услугите, схемата и llms.txt.
 - **Въпрос** — `src/data/faq.ts` (общите) или `faq` в `src/data/services.ts` (по услуга).
-- **Адрес, телефон, работно време, координати** — `src/data/business.json`. Влиза в колонтитула, контактите, схемата.
+- **Адрес, телефон, работно време, координати** — `src/data/business.json`.
 - **Текст на услуга** — `src/data/services.ts` (двата езика в един запис).
-- **Писани страници** — `src/content/*.astro` (един компонент, двата езика вътре), маршрутите са в `src/pages/{bg,en}/`.
+- **Писани страници** — `src/content/*.astro`, маршрутите са в `src/pages/{bg,en}/`.
 - **Низове на интерфейса и адреси на страниците** — `src/i18n/index.ts`.
-- **Каталог** — `src/data/catalog/{марка}.json`. Ръчна корекция на двигател = редакция там + `npm run build`.
-- **Мерене** — `PUBLIC_GTM_ID` в `.env` (празно на new.pdktuning.com). Петте събития вървят през `dataLayer`: `tel_click`, `viber_click`, `form_submit`, `catalog_select`, `file_upload_click`.
+- **Каталог** — `src/data/catalog/{марка}.json`. Ръчна корекция = редакция там + `npm run build`.
+- **Мерене** — `PUBLIC_GTM_ID` в `.env`. Петте събития вървят през `dataLayer`: `tel_click`, `viber_click`, `form_submit`, `catalog_select`, `file_upload_click`.
 
 ## Какво чака потвърждение от възложителя
 
-- Адресът: сайтът и политиката казват ул. „Прилеп“ 164, Google профилът — 96. В `business.json` е 96 (профилът), правното лице е с 164.
+- Адресът: правното лице е с ул. „Прилеп“ 164, Google профилът — 96. В `business.json` е 96. (В новия сайт разминаването е премахнато — там всичко се строи от едно поле.)
 - Работното време и имейлът в `business.json` са предположения.
 - Цените в `prices.json` са ориентировъчни („от“).
 - Формулировките за емисионните системи (`legal` в `services.ts`) — преди публикуване на живия домейн.
@@ -134,20 +208,20 @@ SEO проверките са отделна CI порта в `build-check.yml`;
 ## Структура
 
 ```
-scripts/           crawl, crawl-engines, parse, build-redirects, verify-build
+scripts/           crawl, crawl-engines, parse, build-redirects, csp-hashes, verify-build
 src/data/          catalog/*.json (източникът), business.json, prices.json, services.ts, faq.ts, pages.ts
 src/content/       писаните страници (двуезични компоненти) + privacy.{bg,en}.html (пренесени)
 src/pages/         маршрутите: bg/, en/, [lang]/… (каталогът), data/[brand].json, sitemap-*
 src/components/    хедър, колонтитул, калкулатор, показания, крива, форма, ЧЗВ, трохи, плочки…
 src/lib/           catalog.ts (данни и изчисления), seo.ts (формули и схема), text.ts (сглобени абзаци)
-docker/nginx/      nginx.conf, default.conf.template, headers.inc, redirects.map
+docker/nginx/      nginx.conf, default.conf.template, headers.inc, redirects.map, csp.inc (генериран)
 api/               формата: POST /api/contact, GET /api/health
+site/              НОВИЯТ САЙТ — виж site/README.md
 ```
 
-## Пренасяне на живия домейн (когато дойде денят)
+## Пренасяне на живия домейн
 
-1. `LEGACY_UPSTREAM` в `.env` → адресът на стария сървър (портала), не `www.pdktuning.com`.
-2. `PUBLIC_GTM_ID=GTM-5MKF4JB`, ключовете за Resend и Turnstile.
-3. Правилата на зоната в Cloudflare: апекс и http → `https://www.pdktuning.com` (една стъпка).
-4. Картите: `https://www.pdktuning.com/sitemap-index.xml` в Search Console — по вълни (план, стр. 44): първо `sitemap-*-pages`, `-brands`, `-models`.
-5. Чеклистът от приложение Б (40 точки) и 30 стари адреса на живо.
+Този сайт **не поема** `www.pdktuning.com`. Планът е новият сайт в `site/` да
+застане там, а този да остане произходът за каталога под ниво марка и за
+портала на дилърите — под името `catalog.pdktuning.com`. Редът на стъпките и
+проверките са в [`site/docs/prevklyuchvane.md`](site/docs/prevklyuchvane.md).
