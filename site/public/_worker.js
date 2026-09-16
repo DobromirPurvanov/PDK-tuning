@@ -22,16 +22,27 @@
  * `www.pdktuning.com` сме НИЕ — и ако източникът остане записан така, работникът
  * ще пита сам себе си и каталогът ще замълчи.
  *
- * Затова адресът на източника се чете от средата: `LEGACY_ORIGIN`. Преди
- * прехвърлянето стои празен и се ползва www (както досега). В деня на смяната
- * клиентът прави ЕДИН DNS запис към същия произход (например `catalog.pdktuning.com`,
- * проксиран през Cloudflare, за да има валиден сертификат) и `LEGACY_ORIGIN` сочи
- * към него. Код не се пипа.
+ * Затова адресът на източника се чете от средата: `CATALOG_BASE_URL` (старото
+ * име `LEGACY_ORIGIN` още се приема). Преди прехвърлянето сочи `www`, както
+ * досега. В деня на смяната клиентът прави ЕДИН DNS запис към същия произход
+ * (`catalog.pdktuning.com`, проксиран през Cloudflare, за да има валиден
+ * сертификат) и ключът сочи към него. Код не се пипа — местно стойността
+ * живее в `.env.local`, в Pages е в настройките на проекта.
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
-const LEGACY_DEFAULT = 'https://www.pdktuning.com';
-const legacyOf = (env) => String(env.LEGACY_ORIGIN || LEGACY_DEFAULT).replace(/\/+$/, '');
+/**
+ * ОТКЪДЕ СЕ ЧЕТЕ КАТАЛОГЪТ. Името на ключа е `CATALOG_BASE_URL`; `LEGACY_ORIGIN`
+ * се приема заради вече качените среди и записките, но новото е водещото.
+ *
+ * ПРАЗНО НЕ Е ПОДРАЗБИРАНЕ. По-рано тук стоеше зашит `https://www.pdktuning.com`
+ * и това мълчаливо работеше и при празен ключ — а мълчаливото работене е точно
+ * начинът да се пусне деплой без настроена среда и никой да не забележи, докато
+ * `www` не станем ние и работникът не почне да пита сам себе си. Сега липсващият
+ * ключ казва честно, че липсва.
+ */
+const legacyOf = (env) =>
+  String(env.CATALOG_BASE_URL || env.LEGACY_ORIGIN || '').replace(/\/+$/, '');
 
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36';
 
@@ -602,12 +613,13 @@ async function passThrough(request, url, src, indexable) {
     .transform(out);
 }
 
-/** адресът сочи ли към стария сайт — под сегашното му име или под старото */
+/** адресът сочи ли към стария сайт — сравнява се със СЕГАШНИЯ източник, какъвто
+ *  е в средата; зашито име тук би остаряло в деня на превключването */
 function isLegacyHost(value, src) {
   try {
+    if (!src) return false;
     const h = new URL(value).host.replace(/^www\./i, '');
-    return h === new URL(src).host.replace(/^www\./i, '')
-      || h === new URL(LEGACY_DEFAULT).host.replace(/^www\./i, '');
+    return h === new URL(src).host.replace(/^www\./i, '');
   } catch { return false; }
 }
 
@@ -620,7 +632,7 @@ export default {
     if (url.pathname === '/api/order') return order(request, env, ctx);
 
     // преминаването се включва САМО когато стоим на тяхно място (виж бележката горе)
-    const takenOver = Boolean(env.LEGACY_ORIGIN);
+    const takenOver = Boolean(src);
 
     if (!url.pathname.startsWith('/live/')) {
       /* Пренасочванията вървят ПРЕДИ преминаването: адрес с наследник при нас

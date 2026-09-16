@@ -147,7 +147,43 @@ export const LEGAL = [
   { href: '/otkaz-i-reklamacii/', label: 'Отказ и рекламации' },
 ] as const;
 
-export const BUSINESS = business;
+/**
+ * Данните на фирмата. `legalAddress` СЕ СТРОИ, не се чете от файла — вж.
+ * `_legalAddress_todo` в business.json: отделно поле значеше правни страници с
+ * ул. „Прилеп“ 164 и останал сайт с 96.
+ */
+export const BUSINESS = {
+  ...business,
+  legalAddress: `${business.address.street}, ${business.address.city} ${business.address.postalCode}`,
+};
 
-/** Порталът за файлове остава на СТАРИЯ сървър — не се пипа и не се пренася. */
-export const PORTAL = business.portal.login.bg;
+/**
+ * АДРЕСИТЕ ИДВАТ ОТ `.env.local`, НЕ СЕ ЗАШИВАТ. Виж бележката в astro.config.mjs.
+ *
+ * `PDK_BASE_URL` / `PDK_CATALOG_URL` се вграждат при билда от `vite.define` —
+ * не са `PUBLIC_`, значи НЕ излизат в браузъра като променливи, само като
+ * готовия текст на връзките.
+ */
+export const BASE_URL = (import.meta.env.PDK_BASE_URL ?? '').replace(/\/+$/, '');
+export const CATALOG_URL = (import.meta.env.PDK_CATALOG_URL ?? '').replace(/\/+$/, '');
+
+/**
+ * ПОРТАЛЪТ НА ДИЛЪРИТЕ — „Вход“, „Качи файл“, „Портал за партньори“.
+ *
+ * Връзката е ОТНОСИТЕЛНА (`/bg/login`) и това е нарочно. Порталът си остава на
+ * стария сървър; работникът (`PORTAL_PATHS` в public/_worker.js) препредава
+ * `/bg/login` натам както е — с метода, заглавките и тялото — а `PHPSESSID`
+ * се връща без `Domain` и залепва за нашия домейн. Тоест адресът работи на
+ * всеки етап, без да знае кой е произходът в момента:
+ *
+ *   етап 1  наш адрес/bg/login  →  www.pdktuning.com/bg/login
+ *   етап 2  www/bg/login        →  catalog.pdktuning.com/bg/login
+ *
+ * Зашит абсолютен адрес би бил грешен и на двата етапа: на етап 1 щеше да
+ * извежда хората извън сайта, на етап 2 щеше да сочи `catalog` — вътрешния
+ * произход, който няма нашите заглавки и няма работа пред дилър.
+ *
+ * `PORTAL_URL` в средата пренаписва това, ако някой ден потрябва абсолютен
+ * адрес (например докато работникът още не е пуснат).
+ */
+export const PORTAL = import.meta.env.PDK_PORTAL_URL || '/bg/login';
