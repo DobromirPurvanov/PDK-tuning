@@ -23,6 +23,7 @@
     "postflight:etap2": "node scripts/migration/preflight.mjs --etap2 --dns --live https://www.pdktuning.com"
   },
   "dependencies": {
+    "@worker-tools/html-rewriter": "0.1.0-pre.19",
     "astro": "^7.1.6"
   },
   "devDependencies": {

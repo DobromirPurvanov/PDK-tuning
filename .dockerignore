@@ -1,12 +1,10 @@
-node_modules
-dist
-.astro
+**/node_modules
+**/dist
+**/.astro
+**/.wrangler
+**/.env
+**/.env.*
+**/*.log
 .crawl
 .git
 .github
-*.log
-.env
-.env.*
-
-# новият сайт се деплойва към Cloudflare Pages, не влиза в този образ
-site

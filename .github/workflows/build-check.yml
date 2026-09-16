@@ -1,35 +1,21 @@
-# The quality gate. The SEO checks from scripts/verify-build.mjs run here rather
-# than inside the image, so a failure shows up before deploy instead of leaving
-# the site on 502. Runs on Linux: a macOS build passes because that filesystem
-# is case-insensitive.
 name: Build check
-
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-
       - uses: actions/setup-node@v4
         with:
           node-version: 24
           cache: npm
-
-      - name: API tests
-        run: npm test --prefix api
-
-      - run: npm ci --no-audit --no-fund
-
-      - name: Astro build
-        run: npx astro build
-        env:
-          NODE_OPTIONS: --max-old-space-size=4096
-
-      - name: SEO checks
-        run: node scripts/verify-build.mjs
+          cache-dependency-path: site/package-lock.json
+      - run: npm ci --prefix site --no-audit --no-fund
+      - run: node --test site/server/*.test.mjs
+      - run: npm run check --prefix site
+      - run: npm run build:etap1 --prefix site
+      - run: npm test --prefix api

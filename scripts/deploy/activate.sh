@@ -17,11 +17,13 @@ compose=(docker compose --project-directory "$PWD" "${env_args[@]}" --env-file "
 docker load --input "$release/images.tar"
 # Both images must exist locally; never pull or build on this server.
 "${compose[@]}" up -d --no-build --pull never api
-"${compose[@]}" run --rm --no-deps --pull never web nginx -t
+"${compose[@]}" run --rm --no-deps --pull never web node server/server.mjs --check
 "${compose[@]}" up -d --no-build --pull never web api
 "${compose[@]}" ps
 for i in $(seq 1 30); do
   if curl --connect-timeout 3 --max-time 5 -fsS -o /dev/null http://127.0.0.1:8000/__alive && curl --connect-timeout 3 --max-time 5 -fsS -o /dev/null http://127.0.0.1:8000/api/health; then
+    node_check=$("${compose[@]}" exec -T web node -e "fetch('http://127.0.0.1/api/health').then(r=>r.json()).then(j=>{if(j.site!=='new-pdk')process.exit(1);console.log(j.release)})")
+    echo "Active new site release: $node_check"
     # Записва се в .compose.active.yml, а НЕ върху следения docker-compose.yml.
     # Следеният е за локална работа (`build:`), продукционният е с `image:` —
     # копиран отгоре, той правеше `git status` на сървъра вечно „modified“ и

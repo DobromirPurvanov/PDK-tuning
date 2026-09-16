@@ -1,33 +1,26 @@
-# Stage 1: build the static site (Astro). The SEO checks now gate in CI
-# (.github/workflows/build-check.yml, also on Linux), not here.
+# The only frontend is site/. Build it locally into the VPS image.
 FROM node:24-alpine AS build
 WORKDIR /app
-COPY package.json package-lock.json ./
+COPY site/package.json site/package-lock.json ./
 RUN npm ci --no-audit --no-fund
-COPY . .
-ARG PUBLIC_GTM_ID=
-ARG PUBLIC_TURNSTILE_SITEKEY=
-ENV PUBLIC_GTM_ID=$PUBLIC_GTM_ID PUBLIC_TURNSTILE_SITEKEY=$PUBLIC_TURNSTILE_SITEKEY NODE_OPTIONS=--max-old-space-size=4096
-RUN npx astro build
-# The checks still run here, but do NOT fail the image: new.pdktuning.com is
-# noindexed, so an SEO defect there costs nothing while a 502 costs plenty.
-# Errors stay visible in the build output. The gate that protects production is in CI.
-RUN node scripts/verify-build.mjs || echo '!!! SEO CHECKS FAILED - see the list above; building the image anyway'
+COPY site/ ./
+ARG BASE_URL=https://new.pdktuning.com
+ARG CATALOG_BASE_URL=https://www.pdktuning.com
+ARG PUBLIC_INDEXABLE=false
+ARG PUBLIC_GA_ID=
+ARG PUBLIC_GSC_VERIFY=
+ENV BASE_URL=$BASE_URL CATALOG_BASE_URL=$CATALOG_BASE_URL PUBLIC_INDEXABLE=$PUBLIC_INDEXABLE PUBLIC_GA_ID=$PUBLIC_GA_ID PUBLIC_GSC_VERIFY=$PUBLIC_GSC_VERIFY
+RUN npm run build
 
-# CSP-то се смята ОТ ГОТОВИЯ ИЗХОД: `script-src` носи хешовете на inline
-# скриптовете вместо `'unsafe-inline'`. Това ТРЯБВА да мине — сгрешен или
-# липсващ csp.inc спира nginx, а образ с тихо разрешен inline е по-лош от
-# образ, който не се сглобява.
-RUN node scripts/csp-hashes.mjs
-
-# Етап 2: nginx сервира готовите файлове. Perl модулът е само за правило R4 (главни букви → малки).
-FROM nginx:1.27-alpine-perl
-COPY docker/nginx/nginx.conf /etc/nginx/nginx.conf
-COPY docker/nginx/headers.inc /etc/nginx/headers.inc
-# генерира се в етап 1 от готовия dist, затова се взима ОТТАМ, не от контекста
-COPY --from=build /app/docker/nginx/csp.inc /etc/nginx/csp.inc
-COPY docker/nginx/redirects.map /etc/nginx/redirects.map
-COPY docker/nginx/default.conf.template /etc/nginx/templates/default.conf.template
-COPY --from=build /app/dist /usr/share/nginx/html
-ENV LEGACY_UPSTREAM=https://www.pdktuning.com
+FROM node:24-alpine
+WORKDIR /app
+COPY site/package.json site/package-lock.json ./
+RUN npm ci --omit=dev --no-audit --no-fund
+COPY --from=build /app/dist ./dist
+COPY site/public/_worker.js ./public/_worker.js
+COPY site/server ./server
+ARG SITE_RELEASE=local
+ENV NODE_ENV=production PORT=80 SITE_RELEASE=$SITE_RELEASE
 EXPOSE 80
+USER node
+CMD ["node", "server/server.mjs"]

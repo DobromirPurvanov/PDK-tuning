@@ -6,12 +6,21 @@ services:
     build:
       context: .
       args:
-        PUBLIC_GTM_ID: ${PUBLIC_GTM_ID:-}
-        PUBLIC_TURNSTILE_SITEKEY: ${PUBLIC_TURNSTILE_SITEKEY:-}
+        BASE_URL: ${BASE_URL:-https://new.pdktuning.com}
+        CATALOG_BASE_URL: ${CATALOG_BASE_URL:-https://www.pdktuning.com}
+        PUBLIC_INDEXABLE: ${PUBLIC_INDEXABLE:-false}
+        PUBLIC_GA_ID: ${PUBLIC_GA_ID:-}
+        PUBLIC_GSC_VERIFY: ${PUBLIC_GSC_VERIFY:-}
     ports:
       - "8000:80"
     environment:
-      LEGACY_UPSTREAM: ${LEGACY_UPSTREAM:-https://www.pdktuning.com}
+      BASE_URL: ${BASE_URL:-https://new.pdktuning.com}
+      CATALOG_BASE_URL: ${CATALOG_BASE_URL:-https://www.pdktuning.com}
+      PUBLIC_INDEXABLE: ${PUBLIC_INDEXABLE:-false}
+      RESEND_API_KEY: ${RESEND_API_KEY:-}
+      CONTACT_TO: ${CONTACT_TO:-${MAIL_TO:-}}
+      CONTACT_FROM: ${CONTACT_FROM:-${MAIL_FROM:-}}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
     depends_on:
       - api
     restart: always

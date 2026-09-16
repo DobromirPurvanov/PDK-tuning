@@ -21,25 +21,25 @@ class PublicConfigTests(unittest.TestCase):
 
     def test_real_keys_and_action_banner(self):
         result = public_config.build_settings(self.output({
-            'PUBLIC_GTM_ID': 'GTM-5MKF4JB',
-            'PUBLIC_TURNSTILE_SITEKEY': '0x4AAAA-test-key',
+            'PUBLIC_GA_ID': 'GTM-5MKF4JB',
+            'PUBLIC_GSC_VERIFY': '0x4AAAA-test-key',
             'PRIVATE_SETTING': 'never-export-this',
         }))
-        self.assertEqual(result, 'PUBLIC_GTM_ID=GTM-5MKF4JB\nPUBLIC_TURNSTILE_SITEKEY=0x4AAAA-test-key\n')
+        self.assertEqual(result, 'BASE_URL=\nCATALOG_BASE_URL=\nPUBLIC_INDEXABLE=\nPUBLIC_GA_ID=GTM-5MKF4JB\nPUBLIC_GSC_VERIFY=0x4AAAA-test-key\n')
 
     def test_compose_without_trailing_newline(self):
         output = self.output({}).replace('}\nPDK_PUBLIC_CONFIG_END', '}PDK_PUBLIC_CONFIG_END')
         self.assertEqual(public_config.build_settings(output),
-                         'PUBLIC_GTM_ID=\nPUBLIC_TURNSTILE_SITEKEY=\n')
+                         'BASE_URL=\nCATALOG_BASE_URL=\nPUBLIC_INDEXABLE=\nPUBLIC_GA_ID=\nPUBLIC_GSC_VERIFY=\n')
 
     def test_empty_configuration(self):
         self.assertEqual(public_config.build_settings(self.output({})),
-                         'PUBLIC_GTM_ID=\nPUBLIC_TURNSTILE_SITEKEY=\n')
+                         'BASE_URL=\nCATALOG_BASE_URL=\nPUBLIC_INDEXABLE=\nPUBLIC_GA_ID=\nPUBLIC_GSC_VERIFY=\n')
 
     def test_reject_env_injection(self):
         for value in ['key\nOTHER=value', 'key\rOTHER=value', 'key\0', 123]:
             with self.subTest(value=value), self.assertRaises(ValueError):
-                public_config.build_settings(self.output({'PUBLIC_GTM_ID': value}))
+                public_config.build_settings(self.output({'PUBLIC_GA_ID': value}))
 
     def test_missing_or_duplicate_payload(self):
         for output in ['{}', self.output({}) * 2]:
@@ -65,7 +65,7 @@ printf '%s\\n' "$*" >> "$COMMAND_LOG"
 case "$SCENARIO:$*" in
   config_failure:*'config --quiet'*) exit 1;;
   load_failure:load*) exit 1;;
-  nginx_failure:*'nginx -t'*) exit 1;;
+  runtime_failure:*'node server/server.mjs --check'*) exit 1;;
 esac
 ''',
                 'flock': '#!/bin/sh\n[ "$SCENARIO" != locked ]\n',
@@ -108,7 +108,7 @@ esac
     def test_activation_and_failure_boundaries(self):
         for scenario in ['success', 'missing_env', 'invalid_release', 'locked',
                          'config_failure', 'checksum_failure', 'load_failure',
-                         'nginx_failure', 'http_failure']:
+                         'runtime_failure', 'http_failure']:
             with self.subTest(scenario=scenario):
                 self.activate(scenario)
 

@@ -561,7 +561,12 @@ async function passThrough(request, url, src, indexable) {
     );
   }
 
-  const r = await fetch(new Request(target, request), { redirect: 'manual' });
+  const forwarded = new Request(target, request);
+  // The upstream must receive its own Host and Cloudflare metadata. Forwarding
+  // the VPS client's CF headers can make Cloudflare reject a loopback IP (1000).
+  for (const name of ['host', 'cf-connecting-ip', 'cf-ray', 'cf-visitor', 'cf-worker',
+    'x-forwarded-host', 'x-forwarded-proto', 'x-forwarded-for']) forwarded.headers.delete(name);
+  const r = await fetch(forwarded, { redirect: 'manual' });
   const headers = new Headers(r.headers);
   for (const h of HOP) headers.delete(h);
 
@@ -570,7 +575,8 @@ async function passThrough(request, url, src, indexable) {
   if (loc) headers.set('location', loc.replace(/^https?:\/\/[^/]+/i, url.origin));
 
   // бисквитките на входа са закачени за стария домейн; без „Domain“ стават наши
-  const cookies = r.headers.getAll ? r.headers.getAll('set-cookie') : [];
+  const cookies = r.headers.getSetCookie ? r.headers.getSetCookie()
+    : r.headers.getAll ? r.headers.getAll('set-cookie') : [];
   if (cookies.length) {
     headers.delete('set-cookie');
     for (const c of cookies) headers.append('set-cookie', c.replace(/;\s*domain=[^;]*/i, ''));
