@@ -215,7 +215,8 @@ jobs:
               echo "origin мина на SSH"
             fi
             echo "origin: $(git remote get-url origin)"
-            if git fetch --quiet --tags origin >/dev/null 2>&1; then
+            echo "refspec: $(git config --get remote.origin.fetch || echo ЛИПСВА)"
+            if git fetch --tags origin 2>&1; then
               echo "ръчният git pull работи"
             else
               echo "origin не се отваря от сървъра; деплоят пак минава с bundle-а"
