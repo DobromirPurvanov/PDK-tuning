@@ -41,8 +41,7 @@ const schema = [{
     <strong>{b.legalName}</strong>, търговец с марка „{b.name}“, {b.legalAddress}.
   </p>
   <dl>
-    <dt>ЕИК</dt>
-    <dd>{b.eik || <span class="fill">ЕИК — попълва се от възложителя</span>}</dd>
+    {b.eik && <><dt>ЕИК</dt><dd>{b.eik}</dd></>}
     <dt>Адрес за отказ и рекламации</dt>
     <dd>{b.address.street}, {b.address.city} {b.address.postalCode}</dd>
     <dt>Телефон</dt>

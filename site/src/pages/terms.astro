@@ -30,8 +30,9 @@ const schema = [{
 >
   <h2>1. Кой сме</h2>
   <p>
+    {/* ЕИК-ът се вписва в изречението само когато го има — иначе то свършва на адреса */}
     Сайтът се поддържа от <strong>{b.legalName}</strong>, работещо под марката „{b.name}“,
-    {b.legalAddress}, ЕИК <span class="fill">попълва се от възложителя</span>.
+    {b.legalAddress}{b.eik && <>, ЕИК {b.eik}</>}.
     Връзка: <a href={`tel:${b.phone}`}>{b.phoneDisplay}</a>,
     <a href={`mailto:${b.email}`}>{b.email}</a>.
   </p>

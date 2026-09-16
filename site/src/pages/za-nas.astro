@@ -91,10 +91,9 @@ const numbers = [
           <dl>
             <dt>Юридическо лице</dt>
             <dd>{b.legalName}</dd>
-            <dt>ЕИК</dt>
-            <dd>{b.eik || <span class="p-fill">чака се от клиента</span>}</dd>
-            <dt>ДДС номер</dt>
-            <dd>{b.vat || <span class="p-fill">чака се от клиента</span>}</dd>
+            {/* няма стойност → двойката отпада, вместо да стои празна рамка */}
+            {b.eik && <><dt>ЕИК</dt><dd>{b.eik}</dd></>}
+            {b.vat && <><dt>ДДС номер</dt><dd>{b.vat}</dd></>}
             <dt>Сервиз</dt>
             <dd>{b.address.street}, {b.address.city}</dd>
             <dt>Телефон</dt>
@@ -102,10 +101,14 @@ const numbers = [
             <dt>Имейл</dt>
             <dd><a href={`mailto:${b.email}`} style="color:inherit;border-bottom:1px solid rgba(255,255,255,.2)">{b.email}</a></dd>
           </dl>
-          <p class="p-price" style="border-top-color:var(--grey9)">
-            <span>Адресът в правните страници е ул. „Прилеп“ 164, а в профила в Google — 96.
-            Разминаването се потвърждава от възложителя преди пускане.</span>
-          </p>
+          {/*
+            ТУК СТОЕШЕ бележка, че адресът в правните страници (ул. „Прилеп“ 164)
+            се разминава с този в профила в Google (96) и че разминаването чака
+            възложителя. Това е работна бележка, не съобщение за клиента —
+            махната е по същата причина като рамките „чака се“.
+            Разминаването ОСТАВА: `legalAddress` е 164, `address.street` е 96.
+            Напомнянето живее в `_todo` в src/data/business.json.
+          */}
         </aside>
       </div>
     </section>

@@ -207,11 +207,18 @@ const hoursText = b.hours.map((h) => {
         <span class="id">002 // Въртящ момент</span>
         <div class="row"><b class="cell-val" id="hNm" data-to="40">+0</b><span class="unit">Nm</span><span class="track"><i style="width:74%"></i></span></div>
       </div>
+      {/*
+        ТУК СТОЕШЕ клетка „Източникът“: база `pdktuning.com`, четене „на живо,
+        без копие“. Тя обясняваше как е УСТРОЕН сайтът — на посетителя това не
+        му трябва, а на конкурент му върши работа. Сега клетката казва какво
+        покрива сервизът. Числата идват от marks.json, не са преписани.
+      */}
       <div class="cell">
-        <span class="id">003 // Източникът</span>
-        <div class="kv"><span>База</span><span id="hSrc">pdktuning.com</span></div>
-        <div class="kv"><span>Четене</span><span><b>на живо</b>, без копие</span></div>
-        <div class="kv"><span>Марки</span><span id="hBrands">—</span></div>
+        <span class="id">003 // Обхватът</span>
+        <div class="kv"><span>Леки</span><span><b>{cars.length}</b> марки</span></div>
+        {groups.map((g) => (
+          <div class="kv"><span>{g.cat.wallLabel}</span><span><b>{g.items.length}</b> марки</span></div>
+        ))}
       </div>
     </div>
   </div>
@@ -238,7 +245,7 @@ const hoursText = b.hours.map((h) => {
   <div class="wall-in">
     <div class="wall-head">
       <h2 class="kick">Каталогът</h2>
-      <p class="wall-sum"><b id="wCount">—</b> марки, четени на живо от базата</p>
+      <p class="wall-sum"><b id="wCount">—</b> марки в сервиза</p>
     </div>
 
     <div class="row big">
