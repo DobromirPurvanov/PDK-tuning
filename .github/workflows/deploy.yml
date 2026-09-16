@@ -215,11 +215,12 @@ jobs:
               echo "origin мина на SSH"
             fi
             echo "origin: $(git remote get-url origin)"
-            echo "refspec: $(git config --get remote.origin.fetch || echo ЛИПСВА)"
-            if git fetch --tags origin 2>&1; then
+            # --force, защото дървото е огледало на GitHub: заварен таг, който
+            # не съвпада, иначе вали целия fetch с „would clobber existing tag“.
+            if git fetch --force --tags --prune origin 2>&1; then
               echo "ръчният git pull работи"
             else
-              echo "origin не се отваря от сървъра; деплоят пак минава с bundle-а"
+              echo "origin не се отваря от сървъра; деплоят пак минава с bundle-а" >&2
             fi
             git status --porcelain | head -20
             echo "PDK_TREE_END"
