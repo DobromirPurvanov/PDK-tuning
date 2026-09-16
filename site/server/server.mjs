@@ -114,6 +114,9 @@ export async function makeApp(options = {}) {
     const path = new URL(request.url).pathname;
     let response;
     if (path === '/__alive') response = new Response('ok\n');
+    // Old browsers may have cached the previous site's permanent / -> /bg/
+    // redirect. Serve the new homepage here too, avoiding a /bg/ -> / loop.
+    else if (path === '/bg' || path === '/bg/') response = await assets(new Request(new URL('/', request.url), request));
     else if (path === '/api/health') response = Response.json({ ok: true, site: 'new-pdk',
       release: env.SITE_RELEASE || 'local', mail: Boolean(bindings.RESEND_API_KEY && bindings.CONTACT_TO && bindings.CONTACT_FROM) });
     else response = await worker.fetch(request, bindings, { waitUntil(promise) { promise.catch(console.error); } });

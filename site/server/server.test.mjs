@@ -41,7 +41,10 @@ test('VPS serves the new build and preserves catalogue and dealer sessions', asy
   for (const path of ['/_worker.js', '/_headers', '/.env', '/%2e%2e%2fpackage.json']) assert.equal((await get(path)).status, 404);
   assert.equal((await get('/fonts/test.woff2')).headers.get('content-type'), 'font/woff2');
   assert.match((await get('/fonts/test.woff2')).headers.get('cache-control'), /immutable/);
-  assert.equal((await get('/bg/')).headers.get('location'), 'https://preview.example/');
+  const oldHome = await get('/bg/');
+  assert.equal(oldHome.status, 200);
+  assert.equal(oldHome.headers.get('location'), null);
+  assert.match(await oldHome.text(), /New PDK/);
   assert.equal((await get('/bg/bmw')).headers.get('location'), 'https://preview.example/katalog/bmw/');
   const live = await (await get('/live/brands')).json();
   assert.deepEqual(live.data, [{ slug: 'bmw', label: 'BMW' }]);
