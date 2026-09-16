@@ -180,12 +180,13 @@ jobs:
           TAG: ${{ github.ref_name }}
           SHA: ${{ github.sha }}
           RELEASE: ${{ env.RELEASE }}
+          SSH_URL: git@github.com:${{ github.repository }}.git
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           port: ${{ secrets.SERVER_PORT }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          envs: TAG,SHA,RELEASE
+          envs: TAG,SHA,RELEASE,SSH_URL
           command_timeout: 5m
           script: |
             set -u
@@ -203,6 +204,22 @@ jobs:
               echo "Дървото остава на стария таг; меродавен е ACTIVE-VERSION" >&2
             fi
             rm -f "$RELEASE/repo.bundle"
+            # Деплоят не се нуждае от origin — кодът дойде с bundle-а. Това е
+            # само за ръчното `git pull` на сървъра: ключът там не важи за
+            # HTTPS адрес, затова адресът се сменя, но само ако ключът
+            # наистина отваря GitHub. Няма ключ -> нищо не се пипа.
+            export GIT_SSH_COMMAND='ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new -o ConnectTimeout=10'
+            if [ "$(git remote get-url origin)" != "$SSH_URL" ] \
+               && git ls-remote --quiet "$SSH_URL" HEAD >/dev/null 2>&1; then
+              git remote set-url origin "$SSH_URL"
+              echo "origin мина на SSH"
+            fi
+            echo "origin: $(git remote get-url origin)"
+            if git fetch --quiet --tags origin >/dev/null 2>&1; then
+              echo "ръчният git pull работи"
+            else
+              echo "origin не се отваря от сървъра; деплоят пак минава с bundle-а"
+            fi
             git status --porcelain | head -20
             echo "PDK_TREE_END"
             exit 0
