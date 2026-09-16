@@ -1,0 +1,160 @@
+---
+/**
+ * Хъбът на каталога — всичките 110 марки, подредени по категория, плюс живия
+ * избирач. Тук е и единственото място със сортиране по азбучен ред: човек,
+ * който търси конкретна марка, я търси с очи, не по популярност.
+ */
+import Page from '../../layouts/Page.astro';
+import Picker from '../../components/Picker.astro';
+import MarkGrid from '../../components/MarkGrid.astro';
+import marks from '../../data/marks.json';
+import { CATEGORIES } from '../../data/categories';
+import { crumbSchema, bizRef } from '../../lib/seo';
+
+type Mark = { slug: string; name: string; kind: string; ext: string | null };
+const all = (marks as Mark[]).slice().sort((a, b) => a.name.localeCompare(b.name, 'en'));
+
+const groups = CATEGORIES.map((c) => ({
+  cat: c,
+  items: all.filter((m) => m.kind === c.kind),
+}));
+
+const site = Astro.site!.href.replace(/\/$/, '');
+const crumbs = [{ href: '/katalog/', label: 'Каталог' }];
+
+const schema = [
+  bizRef(site),
+  crumbSchema(site, [{ href: '/', label: 'Начало' }, ...crumbs]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Марки в каталога на PDK Tuning',
+    numberOfItems: all.length,
+    itemListElement: all.map((m, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: m.name,
+      url: `${site}/katalog/${m.slug}/`,
+    })),
+  },
+];
+---
+<Page
+  title="Каталог — 110 марки с реални числа преди и след | PDK Tuning"
+  description="Всички марки, за които имаме стойности: леки автомобили, камиони и селскостопанска техника. Изберете марка, модел и двигател и вижте числата преди и след."
+  kicker={`${all.length} марки`}
+  heading="Каталог"
+  lead="Изберете марка, после модел, година и двигател. Числата за всеки двигател са конкретни — не общо правило за цялата марка."
+  crumbs={crumbs}
+  schema={schema}
+>
+  <div class="p-wrap">
+    <section class="p-sec">
+      <h2>Трите категории</h2>
+      <div class="p-cards three">
+        {groups.map((g) => (
+          <a class="p-card" href={`/${g.cat.slug}/`}>
+            <span class="wash"></span>
+            <span class="lab">{g.items.length} марки</span>
+            <h3>{g.cat.name}</h3>
+            <p>{g.cat.lead}</p>
+            <span class="go">Виж категорията →</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  </div>
+
+  <Picker
+    heading="Намери своя автомобил"
+    sub="Четири стъпки до реалните числа за твоя двигател."
+  />
+
+  <div class="p-wrap">
+    <section class="p-sec">
+      <h2>Всички марки</h2>
+      <p class="p-note">По азбучен ред, в трите категории. Всяка води към страницата си.</p>
+
+      <label class="mfind">
+        <span>Търси марка</span>
+        <input type="search" id="mq" placeholder="BMW, Claas, DAF…" autocomplete="off" />
+      </label>
+      <p class="mnone" id="mnone" hidden>Няма марка с това име в базата ни.</p>
+
+      {groups.map((g) => (
+        <div class="mgroup" data-group>
+          <div class="mhead">
+            <h3><a href={`/${g.cat.slug}/`}>{g.cat.name}</a></h3>
+            <span>{g.items.length} марки</span>
+          </div>
+          <MarkGrid marks={g.items} />
+        </div>
+      ))}
+    </section>
+  </div>
+</Page>
+
+<script>
+// Търсенето скрива плочките на място — без заявка и без пренареждане на решетката.
+const q = document.getElementById('mq') as HTMLInputElement | null;
+if (q) {
+  const groups = Array.from(document.querySelectorAll<HTMLElement>('[data-group]'));
+  const none = document.getElementById('mnone')!;
+  const tiles = groups.map((g) => ({
+    box: g,
+    marks: Array.from(g.querySelectorAll<HTMLElement>('.mark')).map((el) => ({
+      el,
+      key: (el.querySelector('em')?.textContent || '').toLowerCase(),
+    })),
+  }));
+
+  const apply = () => {
+    const s = q.value.trim().toLowerCase();
+    let hits = 0;
+    for (const g of tiles) {
+      let inGroup = 0;
+      for (const t of g.marks) {
+        const on = !s || t.key.includes(s);
+        t.el.hidden = !on;
+        if (on) inGroup++;
+      }
+      g.box.hidden = inGroup === 0;
+      hits += inGroup;
+    }
+    none.hidden = hits > 0;
+  };
+
+  q.addEventListener('input', apply);
+
+  // Страницата 404 праща търсенето насам с `?q=…` през обикновен <form method="get">,
+  // за да работи и без JavaScript. Тук го подхващаме и филтрираме веднага.
+  // Дължината се реже, защото стойността идва отвън.
+  const wanted = new URLSearchParams(location.search).get('q');
+  if (wanted) {
+    q.value = wanted.slice(0, 40);
+    apply();
+    q.scrollIntoView({ block: 'center' });
+    // адресът се изчиства — филтърът е състояние на екрана, не адрес за споделяне
+    history.replaceState(null, '', location.pathname);
+  }
+}
+</script>
+
+<style is:global>
+.mfind{display:block;max-width:420px;margin:0 0 30px}
+.mfind span{display:block;margin-bottom:8px;font:400 10px/1 var(--mono);letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(255,255,255,.72)}
+.mfind input{width:100%;min-height:48px;padding:13px 15px;background:rgba(255,255,255,.04);
+  border:1px solid var(--grey9);border-radius:9px;color:var(--white);font:400 15px/1.4 var(--body);outline:none;
+  transition:border-color .18s}
+.mfind input:focus{border-color:var(--lime)}
+.mnone{margin:0 0 26px;font:400 14px/1.6 var(--body);color:#FF8E72}
+
+.mgroup + .mgroup{margin-top:44px}
+.mhead{display:flex;align-items:baseline;gap:16px;margin:0 0 18px;padding-bottom:12px;
+  border-bottom:1px solid var(--grey9)}
+.mhead h3{margin:0;font:700 20px/1.1 var(--head);text-transform:uppercase;letter-spacing:.005em}
+.mhead h3 a{border-bottom:1px solid transparent;transition:.18s}
+.mhead h3 a:hover{color:var(--lime);border-bottom-color:rgba(82,251,9,.5)}
+.mhead span{margin-left:auto;font:400 11px/1 var(--mono);color:rgba(255,255,255,.56)}
+</style>

@@ -1,0 +1,225 @@
+---
+/**
+ * СТРАНИЦАТА НА ЕДИН ЕЛЕКТРИЧЕСКИ МОДЕЛ — числата, цената и бутонът.
+ *
+ * Тук свършва пътят от рекламата и от избирача: човекът вижда своята кола и
+ * едно действие. Нищо на тази страница не се пише на ръка за конкретен модел —
+ * всичко идва от src/data/ev.ts, за да няма страница, която казва едно, а
+ * избирачът — друго.
+ *
+ * КАКВО СТАВА С ЛИПСВАЩАТА ЦЕНА. Докато `price` в OURS е празно, бутонът не
+ * казва „Купи“, а „Заяви оферта“, и `offers` не влиза в схемата. Празно поле
+ * значи „още не е обявено“, а не „нула“.
+ */
+import Page from '../../layouts/Page.astro';
+import EvPicker from '../../components/EvPicker.astro';
+import { EV_MODELS, EV_BY_SLUG, EV_CURRENCY, money } from '../../data/ev';
+import { crumbSchema, evPackageSchema, bizRef, pickDesc } from '../../lib/seo';
+
+export function getStaticPaths() {
+  return EV_MODELS.map((m) => ({ params: { slug: m.slug } }));
+}
+
+const { slug } = Astro.params;
+const m = EV_BY_SLUG.get(slug!)!;
+
+const site = Astro.site!.href.replace(/\/$/, '');
+const crumbs = [
+  { href: '/elektricheski/', label: 'Електрически автомобили' },
+  { href: m.href, label: m.full },
+];
+
+/** Братята по марка — за да има накъде да се продължи от дъното. */
+const siblings = EV_MODELS.filter((x) => x.brand === m.brand && x.slug !== m.slug).slice(0, 8);
+
+const headline = m.hasOurs
+  ? `${m.stockPs} к.с. фабрично, ${m.ps} к.с. след нашия файл. Записва се от вас, през телефона.`
+  : `${m.stockPs} к.с. фабрично при таван на блока ${m.ceilingPs} к.с. Числото за този модел още не е обявено.`;
+
+const description = pickDesc(
+  `${m.full} ${m.years}: ${headline}`,
+  `Тунинг за ${m.full} — ${m.stockPs} к.с. фабрично. Софтуер през PDK Flasher, без посещение в сервиз.`,
+);
+
+const schema = [
+  bizRef(site),
+  evPackageSchema(
+    site,
+    {
+      slug: m.slug,
+      name: `Тунинг софтуер за ${m.full}`,
+      description: headline,
+      brand: m.brandName,
+    },
+    m.price != null ? { value: m.price, currency: EV_CURRENCY } : undefined,
+  ),
+  crumbSchema(site, [{ href: '/', label: 'Начало' }, ...crumbs]),
+];
+---
+<Page
+  title={`Тунинг за ${m.full} ${m.years} | PDK Tuning`}
+  description={description}
+  kicker={`${m.brandName} · електрически`}
+  heading={`${m.full}`}
+  lead={headline}
+  crumbs={crumbs}
+  schema={schema}
+  ctaTitle="Питайте, преди да поръчате."
+  ctaText={`Ако нещо по ${m.full} не ви е ясно — гаранция, връщане на оригинала, срок — кажете го сега, не след записа.`}
+>
+  <div class="p-wrap">
+    <section class="p-sec">
+      <div class="ev-buy">
+        <div class="ev-nums">
+          <p class="ev-lab">Мощност, нормален режим</p>
+          <p class="ev-row">
+            <b>{m.stockPs}</b><i>→</i>
+            {m.hasOurs ? <b class="hit">{m.ps}</b> : <b class="off">?</b>}
+            <span>к.с.</span>
+          </p>
+
+          <p class="ev-lab">Въртящ момент</p>
+          <p class="ev-row">
+            <b>{m.stockNm}</b><i>→</i>
+            {m.nm != null ? <b class="hit">{m.nm}</b> : <b class="off">?</b>}
+            <span>Nm</span>
+          </p>
+
+          <dl class="ev-meta">
+            <div><dt>Години</dt><dd>{m.years}</dd></div>
+            <div><dt>Таван на блока</dt><dd>{m.ceilingPs} к.с. / {m.ceilingNm} Nm</dd></div>
+            <div><dt>Къде се прави</dt><dd>При вас, през PDK Flasher</dd></div>
+          </dl>
+        </div>
+
+        <aside class="ev-order">
+          <p class="ev-price">{money(m.price)}</p>
+          <p class="ev-price-note">
+            {m.price != null
+              ? 'Крайна цена с ДДС. В нея влизат устройството, подготовката на файла и доставката до адрес в България.'
+              : 'Цената за този модел още не е обявена. Пишете ни и я казваме прямо, без обиколки.'}
+          </p>
+          <a class="ev-cta" href={`/elektricheski/poracha/?m=${m.slug}`}>
+            {m.price != null ? 'Купи' : 'Заяви оферта'}
+          </a>
+          <p class="ev-small">
+            {m.price != null
+              ? 'Плащане с карта или PayPal. 14 дни право на отказ за устройството.'
+              : 'Отговаряме в рамките на работния ден.'}
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <div class="p-split">
+        <div class="p-prose">
+          <h2>Какво получавате</h2>
+          <p>
+            Устройството PDK Flasher, подготвения за вашия автомобил файл и пътя дотам:
+            изчитане на оригинала, обработка от наш човек и запис — всичко през приложението
+            на телефона. Оригиналният файл се архивира и се връща по всяко време, от вас,
+            без да си уговаряме среща.
+          </p>
+          <h2>Какво няма да чуете от нас</h2>
+          <p>
+            Че записът е невидим за сервиза. Не е — броячът на блока пази следа и
+            официалният сервиз може да я види. Промяната на заводския софтуер може да е
+            основание да откажат гаранционен ремонт по задвижването. Ако колата е в
+            гаранция, това е разговорът, който водим преди поръчката, а не след нея.
+          </p>
+          {!m.hasOurs && (
+            <>
+              <h2>Защо тук няма число</h2>
+              <p>
+                Таванът на блока за {m.full} е {m.ceilingPs} к.с. — това е факт за
+                автомобила. Колко вадим ние от него още не е обявено и няма да го
+                напишем наум. Заявете оферта и ще получите числото за вашата кола.
+              </p>
+            </>
+          )}
+        </div>
+
+        <aside class="p-facts">
+          <h2>Пътят накратко</h2>
+          <dl>
+            <dt>1. Свързвате</dt><dd>Flasher в диагностичния куплунг</dd>
+            <dt>2. Четете</dt><dd>Оригиналът тръгва към нас сам</dd>
+            <dt>3. Подготвяме</dt><dd>Файл за вашия автомобил</dd>
+            <dt>4. Получавате</dt><dd>Обратно в приложението</dd>
+            <dt>5. Записвате</dt><dd>По стъпките в приложението</dd>
+          </dl>
+          <p class="p-prose" style="margin:18px 0 0">
+            <a href="/elektricheski/">Как работи, подробно →</a>
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    {siblings.length > 0 && (
+      <section class="p-sec">
+        <h2>Другите {m.brandName}</h2>
+        <ul class="ev-sib">
+          {siblings.map((s) => (
+            <li>
+              <a href={s.href}>
+                <span class="n">{s.name}</span>
+                <span class="y">{s.years}</span>
+                <span class="p">{s.stockPs} → {s.ceilingPs} к.с.</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+  </div>
+
+  <EvPicker
+    heading="Или виж друга кола"
+    sub="Същите две стъпки, същите числа."
+    brand={m.brand}
+    model={m.slug}
+  />
+</Page>
+
+<style>
+.ev-buy{display:grid;gap:24px}
+@media(min-width:900px){.ev-buy{grid-template-columns:1.25fr .75fr;gap:40px;align-items:start}}
+
+.ev-lab{margin:0 0 6px;font:400 9px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.58)}
+.ev-lab + .ev-row{margin:0 0 26px}
+.ev-row{display:flex;align-items:baseline;gap:12px;margin:0}
+.ev-row b{font:700 clamp(40px,6vw,68px)/1 var(--head);font-variant-numeric:tabular-nums;color:rgba(255,255,255,.5)}
+.ev-row b.hit{color:var(--lime)}
+.ev-row b.off{color:rgba(255,255,255,.28)}
+.ev-row i{font-style:normal;font-size:24px;color:rgba(255,255,255,.34)}
+.ev-row span{font:400 11px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.58)}
+
+.ev-meta{margin:6px 0 0;border-top:1px solid var(--grey9)}
+.ev-meta > div{display:flex;justify-content:space-between;gap:14px;padding:11px 0;
+  border-bottom:1px solid var(--grey9);font:400 12px/1.4 var(--mono);color:rgba(255,255,255,.62)}
+.ev-meta dt,.ev-meta dd{margin:0}
+.ev-meta dd{color:rgba(255,255,255,.9);text-align:right}
+
+.ev-order{background:#0C0C0C;border:1px solid var(--grey9);border-radius:14px;padding:26px 24px}
+.ev-price{margin:0;font:700 clamp(30px,4vw,40px)/1 var(--head);color:var(--white);font-variant-numeric:tabular-nums}
+.ev-price-note{margin:10px 0 20px;font:400 12px/1.65 var(--mono);color:rgba(255,255,255,.6)}
+.ev-cta{display:flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:10px;
+  background:var(--lime);color:#041000;font:700 12px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;
+  transition:.16s}
+.ev-cta:hover{filter:brightness(1.12)}
+.ev-small{margin:14px 0 0;font:400 11px/1.6 var(--mono);color:rgba(255,255,255,.5);text-align:center}
+
+.ev-sib{margin:0;padding:0;list-style:none;border-top:1px solid var(--grey9)}
+.ev-sib a{display:grid;gap:4px 16px;grid-template-columns:1fr auto;align-items:baseline;
+  padding:13px 2px;border-bottom:1px solid var(--grey9);transition:.14s}
+.ev-sib a:hover{background:rgba(255,255,255,.03)}
+.ev-sib .n{font:400 16px/1.3 var(--body)}
+.ev-sib .y{font:400 11px/1 var(--mono);color:rgba(255,255,255,.5);text-align:right}
+.ev-sib .p{font:400 12px/1 var(--mono);color:rgba(255,255,255,.66);font-variant-numeric:tabular-nums}
+.ev-sib a:hover .n{color:var(--lime)}
+@media(min-width:760px){
+  .ev-sib a{grid-template-columns:1fr 110px 160px}
+  .ev-sib .y,.ev-sib .p{text-align:left}
+}
+</style>

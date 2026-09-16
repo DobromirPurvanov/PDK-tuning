@@ -1,0 +1,138 @@
+---
+/**
+ * ТРИТЕ КАТЕГОРИЙНИ СТРАНИЦИ — /leki-avtomobili/, /kamioni/,
+ * /selskostopanska-tehnika/.
+ *
+ * Тук е зарязаният актив: камионите (7 марки) и селскостопанската техника
+ * (19 марки) съществуват в базата от години, но на стария сайт нямаха нито
+ * входна страница, нито дума текст. Двайсет и шест марки без конкуренция.
+ *
+ * Маршрутът е динамичен, но НЕ е широк: `getStaticPaths` връща точно трите
+ * адреса, значи никой друг път не се хваща от него.
+ */
+import Page from '../layouts/Page.astro';
+import MarkGrid from '../components/MarkGrid.astro';
+import { CATEGORIES, CAT_BY_SLUG } from '../data/categories';
+import { BY_SLUG as SVC, ICONS } from '../data/services';
+import marks from '../data/marks.json';
+import { crumbSchema, bizRef } from '../lib/seo';
+
+type Mark = { slug: string; name: string; kind: string; ext: string | null };
+
+export function getStaticPaths() {
+  return CATEGORIES.map((c) => ({ params: { category: c.slug } }));
+}
+
+const { category } = Astro.params;
+const c = CAT_BY_SLUG.get(category!)!;
+
+const all = marks as Mark[];
+const mine = all.filter((m) => m.kind === c.kind);
+
+const site = Astro.site!.href.replace(/\/$/, '');
+const crumbs = [
+  { href: '/katalog/', label: 'Каталог' },
+  { href: `/${c.slug}/`, label: c.name },
+];
+
+const services = c.services.map((s) => SVC.get(s)!).filter(Boolean);
+
+const schema = [
+  bizRef(site),
+  crumbSchema(site, [{ href: '/', label: 'Начало' }, ...crumbs]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: `Марки — ${c.name}`,
+    numberOfItems: mine.length,
+    itemListElement: mine.map((m, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: m.name,
+      url: `${site}/katalog/${m.slug}/`,
+    })),
+  },
+];
+---
+<Page
+  title={c.title}
+  description={c.description}
+  kicker={`${mine.length} марки в базата`}
+  heading={c.h1}
+  lead={c.lead}
+  crumbs={crumbs}
+  schema={schema}
+>
+  <div class="p-wrap">
+    <section class="p-sec">
+      <h2>Какво печели тази техника</h2>
+      <p class="p-note">Обичайни стойности. Точното число за конкретния двигател е в каталога.</p>
+      <table class="p-table">
+        <thead><tr><th>Какво</th><th>Колко</th></tr></thead>
+        <tbody>
+          {c.gains.map((g) => (
+            <tr>
+              <td data-l="Какво">{g.k}</td>
+              <td data-l="Колко"><b>{g.v}</b></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="p-sec">
+      <h2>Марките</h2>
+      <p class="p-note">Всяка води към страницата си с живия избирач.</p>
+      <MarkGrid marks={mine} big={mine.length <= 20} />
+    </section>
+
+    <section class="p-sec">
+      <div class="p-prose">
+        {c.body.map((sec) => (
+          <>
+            <h2>{sec.h}</h2>
+            {sec.p.map((t) => <p>{t}</p>)}
+          </>
+        ))}
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <h2>Услуги за {c.name.toLowerCase()}</h2>
+      <div class="p-cards three">
+        {services.map((s) => (
+          <a class="p-card" href={`/uslugi/${s.slug}/`}>
+            <span class="wash"></span>
+            <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><Fragment set:html={ICONS[s.icon]} /></svg></span>
+            <span class="lab">{s.kicker}</span>
+            <h3>{s.name}</h3>
+            <p>{s.short}</p>
+            <span class="go">Виж услугата →</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <h2>Другите категории</h2>
+      <div class="p-cards three">
+        {CATEGORIES.filter((x) => x.slug !== c.slug).map((x) => (
+          <a class="p-card" href={`/${x.slug}/`}>
+            <span class="wash"></span>
+            <span class="lab">{all.filter((m) => m.kind === x.kind).length} марки</span>
+            <h3>{x.name}</h3>
+            <p>{x.lead}</p>
+            <span class="go">Виж категорията →</span>
+          </a>
+        ))}
+        <a class="p-card" href="/katalog/">
+          <span class="wash"></span>
+          <span class="lab">{all.length} марки</span>
+          <h3>Целият каталог</h3>
+          <p>Всички марки на едно място, с търсене и живия избирач.</p>
+          <span class="go">Отвори каталога →</span>
+        </a>
+      </div>
+    </section>
+  </div>
+</Page>

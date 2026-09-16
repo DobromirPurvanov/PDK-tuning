@@ -1,0 +1,128 @@
+---
+/**
+ * Контакти — адрес, работно време, телефон и работещата форма.
+ *
+ * Секцията на началната остава: човек, който е дошъл да чете за услуга, не бива
+ * да бъде пращан на трета страница, за да остави телефон. Тази страница е за
+ * тези, които идват направо от търсачка с „чип тунинг варна телефон“.
+ */
+import Page from '../layouts/Page.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { crumbSchema, bizRef } from '../lib/seo';
+import { BUSINESS as b, PORTAL } from '../config/site';
+
+const site = Astro.site!.href.replace(/\/$/, '');
+const crumbs = [{ href: '/kontakti/', label: 'Контакти' }];
+
+const days: Record<string, string> = {
+  Monday: 'понеделник', Tuesday: 'вторник', Wednesday: 'сряда', Thursday: 'четвъртък',
+  Friday: 'петък', Saturday: 'събота', Sunday: 'неделя',
+};
+const hoursText = b.hours.map((h) => {
+  const d = h.days.length > 1 ? `${days[h.days[0]]} – ${days[h.days[h.days.length - 1]]}` : days[h.days[0]];
+  return { d: d.charAt(0).toUpperCase() + d.slice(1), t: `${h.opens} – ${h.closes}` };
+});
+
+const schema = [
+  bizRef(site),
+  crumbSchema(site, [{ href: '/', label: 'Начало' }, ...crumbs]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    url: `${site}/kontakti/`,
+    name: 'Контакти — PDK Tuning',
+    about: { '@id': `${site}/#business` },
+  },
+];
+---
+<Page
+  title="Контакти — PDK Tuning, чип тунинг Варна"
+  description={`Сервизът е на ${b.address.street}, Варна. Телефон ${b.phoneDisplay}, имейл и Viber. Работно време, карта и форма за запитване с отговор в работния ден.`}
+  kicker="Как да ни намерите"
+  heading="Контакти"
+  lead="Обадете се или пишете. Отговаряме в рамките на работния ден."
+  crumbs={crumbs}
+  cta={false}
+  schema={schema}
+>
+  <div class="p-wrap">
+    <section class="p-sec">
+      <div class="k-grid">
+        <div>
+          <dl class="nap">
+            <dt>Адрес</dt>
+            <dd>
+              <a href={b.social.maps} target="_blank" rel="noopener noreferrer">
+                {b.address.street}, {b.address.city} {b.address.postalCode}
+              </a>
+            </dd>
+            <dt>Телефон</dt>
+            <dd><a href={`tel:${b.phone}`}>{b.phoneDisplay}</a></dd>
+            <dt>Viber</dt>
+            <dd><a href={`viber://chat?number=${encodeURIComponent(b.viber)}`}>{b.phoneIntl}</a></dd>
+            <dt>Имейл</dt>
+            <dd><a href={`mailto:${b.email}`}>{b.email}</a></dd>
+            <dt>Работно време</dt>
+            <dd>
+              {hoursText.map((h) => <span class="hrow"><b>{h.d}</b>{h.t}</span>)}
+              <span class="hrow"><b>Неделя</b>почивен ден</span>
+            </dd>
+            <dt>За партньори</dt>
+            <dd><a href={PORTAL} target="_blank" rel="noopener noreferrer">Портал за файлове ↗</a></dd>
+          </dl>
+
+          <div class="p-warn" style="margin-top:30px">
+            <b>Чака потвърждение</b>
+            <p>
+              Работното време и адресът стоят като предположение: сайтът досега казваше
+              ул. „Прилеп“ 164, а профилът в Google — 96. Възложителят потвърждава кое е вярно
+              преди пускането.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <ContactForm heading="Запитване" />
+        </div>
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <h2>Преди да се обадите</h2>
+      <div class="p-prose">
+        <p>
+          Разговорът върви най-бързо, ако знаете три неща: марка и модел, двигател (обем и
+          мощност или кодът му) и приблизителен пробег. С тях можем да кажем още по телефона
+          дали работата е за нас и в какъв порядък е цената.
+        </p>
+        <p>
+          Ако сте минали през <a href="/katalog/">каталога</a> и сте избрали двигателя си,
+          копчето „Запази час“ пренася избора в полето „Автомобил“ на формата — не се налага да
+          го пишете наум.
+        </p>
+        <p>
+          Ако въпросът ви е общ — гаранция, риск, разход — вижте първо
+          <a href="/vaprosi/"> въпросите и отговорите</a>. Там стоят отговорите, които даваме
+          най-често.
+        </p>
+      </div>
+    </section>
+  </div>
+</Page>
+
+<style is:global>
+.k-grid{display:grid;gap:44px;grid-template-columns:1fr}
+@media(min-width:940px){.k-grid{grid-template-columns:1fr 1.15fr;gap:64px;align-items:start}}
+
+.nap{margin:0}
+.nap dt{margin-top:22px;font:400 10px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--lime)}
+.nap dt:first-child{margin-top:0}
+.nap dd{margin:8px 0 0;font:400 15px/1.6 var(--body);color:rgba(255,255,255,.82)}
+.nap dd a{display:inline-flex;align-items:center;min-height:44px;
+  border-bottom:1px solid rgba(255,255,255,.2);transition:color .18s,border-color .18s}
+.nap dd a:hover{color:var(--lime);border-bottom-color:rgba(82,251,9,.6)}
+.hrow{display:flex;gap:14px;font:400 13px/2 var(--mono);color:rgba(255,255,255,.72)}
+.hrow b{min-width:11rem;font-weight:400;color:rgba(255,255,255,.56)}
+@media(max-width:420px){.hrow b{min-width:9rem}}
+@media(pointer:coarse){.nap dd a{min-height:48px}}
+</style>

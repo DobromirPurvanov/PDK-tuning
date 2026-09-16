@@ -1,0 +1,73 @@
+---
+/**
+ * Всички въпроси на едно място, групирани.
+ *
+ * `FAQPage` схемата се строи от СЪЩИЯ списък, който се рисува — иначе схемата
+ * би обещала отговори, които ги няма на екрана.
+ */
+import Page from '../layouts/Page.astro';
+import { FAQ, FAQ_GROUPS } from '../data/faq';
+import { SERVICES } from '../data/services';
+import { crumbSchema, faqSchema, bizRef } from '../lib/seo';
+
+const site = Astro.site!.href.replace(/\/$/, '');
+const crumbs = [{ href: '/vaprosi/', label: 'Въпроси' }];
+
+const groups = FAQ_GROUPS.map((g) => ({ g, items: FAQ.filter((f) => f.group === g) }));
+
+/** услугите със собствени въпроси — препращаме към тях, вместо да ги преписваме */
+const withFaq = SERVICES.filter((s) => s.faq?.length);
+
+const schema = [
+  bizRef(site),
+  crumbSchema(site, [{ href: '/', label: 'Начало' }, ...crumbs]),
+  faqSchema(FAQ.map(({ q, a }) => ({ q, a }))),
+];
+---
+<Page
+  title="Въпроси и отговори за чип тунинг | PDK Tuning Варна"
+  description="Гаранция, риск за двигателя, връщане на фабричния софтуер, разход на гориво, DPF и AdBlue. Четиринайсет кратки отговора, без заобикаляне и без обещания."
+  kicker={`${FAQ.length} въпроса`}
+  heading="Въпроси и отговори"
+  lead="Кратки отговори, без заобикаляне. Ако нещо липсва — обадете се и питайте направо."
+  crumbs={crumbs}
+  schema={schema}
+  ctaTitle="Останал е въпрос?"
+  ctaText="Обадете се. Отговаряме и на въпроси, които завършват с „не си струва“."
+>
+  <div class="p-wrap">
+    {groups.map((grp) => (
+      <section class="p-sec">
+        <h2>{grp.g}</h2>
+        <div class="p-qa">
+          {grp.items.map((f, i) => (
+            <details name={`qa-${grp.g}`} open={i === 0}>
+              <summary><h3>{f.q}</h3><i aria-hidden="true"></i></summary>
+              <div class="ans"><p>{f.a}</p></div>
+            </details>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <section class="p-sec">
+      <h2>Въпроси по конкретна услуга</h2>
+      <p class="p-note">Отговорите стоят на самата страница на услугата.</p>
+      <div class="p-prose">
+        <ul>
+          {withFaq.map((s) => (
+            <li style="margin-bottom:10px">
+              <a href={`/uslugi/${s.slug}/`}>{s.name}</a> — {s.faq!.length === 1 ? 'един въпрос' : `${s.faq!.length} въпроса`}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  </div>
+</Page>
+
+<style is:global>
+.p-prose ul{margin:0 0 18px;padding-left:22px}
+.p-prose li{margin:0 0 9px;font:400 16px/1.7 var(--body);color:rgba(255,255,255,.78)}
+.p-prose li::marker{color:var(--lime)}
+</style>

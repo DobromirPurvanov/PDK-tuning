@@ -1,0 +1,269 @@
+---
+/**
+ * Обвивката на ВСЯКА вътрешна страница — услуги, категории, марки, статии,
+ * фирмени страници.
+ *
+ * `Text.astro` остава за правните: там текстът е една колона и нищо друго.
+ * Тук има трошици, заглавен блок, разделите на съдържанието и заключително
+ * действие. Класовете са с представка `p-`, за да не се блъснат с общите
+ * имена от началната (`row`, `col`, `tile`, `in`, `top`…) — веднъж `bar` вече
+ * ни струва два кръга гледане в грешния елемент.
+ */
+import Base from './Base.astro';
+import { BUSINESS as b, PORTAL } from '../config/site';
+
+export type Crumb = { href: string; label: string };
+
+interface Props {
+  title: string;
+  description: string;
+  /** микро-етикетът над заглавието */
+  kicker?: string;
+  heading: string;
+  lead?: string;
+  /** без началната — тя се добавя сама */
+  crumbs?: Crumb[];
+  image?: string;
+  ogType?: 'website' | 'article';
+  noindex?: boolean;
+  schema?: Record<string, unknown>[];
+  /** заключителният блок с телефона; изключва се само там, където пречи */
+  cta?: boolean;
+  ctaTitle?: string;
+  ctaText?: string;
+}
+const {
+  kicker,
+  heading,
+  lead,
+  crumbs = [],
+  cta = true,
+  ctaTitle = 'Да го измерим.',
+  ctaText = 'Кажете ни колата и какво искате от нея. Ако не си струва, ще го чуете от нас.',
+  ...head
+} = Astro.props;
+
+const trail: Crumb[] = [{ href: '/', label: 'Начало' }, ...crumbs];
+---
+<Base {...head}>
+  <div class="p-top">
+    <nav class="crumbs" aria-label="Пътека">
+      <ol>
+        {trail.map((c, i) => (
+          <li>
+            {i < trail.length - 1
+              ? <a href={c.href}>{c.label}</a>
+              : <span aria-current="page">{c.label}</span>}
+          </li>
+        ))}
+      </ol>
+    </nav>
+
+    <header class="p-hero">
+      {kicker && <p class="p-kick">{kicker}</p>}
+      <h1>{heading}</h1>
+      {lead && <p class="p-lead">{lead}</p>}
+    </header>
+  </div>
+
+  <slot />
+
+  {cta && (
+    <section class="p-cta">
+      <div class="p-cta-in">
+        <div>
+          <h2>{ctaTitle}</h2>
+          <p>{ctaText}</p>
+        </div>
+        <div class="p-cta-do">
+          <a class="p-btn go" href={`tel:${b.phone}`}>{b.phoneDisplay}</a>
+          <a class="p-btn" href="/kontakti/">Пиши запитване</a>
+          <a class="p-btn ghost" href={PORTAL} target="_blank" rel="noopener noreferrer">Портал за партньори ↗</a>
+        </div>
+      </div>
+    </section>
+  )}
+</Base>
+
+<style is:global>
+/* ── трошици и заглавен блок ────────────────────────────────────────────── */
+.p-top{max-width:1180px;margin:0 auto;padding:132px var(--gut) 0}
+@media(max-width:760px){.p-top{padding-top:104px}}
+
+.crumbs ol{display:flex;flex-wrap:wrap;gap:0 8px;margin:0;padding:0;list-style:none}
+.crumbs li{display:flex;align-items:center;gap:8px;
+  font:400 10px/1.6 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.56)}
+.crumbs li + li::before{content:'/';color:rgba(255,255,255,.3)}
+.crumbs a{display:inline-flex;align-items:center;min-height:28px;color:rgba(255,255,255,.66);transition:color .18s}
+.crumbs a:hover{color:var(--lime)}
+.crumbs [aria-current]{color:var(--white)}
+/* пътеката стои плътна на мишка; с пръст се разтваря до пълните 48px */
+@media(pointer:coarse){.crumbs a{min-height:48px}}
+
+.p-hero{padding:30px 0 40px;margin-bottom:0;border-bottom:1px solid var(--grey9)}
+.p-kick{margin:0 0 16px;font:400 10px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--lime)}
+.p-hero h1{margin:0;max-width:19ch;font:700 clamp(2.3rem,6vw,4.6rem)/.96 var(--head);
+  letter-spacing:-.026em;text-transform:uppercase}
+.p-lead{margin:24px 0 0;max-width:60ch;font:400 clamp(16px,1.5vw,19px)/1.6 var(--body);color:rgba(255,255,255,.82)}
+
+/* ── общият контейнер на разделите ──────────────────────────────────────── */
+.p-wrap{max-width:1180px;margin:0 auto;padding:0 var(--gut)}
+.p-sec{padding:64px 0}
+.p-sec + .p-sec{border-top:1px solid var(--grey9)}
+@media(max-width:760px){.p-sec{padding:44px 0}}
+.p-sec > h2{margin:0 0 28px;font:700 clamp(1.6rem,3.2vw,2.5rem)/1.04 var(--head);
+  letter-spacing:-.02em;text-transform:uppercase}
+.p-sec > .p-note{margin:-18px 0 30px;max-width:56ch;font:400 10px/1.85 var(--mono);
+  letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+
+/* ── проза ──────────────────────────────────────────────────────────────── */
+/* ВНИМАНИЕ С НИВАТА. Когато разделът НЯМА свое `.p-sec > h2`, заглавията в
+   прозата СА заглавията на раздела и трябва да са `h2` — иначе страницата
+   скача от h1 на h3. Точно това чупеше 126 от 144 страници.
+   Затова h2 и h3 тук изглеждат ЕДНАКВО: нивото се избира по смисъл, а
+   външният вид не се мени според това дали разделът има собствено заглавие. */
+.p-prose{max-width:70ch}
+.p-prose h2,.p-prose h3{margin:38px 0 12px;font:700 clamp(19px,2.1vw,23px)/1.2 var(--head);
+  text-transform:uppercase;letter-spacing:-.008em}
+.p-prose h2:first-child,.p-prose h3:first-child{margin-top:0}
+.p-prose p{margin:0 0 16px;font:400 16px/1.72 var(--body);color:rgba(255,255,255,.78)}
+.p-prose a{color:var(--lime);border-bottom:1px solid rgba(82,251,9,.4)}
+.p-prose a:hover{border-bottom-color:var(--lime)}
+.p-prose strong{color:var(--white);font-weight:400}
+
+/* ── двуколонният разрез: текст вляво, сухи числа вдясно ────────────────── */
+.p-split{display:grid;gap:44px;grid-template-columns:1fr}
+@media(min-width:980px){.p-split{grid-template-columns:1fr 320px;gap:64px;align-items:start}}
+
+/* ── списъци „за кого е“ / „кога няма смисъл“ ───────────────────────────── */
+.p-lists{display:grid;gap:22px;grid-template-columns:1fr}
+@media(min-width:760px){.p-lists{grid-template-columns:1fr 1fr;gap:26px}}
+.p-list{padding:26px 26px 24px;border:1px solid var(--grey9);border-radius:14px;background:#0C0C0C}
+.p-list h3{margin:0 0 16px;font:400 10px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase}
+.p-list.yes h3{color:var(--lime)}
+.p-list.no h3{color:#FF8E72}
+.p-list ul{margin:0;padding:0;list-style:none}
+.p-list li{position:relative;margin:0 0 11px;padding-left:22px;font:400 15px/1.6 var(--body);color:rgba(255,255,255,.78)}
+.p-list li::before{position:absolute;left:0;top:0;font:400 14px/1.7 var(--mono)}
+.p-list.yes li::before{content:'+';color:var(--lime)}
+.p-list.no li::before{content:'−';color:#FF8E72}
+
+/* ── стъпките: номерирана пътека ────────────────────────────────────────── */
+.p-steps{counter-reset:st;display:grid;gap:0;max-width:74ch}
+.p-step{counter-increment:st;display:grid;grid-template-columns:auto 1fr;gap:0 20px;
+  padding:22px 0;border-bottom:1px solid var(--grey9)}
+.p-step:last-child{border-bottom:0}
+.p-step::before{content:counter(st,decimal-leading-zero);
+  font:400 11px/1.5 var(--mono);letter-spacing:.14em;color:var(--lime)}
+.p-step h3{margin:0 0 6px;font:700 17px/1.25 var(--head);text-transform:uppercase;letter-spacing:.005em}
+.p-step p{margin:0;font:400 15px/1.65 var(--body);color:rgba(255,255,255,.72)}
+
+/* ── сухите числа отстрани ──────────────────────────────────────────────── */
+.p-facts{position:sticky;top:104px;padding:24px 24px 20px;border:1px solid var(--grey9);
+  border-radius:14px;background:#0C0C0C}
+@media(max-width:979px){.p-facts{position:static}}
+/* Заглавието на страничната колона е `h2`: тя е самостоятелен раздел на
+   страницата, а не подраздел на прозата до нея. */
+.p-facts h2,.p-facts h3{margin:0 0 16px;font:400 10px/1 var(--mono);letter-spacing:.24em;
+  text-transform:uppercase;color:var(--lime)}
+.p-facts dl{margin:0}
+.p-facts dt{font:400 10px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.56)}
+.p-facts dd{margin:4px 0 0;font:400 15px/1.5 var(--body);color:var(--white)}
+.p-facts dd + dt{margin-top:16px;padding-top:16px;border-top:1px solid var(--grey9)}
+.p-price{margin:20px 0 0;padding-top:18px;border-top:1px solid var(--grey9)}
+.p-price b{display:block;font:700 30px/1 var(--head);color:var(--lime);font-variant-numeric:tabular-nums}
+.p-price span{display:block;margin-top:7px;font:400 11px/1.5 var(--mono);color:rgba(255,255,255,.62)}
+
+/* ── карти: услуги, категории, статии ───────────────────────────────────── */
+.p-cards{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:700px){.p-cards{grid-template-columns:1fr 1fr}}
+@media(min-width:1060px){.p-cards.three{grid-template-columns:repeat(3,1fr)}}
+.p-card{position:relative;display:block;overflow:hidden;padding:30px 28px 26px;
+  background:#0C0C0C;border:1px solid var(--grey9);border-radius:14px;transition:border-color .4s}
+.p-card:hover{border-color:rgba(82,251,9,.45)}
+.p-card .wash{position:absolute;inset:0;opacity:0;transition:opacity .6s;
+  background:linear-gradient(135deg,rgba(82,251,9,.14) 0%,transparent 62%)}
+.p-card:hover .wash{opacity:1}
+.p-card > * {position:relative;z-index:2}
+.p-card .ic{width:48px;height:48px;margin-bottom:26px;border-radius:12px;
+  background:rgba(255,255,255,.07);display:grid;place-items:center}
+.p-card .ic svg{width:22px;height:22px;stroke:var(--lime);stroke-width:1.8;fill:none;
+  stroke-linecap:round;stroke-linejoin:round}
+.p-card .lab{display:block;margin-bottom:10px;font:400 10px/1 var(--mono);letter-spacing:.28em;
+  text-transform:uppercase;color:rgba(255,255,255,.62)}
+.p-card h3{margin:0 0 9px;font:700 clamp(19px,2vw,25px)/1.08 var(--head);
+  letter-spacing:-.014em;text-transform:uppercase}
+.p-card p{margin:0;font:400 13px/1.62 var(--mono);color:rgba(255,255,255,.66)}
+.p-card p b{color:var(--lime);font-weight:400}
+.p-card .go{display:inline-block;margin-top:16px;font:400 10px/1 var(--mono);letter-spacing:.2em;
+  text-transform:uppercase;color:var(--lime);opacity:.85;transition:opacity .2s}
+.p-card:hover .go{opacity:1}
+
+/* ── въпросите: същият вид като на началната, но със свои имена ─────────── */
+.p-qa{max-width:900px}
+.p-qa details{border-bottom:1px solid var(--grey9)}
+.p-qa summary{display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:20px 0;min-height:48px;cursor:pointer;list-style:none;
+  font:700 clamp(16px,1.8vw,20px)/1.32 var(--head);text-transform:uppercase;transition:color .18s}
+.p-qa summary::-webkit-details-marker{display:none}
+.p-qa summary h3{margin:0;font:inherit;color:inherit;text-transform:inherit}
+.p-qa summary:hover{color:var(--lime)}
+.p-qa summary i{flex:0 0 auto;width:11px;height:11px;position:relative}
+.p-qa summary i::before,.p-qa summary i::after{content:'';position:absolute;background:var(--lime);
+  transition:transform .22s,opacity .22s}
+.p-qa summary i::before{left:0;right:0;top:5px;height:1.5px}
+.p-qa summary i::after{top:0;bottom:0;left:5px;width:1.5px}
+.p-qa details[open] summary i::after{transform:scaleY(0);opacity:0}
+.p-qa .ans{padding:0 0 24px;max-width:62ch}
+.p-qa .ans p{margin:0 0 12px;font:400 15px/1.68 var(--body);color:rgba(255,255,255,.72)}
+.p-qa .ans p:last-child{margin-bottom:0}
+
+/* ── предупредителна плоча (правната граница) ───────────────────────────── */
+.p-warn{margin:0 0 26px;padding:20px 22px;border:1px solid rgba(255,142,114,.4);
+  border-radius:12px;background:rgba(255,107,74,.07)}
+.p-warn b{display:block;margin-bottom:8px;font:400 10px/1 var(--mono);letter-spacing:.22em;
+  text-transform:uppercase;color:#FF8E72}
+.p-warn p{margin:0;font:400 15px/1.65 var(--body);color:rgba(255,255,255,.82)}
+
+/* ── полето „чака данни от клиента“ ─────────────────────────────────────── */
+.p-fill{display:inline-block;padding:1px 8px;border:1px dashed rgba(82,251,9,.5);border-radius:5px;
+  font:400 13px/1.5 var(--mono);color:rgba(255,255,255,.72);background:rgba(82,251,9,.05)}
+
+/* ── таблица ────────────────────────────────────────────────────────────── */
+.p-table{width:100%;border-collapse:collapse;font:400 15px/1.55 var(--body);color:rgba(255,255,255,.8)}
+.p-table th,.p-table td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--grey9);vertical-align:top}
+.p-table th{font:400 10px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+.p-table td b{color:var(--lime);font-weight:400;font-family:var(--mono);font-size:15px}
+.p-table tr:hover td{background:rgba(255,255,255,.02)}
+.p-table a{color:inherit;border-bottom:1px solid rgba(255,255,255,.2)}
+.p-table a:hover{color:var(--lime);border-bottom-color:rgba(82,251,9,.6)}
+@media(max-width:620px){
+  .p-table,.p-table tbody,.p-table tr,.p-table td{display:block;width:100%}
+  .p-table thead{position:absolute;left:-9999px}
+  .p-table tr{padding:14px 0;border-bottom:1px solid var(--grey9)}
+  .p-table td{border:0;padding:3px 0}
+  .p-table td::before{content:attr(data-l);display:block;margin-bottom:3px;
+    font:400 10px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+}
+
+/* ── заключителното действие ────────────────────────────────────────────── */
+.p-cta{position:relative;overflow:hidden;margin-top:16px;padding:72px var(--gut) 78px;
+  border-top:1px solid var(--grey9);background:#0A0A0A}
+.p-cta::before{content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(45deg,#161616 0px 1px,transparent 1px 8px);
+  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 0%,#000 62%,transparent 108%);
+  mask-image:radial-gradient(ellipse 70% 60% at 50% 0%,#000 62%,transparent 108%)}
+.p-cta-in{position:relative;z-index:2;max-width:1180px;margin:0 auto;display:flex;
+  flex-wrap:wrap;gap:34px;align-items:flex-end;justify-content:space-between}
+.p-cta h2{margin:0;font:700 clamp(2rem,4.6vw,3.4rem)/.98 var(--head);letter-spacing:-.025em;text-transform:uppercase}
+.p-cta p{margin:16px 0 0;max-width:44ch;font:400 15px/1.65 var(--body);color:rgba(255,255,255,.72)}
+.p-cta-do{display:flex;flex-wrap:wrap;gap:10px}
+.p-btn{display:inline-flex;align-items:center;min-height:52px;padding:15px 26px;border-radius:10px;
+  border:1px solid rgba(255,255,255,.16);font:400 11px/1 var(--mono);letter-spacing:.16em;
+  text-transform:uppercase;transition:.2s;white-space:nowrap}
+.p-btn:hover{border-color:rgba(255,255,255,.45)}
+.p-btn.go{background:var(--lime);border-color:var(--lime);color:#041000;font-weight:700}
+.p-btn.go:hover{filter:brightness(1.1)}
+.p-btn.ghost{color:rgba(255,255,255,.66)}
+@media(max-width:620px){.p-cta{padding:52px var(--gut) 56px}.p-cta-do{width:100%}.p-btn{flex:1 1 100%;justify-content:center}}
+</style>

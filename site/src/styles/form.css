@@ -1,0 +1,65 @@
+/**
+ * СТИЛОВЕТЕ НА ФОРМИТЕ — едно място за двете.
+ *
+ * Стояха в <style is:global> вътре в ContactForm.astro. Когато се появи втора
+ * форма (поръчката за електрически), копието щеше да е второ: два файла, които
+ * един ден се разминават по едно 48px и полето става недостижимо с пръст.
+ *
+ * Внася се от компонента, който рисува форма — не от Base.astro. Страница без
+ * форма не бива да сваля тези правила.
+ */
+
+.form{background:#0C0C0C;border:1px solid var(--grey9);border-radius:14px;padding:30px 28px}
+@media(max-width:520px){.form{padding:22px 18px}}
+.fhead{margin:0 0 24px;font:700 clamp(20px,2.4vw,26px)/1.1 var(--head);text-transform:uppercase;letter-spacing:-.01em}
+.f2{display:grid;gap:0 18px;grid-template-columns:1fr}
+@media(min-width:600px){.f2{grid-template-columns:1fr 1fr}}
+.fld{margin:0 0 18px}
+.fld label{display:block;margin-bottom:8px;font:400 10px/1 var(--mono);letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(255,255,255,.72)}
+.fld label span{color:var(--lime)}
+.fld input,.fld select,.fld textarea{width:100%;min-height:48px;padding:13px 14px;
+  background:rgba(255,255,255,.04);border:1px solid var(--grey9);border-radius:9px;
+  color:var(--white);font:400 15px/1.4 var(--body);outline:none;transition:border-color .18s}
+.fld textarea{min-height:112px;resize:vertical}
+.fld select{appearance:none;cursor:pointer;
+  background-image:linear-gradient(45deg,transparent 50%,#52FB09 50%),linear-gradient(135deg,#52FB09 50%,transparent 50%);
+  background-position:calc(100% - 20px) 22px,calc(100% - 14px) 22px;
+  background-size:6px 6px,6px 6px;background-repeat:no-repeat}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--lime)}
+.fld input[aria-invalid="true"],.fld textarea[aria-invalid="true"]{border-color:#FF6B4A}
+.fld .hint{display:block;margin-top:7px;font:400 11px/1.5 var(--mono);color:rgba(255,255,255,.56)}
+.fld .err{display:block;margin-top:7px;font:400 12px/1.4 var(--body);color:#FF8E72}
+
+.fld.check{display:grid;grid-template-columns:auto 1fr;gap:0 12px;align-items:start}
+.fld.check input{width:24px;height:24px;min-height:24px;margin-top:2px;accent-color:var(--lime);cursor:pointer}
+/* Отметката е 24px — минимумът по WCAG 2.5.8. По-голяма цел НЕ се постига с
+   padding върху самото поле (native checkbox не го зачита надеждно), а през
+   ЕТИКЕТА: `<label for="f-gdpr">` покрива цялото изречение до него и превключва
+   отметката. Затова етикетът има собствена височина, вместо да е гол текст. */
+/* НЕ `display:flex`. Етикетът е течащо изречение с връзки вътре; флексът правеше
+   всяка дума и всяка връзка отделен елемент и при пренасяне редът се разпадаше на
+   колони с дупки („Общите условия“ отлиташе вдясно, „и“ увисваше само). `block`
+   пази изречението изречение, а целта за пръст се държи от min-height. */
+.fld.check label{min-height:48px;display:block;padding-top:2px}
+@media(pointer:coarse){.fld.check input{width:28px;height:28px;min-height:28px}}
+.fld.check label{margin:0;font:400 13px/1.5 var(--body);letter-spacing:0;text-transform:none;
+  color:rgba(255,255,255,.72);cursor:pointer}
+.fld.check label a{color:var(--lime);border-bottom:1px solid rgba(82,251,9,.4)}
+.fld.check .err{grid-column:1 / -1}
+
+/* примамката се вижда само от робот: скрита е и от очи, и от четци */
+.trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+.fsub{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:6px}
+.send{min-height:52px;padding:16px 30px;border-radius:10px;border:0;cursor:pointer;
+  background:var(--lime);color:#041000;font:700 11px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;
+  transition:filter .18s,opacity .18s}
+.send:hover{filter:brightness(1.1)}
+.send[disabled]{opacity:.55;cursor:progress}
+.fnote{font:400 11px/1.5 var(--mono);color:rgba(255,255,255,.56)}
+.fnote span{color:var(--lime)}
+.fmsg{margin:20px 0 0;padding:14px 16px;border-radius:10px;font:400 14px/1.55 var(--body)}
+.fmsg.ok{background:rgba(82,251,9,.1);border:1px solid rgba(82,251,9,.4);color:#CFFFB8}
+.fmsg.bad{background:rgba(255,107,74,.1);border:1px solid rgba(255,107,74,.42);color:#FFC2B0}
+.fmsg a{color:inherit;border-bottom:1px solid currentColor}

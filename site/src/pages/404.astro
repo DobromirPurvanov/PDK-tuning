@@ -1,0 +1,99 @@
+---
+/**
+ * 404.
+ *
+ * Cloudflare Pages връща `index.html` със статус 200 за непознат адрес, ако в
+ * изхода НЯМА `404.html`. Тогава всяка сгрешена препратка изглежда като работеща
+ * страница — и за човека, и за търсачката. Този файл е причината да връща 404.
+ */
+import Base from '../layouts/Base.astro';
+import { NAV, BUSINESS as b } from '../config/site';
+
+// Сочехме котви на началната (`/#services`), когато сайтът беше една страница.
+// Сега страниците са 144 и човек, попаднал на сгрешен адрес, трябва да стигне
+// до ИСТИНСКАТА страница, а не до раздел, покрай който да скролва.
+const quick = NAV.map((n) => ({ href: n.href, label: n.label }));
+---
+<Base
+  title="Страницата я няма (404) — PDK Tuning"
+  description="Адресът не съществува или страницата е преместена. Оттук се стига до услугите, каталога с 110 марки, цените и контактите на PDK Tuning във Варна."
+  noindex
+>
+  <section class="nf">
+    <div class="nf-in">
+      <p class="nf-code" aria-hidden="true">404</p>
+      <h1>Тази страница я няма.</h1>
+      <p class="nf-lead">
+        Адресът е сгрешен или страницата е преместена. Нищо не е загубено —
+        каталогът и услугите са на един клик.
+      </p>
+
+      <nav class="nf-links" aria-label="Накъде оттук">
+        <a class="nf-go" href="/">Към началната страница</a>
+        {quick.map((q) => <a class="nf-alt" href={q.href}>{q.label}</a>)}
+      </nav>
+
+      {/*
+        Търсене на марка: каталогът вече има свой филтър, затова тук не строим
+        втора търсачка, а водим към нея с готова заявка. Полето е `<form>` с
+        `method="get"`, за да работи и БЕЗ JavaScript — 404 страницата е точно
+        мястото, където нищо не бива да зависи от скрипт.
+      */}
+      <form class="nf-find" action="/katalog/" method="get" role="search">
+        <label for="nf-q">Търсите марка?</label>
+        <div class="nf-row">
+          <input id="nf-q" name="q" type="search" placeholder="BMW, DAF, Claas…" autocomplete="off" />
+          <button type="submit">Търси в каталога</button>
+        </div>
+      </form>
+
+      <p class="nf-tel">
+        Или се обадете на <a href={`tel:${b.phone}`}>{b.phoneDisplay}</a> —
+        по телефона се решава повече, отколкото изглежда.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+.nf{position:relative;min-height:78vh;display:grid;place-items:center;
+  padding:150px var(--gut) 90px;overflow:hidden}
+.nf::before{content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(45deg,#1A1A1A 0px 1px,transparent 1px 8px);
+  -webkit-mask-image:radial-gradient(ellipse 70% 55% at 50% 40%,#000 55%,transparent 100%);
+  mask-image:radial-gradient(ellipse 70% 55% at 50% 40%,#000 55%,transparent 100%)}
+.nf-in{position:relative;z-index:2;max-width:640px;text-align:center}
+
+.nf-code{margin:0 0 18px;font:700 clamp(5rem,20vw,11rem)/1 var(--head);letter-spacing:-.03em;
+  color:transparent;-webkit-text-stroke:2px var(--lime)}
+@media(min-width:900px){.nf-code{-webkit-text-stroke-width:3px}}
+.nf h1{margin:0;font:700 clamp(1.9rem,4.6vw,3rem)/1.02 var(--head);
+  letter-spacing:-.02em;text-transform:uppercase}
+.nf-lead{margin:20px auto 0;max-width:46ch;font:400 16px/1.65 var(--body);color:rgba(255,255,255,.78)}
+
+.nf-links{margin:38px 0 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.nf-go,.nf-alt{display:inline-flex;align-items:center;justify-content:center;min-height:48px;
+  padding:14px 22px;border-radius:999px;font:400 10px/1 var(--mono);letter-spacing:.18em;
+  text-transform:uppercase;transition:.18s}
+.nf-go{background:var(--lime);color:#041000;font-weight:700}
+.nf-go:hover{filter:brightness(1.1)}
+.nf-alt{border:1px solid var(--grey9);color:rgba(255,255,255,.72)}
+.nf-alt:hover{border-color:rgba(82,251,9,.45);color:#fff}
+
+.nf-find{margin:34px auto 0;max-width:460px;text-align:left}
+.nf-find label{display:block;margin-bottom:8px;font:400 10px/1 var(--mono);letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(255,255,255,.72)}
+.nf-row{display:flex;gap:8px;flex-wrap:wrap}
+.nf-find input{flex:1 1 180px;min-width:0;min-height:48px;padding:13px 15px;
+  background:rgba(255,255,255,.04);border:1px solid var(--grey9);border-radius:9px;
+  color:var(--white);font:400 15px/1.4 var(--body);outline:none;transition:border-color .18s}
+.nf-find input:focus{border-color:var(--lime)}
+.nf-find button{flex:0 0 auto;min-height:48px;padding:14px 20px;border:0;border-radius:9px;cursor:pointer;
+  background:var(--lime);color:#041000;font:700 10px/1 var(--mono);letter-spacing:.16em;
+  text-transform:uppercase;transition:filter .18s}
+.nf-find button:hover{filter:brightness(1.1)}
+@media(max-width:420px){.nf-find button{flex:1 1 100%}}
+
+.nf-tel{margin:32px 0 0;font:400 12px/1.6 var(--mono);color:rgba(255,255,255,.62)}
+.nf-tel a{color:var(--lime);border-bottom:1px solid rgba(82,251,9,.4)}
+</style>

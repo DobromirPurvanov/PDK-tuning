@@ -1,0 +1,239 @@
+---
+/**
+ * Съгласието за бисквитки.
+ *
+ * Правилото е просто: докато човекът не каже „да“, НЕ се зарежда нищо, което
+ * следи. Затова аналитиката не стои в страницата — тя се закача чак след
+ * съгласие (виж Analytics.astro, слуша събитието `pdk:consent`).
+ *
+ * ТРИ РАВНОПОСТАВЕНИ ИЗБОРА, не два. Надзорните органи гледат точно това:
+ * „приемам всички“ и „само необходимите“ трябва да струват еднакво усилие —
+ * едно натискане, еднакво видими копчета. Затова отказът НЕ е скрит текст.
+ * Третото копче отваря категориите поотделно.
+ *
+ * НИТО ЕДНА ОТМЕТКА НЕ Е ПРЕДВАРИТЕЛНО СЛОЖЕНА. Строго необходимите стоят
+ * сложени и заключени, защото без тях няма услуга и за тях не се иска съгласие.
+ *
+ * Изборът се пази в localStorage под `pdk-consent` с НОМЕР НА ВЕРСИЯ: ако утре
+ * се появи нов доставчик, вдигането на `V` пита наново, вместо старото „да“ да
+ * покрие нещо, което не е било описано, когато е дадено.
+ */
+import { LEGAL } from '../config/site';
+
+const privacy = LEGAL[0].href;
+const cookies = LEGAL.find((l) => l.href === '/cookie-policy/')!;
+
+/** категориите, както се виждат и в /cookie-policy/ */
+const CATS = [
+  {
+    key: 'necessary',
+    name: 'Строго необходими',
+    note: 'Помнят избора ви тук и пазят формата от автоматични злоупотреби. Без тях сайтът не може да свърши поисканото.',
+    locked: true,
+    on: true,
+  },
+  {
+    key: 'analytics',
+    name: 'Статистика',
+    note: 'Колко души идват и кои страници четат. Google Analytics с анонимизиран IP. Не се зарежда, докато не разрешите.',
+    locked: false,
+    on: false,
+  },
+  {
+    key: 'marketing',
+    name: 'Маркетинг',
+    note: 'Не се ползва. На сайта няма рекламни пиксели и не изграждаме рекламни профили — няма какво да се разреши.',
+    locked: true,
+    on: false,
+  },
+] as const;
+---
+<div class="cc" id="cookieBar" role="dialog" aria-modal="true" aria-labelledby="ccTitle"
+     aria-describedby="ccText" tabindex="-1" hidden>
+  <div class="cc-in">
+    <div class="cc-txt">
+      <p class="cc-t" id="ccTitle">Бисквитки</p>
+      <p class="cc-p" id="ccText">
+        Сайтът работи и без тях. Ако се съгласите, ще ползваме бисквитки само за анонимна
+        статистика — колко души идват и кои страници четат. Никаква реклама.
+        Подробно в <a href={cookies.href}>{cookies.label}</a> и в
+        <a href={privacy}>Политиката за поверителност</a>.
+      </p>
+    </div>
+
+    <!-- Категориите: скрити, докато не се поиска „Настрой“. Не са отделен екран —
+         банерът се разгъва на място, за да не се губи контекстът. -->
+    <div class="cc-cats" id="ccCats" hidden>
+      <fieldset>
+        <legend class="cc-leg">Изберете по категория</legend>
+        {CATS.map((c) => (
+          <label class:list={['cc-cat', c.locked && 'locked']} for={`cc-${c.key}`}>
+            <input
+              type="checkbox"
+              id={`cc-${c.key}`}
+              data-cat={c.key}
+              checked={c.on}
+              disabled={c.locked}
+              aria-describedby={`cc-n-${c.key}`}
+            />
+            <span class="cc-cat-b">
+              <b>{c.name}{c.locked && <em>{c.on ? 'винаги активни' : 'не се ползва'}</em>}</b>
+              <span class="cc-note" id={`cc-n-${c.key}`}>{c.note}</span>
+            </span>
+          </label>
+        ))}
+      </fieldset>
+    </div>
+
+    <div class="cc-btns">
+      <button type="button" id="ccCustom" class="cc-b ghost" aria-expanded="false" aria-controls="ccCats">Настрой</button>
+      <button type="button" id="ccNo" class="cc-b">Само необходимите</button>
+      <button type="button" id="ccYes" class="cc-b yes">Приемам всички</button>
+      <button type="button" id="ccSave" class="cc-b yes" hidden>Запази избора</button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (() => {
+    'use strict';
+    const KEY = 'pdk-consent';
+    const V = 2;                       // вдигни при нов доставчик → пита наново
+    const bar = document.getElementById('cookieBar');
+    if (!bar) return;
+
+    const $ = (id) => document.getElementById(id);
+    const cats = $('ccCats');
+    const bCustom = $('ccCustom'), bNo = $('ccNo'), bYes = $('ccYes'), bSave = $('ccSave');
+    if (!cats || !bCustom || !bNo || !bYes || !bSave) return;
+
+    /** какво връщаме на слушателите; маркетинг стои за бъдещето, днес е винаги false */
+    const shape = (analytics, marketing) => ({ analytics: !!analytics, marketing: !!marketing });
+
+    const read = () => {
+      try {
+        const raw = JSON.parse(localStorage.getItem(KEY) || 'null');
+        if (!raw || typeof raw !== 'object') return null;
+        if (raw.v !== V) return null;                 // стара версия = питаме наново
+        if (typeof raw.analytics !== 'boolean') return null;
+        return raw;
+      } catch { return null; }
+    };
+
+    const tell = (c) => document.dispatchEvent(new CustomEvent('pdk:consent', { detail: c }));
+
+    // ── капан за фокуса ─────────────────────────────────────────────────────
+    // Диалогът иска решение, затова Tab обикаля вътре в него. Изходът НЕ е
+    // блокиран: Escape затваря с ОТКАЗ — безопасната посока.
+    let opener = null;
+    const focusables = () =>
+      [...bar.querySelectorAll('a[href],button:not([disabled]),input:not([disabled])')]
+        .filter((el) => el.offsetParent !== null || el === document.activeElement);
+
+    const onKey = (e) => {
+      if (e.key === 'Escape') { e.preventDefault(); decide(false, false); return; }
+      if (e.key !== 'Tab') return;
+      const f = focusables();
+      if (!f.length) return;
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    };
+
+    const open = (from) => {
+      opener = from || null;
+      bar.hidden = false;
+      bar.addEventListener('keydown', onKey);
+      // фокусът отива на диалога, не на копче — четецът първо прочита за какво става дума
+      bar.focus({ preventScroll: true });
+    };
+
+    const close = () => {
+      bar.removeEventListener('keydown', onKey);
+      bar.hidden = true;
+      // фокусът се връща откъдето е дошъл, иначе изчезва в началото на документа
+      if (opener && document.contains(opener)) { try { opener.focus(); } catch {} }
+      opener = null;
+    };
+
+    const decide = (analytics, marketing) => {
+      const c = shape(analytics, marketing);
+      try {
+        localStorage.setItem(KEY, JSON.stringify({ v: V, ...c, ts: Date.now() }));
+      } catch { /* режим „без запис“ — решението важи поне за това зареждане */ }
+      close();
+      tell(c);
+    };
+
+    // ── трите избора ────────────────────────────────────────────────────────
+    bYes.addEventListener('click', () => decide(true, false));
+    bNo.addEventListener('click', () => decide(false, false));
+
+    bCustom.addEventListener('click', () => {
+      const show = cats.hidden;
+      cats.hidden = !show;
+      bCustom.setAttribute('aria-expanded', String(show));
+      // при отворени категории „Приемам всички“ отстъпва на „Запази избора“
+      bYes.hidden = show;
+      bSave.hidden = !show;
+      if (show) $('cc-analytics')?.focus();
+    });
+
+    bSave.addEventListener('click', () => {
+      const a = $('cc-analytics');
+      decide(!!(a && a.checked), false);
+    });
+
+    // ── пускане ─────────────────────────────────────────────────────────────
+    const saved = read();
+    if (saved) tell(shape(saved.analytics, saved.marketing));
+    else open(null);
+
+    // връзката в долния ред отваря банера пак, за да се смени решението
+    document.getElementById('cookieOpen')?.addEventListener('click', (e) => {
+      const s = read();
+      const a = $('cc-analytics');
+      if (a) a.checked = !!(s && s.analytics);      // показваме ТЕКУЩИЯ избор, не нулиран
+      open(e.currentTarget);
+    });
+  })();
+</script>
+
+<style>
+.cc{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;
+  background:#0C0C0C;border:1px solid var(--grey9);border-radius:14px;
+  box-shadow:0 18px 50px rgba(0,0,0,.6);max-height:calc(100vh - 24px);overflow-y:auto}
+@media(min-width:900px){.cc{left:auto;right:24px;bottom:24px;max-width:520px;max-height:calc(100vh - 48px)}}
+.cc[hidden]{display:none}
+.cc-in{padding:22px 24px;display:flex;flex-direction:column;gap:18px}
+.cc-t{margin:0 0 8px;font:700 18px/1 var(--head);text-transform:uppercase;letter-spacing:.01em}
+.cc-p{margin:0;font:400 13px/1.6 var(--body);color:rgba(255,255,255,.7)}
+.cc-p a{color:var(--lime);border-bottom:1px solid rgba(82,251,9,.4)}
+
+/* ── категориите ─────────────────────────────────────────────────────────── */
+.cc-cats fieldset{margin:0;padding:0;border:0}
+.cc-leg{padding:0 0 12px;font:400 10px/1 var(--mono);letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(255,255,255,.62)}
+.cc-cat{display:grid;grid-template-columns:auto 1fr;gap:0 12px;align-items:start;
+  padding:12px 0;border-top:1px solid var(--grey9);cursor:pointer}
+.cc-cat.locked{cursor:default}
+.cc-cat input{width:24px;height:24px;margin:1px 0 0;accent-color:var(--lime);cursor:pointer}
+.cc-cat.locked input{cursor:not-allowed;opacity:.55}
+.cc-cat-b b{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 10px;
+  font:400 14px/1.4 var(--body);color:var(--white)}
+.cc-cat-b b em{font-style:normal;font:400 9px/1 var(--mono);letter-spacing:.18em;
+  text-transform:uppercase;color:rgba(255,255,255,.5)}
+.cc-note{display:block;margin-top:5px;font:400 12px/1.55 var(--body);color:rgba(255,255,255,.62)}
+
+/* ── копчетата: отказът НЕ е по-дребен от приемането ──────────────────────── */
+.cc-btns{display:flex;flex-wrap:wrap;gap:10px}
+.cc-b{flex:1 1 auto;min-height:48px;padding:14px 18px;border-radius:10px;cursor:pointer;
+  border:1px solid var(--grey9);background:none;color:var(--white);
+  font:400 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;transition:.18s}
+.cc-b:hover{border-color:rgba(255,255,255,.42)}
+.cc-b[hidden]{display:none}
+.cc-b.ghost{flex:0 1 auto;color:rgba(255,255,255,.72)}
+.cc-b.yes{background:var(--lime);border-color:var(--lime);color:#041000;font-weight:700}
+.cc-b.yes:hover{filter:brightness(1.1)}
+@media(max-width:420px){.cc-b{flex:1 1 100%}}
+</style>

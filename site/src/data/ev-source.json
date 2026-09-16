@@ -1,0 +1,831 @@
+{
+  "harvested": "2026-09-11",
+  "source": "mapev.net",
+  "models": [
+    {
+      "slug": "e-tron-gt",
+      "brand": "audi",
+      "name": "e-tron GT",
+      "years": "2020–2024",
+      "stock": {
+        "ps": 530,
+        "nm": 640
+      },
+      "normal": {
+        "ps": 476,
+        "nm": 640
+      },
+      "mapev": {
+        "ps": 730,
+        "nm": 660
+      },
+      "mapevPrice": {
+        "usd": 2599,
+        "eur": 2159,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The e-tron GT is artificially detuned from the maximum possible 730 PS to 530 PS in launch control and 476 PS in normal mode. The torque is 640 Nm. With our upgrade the maximum power is increased to 730 PS, and the full torque of 660 Nm is available in all modes.",
+      "src": "https://www.mapev.net/e-tron-gt/"
+    },
+    {
+      "slug": "e-tron-gt-quattro",
+      "brand": "audi",
+      "name": "e-tron GT quattro",
+      "years": "2025–",
+      "stock": {
+        "ps": 585,
+        "nm": 600
+      },
+      "normal": {
+        "ps": 503,
+        "nm": 600
+      },
+      "mapev": {
+        "ps": 940,
+        "nm": 990
+      },
+      "mapevPrice": {
+        "usd": 3099,
+        "eur": 2599,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The e-tron GT quattro is artificially detuned from the maximum possible 940 PS to 585 PS in launch control and boost mode and 503 PS in normal mode. The torque is 600 Nm. With our upgrade the maximum power is increased to 940 PS, and the full torque of 990 Nm is available in all modes.",
+      "src": "https://www.mapev.net/e-tron-gt-quattro/"
+    },
+    {
+      "slug": "q4-e-tron-35",
+      "brand": "audi",
+      "name": "Q4 e-tron 35",
+      "years": "2021–2024",
+      "stock": {
+        "ps": 170,
+        "nm": 310
+      },
+      "normal": {
+        "ps": 170,
+        "nm": 310
+      },
+      "mapev": {
+        "ps": 204,
+        "nm": 310
+      },
+      "mapevPrice": {
+        "usd": 790,
+        "eur": 650,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The Audi Q4 e-tron 35 is artificially detuned from the maximum possible 204 PS to 170 PS. The torque is 310 Nm.",
+      "src": "https://www.mapev.net/q4-e-tron-35/"
+    },
+    {
+      "slug": "q4-e-tron-45",
+      "brand": "audi",
+      "name": "Q4 e-tron 45",
+      "years": "2021–2024",
+      "stock": {
+        "ps": 265,
+        "nm": 425
+      },
+      "normal": {
+        "ps": 265,
+        "nm": 425
+      },
+      "mapev": {
+        "ps": 300,
+        "nm": 465
+      },
+      "mapevPrice": {
+        "usd": 790,
+        "eur": 650,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The Q4 e-tron 45 is artificially detuned from the maximum possible 300 PS to 265 PS. The torque is 425 Nm.",
+      "src": "https://www.mapev.net/q4-e-tron-45/"
+    },
+    {
+      "slug": "rs-e-tron-gt",
+      "brand": "audi",
+      "name": "RS e-tron GT",
+      "years": "2020–2024",
+      "stock": {
+        "ps": 646,
+        "nm": 850
+      },
+      "normal": {
+        "ps": 598,
+        "nm": 850
+      },
+      "mapev": {
+        "ps": 800,
+        "nm": 910
+      },
+      "mapevPrice": {
+        "usd": 2599,
+        "eur": 2159,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The RS e-tron GT is artificially detuned from the maximum possible 800 PS to 646 PS in launch control and 598 PS in normal mode. The torque is 850 Nm. With our upgrade the maximum power is increased to 800 PS, and the full torque of 910 Nm is available in all modes.",
+      "src": "https://www.mapev.net/rs-e-tron-gt/"
+    },
+    {
+      "slug": "rs-e-tron-gt-fl",
+      "brand": "audi",
+      "name": "RS e-tron GT",
+      "years": "2024–",
+      "stock": {
+        "ps": 857,
+        "nm": 900
+      },
+      "normal": {
+        "ps": 680,
+        "nm": 890
+      },
+      "mapev": {
+        "ps": 940,
+        "nm": 990
+      },
+      "mapevPrice": {
+        "usd": 3099,
+        "eur": 2599,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The RS e-tron GT is artificially detuned from the maximum possible 940 PS to 857 PS in launch control, 775 PS in Boost and 680 PS in normal mode. The torque is 905 Nm, 885 Nm and 885 Nm respectively. With our upgrade the maximum power is increased to 940 PS, and the full torque of 990 Nm is available in all modes.",
+      "src": "https://www.mapev.net/rs-e-tron-gt-fl/"
+    },
+    {
+      "slug": "rs-e-tron-gt-performance",
+      "brand": "audi",
+      "name": "RS e-tron GT Performance",
+      "years": "2024–",
+      "stock": {
+        "ps": 925,
+        "nm": 1000
+      },
+      "normal": {
+        "ps": 748,
+        "nm": 985
+      },
+      "mapev": {
+        "ps": 1080,
+        "nm": 1160
+      },
+      "mapevPrice": {
+        "usd": 3099,
+        "eur": 2599,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The RS e-tron GT Performance has 925 PS in launch, 843 PS in Boost and 748 PS in normal mode. The torque is 1000 Nm and 985 Nm respectively. With our upgrade the power is increased to 1080 PS, and 1160 Nm of torque is available in all modes.",
+      "src": "https://www.mapev.net/rs-e-tron-gt-performance/"
+    },
+    {
+      "slug": "e-tron-gt-fl",
+      "brand": "audi",
+      "name": "S e-tron GT",
+      "years": "2024–",
+      "stock": {
+        "ps": 680,
+        "nm": 750
+      },
+      "normal": {
+        "ps": 591,
+        "nm": 720
+      },
+      "mapev": {
+        "ps": 940,
+        "nm": 990
+      },
+      "mapevPrice": {
+        "usd": 3099,
+        "eur": 2599,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The S e-tron GT is artificially detuned from the maximum possible 940 PS to 680 PS in launch control and 591 PS in normal mode. The torque is 750 Nm and 720 Nm respectively. With our upgrade the maximum power is increased to 940 PS, and the full torque of 990 Nm is available in all modes.",
+      "src": "https://www.mapev.net/e-tron-gt-fl/"
+    },
+    {
+      "slug": "taycan-4",
+      "brand": "porsche",
+      "name": "Taycan 4",
+      "years": "2019–2024",
+      "stock": {
+        "ps": 475,
+        "nm": 640
+      },
+      "normal": {
+        "ps": 380,
+        "nm": 640
+      },
+      "mapev": {
+        "ps": 730,
+        "nm": 660
+      },
+      "mapevPrice": {
+        "usd": 2599,
+        "eur": 2159,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The Taycan 4 is heavily artificially detuned from the maximum possible 730 PS to 475 PS in launch control and 380 PS in normal mode. The torque is 640 Nm. With our upgrade the maximum power is increased to 730 PS, and the full torque of 660 Nm is available in all modes.",
+      "src": "https://www.mapev.net/taycan-4/"
+    },
+    {
+      "slug": "taycan-4-pb-plus-fl",
+      "brand": "porsche",
+      "name": "Taycan 4 PB+",
+      "years": "2024–",
+      "stock": {
+        "ps": 435,
+        "nm": 585
+      },
+      "normal": {
+        "ps": 435,
+        "nm": 530
+      },
+      "mapev": {
+        "ps": 940,
+        "nm": 990
+      },
+      "mapevPrice": {
+        "usd": 3099,
+        "eur": 2599,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The Taycan 4 Performance Battery Plus is artificially detuned from the maximum possible 940 PS to 435 PS in launch control and normal mode. The torque is 585 Nm and 530 Nm respectively. With our upgrade the maximum power is increased to 940 PS, and the full torque of 990 Nm is available in all modes.",
+      "src": "https://www.mapev.net/taycan-4-pb-plus-fl/"
+    },
+    {
+      "slug": "taycan-4s-pb",
+      "brand": "porsche",
+      "name": "Taycan 4S PB",
+      "years": "2019–2024",
+      "stock": {
+        "ps": 530,
+        "nm": 640
+      },
+      "normal": {
+        "ps": 435,
+        "nm": 640
+      },
+      "mapev": {
+        "ps": 630,
+        "nm": 660
+      },
+      "mapevPrice": {
+        "usd": 2599,
+        "eur": 2159,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The Taycan 4S Performance Battery is artificially detuned from the maximum possible 660 PS to 530 PS in launch control and 435 PS in normal mode. The torque is 640 Nm. With our upgrade the maximum power is increased to 630 PS, and the full torque of 660 Nm is available in all modes.",
+      "src": "https://www.mapev.net/taycan-4s-pb/"
+    },
+    {
+      "slug": "taycan-4s-pb-plus",
+      "brand": "porsche",
+      "name": "Taycan 4S PB+",
+      "years": "2019–2024",
+      "stock": {
+        "ps": 571,
+        "nm": 640
+      },
+      "normal": {
+        "ps": 489,
+        "nm": 640
+      },
+      "mapev": {
+        "ps": 730,
+        "nm": 660
+      },
+      "mapevPrice": {
+        "usd": 2599,
+        "eur": 2159,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The Taycan 4S Performance Battery Plus is artificially detuned from the maximum possible 730 PS to 571 PS in launch control and 489 PS in normal mode. The torque is 640 Nm. With our upgrade the maximum power is increased to 730 PS, and the full torque of 660 Nm is available in all modes.",
+      "src": "https://www.mapev.net/taycan-4s-pb-plus/"
+    },
+    {
+      "slug": "taycan-4s-pb-plus-fl",
+      "brand": "porsche",
+      "name": "Taycan 4S PB+",
+      "years": "2024–",
+      "stock": {
+        "ps": 598,
+        "nm": 710
+      },
+      "normal": {
+        "ps": 517,
+        "nm": 650
+      },
+      "mapev": {
+        "ps": 940,
+        "nm": 990
+      },
+      "mapevPrice": {
+        "usd": 3099,
+        "eur": 2599,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The Taycan 4S Performance Battery Plus is artificially detuned from the maximum possible 940 PS to 598 PS in launch control, 598 PS in Boost and 517 PS in normal mode. The torque is 710 Nm, 650 Nm and 650 Nm respectively. With our upgrade the maximum power is increased to 940 PS, and the full torque of 990 Nm is available in all modes.",
+      "src": "https://www.mapev.net/taycan-4s-pb-plus-fl/"
+    },
+    {
+      "slug": "taycan-gts",
+      "brand": "porsche",
+      "name": "Taycan GTS",
+      "years": "2019–2024",
+      "stock": {
+        "ps": 598,
+        "nm": 850
+      },
+      "normal": {
+        "ps": 510,
+        "nm": 850
+      },
+      "mapev": {
+        "ps": 800,
+        "nm": 910
+      },
+      "mapevPrice": {
+        "usd": 2599,
+        "eur": 2159,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The Taycan GTS is artificially detuned from the maximum possible 800 PS to 598 PS in launch control and 510 PS in normal mode. The torque is 850 Nm. With our upgrade the maximum power is increased to 800 PS at 100% SoC, and the full torque of 910 Nm is available in all modes.",
+      "src": "https://www.mapev.net/taycan-gts/"
+    },
+    {
+      "slug": "taycan-gts-fl",
+      "brand": "porsche",
+      "name": "Taycan GTS",
+      "years": "2024–",
+      "stock": {
+        "ps": 700,
+        "nm": 790
+      },
+      "normal": {
+        "ps": 605,
+        "nm": 720
+      },
+      "mapev": {
+        "ps": 940,
+        "nm": 990
+      },
+      "mapevPrice": {
+        "usd": 3099,
+        "eur": 2599,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The Taycan GTS is artificially detuned from the maximum possible 940 PS to 700 PS in launch control, 700 PS in Boost and 605 PS in normal mode. The torque is 790 Nm, 790 Nm and 720 Nm respectively. With our upgrade the maximum power is increased to 940 PS, and the full torque of 990 Nm is available in all modes.",
+      "src": "https://www.mapev.net/taycan-gts-fl/"
+    },
+    {
+      "slug": "taycan-pb",
+      "brand": "porsche",
+      "name": "Taycan PB",
+      "years": "2019–2024",
+      "stock": {
+        "ps": 408,
+        "nm": 345
+      },
+      "normal": {
+        "ps": 326,
+        "nm": 340
+      },
+      "mapev": {
+        "ps": 480,
+        "nm": 360
+      },
+      "mapevPrice": {
+        "usd": 2599,
+        "eur": 2159,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The Taycan Performance Battery is artificially detuned from the maximum possible 480 PS to 408 PS in launch control and 326 PS in normal mode. The torque is 340 Nm. With our upgrade the maximum power is increased to 480 PS, and the full torque of 360 Nm is available in all modes.",
+      "src": "https://www.mapev.net/taycan-pb/"
+    },
+    {
+      "slug": "taycan-pb-fl",
+      "brand": "porsche",
+      "name": "Taycan PB",
+      "years": "2024–",
+      "stock": {
+        "ps": 408,
+        "nm": 410
+      },
+      "normal": {
+        "ps": 410,
+        "nm": 370
+      },
+      "mapev": {
+        "ps": 670,
+        "nm": 690
+      },
+      "mapevPrice": {
+        "usd": 3099,
+        "eur": 2599,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The Taycan Performance Battery is artificially detuned from the maximum possible 670 PS to 408 PS in launch control and normal mode. The torque is 410 Nm and 370 Nm respectively. With our upgrade the maximum power is increased to 670 PS, and the full torque of 690 Nm is available in all modes.",
+      "src": "https://www.mapev.net/taycan-pb-fl/"
+    },
+    {
+      "slug": "taycan-pb-plus",
+      "brand": "porsche",
+      "name": "Taycan PB+",
+      "years": "2019–2024",
+      "stock": {
+        "ps": 480,
+        "nm": 360
+      },
+      "normal": {
+        "ps": 380,
+        "nm": 340
+      },
+      "mapev": {
+        "ps": 480,
+        "nm": 360
+      },
+      "mapevPrice": {
+        "usd": 2599,
+        "eur": 2159,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The Taycan Performance Battery Plus is artificially detuned to 380 PS in normal mode. The torque is 340 Nm. With our upgrade the maximum power is increased to 480 PS outside launch control, and the full torque of 360 Nm is available in all modes.",
+      "src": "https://www.mapev.net/taycan-pb-plus/"
+    },
+    {
+      "slug": "taycan-pb-plus-fl",
+      "brand": "porsche",
+      "name": "Taycan PB+",
+      "years": "2024–",
+      "stock": {
+        "ps": 435,
+        "nm": 420
+      },
+      "normal": {
+        "ps": 435,
+        "nm": 380
+      },
+      "mapev": {
+        "ps": 670,
+        "nm": 690
+      },
+      "mapevPrice": {
+        "usd": 3099,
+        "eur": 2599,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The Taycan Performance Battery Plus is artificially detuned from the maximum possible 670 PS to 435 PS in launch control and normal mode. The torque is 420 Nm and 380 Nm respectively. With our upgrade the maximum power is increased to 670 PS, and the full torque of 690 Nm is available in all modes.",
+      "src": "https://www.mapev.net/taycan-pb-plus-fl/"
+    },
+    {
+      "slug": "taycan-turbo",
+      "brand": "porsche",
+      "name": "Taycan Turbo",
+      "years": "2019–2024",
+      "stock": {
+        "ps": 680,
+        "nm": 910
+      },
+      "normal": {
+        "ps": 625,
+        "nm": 850
+      },
+      "mapev": {
+        "ps": 800,
+        "nm": 910
+      },
+      "mapevPrice": {
+        "usd": 2599,
+        "eur": 2159,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The Taycan Turbo is artificially detuned from the maximum possible power of 800 PS to 680 PS in launch control and 625 PS in normal mode. The torque is 910 Nm and 850 Nm respectively. With our upgrade the maximum power is increased to 800 PS, and the full launch torque of 910 Nm is available in all modes.",
+      "src": "https://www.mapev.net/taycan-turbo/"
+    },
+    {
+      "slug": "taycan-turbo-fl",
+      "brand": "porsche",
+      "name": "Taycan Turbo",
+      "years": "2024–",
+      "stock": {
+        "ps": 884,
+        "nm": 990
+      },
+      "normal": {
+        "ps": 707,
+        "nm": 890
+      },
+      "mapev": {
+        "ps": 940,
+        "nm": 990
+      },
+      "mapevPrice": {
+        "usd": 3099,
+        "eur": 2599,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The Taycan Turbo is artificially detuned from the maximum possible 940 PS to 884 PS in launch control, 802 PS in Boost and 707 PS in normal mode. The torque is 990 Nm, 890 Nm and 890 Nm respectively. With our upgrade the maximum power is increased to 940 PS, and the full torque of 990 Nm is available in all modes.",
+      "src": "https://www.mapev.net/taycan-turbo-fl/"
+    },
+    {
+      "slug": "taycan-turbo-gt",
+      "brand": "porsche",
+      "name": "Taycan Turbo GT",
+      "years": "2024–",
+      "stock": {
+        "ps": 1177,
+        "nm": 1300
+      },
+      "normal": {
+        "ps": 789,
+        "nm": 1185
+      },
+      "mapev": {
+        "ps": 1177,
+        "nm": 1300
+      },
+      "mapevPrice": {
+        "usd": 3099,
+        "eur": 2599,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The Taycan Turbo GT has 1177 PS in launch control (even though Porsche specifies 1033 PS), 952 PS in Boost and 789 PS in normal mode. The torque is 1300 Nm, 1185 Nm and 1185 Nm respectively. With our upgrade the maximum power of 1177 PS and the full torque of 1300 Nm is available in all modes.",
+      "src": "https://www.mapev.net/taycan-turbo-gt/"
+    },
+    {
+      "slug": "porsche-taycan-turbo-s",
+      "brand": "porsche",
+      "name": "Taycan Turbo S",
+      "years": "2019–2024",
+      "stock": {
+        "ps": 761,
+        "nm": 1050
+      },
+      "normal": {
+        "ps": 625,
+        "nm": 950
+      },
+      "mapev": {
+        "ps": 800,
+        "nm": 1050
+      },
+      "mapevPrice": {
+        "usd": 2599,
+        "eur": 2159,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The Taycan Turbo S allows for 800 PS / 1050Nm from factory in launch control mode at 100% SoC. The factory supplied figure of 761 PS is delivered at up to 85% SoC. With our software upgrade the full launch control power and torque are available during normal driving, giving a power increase of 175 PS and a torque increase of 100 Nm.",
+      "src": "https://www.mapev.net/porsche-taycan-turbo-s/"
+    },
+    {
+      "slug": "taycan-turbo-s-fl",
+      "brand": "porsche",
+      "name": "Taycan Turbo S",
+      "years": "2024–",
+      "stock": {
+        "ps": 952,
+        "nm": 1110
+      },
+      "normal": {
+        "ps": 775,
+        "nm": 985
+      },
+      "mapev": {
+        "ps": 1080,
+        "nm": 1160
+      },
+      "mapevPrice": {
+        "usd": 3099,
+        "eur": 2599,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The Taycan Turbo S has 952 PS in launch control, 870 PS in Boost and 775 PS in normal mode. The torque is 1110 Nm, 985 Nm and 985 Nm respectively. With our upgrade the maximum power is increased to 1080 PS and the full torque of 1160 Nm is available in all modes.",
+      "src": "https://www.mapev.net/taycan-turbo-s-fl/"
+    },
+    {
+      "slug": "enyaq-iv-50",
+      "brand": "skoda",
+      "name": "Enyaq iV 50",
+      "years": "2021–2024",
+      "stock": {
+        "ps": 265,
+        "nm": 250
+      },
+      "normal": {
+        "ps": 148,
+        "nm": 250
+      },
+      "mapev": {
+        "ps": 204,
+        "nm": 310
+      },
+      "mapevPrice": {
+        "usd": 790,
+        "eur": 650,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The Skoda Enyaq iV 50 is artificially detuned from the maximum possible 204 PS to 148 PS. The torque is 250 Nm.",
+      "src": "https://www.mapev.net/enyaq-iv-50/"
+    },
+    {
+      "slug": "enyaq-iv-60",
+      "brand": "skoda",
+      "name": "Enyaq iV 60",
+      "years": "2021–2024",
+      "stock": {
+        "ps": 180,
+        "nm": 310
+      },
+      "normal": {
+        "ps": 180,
+        "nm": 310
+      },
+      "mapev": {
+        "ps": 204,
+        "nm": 310
+      },
+      "mapevPrice": {
+        "usd": 790,
+        "eur": 650,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The Skoda Enyaq iV 60 is artificially detuned from the maximum possible 204 PS to 180 PS. The torque is 310 Nm.",
+      "src": "https://www.mapev.net/enyaq-iv-60/"
+    },
+    {
+      "slug": "enyaq-iv-80x",
+      "brand": "skoda",
+      "name": "Enyaq iV 80x",
+      "years": "2021–2024",
+      "stock": {
+        "ps": 265,
+        "nm": 425
+      },
+      "normal": {
+        "ps": 265,
+        "nm": 425
+      },
+      "mapev": {
+        "ps": 300,
+        "nm": 465
+      },
+      "mapevPrice": {
+        "usd": 790,
+        "eur": 650,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The Skoda Enyaq iV 80x is artificially detuned from the maximum possible 300 PS to 265 PS. The torque is 425 Nm.",
+      "src": "https://www.mapev.net/enyaq-iv-80x/"
+    },
+    {
+      "slug": "id-3-pro",
+      "brand": "vw",
+      "name": "ID.3 Pro",
+      "years": "2021–2024",
+      "stock": {
+        "ps": 145,
+        "nm": 275
+      },
+      "normal": {
+        "ps": 145,
+        "nm": 275
+      },
+      "mapev": {
+        "ps": 204,
+        "nm": 310
+      },
+      "mapevPrice": {
+        "usd": 790,
+        "eur": 650,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The ID.3 Pro is artificially detuned from the maximum possible 204 PS to 145 PS. The torque is 275 Nm.",
+      "src": "https://www.mapev.net/id-3-pro/"
+    },
+    {
+      "slug": "id3-pure-performance",
+      "brand": "vw",
+      "name": "ID.3 Pure Performance",
+      "years": "2021–2024",
+      "stock": {
+        "ps": 150,
+        "nm": 275
+      },
+      "normal": {
+        "ps": 150,
+        "nm": 275
+      },
+      "mapev": {
+        "ps": 204,
+        "nm": 310
+      },
+      "mapevPrice": {
+        "usd": 790,
+        "eur": 650,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The ID.3 Pure Performance is artificially detuned from the maximum possible 204 PS to 150 PS. The torque is 310 Nm.",
+      "src": "https://www.mapev.net/id3-pure-performance/"
+    },
+    {
+      "slug": "id4-pro",
+      "brand": "vw",
+      "name": "ID.4 Pro",
+      "years": "2021–2024",
+      "stock": {
+        "ps": 174,
+        "nm": 265
+      },
+      "normal": {
+        "ps": 174,
+        "nm": 265
+      },
+      "mapev": {
+        "ps": 204,
+        "nm": 310
+      },
+      "mapevPrice": {
+        "usd": 790,
+        "eur": 650,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The VW ID.4 Pro is artificially detuned from the maximum possible 204 PS to 174 PS. The torque is 265 Nm.",
+      "src": "https://www.mapev.net/id4-pro/"
+    },
+    {
+      "slug": "id4-pure",
+      "brand": "vw",
+      "name": "ID.4 Pure",
+      "years": "2021–2024",
+      "stock": {
+        "ps": 148,
+        "nm": 250
+      },
+      "normal": {
+        "ps": 148,
+        "nm": 250
+      },
+      "mapev": {
+        "ps": 204,
+        "nm": 310
+      },
+      "mapevPrice": {
+        "usd": 790,
+        "eur": 650,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The VW ID.4 Pure is artificially detuned from the maximum possible 204 PS to 148 PS. The torque is 250 Nm.",
+      "src": "https://www.mapev.net/id4-pure/"
+    },
+    {
+      "slug": "id4-pure-performance",
+      "brand": "vw",
+      "name": "ID.4 Pure Performance",
+      "years": "2021–2024",
+      "stock": {
+        "ps": 170,
+        "nm": 310
+      },
+      "normal": {
+        "ps": 170,
+        "nm": 310
+      },
+      "mapev": {
+        "ps": 204,
+        "nm": 310
+      },
+      "mapevPrice": {
+        "usd": 790,
+        "eur": 650,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The VW ID.4 Pure Performance is artificially detuned from the maximum possible 204 PS to 170 PS. The torque is 310 Nm.",
+      "src": "https://www.mapev.net/id4-pure-performance/"
+    },
+    {
+      "slug": "id5-pro",
+      "brand": "vw",
+      "name": "ID.5 Pro",
+      "years": "2021–2024",
+      "stock": {
+        "ps": 174,
+        "nm": 265
+      },
+      "normal": {
+        "ps": 174,
+        "nm": 265
+      },
+      "mapev": {
+        "ps": 204,
+        "nm": 310
+      },
+      "mapevPrice": {
+        "usd": 790,
+        "eur": 650,
+        "note": "смяна на модула, без ДДС и доставка"
+      },
+      "descr": "The VW ID.5 Pro is artificially detuned from the maximum possible 204 PS to 174 PS. The torque is 265 Nm.",
+      "src": "https://www.mapev.net/id5-pro/"
+    }
+  ]
+}

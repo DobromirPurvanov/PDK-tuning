@@ -1,0 +1,199 @@
+---
+/**
+ * ЕЛЕКТРИЧЕСКИТЕ — входната страница на новото направление.
+ *
+ * Тук се събират две неща: кои електрически модели поемаме (данните са в
+ * src/data/ev.ts) и как работи PDK Flasher, с който клиентът си записва
+ * файла сам, без да идва до Варна.
+ *
+ * Числата в текста НЕ се пишат на ръка. „33 модела“ и най-голямата разлика
+ * идват от данните — иначе един ден ще пише 33, а в избирача ще има 40.
+ */
+import Page from '../../layouts/Page.astro';
+import EvPicker from '../../components/EvPicker.astro';
+import { EV_COUNT, EV_BEST, EV_BY_BRAND, money } from '../../data/ev';
+import { crumbSchema, faqSchema, bizRef } from '../../lib/seo';
+// стъпките и екраните на приложението живеят в данните — ползва ги и /pdk-flasher/
+import { FLASHER_STEPS, FLASHER_APP } from '../../data/flasher';
+
+const site = Astro.site!.href.replace(/\/$/, '');
+const crumbs = [{ href: '/elektricheski/', label: 'Електрически автомобили' }];
+
+const brandLine = EV_BY_BRAND.map((b) => b.name).join(', ');
+const bestGain = EV_BEST.ceilingPs - EV_BEST.stockPs;
+
+const faq = [
+  {
+    q: 'Наистина ли не трябва да идвам до сервиза?',
+    a: 'Не трябва. Целият път — четене, изпращане, получаване и запис — минава през PDK Flasher и приложението. Устройството се доставя до вас и остава ваше.',
+  },
+  {
+    q: 'Защо електрическата кола изобщо има какво да се вземе?',
+    a: 'Защото един и същ агрегат се продава в няколко мощности, а разликата между тях е обявена от самия производител. Заводът сам доказва, че хардуерът носи по-високото число, като го продава под друго име и на по-висока цена.',
+  },
+  {
+    q: 'Какво значи „таван на блока“ в избирача?',
+    a: 'Докъдето управляващият блок на този модел изобщо пуска — това е факт за колата, не обещание какво ще извадим ние за вас. Нашето число за всеки модел стои отделно и там, където още не е обявено, го пише честно.',
+  },
+  {
+    q: 'Какво става с гаранцията?',
+    a: 'Промяната на заводския софтуер може да е основание сервизът да откаже гаранционен ремонт по задвижването. Казваме го на входа. Оригиналът се архивира и се връща по всяко време, но записът оставя следа в брояча на блока — не обещаваме невидимост.',
+  },
+  {
+    q: 'Мога ли да върна колата както си беше?',
+    a: 'Да. Оригиналният файл се пази и се записва обратно със същото устройство и същото приложение, без да ни търсите за среща.',
+  },
+  {
+    q: 'Моят модел го няма в списъка.',
+    a: `Списъкът тръгва с ${EV_COUNT} модела на ${brandLine} и расте. Пишете ни кой е автомобилът — ако блокът му е познат, ще ви кажем прямо дали го поемаме и кога.`,
+  },
+];
+
+const schema = [
+  bizRef(site),
+  crumbSchema(site, [{ href: '/', label: 'Начало' }, ...crumbs]),
+  faqSchema(faq),
+];
+---
+<Page
+  title="Тунинг на електрически автомобили | PDK Tuning"
+  description={`Софтуер за електрически автомобили на ${brandLine} — ${EV_COUNT} модела. Четете и записвате сами през PDK Flasher, от всяка точка на света.`}
+  kicker="Ново направление"
+  heading="Електрически автомобили"
+  lead="Заводът продава един и същ агрегат в няколко мощности. Разликата е в софтуера — и тя се отключва през телефона ви, без да идвате до Варна."
+  crumbs={crumbs}
+  schema={schema}
+  ctaTitle="Кажи ни колата."
+  ctaText="Ако моделът още не е в списъка, пак ни пишете. По-добре да чуете „не го поемаме“, отколкото да чакате."
+>
+  <div class="p-wrap">
+    <section class="p-sec">
+      <div class="p-split">
+        <div class="p-prose">
+          <h2>Къде е резервът при електрическата кола</h2>
+          <p>
+            При двигателя с горене резервът се търси в турбото, в налягането и в границите
+            на температурата. При електрическата кола почти нищо от това не важи. Там
+            разликата между два модела с един и същ агрегат е обявена от производителя:
+            същите мотори, същата батерия, друга цена и друго число в талона.
+          </p>
+          <p>
+            Точно това е най-чистият случай за софтуерна работа. Не се търси граница,
+            която никой не е проверявал — работи се в диапазон, който заводът вече е
+            продал на някого другиго.
+          </p>
+          <h2>Какво не обещаваме</h2>
+          <p>
+            Не обещаваме невидимост пред сервиза и не обещаваме, че всеки модел ще стигне
+            тавана на блока си. Таванът е факт за колата; нашето число е отделно и за част
+            от моделите още не е обявено. Там, където го няма, страницата го казва, вместо
+            да покаже чуждо число.
+          </p>
+        </div>
+
+        <aside class="p-facts">
+          <h2>Накратко</h2>
+          <dl>
+            <dt>Модели в списъка</dt><dd>{EV_COUNT}</dd>
+            <dt>Марки</dt><dd>{brandLine}</dd>
+            <dt>Най-голяма разлика</dt>
+            <dd>{EV_BEST.full} — {EV_BEST.stockPs} к.с. фабрично, {EV_BEST.ceilingPs} к.с. таван на блока (+{bestGain})</dd>
+            <dt>Къде се прави</dt><dd>При вас, през PDK Flasher</dd>
+            <dt>Връщане на оригинала</dt><dd>По всяко време, от вас</dd>
+          </dl>
+        </aside>
+      </div>
+    </section>
+  </div>
+
+  <EvPicker
+    heading="Избери своя автомобил"
+    sub="Марка, после модел. Числата и цената излизат веднага."
+  />
+
+  <div class="p-wrap">
+    <section class="p-sec">
+      <h2>Как става, без да идвате</h2>
+      <div class="p-steps">
+        {FLASHER_STEPS.map((s) => (
+          <div class="p-step">
+            <div><h3>{s.t}</h3><p>{s.d}</p></div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <h2>Какво още има в приложението</h2>
+      <p class="p-note">
+        Подробно за самото устройство — <a href="/pdk-flasher/">PDK Flasher</a>.
+      </p>
+      <div class="p-steps">
+        {FLASHER_APP.map((a) => (
+          <div class="p-step">
+            <div><h3>{a.t}</h3><p>{a.d}</p></div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <h2>Моделите, които поемаме</h2>
+      <p class="p-note">
+        Числото вдясно е фабричната мощност в нормален режим и таванът на управляващия
+        блок. Цената и нашето число се виждат в страницата на модела.
+      </p>
+      <div class="ev-table">
+        {EV_BY_BRAND.map((b) => (
+          <section class="ev-group">
+            <h3>{b.name}</h3>
+            <ul>
+              {b.models.map((m) => (
+                <li>
+                  <a href={m.href}>
+                    <span class="n">{m.name}</span>
+                    <span class="y">{m.years}</span>
+                    <span class="p">{m.stockPs} → {m.ceilingPs} к.с.</span>
+                    <span class="c">{money(m.price)}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <h2>Въпросите, които ни задават</h2>
+      <div class="p-qa">
+        {faq.map((f, i) => (
+          <details name="evfaq" open={i === 0}>
+            <summary><h3>{f.q}</h3><i aria-hidden="true"></i></summary>
+            <div class="ans"><p>{f.a}</p></div>
+          </details>
+        ))}
+      </div>
+    </section>
+  </div>
+</Page>
+
+<style>
+.ev-table{display:grid;gap:34px}
+.ev-group h3{margin:0 0 12px;font:700 15px/1 var(--head);text-transform:uppercase;letter-spacing:.06em;color:var(--lime)}
+.ev-group ul{margin:0;padding:0;list-style:none;border-top:1px solid var(--grey9)}
+.ev-group a{display:grid;gap:4px 16px;grid-template-columns:1fr auto;align-items:baseline;
+  padding:13px 2px;border-bottom:1px solid var(--grey9);transition:.14s}
+.ev-group a:hover{background:rgba(255,255,255,.03)}
+.ev-group .n{font:400 16px/1.3 var(--body);color:var(--white)}
+.ev-group .y{font:400 11px/1 var(--mono);color:rgba(255,255,255,.5);text-align:right}
+.ev-group .p{font:400 12px/1 var(--mono);color:rgba(255,255,255,.66);font-variant-numeric:tabular-nums}
+.ev-group .c{font:400 12px/1 var(--mono);color:var(--lime);text-align:right;white-space:nowrap}
+.ev-group a:hover .n{color:var(--lime)}
+@media(min-width:760px){
+  .ev-table{grid-template-columns:1fr 1fr;gap:34px 48px}
+  .ev-group a{grid-template-columns:1fr 90px 150px 130px}
+  .ev-group .y,.ev-group .p{text-align:left}
+}
+@media(min-width:1060px){.ev-table{grid-template-columns:1fr}}
+</style>

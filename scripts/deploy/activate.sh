@@ -22,7 +22,11 @@ docker load --input "$release/images.tar"
 "${compose[@]}" ps
 for i in $(seq 1 30); do
   if curl --connect-timeout 3 --max-time 5 -fsS -o /dev/null http://127.0.0.1:8000/bg/ && curl --connect-timeout 3 --max-time 5 -fsS -o /dev/null http://127.0.0.1:8000/api/health; then
-    cp "$release/docker-compose.yml" docker-compose.yml
+    # Записва се в .compose.active.yml, а НЕ върху следения docker-compose.yml.
+    # Следеният е за локална работа (`build:`), продукционният е с `image:` —
+    # копиран отгоре, той правеше `git status` на сървъра вечно „modified“ и
+    # всяко влизане там изглеждаше като че някой е пипал хранилището на ръка.
+    cp "$release/docker-compose.yml" .compose.active.yml
     cp "$release/images.env" .images.env
     rm "$release/images.tar"
     echo 'Deployment healthy; only this project’s web/api services were updated.'

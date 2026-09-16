@@ -1,0 +1,165 @@
+---
+/**
+ * Долният ред. Беше един ред сив текст (`#4E544E` = контраст 2,58:1 — не се
+ * четеше), после стана четири колони с котвите на началната. Сега сайтът има
+ * страници, затова носи и втория ред връзки, който не се побра в лентата:
+ * въпросите, мит/факт, статиите и порталът за партньори.
+ */
+import { NAV, MORE, LEGAL, BUSINESS as b, PORTAL } from '../config/site';
+
+const year = new Date().getFullYear();
+
+/** услугите и каталогът се разгъват — те са единствените с подниво */
+const services = NAV.find((n) => n.href === '/uslugi/')!;
+const catalog = NAV.find((n) => n.href === '/katalog/')!;
+
+const social = [
+  { href: b.social.facebook, label: 'Facebook' },
+  { href: b.social.instagram, label: 'Instagram' },
+  { href: b.social.youtube, label: 'YouTube' },
+];
+---
+<footer class="foot">
+  <div class="foot-in">
+    {/*
+      ТЪРГОВСКАТА ИДЕНТИФИКАЦИЯ Е ЗАДЪЛЖИТЕЛНА, не украса: чл. 4 от Закона за
+      електронната търговия иска наименование, седалище, адрес за кореспонденция,
+      данни за контакт и номер на вписване. Затова стои на ВСЯКА страница, а не
+      само в общите условия.
+
+      ЕИК и ДДС номерът се четат от business.json. Празни са → редът НЕ СЕ
+      РИСУВА. Дотук стоеше видима рамка „чака се“; тя вършеше работа, докато
+      сайтът се гледаше отвътре, но пред посетител е признание за недовършеност.
+      Щом дойдат от възложителя, редът се появява сам — нищо друго не се пипа.
+      Ако е дошло само едното, излиза само то, без увиснал разделител.
+    */}
+    <address class="fcol">
+      <p class="ftitle">{b.name}</p>
+      <p class="fline">{b.legalName}</p>
+      {(b.eik || b.vat) && (
+        <p class="fline">
+          {b.eik && <>ЕИК: {b.eik}</>}
+          {b.eik && b.vat && <span class="fsep" aria-hidden="true">·</span>}
+          {b.vat && <>ДДС: {b.vat}</>}
+        </p>
+      )}
+      <p class="fline">{b.address.street}, {b.address.city} {b.address.postalCode}</p>
+      <p class="fline"><a href={`tel:${b.phone}`}>{b.phoneDisplay}</a></p>
+      <p class="fline"><a href={`mailto:${b.email}`}>{b.email}</a></p>
+      <p class="fline" style="margin-top:14px">
+        <a href={PORTAL} target="_blank" rel="noopener noreferrer">Портал за партньори ↗</a>
+      </p>
+    </address>
+
+    {/*
+      ШЕСТ услуги, не осем. Тринайсетте са в падащото меню горе и на /uslugi/;
+      тук са само най-търсените, за да не надвиши тази колона всички останали и
+      да разтегли футъра заради себе си. „Всички услуги“ поема останалите.
+    */}
+    <nav class="fcol" aria-label="Услуги">
+      <p class="ftitle"><a href="/uslugi/">Услуги</a></p>
+      {services.children!.slice(0, 6).map((s) => <p class="fline"><a href={s.href}>{s.label}</a></p>)}
+      <p class="fline"><a href="/uslugi/">Всички услуги →</a></p>
+    </nav>
+
+    {/*
+      „Сайтът“ (Електрически, Цени, Как работим, За нас, Контакти) беше ТУК и
+      преписваше лентата горе дума по дума — пет реда, които не водеха никого
+      никъде. Махнат. Останалото в тази колона е каталогът, който наистина има
+      подниво.
+    */}
+    <nav class="fcol" aria-label="Каталог">
+      <p class="ftitle"><a href="/katalog/">Каталог</a></p>
+      {catalog.children!.map((c) => <p class="fline"><a href={c.href}>{c.label}</a></p>)}
+    </nav>
+
+    {/*
+      „Полезно“ остава на своето място, защото това е ЕДИНСТВЕНИЯТ вход към
+      тези страници — в лентата горе ги няма. Правното и социалните слязоха в
+      долния ред: те са по три думи всяка и вертикалният списък им отпускаше
+      цяла колона за нищо.
+    */}
+    <nav class="fcol" aria-label="Полезно">
+      <p class="ftitle">Полезно</p>
+      {MORE.map((m) => <p class="fline"><a href={m.href}>{m.label}</a></p>)}
+    </nav>
+  </div>
+
+  <div class="foot-end">
+    <nav class="fend-links" aria-label="Правно">
+      {LEGAL.map((l) => <a href={l.href}>{l.label}</a>)}
+      {/* „Бисквитки“ до „Политика за бисквитки“ се четеше като две страници за
+          едно и също. Това е бутон, който отваря избора — казва се какъв е. */}
+      <button type="button" id="cookieOpen" class="linky">Настройки за бисквитки</button>
+    </nav>
+
+    <nav class="fend-links fend-social" aria-label="Социални мрежи">
+      {social.map((s) => (
+        <a href={s.href} target="_blank" rel="noopener noreferrer">{s.label}</a>
+      ))}
+    </nav>
+
+    {/*
+      ТУК СТОЕШЕ „Каталогът се чете на живо от pdktuning.com — тук не се пази
+      копие.“ Това е бележка за устройството на сайта: на посетителя не му
+      трябва, а сочи чужд домейн от всяка страница. Останалото е авторското
+      право, което си е на място.
+    */}
+    <p class="fend-note">
+      <span>© {year} {b.legalName}.</span>
+    </p>
+  </div>
+</footer>
+
+<style>
+.foot{border-top:1px solid var(--grey9);padding:56px var(--gut) 28px;background:#0A0A0A}
+/* На телефон трите колони с връзки стояха ЕДНА ПОД ДРУГА и футърът ставаше
+   1330px — един екран и половина само за навигация. Заглавията им са по две
+   думи, тоест се събират по две на ред и при 390px. Данните на фирмата остават
+   на цял ред: адресът и имейлът не се пречупват добре в половин колона. */
+.foot-in{max-width:1180px;margin:0 auto;display:grid;gap:30px 24px;grid-template-columns:1fr 1fr}
+address.fcol{grid-column:1 / -1}
+@media(min-width:960px){
+  .foot-in{grid-template-columns:1.4fr 1fr 1fr 1fr;gap:34px 26px}
+  address.fcol{grid-column:auto}
+}
+
+/* <address> носи наклонен шрифт по подразбиране — тук е блок с данни, не цитат */
+address.fcol{font-style:normal}
+.ftitle{margin:0 0 16px;font:400 10px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--lime)}
+/* Разделителят е декоративен и е aria-hidden, но СЕ ВИЖДА — значи важи прагът
+   за контраст. При .3 даваше 2,59:1 върху #0A0A0A. Минималната алфа за 4,5:1
+   на този фон е около 0,45; .5 оставя запас. */
+.fsep{padding:0 6px;color:rgba(255,255,255,.5)}
+.ftitle a{border-bottom:1px solid transparent;transition:border-color .18s}
+.ftitle a:hover{border-bottom-color:rgba(82,251,9,.5)}
+.fline{margin:0;font:400 13px/1.5 var(--body);color:rgba(255,255,255,.66)}
+.fline + .fline{margin-top:4px}
+.fline a,.linky{display:inline-flex;align-items:center;min-height:32px;color:rgba(255,255,255,.66);
+  border:0;background:none;padding:0;cursor:pointer;text-align:left;font:inherit;
+  border-bottom:1px solid transparent;transition:color .18s,border-color .18s}
+.fline a:hover,.linky:hover{color:var(--lime);border-bottom-color:rgba(82,251,9,.5)}
+/* заглавията на колоните вече са връзки („Услуги", „Каталог") — и те искат пръст */
+@media(pointer:coarse){.fline a,.linky,.ftitle a{min-height:48px;display:inline-flex;align-items:center}}
+
+/* Долният ред пое правното и социалните. Те са по три думи всяка и като
+   вертикални списъци държаха цяла колона; наредени водоравно се събират на
+   един-два реда. */
+.foot-end{max-width:1180px;margin:30px auto 0;padding-top:18px;border-top:1px solid var(--grey9);
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px 28px}
+.fend-links{display:flex;flex-wrap:wrap;gap:4px 20px;align-items:center}
+.fend-links a,.fend-links .linky{font:400 12px/1.5 var(--body);color:rgba(255,255,255,.62);
+  border:0;background:none;padding:0;cursor:pointer;display:inline-flex;align-items:center;min-height:30px;
+  border-bottom:1px solid transparent;transition:color .18s,border-color .18s}
+.fend-links a:hover,.fend-links .linky:hover{color:var(--lime);border-bottom-color:rgba(82,251,9,.5)}
+/* социалните се отделят от правните, за да не се четат като един списък */
+.fend-social{margin-left:auto}
+.fend-social a{font:400 10px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.fend-note{flex-basis:100%;margin:2px 0 0;display:flex;flex-wrap:wrap;gap:4px 18px;
+  font:400 11px/1.6 var(--mono);color:rgba(255,255,255,.5)}
+@media(pointer:coarse){.fend-links a,.fend-links .linky{min-height:48px}}
+@media(max-width:620px){
+  .fend-social{margin-left:0}
+  .fend-note{flex-direction:column;gap:4px}
+}
+</style>

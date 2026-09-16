@@ -14,10 +14,18 @@ RUN npx astro build
 # Errors stay visible in the build output. The gate that protects production is in CI.
 RUN node scripts/verify-build.mjs || echo '!!! SEO CHECKS FAILED - see the list above; building the image anyway'
 
+# CSP-то се смята ОТ ГОТОВИЯ ИЗХОД: `script-src` носи хешовете на inline
+# скриптовете вместо `'unsafe-inline'`. Това ТРЯБВА да мине — сгрешен или
+# липсващ csp.inc спира nginx, а образ с тихо разрешен inline е по-лош от
+# образ, който не се сглобява.
+RUN node scripts/csp-hashes.mjs
+
 # Етап 2: nginx сервира готовите файлове. Perl модулът е само за правило R4 (главни букви → малки).
 FROM nginx:1.27-alpine-perl
 COPY docker/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY docker/nginx/headers.inc /etc/nginx/headers.inc
+# генерира се в етап 1 от готовия dist, затова се взима ОТТАМ, не от контекста
+COPY --from=build /app/docker/nginx/csp.inc /etc/nginx/csp.inc
 COPY docker/nginx/redirects.map /etc/nginx/redirects.map
 COPY docker/nginx/default.conf.template /etc/nginx/templates/default.conf.template
 COPY --from=build /app/dist /usr/share/nginx/html

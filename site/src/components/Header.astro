@@ -1,0 +1,195 @@
+---
+/**
+ * Лентата горе. Стои на всяка страница, затова живее тук, а не в началната.
+ *
+ * Лентата е ЗАЛЕПЕНА горе и има собствено ПЛЪТНО тяло — полупрозрачна лента
+ * върху светъл кадър от видеото посивяваше и седеше като чуждо петно.
+ * Затова и няма backdrop-filter: размазването смуква светлината и черното става
+ * сиво-млечно.
+ *
+ * Внимание с имената: лентата за напредък в избирача веднъж се казваше `bar`
+ * като този хедър и наследи `position:fixed` — легна през целия екран като бяла
+ * ивица. Класът `bar` е ЗАЕТ от тук.
+ *
+ * САЙТЪТ ВЕЧЕ НЕ Е ЕДНА СТРАНИЦА, затова менюто вече не е списък от котви, а
+ * от адреси, а две от точките имат подсписък. Прагът за широкото меню се качи
+ * на 1180px: шест точки с моно разредка не се побират под това.
+ */
+import { NAV, PORTAL } from '../config/site';
+
+const path = Astro.url.pathname;
+/** текущата точка: „/uslugi/chip-tuning/“ свети „Услуги“ */
+const active = (href: string) => (href === '/' ? path === '/' : path.startsWith(href.replace(/\/$/, '')));
+---
+<header class="bar">
+  <a class="logo" href="/" aria-label="PDK Tuning — начална страница">
+    <picture>
+      <source srcset="/pdk-logo.webp" type="image/webp" />
+      <img src="/pdk-logo.jpg" alt="" width="40" height="40" />
+    </picture>
+    <span>PDK Tuning</span>
+  </a>
+
+  <nav class="menu" id="menu" aria-label="Основно меню">
+    {NAV.map((n) => (
+      n.children
+        ? <div class="has-sub">
+            <a href={n.href} aria-current={active(n.href) ? 'page' : undefined}>
+              {n.label}<i class="caret" aria-hidden="true"></i>
+            </a>
+            <div class="sub">
+              <div class="sub-in">
+                {n.children.map((c) => <a href={c.href}>{c.label}</a>)}
+              </div>
+            </div>
+          </div>
+        : <a href={n.href} aria-current={active(n.href) ? 'page' : undefined}>{n.label}</a>
+    ))}
+    <a href={PORTAL} class="only-narrow" target="_blank" rel="noopener noreferrer">Вход за партньори</a>
+  </nav>
+
+  <div class="right">
+    <span class="pill lang-pill" lang="bg" title="Страницата е на български. Английската версия предстои.">BG / EN</span>
+    <a class="pill" href={PORTAL} target="_blank" rel="noopener noreferrer">Вход</a>
+    <a class="pill go" href={PORTAL} target="_blank" rel="noopener noreferrer">Качи файл</a>
+    <button class="burger" id="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="menu">
+      <i></i><i></i><i></i>
+    </button>
+  </div>
+</header>
+
+<script>
+  // плътна лента, щом сме минали първия екран с очи
+  const bar = document.querySelector('.bar')!;
+  const onScroll = () => bar.classList.toggle('stuck', scrollY > 60);
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  const burger = document.getElementById('burger')!;
+  burger.addEventListener('click', () => {
+    const open = bar.classList.toggle('open');
+    burger.setAttribute('aria-expanded', String(open));
+  });
+  // с щракване по връзка менюто се затваря — иначе остава отворено върху съдържанието
+  bar.querySelectorAll('.menu a').forEach((a) =>
+    a.addEventListener('click', () => {
+      bar.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    })
+  );
+
+  // Подсписъкът се отваря с посочване (CSS), но с КЛАВИАТУРА посочване няма.
+  // Затова фокусът вътре в групата я държи отворена — иначе тринайсетте услуги
+  // са недостижими без мишка.
+  document.querySelectorAll<HTMLElement>('.has-sub').forEach((g) => {
+    g.addEventListener('focusin', () => g.classList.add('open'));
+    g.addEventListener('focusout', (e) => {
+      if (!g.contains(e.relatedTarget as Node)) g.classList.remove('open');
+    });
+  });
+</script>
+
+<style>
+.bar{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;align-items:center;gap:22px;
+  padding:18px var(--gut);transition:border-color .25s,padding .25s;
+  border-bottom:1px solid transparent;background:#0A0A0A}
+.bar.stuck{border-bottom-color:var(--grey9);padding:12px var(--gut)}
+
+.logo{display:flex;align-items:center;gap:12px;flex:0 0 auto}
+.logo img{width:40px;height:40px;border-radius:9px;border:1px solid rgba(255,255,255,.16);display:block}
+.logo span{font:400 11px/1 var(--mono);letter-spacing:.26em;text-transform:uppercase;white-space:nowrap}
+
+/* тънка черта дели марката от менюто — преди „PDK TUNING“ и „КАТАЛОГ“ се сливаха */
+.menu{display:none;gap:26px;margin-left:12px;padding-left:24px;border-left:1px solid var(--grey9)}
+@media(min-width:1180px){.menu{display:flex;align-items:center}}
+.menu > a,.has-sub > a{position:relative;display:inline-flex;align-items:center;gap:6px;
+  font:400 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(255,255,255,.72);padding:6px 0;transition:color .18s;white-space:nowrap}
+.menu .only-narrow{display:none}
+.menu > a::after,.has-sub > a::after{content:'';position:absolute;left:0;right:100%;bottom:0;
+  height:1px;background:var(--lime);transition:right .22s}
+.menu > a:hover,.has-sub > a:hover{color:#fff}
+.menu > a:hover::after,.has-sub:hover > a::after{right:0}
+.menu [aria-current="page"]{color:#fff}
+.menu [aria-current="page"]::after{right:0}
+
+/* ── падащият списък ────────────────────────────────────────────────────── */
+.has-sub{position:relative}
+.caret{width:5px;height:5px;border-right:1.4px solid currentColor;border-bottom:1.4px solid currentColor;
+  transform:rotate(45deg) translate(-1px,-1px);transition:transform .2s}
+.has-sub:hover .caret,.has-sub.open .caret{transform:rotate(-135deg) translate(-2px,-2px)}
+.sub{position:absolute;top:100%;left:-16px;padding-top:14px;opacity:0;visibility:hidden;
+  transform:translateY(-6px);transition:opacity .2s,transform .2s,visibility .2s}
+.has-sub:hover .sub,.has-sub.open .sub{opacity:1;visibility:visible;transform:none}
+.sub-in{display:grid;gap:0;min-width:238px;padding:8px;background:#0E0E0E;
+  border:1px solid var(--grey9);border-radius:12px;box-shadow:0 18px 44px rgba(0,0,0,.6)}
+.sub-in a{display:flex;align-items:center;min-height:38px;padding:8px 14px;border-radius:8px;
+  font:400 12px/1.3 var(--body);color:rgba(255,255,255,.76);transition:.15s}
+.sub-in a:hover{background:rgba(82,251,9,.1);color:var(--lime)}
+
+.right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.pill{display:inline-flex;align-items:center;font:400 10px/1 var(--mono);letter-spacing:.16em;
+  text-transform:uppercase;padding:12px 16px;border:1px solid rgba(255,255,255,.14);
+  border-radius:999px;white-space:nowrap}
+.pill:hover{border-color:rgba(255,255,255,.4)}
+.pill.go{background:var(--lime);border-color:var(--lime);color:#041000;font-weight:700}
+.pill.go:hover{filter:brightness(1.1)}
+.lang-pill{color:rgba(255,255,255,.72);cursor:default}
+
+.burger{display:none;width:44px;height:44px;border:1px solid rgba(255,255,255,.14);
+  border-radius:999px;background:none;cursor:pointer;position:relative;flex:0 0 auto}
+.burger i{position:absolute;left:13px;right:13px;height:1.5px;background:var(--white);transition:.2s}
+.burger i:nth-child(1){top:16px}
+.burger i:nth-child(2){top:21px}
+.burger i:nth-child(3){top:26px}
+.bar.open .burger i:nth-child(1){transform:translateY(5px) rotate(45deg)}
+.bar.open .burger i:nth-child(2){opacity:0}
+.bar.open .burger i:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+
+/* ── под 1180px менюто няма как да се отвори без бургер ─────────────────── */
+@media(max-width:1179px){
+  .bar{flex-wrap:wrap;padding:14px var(--gut);gap:10px}
+  .burger{display:block;order:3}
+  .right{gap:8px}
+  .right .pill{padding:11px 13px}
+  .menu{display:none;order:4;flex-basis:100%;flex-direction:column;gap:0;margin:14px 0 4px;
+    padding-left:0;border-left:0;max-height:min(70vh,560px);overflow-y:auto;overscroll-behavior:contain}
+  .bar.open .menu{display:flex}
+  .menu .only-narrow{display:block}
+  .menu > a,.has-sub > a{display:flex;align-items:center;min-height:48px;padding:0;
+    border-bottom:1px solid var(--grey9);font-size:12px}
+  .menu > a::after,.has-sub > a::after{display:none}
+  .bar.open{background:#080808;border-bottom-color:var(--grey9)}
+
+  /* На тесен екран подсписъкът НЕ е падащ — стои разгънат и с отстъп.
+     Падащо меню, което се отваря с посочване, с пръст е капан. */
+  .has-sub{position:static}
+  .caret{display:none}
+  .sub{position:static;padding-top:0;opacity:1;visibility:visible;transform:none}
+  .sub-in{min-width:0;padding:4px 0 10px 16px;background:none;border:0;border-radius:0;box-shadow:none;
+    border-bottom:1px solid var(--grey9)}
+  .sub-in a{min-height:40px;padding:6px 0;font-size:12px;color:rgba(255,255,255,.62)}
+  .sub-in a:hover{background:none}
+}
+@media(max-width:560px){
+  /* остават езикът и действието; „Вход“ отива в менюто */
+  .right .pill:not(.go):not(.lang-pill){display:none}
+  .logo span{display:none}
+}
+/* с пръст всяко копче е поне 48px — на мишка плътността остава каквато е одобрена */
+@media(pointer:coarse){
+  .pill{min-height:48px}
+  /* Под 560px надписът „PDK TUNING“ се крие и логото остава 40px ШИРОКО —
+     висока, но тясна цел. Отстоянието я прави 48×48, без да мести знака. */
+  .logo{min-height:48px;min-width:48px;padding:0 4px;margin-left:-4px}
+  /* таблет над 1180px вижда широкото меню, но го пипа с пръст — там точките
+     иначе остават 23px, защото правилото за бургера не важи */
+  .menu > a,.has-sub > a{min-height:48px}
+  .burger{width:48px;height:48px}
+  .burger i{left:15px;right:15px}
+  .burger i:nth-child(1){top:18px}
+  .burger i:nth-child(2){top:23px}
+  .burger i:nth-child(3){top:28px}
+  .sub-in a{min-height:48px}
+}
+</style>

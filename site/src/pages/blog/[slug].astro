@@ -1,0 +1,107 @@
+---
+/**
+ * Статията. Една страница за всеки запис в `src/data/articles.ts`.
+ */
+import Page from '../../layouts/Page.astro';
+import { ARTICLES, ART_BY_SLUG } from '../../data/articles';
+import { BY_SLUG as SVC, ICONS } from '../../data/services';
+import { crumbSchema, articleSchema, bizRef } from '../../lib/seo';
+
+export function getStaticPaths() {
+  return ARTICLES.map((a) => ({ params: { slug: a.slug } }));
+}
+
+const { slug } = Astro.params;
+const a = ART_BY_SLUG.get(slug!)!;
+
+const site = Astro.site!.href.replace(/\/$/, '');
+const crumbs = [
+  { href: '/blog/', label: 'Статии' },
+  { href: `/blog/${a.slug}/`, label: a.h1 },
+];
+
+const related = a.related.map((r) => SVC.get(r)!).filter(Boolean);
+const others = ARTICLES.filter((x) => x.slug !== a.slug).slice(0, 3);
+
+const schema = [
+  bizRef(site),
+  articleSchema(site, a),
+  crumbSchema(site, [{ href: '/', label: 'Начало' }, ...crumbs]),
+];
+
+const fmt = (iso: string) =>
+  new Date(iso).toLocaleDateString('bg-BG', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+<Page
+  title={a.title}
+  description={a.description}
+  kicker={a.kicker}
+  heading={a.h1}
+  lead={a.lead}
+  crumbs={crumbs}
+  ogType="article"
+  schema={schema}
+  ctaTitle="Имате въпрос по темата?"
+  ctaText="Обадете се. По телефона се решава повече, отколкото изглежда."
+>
+  <div class="p-wrap">
+    <section class="p-sec">
+      <p class="art-meta">
+        <time datetime={a.date}>{fmt(a.date)}</time>
+        <span aria-hidden="true">·</span>
+        <span>{a.minutes} мин четене</span>
+      </p>
+
+      <div class="p-prose art">
+        {a.body.map((sec) => (
+          <>
+            <h2>{sec.h}</h2>
+            {sec.p.map((t) => <p>{t}</p>)}
+          </>
+        ))}
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <h2>Свързани услуги</h2>
+      <div class="p-cards three">
+        {related.map((s) => (
+          <a class="p-card" href={`/uslugi/${s.slug}/`}>
+            <span class="wash"></span>
+            <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><Fragment set:html={ICONS[s.icon]} /></svg></span>
+            <span class="lab">{s.kicker}</span>
+            <h3>{s.name}</h3>
+            <p>{s.short}</p>
+            <span class="go">Виж услугата →</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <h2>Още статии</h2>
+      <div class="p-cards three">
+        {others.map((o) => (
+          <a class="p-card" href={`/blog/${o.slug}/`}>
+            <span class="wash"></span>
+            <span class="lab">{o.kicker}</span>
+            <h3>{o.h1}</h3>
+            <p>{o.lead}</p>
+            <span class="go">Чети →</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  </div>
+</Page>
+
+<style is:global>
+.art-meta{display:flex;flex-wrap:wrap;gap:0 8px;margin:0 0 34px;
+  font:400 10px/1.6 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.56)}
+.art-meta span[aria-hidden]{color:rgba(255,255,255,.3)}
+.p-prose.art{max-width:68ch}
+.p-prose.art h2{margin:44px 0 14px;font:700 clamp(21px,2.4vw,27px)/1.16 var(--head);
+  text-transform:uppercase;letter-spacing:-.012em}
+.p-prose.art h2:first-child{margin-top:0}
+.p-prose.art p{font-size:17px;line-height:1.75}
+</style>

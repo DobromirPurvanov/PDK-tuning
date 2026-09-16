@@ -1,0 +1,834 @@
+---
+// НОВИЯТ САЙТ — начален екран.
+//
+// Базата НЕ се мигрира и НЕ се сваля. Старият сайт (www.pdktuning.com) продължава да
+// работи и остава единственият ѝ пазител; тук няма нито един запис от каталога.
+// Всяко ниво на избирача се пита на живо през public/_worker.js → /live/*.
+//
+// Дизайнът е одобреният: бранд таблото в Canva (черно #080808 + киселинно зелено
+// #52FB09, „Всеки автомобил има потенциал / Ние знаем как да го отключим") плюс
+// компоненти от 21st.dev — Crypto Hero (8759), Experience Hero (9724),
+// Pixel Logo Grid (12815), Feature Velocity (18901), Multi-Step Form (8281).
+//
+// Общото (глава, лента, долен ред, бисквитки) е в src/layouts/Base.astro.
+import Base from '../layouts/Base.astro';
+import Picker from '../components/Picker.astro';
+import MarkGrid from '../components/MarkGrid.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Promo from '../components/Promo.astro';
+import business from '../data/business.json';
+import prices from '../data/prices.json';
+import marks from '../data/marks.json';
+import { FEATURED, ICONS, SERVICES } from '../data/services';
+import { CATEGORIES } from '../data/categories';
+import { FAQ_HOME } from '../data/faq';
+import { ARTICLES } from '../data/articles';
+import { EV_COUNT, EV_BY_BRAND } from '../data/ev';
+
+// Емблемите са АКТУАЛНИТЕ знаци на марките, събрани от Simple Icons и Уикиданни
+// (свойство „лого“ → файл в Commons). Стоят в public/marks. За марките без чист
+// знак в свободен източник се показва името, набрано в Oswald.
+type Mark = { slug: string; name: string; kind: string; ext: string | null };
+const all = marks as Mark[];
+
+// Популярните при нас — показват се едро отпред. Списъкът е НАШ избор и се
+// пипа само тук; останалите се отварят с копчето под тях.
+const TOP = ['bmw', 'mercedes-benz', 'volkswagen', 'audi', 'opel-vauxhall', 'ford',
+  'renault', 'peugeot', 'citroen', 'skoda', 'toyota', 'fiat', 'volvo', 'seat',
+  'nissan', 'honda', 'hyundai', 'kia', 'mazda', 'mini'];
+
+/** марките с електрически модели — за лентата под избирача */
+const evBrands = EV_BY_BRAND.map((b) => b.name).join(', ');
+
+const cars = all.filter((m) => m.kind === 'леки');
+const byTop = (a: Mark, b: Mark) => TOP.indexOf(a.slug) - TOP.indexOf(b.slug);
+const carsTop = cars.filter((m) => TOP.includes(m.slug)).sort(byTop);
+const carsRest = cars.filter((m) => !TOP.includes(m.slug));
+
+// Камионите и селскостопанската техника вече имат СВОИ страници — етикетът
+// отляво е връзка към тях, а не мъртъв надпис.
+const groups = CATEGORIES.filter((c) => c.kind !== 'леки').map((c) => {
+  const items = all.filter((m) => m.kind === c.kind);
+  return { cat: c, items, note: `${items.length} марки` };
+});
+const carsCat = CATEGORIES.find((c) => c.kind === 'леки')!;
+
+// ── услуги: шестте отбелязани в src/data/services.ts, цените от prices.json ──
+// Списъкът стоеше вграден тук и вече беше на две места. Сега е едно.
+const P = prices.items as Record<string, { from: number; time: string }>;
+const services = FEATURED;
+
+// ── въпросите, които наистина ни задават ──────────────────────────────────
+// Списъкът вече живее в src/data/faq.ts, защото го ползва и /vaprosi/.
+// Текстът тук е СЪЩИЯТ, който отива и в структурираните данни по-долу —
+// FAQPage важи само когато отговорът се вижда на страницата.
+const faq = FAQ_HOME;
+
+// ── структурирани данни ───────────────────────────────────────────────────
+// Оценката от Google НЕ се маркира: правилата на Google не признават оценка,
+// която фирмата слага сама за себе си, без отзивите да се виждат на страницата.
+const b = business;
+const site = Astro.site!.href.replace(/\/$/, '');
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'AutoRepair',
+    '@id': `${site}/#business`,
+    name: b.name,
+    legalName: b.legalName,
+    url: `${site}/`,
+    image: `${site}/img/pdk-hero.jpg`,
+    logo: `${site}/icons/icon-512.png`,
+    telephone: b.phoneIntl,
+    email: b.email,
+    priceRange: '€€',
+    // Идентификаторите излизат в схемата САМО ако наистина ги имаме — празен
+    // `taxID` е по-лош от липсващ, защото твърди нещо и не го казва.
+    ...(b.eik ? { identifier: b.eik, taxID: b.eik } : {}),
+    ...(b.vat ? { vatID: b.vat } : {}),
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: b.address.street,
+      addressLocality: b.address.city,
+      postalCode: b.address.postalCode,
+      addressCountry: b.address.country,
+    },
+    geo: { '@type': 'GeoCoordinates', latitude: b.geo.lat, longitude: b.geo.lng },
+    openingHoursSpecification: b.hours.map((h) => ({
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: h.days,
+      opens: h.opens,
+      closes: h.closes,
+    })),
+    areaServed: { '@type': 'City', name: 'Варна' },
+    sameAs: [b.social.facebook, b.social.instagram, b.social.youtube],
+    // всичките тринайсет услуги, не само шестте на екрана
+    makesOffer: SERVICES.map((s) => ({
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: s.name,
+        description: s.short,
+        url: `${site}/uslugi/${s.slug}/`,
+      },
+      ...(s.priceKey && P[s.priceKey]
+        ? { price: P[s.priceKey].from, priceCurrency: prices.currency }
+        : {}),
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${site}/#website`,
+    url: `${site}/`,
+    name: `${b.name} — чип тунинг Варна`,
+    inLanguage: 'bg-BG',
+    publisher: { '@id': `${site}/#business` },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+
+const days: Record<string, string> = {
+  Monday: 'понеделник', Tuesday: 'вторник', Wednesday: 'сряда', Thursday: 'четвъртък',
+  Friday: 'петък', Saturday: 'събота', Sunday: 'неделя',
+};
+const hoursText = b.hours.map((h) => {
+  const d = h.days.length > 1 ? `${days[h.days[0]]} – ${days[h.days[h.days.length - 1]]}` : days[h.days[0]];
+  return { d: d.charAt(0).toUpperCase() + d.slice(1), t: `${h.opens} – ${h.closes}` };
+});
+---
+
+<Base
+  title="PDK Tuning — чип тунинг и софтуерни ремонти във Варна"
+  description="Чип тунинг с измерване на собствен стенд, DPF, EGR и AdBlue във Варна. Изберете двигателя си и вижте реалните числа преди и след."
+  schema={schema}
+>
+  <Fragment slot="head">
+    <!-- само това, което рисува първия екран; останалите шрифтове идват при нужда -->
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/jetbrains-mono-400-cyrillic.woff2" crossorigin />
+    <link rel="preload" as="image" href="/img/pdk-hero.jpg" fetchpriority="high" />
+  </Fragment>
+
+<section class="hero">
+  <div class="shot">
+    <video id="shot" poster="/img/pdk-hero.jpg" muted loop playsinline preload="none"
+           width="1280" height="704" aria-hidden="true"></video>
+  </div>
+  <div class="smoke" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="stagelines" aria-hidden="true"></div>
+  <div class="sweep" aria-hidden="true"></div>
+  <div class="hud" aria-hidden="true">
+    <span class="cn tl"></span><span class="cn tr"></span><span class="cn bl"></span><span class="cn br"></span>
+    <div class="ticks"></div>
+  </div>
+
+  <div class="inner">
+    <div class="left">
+      <div class="live"><i class="dot"></i><span>PDK Tuning // Варна // {new Date().getFullYear() - business.yearsExperience}</span></div>
+
+      <div>
+        <p class="eyebrow">Всеки автомобил има потенциал</p>
+        <h1><span class="lead">Ние знаем как да го</span><span class="out">отключим</span></h1>
+        <p class="sub">Анализ · Настройка · Оптимизация — измерено на собствен стенд</p>
+      </div>
+
+      <div class="power">
+        <div class="p-head">
+          <span>Стоково <b>190</b></span>
+          <span class="p-mid">BMW 320d · 2015–2019</span>
+          <span>PDK <b id="gnum">190</b></span>
+        </div>
+        <div class="p-bar"><i id="gval"></i></div>
+      </div>
+
+      <div class="cta">
+        <a class="circle" href="#picker">
+          <i><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i>
+          <b>Намери своя автомобил</b>
+        </a>
+        <a class="tel" href={`tel:${business.phone}`}><b>{business.phoneDisplay}</b></a>
+      </div>
+    </div>
+
+    <div class="deck">
+      <div class="cell">
+        <span class="id">001 // Мощност</span>
+        <div class="row"><b class="cell-val" id="hHp" data-to="30">+0</b><span class="unit">к.с.</span><span class="track"><i></i></span></div>
+      </div>
+      <div class="cell">
+        <span class="id">002 // Въртящ момент</span>
+        <div class="row"><b class="cell-val" id="hNm" data-to="40">+0</b><span class="unit">Nm</span><span class="track"><i style="width:74%"></i></span></div>
+      </div>
+      {/*
+        ТУК СТОЕШЕ клетка „Източникът“: база `pdktuning.com`, четене „на живо,
+        без копие“. Тя обясняваше как е УСТРОЕН сайтът — на посетителя това не
+        му трябва, а на конкурент му върши работа. Сега клетката казва какво
+        покрива сервизът. Числата идват от marks.json, не са преписани.
+      */}
+      <div class="cell">
+        <span class="id">003 // Обхватът</span>
+        <div class="kv"><span>Леки</span><span><b>{cars.length}</b> марки</span></div>
+        {groups.map((g) => (
+          <div class="kv"><span>{g.cat.wallLabel}</span><span><b>{g.items.length}</b> марки</span></div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<Picker />
+
+{/* Електрическите — рекламата изскача веднъж на 14 дни, този вход стои винаги. */}
+<section class="ev-band" aria-labelledby="ev-band-h">
+  <div class="ev-band-in">
+    <div>
+      <p class="ev-band-kick">Ново направление</p>
+      <h2 id="ev-band-h">Вече и за <em>електрически</em></h2>
+      <p class="ev-band-p">
+        {EV_COUNT} модела на {evBrands}. Заводът ги продава занижени; разликата е софтуер.
+        Записва се от вас, през телефона, без да идвате до Варна.
+      </p>
+    </div>
+    <a class="ev-band-go" href="/elektricheski/">Виж своя модел →</a>
+  </div>
+</section>
+
+<section class="wall" id="catalog">
+  <div class="wall-in">
+    <div class="wall-head">
+      <h2 class="kick">Каталогът</h2>
+      <p class="wall-sum"><b id="wCount">—</b> марки в сервиза</p>
+    </div>
+
+    <div class="row big">
+      <div class="row-lab">
+        <h3><a href={`/${carsCat.slug}/`}>Леки</a></h3>
+        <span>{cars.length} марки в базата</span>
+      </div>
+      <MarkGrid marks={carsTop} big />
+    </div>
+
+    <div class="more">
+      <button id="moreBtn" type="button" aria-expanded="false" aria-controls="carsRest">
+        <span>Още {carsRest.length} марки</span>
+        <i aria-hidden="true"></i>
+      </button>
+      <MarkGrid marks={carsRest} id="carsRest" hidden />
+    </div>
+
+    {groups.map((g) => (
+      <div class="row">
+        <div class="row-lab">
+          <h3><a href={`/${g.cat.slug}/`}>{g.cat.wallLabel}</a></h3>
+          <span>{g.note}</span>
+        </div>
+        <MarkGrid marks={g.items} />
+      </div>
+    ))}
+
+    <p class="wall-more">
+      <a href="/katalog/">Целият каталог — всички {all.length} марки →</a>
+    </p>
+  </div>
+</section>
+
+<section class="srv" id="services">
+  <div class="in">
+    <div class="top">
+      <h2>Чип тунинг<br />и софтуерни ремонти.</h2>
+      <p class="note">Диагностика преди файл. Ако проблемът е датчик, го казваме — и не пишем нищо.</p>
+    </div>
+    <div class="tiles">
+      {services.map((s) => (
+        <a class="tile" href={`/uslugi/${s.slug}/`}>
+          <span class="wash"></span>
+          <div class="body">
+            <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><Fragment set:html={ICONS[s.icon]} /></svg></span>
+            <div>
+              <span class="lab">{s.kicker}</span>
+              <h3>{s.name}</h3>
+              <p>{s.short}<br />{s.priceKey && P[s.priceKey] && <><b>от {P[s.priceKey].from} €</b> · {P[s.priceKey].time}</>}</p>
+              <span class="tile-go">Виж услугата →</span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+    <p class="srv-more"><a href="/uslugi/">Всички {SERVICES.length} услуги →</a></p>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="in">
+    <div class="top">
+      <h2>Въпросите,<br />които ни задавате.</h2>
+      <p class="note">Кратки отговори, без заобикаляне. Ако нещо липсва — обадете се.</p>
+    </div>
+    <div class="qa">
+      {faq.map((f, i) => (
+        <details name="faq" open={i === 0}>
+          <summary>
+            <h3>{f.q}</h3>
+            <i aria-hidden="true"></i>
+          </summary>
+          <div class="ans"><p>{f.a}</p></div>
+        </details>
+      ))}
+    </div>
+    <p class="srv-more"><a href="/vaprosi/">Всички въпроси и отговори →</a></p>
+  </div>
+</section>
+
+<section class="reads">
+  <div class="in">
+    <div class="top">
+      <h2>Преди да<br />решите.</h2>
+      <p class="note">Написано, за да отговори на въпрос — не за да заеме място между две ключови думи.</p>
+    </div>
+    <div class="reads-list">
+      {ARTICLES.slice(0, 3).map((a) => (
+        <a class="read" href={`/blog/${a.slug}/`}>
+          <span class="read-lab">{a.kicker} · {a.minutes} мин</span>
+          <h3>{a.h1}</h3>
+          <p>{a.lead}</p>
+        </a>
+      ))}
+    </div>
+    <p class="srv-more"><a href="/blog/">Всички статии →</a></p>
+  </div>
+</section>
+
+<section class="cnt" id="contact">
+  <div class="in">
+    <div class="cnt-info">
+      <h2>Запази час.</h2>
+      <p class="note">Пишете ни или се обадете. Отговаряме в рамките на работния ден.</p>
+
+      <dl class="nap">
+        <dt>Адрес</dt>
+        <dd>
+          <a href={business.social.maps} target="_blank" rel="noopener noreferrer">
+            {business.address.street}, {business.address.city} {business.address.postalCode}
+          </a>
+        </dd>
+        <dt>Телефон</dt>
+        <dd><a href={`tel:${business.phone}`}>{business.phoneDisplay}</a></dd>
+        <dt>Имейл</dt>
+        <dd><a href={`mailto:${business.email}`}>{business.email}</a></dd>
+        <dt>Работно време</dt>
+        <dd>
+          {hoursText.map((h) => <span class="hrow"><b>{h.d}</b>{h.t}</span>)}
+          <span class="hrow"><b>Неделя</b>почивен ден</span>
+        </dd>
+      </dl>
+    </div>
+
+    <ContactForm />
+  </div>
+</section>
+
+<Promo />
+
+<style is:global>
+/* ── електрическите: лентата под избирача ──────────────── */
+.ev-band{padding:0 var(--gut) 104px}
+.ev-band-in{position:relative;max-width:1000px;margin:0 auto;padding:34px 36px;overflow:hidden;
+  background:#0C0C0C;border:1px solid var(--grey9);border-radius:14px;
+  display:grid;gap:22px;align-items:center}
+@media(min-width:820px){.ev-band-in{grid-template-columns:1fr auto;gap:40px}}
+.ev-band-in::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(45deg,#1A1A1A 0 1px,transparent 1px 8px);
+  -webkit-mask-image:radial-gradient(110% 90% at 100% 0,#000 0%,transparent 62%);
+  mask-image:radial-gradient(110% 90% at 100% 0,#000 0%,transparent 62%)}
+.ev-band-in > *{position:relative}
+.ev-band-kick{margin:0 0 10px;font:400 9px/1 var(--mono);letter-spacing:.3em;text-transform:uppercase;color:var(--lime)}
+.ev-band h2{margin:0;font:700 clamp(26px,3.6vw,40px)/1 var(--head);text-transform:uppercase;letter-spacing:-.015em}
+.ev-band h2 em{font-style:normal;color:var(--lime)}
+.ev-band-p{margin:12px 0 0;max-width:56ch;font:400 15px/1.6 var(--body);color:rgba(255,255,255,.7)}
+.ev-band-go{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;
+  border-radius:10px;background:var(--lime);color:#041000;white-space:nowrap;
+  font:700 11px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;transition:filter .18s}
+.ev-band-go:hover{filter:brightness(1.12)}
+@media(max-width:820px){
+  .ev-band{padding-bottom:64px}
+  .ev-band-in{padding:26px 22px}
+  .ev-band-go{width:100%}
+}
+
+/* ── хиро ──────────────────────────────────────────────── */
+.hero{position:relative;min-height:100vh;overflow:hidden;
+  background:linear-gradient(180deg,#0A1206 0%,#111B08 46%,var(--black) 100%)}
+.hero .shot{position:absolute;inset:-3%;overflow:hidden}
+.hero .shot video,.hero .shot img{width:100%;height:100%;object-fit:cover;object-position:52% 64%;
+  filter:contrast(1.2) brightness(.5) saturate(.34);opacity:.95;
+  transform:scale(1.04) translate3d(var(--px,0),var(--py,0),0);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+
+/* ── „фото режим“: подът и хоризонтът, както в играта ──────────────────── */
+.stagelines{position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background:
+    linear-gradient(transparent 0 calc(100% - 1px), rgba(82,251,9,.16) calc(100% - 1px)) 0 0/100% 62px,
+    linear-gradient(90deg, transparent 0 calc(100% - 1px), rgba(255,255,255,.045) calc(100% - 1px)) 0 0/62px 100%;
+  -webkit-mask-image:linear-gradient(180deg,transparent 42%,#000 88%,transparent 100%);
+  mask-image:linear-gradient(180deg,transparent 42%,#000 88%,transparent 100%)}
+
+/* ── HUD: ъглови скоби и мерна лента ──────────────────── */
+/* горният ръб е под лентата — иначе ъгловата скоба сечеше логото */
+.hud{position:absolute;inset:82px 22px 22px;pointer-events:none;z-index:5}
+@media(min-width:900px){.hud{inset:96px 34px 34px}}
+.cn{position:absolute;width:26px;height:26px;border:1px solid rgba(82,251,9,.5);opacity:0;
+  animation:cn-in .5s ease forwards}
+.cn.tl{top:0;left:0;border-right:0;border-bottom:0;animation-delay:.15s}
+.cn.tr{top:0;right:0;border-left:0;border-bottom:0;animation-delay:.25s}
+.cn.bl{bottom:0;left:0;border-right:0;border-top:0;animation-delay:.35s}
+.cn.br{bottom:0;right:0;border-left:0;border-top:0;animation-delay:.45s}
+@keyframes cn-in{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
+.ticks{position:absolute;left:38px;right:38px;bottom:0;height:9px;
+  background:repeating-linear-gradient(90deg, rgba(255,255,255,.28) 0 1px, transparent 1px 26px);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent)}
+
+/* лентата на мощността: стоково → след файла, като телеметрия в игра */
+.power{max-width:640px}
+.p-head{display:flex;align-items:baseline;gap:14px;margin:0 0 10px;
+  font:400 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+.p-head b{color:#fff;font-weight:400;font-size:13px}
+.p-head span:last-child b{color:var(--lime)}
+.p-mid{margin:0 auto;letter-spacing:.1em;color:rgba(255,255,255,.56)}
+@media(max-width:560px){.p-mid{display:none}}
+.p-bar{position:relative;height:7px;background:rgba(255,255,255,.06);overflow:hidden}
+/* деленията са НАД запълването, но леки — иначе изяждаха зеленото */
+.p-bar::after{content:'';position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(90deg,transparent 0 15px,rgba(8,8,8,.4) 15px 16px)}
+.p-bar i{display:block;height:100%;width:0;
+  background:linear-gradient(90deg,#2FCF06,#52FB09);
+  box-shadow:0 0 16px rgba(82,251,9,.6);transition:width 1.7s cubic-bezier(.2,.8,.2,1)}
+
+/* ── зеленият дим: тънка мъгла по дъното, не петно ────────────────────── */
+.smoke{position:absolute;left:0;right:0;bottom:0;height:46%;pointer-events:none;overflow:hidden;z-index:2;
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 62%,#000);
+  mask-image:linear-gradient(180deg,transparent,#000 62%,#000)}
+.smoke i{position:absolute;border-radius:50%;filter:blur(70px);opacity:0;
+  background:radial-gradient(circle,rgba(82,251,9,.34) 0%,rgba(5,173,2,.12) 46%,transparent 74%);
+  animation:puff 15s ease-in-out infinite}
+.smoke i:nth-child(1){width:520px;height:190px;left:-4%;bottom:-8%;animation-delay:0s}
+.smoke i:nth-child(2){width:420px;height:160px;left:24%;bottom:-12%;animation-delay:-5s}
+.smoke i:nth-child(3){width:340px;height:140px;left:50%;bottom:-10%;animation-delay:-10s}
+@keyframes puff{
+  0%{opacity:0;transform:translate3d(0,26px,0) scale(.9)}
+  40%{opacity:.75}
+  75%{opacity:.35}
+  100%{opacity:0;transform:translate3d(120px,-34px,0) scale(1.25)}}
+
+/* ── еднократно метене при зареждане, като сканиране в игра ───────────── */
+.sweep{position:absolute;inset:0;pointer-events:none;z-index:4;
+  background:linear-gradient(90deg,transparent,rgba(82,251,9,.16) 46%,rgba(82,251,9,.5) 50%,rgba(82,251,9,.16) 54%,transparent);
+  transform:translateX(-100%);animation:sweep-go 1.5s cubic-bezier(.5,0,.2,1) .35s 1}
+@keyframes sweep-go{to{transform:translateX(100%)}}
+
+/* ── въвеждащото движение на текста ──────────────────────────────────── */
+.left > *{opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) forwards}
+.left > *:nth-child(1){animation-delay:.25s}
+.left > *:nth-child(2){animation-delay:.4s}
+.left > *:nth-child(3){animation-delay:.62s}
+.deck .cell{opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) forwards}
+.deck .cell:nth-child(1){animation-delay:.7s}
+.deck .cell:nth-child(2){animation-delay:.8s}
+.deck .cell:nth-child(3){animation-delay:.9s}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+@media(prefers-reduced-motion:reduce){
+  .smoke i,.sweep,.cn,.left > *,.deck .cell{animation:none;opacity:1;transform:none}
+  .hero .shot video{display:none}
+  .hero .shot{background:url(/img/pdk-hero.jpg) center/cover no-repeat}
+  .g-val{transition:none}
+}
+
+.inner{position:relative;z-index:10;min-height:100vh;display:flex;flex-direction:column;
+  justify-content:space-between;padding:120px var(--gut) 54px;gap:40px}
+@media(min-width:1000px){.inner{flex-direction:row;align-items:stretch;padding-top:130px}}
+.left{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-between;gap:38px}
+
+/* жива точка + моно надпис — от Experience Hero */
+.live{display:flex;align-items:center;gap:11px}
+.dot{position:relative;width:9px;height:9px;border-radius:50%;background:var(--lime)}
+.dot::after{content:'';position:absolute;inset:0;border-radius:50%;background:var(--lime);animation:ping 1.9s cubic-bezier(0,0,.2,1) infinite}
+@keyframes ping{75%,100%{transform:scale(2.6);opacity:0}}
+.live span{font:400 10px/1 var(--mono);font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+
+.eyebrow{font:italic 400 clamp(15px,1.4vw,19px)/1.4 var(--body);color:rgba(255,255,255,.72);
+  margin:0 0 16px;text-shadow:0 1px 12px rgba(8,8,8,.95)}
+h1{margin:0;font-family:var(--head);font-weight:700;--stroke:2px;
+  font-size:clamp(2.9rem,10.4vw,9.5rem);line-height:1.02;letter-spacing:-.022em;text-transform:uppercase}
+/* Стъпаловидно: изречението е подстъп на един по-дребен ред, думата е кулминацията.
+   Трите равни реда се слепваха един върху друг — това дава йерархия и въздух. */
+h1 .lead{display:block;font-size:.46em;line-height:1.12;letter-spacing:.02em;color:rgba(255,255,255,.9)}
+@media(min-width:900px){h1{--stroke:3px}}
+/* Вторият ред е КОНТУР (ходът е от Experience Hero, цветът от таблото).
+   -webkit-text-stroke рисува линията ЦЕНТРИРАНО върху буквата — половината излиза
+   навън и редът увисва наляво спрямо запълнените. Отместваме с половин дебелина,
+   за да застанат трите реда на една вертикала. Разредката е малко по-широка,
+   защото при контур съседните букви се слепват. */
+h1 .out{display:block;color:transparent;-webkit-text-stroke:var(--stroke) var(--lime);
+  paint-order:stroke fill;margin-left:calc(var(--stroke) / 2);letter-spacing:-.008em;margin-top:.1em}
+.sub{margin:30px 0 0;font:400 10px/1.9 var(--mono);letter-spacing:.34em;text-transform:uppercase;
+  color:rgba(255,255,255,.72);max-width:52ch;text-shadow:0 1px 12px rgba(8,8,8,.95)}
+
+.cta{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+.circle{display:flex;align-items:center;gap:18px;cursor:pointer}
+.circle i{width:62px;height:62px;border-radius:50%;border:1px solid rgba(255,255,255,.18);
+  display:grid;place-items:center;transition:.45s}
+.circle:hover i{background:var(--lime);border-color:var(--lime)}
+.circle svg{stroke:var(--white);transition:.45s}
+.circle:hover svg{stroke:#041000}
+.circle b{font:400 10px/1 var(--mono);font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.tel{display:inline-flex;align-items:center;min-height:44px;
+  font:400 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.tel b{color:var(--white);font-weight:400}
+
+/* командните клетки — от Experience Hero, съдържанието е нашето */
+.deck{width:100%;display:flex;flex-direction:column;gap:14px;justify-content:center}
+@media(min-width:1000px){.deck{width:340px;flex:0 0 340px}}
+@media(min-width:1240px){.deck{width:390px;flex:0 0 390px}}
+.cell{padding:24px 26px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);
+  backdrop-filter:blur(12px);border-radius:2px}
+.cell .id{display:block;margin-bottom:14px;font:400 9px/1 var(--mono);letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(255,255,255,.62)}
+.cell .row{display:flex;align-items:flex-end;gap:9px}
+.cell .track{margin-left:auto;margin-bottom:9px}
+/* Беше <h4>. Числото е СТОЙНОСТ, не заглавие — като заглавие правеше скок
+   h1 → h4 на началната и обявяваше раздел, който не съществува. */
+.cell .cell-val{display:block;margin:0;font:700 clamp(30px,3.2vw,42px)/1 var(--head);
+  letter-spacing:-.02em;color:var(--lime);font-variant-numeric:tabular-nums}
+.cell .unit{font:400 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.62);padding-bottom:5px}
+.track{height:2px;width:84px;background:rgba(255,255,255,.08);overflow:hidden}
+.track i{display:block;height:100%;background:var(--lime);width:62%}
+.cell .kv{display:flex;justify-content:space-between;font:400 10px/1 var(--mono);color:rgba(255,255,255,.62);padding:9px 0}
+.cell .kv + .kv{border-top:1px solid rgba(255,255,255,.06)}
+.cell .kv b{color:var(--white);font-weight:400}
+
+/* ── стената: подредбата САМА казва „леки, камиони, селскостопански“ —
+      три реда с етикет отляво, вместо заглавие, увиснало в средата. ─────────── */
+.wall{padding:84px var(--gut) 96px;content-visibility:auto;contain-intrinsic-size:auto 900px}
+.wall-in{max-width:1180px;margin:0 auto}
+.wall-head{display:flex;align-items:baseline;gap:20px;flex-wrap:wrap;margin:0 0 40px;
+  padding-bottom:18px;border-bottom:1px solid var(--grey9)}
+.kick{margin:0;font:400 10px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+.wall-sum{margin:0 0 0 auto;font:400 12px/1 var(--mono);color:rgba(255,255,255,.62)}
+.wall-sum b{color:var(--lime);font-weight:400}
+
+.row{display:grid;grid-template-columns:1fr;gap:18px;padding:26px 0;border-bottom:1px solid var(--grey9)}
+@media(min-width:820px){.row{grid-template-columns:220px 1fr;gap:34px;align-items:center;padding:30px 0}}
+.row:last-child{border-bottom:0}
+.row-lab h3{margin:0 0 6px;font:700 24px/1 var(--head);text-transform:uppercase;letter-spacing:.01em}
+/* етикетът отляво вече води към категорийната страница, а не е мъртъв надпис */
+.row-lab h3 a{border-bottom:1px solid transparent;transition:color .18s,border-color .18s}
+.row-lab h3 a:hover{color:var(--lime);border-bottom-color:rgba(82,251,9,.5)}
+.row-lab span{font:400 11px/1.5 var(--mono);color:rgba(255,255,255,.56)}
+
+/* „виж всичко“ — на дъното на стената и под всяка решетка от плочки */
+.wall-more,.srv-more{margin:26px 0 0}
+.wall-more a,.srv-more a{display:inline-flex;align-items:center;min-height:44px;
+  font:400 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--lime);
+  border-bottom:1px solid rgba(82,251,9,.35);transition:border-color .18s}
+.wall-more a:hover,.srv-more a:hover{border-bottom-color:var(--lime)}
+@media(pointer:coarse){.wall-more a,.srv-more a{min-height:48px}}
+/* Плочките на марките (.row-marks/.mark) живеят в MarkGrid.astro —
+   ползват ги и стоте страници на марките, затова не стоят тук. */
+
+.more{padding:22px 0 30px;border-bottom:1px solid var(--grey9)}
+@media(min-width:820px){.more{padding-left:254px}}
+#moreBtn{display:inline-flex;align-items:center;gap:12px;cursor:pointer;min-height:44px;
+  padding:12px 20px;border:1px solid var(--grey9);border-radius:999px;background:none;
+  font:400 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(255,255,255,.72);transition:.18s}
+#moreBtn:hover{border-color:rgba(82,251,9,.45);color:#fff}
+#moreBtn i{width:7px;height:7px;border-right:1.5px solid var(--lime);border-bottom:1.5px solid var(--lime);
+  transform:rotate(45deg) translate(-2px,-2px);transition:transform .22s}
+#moreBtn[aria-expanded="true"] i{transform:rotate(-135deg) translate(-2px,-2px)}
+.rest{margin-top:20px}
+
+/* ── услуги и въпроси — от Feature Velocity ───────────────────────── */
+.srv,.faq{position:relative;padding:96px var(--gut) 104px;overflow:hidden;
+  content-visibility:auto;contain-intrinsic-size:auto 1100px}
+.faq{padding-top:0}
+/* диагоналните косъм-линии с радиална маска са техни; цветът е нашият */
+.srv::before{content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(45deg,#1A1A1A 0px 1px,transparent 1px 8px);
+  -webkit-mask-image:radial-gradient(ellipse 80% 50% at 50% 0%,#000 70%,transparent 110%);
+  mask-image:radial-gradient(ellipse 80% 50% at 50% 0%,#000 70%,transparent 110%)}
+.srv .in,.faq .in,.cnt .in{position:relative;z-index:2;max-width:1160px;margin:0 auto}
+.srv .top,.faq .top{display:flex;flex-direction:column;gap:26px;justify-content:space-between;
+  border-bottom:1px solid var(--grey9);padding-bottom:40px;margin-bottom:56px}
+@media(min-width:860px){.srv .top,.faq .top{flex-direction:row;align-items:flex-end;gap:48px}}
+.srv h2,.faq h2,.cnt h2{margin:0;font:700 clamp(2.4rem,5.2vw,4.4rem)/.94 var(--head);
+  letter-spacing:-.025em;text-transform:uppercase}
+.srv .note,.faq .note,.cnt .note{margin:0;max-width:22rem;font:400 10px/1.85 var(--mono);
+  letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+.tiles{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:700px){.tiles{grid-template-columns:1fr 1fr}}
+@media(min-width:1060px){.tiles{grid-template-columns:repeat(3,1fr)}}
+.tile{position:relative;display:block;overflow:hidden;padding:38px 34px 34px;
+  background:#0C0C0C;border:1px solid var(--grey9);border-radius:14px;transition:border-color .5s}
+.tile:hover{border-color:rgba(82,251,9,.45)}
+.tile .wash{position:absolute;inset:0;opacity:0;transition:opacity .7s;
+  background:linear-gradient(135deg,rgba(82,251,9,.16) 0%,transparent 62%)}
+.tile:hover .wash{opacity:1}
+.tile .body{position:relative;z-index:2;display:flex;flex-direction:column;gap:52px}
+.tile .ic{width:54px;height:54px;border-radius:14px;background:rgba(255,255,255,.07);display:grid;place-items:center}
+.tile .ic svg{width:24px;height:24px;stroke:var(--lime);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.tile .lab{display:block;margin-bottom:12px;font:400 10px/1 var(--mono);letter-spacing:.3em;
+  text-transform:uppercase;color:rgba(255,255,255,.62)}
+.tile h3{margin:0 0 10px;font:700 clamp(22px,2.2vw,29px)/1.05 var(--head);letter-spacing:-.015em;text-transform:uppercase}
+.tile p{margin:0;font:400 13px/1.6 var(--mono);color:rgba(255,255,255,.66)}
+.tile p b{color:var(--lime);font-weight:400}
+/* ясното действие на плочката — преди картата водеше към „#“ и не правеше нищо */
+.tile-go{display:inline-block;margin-top:18px;font:400 10px/1 var(--mono);letter-spacing:.2em;
+  text-transform:uppercase;color:var(--lime);opacity:.85;transition:opacity .2s}
+.tile:hover .tile-go{opacity:1}
+
+/* ── въпросите ─────────────────────────────────────────── */
+.qa{max-width:900px}
+.qa details{border-bottom:1px solid var(--grey9)}
+.qa summary{display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:22px 0;min-height:48px;cursor:pointer;list-style:none;
+  font:700 clamp(17px,1.9vw,21px)/1.3 var(--head);text-transform:uppercase;letter-spacing:.005em;
+  transition:color .18s}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary h3{margin:0;font:inherit;color:inherit;text-transform:inherit;letter-spacing:inherit}
+.qa summary:hover{color:var(--lime)}
+.qa summary i{flex:0 0 auto;width:11px;height:11px;position:relative}
+.qa summary i::before,.qa summary i::after{content:'';position:absolute;background:var(--lime);
+  transition:transform .22s,opacity .22s}
+.qa summary i::before{left:0;right:0;top:5px;height:1.5px}
+.qa summary i::after{top:0;bottom:0;left:5px;width:1.5px}
+.qa details[open] summary i::after{transform:scaleY(0);opacity:0}
+.qa .ans{padding:0 0 26px;max-width:62ch}
+.qa .ans p{margin:0;font:400 15px/1.65 var(--body);color:rgba(255,255,255,.72)}
+
+/* ── статиите: три реда, не картички — тук текстът е стоката ────────────── */
+.reads{position:relative;padding:0 var(--gut) 96px;content-visibility:auto;contain-intrinsic-size:auto 700px}
+.reads .in{position:relative;z-index:2;max-width:1160px;margin:0 auto}
+.reads .top{display:flex;flex-direction:column;gap:26px;justify-content:space-between;
+  border-bottom:1px solid var(--grey9);padding-bottom:40px;margin-bottom:20px}
+@media(min-width:860px){.reads .top{flex-direction:row;align-items:flex-end;gap:48px}}
+.reads h2{margin:0;font:700 clamp(2.4rem,5.2vw,4.4rem)/.94 var(--head);letter-spacing:-.025em;text-transform:uppercase}
+.reads .note{margin:0;max-width:22rem;font:400 10px/1.85 var(--mono);letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(255,255,255,.62)}
+.reads-list{display:grid;gap:0}
+.read{display:block;padding:28px 0;border-bottom:1px solid var(--grey9);transition:padding-left .25s}
+.read:hover{padding-left:14px}
+.read-lab{display:block;margin-bottom:10px;font:400 10px/1 var(--mono);letter-spacing:.22em;
+  text-transform:uppercase;color:var(--lime)}
+.read h3{margin:0 0 8px;font:700 clamp(19px,2.2vw,26px)/1.12 var(--head);
+  letter-spacing:-.016em;text-transform:uppercase;transition:color .18s}
+.read:hover h3{color:var(--lime)}
+.read p{margin:0;max-width:62ch;font:400 15px/1.62 var(--body);color:rgba(255,255,255,.7)}
+@media(max-width:760px){
+  .reads{padding:0 var(--gut) 64px}
+  .reads .top{padding-bottom:28px;margin-bottom:12px}
+  .read{padding:22px 0}
+}
+
+/* ── контакти и форма ──────────────────────────────────── */
+.cnt{padding:0 var(--gut) 104px}
+.cnt .in{display:grid;gap:44px;grid-template-columns:1fr}
+@media(min-width:940px){.cnt .in{grid-template-columns:1fr 1.15fr;gap:64px;align-items:start}}
+.cnt .note{margin:18px 0 34px;max-width:26rem}
+
+.nap{margin:0;display:grid;grid-template-columns:auto;gap:0}
+.nap dt{margin-top:22px;font:400 10px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--lime)}
+.nap dt:first-child{margin-top:0}
+.nap dd{margin:8px 0 0;font:400 15px/1.6 var(--body);color:rgba(255,255,255,.82)}
+.nap dd a{display:inline-flex;align-items:center;min-height:44px;
+  border-bottom:1px solid rgba(255,255,255,.2);transition:color .18s,border-color .18s}
+.nap dd a:hover{color:var(--lime);border-bottom-color:rgba(82,251,9,.6)}
+.hrow{display:flex;gap:14px;font:400 13px/2 var(--mono);color:rgba(255,255,255,.72)}
+.hrow b{min-width:11rem;font-weight:400;color:rgba(255,255,255,.56)}
+@media(max-width:420px){.hrow b{min-width:9rem}}
+
+/* Формата (.form/.fld/.fmsg…) живее в ContactForm.astro — ползва я и /kontakti/. */
+
+/* Избирачът (.pick/.panel/.cols/.col/.pf…) живее в Picker.astro, заедно с
+   правилата си за тесен екран — ползват го и каталогът, и марките. */
+
+/* ══════════════════════════════════════════════════════════════════════════
+   ТЕСНИТЕ ЕКРАНИ
+   Мерено с iframe на 375 / 414 / 768 / 1024 (смяната на размера на прозореца
+   лъже — innerWidth не се променя). Оправя се това, което наистина се чупеше.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ── хиро ────────────────────────────────────────────────────────────────── */
+@media(max-width:999px){
+  .inner{padding-top:96px;padding-bottom:44px;gap:34px}
+  .left{gap:28px}
+  .deck{gap:12px}
+  .cell{padding:18px 20px}
+  .cta{gap:18px}
+}
+@media(min-width:561px) and (max-width:999px){
+  /* трите клетки: две горе, третата през цялата ширина */
+  .deck{display:grid;grid-template-columns:1fr 1fr;width:100%;flex:none}
+  .cell:last-child{grid-column:1 / -1}
+}
+@media(max-width:400px){
+  .live span{font-size:9px;letter-spacing:.16em}
+  .sub{letter-spacing:.24em}
+  .circle i{width:54px;height:54px}
+}
+
+/* ── стената на тесен екран ─────────────────────────────────────────────── */
+@media(max-width:760px){
+  .wall{padding:56px var(--gut) 64px}
+  .wall-head{margin-bottom:26px}
+  .row{padding:22px 0;gap:14px}
+  .row-lab h3{font-size:20px}
+}
+
+/* ── услугите, въпросите и контактите ───────────────────────────────────── */
+@media(max-width:760px){
+  .srv{padding:64px var(--gut) 72px}
+  .faq{padding:0 var(--gut) 72px}
+  .cnt{padding:0 var(--gut) 72px}
+  .srv .top,.faq .top{padding-bottom:28px;margin-bottom:32px}
+  .tile{padding:28px 24px}
+  .tile .body{gap:34px}
+}
+
+/* ── с пръст всяко копче е поне 48px; на мишка плътността остава одобрената ── */
+@media(pointer:coarse){
+  #moreBtn{min-height:48px}
+  .tel{min-height:48px}
+  .nap dd a{min-height:48px}
+}
+</style>
+
+<script>
+// ── хирото: числата се навъртат, стрелката мете, кадърът се движи с показалеца ──
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const STOCK = 190, TUNED = 220, MAXHP = 400;   // примерът в хироту
+
+const ease = (k: number) => 1 - Math.pow(1 - k, 3);
+// В скрит таб requestAnimationFrame спира — без това числата увисват на нула,
+// ако страницата е отворена на заден план. Тогава просто показваме крайното.
+const run = (ms: number, step: (k: number) => void) => {
+  if (reduce || document.hidden) { step(1); return; }
+  const t0 = performance.now();
+  const tick = (now: number) => {
+    if (document.hidden) { step(1); return; }
+    const k = Math.min(1, (now - t0) / ms);
+    step(ease(k));
+    if (k < 1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+};
+
+setTimeout(() => {
+  document.querySelectorAll<HTMLElement>('[data-to]').forEach((el, i) => {
+    const to = Number(el.dataset.to);
+    setTimeout(() => run(1400, (e) => { el.textContent = '+' + Math.round(to * e); }), i * 130);
+  });
+
+  const g = document.getElementById('gval');
+  if (g) g.style.width = (TUNED / MAXHP * 100) + '%';
+  const num = document.getElementById('gnum');
+  if (num) run(1800, (e) => { num.textContent = String(Math.round(STOCK + (TUNED - STOCK) * e)); });
+}, 700);
+
+// ── видеото се закача СЛЕД като страницата е готова: то тежи ~400 KB и не бива
+//    да се състезава с шрифтовете и текста за първото рисуване. Докато го няма,
+//    се вижда плакатът. При пестене на данни, бавна връзка или изключено
+//    движение изобщо не се тегли.
+(() => {
+  const v = document.getElementById('shot') as HTMLVideoElement | null;
+  if (!v) return;
+  const c = (navigator as any).connection || {};
+  const slow = c.saveData === true || /^(slow-)?2g$/.test(c.effectiveType || '') || c.effectiveType === '3g';
+  if (reduce || slow) return;                 // остава плакатът
+  const start = () => {
+    for (const [src, type] of [['/img/pdk-hero.webm', 'video/webm'], ['/img/pdk-hero.mp4', 'video/mp4']]) {
+      const s = document.createElement('source'); s.src = src; s.type = type; v.appendChild(s);
+    }
+    v.preload = 'auto'; v.load();
+    v.play().catch(() => {});                 // ако браузърът откаже — плакатът остава
+  };
+  if ('requestIdleCallback' in window) requestIdleCallback(start, { timeout: 2500 });
+  else addEventListener('load', () => setTimeout(start, 400));
+})();
+
+// дълбочина: кадърът се измества съвсем малко след показалеца
+if (!reduce && matchMedia('(pointer:fine)').matches) {
+  const hero = document.querySelector('.hero') as HTMLElement;
+  const shot = document.getElementById('shot') as HTMLElement;
+  hero.addEventListener('pointermove', (e) => {
+    const r = hero.getBoundingClientRect();
+    shot.style.setProperty('--px', ((e.clientX - r.left) / r.width - .5) * -18 + 'px');
+    shot.style.setProperty('--py', ((e.clientY - r.top) / r.height - .5) * -12 + 'px');
+  });
+  hero.addEventListener('pointerleave', () => {
+    shot.style.setProperty('--px', '0px'); shot.style.setProperty('--py', '0px');
+  });
+}
+</script>
+
+<script>
+// Стената: останалите марки се отварят с копчето. Останалите скриптове на тази
+// страница вече са в компонентите — избирачът в Picker.astro, формата в
+// ContactForm.astro.
+const moreBtn = document.getElementById('moreBtn');
+if (moreBtn) moreBtn.onclick = () => {
+  const box = document.getElementById('carsRest')!;
+  const open = box.hidden;
+  box.hidden = !open;
+  moreBtn.setAttribute('aria-expanded', String(open));
+  moreBtn.querySelector('span')!.textContent = open ? 'Скрий останалите' : `Още ${box.children.length} марки`;
+};
+</script>
+</Base>
