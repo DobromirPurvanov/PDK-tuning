@@ -1,0 +1,170 @@
+---
+/**
+ * УСТРОЙСТВОТО PDK FLASHER — своя страница.
+ *
+ * Раздел `/elektricheski/` продава пакет за конкретен модел. Тази страница
+ * обяснява САМОТО устройство: какво е, как се ползва и какво още може извън
+ * записа на файл. Двете се препращат, но не се преписват — стъпките живеят
+ * тук и се внасят там, за да не се разминат един ден.
+ *
+ * Копчетата към двата магазина се рисуват САМО ако адресите са попълнени в
+ * business.json. Празно поле значи липсващо копче, а не копче към нищото.
+ */
+import Page from '../layouts/Page.astro';
+import { BUSINESS as b } from '../config/site';
+import { EV_COUNT, EV_BY_BRAND } from '../data/ev';
+import { crumbSchema, faqSchema, bizRef } from '../lib/seo';
+import { FLASHER_STEPS, FLASHER_APP } from '../data/flasher';
+
+const site = Astro.site!.href.replace(/\/$/, '');
+const crumbs = [{ href: '/pdk-flasher/', label: 'PDK Flasher' }];
+const brands = EV_BY_BRAND.map((x) => x.name).join(', ');
+
+const apps = [
+  { href: b.apps?.ios, label: 'App Store', note: 'iPhone и iPad' },
+  { href: b.apps?.android, label: 'Google Play', note: 'Android' },
+].filter((a) => a.href);
+
+const faq = [
+  {
+    q: 'За кои автомобили работи?',
+    a: `Днес продаваме готови пакети за електрически автомобили на ${brands} — ${EV_COUNT} модела. За автомобил с двигател с горене устройството също се използва, но работата се уговаря след диагностика.`,
+  },
+  {
+    q: 'Трябва ли ми компютър?',
+    a: 'Не. Четенето, изпращането, получаването и записът стават от телефона през приложението. Компютър не участва никъде в процеса.',
+  },
+  {
+    q: 'Какво става, ако записът прекъсне?',
+    a: 'Приложението следи процеса и не позволява запис при ниско напрежение. Ако нещо все пак прекъсне, екипът ни се включва отдалечено — затова чатът е вътре в приложението, а не на друго място.',
+  },
+  {
+    q: 'Устройството остава ли мое?',
+    a: 'Да. Купувате го веднъж и остава ваше. С него връщате оригиналния файл по всяко време, без да ни търсите за среща.',
+  },
+  {
+    q: 'Мога ли да го ползвам за втора кола?',
+    a: 'Устройството — да. Файлът — не: той се прави за конкретния блок на конкретния автомобил. За втора кола се подготвя нов файл.',
+  },
+];
+
+const schema = [
+  bizRef(site),
+  crumbSchema(site, [{ href: '/', label: 'Начало' }, ...crumbs]),
+  faqSchema(faq),
+];
+---
+<Page
+  title="PDK Flasher — тунинг през телефона | PDK Tuning"
+  description="Multi-brand OBD-II устройство и приложение: четете оригиналния софтуер, ние подготвяме файла, вие го записвате. Без посещение в сервиз, от всяка точка на света."
+  kicker="Устройството"
+  heading="PDK Flasher"
+  lead="Професионален тунинг, направен през телефона ви. От всяка точка на света, с наш човек от другата страна."
+  crumbs={crumbs}
+  schema={schema}
+  ctaTitle="Кажи ни колата."
+  ctaText="Ще ви кажем какво излиза от нея и дали изобщо си струва. Ако не си струва, ще го чуете от нас."
+>
+  <div class="p-wrap">
+    <section class="p-sec">
+      <div class="p-split">
+        <div class="p-prose">
+          <h2>Какво е</h2>
+          <p>
+            Multi-brand OBD-II устройство, което влиза в диагностичния куплунг на автомобила
+            и се управлява от приложението на телефона ви. През него се чете оригиналният
+            софтуер и през него се записва подготвеният от нас файл.
+          </p>
+          <p>
+            Разликата с обичайния ред е къде стои колата. Не при нас на подемника, а при вас —
+            пред блока, на паркинга, в двора. Работата по файла си остава наша и я върши човек,
+            а не автомат.
+          </p>
+          <h2>Какво НЕ прави</h2>
+          <p>
+            Не измисля файл сам и не сваля готов от папка. Не прави записа невидим за
+            официалния сервиз — броячът на блока пази следа. И не заменя диагностиката: ако
+            автомобилът има повреда, тя се вижда в логовете и работата спира дотам.
+          </p>
+        </div>
+
+        <aside class="p-facts">
+          <h2>Накратко</h2>
+          <dl>
+            <dt>Връзка с колата</dt><dd>OBD-II, диагностичен куплунг</dd>
+            <dt>Управление</dt><dd>Приложение за телефон</dd>
+            <dt>Нужен компютър</dt><dd>Не</dd>
+            <dt>Готови пакети</dt><dd>{EV_COUNT} електрически модела</dd>
+            <dt>Оригиналният файл</dt><dd>Архивира се и се връща от вас</dd>
+          </dl>
+          {apps.length > 0 && (
+            <div class="fl-apps">
+              {apps.map((a) => (
+                <a href={a.href} target="_blank" rel="noopener noreferrer">
+                  <b>{a.label}</b><span>{a.note}</span>
+                </a>
+              ))}
+            </div>
+          )}
+        </aside>
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <h2>Как работи</h2>
+      <div class="p-steps">
+        {FLASHER_STEPS.map((s) => (
+          <div class="p-step">
+            <div><h3>{s.t}</h3><p>{s.d}</p></div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <h2>Всичко необходимо в едно приложение</h2>
+      <p class="p-note">
+        С PDK Flasher получавате повече от устройство за програмиране.
+      </p>
+      <div class="p-steps">
+        {FLASHER_APP.map((a) => (
+          <div class="p-step">
+            <div><h3>{a.t}</h3><p>{a.d}</p></div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <h2>Откъде се купува</h2>
+      <p class="p-note">
+        Днес готовите пакети са за електрически автомобили — {EV_COUNT} модела на {brands}.
+        Изберете своя и цената излиза веднага.
+      </p>
+      <p class="p-prose">
+        <a href="/elektricheski/">Виж моделите и цените →</a>
+      </p>
+    </section>
+
+    <section class="p-sec">
+      <h2>Въпроси</h2>
+      <div class="p-qa">
+        {faq.map((f, i) => (
+          <details name="flfaq" open={i === 0}>
+            <summary><h3>{f.q}</h3><i aria-hidden="true"></i></summary>
+            <div class="ans"><p>{f.a}</p></div>
+          </details>
+        ))}
+      </div>
+    </section>
+  </div>
+</Page>
+
+<style>
+.fl-apps{display:grid;gap:10px;margin-top:20px;padding-top:18px;border-top:1px solid var(--grey9)}
+.fl-apps a{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  min-height:52px;padding:0 18px;border:1px solid var(--grey9);border-radius:10px;transition:.16s}
+.fl-apps a:hover{border-color:var(--lime)}
+.fl-apps b{font:700 13px/1 var(--head);text-transform:uppercase;letter-spacing:.06em}
+.fl-apps span{font:400 10px/1 var(--mono);color:rgba(255,255,255,.56)}
+</style>

@@ -1,0 +1,71 @@
+---
+/**
+ * Главата на всяка страница — едно място за заглавие, описание, каноникъл,
+ * споделяне и икони. Нито една страница не пише мета тагове сама.
+ *
+ * Каноникълът се смята от `site` в astro.config.mjs, а НЕ от адреса, на който
+ * страницата е отворена — така макетът никога не сочи към localhost.
+ */
+import { SITE, INDEXABLE } from '../config/site';
+
+interface Props {
+  title: string;
+  description: string;
+  /** снимка за споделяне, ако страницата има своя */
+  image?: string;
+  /** `article` за текстовите страници, `website` за началната */
+  ogType?: 'website' | 'article';
+  /** страници, които никога не се индексират (404) — независимо от флага */
+  noindex?: boolean;
+  /** структурирани данни; всеки обект се изписва като отделен JSON-LD блок */
+  schema?: Record<string, unknown>[];
+}
+
+const { title, description, image = SITE.ogImage, ogType = 'website', noindex = false, schema = [] } = Astro.props;
+
+// „/privacy" → „/privacy/" — билдът вади папки, каноникълът трябва да е същият адрес
+const path = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
+const canonical = new URL(path, Astro.site).href;
+const ogImage = new URL(image, Astro.site).href;
+const robots = noindex || !INDEXABLE ? 'noindex, nofollow' : 'index, follow, max-image-preview:large';
+---
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<title>{title}</title>
+<meta name="description" content={description} />
+{/* 404 няма собствен адрес — каноникъл към „/404/“ би сочил страница, която не е съдържание */}
+{!noindex && <link rel="canonical" href={canonical} />}
+<meta name="robots" content={robots} />
+
+<meta property="og:site_name" content={SITE.name} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:type" content={ogType} />
+<meta property="og:locale" content={SITE.locale} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:secure_url" content={ogImage} />
+<meta property="og:image:alt" content={SITE.ogImageAlt} />
+<meta property="og:image:type" content={SITE.ogImageType} />
+<meta property="og:image:width" content={String(SITE.ogImageW)} />
+<meta property="og:image:height" content={String(SITE.ogImageH)} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+<meta name="twitter:image:alt" content={SITE.ogImageAlt} />
+{/* Марката няма профил в X — `twitter:site` се изписва само ако бъде попълнен
+    в site.ts. Празен или измислен хендъл е по-лош от липсващ. */}
+{SITE.twitterHandle && <meta name="twitter:site" content={SITE.twitterHandle} />}
+{SITE.twitterHandle && <meta name="twitter:creator" content={SITE.twitterHandle} />}
+
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" sizes="180x180" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta name="theme-color" content={SITE.themeColor} />
+<meta name="apple-mobile-web-app-title" content={SITE.name} />
+
+{schema.map((s) => <script type="application/ld+json" is:inline set:html={JSON.stringify(s)} />)}

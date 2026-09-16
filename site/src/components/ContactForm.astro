@@ -1,0 +1,187 @@
+---
+/**
+ * ФОРМАТА ЗА ЗАПИТВАНЕ.
+ *
+ * Изнесена от началната, защото сега стои и на `/kontakti/`. Две копия на един
+ * и същ скрипт е начинът един ден да се окажат две различни проверки.
+ *
+ * Праща на `/api/contact` в public/_worker.js → Resend. Без ключовете в средата
+ * работникът връща `not-configured` (503) и страницата казва честно „не е
+ * свързана, обадете се" — вместо да покаже фалшив успех.
+ *
+ * Защитата е в четири пласта и трите от тях са на СЪРВЪРА: примамка `pdk_extra`
+ * (нарочно НЕ „website“ — мениджърите на пароли пълнят такова поле и режат
+ * истински хора), праг от две секунди, проверка на произхода и 5 заявки на час
+ * от адрес.
+ */
+import { SERVICES } from '../data/services';
+// Стиловете на полетата са общи с поръчката за електрически — src/styles/form.css.
+import '../styles/form.css';
+
+interface Props {
+  /** заглавие над формата; на началната то е на секцията, не тук */
+  heading?: string;
+}
+const { heading } = Astro.props;
+---
+<form class="form" id="cform" novalidate>
+  {heading && <h2 class="fhead">{heading}</h2>}
+
+  <div class="f2">
+    <p class="fld">
+      <label for="f-name">Име <span aria-hidden="true">*</span></label>
+      <input id="f-name" name="name" type="text" required autocomplete="name" maxlength="80" />
+      <span class="err" id="e-name" hidden>Моля, напишете името си.</span>
+    </p>
+    <p class="fld">
+      <label for="f-phone">Телефон <span aria-hidden="true">*</span></label>
+      <input id="f-phone" name="phone" type="tel" required autocomplete="tel" maxlength="30" inputmode="tel" />
+      <span class="err" id="e-phone" hidden>Трябва ни телефон, за да отговорим.</span>
+    </p>
+  </div>
+
+  <div class="f2">
+    <p class="fld">
+      <label for="f-email">Имейл</label>
+      <input id="f-email" name="email" type="email" autocomplete="email" maxlength="120" />
+      <span class="err" id="e-email" hidden>Проверете адреса — липсва @ или домейн.</span>
+    </p>
+    <p class="fld">
+      <label for="f-service">Услуга</label>
+      <select id="f-service" name="service">
+        <option value="">— изберете —</option>
+        {SERVICES.map((s) => <option value={s.name}>{s.name}</option>)}
+        <option value="Друго">Друго</option>
+      </select>
+    </p>
+  </div>
+
+  <p class="fld">
+    <label for="f-car">Автомобил</label>
+    <input id="f-car" name="car" type="text" maxlength="120"
+           placeholder="Марка, модел, година, двигател" />
+    <span class="hint">Попълва се само̀, ако сте минали през избирача в каталога.</span>
+  </p>
+
+  <p class="fld">
+    <label for="f-msg">Съобщение</label>
+    <textarea id="f-msg" name="message" rows="4" maxlength="1500"></textarea>
+  </p>
+
+  <p class="fld check">
+    <input id="f-gdpr" name="gdpr" type="checkbox" required />
+    <label for="f-gdpr">
+      Съгласен съм данните ми да бъдат обработени, за да получа отговор.
+      <a href="/privacy/">Политика за поверителност</a>. <span aria-hidden="true">*</span>
+    </label>
+    <span class="err" id="e-gdpr" hidden>Без съгласие не можем да обработим запитването.</span>
+  </p>
+
+  {/* примамка за роботи: истински човек не я вижда и не я попълва */}
+  <p class="trap" aria-hidden="true">
+    <label for="f-web">Не попълвайте това поле</label>
+    <input id="f-web" name="pdk_extra" type="text" tabindex="-1" autocomplete="off" />
+  </p>
+
+  <div class="fsub">
+    <button type="submit" class="send" id="fsend">Изпрати запитване</button>
+    <span class="fnote">Полетата със <span aria-hidden="true">*</span> са задължителни.</span>
+  </div>
+
+  <p class="fmsg ok" id="fok" role="status" hidden></p>
+  <p class="fmsg bad" id="fbad" role="alert" hidden></p>
+</form>
+
+<script>
+// Проверява се и тук, и на сървъра (public/_worker.js). Копчето се заключва,
+// докато трае заявката, а резултатът се казва с думи — не с мълчание.
+const form = document.getElementById('cform') as HTMLFormElement | null;
+if (form) {
+  const send = document.getElementById('fsend') as HTMLButtonElement;
+  const ok = document.getElementById('fok')!;
+  const bad = document.getElementById('fbad')!;
+  const opened = Date.now();
+
+  const field = (id: string) => document.getElementById('f-' + id) as HTMLInputElement;
+  const errBox = (id: string) => document.getElementById('e-' + id)!;
+
+  // Избирачът на друга страница праща избраното в адреса. Пренасяме го в полето,
+  // за да не се набира наум — но с ограничение по дължина, защото стойността
+  // идва отвън.
+  const car = new URLSearchParams(location.search).get('car');
+  if (car) {
+    (field('car') as HTMLInputElement).value = car.slice(0, 120);
+    history.replaceState(null, '', location.pathname + location.hash);
+  }
+
+  const setErr = (id: string, on: boolean) => {
+    const el = field(id), box = errBox(id);
+    box.hidden = !on;
+    el.setAttribute('aria-invalid', String(on));
+    if (on) el.setAttribute('aria-describedby', box.id); else el.removeAttribute('aria-describedby');
+  };
+
+  const checks: Record<string, () => boolean> = {
+    name: () => field('name').value.trim().length >= 2,
+    phone: () => field('phone').value.replace(/[^\d+]/g, '').length >= 6,
+    email: () => { const v = field('email').value.trim(); return !v || /^[^@\s]+@[^@\s.]+\.[a-z]{2,}$/i.test(v); },
+    gdpr: () => field('gdpr').checked,
+  };
+
+  // проверката на едно поле става, щом човекът го напусне — не по време на писане
+  for (const id of Object.keys(checks)) {
+    field(id).addEventListener('blur', () => setErr(id, !checks[id]()));
+    field(id).addEventListener('input', () => { if (!errBox(id).hidden) setErr(id, !checks[id]()); });
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    ok.hidden = true; bad.hidden = true;
+
+    let first: string | null = null;
+    for (const id of Object.keys(checks)) {
+      const good = checks[id]();
+      setErr(id, !good);
+      if (!good && !first) first = id;
+    }
+    if (first) { field(first).focus(); return; }
+
+    const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
+    data.elapsed = String(Date.now() - opened);
+    data.page = location.pathname;   // от коя страница е дошло запитването
+
+    send.disabled = true;
+    const label = send.textContent;
+    send.textContent = 'Изпращане…';
+
+    try {
+      const r = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const j = await r.json().catch(() => ({}));
+      if (r.ok && j.ok) {
+        form.reset();
+        ok.textContent = 'Благодарим — запитването е при нас. Ще се обадим в рамките на работния ден.';
+        ok.hidden = false;
+        ok.scrollIntoView({ block: 'nearest' });
+      } else {
+        const why = j.code === 'not-configured'
+          ? 'Формата още не е свързана с пощата на сервиза. '
+          : j.code === 'rate' ? 'Твърде много запитвания от този адрес. '
+          : 'Нещо се обърка при изпращането. ';
+        bad.innerHTML = why + 'Обадете се на <a href="tel:+359883331609">088 333 1609</a> ' +
+          'или пишете на <a href="mailto:office@pdktuning.com">office@pdktuning.com</a>.';
+        bad.hidden = false;
+      }
+    } catch {
+      bad.innerHTML = 'Няма връзка със сървъра. Обадете се на <a href="tel:+359883331609">088 333 1609</a>.';
+      bad.hidden = false;
+    } finally {
+      send.disabled = false;
+      send.textContent = label;
+    }
+  });
+}
+</script>

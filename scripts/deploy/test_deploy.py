@@ -91,6 +91,10 @@ esac
             changed = scenario in ['success', 'http_failure']
             self.assertEqual('up -d --no-build --pull never web api' in commands, changed)
             self.assertEqual((root / '.images.env').exists(), scenario == 'success')
+            # Съставът се записва настрани, а следеният docker-compose.yml НЕ се
+            # пипа: иначе `git status` на сървъра остава вечно „modified“.
+            self.assertEqual((root / '.compose.active.yml').exists(), scenario == 'success')
+            self.assertFalse((root / 'docker-compose.yml').exists())
             self.assertEqual((release / 'images.tar').exists(), scenario != 'success')
             if 'up -d' in commands:
                 self.assertIn('--project-directory ' + directory, commands)

@@ -1,0 +1,183 @@
+---
+/**
+ * РЕКЛАМНИЯТ ПРОЗОРЕЦ НА НАЧАЛНАТА — новото направление с електрическите.
+ *
+ * Прави се с `<dialog>` и `showModal()`, а не с наш `div`: браузърът сам
+ * затваря фокуса вътре, сам връща фокуса откъдето е тръгнал, сам слуша Esc и
+ * сам рисува подложката. Всичко това, написано на ръка, е трийсет реда, които
+ * после не работят с четец на екран.
+ *
+ * ЧЕТИРИ ПРАВИЛА, за да не е досаден и да не яде позиции:
+ *
+ *   1. НЕ веднага. Google брои изскачащото, което посреща човека от търсенето,
+ *      за натрапчиво и сваля страницата. Този чака 7 секунди или 40% скрол —
+ *      дотогава човекът вече чете сайта, а не рекламата.
+ *   2. НЕ докато пита за бисквитки. Онази лента също е `aria-modal` и двата
+ *      прозореца заедно са задънена улица за четеца. Чака се решението.
+ *   3. ВЕДНЪЖ. Затварянето се помни 14 дни в localStorage. Номерът на версия
+ *      позволява следващата кампания да се покаже наново, без да чака изтичане.
+ *   4. НЕ на човек, който вече е там. Ако адресът е /elektricheski/, мълчи.
+ *
+ * Текстът НЕ обещава числа. Нашите числа за електрическите още не са обявени
+ * (виж OURS в src/data/ev.ts) и рекламата не е мястото, където да се измислят.
+ */
+import { EV_COUNT, EV_BY_BRAND } from '../data/ev';
+
+const brands = EV_BY_BRAND.map((b) => b.name).join(' · ');
+---
+
+<dialog class="promo" id="promo" aria-labelledby="promo-h">
+  <form method="dialog" class="promo-x">
+    <button value="close" aria-label="Затвори">✕</button>
+  </form>
+
+  <div class="promo-in">
+    <p class="promo-kick">Ново направление</p>
+    <h2 id="promo-h">Вече и за <em>електрически</em></h2>
+    <p class="promo-p">
+      Заводът продава един и същ агрегат в няколко мощности. Разликата е софтуер —
+      и се отключва през телефона ви, без да идвате до Варна.
+    </p>
+
+    <ul class="promo-facts">
+      <li><b>{EV_COUNT}</b><span>модела</span></li>
+      <li><b>0</b><span>посещения в сервиз</span></li>
+    </ul>
+
+    <p class="promo-brands">{brands}</p>
+
+    <div class="promo-act">
+      <a class="promo-go" href="/elektricheski/">Виж своя модел</a>
+      <form method="dialog"><button class="promo-no" value="later">Не сега</button></form>
+    </div>
+  </div>
+</dialog>
+
+<script>
+// Показва се веднъж, със закъснение, и само след като въпросът за бисквитките
+// е решен. Всичко наоколо е предпазител срещу това да подскочи в лицето.
+const dlg = document.getElementById('promo') as HTMLDialogElement | null;
+if (dlg && !location.pathname.startsWith('/elektricheski')) {
+  const KEY = 'pdk-promo';
+  const V = 1;                       // вдига се при нова кампания
+  const DAYS = 14;
+  const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /** Затворено ли е вече? Счупен или недостъпен localStorage значи „покажи“ —
+   *  по-добре втори път, отколкото никога. */
+  function seen() {
+    try {
+      const raw = JSON.parse(localStorage.getItem(KEY) || 'null');
+      if (!raw || raw.v !== V) return false;
+      return Date.now() - raw.ts < DAYS * 864e5;
+    } catch { return false; }
+  }
+
+  function remember() {
+    try { localStorage.setItem(KEY, JSON.stringify({ v: V, ts: Date.now() })); } catch { /* без памет — просто ще се покаже пак */ }
+  }
+
+  if (!seen()) {
+    let done = false;
+    let waiting = false;
+
+    /** Лентата за бисквитки стои ли в момента? Проверява се В МИГА НА ОТВАРЯНЕТО,
+     *  а не веднъж в началото: двата скрипта са в един пакет и редът им не е
+     *  обещан — при проверка в началото лентата още може да не е изгряла. */
+    const asking = () => {
+      const bar = document.getElementById('cookieBar');
+      return Boolean(bar && !bar.hidden);
+    };
+
+    const open = () => {
+      if (done || dlg.open || seen()) return;
+      if (asking()) {
+        // изчакваме решението и тогава отваряме — веднъж, не при всяко подминаване
+        if (!waiting) {
+          waiting = true;
+          document.addEventListener('pdk:consent', () => setTimeout(open, 600), { once: true });
+        }
+        return;
+      }
+      done = true;
+      window.removeEventListener('scroll', onScroll);
+      dlg.showModal();
+      if (!calm) dlg.classList.add('in');
+    };
+
+    const onScroll = () => {
+      const h = document.documentElement;
+      const past = h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight);
+      if (past > 0.4) open();
+    };
+
+    // Затварянето се помни, независимо дали е през копчето, Esc или подложката.
+    dlg.addEventListener('close', remember);
+
+    // Щракване ИЗВЪН панела затваря. `<dialog>` праща събитието на себе си,
+    // когато е ударена подложката — панелът вътре го спира.
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close('backdrop'); });
+
+    setTimeout(open, 7000);
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+}
+</script>
+
+<style>
+.promo{
+  width:min(92vw,520px);padding:0;border:1px solid var(--grey9);border-radius:16px;
+  background:#0C0C0C;color:var(--white);overflow:hidden;
+  /* браузърът центрира сам модалния диалог; margin:auto пази старите поведения */
+  margin:auto;
+}
+.promo::backdrop{background:rgba(4,6,2,.72);backdrop-filter:blur(3px)}
+.promo.in{animation:promo-up .3s cubic-bezier(.2,.7,.3,1)}
+@keyframes promo-up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* Косите косъм-линии са същият знак, който носи и секцията с услугите. */
+.promo-in{position:relative;padding:34px 32px 30px}
+.promo-in::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(45deg,#1A1A1A 0 1px,transparent 1px 8px);
+  -webkit-mask-image:radial-gradient(120% 90% at 100% 0,#000 0%,transparent 65%);
+  mask-image:radial-gradient(120% 90% at 100% 0,#000 0%,transparent 65%)}
+.promo-in > *{position:relative}
+
+.promo-x{position:absolute;top:10px;right:10px;z-index:2;margin:0}
+.promo-x button{width:40px;height:40px;border-radius:9px;border:1px solid var(--grey9);
+  background:rgba(8,8,8,.7);color:rgba(255,255,255,.7);cursor:pointer;display:grid;place-items:center;
+  font:400 13px/1 var(--mono);transition:.16s}
+.promo-x button:hover{border-color:rgba(255,255,255,.45);color:#fff}
+
+.promo-kick{margin:0 0 12px;font:400 9px/1 var(--mono);letter-spacing:.3em;text-transform:uppercase;color:var(--lime)}
+.promo h2{margin:0;font:700 clamp(30px,7vw,44px)/.98 var(--head);text-transform:uppercase;letter-spacing:-.015em}
+.promo h2 em{font-style:normal;color:var(--lime)}
+.promo-p{margin:14px 0 0;font:400 15px/1.55 var(--body);color:rgba(255,255,255,.74)}
+
+.promo-facts{display:flex;gap:28px;margin:22px 0 0;padding:18px 0 0;border-top:1px solid var(--grey9);list-style:none}
+.promo-facts li{display:flex;align-items:baseline;gap:8px}
+.promo-facts b{font:700 30px/1 var(--head);color:var(--white);font-variant-numeric:tabular-nums}
+.promo-facts span{font:400 10px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.56)}
+
+.promo-brands{margin:14px 0 0;font:400 11px/1.6 var(--mono);letter-spacing:.1em;color:rgba(255,255,255,.5)}
+
+.promo-act{display:flex;align-items:center;gap:12px;margin-top:24px;flex-wrap:wrap}
+.promo-act form{margin:0}
+.promo-go{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;
+  border-radius:10px;background:var(--lime);color:#041000;
+  font:700 11px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;transition:filter .18s}
+.promo-go:hover{filter:brightness(1.12)}
+.promo-no{min-height:52px;padding:0 18px;border:0;background:none;cursor:pointer;
+  font:400 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.56)}
+.promo-no:hover{color:var(--white)}
+
+/* На телефон сяда долу като лист: там пръстът е долу, а не в средата на екрана. */
+@media(max-width:560px){
+  .promo{width:100%;max-width:none;margin:auto 0 0;border-radius:16px 16px 0 0;border-bottom:0}
+  .promo.in{animation:promo-sheet .3s cubic-bezier(.2,.7,.3,1)}
+  @keyframes promo-sheet{from{opacity:0;transform:translateY(100%)}to{opacity:1;transform:none}}
+  .promo-in{padding:30px 22px 26px}
+  .promo-act{gap:8px}
+  .promo-go{flex:1}
+}
+</style>

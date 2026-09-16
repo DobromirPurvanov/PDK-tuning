@@ -1,0 +1,326 @@
+---
+/**
+ * ИЗБИРАЧЪТ ЗА ЕЛЕКТРИЧЕСКИ — марка → модел → числата и цената → покупка.
+ *
+ * Различава се от Picker.astro по едно важно нещо: ТУК НЯМА ЗАЯВКИ. Големият
+ * каталог живее в стария сайт и се пита на живо; електрическите са 33 реда в
+ * src/data/ev.ts и се рисуват целите на сървъра. Скриптът само показва,
+ * скрива и попълва — не създава нито един възел.
+ *
+ * Затова и стиловете тук са ОБХВАНАТИ (без `is:global`): всичко, което се
+ * стилизира, съществува в HTML-а от самото начало. Класовете са с представка
+ * `ev`, за да не се срещнат с `.panel`, `.col` и `.result` на другия избирач,
+ * които са глобални.
+ */
+import { EV_BY_BRAND, money, type EvModel } from '../data/ev';
+
+interface Props {
+  heading?: string;
+  sub?: string;
+  /** марка, избрана при зареждане */
+  brand?: string;
+  /** модел, избран при зареждане (страницата на модела) */
+  model?: string;
+}
+const {
+  heading = 'Избери електрическия си автомобил',
+  sub = 'Две стъпки до числата и цената.',
+  brand = '',
+  model = '',
+} = Astro.props;
+
+/** Каквото скриптът пише в дясната колона, идва от тези атрибути. */
+const attrs = (m: EvModel) => ({
+  'data-slug': m.slug,
+  'data-brand': m.brand,
+  'data-full': m.full,
+  'data-years': m.years,
+  'data-stock-ps': String(m.stockPs),
+  'data-stock-nm': String(m.stockNm),
+  'data-ps': m.ps == null ? '' : String(m.ps),
+  'data-nm': m.nm == null ? '' : String(m.nm),
+  'data-ceiling-ps': String(m.ceilingPs),
+  'data-ceiling-nm': String(m.ceilingNm),
+  'data-price': money(m.price),
+  'data-href': m.href,
+});
+---
+
+<section class="evp" id="evpicker">
+  <div class="evpanel" data-brand={brand} data-model={model}>
+    <div class="evhead">
+      <div>
+        <h2>{heading}</h2>
+        <p>{sub}</p>
+      </div>
+      <button class="evx" type="button" id="evclear" aria-label="Изчисти избора">✕</button>
+    </div>
+
+    <div class="evcols" data-step="1">
+      <div class="evcol">
+        <b id="ev-lab-brand">Марка</b>
+        <ul class="evlist" aria-labelledby="ev-lab-brand">
+          {EV_BY_BRAND.map((b) => (
+            <li>
+              <button type="button" class="evbrand" data-key={b.key}>
+                <img src={`/marks/${b.mark}.svg`} alt="" width="22" height="22" loading="lazy" />
+                <span>{b.name}</span>
+                <em>{b.models.length}</em>
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="evcol">
+        <b id="ev-lab-model">Модел</b>
+        <ul class="evlist" aria-labelledby="ev-lab-model">
+          {EV_BY_BRAND.flatMap((b) =>
+            b.models.map((m) => (
+              <li class="evmodel-li" data-brand={b.key} hidden>
+                <button type="button" class="evmodel" {...attrs(m)}>
+                  <span>{m.name}</span>
+                  <em>{m.years}</em>
+                </button>
+              </li>
+            )),
+          )}
+          <li class="evempty" id="evhint">Избери марка</li>
+        </ul>
+      </div>
+
+      <div class="evcol evcol-res">
+        <b>Твоята кола</b>
+        <div class="evres" id="evres" role="status" aria-live="polite">
+          <p class="evempty" id="evres-empty">Избери модел, за да видиш числата.</p>
+
+          <div class="evcard" id="evcard" hidden>
+            <p class="evname"><b id="ev-full"></b> <span id="ev-years"></span></p>
+
+            {/* Голямото число го има само когато НИЕ имаме обявено число. Иначе
+                целият блок изчезва: тире, набрано 46px в Oswald, се чете като
+                счупена зелена черта, а не като „няма данни“. */}
+            <div class="evbig" id="evbig" hidden>
+              <b id="ev-gain"></b><span>к.с. отгоре</span>
+            </div>
+
+            <dl class="evkv">
+              <div><dt>Мощност</dt><dd id="ev-p">—</dd></div>
+              <div><dt>Момент</dt><dd id="ev-n">—</dd></div>
+              <div><dt>Таван на блока</dt><dd id="ev-c">—</dd></div>
+            </dl>
+
+            <p class="evprice" id="ev-price">—</p>
+            <p class="evnote" id="ev-note" hidden>
+              Числата за този модел още не са обявени. Пиши ни и ти казваме какво вадим от него.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="evfoot">
+      <a class="evmore" id="ev-more" href="/elektricheski/" hidden>Всичко за този модел ↗</a>
+      <div class="evbtns">
+        <button id="evback" type="button" disabled>Назад</button>
+        <a class="evgo" id="evbuy" href="/elektricheski/poracha/" aria-disabled="true">Избери модел</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// Скриптът НЕ създава възли — само показва, скрива и попълва вече съществуващи.
+const panel = document.querySelector<HTMLElement>('#evpicker .evpanel');
+if (panel) {
+  const need = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
+  const cols = panel.querySelector<HTMLElement>('.evcols')!;
+  const brands = Array.from(panel.querySelectorAll<HTMLButtonElement>('.evbrand'));
+  const rows = Array.from(panel.querySelectorAll<HTMLLIElement>('.evmodel-li'));
+  const models = Array.from(panel.querySelectorAll<HTMLButtonElement>('.evmodel'));
+  const buy = need<HTMLAnchorElement>('evbuy');
+  const more = need<HTMLAnchorElement>('ev-more');
+  const back = need<HTMLButtonElement>('evback');
+
+  const step = (n: number) => {
+    cols.dataset.step = String(n);
+    back.disabled = n <= 1;
+  };
+
+  function show(m: HTMLButtonElement) {
+    models.forEach((x) => x.classList.remove('on'));
+    m.classList.add('on');
+    const d = m.dataset;
+
+    const stockPs = Number(d.stockPs);
+    const stockNm = Number(d.stockNm);
+    const ps = d.ps ? Number(d.ps) : null;
+    const nm = d.nm ? Number(d.nm) : null;
+
+    need('ev-full').textContent = d.full!;
+    need('ev-years').textContent = d.years!;
+
+    // Празно поле в OURS значи „още не е обявено“. Тогава на мястото на нашето
+    // число НЕ влиза чуждото — влиза честното „по запитване“.
+    need('ev-gain').textContent = ps ? '+' + (ps - stockPs) : '';
+    need('evbig').hidden = !ps;
+    need('ev-p').innerHTML = ps
+      ? `${stockPs} → <b>${ps}</b> к.с.`
+      : `${stockPs} к.с. фабрично`;
+    need('ev-n').innerHTML = nm
+      ? `${stockNm} → <b>${nm}</b> Nm`
+      : `${stockNm} Nm фабрично`;
+    need('ev-c').textContent = `${d.ceilingPs} к.с. / ${d.ceilingNm} Nm`;
+    need('ev-price').textContent = d.price!;
+    need('ev-note').hidden = Boolean(ps);
+
+    need('evres-empty').hidden = true;
+    need('evcard').hidden = false;
+
+    more.href = d.href!;
+    more.hidden = false;
+    buy.href = `/elektricheski/poracha/?m=${encodeURIComponent(d.slug!)}`;
+    buy.removeAttribute('aria-disabled');
+    buy.textContent = d.price === 'Цена по запитване' ? 'Заяви оферта' : 'Купи';
+    step(3);
+  }
+
+  function pickBrand(key: string, focus = true) {
+    brands.forEach((b) => b.classList.toggle('on', b.dataset.key === key));
+    let n = 0;
+    for (const li of rows) {
+      const hit = li.dataset.brand === key;
+      li.hidden = !hit;
+      if (hit) n++;
+    }
+    need('evhint').hidden = n > 0;
+    clearCard();
+    step(2);
+    if (focus) rows.find((li) => !li.hidden)?.querySelector('button')?.focus();
+  }
+
+  function clearCard() {
+    models.forEach((x) => x.classList.remove('on'));
+    need('evcard').hidden = true;
+    need('evres-empty').hidden = false;
+    more.hidden = true;
+    buy.href = '/elektricheski/poracha/';
+    buy.setAttribute('aria-disabled', 'true');
+    buy.textContent = 'Избери модел';
+  }
+
+  brands.forEach((b) => b.addEventListener('click', () => pickBrand(b.dataset.key!)));
+  models.forEach((m) => m.addEventListener('click', () => show(m)));
+
+  back.addEventListener('click', () => {
+    if (cols.dataset.step === '3') { clearCard(); step(2); }
+    else if (cols.dataset.step === '2') { rows.forEach((li) => (li.hidden = true)); need('evhint').hidden = false; brands.forEach((b) => b.classList.remove('on')); step(1); }
+  });
+
+  need('evclear').addEventListener('click', () => {
+    rows.forEach((li) => (li.hidden = true));
+    need('evhint').hidden = false;
+    brands.forEach((b) => b.classList.remove('on'));
+    clearCard();
+    step(1);
+  });
+
+  // Страницата на модела зарежда избирача вече отворен на този модел.
+  const wantBrand = panel.dataset.brand;
+  const wantModel = panel.dataset.model;
+  if (wantModel) {
+    const m = models.find((x) => x.dataset.slug === wantModel);
+    if (m) { pickBrand(m.dataset.brand!, false); show(m); }
+  } else if (wantBrand) {
+    if (brands.some((b) => b.dataset.key === wantBrand)) pickBrand(wantBrand, false);
+  }
+}
+</script>
+
+<style>
+.evp{padding:0 var(--gut) 96px}
+.evpanel{max-width:1000px;margin:0 auto;background:#0C0C0C;border:1px solid var(--grey9);border-radius:14px;overflow:hidden}
+.evhead{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;
+  padding:30px 34px 26px;border-bottom:1px solid var(--grey9)}
+.evhead h2{margin:0;font:700 clamp(24px,2.6vw,32px)/1.05 var(--head);text-transform:uppercase;letter-spacing:-.01em}
+.evhead p{margin:8px 0 0;font:400 13px/1.6 var(--mono);color:rgba(255,255,255,.66)}
+.evx{width:38px;height:38px;border-radius:8px;border:1px solid var(--grey9);background:none;cursor:pointer;
+  display:grid;place-items:center;flex:0 0 auto;color:rgba(255,255,255,.66);transition:.18s}
+.evx:hover{border-color:rgba(255,255,255,.42);color:#fff}
+
+.evcols{display:grid;grid-template-columns:1fr;min-height:330px}
+@media(min-width:760px){.evcols{grid-template-columns:.9fr 1.1fr 1.3fr}}
+.evcol{border-right:1px solid var(--grey9);display:flex;flex-direction:column;min-width:0}
+.evcol:last-child{border-right:0}
+.evcol > b{display:block;padding:16px 18px 12px;font:400 9px/1 var(--mono);letter-spacing:.24em;
+  text-transform:uppercase;color:rgba(255,255,255,.62);font-weight:400}
+
+.evlist{margin:0;padding:0 0 12px;list-style:none;overflow-y:auto;max-height:268px;scrollbar-width:thin}
+.evlist button{display:flex;width:100%;align-items:center;gap:10px;padding:11px 18px;min-height:44px;
+  background:none;border:0;text-align:left;cursor:pointer;font:400 13px/1.35 var(--body);
+  color:rgba(255,255,255,.72);transition:.14s}
+.evlist button span{flex:1;min-width:0}
+.evlist button:hover{color:var(--white);background:rgba(255,255,255,.04)}
+.evlist button.on{color:var(--lime);background:rgba(82,251,9,.08);box-shadow:inset 2px 0 0 var(--lime)}
+.evlist button em{font-style:normal;font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.56)}
+/* Знаците в public/marks са ЧЕРНИ (Simple Icons, `fill="#000000"`). На черен
+   фон `grayscale()` ги прави невидими — трябва същото обръщане, което ползва и
+   MarkGrid: brightness(0) сплесква до черно, invert(1) го вдига до бяло. */
+.evlist button img{width:22px;height:22px;object-fit:contain;
+  filter:brightness(0) invert(1);opacity:.55;transition:opacity .14s}
+.evlist button:hover img,.evlist button.on img{opacity:1}
+.evempty{padding:16px 18px;font:400 11px/1.6 var(--mono);color:rgba(255,255,255,.56);list-style:none}
+
+.evres{padding:6px 18px 20px}
+.evname{margin:0 0 14px;font:400 12px/1.5 var(--mono);color:rgba(255,255,255,.62)}
+.evname b{display:block;font:700 19px/1.2 var(--head);text-transform:uppercase;color:var(--white);letter-spacing:.01em}
+.evbig{display:flex;align-items:baseline;gap:8px;margin-bottom:12px}
+.evbig b{font:700 46px/1 var(--head);color:var(--lime);font-variant-numeric:tabular-nums}
+.evbig span{font:400 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+.evkv{margin:0}
+.evkv > div{display:flex;justify-content:space-between;gap:10px;padding:9px 0;
+  font:400 11px/1.4 var(--mono);color:rgba(255,255,255,.62)}
+.evkv > div + div{border-top:1px solid rgba(255,255,255,.07)}
+.evkv dt,.evkv dd{margin:0}
+.evkv dd{color:rgba(255,255,255,.86);text-align:right}
+.evkv dd b{color:var(--lime);font-weight:400}
+.evprice{margin:16px 0 0;padding-top:14px;border-top:1px solid var(--grey9);
+  font:700 26px/1 var(--head);color:var(--white);font-variant-numeric:tabular-nums}
+.evnote{margin:10px 0 0;font:400 11px/1.6 var(--mono);color:rgba(255,255,255,.56)}
+
+.evfoot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  padding:20px 34px;border-top:1px solid var(--grey9)}
+.evmore{display:inline-flex;align-items:center;min-height:44px;font:400 11px/1 var(--mono);color:var(--lime)}
+.evbtns{display:flex;gap:10px;margin-left:auto}
+.evbtns button,.evbtns a{display:inline-flex;align-items:center;justify-content:center;
+  padding:13px 22px;min-height:44px;border-radius:9px;border:1px solid var(--grey9);background:none;cursor:pointer;
+  font:400 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--white)}
+.evbtns button:hover,.evbtns a:hover{border-color:rgba(255,255,255,.4)}
+.evbtns .evgo{background:var(--lime);border-color:var(--lime);color:#041000;font-weight:700}
+.evbtns button:disabled{opacity:.4;cursor:not-allowed}
+/* Бутонът съществува от началото, за да не подскача редът — но до избор на
+   модел той не води наникъде и това се казва и на четеца. */
+.evbtns .evgo[aria-disabled="true"]{background:none;border-color:var(--grey9);color:rgba(255,255,255,.4);
+  pointer-events:none;font-weight:400}
+
+@media(max-width:760px){
+  .evp{padding-bottom:64px}
+  .evpanel{border-radius:12px}
+  .evhead{padding:22px 20px 20px}
+  .evhead h2{font-size:24px}
+  .evcols{min-height:0}
+  .evcol{border-right:0}
+  .evlist{max-height:58vh}
+  .evcols .evcol{display:none}
+  .evcols[data-step="1"] .evcol:nth-child(1),
+  .evcols[data-step="2"] .evcol:nth-child(2),
+  .evcols[data-step="3"] .evcol:nth-child(3){display:flex}
+  .evfoot{padding:16px 20px}
+  .evbtns{width:100%}
+  .evbtns button,.evbtns a{flex:1}
+}
+@media(pointer:coarse){
+  .evlist button,.evbtns button,.evbtns a,.evmore{min-height:48px}
+  .evx{width:48px;height:48px}
+}
+</style>

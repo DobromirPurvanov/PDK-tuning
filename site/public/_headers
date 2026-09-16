@@ -1,0 +1,117 @@
+# ══════════════════════════════════════════════════════════════════════════
+#  ЗАГЛАВКИ ЗА CLOUDFLARE PAGES
+#
+#  Правилата се четат отгоре надолу; по-долното допълва по-горното за същия
+#  път. Затова общото стои първо, а изключенията — след него.
+#
+#  ВАЖНО ЗА ДЕНЯ НА ПРЕХВЪРЛЯНЕТО: тези заглавки важат за файловете, които
+#  Pages сервира. Отговорите, които `_worker.js` сглобява сам (пасът към
+#  стария сайт за /bg, /en, /images…), НЕ минават оттук — те носят своите
+#  заглавки от произхода. Затова CSP по-долу не може да счупи стария портал.
+# ══════════════════════════════════════════════════════════════════════════
+
+# ── защита за всичко ──────────────────────────────────────────────────────
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+  # Старият сайт стоеше с HSTS max-age=0, тоест реално ИЗКЛЮЧЕН. Тук е включен
+  # за година. `preload` НЕ се обявява: то е еднопосочно и се подава чак когато
+  # възложителят потвърди, че всички поддомейни (включително пощата) са по HTTPS.
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  # CSP без 'unsafe-inline' не е възможна тук: Astro вгражда целия CSS в
+  # страницата (`inlineStylesheets:'always'`), а банерът за съгласие и Analytics
+  # са inline по необходимост — трябва да решат ПРЕДИ да е изтеглен външен файл.
+  # Ползата пак е реална: чужд произход за скрипт, рамка или форма е спрян.
+  # googletagmanager е тук, защото GA се зарежда СЛЕД съгласие; докато не е
+  # дадено, нищо оттам не се тегли (виж Analytics.astro).
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; font-src 'self'; media-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; manifest-src 'self'; upgrade-insecure-requests
+
+# ── старият сайт: без наша CSP ────────────────────────────────────────────
+# Отговорите оттам се сглобяват в работника и обикновено не минават през този
+# файл. Записано е изрично, за да не се окаже един ден, че сме счупили входа на
+# дилърите с политика, писана за нашите страници (той ползва reCAPTCHA и
+# Google Sign-In от чужди произходи).
+/bg/*
+  ! Content-Security-Policy
+/en/*
+  ! Content-Security-Policy
+
+# ── файлове с име, което не се мени: дълъг кеш ────────────────────────────
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/marks/*
+  Cache-Control: public, max-age=31536000, immutable
+/logos/*
+  Cache-Control: public, max-age=31536000, immutable
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# ── картинки и икони: месец ───────────────────────────────────────────────
+/img/*
+  Cache-Control: public, max-age=2592000
+/icons/*
+  Cache-Control: public, max-age=2592000
+/pdk-logo.*
+  Cache-Control: public, max-age=2592000
+/favicon.ico
+  Cache-Control: public, max-age=2592000
+/favicon-32.png
+  Cache-Control: public, max-age=2592000
+/manifest.webmanifest
+  Cache-Control: public, max-age=86400
+  Content-Type: application/manifest+json
+
+# ══════════════════════════════════════════════════════════════════════════
+#  СТРАНИЦИТЕ
+#
+#  Тук стояха ТРИ пътя (/, /privacy/, /terms/) от времето, когато сайтът беше
+#  една страница. Днес са 144 и останалите 141 оставаха без правило.
+#  Изброяването на 110 марки на ръка е обречено да изостане, затова правилото
+#  е по ПРЕФИКС — така всяка бъдеща страница го получава сама.
+# ══════════════════════════════════════════════════════════════════════════
+/
+  Cache-Control: public, max-age=0, must-revalidate
+/uslugi/*
+  Cache-Control: public, max-age=0, must-revalidate
+/katalog/*
+  Cache-Control: public, max-age=0, must-revalidate
+/blog/*
+  Cache-Control: public, max-age=0, must-revalidate
+/leki-avtomobili/*
+  Cache-Control: public, max-age=0, must-revalidate
+/kamioni/*
+  Cache-Control: public, max-age=0, must-revalidate
+/selskostopanska-tehnika/*
+  Cache-Control: public, max-age=0, must-revalidate
+/tseni/*
+  Cache-Control: public, max-age=0, must-revalidate
+/kak-rabotim/*
+  Cache-Control: public, max-age=0, must-revalidate
+/za-nas/*
+  Cache-Control: public, max-age=0, must-revalidate
+/za-dileri/*
+  Cache-Control: public, max-age=0, must-revalidate
+/vaprosi/*
+  Cache-Control: public, max-age=0, must-revalidate
+/mit-fakt/*
+  Cache-Control: public, max-age=0, must-revalidate
+/kontakti/*
+  Cache-Control: public, max-age=0, must-revalidate
+/privacy/*
+  Cache-Control: public, max-age=0, must-revalidate
+/terms/*
+  Cache-Control: public, max-age=0, must-revalidate
+/cookie-policy/*
+  Cache-Control: public, max-age=0, must-revalidate
+/otkaz-i-reklamacii/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+# robots и картата се менят с всяко качване
+/robots.txt
+  Cache-Control: public, max-age=3600
+/sitemap.xml
+  Cache-Control: public, max-age=3600

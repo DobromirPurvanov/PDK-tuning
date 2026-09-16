@@ -1,0 +1,116 @@
+---
+/**
+ * Долният ред. Беше един ред сив текст (`#4E544E` = контраст 2,58:1 — не се
+ * четеше), после стана четири колони с котвите на началната. Сега сайтът има
+ * страници, затова носи и втория ред връзки, който не се побра в лентата:
+ * въпросите, мит/факт, статиите и порталът за партньори.
+ */
+import { NAV, MORE, LEGAL, BUSINESS as b, PORTAL } from '../config/site';
+
+const year = new Date().getFullYear();
+
+/** услугите и каталогът се разгъват; останалите точки от менюто са прости връзки */
+const services = NAV.find((n) => n.href === '/uslugi/')!;
+const catalog = NAV.find((n) => n.href === '/katalog/')!;
+const plain = NAV.filter((n) => !n.children);
+
+const social = [
+  { href: b.social.facebook, label: 'Facebook' },
+  { href: b.social.instagram, label: 'Instagram' },
+  { href: b.social.youtube, label: 'YouTube' },
+];
+---
+<footer class="foot">
+  <div class="foot-in">
+    {/*
+      ТЪРГОВСКАТА ИДЕНТИФИКАЦИЯ Е ЗАДЪЛЖИТЕЛНА, не украса: чл. 4 от Закона за
+      електронната търговия иска наименование, седалище, адрес за кореспонденция,
+      данни за контакт и номер на вписване. Затова стои на ВСЯКА страница, а не
+      само в общите условия.
+
+      ЕИК и ДДС номерът се четат от business.json. Празни са → излиза видима
+      рамка „чака се“, за да не тръгне сайтът с празнота, която никой не е
+      забелязал. Щом дойдат от възложителя, се появяват сами.
+    */}
+    <address class="fcol">
+      <p class="ftitle">{b.name}</p>
+      <p class="fline">{b.legalName}</p>
+      <p class="fline">
+        ЕИК: {b.eik ? b.eik : <span class="fneed">чака се</span>}
+        <span class="fsep" aria-hidden="true">·</span>
+        ДДС: {b.vat ? b.vat : <span class="fneed">чака се</span>}
+      </p>
+      <p class="fline">{b.address.street}, {b.address.city} {b.address.postalCode}</p>
+      <p class="fline"><a href={`tel:${b.phone}`}>{b.phoneDisplay}</a></p>
+      <p class="fline"><a href={`mailto:${b.email}`}>{b.email}</a></p>
+      <p class="fline" style="margin-top:14px">
+        <a href={PORTAL} target="_blank" rel="noopener noreferrer">Портал за партньори ↗</a>
+      </p>
+    </address>
+
+    <nav class="fcol" aria-label="Услуги">
+      <p class="ftitle"><a href="/uslugi/">Услуги</a></p>
+      {services.children!.slice(0, 8).map((s) => <p class="fline"><a href={s.href}>{s.label}</a></p>)}
+      <p class="fline"><a href="/uslugi/">Всички услуги →</a></p>
+    </nav>
+
+    <nav class="fcol" aria-label="Каталог">
+      <p class="ftitle"><a href="/katalog/">Каталог</a></p>
+      {catalog.children!.map((c) => <p class="fline"><a href={c.href}>{c.label}</a></p>)}
+      <p class="ftitle" style="margin-top:26px">Сайтът</p>
+      {plain.map((n) => <p class="fline"><a href={n.href}>{n.label}</a></p>)}
+    </nav>
+
+    <nav class="fcol" aria-label="Полезно и правно">
+      <p class="ftitle">Полезно</p>
+      {MORE.map((m) => <p class="fline"><a href={m.href}>{m.label}</a></p>)}
+
+      <p class="ftitle" style="margin-top:26px">Правно</p>
+      {LEGAL.map((l) => <p class="fline"><a href={l.href}>{l.label}</a></p>)}
+      <p class="fline"><button type="button" id="cookieOpen" class="linky">Бисквитки</button></p>
+
+      <p class="ftitle" style="margin-top:26px">Следете ни</p>
+      {social.map((s) => (
+        <p class="fline"><a href={s.href} target="_blank" rel="noopener noreferrer">{s.label}</a></p>
+      ))}
+    </nav>
+  </div>
+
+  <div class="foot-end">
+    <span>© {year} {b.legalName}. Всички права запазени.</span>
+    <span>Каталогът се чете на живо от pdktuning.com — тук не се пази копие.</span>
+  </div>
+</footer>
+
+<style>
+.foot{border-top:1px solid var(--grey9);padding:56px var(--gut) 28px;background:#0A0A0A}
+.foot-in{max-width:1180px;margin:0 auto;display:grid;gap:34px 26px;grid-template-columns:1fr}
+@media(min-width:620px){.foot-in{grid-template-columns:1fr 1fr}}
+@media(min-width:960px){.foot-in{grid-template-columns:1.4fr 1fr 1fr 1fr}}
+
+/* <address> носи наклонен шрифт по подразбиране — тук е блок с данни, не цитат */
+address.fcol{font-style:normal}
+.ftitle{margin:0 0 16px;font:400 10px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--lime)}
+/* полето, което чака данни от възложителя — личи си с очи, не минава за факт */
+.fneed{display:inline-block;padding:0 6px;border:1px dashed rgba(82,251,9,.45);border-radius:4px;
+  font:400 11px/1.5 var(--mono);color:rgba(255,255,255,.6)}
+/* Разделителят е декоративен и е aria-hidden, но СЕ ВИЖДА — значи важи прагът
+   за контраст. При .3 даваше 2,59:1 върху #0A0A0A. Минималната алфа за 4,5:1
+   на този фон е около 0,45; .5 оставя запас. */
+.fsep{padding:0 6px;color:rgba(255,255,255,.5)}
+.ftitle a{border-bottom:1px solid transparent;transition:border-color .18s}
+.ftitle a:hover{border-bottom-color:rgba(82,251,9,.5)}
+.fline{margin:0;font:400 13px/1.5 var(--body);color:rgba(255,255,255,.66)}
+.fline + .fline{margin-top:4px}
+.fline a,.linky{display:inline-flex;align-items:center;min-height:32px;color:rgba(255,255,255,.66);
+  border:0;background:none;padding:0;cursor:pointer;text-align:left;font:inherit;
+  border-bottom:1px solid transparent;transition:color .18s,border-color .18s}
+.fline a:hover,.linky:hover{color:var(--lime);border-bottom-color:rgba(82,251,9,.5)}
+/* заглавията на колоните вече са връзки („Услуги", „Каталог") — и те искат пръст */
+@media(pointer:coarse){.fline a,.linky,.ftitle a{min-height:48px;display:inline-flex;align-items:center}}
+
+.foot-end{max-width:1180px;margin:36px auto 0;padding-top:20px;border-top:1px solid var(--grey9);
+  display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;
+  font:400 11px/1.6 var(--mono);color:rgba(255,255,255,.5)}
+@media(max-width:620px){.foot-end{flex-direction:column;gap:6px}}
+</style>

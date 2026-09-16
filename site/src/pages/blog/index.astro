@@ -1,0 +1,88 @@
+---
+/**
+ * Списъкът със статии. Четири на брой засега — нарочно малко и написани докрай,
+ * вместо двайсет по петстотин знака.
+ */
+import Page from '../../layouts/Page.astro';
+import { ARTICLES } from '../../data/articles';
+import { crumbSchema, bizRef } from '../../lib/seo';
+
+const site = Astro.site!.href.replace(/\/$/, '');
+const crumbs = [{ href: '/blog/', label: 'Статии' }];
+
+const posts = ARTICLES.slice().sort((a, b) => b.date.localeCompare(a.date));
+
+const schema = [
+  bizRef(site),
+  crumbSchema(site, [{ href: '/', label: 'Начало' }, ...crumbs]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'Статии — PDK Tuning',
+    url: `${site}/blog/`,
+    inLanguage: 'bg-BG',
+    blogPost: posts.map((a) => ({
+      '@type': 'BlogPosting',
+      headline: a.h1,
+      url: `${site}/blog/${a.slug}/`,
+      datePublished: a.date,
+    })),
+  },
+];
+
+const fmt = (iso: string) =>
+  new Date(iso).toLocaleDateString('bg-BG', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+<Page
+  title="Статии за чип тунинг и дизелови системи | PDK Tuning"
+  description="Какво да знаете преди чип тунинг, защо DPF филтърът се запушва, разликата между Stage 1 и Stage 2 и как се чете крива от стенд."
+  kicker={`${posts.length} статии`}
+  heading="Статии"
+  lead="Написани, за да отговорят на въпрос — не за да заемат място между две ключови думи."
+  crumbs={crumbs}
+  schema={schema}
+>
+  <div class="p-wrap">
+    <section class="p-sec">
+      <div class="posts">
+        {posts.map((a) => (
+          <a class="post" href={`/blog/${a.slug}/`}>
+            <span class="wash"></span>
+            <div class="post-meta">
+              <span class="lab">{a.kicker}</span>
+              <span class="dot" aria-hidden="true">·</span>
+              <time datetime={a.date}>{fmt(a.date)}</time>
+              <span class="dot" aria-hidden="true">·</span>
+              <span>{a.minutes} мин четене</span>
+            </div>
+            <h2>{a.h1}</h2>
+            <p>{a.lead}</p>
+            <span class="go">Чети →</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  </div>
+</Page>
+
+<style is:global>
+.posts{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:820px){.posts{grid-template-columns:1fr 1fr}}
+.post{position:relative;display:block;overflow:hidden;padding:32px 30px 28px;
+  background:#0C0C0C;border:1px solid var(--grey9);border-radius:14px;transition:border-color .4s}
+.post:hover{border-color:rgba(82,251,9,.45)}
+.post .wash{position:absolute;inset:0;opacity:0;transition:opacity .6s;
+  background:linear-gradient(135deg,rgba(82,251,9,.14) 0%,transparent 62%)}
+.post:hover .wash{opacity:1}
+.post > *{position:relative;z-index:2}
+.post-meta{display:flex;flex-wrap:wrap;align-items:center;gap:0 8px;margin-bottom:16px;
+  font:400 10px/1.6 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.56)}
+.post-meta .lab{color:var(--lime)}
+.post-meta .dot{color:rgba(255,255,255,.3)}
+.post h2{margin:0 0 12px;font:700 clamp(21px,2.3vw,28px)/1.1 var(--head);
+  letter-spacing:-.018em;text-transform:uppercase}
+.post p{margin:0;max-width:52ch;font:400 15px/1.65 var(--body);color:rgba(255,255,255,.72)}
+.post .go{display:inline-block;margin-top:18px;font:400 10px/1 var(--mono);letter-spacing:.2em;
+  text-transform:uppercase;color:var(--lime);opacity:.85;transition:opacity .2s}
+.post:hover .go{opacity:1}
+</style>

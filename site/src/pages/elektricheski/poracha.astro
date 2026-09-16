@@ -1,0 +1,363 @@
+---
+/**
+ * ПОРЪЧКАТА ЗА ЕЛЕКТРИЧЕСКИ — последната стъпка след избирача.
+ *
+ * ЧЕКАУТ ОЩЕ НЯМА. Сметка при доставчик не е открита, затова поръчката
+ * пристига при нас като писмо през `/api/order` и плащането се уговаря с
+ * човек. Страницата НЕ се преструва, че е плащане: казва го с думи, горе,
+ * преди полетата.
+ *
+ * КОГАТО ДОЙДЕ СМЕТКАТА се пипат две места и нищо друго:
+ *   1. `order()` в public/_worker.js — прави сесия при доставчика и връща
+ *      `{ ok: true, redirect: <адрес на плащането> }`;
+ *   2. текстът на бележката тук.
+ * Скриптът долу вече чете `redirect` и тръгва натам, ако го има.
+ *
+ * `noindex`, защото това е стъпка от поръчката, а не страница за търсене.
+ * Моделите се намират през /elektricheski/ и през страницата на модела.
+ */
+import Page from '../../layouts/Page.astro';
+import { EV_BY_BRAND, money } from '../../data/ev';
+import { BUSINESS as b, CHECKOUT_LIVE } from '../../config/site';
+import '../../styles/form.css';
+
+const crumbs = [
+  { href: '/elektricheski/', label: 'Електрически автомобили' },
+  { href: '/elektricheski/poracha/', label: 'Поръчка' },
+];
+---
+<Page
+  title="Поръчка — тунинг за електрически автомобил | PDK Tuning"
+  description="Избери модела, начина на плащане и адреса за доставка. Потвърждаваме поръчката с обаждане, преди да тръгне каквото и да е."
+  kicker="Поръчка"
+  heading="Поръчай своя пакет"
+  lead="Избери модела и как ти е удобно да платиш. Обаждаме се да потвърдим, преди да тръгне устройството."
+  crumbs={crumbs}
+  noindex={true}
+  cta={false}
+>
+  <div class="p-wrap">
+    <section class="p-sec">
+      <div class="ord">
+        <form class="form" id="oform" novalidate data-live={CHECKOUT_LIVE ? '1' : ''}>
+          <p class="onote">
+            {CHECKOUT_LIVE ? (
+              <>
+                <b>Плащането е с карта или PayPal.</b>
+                След „Плати“ отиваш на защитената страница на доставчика на платежни
+                услуги. Данните от картата не минават през нас и не се пазят тук.
+              </>
+            ) : (
+              <>
+                <b>Плащането още не става онлайн.</b>
+                Поръчката идва при нас, обаждаме се да я потвърдим и тогава уговаряме
+                плащането — с карта или PayPal, както си избрал тук. Нищо не се удържа
+                от тази страница.
+              </>
+            )}
+          </p>
+
+          <p class="fld">
+            <label for="f-model">Автомобил <span aria-hidden="true">*</span></label>
+            <select id="f-model" name="model" required>
+              <option value="">— избери модел —</option>
+              {EV_BY_BRAND.map((br) => (
+                <optgroup label={br.name}>
+                  {br.models.map((m) => (
+                    <option value={m.full} data-slug={m.slug} data-price={money(m.price)}>
+                      {m.name} · {m.years}
+                    </option>
+                  ))}
+                </optgroup>
+              ))}
+            </select>
+            <span class="err" id="e-model" hidden>Изберете модела, за да знаем какво подготвяме.</span>
+          </p>
+
+          <p class="oprice" id="oprice" hidden>
+            <span>Цена</span><b id="oprice-v">—</b>
+          </p>
+
+          <fieldset class="fld ogroup">
+            <legend>Плащане <span aria-hidden="true">*</span></legend>
+            <label class="opay">
+              <input type="radio" name="pay" value="Карта" checked />
+              <span>Карта</span>
+            </label>
+            <label class="opay">
+              <input type="radio" name="pay" value="PayPal" />
+              <span>PayPal</span>
+            </label>
+          </fieldset>
+
+          <div class="f2">
+            <p class="fld">
+              <label for="f-name">Име <span aria-hidden="true">*</span></label>
+              <input id="f-name" name="name" type="text" required autocomplete="name" maxlength="80" />
+              <span class="err" id="e-name" hidden>Моля, напишете името си.</span>
+            </p>
+            <p class="fld">
+              <label for="f-phone">Телефон <span aria-hidden="true">*</span></label>
+              <input id="f-phone" name="phone" type="tel" required autocomplete="tel" maxlength="30" inputmode="tel" />
+              <span class="err" id="e-phone" hidden>Трябва ни телефон, за да потвърдим поръчката.</span>
+            </p>
+          </div>
+
+          <div class="f2">
+            <p class="fld">
+              <label for="f-email">Имейл</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" maxlength="120" />
+              <span class="err" id="e-email" hidden>Проверете адреса — липсва @ или домейн.</span>
+            </p>
+            <p class="fld">
+              <label for="f-vin">VIN</label>
+              <input id="f-vin" name="vin" type="text" maxlength="24" autocomplete="off" spellcheck="false" />
+              <span class="hint">Не е задължителен сега, но спестява един въпрос после.</span>
+            </p>
+          </div>
+
+          <p class="fld">
+            <label for="f-address">Адрес за доставка</label>
+            <input id="f-address" name="address" type="text" maxlength="200" autocomplete="street-address" />
+            <span class="hint">
+              Доставката до адрес в България е в цената. Ако ще идвате до Варна, оставете празно.
+            </span>
+          </p>
+
+          <p class="fld">
+            <label for="f-msg">Бележка</label>
+            <textarea id="f-msg" name="message" rows="3" maxlength="1500"></textarea>
+          </p>
+
+          <p class="fld check">
+            <input id="f-gdpr" name="gdpr" type="checkbox" required />
+            <label for="f-gdpr">
+              Съгласен съм данните ми да бъдат обработени за тази поръчка и приемам
+              <a href="/terms/">Общите условия</a> и
+              <a href="/otkaz-i-reklamacii/">правилата за отказ</a>. <span aria-hidden="true">*</span>
+            </label>
+            <span class="err" id="e-gdpr" hidden>Без съгласие не можем да приемем поръчката.</span>
+          </p>
+
+          {/*
+            ОТДЕЛНА ОТМЕТКА, НЕЗАДЪЛЖИТЕЛНА И НЕОТМЕТНАТА ПРЕДВАРИТЕЛНО.
+            По чл. 57, т. 13 ЗЗП правото на отказ за цифрово съдържание отпада само
+            при три условия наведнъж: изрично съгласие, потвърждение, че човекът знае
+            какво губи, и започнало изпълнение. Предварително сложена отметка НЕ е
+            съгласие, а сливането ѝ с отметката за лични данни отнема избора.
+            Затова тук стои сама, поръчката минава и без нея, а какво следва при
+            всеки от двата избора пише под нея.
+          */}
+          <p class="fld check onow">
+            <input id="f-now" name="now" type="checkbox" />
+            <label for="f-now">
+              Искам подготовката на файла да започне веднага и потвърждавам, че така
+              губя правото си на отказ за софтуерната част.
+            </label>
+            <span class="hint">
+              Без тази отметка изчакваме 14-дневния срок, преди да започнем работа по файла.
+              Устройството тръгва към вас веднага и в двата случая. Правото ви на отказ за
+              самото устройство остава непокътнато.
+            </span>
+          </p>
+
+          <p class="trap" aria-hidden="true">
+            <label for="f-web">Не попълвайте това поле</label>
+            <input id="f-web" name="pdk_extra" type="text" tabindex="-1" autocomplete="off" />
+          </p>
+
+          <div class="fsub">
+            <button type="submit" class="send" id="osend">Изпрати поръчката</button>
+            <span class="fnote">Полетата със <span aria-hidden="true">*</span> са задължителни.</span>
+          </div>
+
+          <p class="fmsg ok" id="ook" role="status" hidden></p>
+          <p class="fmsg bad" id="obad" role="alert" hidden></p>
+        </form>
+
+        <aside class="oside">
+          <h2>Какво следва</h2>
+          <ol>
+            {CHECKOUT_LIVE
+              ? <li>Плащате на страницата на доставчика — карта или PayPal.</li>
+              : <li>Обаждаме се да потвърдим модела и адреса.</li>}
+            {CHECKOUT_LIVE
+              ? <li>Обаждаме се да сверим модела с автомобила.</li>
+              : <li>Уговаряме плащането — карта или PayPal.</li>}
+            <li>PDK Flasher тръгва към вас. Доставката до адрес в България е в цената.</li>
+            <li>Четете оригинала през приложението.</li>
+            <li>Връщаме готовия файл и го записвате сами.</li>
+          </ol>
+          <p class="ohelp">
+            Питане преди поръчка:<br />
+            <a href={`tel:${b.phone}`}>{b.phoneDisplay ?? b.phone}</a><br />
+            <a href={`mailto:${b.email}`}>{b.email}</a>
+          </p>
+        </aside>
+      </div>
+    </section>
+  </div>
+</Page>
+
+<script>
+// Същият ред като при формата за запитване: проверява се тук за човека и в
+// public/_worker.js за сървъра. Разликата е една — ако доставчикът на плащания
+// някой ден върне адрес, тръгваме натам вместо да показваме „прието“.
+const form = document.getElementById('oform') as HTMLFormElement | null;
+if (form) {
+  const send = document.getElementById('osend') as HTMLButtonElement;
+  const ok = document.getElementById('ook')!;
+  const bad = document.getElementById('obad')!;
+  const opened = Date.now();
+
+  const field = (id: string) => document.getElementById('f-' + id) as HTMLInputElement;
+  const errBox = (id: string) => document.getElementById('e-' + id)!;
+  const model = document.getElementById('f-model') as HTMLSelectElement;
+  const priceBox = document.getElementById('oprice')!;
+  const priceVal = document.getElementById('oprice-v')!;
+
+  /** Жив ли е чекаутът — решено при билда (PUBLIC_CHECKOUT), не гадано тук. */
+  const live = form.dataset.live === '1';
+
+  /** цената идва от избраната възможност, не от втори списък в скрипта */
+  function showPrice() {
+    const opt = model.selectedOptions[0];
+    const p = opt?.dataset.price;
+    priceVal.textContent = p ?? '—';
+    priceBox.hidden = !p;
+    // Модел без обявена цена НИКОГА не води до плащане, дори чекаутът да е жив.
+    const askOnly = !p || p === 'Цена по запитване';
+    send.textContent = askOnly ? 'Заяви оферта' : live ? 'Плати' : 'Изпрати поръчката';
+  }
+
+  // Бутонът „Купи“ носи модела в адреса: /elektricheski/poracha/?m=taycan-4
+  const want = new URLSearchParams(location.search).get('m');
+  if (want) {
+    const hit = Array.from(model.options).find((o) => o.dataset.slug === want);
+    if (hit) {
+      model.value = hit.value;
+      history.replaceState(null, '', location.pathname);
+    }
+  }
+  showPrice();
+  model.addEventListener('change', showPrice);
+
+  const setErr = (id: string, on: boolean) => {
+    const el = field(id), box = errBox(id);
+    box.hidden = !on;
+    el.setAttribute('aria-invalid', String(on));
+    if (on) el.setAttribute('aria-describedby', box.id); else el.removeAttribute('aria-describedby');
+  };
+
+  const checks: Record<string, () => boolean> = {
+    model: () => model.value.trim().length > 0,
+    name: () => field('name').value.trim().length >= 2,
+    phone: () => field('phone').value.replace(/[^\d+]/g, '').length >= 6,
+    email: () => { const v = field('email').value.trim(); return !v || /^[^@\s]+@[^@\s.]+\.[a-z]{2,}$/i.test(v); },
+    gdpr: () => field('gdpr').checked,
+  };
+
+  for (const id of Object.keys(checks)) {
+    field(id).addEventListener('blur', () => setErr(id, !checks[id]()));
+    field(id).addEventListener('input', () => { if (!errBox(id).hidden) setErr(id, !checks[id]()); });
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    ok.hidden = true; bad.hidden = true;
+
+    let first: string | null = null;
+    for (const id of Object.keys(checks)) {
+      const good = checks[id]();
+      setErr(id, !good);
+      if (!good && !first) first = id;
+    }
+    if (first) { field(first).focus(); return; }
+
+    const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
+    data.elapsed = String(Date.now() - opened);
+    // Кодът на модела е ЕДИНСТВЕНОТО, по което сървърът вади цената. Самата цена
+    // тук е само каквото е видял човекът на екрана и служи за сверка, не за плащане.
+    data.slug = model.selectedOptions[0]?.dataset.slug ?? '';
+    data.price = model.selectedOptions[0]?.dataset.price ?? '';
+
+    send.disabled = true;
+    const label = send.textContent;
+    send.textContent = 'Изпращане…';
+
+    try {
+      const r = await fetch('/api/order', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const j = await r.json().catch(() => ({}));
+
+      // Тук влиза чекаутът: щом работникът върне адрес на плащането, тръгваме натам.
+      if (r.ok && j.ok && j.redirect) { location.href = j.redirect; return; }
+
+      if (r.ok && j.ok) {
+        form.reset();
+        showPrice();
+        ok.textContent = 'Поръчката е при нас. Обаждаме се в рамките на работния ден, за да я потвърдим и да уговорим плащането.';
+        ok.hidden = false;
+        ok.scrollIntoView({ block: 'nearest' });
+      } else {
+        const why = j.code === 'not-configured'
+          ? 'Поръчките още не са свързани с пощата на сервиза. '
+          : j.code === 'rate' ? 'Твърде много заявки от този адрес. '
+          : 'Нещо се обърка при изпращането. ';
+        bad.innerHTML = why + 'Обадете се на <a href="tel:+359883331609">088 333 1609</a> ' +
+          'или пишете на <a href="mailto:office@pdktuning.com">office@pdktuning.com</a>.';
+        bad.hidden = false;
+      }
+    } catch {
+      bad.innerHTML = 'Няма връзка със сървъра. Обадете се на <a href="tel:+359883331609">088 333 1609</a>.';
+      bad.hidden = false;
+    } finally {
+      send.disabled = false;
+      send.textContent = label;
+    }
+  });
+}
+</script>
+
+<style>
+.ord{display:grid;gap:28px}
+@media(min-width:980px){.ord{grid-template-columns:1.35fr .65fr;gap:40px;align-items:start}}
+
+.onote{margin:0 0 26px;padding:14px 16px;border-radius:10px;
+  background:rgba(255,255,255,.04);border:1px solid var(--grey9);
+  font:400 13px/1.6 var(--body);color:rgba(255,255,255,.74)}
+.onote b{display:block;margin-bottom:4px;color:var(--white)}
+
+.oprice{display:flex;align-items:baseline;justify-content:space-between;gap:14px;
+  margin:-6px 0 22px;padding:14px 16px;border-radius:10px;
+  background:rgba(82,251,9,.07);border:1px solid rgba(82,251,9,.3)}
+.oprice span{font:400 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.oprice b{font:700 24px/1 var(--head);color:var(--lime);font-variant-numeric:tabular-nums}
+
+/* Съгласието по чл. 57, т. 13 е отделено с линия: то е ДРУГО решение, не
+   продължение на отметката за лични данни отгоре. */
+.onow{margin-top:-6px;padding-top:16px;border-top:1px solid var(--grey9)}
+.onow .hint{grid-column:1 / -1;margin-top:2px}
+
+.ogroup{border:0;padding:0;margin:0 0 18px}
+.ogroup legend{padding:0;margin-bottom:8px;font:400 10px/1 var(--mono);letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(255,255,255,.72)}
+.ogroup legend span{color:var(--lime)}
+.opay{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 18px;margin-right:10px;
+  border:1px solid var(--grey9);border-radius:9px;cursor:pointer;
+  font:400 14px/1 var(--body);color:rgba(255,255,255,.8);transition:.16s}
+.opay:hover{border-color:rgba(255,255,255,.4)}
+.opay input{width:20px;height:20px;accent-color:var(--lime);cursor:pointer}
+.opay:has(input:checked){border-color:var(--lime);background:rgba(82,251,9,.08);color:var(--white)}
+
+.oside{background:#0C0C0C;border:1px solid var(--grey9);border-radius:14px;padding:26px 24px}
+.oside h2{margin:0 0 16px;font:700 16px/1 var(--head);text-transform:uppercase;letter-spacing:.05em}
+.oside ol{margin:0;padding-left:20px}
+.oside li{margin-bottom:10px;font:400 14px/1.55 var(--body);color:rgba(255,255,255,.74)}
+.ohelp{margin:20px 0 0;padding-top:18px;border-top:1px solid var(--grey9);
+  font:400 12px/1.9 var(--mono);color:rgba(255,255,255,.6)}
+.ohelp a{color:var(--lime)}
+</style>

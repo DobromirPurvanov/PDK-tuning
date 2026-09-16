@@ -1,0 +1,151 @@
+---
+/**
+ * Тринайсетте страници на услугите — една за всеки запис в `src/data/services.ts`.
+ *
+ * Нищо тук не се пише на ръка за конкретна услуга: ако липсва раздел (примерно
+ * „кога няма смисъл“ или собствени въпроси), той просто не се рисува. Така
+ * добавянето на четиринайсета услуга е един запис в данните, а не нова страница.
+ */
+import Page from '../../layouts/Page.astro';
+import { SERVICES, BY_SLUG, ICONS } from '../../data/services';
+import prices from '../../data/prices.json';
+import { crumbSchema, faqSchema, serviceSchema, bizRef } from '../../lib/seo';
+
+export function getStaticPaths() {
+  return SERVICES.map((s) => ({ params: { slug: s.slug } }));
+}
+
+const { slug } = Astro.params;
+const s = BY_SLUG.get(slug!)!;
+
+const P = prices.items as Record<string, { from: number; time: string }>;
+const price = s.priceKey ? P[s.priceKey] : undefined;
+
+const site = Astro.site!.href.replace(/\/$/, '');
+const crumbs = [
+  { href: '/uslugi/', label: 'Услуги' },
+  { href: `/uslugi/${s.slug}/`, label: s.name },
+];
+const trail = [{ href: '/', label: 'Начало' }, ...crumbs];
+
+const related = s.related.map((r) => BY_SLUG.get(r)!).filter(Boolean);
+
+const schema = [
+  bizRef(site),
+  serviceSchema(site, { name: s.name, description: s.description, slug: s.slug },
+    price ? { from: price.from, currency: prices.currency } : undefined),
+  crumbSchema(site, trail),
+  // FAQPage само когато въпросите наистина стоят в текста по-долу
+  ...(s.faq?.length ? [faqSchema(s.faq)] : []),
+];
+---
+<Page
+  title={s.title}
+  description={s.description}
+  kicker={s.kicker}
+  heading={s.name}
+  lead={s.lead}
+  crumbs={crumbs}
+  schema={schema}
+  ctaTitle="Да я погледнем."
+  ctaText={`Кажете ни колата и какво прави тя сега. За ${s.name.toLowerCase()} започваме с диагностика, не с оферта.`}
+>
+  <div class="p-wrap">
+    <section class="p-sec">
+      <div class="p-split">
+        <div class="p-prose">
+          {s.body.map((sec) => (
+            sec.tone === 'warn'
+              ? <div class="p-warn">
+                  <b>{sec.h}</b>
+                  {sec.p.map((t) => <p>{t}</p>)}
+                </div>
+              : <>
+                  <h2>{sec.h}</h2>
+                  {sec.p.map((t) => <p>{t}</p>)}
+                </>
+          ))}
+        </div>
+
+        <aside class="p-facts">
+          <h2>Накратко</h2>
+          <dl>
+            {s.facts?.map((f) => (<><dt>{f.k}</dt><dd>{f.v}</dd></>))}
+            {price && (<><dt>Ориентировъчно време</dt><dd>{price.time}</dd></>)}
+          </dl>
+          {price && (
+            <p class="p-price">
+              <b>от {price.from} €</b>
+              <span>Крайна цена след оглед. Числото е начало, не оферта.</span>
+            </p>
+          )}
+        </aside>
+      </div>
+    </section>
+
+    {(s.fits.length || s.notFor?.length) && (
+      <section class="p-sec">
+        <h2>За кого е</h2>
+        <div class="p-lists">
+          <div class="p-list yes">
+            <h3>Има смисъл при</h3>
+            <ul>{s.fits.map((t) => <li>{t}</li>)}</ul>
+          </div>
+          {s.notFor?.length && (
+            <div class="p-list no">
+              <h3>Няма смисъл при</h3>
+              <ul>{s.notFor.map((t) => <li>{t}</li>)}</ul>
+            </div>
+          )}
+        </div>
+      </section>
+    )}
+
+    <section class="p-sec">
+      <h2>Как минава при нас</h2>
+      <div class="p-steps">
+        {s.steps.map((st) => (
+          <div class="p-step">
+            <div>
+              <h3>{st.t}</h3>
+              <p>{st.d}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {s.faq?.length && (
+      <section class="p-sec">
+        <h2>Въпроси за тази услуга</h2>
+        <div class="p-qa">
+          {s.faq.map((f, i) => (
+            <details name="sfaq" open={i === 0}>
+              <summary><h3>{f.q}</h3><i aria-hidden="true"></i></summary>
+              <div class="ans"><p>{f.a}</p></div>
+            </details>
+          ))}
+        </div>
+        <p class="p-prose" style="margin-top:26px">
+          <a href="/vaprosi/">Всички въпроси и отговори →</a>
+        </p>
+      </section>
+    )}
+
+    <section class="p-sec">
+      <h2>Свързани услуги</h2>
+      <div class="p-cards three">
+        {related.map((r) => (
+          <a class="p-card" href={`/uslugi/${r.slug}/`}>
+            <span class="wash"></span>
+            <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><Fragment set:html={ICONS[r.icon]} /></svg></span>
+            <span class="lab">{r.kicker}</span>
+            <h3>{r.name}</h3>
+            <p>{r.short}</p>
+            <span class="go">Виж услугата →</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  </div>
+</Page>

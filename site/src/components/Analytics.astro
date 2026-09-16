@@ -1,0 +1,61 @@
+---
+/**
+ * Аналитиката.
+ *
+ * Маркерът идва от средата (`PUBLIC_GA_ID`) и в макета е ПРАЗЕН — демонстрационните
+ * посещения нямат работа в имота на клиента. Празно = този компонент не изписва
+ * НИТО ЕДИН ред в страницата.
+ *
+ * Скриптът на Google не се тегли предварително и не се „изключва“ след това:
+ * тегли се ЧАК след „да“ от банера (събитието `pdk:consent`). При отказ — нищо;
+ * при отмяна на вече дадено съгласие маркерът се гаси и бисквитките се трият.
+ */
+import { GA_ID } from '../config/site';
+---
+{GA_ID && (
+  <script is:inline define:vars={{ id: GA_ID }}>
+    (() => {
+      let loaded = false;
+
+      const load = () => {
+        if (loaded) return;
+        loaded = true;
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        gtag('js', new Date());
+        // Consent Mode v2: разрешава се САМО статистиката, реклама няма
+        gtag('consent', 'default', {
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          analytics_storage: 'granted',
+        });
+        gtag('config', id, { anonymize_ip: true });
+        const s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);
+        document.head.appendChild(s);
+      };
+
+      const stop = () => {
+        window['ga-disable-' + id] = true;
+        // изтриване на вече оставените бисквитки на Google
+        for (const c of document.cookie.split(';')) {
+          const name = c.split('=')[0].trim();
+          if (/^(_ga|_gid|_gat)/.test(name)) {
+            document.cookie = name + '=; Max-Age=0; path=/; domain=.' + location.hostname;
+            document.cookie = name + '=; Max-Age=0; path=/';
+          }
+        }
+      };
+
+      // Отбранително: липсващ или сгрешен detail значи „няма съгласие“ — при
+      // съмнение НЕ се зарежда нищо. Мълчаливото падане към `load()` е точно
+      // грешката, която прави барера безсмислен.
+      document.addEventListener('pdk:consent', (e) => {
+        const ok = !!(e && e.detail && e.detail.analytics === true);
+        ok ? load() : stop();
+      });
+    })();
+  </script>
+)}

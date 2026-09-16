@@ -1,0 +1,158 @@
+---
+/**
+ * СТО И ДЕСЕТТЕ СТРАНИЦИ НА МАРКИТЕ.
+ *
+ * Тук базата НЕ се копира — на страницата няма нито един двигател, записан
+ * статично. Живият избирач под текста тръгва ВЕЧЕ ИЗБРАН на тази марка и
+ * пита стария сайт в момента на отваряне.
+ *
+ * Текстът е свой за всяка марка (`src/data/brand-notes.ts`). Това не е
+ * украса: сто и десет страници с един и същ абзац и сменено име са точно
+ * определението за doorway pages.
+ */
+import Page from '../../layouts/Page.astro';
+import Picker from '../../components/Picker.astro';
+import MarkGrid from '../../components/MarkGrid.astro';
+import marks from '../../data/marks.json';
+import { noteFor } from '../../data/brand-notes';
+import { CAT_BY_KIND } from '../../data/categories';
+import { BY_SLUG as SVC, ICONS } from '../../data/services';
+import { crumbSchema, bizRef, pickDesc, pickTitle } from '../../lib/seo';
+
+type Mark = { slug: string; name: string; kind: string; ext: string | null };
+const all = marks as Mark[];
+
+export function getStaticPaths() {
+  return (marks as Mark[]).map((m) => ({ params: { brand: m.slug } }));
+}
+
+const { brand } = Astro.params;
+const m = all.find((x) => x.slug === brand)!;
+const cat = CAT_BY_KIND.get(m.kind as any)!;
+const note = noteFor(m.slug);
+
+// съседите в същата категория — за да не е страницата задънена улица
+const siblings = all.filter((x) => x.kind === m.kind && x.slug !== m.slug);
+const nearby = siblings.slice(0, 24);
+
+const services = cat.services.slice(0, 3).map((s) => SVC.get(s)!).filter(Boolean);
+
+const site = Astro.site!.href.replace(/\/$/, '');
+const crumbs = [
+  { href: '/katalog/', label: 'Каталог' },
+  { href: `/${cat.slug}/`, label: cat.name },
+  { href: `/katalog/${m.slug}/`, label: m.name },
+];
+
+// Имената са от 3 знака („MG“) до 21 („Mercedes-Benz Trucks“). Един шаблон за
+// всички изкарва дългите марки извън 158 знака и Google реже изречението по
+// средата. Вариантите са от най-дълъг към най-къс.
+// Същото и за заглавието: „Mercedes-Benz Trucks“ изкарва шаблона на 77 знака,
+// а Google реже около 60 и марката пада първа — тоест точно това, което трябва
+// да оцелее. Вариантите са от най-описателен към най-къс.
+const pageTitle = pickTitle(
+  `Чип тунинг ${m.name} — числа преди и след | PDK Tuning`,
+  `Чип тунинг ${m.name} — Варна | PDK Tuning`,
+  `Чип тунинг ${m.name} | PDK Tuning`,
+);
+
+const description = pickDesc(
+  `Чип тунинг, диагностика и софтуерни ремонти за ${m.name} във Варна. Изберете модела, годината и двигателя и вижте мощността преди и след — на живо от базата.`,
+  `Чип тунинг и софтуерни ремонти за ${m.name} във Варна. Изберете модел, година и двигател и вижте мощността преди и след — на живо от базата.`,
+  `Чип тунинг за ${m.name} във Варна. Изберете модел, година и двигател и вижте мощността преди и след — на живо от базата ни.`,
+);
+
+const schema = [
+  bizRef(site),
+  crumbSchema(site, [{ href: '/', label: 'Начало' }, ...crumbs]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: `Чип тунинг ${m.name}`,
+    description: `Чип тунинг и софтуерни ремонти за ${m.name} във Варна.`,
+    url: `${site}/katalog/${m.slug}/`,
+    provider: { '@id': `${site}/#business` },
+    areaServed: { '@type': 'City', name: 'Варна' },
+    brand: { '@type': 'Brand', name: m.name },
+  },
+];
+---
+<Page
+  title={pageTitle}
+  description={description}
+  kicker={cat.name}
+  heading={`Чип тунинг ${m.name}`}
+  lead={`Изберете модела и двигателя по-долу — числата излизат на живо от базата, а не от рекламна таблица.`}
+  crumbs={crumbs}
+  schema={schema}
+  ctaTitle={`Твоят ${m.name}.`}
+  ctaText="Кажете ни двигателя и пробега. Започваме с диагностика, не с оферта."
+>
+  <div class="p-wrap">
+    <section class="p-sec">
+      <div class="p-split">
+        <div class="p-prose">
+          <h2>Какво да очаквате от {m.name}</h2>
+          {note
+            ? <p>{note}</p>
+            : <p>Марката е в базата ни с реални стойности преди и след за всеки двигател.
+                Изберете модела и годината по-долу — числата идват на живо, а не от общо правило.</p>}
+          {cat.body[0] && cat.body[0].p.map((t) => <p>{t}</p>)}
+          <p>
+            Повече за работата ни с {cat.name.toLowerCase()} —
+            в <a href={`/${cat.slug}/`}>{cat.name.toLowerCase()}</a>.
+          </p>
+        </div>
+
+        <aside class="p-facts">
+          <h2>{m.name}</h2>
+          <dl>
+            <dt>Категория</dt>
+            <dd><a href={`/${cat.slug}/`} style="color:inherit;border-bottom:1px solid rgba(255,255,255,.2)">{cat.name}</a></dd>
+            <dt>Марки в категорията</dt>
+            <dd>{siblings.length + 1}</dd>
+            <dt>Източник на числата</dt>
+            <dd>живата база, без копие</dd>
+            <dt>Преди файл</dt>
+            <dd>диагностика — винаги</dd>
+          </dl>
+        </aside>
+      </div>
+    </section>
+  </div>
+
+  <Picker
+    heading={`${m.name} — избери двигателя`}
+    sub="Модел, година, двигател. Числата идват от базата в момента на избора."
+    brand={m.slug}
+  />
+
+  <div class="p-wrap">
+    <section class="p-sec">
+      <h2>Услуги за {m.name}</h2>
+      <div class="p-cards three">
+        {services.map((s) => (
+          <a class="p-card" href={`/uslugi/${s.slug}/`}>
+            <span class="wash"></span>
+            <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><Fragment set:html={ICONS[s.icon]} /></svg></span>
+            <span class="lab">{s.kicker}</span>
+            <h3>{s.name}</h3>
+            <p>{s.short}</p>
+            <span class="go">Виж услугата →</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <h2>Други марки в {cat.name.toLowerCase()}</h2>
+      <p class="p-note">{siblings.length} марки в същата категория.</p>
+      <MarkGrid marks={nearby} />
+      {siblings.length > nearby.length && (
+        <p class="p-prose" style="margin-top:24px">
+          <a href={`/${cat.slug}/`}>Виж всички {siblings.length + 1} марки в {cat.name.toLowerCase()} →</a>
+        </p>
+      )}
+    </section>
+  </div>
+</Page>

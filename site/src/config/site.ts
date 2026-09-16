@@ -1,0 +1,132 @@
+/**
+ * Едно място за всичко, което различава макета от истинското пускане.
+ *
+ * Когато сайтът тръгне на собствен домейн, се пипат ДВЕ неща:
+ *   1. `site` в astro.config.mjs → истинският домейн (канониклите и картата го четат оттам);
+ *   2. `PUBLIC_INDEXABLE=true` в средата → маха се `noindex` и robots.txt отваря обхождането.
+ * Нищо друго не се търси из страниците.
+ */
+import business from '../data/business.json';
+import { SERVICES } from '../data/services';
+import { CATEGORIES } from '../data/categories';
+
+/** Дали пускаме търсачките. Макетът стои ЗАТВОРЕН: индексира се истинският домейн,
+ *  не new-pdk.pages.dev — иначе двата адреса се бият за едни и същи думи. */
+export const INDEXABLE = import.meta.env.PUBLIC_INDEXABLE === 'true';
+
+/** GA4 маркерът идва от средата и е ПРАЗЕН в макета: демонстрационните посещения
+ *  нямат работа в имота на клиента. Празно = не се зарежда нищо. */
+export const GA_ID = import.meta.env.PUBLIC_GA_ID ?? '';
+
+/**
+ * ЖИВ ЛИ Е ЧЕКАУТЪТ. Изключен по подразбиране.
+ *
+ * Страницата за поръчка е статична и не може да пита работника дали има ключ за
+ * Stripe, а текстът „плащането още не става онлайн“ трябва да изчезне в същия
+ * миг, в който плащането тръгне. Затова един флаг при билда управлява думите,
+ * а работникът си решава сам по `STRIPE_SECRET_KEY`.
+ *
+ * При пускането се вдигат ДВЕТЕ: `PUBLIC_CHECKOUT=true` в билда и
+ * `STRIPE_SECRET_KEY` в средата на Pages. Само едното дава или мълчалива
+ * страница, която обещава плащане, или обратното.
+ */
+export const CHECKOUT_LIVE = import.meta.env.PUBLIC_CHECKOUT === 'true';
+
+export const SITE = {
+  name: 'PDK Tuning',
+  locale: 'bg_BG',
+  lang: 'bg',
+  /**
+   * Снимката за споделяне; прави се абсолютна спрямо домейна в Head.astro.
+   *
+   * ОТДЕЛЕН ФАЙЛ, не хиро кадърът. Facebook, LinkedIn, X и Slack режат към
+   * 1,91 (1200×630); хирото е 1280×704 = 1,82 и всяка платформа го реже сама
+   * и по различен начин. Този е изрязан веднъж, съзнателно —
+   * `node scripts/make-og.mjs`.
+   */
+  ogImage: '/img/og-pdk.jpg',
+  ogImageW: 1200,
+  ogImageH: 630,
+  ogImageType: 'image/jpeg',
+  ogImageAlt: 'Тъмно купе на стенда на PDK Tuning във Варна, осветено в зелено',
+  themeColor: '#080808',
+  /**
+   * Марката НЯМА профил в X. `twitter:site` и `twitter:creator` нарочно
+   * ЛИПСВАТ — измислен хендъл сочи чужд профил, а празен атрибут е невалиден.
+   * `twitter:card` работи и без тях.
+   */
+  twitterHandle: '' as string,
+} as const;
+
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * АДРЕСИТЕ СА НА КОРЕНА, С ЛАТИНИЦА — и това НЕ е стилово решение.
+ *
+ * След прехвърлянето този сайт застава върху pdktuning.com, а старият остава
+ * отдолу: `/bg`, `/en`, `/images`, `/vendor`, `/js`, `/css`, `/uploads`,
+ * `/storage` се ПОДАВАТ на него (виж `passThrough` в public/_worker.js), за да
+ * не се счупят ~9 000 индексирани адреса и входът на дилърите.
+ *
+ * Затова нито една наша страница не бива да живее под `/bg/` — тя просто няма
+ * да стигне до нас. Всеки нов адрес се добавя тук и се проверява, че не се
+ * застъпва със списъка в работника.
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+/** Разделите НА НАЧАЛНАТА — котви, не страници. */
+export const SECTIONS = [
+  { id: 'picker', label: 'Избери автомобил' },
+  { id: 'services', label: 'Услуги' },
+  { id: 'faq', label: 'Въпроси' },
+  { id: 'contact', label: 'Контакти' },
+] as const;
+
+export type NavItem = { href: string; label: string; children?: { href: string; label: string }[] };
+
+/** Основното меню. Двете групи с падащ списък се четат от данните, за да не
+ *  съществува връзка към услуга или категория, която я няма. */
+export const NAV: NavItem[] = [
+  {
+    href: '/uslugi/',
+    label: 'Услуги',
+    children: SERVICES.map((s) => ({ href: `/uslugi/${s.slug}/`, label: s.name })),
+  },
+  {
+    href: '/katalog/',
+    label: 'Каталог',
+    children: [
+      ...CATEGORIES.map((c) => ({ href: `/${c.slug}/`, label: c.name })),
+      { href: '/elektricheski/', label: 'Електрически автомобили' },
+      { href: '/katalog/', label: 'Всички марки' },
+    ],
+  },
+  // Собствен вход в лентата, а не само в падащия списък: това е новото
+  // направление и рекламата на началната води точно тук.
+  { href: '/elektricheski/', label: 'Електрически' },
+  { href: '/tseni/', label: 'Цени' },
+  { href: '/kak-rabotim/', label: 'Как работим' },
+  { href: '/za-nas/', label: 'За нас' },
+  { href: '/kontakti/', label: 'Контакти' },
+];
+
+/** Втори ред връзки — стоят в долния ред, не в лентата. */
+export const MORE = [
+  { href: '/pdk-flasher/', label: 'Устройството PDK Flasher' },
+  { href: '/vaprosi/', label: 'Въпроси и отговори' },
+  { href: '/mit-fakt/', label: 'Мит и факт' },
+  { href: '/blog/', label: 'Статии' },
+  { href: '/za-dileri/', label: 'За дилъри и сервизи' },
+] as const;
+
+/** Правните страници: едно място, от което ги вадят и футърът, и картата. */
+export const LEGAL = [
+  { href: '/privacy/', label: 'Поверителност' },
+  { href: '/terms/', label: 'Общи условия' },
+  { href: '/cookie-policy/', label: 'Политика за бисквитки' },
+  { href: '/otkaz-i-reklamacii/', label: 'Отказ и рекламации' },
+] as const;
+
+export const BUSINESS = business;
+
+/** Порталът за файлове остава на СТАРИЯ сървър — не се пипа и не се пренася. */
+export const PORTAL = business.portal.login.bg;

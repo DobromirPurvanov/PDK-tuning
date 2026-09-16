@@ -1,0 +1,113 @@
+---
+/**
+ * Хъбът на услугите. Тринайсетте плочки се четат от данните — списък, който
+ * се разминава с истинските страници, е въпрос на време.
+ */
+import Page from '../../layouts/Page.astro';
+import { SERVICES, ICONS } from '../../data/services';
+import { CATEGORIES } from '../../data/categories';
+import prices from '../../data/prices.json';
+import { crumbSchema, bizRef } from '../../lib/seo';
+
+const P = prices.items as Record<string, { from: number; time: string }>;
+const site = Astro.site!.href.replace(/\/$/, '');
+const crumbs = [{ href: '/uslugi/', label: 'Услуги' }];
+
+const schema = [
+  bizRef(site),
+  crumbSchema(site, [{ href: '/', label: 'Начало' }, ...crumbs]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Услуги на PDK Tuning',
+    itemListElement: SERVICES.map((s, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: s.name,
+      url: `${site}/uslugi/${s.slug}/`,
+    })),
+  },
+];
+
+/** трите семейства — подредбата сама казва къде свършва тунингът и почва ремонтът */
+const groups = [
+  {
+    lab: 'Мощност',
+    note: 'Работа в резерва, който заводът е оставил.',
+    keys: ['chip-tuning', 'stage-2', 'tcu-dsg', 'pops-bangs', 'vmax-off'],
+  },
+  {
+    lab: 'Дизел и изгорели газове',
+    note: 'Първо диагностика. Ремонт, а не изключване — за коли на пътя.',
+    keys: ['dpf-fap', 'egr', 'adblue'],
+  },
+  {
+    lab: 'Диагностика и ремонт',
+    note: 'Оттук започва всичко останало.',
+    keys: ['diagnostika', 'dtc-greshki', 'lambda-maf', 'softueren-remont', 'dyno-stend'],
+  },
+];
+---
+<Page
+  title="Услуги — чип тунинг и софтуерни ремонти | PDK Tuning"
+  description="Тринайсет услуги: чип тунинг и Stage 2, настройка на скоростна кутия, DPF, EGR, AdBlue, диагностика, стенд и софтуерен ремонт на блок. Варна."
+  kicker="Какво правим"
+  heading="Услуги"
+  lead="Диагностика преди файл. Ако проблемът е датчик, го казваме — и не пишем нищо."
+  crumbs={crumbs}
+  schema={schema}
+>
+  <div class="p-wrap">
+    {groups.map((g) => (
+      <section class="p-sec">
+        <h2>{g.lab}</h2>
+        <p class="p-note">{g.note}</p>
+        <div class="p-cards three">
+          {g.keys.map((k) => {
+            const s = SERVICES.find((x) => x.slug === k)!;
+            const pr = s.priceKey ? P[s.priceKey] : undefined;
+            return (
+              <a class="p-card" href={`/uslugi/${s.slug}/`}>
+                <span class="wash"></span>
+                <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><Fragment set:html={ICONS[s.icon]} /></svg></span>
+                <span class="lab">{s.kicker}</span>
+                <h3>{s.name}</h3>
+                <p>{s.short}{pr && <><br /><b>от {pr.from} €</b> · {pr.time}</>}</p>
+                <span class="go">Виж услугата →</span>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    ))}
+
+    <section class="p-sec">
+      <h2>По вид техника</h2>
+      <p class="p-note">Не всяка услуга има смисъл за всяка машина.</p>
+      <div class="p-cards three">
+        {CATEGORIES.map((c) => (
+          <a class="p-card" href={`/${c.slug}/`}>
+            <span class="wash"></span>
+            <span class="lab">{c.services.length} услуги</span>
+            <h3>{c.name}</h3>
+            <p>{c.lead}</p>
+            <span class="go">Виж категорията →</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <h2>Цените</h2>
+      <p class="p-note">Пълната таблица с ориентировъчни стойности и какво ги мени.</p>
+      <div class="p-prose">
+        <p>
+          Всяка услуга има начална цена, а крайната се казва след оглед. Причината не е
+          предпазливост: една и съща работа върху две различни коли отнема различно време и
+          изисква различни части. Затова числото до услугата е начало, а не оферта.
+        </p>
+        <p><a href="/tseni/">Виж всички цени →</a></p>
+      </div>
+    </section>
+  </div>
+</Page>

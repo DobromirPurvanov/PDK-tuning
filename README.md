@@ -1,4 +1,18 @@
-# pdktuning.com — новият сайт
+# pdktuning.com
+
+> **В това хранилище има ДВА сайта.** Този в корена и този в `site/`. Не се
+> строят заедно и не се деплойват заедно.
+>
+> | | корен | [`site/`](site/README.md) |
+> |---|---|---|
+> | какво е | Astro сайт с ~30 000 страници от изнесен каталог | новият сайт, 183 страници |
+> | къде отива | VPS-ът, Docker + nginx | Cloudflare Pages, проект `new-pdk` |
+> | какво го пуска | таг `v*` → `.github/workflows/deploy.yml` | `npm run deploy:etap1` от `site/` |
+>
+> Останалото в този файл описва **сайта в корена**. За новия виж
+> [`site/README.md`](site/README.md).
+
+## Сайтът в корена
 
 Статичен сайт (Astro 7) + nginx в Docker + малък API за формата. Строи се по „Пълен план за изпълнение“ от 25.08.2026 (Just Pablo).
 Адресите на стария сайт се запазват 1:1; каталогът е извлечен от него и живее като JSON в хранилището.
@@ -41,14 +55,41 @@ SSH secrets остават `SERVER_HOST`, `SERVER_USER`, `SERVER_PORT`, `SSH_PRI
 За ръчно стартиране след успешен деплой, в `/home/pdk_new/website`:
 
 ```bash
-docker compose --env-file .env --env-file .images.env up -d --no-build --pull never web api
+docker compose -f .compose.active.yml --env-file .env --env-file .images.env \
+  up -d --no-build --pull never web api
 # Ако има .env.local, добави --env-file .env.local преди --env-file .images.env.
 ```
 
-Локалният `docker-compose.yml` остава за разработка с build.
-На сървъра pipeline-ът записва `docker-compose.production.yml` като `docker-compose.yml`
-без build секции. SEO проверките са отделна CI порта в `build-check.yml`;
-в Dockerfile резултатът им е диагностичен и не спира образа.
+### Какво оставя деплоят на сървъра
+
+Четири неща, всичките очаквани и всичките в `.gitignore`:
+
+| | какво е |
+|---|---|
+| `.compose.active.yml` | съставът, с който в момента вървят контейнерите |
+| `.images.env` | имената на образите от последния **успешен** деплой |
+| `.deploy.lock` | заключване срещу два едновременни деплоя |
+| `releases/` | стоварените пакети |
+
+**Следеният `docker-compose.yml` не се пипа.** Той е за локална работа с `build:`;
+продукционният е `docker-compose.production.yml` и се стоварва под `releases/`.
+По-рано продукционният се копираше върху следения и `git status` на сървъра
+оставаше вечно „modified“ — всяко влизане там изглеждаше като че някой е пипал
+хранилището на ръка.
+
+Ако на сървъра още стои старото копие, връща се с:
+
+```bash
+git checkout -- docker-compose.yml
+```
+
+Работното дърво там е **замръзнало** от стария начин на деплой (`HEAD detached`
+на някакъв стар таг) и не показва коя версия работи. Днешният конвейер не прави
+`checkout` — кодът идва от образите. Какво върви наистина се вижда в
+`.images.env` и в `docker compose -f .compose.active.yml ps`.
+
+SEO проверките са отделна CI порта в `build-check.yml`; в Dockerfile резултатът
+им е диагностичен и не спира образа.
 
 ## Памет на API-то
 

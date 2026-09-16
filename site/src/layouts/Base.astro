@@ -1,0 +1,91 @@
+---
+/**
+ * Обвивката на всяка страница: глава, лента, съдържание, долен ред, бисквитки.
+ *
+ * Тук стоят САМО общите неща — жетоните на бранда, шрифтовете, нулирането и
+ * скелетът. Всичко, което е само за началната, си остава в index.astro.
+ */
+import Head from '../components/Head.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Consent from '../components/Consent.astro';
+import Analytics from '../components/Analytics.astro';
+import { SITE } from '../config/site';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  ogType?: 'website' | 'article';
+  noindex?: boolean;
+  schema?: Record<string, unknown>[];
+  /** класове за <body> — началната си боядисва фона другояче */
+  bodyClass?: string;
+}
+const { bodyClass = '', ...head } = Astro.props;
+---
+<!doctype html>
+<html lang={SITE.lang}>
+<head>
+  <Head {...head} />
+  <!--
+    Двата шрифта, с които е написан ПЪРВИЯТ екран на всяка страница: Oswald
+    рисува заглавията, Golos е `--body`, тоест всеки абзац и всеки бутон.
+    Golos липсваше дълго време — теглеше се чак след като браузърът разчете
+    вградения CSS, докато моно шрифтът за дребните етикети се дърпаше с
+    приоритет. Тоест най-важният текст чакаше заради второстепенния.
+    Латинските части и моно шрифтът идват при нужда.
+  -->
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/oswald-700-cyrillic.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/golos-text-400-cyrillic.woff2" crossorigin />
+  <slot name="head" />
+  <style is:global>
+    @font-face{font-family:'Oswald';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/oswald-700-cyrillic.woff2) format('woff2');unicode-range:U+0400-045F,U+0490-0491}
+    @font-face{font-family:'Oswald';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/oswald-700-latin.woff2) format('woff2')}
+    @font-face{font-family:'Golos Text';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/golos-text-400-cyrillic.woff2) format('woff2');unicode-range:U+0400-045F,U+0490-0491}
+    @font-face{font-family:'Golos Text';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/golos-text-400-latin.woff2) format('woff2')}
+    @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/jetbrains-mono-400-cyrillic.woff2) format('woff2');unicode-range:U+0400-045F,U+0490-0491}
+    @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/jetbrains-mono-400-latin.woff2) format('woff2')}
+
+    :root{
+      --black:#080808; --grey9:#232323; --grey5:#999898; --white:#FFFFFF;
+      --green:#05AD02; --lime:#52FB09;
+      --head:'Oswald','Arial Narrow',sans-serif;
+      --body:'Golos Text',system-ui,sans-serif;
+      --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+      --gut:22px; color-scheme:dark;
+    }
+    @media(min-width:900px){:root{--gut:56px}}
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-padding-top:88px}
+    body{margin:0;background:var(--black);color:var(--white);font:400 17px/1.55 var(--body);
+      -webkit-font-smoothing:antialiased;overflow-x:hidden}
+    img{display:block;max-width:100%}
+    /* УЛОВКА: правило с `display` от таблицата бие `[hidden]` на браузъра. Така
+       скритите марки в каталога и грешките под полетата се виждаха ВЕДНАГА.
+       Едно правило спасява всяко бъдещо `hidden` в тази страница. */
+    [hidden]{display:none !important}
+    a,button{color:inherit;text-decoration:none;font:inherit}
+    :focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:3px}
+    main:focus{outline:none}
+    .skip{position:absolute;left:-9999px;top:0;z-index:70;background:var(--lime);color:#041000;
+      display:inline-flex;align-items:center;min-height:48px;padding:0 20px;font:700 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+    .skip:focus{left:12px;top:12px}
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;
+        transition-duration:.001ms !important}
+    }
+  </style>
+</head>
+<body class={bodyClass}>
+  <a class="skip" href="#content">Към съдържанието</a>
+  <Header />
+  <main id="content" tabindex="-1">
+    <slot />
+  </main>
+  <Footer />
+  <Consent />
+  <Analytics />
+</body>
+</html>

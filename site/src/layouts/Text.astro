@@ -1,0 +1,78 @@
+---
+/**
+ * Обвивка за страниците, които са само текст — правните и подобните.
+ * Типографията е една: мярка около 70 знака, дишащи заглавия, четим сив.
+ */
+import Base from './Base.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  heading: string;
+  /** „в сила от“ — датата стои под заглавието и се вижда от читателя */
+  updated?: string;
+  lead?: string;
+  noindex?: boolean;
+  schema?: Record<string, unknown>[];
+}
+const { heading, updated, lead, ...head } = Astro.props;
+---
+<Base {...head} ogType="article">
+  <article class="doc">
+    <header class="doc-head">
+      <p class="doc-kick">PDK Tuning</p>
+      <h1>{heading}</h1>
+      {lead && <p class="doc-lead">{lead}</p>}
+      {updated && <p class="doc-date">В сила от {updated}</p>}
+    </header>
+    <div class="doc-body">
+      <slot />
+    </div>
+  </article>
+</Base>
+
+<style is:global>
+.doc{max-width:900px;margin:0 auto;padding:150px var(--gut) 96px}
+@media(max-width:760px){.doc{padding:120px var(--gut) 72px}}
+
+.doc-head{padding-bottom:34px;margin-bottom:40px;border-bottom:1px solid var(--grey9)}
+.doc-kick{margin:0 0 16px;font:400 10px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--lime)}
+.doc h1{margin:0;font:700 clamp(2.2rem,5.6vw,4rem)/.98 var(--head);letter-spacing:-.025em;text-transform:uppercase}
+.doc-lead{margin:22px 0 0;max-width:62ch;font:400 17px/1.6 var(--body);color:rgba(255,255,255,.82)}
+.doc-date{margin:18px 0 0;font:400 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.56)}
+
+.doc-body{max-width:70ch}
+.doc-body h2{margin:52px 0 16px;font:700 clamp(20px,2.4vw,26px)/1.15 var(--head);
+  letter-spacing:-.01em;text-transform:uppercase}
+.doc-body h2:first-child{margin-top:0}
+.doc-body h3{margin:32px 0 10px;font:700 16px/1.3 var(--head);text-transform:uppercase;letter-spacing:.01em;color:var(--lime)}
+.doc-body p{margin:0 0 16px;font:400 16px/1.7 var(--body);color:rgba(255,255,255,.78)}
+.doc-body ul,.doc-body ol{margin:0 0 18px;padding-left:22px}
+.doc-body li{margin:0 0 9px;font:400 16px/1.7 var(--body);color:rgba(255,255,255,.78)}
+.doc-body li::marker{color:var(--lime)}
+.doc-body a{color:var(--lime);border-bottom:1px solid rgba(82,251,9,.4)}
+.doc-body a:hover{border-bottom-color:var(--lime)}
+.doc-body strong{color:var(--white);font-weight:400}
+.doc-body dl{margin:0 0 18px}
+.doc-body dt{margin-top:16px;font:400 13px/1.4 var(--mono);color:var(--white)}
+.doc-body dd{margin:5px 0 0;font:400 15px/1.6 var(--body);color:rgba(255,255,255,.72)}
+
+/* полето „попълва се“ — личи си, че чака данни от клиента */
+.fill{display:inline-block;padding:1px 8px;border:1px dashed rgba(82,251,9,.5);border-radius:5px;
+  font:400 13px/1.5 var(--mono);color:rgba(255,255,255,.72);background:rgba(82,251,9,.05)}
+
+.doc-table{width:100%;margin:0 0 22px;border-collapse:collapse;
+  font:400 14px/1.55 var(--body);color:rgba(255,255,255,.78)}
+.doc-table th,.doc-table td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--grey9);vertical-align:top}
+.doc-table th{font:400 10px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+.doc-table code{font:400 13px/1.4 var(--mono);color:var(--lime)}
+/* тясната таблица се пренарежда — иначе излиза извън екрана */
+@media(max-width:620px){
+  .doc-table,.doc-table tbody,.doc-table tr,.doc-table td{display:block;width:100%}
+  .doc-table thead{position:absolute;left:-9999px}
+  .doc-table tr{padding:14px 0;border-bottom:1px solid var(--grey9)}
+  .doc-table td{border:0;padding:3px 0}
+  .doc-table td::before{content:attr(data-l);display:block;margin-bottom:3px;
+    font:400 10px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+}
+</style>

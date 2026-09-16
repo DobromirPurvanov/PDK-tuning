@@ -1,0 +1,61 @@
+---
+/**
+ * Плочките с емблемите на марките.
+ *
+ * Стояха вградени в началната и водеха към `#picker`. Сега марките имат
+ * собствени страници, затова плочката е връзка към `/katalog/<марка>/`.
+ *
+ * Знакът е `<img loading="lazy">`, а НЕ CSS маска: маските не могат мързеливо,
+ * а 110 емблеми не бива да се теглят, преди решетката да е дошла на екрана.
+ * `brightness(0) invert(1)` ги изравнява като бял силует — иначе плочковидните
+ * лога (DAF, MAN, John Deere) излизат като бели правоъгълници.
+ *
+ * За 25-те марки без чист знак в свободен източник се изписва името в Oswald.
+ * Това е нарочно решение: изглежда еднакво и никога не е грешно.
+ */
+type Mark = { slug: string; name: string; kind: string; ext: string | null };
+
+interface Props {
+  marks: Mark[];
+  /** едрите плочки — само за популярните отпред */
+  big?: boolean;
+  id?: string;
+  hidden?: boolean;
+}
+const { marks, big = false, id, hidden = false } = Astro.props;
+---
+<div class:list={['row-marks', big && 'big-marks']} id={id} hidden={hidden}>
+  {marks.map((m) => (
+    <a class="mark" href={`/katalog/${m.slug}/`}>
+      {m.ext
+        ? <img src={`/marks/${m.slug}.${m.ext}`} alt="" loading="lazy" decoding="async" width="120" height="40" />
+        : <b class="word">{m.name}</b>}
+      <em>{m.name}</em>
+    </a>
+  ))}
+</div>
+
+<style is:global>
+.row-marks{display:flex;flex-wrap:wrap;gap:10px}
+.mark{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  width:92px;height:80px;padding:6px;border:1px solid var(--grey9);border-radius:10px;background:#0C0C0C;
+  transition:border-color .2s,background .2s,transform .2s}
+@media(max-width:520px){.mark{width:calc(33.333% - 7px);height:76px}}
+.mark img{width:auto;height:auto;max-width:74%;max-height:30px;
+  filter:brightness(0) invert(1);opacity:.72;transition:opacity .2s,transform .2s}
+.mark .word{font:700 15px/1 var(--head);letter-spacing:.01em;text-transform:uppercase;
+  color:rgba(255,255,255,.72);text-align:center;max-width:100%;overflow:hidden;transition:color .2s}
+.mark em{font-style:normal;font:400 8px/1 var(--mono);letter-spacing:.06em;color:rgba(255,255,255,.56);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:84px;text-align:center;transition:color .2s}
+.mark:hover{border-color:rgba(82,251,9,.45);background:#0E140A;transform:translateY(-2px)}
+.mark:hover img{opacity:1;transform:scale(1.06)}
+.mark:hover .word{color:var(--lime)}
+.mark:hover em{color:rgba(255,255,255,.8)}
+
+/* Популярните стоят ЕДРО отпред; останалите се отварят с копчето. */
+.big-marks .mark{width:126px;height:104px;gap:11px}
+.big-marks .mark img{max-height:40px;max-width:78%;opacity:.8}
+.big-marks .mark .word{font-size:18px}
+.big-marks .mark em{font-size:9px;max-width:112px}
+@media(max-width:520px){.big-marks .mark{width:calc(33.333% - 7px);height:92px}}
+</style>

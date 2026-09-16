@@ -1,0 +1,352 @@
+---
+/**
+ * ИЗБИРАЧЪТ — марка → модел → година → двигател, на живо от базата.
+ *
+ * Стоеше вграден в началната. Изнесен е тук, защото сега го ползват и
+ * стоте страници на марките: копие от 150 реда скрипт на всяка от тях е
+ * начинът един ден да се окажат три различни версии.
+ *
+ * Тук НЕ се пази нищо от каталога. Всяко ниво е една заявка към
+ * `/live/*` в public/_worker.js, който чете стария сайт в момента на
+ * заявката. Кешът е само в паметта на отворената страница.
+ *
+ * ВНИМАНИЕ С ИМЕНАТА НА КЛАСОВЕТЕ. Стиловете са `is:global`, защото
+ * скриптът създава копчетата с JS и обхватът на Astro не ги хваща. Веднъж
+ * лентата за напредък се казваше `bar` — точно като лентата горе — и наследи
+ * `position:fixed`, та легна през целия екран. Затова е `pline`.
+ */
+import { BUSINESS } from '../config/site';
+
+interface Props {
+  /** заглавие над избирача */
+  heading?: string;
+  sub?: string;
+  /** марка, която да се избере сама при зареждане (страниците на марките) */
+  brand?: string;
+  /** къде отива „Запази час", когато на страницата няма форма */
+  formHref?: string;
+}
+const {
+  heading = 'Намери своя автомобил',
+  sub = 'Четири стъпки до реалните числа за твоя двигател.',
+  brand = '',
+  formHref = '/kontakti/',
+} = Astro.props;
+---
+
+<section class="pick">
+  <div class="panel" id="picker" data-brand={brand} data-form={formHref}>
+    <div class="ph">
+      <div class="line">
+        <div>
+          <h2>{heading}</h2>
+          <p>{sub}</p>
+        </div>
+        <button class="x" type="button" id="pclear" aria-label="Изчисти избора">✕</button>
+      </div>
+      <div class="prog"><span class="pline"><i id="pbar"></i></span><span id="pstep">1 / 4 завършени</span></div>
+    </div>
+
+    <div class="cols">
+      <div class="col">
+        <b id="lab-brand">Марка</b>
+        <input id="bq" class="q" type="search" placeholder="Търси марка…" autocomplete="off" aria-label="Търси марка" />
+        <ul id="c1" aria-labelledby="lab-brand"><li class="empty">Тегли от базата…</li></ul>
+      </div>
+      <div class="col"><b id="lab-model">Модел</b><ul id="c2" aria-labelledby="lab-model"><li class="empty">Избери марка</li></ul></div>
+      <div class="col"><b id="lab-year">Година</b><ul id="c3" aria-labelledby="lab-year"><li class="empty">Избери модел</li></ul></div>
+      <div class="col">
+        <b id="lab-engine">Двигател</b>
+        <ul id="c4" aria-labelledby="lab-engine"><li class="empty">Избери година</li></ul>
+        <div class="result" id="res" role="status">
+          <div class="big"><b id="rhp">+0</b><span>к.с.</span></div>
+          <div class="kv"><span>Мощност</span><span id="rp">—</span></div>
+          <div class="kv"><span>Момент</span><span id="rn">—</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pf">
+      <a class="help" href={`tel:${BUSINESS.phone}`}>Нужна ти е помощ? ↗</a>
+      <div class="btns">
+        <button id="pback" type="button" disabled>Назад</button>
+        <button class="go" id="pnext" type="button">Запази час</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// Всяко ниво е ЕДНА заявка към живата база през /live/* (виж public/_worker.js).
+type Item = { slug: string; label: string; right?: string; value?: any; key?: string };
+
+const panel = document.getElementById('picker');
+if (panel) {
+  const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Нарочно НЕ е `!`: същият скрипт върви и на страници без форма и без
+  // броячи в хирото. Липсващ възел значи „тази страница няма това“, не грешка.
+  const $ = (id: string) => document.getElementById(id);
+  const need = (id: string) => document.getElementById(id)!;
+  const cols = [need('c1'), need('c2'), need('c3'), need('c4')];
+  const state: Record<string, any> = { b: null, m: null, y: null, e: null };
+  const mem = new Map<string, any>();
+
+  async function live(path: string) {
+    if (mem.has(path)) return mem.get(path);
+    const r = await fetch('/live/' + path);
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.error || r.status);
+    mem.set(path, j.data);
+    return j.data;
+  }
+
+  const note = (ul: HTMLElement, txt: string) => {
+    ul.replaceChildren();
+    const li = document.createElement('li');
+    li.className = 'empty';
+    li.textContent = txt;
+    ul.appendChild(li);
+  };
+
+  function fill(ul: HTMLElement, items: Item[], onPick: (v: any) => void) {
+    ul.innerHTML = '';
+    const frag = document.createDocumentFragment();
+    for (const it of items) {
+      const li = document.createElement('li');
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      const name = document.createElement('span');
+      name.textContent = it.label;
+      btn.appendChild(name);
+      if (it.right) { const em = document.createElement('em'); em.textContent = it.right; btn.appendChild(em); }
+      btn.onclick = (ev) => {
+        ev.preventDefault();
+        ul.querySelectorAll('button').forEach((x) => x.classList.remove('on'));
+        btn.classList.add('on');
+        onPick(it.value ?? it);
+      };
+      li.appendChild(btn); frag.appendChild(li);
+    }
+    ul.appendChild(frag);
+  }
+
+  const cols4 = panel.querySelector('.cols') as HTMLElement;
+  const step = (n: number) => {
+    cols4.dataset.step = String(n);   // на тесен екран се вижда само тази колона
+    need('pbar').style.width = (n / 4 * 100) + '%';
+    need('pstep').textContent = `${n} / 4 завършени`;
+    (need('pback') as HTMLButtonElement).disabled = n <= 1;
+  };
+  const reset = (from: number) => {
+    const hints = ['', 'Избери марка', 'Избери модел', 'Избери година'];
+    for (let i = from; i < 4; i++) note(cols[i], hints[i]);
+    need('res').classList.remove('on');
+  };
+  // „316D 116hp“ → 116; показваме мощността ВДЯСНО в колоната
+  const hpOf = (label: string) => { const m = label.match(/(\d+)\s*hp/i); return m ? m[1] + ' hp' : ''; };
+  // …и я МАХАМЕ от самото име, иначе редът излиза „3.0i Bi-turbo 340hp   340 hp“.
+  // Старата база лепи мощността накрая ту с интервал, ту без. Реже се само в
+  // КРАЯ — „320d 163hp“ да, „116d 1.6 116hp xDrive“ не.
+  // Второто чистене е за увисналия разделител: „2.0 Tfsi - 235hp“ оставяше
+  // „2.0 Tfsi -“ с тире, което не води наникъде.
+  const stripHp = (label: string) =>
+    label.replace(/\s*\d+\s*hp\s*$/i, '').replace(/\s*[-–—·|,]\s*$/, '').trim() || label;
+
+  async function pickEngine(e: Item) {
+    state.e = e; step(4);
+    need('rhp').textContent = '…';
+    need('res').classList.add('on');
+    try {
+      const r = await live(`result/${state.b.slug}/${state.m.slug}/${state.y.slug}/${e.slug}`);
+      // В старата база има двигатели с празни клетки — тогава излизаше „+-140“ и
+      // „140 → 0 к.с.“. По-добре празно, отколкото измислено число.
+      const real = (p: number[] | null) => (p && p[0] > 0 && p[1] > p[0] ? p : null);
+      const hp = real(r.hp), nm = real(r.nm);
+      need('rhp').textContent = hp ? '+' + (hp[1] - hp[0]) : '—';
+      need('rp').innerHTML = hp ? `${hp[0]} → <b>${hp[1]}</b> к.с.` : 'няма данни за този двигател';
+      need('rn').innerHTML = nm ? `${nm[0]} → <b>${nm[1]}</b> Nm` : '—';
+    } catch {
+      need('rhp').textContent = '—';
+      need('rp').textContent = 'базата не отговаря';
+      need('rn').textContent = '';
+    }
+  }
+
+  async function pickYear(y: Item) {
+    state.y = y; reset(3); step(3);
+    note(cols[3], 'Тегли…');
+    try {
+      const list = await live(`engines/${state.b.slug}/${state.m.slug}/${y.slug}`);
+      // `value` пази ЦЯЛОТО име — то отива в запитването и в полето „Автомобил“;
+      // подрязаното е само за екрана, за да не се повтаря мощността.
+      fill(cols[3], list.map((e: Item) => ({
+        ...e, label: stripHp(e.label), right: hpOf(e.label), value: e,
+      })), pickEngine);
+    } catch (err: any) { note(cols[3], String(err.message)); }
+  }
+
+  async function pickModel(m: Item) {
+    state.m = m; reset(2); step(2);
+    note(cols[2], 'Тегли…');
+    try {
+      fill(cols[2], await live(`years/${state.b.slug}/${m.slug}`), pickYear);
+    } catch (err: any) { note(cols[2], String(err.message)); }
+  }
+
+  async function pickBrand(b: Item) {
+    state.b = b; reset(1); step(1);
+    note(cols[1], 'Тегли…');
+    try {
+      fill(cols[1], await live(`models/${b.slug}`), pickModel);
+    } catch (err: any) { note(cols[1], String(err.message)); }
+  }
+
+  let brandItems: Item[] = [];
+  (async () => {
+    try {
+      const list = await live('brands');
+      brandItems = list.map((b: Item) => ({ ...b, key: b.label.toLowerCase() }));
+      fill(cols[0], brandItems, pickBrand);
+      // броячите съществуват само на началната
+      const n = String(list.length);
+      const hb = $('hBrands'); if (hb) hb.textContent = n;
+      const wc = $('wCount'); if (wc) wc.textContent = n;
+
+      // На страницата на марка избирачът тръгва вече избран. Ако живата база не
+      // познава този slug, просто оставаме на първа стъпка — по-добре, отколкото
+      // да мълчим с празна колона.
+      const want = panel.dataset.brand;
+      if (want) {
+        const hit = brandItems.find((b) => b.slug === want);
+        if (hit) {
+          const btn = Array.from(cols[0].querySelectorAll('button'))
+            .find((x) => x.querySelector('span')?.textContent === hit.label);
+          btn?.classList.add('on');
+          btn?.scrollIntoView({ block: 'nearest' });
+          pickBrand(hit);
+        }
+      }
+    } catch {
+      note(cols[0], 'Старият сайт не отговаря');
+      const hb = $('hBrands'); if (hb) hb.textContent = '—';
+    }
+  })();
+  step(1);
+
+  need('bq').addEventListener('input', (ev) => {
+    const q = (ev.target as HTMLInputElement).value.trim().toLowerCase();
+    const hit = q ? brandItems.filter((b) => b.key!.includes(q)) : brandItems;
+    if (!hit.length) { note(cols[0], 'Няма такава марка'); return; }
+    fill(cols[0], hit, pickBrand);
+  });
+
+  need('pback').onclick = () => {
+    if (state.e) { state.e = null; need('res').classList.remove('on'); step(3); }
+    else if (state.y) { state.y = null; reset(3); step(2); }
+    else if (state.m) { state.m = null; reset(2); step(1); }
+  };
+
+  // „✕“ изчиства избора и връща избирача на първа стъпка
+  need('pclear').onclick = () => {
+    state.b = state.m = state.y = state.e = null;
+    (need('bq') as HTMLInputElement).value = '';
+    fill(cols[0], brandItems, pickBrand);
+    reset(1); step(1);
+  };
+
+  // „Запази час“ пренася избраното в запитването. На началната и на /kontakti/
+  // формата е на същата страница; навсякъде другаде отиваме при нея с автомобила
+  // в адреса, за да не се набира наум.
+  need('pnext').onclick = () => {
+    const parts = [state.b?.label, state.m?.label, state.y?.label, state.e?.label].filter(Boolean);
+    const car = $('f-car') as HTMLInputElement | null;
+    if (car) {
+      if (parts.length) car.value = parts.join(' · ');
+      document.getElementById('contact')?.scrollIntoView({ behavior: calm ? 'auto' : 'smooth' });
+      setTimeout(() => ($('f-name') as HTMLInputElement | null)?.focus(), calm ? 0 : 500);
+      return;
+    }
+    const to = panel.dataset.form || '/kontakti/';
+    location.href = parts.length ? `${to}?car=${encodeURIComponent(parts.join(' · '))}` : to;
+  };
+}
+</script>
+
+<style is:global>
+/* ── избирачът — от Multi-Step Form (21st, id 8281) ─────────────────────── */
+.pick{padding:0 var(--gut) 104px}
+.panel{max-width:1000px;margin:0 auto;background:#0C0C0C;border:1px solid var(--grey9);border-radius:14px;overflow:hidden}
+.ph{padding:30px 34px 26px;border-bottom:1px solid var(--grey9)}
+.ph .line{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
+.ph h2{margin:0;font:700 clamp(24px,2.6vw,32px)/1.05 var(--head);text-transform:uppercase;letter-spacing:-.01em}
+.ph p{margin:8px 0 0;font:400 13px/1.6 var(--mono);color:rgba(255,255,255,.66)}
+.x{width:38px;height:38px;border-radius:8px;border:1px solid var(--grey9);background:none;cursor:pointer;
+  display:grid;place-items:center;flex:0 0 auto;color:rgba(255,255,255,.66);transition:.18s}
+.x:hover{border-color:rgba(255,255,255,.42);color:#fff}
+.prog{display:flex;align-items:center;gap:16px;margin-top:22px}
+.prog .pline{flex:1;height:5px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden}
+.prog .pline i{display:block;height:100%;width:25%;border-radius:99px;background:var(--lime);transition:width .35s ease}
+.prog span{font:400 11px/1 var(--mono);color:rgba(255,255,255,.66);white-space:nowrap}
+.cols{display:grid;grid-template-columns:1fr;min-height:308px}
+@media(min-width:760px){.cols{grid-template-columns:repeat(4,1fr)}}
+.col{border-right:1px solid var(--grey9);display:flex;flex-direction:column;min-width:0}
+.col:last-child{border-right:0}
+@media(max-width:759px){.col{border-right:0;border-bottom:1px solid var(--grey9)}}
+.col > b{display:block;padding:16px 18px 12px;font:400 9px/1 var(--mono);letter-spacing:.24em;
+  text-transform:uppercase;color:rgba(255,255,255,.62);font-weight:400}
+.col .q{margin:0 14px 8px;padding:11px;min-height:44px;background:rgba(255,255,255,.04);
+  border:1px solid var(--grey9);border-radius:8px;color:var(--white);font:400 12px/1 var(--mono);
+  outline:none;min-width:0}
+.col .q::placeholder{color:rgba(255,255,255,.56)}
+.col .q:focus{border-color:var(--lime)}
+.col ul{margin:0;padding:0 0 12px;list-style:none;overflow-y:auto;max-height:246px;scrollbar-width:thin}
+.col li{margin:0}
+.col button{display:flex;width:100%;align-items:center;justify-content:space-between;gap:10px;
+  padding:11px 18px;min-height:44px;background:none;border:0;text-align:left;cursor:pointer;
+  font:400 13px/1.35 var(--body);color:rgba(255,255,255,.72);transition:.14s}
+.col button:hover{color:var(--white);background:rgba(255,255,255,.04)}
+.col button.on{color:var(--lime);background:rgba(82,251,9,.08);box-shadow:inset 2px 0 0 var(--lime)}
+.col button em{font-style:normal;font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.56)}
+.col .empty{padding:16px 18px;font:400 11px/1.6 var(--mono);color:rgba(255,255,255,.56)}
+.result{padding:22px 18px;display:none}
+.result.on{display:block}
+.result .big{display:flex;align-items:baseline;gap:8px;margin-bottom:4px}
+.result .big b{font:700 40px/1 var(--head);color:var(--lime);font-variant-numeric:tabular-nums}
+.result .big span{font:400 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+.result .kv{display:flex;justify-content:space-between;gap:10px;padding:9px 0;font:400 11px/1 var(--mono);color:rgba(255,255,255,.62)}
+.result .kv + .kv{border-top:1px solid rgba(255,255,255,.07)}
+.result .kv b{color:var(--white);font-weight:400}
+.pf{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  padding:20px 34px;border-top:1px solid var(--grey9)}
+.pf a.help{display:inline-flex;align-items:center;min-height:44px;font:400 11px/1 var(--mono);color:var(--lime)}
+.pf .btns{display:flex;gap:10px;margin-left:auto}
+.pf button{padding:13px 22px;min-height:44px;border-radius:9px;border:1px solid var(--grey9);background:none;cursor:pointer;
+  font:400 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--white)}
+.pf button:hover{border-color:rgba(255,255,255,.4)}
+.pf button.go{background:var(--lime);border-color:var(--lime);color:#041000;font-weight:700}
+.pf button:disabled{opacity:.4;cursor:not-allowed}
+
+/* Под 760px четирите колони се редяха една под друга и всяка имаше СВОЙ скрол.
+   Сега се вижда само стъпката, на която си. */
+@media(max-width:760px){
+  .pick{padding-bottom:64px}
+  .panel{border-radius:12px}
+  .ph{padding:22px 20px 20px}
+  .ph h2{font-size:24px}
+  .cols{min-height:0}
+  .col{border-bottom:0}
+  .col ul{max-height:62vh}
+  .cols .col{display:none}
+  .cols[data-step="1"] .col:nth-child(1),
+  .cols[data-step="2"] .col:nth-child(2),
+  .cols[data-step="3"] .col:nth-child(3),
+  .cols[data-step="4"] .col:nth-child(4){display:flex}
+  .pf{padding:16px 20px}
+  .pf .btns{width:100%}
+  .pf .btns button{flex:1}
+}
+@media(pointer:coarse){
+  .col button,.col .q,.pf button,.pf a.help{min-height:48px}
+  .x{width:48px;height:48px}
+}
+</style>

@@ -1,0 +1,32 @@
+{
+  "name": "new-pdk",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "npm run build && npx wrangler pages deploy dist --project-name=new-pdk --branch=main --commit-dirty=true",
+    "check": "astro check",
+    "lint": "astro check",
+    "build:etap1": "PUBLIC_SITE_URL=https://new.pdktuning.com astro build",
+    "deploy:etap1": "npm run build:etap1 && npx wrangler pages deploy dist --project-name=new-pdk --branch=main --commit-dirty=true",
+    "preflight": "node scripts/migration/preflight.mjs --dns",
+    "preflight:etap2": "node scripts/migration/preflight.mjs --etap2 --dns",
+    "redirects": "node scripts/migration/redirects.mjs",
+    "postflight": "node scripts/migration/preflight.mjs --dns --live https://new.pdktuning.com",
+    "postflight:etap2": "node scripts/migration/preflight.mjs --etap2 --dns --live https://www.pdktuning.com"
+  },
+  "dependencies": {
+    "astro": "^7.1.6"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@types/node": "^26.4.1",
+    "typescript": "^6.0.3"
+  }
+}

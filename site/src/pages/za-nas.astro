@@ -1,0 +1,139 @@
+---
+/**
+ * „КОИ СМЕ НИЕ?“ — заглавие от собствения им речник.
+ *
+ * ВНИМАНИЕ: тук стоят полета, които ЧАКАТ клиента (ЕИК, точният адрес, годината
+ * на започване). Те са в рамка `p-fill`, за да се вижда с очи, че не са
+ * попълнени — а не да минат за факт. Оценката от Google НЕ се маркира като
+ * `aggregateRating`: самооценка без видими отзиви е против правилата.
+ */
+import Page from '../layouts/Page.astro';
+import { crumbSchema, bizRef } from '../lib/seo';
+import { BUSINESS as b } from '../config/site';
+import marks from '../data/marks.json';
+import { SERVICES } from '../data/services';
+
+const site = Astro.site!.href.replace(/\/$/, '');
+const crumbs = [{ href: '/za-nas/', label: 'За нас' }];
+const schema = [bizRef(site), crumbSchema(site, [{ href: '/', label: 'Начало' }, ...crumbs])];
+
+const numbers = [
+  { n: String(b.yearsExperience), l: 'години с блокове' },
+  { n: String((marks as unknown[]).length), l: 'марки в базата' },
+  { n: String(SERVICES.length), l: 'услуги' },
+  { n: String(b.countries), l: 'държави с партньори' },
+];
+---
+<Page
+  title="Кои сме ние — PDK Tuning, чип тунинг във Варна"
+  description="Сервиз за чип тунинг и софтуерни ремонти във Варна със собствен стенд. Работим и с крайни клиенти, и с партньорски сервизи в няколко държави."
+  kicker="Кои сме ние"
+  heading="За нас"
+  lead="Сервиз във Варна със собствен стенд. Работим по блокове от петнайсет години — и с крайни клиенти, и със сервизи, които ни пращат файлове."
+  crumbs={crumbs}
+  schema={schema}
+>
+  <div class="p-wrap">
+    <section class="p-sec">
+      <div class="nums">
+        {numbers.map((x) => (
+          <div class="num">
+            <b>{x.n}</b>
+            <span>{x.l}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <div class="p-split">
+        <div class="p-prose">
+          <h2>С какво се занимаваме</h2>
+          <p>
+            Пишем и поправяме софтуер за управляващи блокове. Половината от работата е тунинг —
+            чип тунинг, Stage 2, настройка на автоматични скоростни кутии. Другата половина е
+            ремонт: запушени филтри за частици, откази в системата за карбамид, блокове, които
+            са спрели да отговарят след неуспешен запис в чужд сервиз.
+          </p>
+          <p>
+            Втората половина рядко се рекламира, защото не звучи впечатляващо. Тя обаче е
+            причината сервизи от няколко държави да ни пращат работа.
+          </p>
+
+          <h2>Стендът</h2>
+          <p>
+            Имаме собствен стенд и това променя разговора. Всяко твърдение за резултат се
+            подкрепя с две криви — преди и след — измерени на един и същ уред в един и същ ден.
+            Без стенд остава само усещането, а усещането не се спори.
+          </p>
+
+          <h2>Защо казваме „не“</h2>
+          <p>
+            Отказваме работа по-често, отколкото е удобно. Кола в гаранция дни преди края ѝ,
+            двигател с болен турбокомпресор, атмосферен бензинов блок, при който печалбата не
+            оправдава парите — всяко от тези е разговор, който завършва с „не си струва“.
+          </p>
+          <p>
+            Причината е практична: файл върху болна кола ускорява края на болната част, а вината
+            после пада върху нас. По-евтино е да не поемем работата.
+          </p>
+
+          <h2>Партньорските сервизи</h2>
+          <p>
+            Част от работата ни идва от други сервизи, които качват файлове през портала и
+            получават готовия файл обратно там. Порталът е отделен от този сайт и достъпът се
+            урежда индивидуално. Повече в <a href="/za-dileri/">за дилъри и сервизи</a>.
+          </p>
+        </div>
+
+        <aside class="p-facts">
+          <h2>Фирмата</h2>
+          <dl>
+            <dt>Юридическо лице</dt>
+            <dd>{b.legalName}</dd>
+            <dt>ЕИК</dt>
+            <dd>{b.eik || <span class="p-fill">чака се от клиента</span>}</dd>
+            <dt>ДДС номер</dt>
+            <dd>{b.vat || <span class="p-fill">чака се от клиента</span>}</dd>
+            <dt>Сервиз</dt>
+            <dd>{b.address.street}, {b.address.city}</dd>
+            <dt>Телефон</dt>
+            <dd><a href={`tel:${b.phone}`} style="color:inherit;border-bottom:1px solid rgba(255,255,255,.2)">{b.phoneDisplay}</a></dd>
+            <dt>Имейл</dt>
+            <dd><a href={`mailto:${b.email}`} style="color:inherit;border-bottom:1px solid rgba(255,255,255,.2)">{b.email}</a></dd>
+          </dl>
+          <p class="p-price" style="border-top-color:var(--grey9)">
+            <span>Адресът в правните страници е ул. „Прилеп“ 164, а в профила в Google — 96.
+            Разминаването се потвърждава от възложителя преди пускане.</span>
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <h2>Къде сме</h2>
+      <div class="p-prose">
+        <p>
+          Варна, {b.address.street}. Работим предимно с хора от Варна и областта, но за
+          Stage 2 и за софтуерен ремонт идват и от по-далеч — тази работа не се прави навсякъде.
+        </p>
+        <p>
+          <a href={b.social.maps} target="_blank" rel="noopener noreferrer">Отвори в Google Карти →</a>
+        </p>
+        <p>
+          Работно време, телефон и форма за запитване са в <a href="/kontakti/">контакти</a>.
+        </p>
+      </div>
+    </section>
+  </div>
+</Page>
+
+<style is:global>
+.nums{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+@media(min-width:760px){.nums{grid-template-columns:repeat(4,1fr);gap:18px}}
+.num{padding:26px 24px;border:1px solid var(--grey9);border-radius:14px;background:#0C0C0C}
+.num b{display:block;font:700 clamp(34px,4.4vw,52px)/1 var(--head);color:var(--lime);
+  letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.num span{display:block;margin-top:10px;font:400 10px/1.5 var(--mono);letter-spacing:.18em;
+  text-transform:uppercase;color:rgba(255,255,255,.62)}
+</style>
