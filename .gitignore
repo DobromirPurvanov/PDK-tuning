@@ -23,3 +23,6 @@ releases/             # стоварените пакети (images.tar, images.
 # Комитнат файл тук би остарял при първата промяна по скрипт и щеше да
 # спре точно тези скриптове — мълчаливо, само в браузъра.
 docker/nginx/csp.inc
+
+# This file contains only the two public deployment origins.
+!site/.env.local

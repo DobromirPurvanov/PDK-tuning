@@ -7,3 +7,6 @@ dist/
 .env
 .env.local
 .env.*.local
+
+# Public deployment origins only; credentials belong in the server environment.
+!.env.local

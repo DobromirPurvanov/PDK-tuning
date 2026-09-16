@@ -7,9 +7,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      BASE_URL: https://new.pdktuning.com
-      CATALOG_BASE_URL: https://www.pdktuning.com
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v4
@@ -20,5 +17,5 @@ jobs:
       - run: npm ci --prefix site --no-audit --no-fund
       - run: node --test site/server/*.test.mjs
       - run: npm run check --prefix site
-      - run: npm run build:etap1 --prefix site
+      - run: npm run build --prefix site
       - run: npm test --prefix api

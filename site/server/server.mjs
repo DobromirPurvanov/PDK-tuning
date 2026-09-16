@@ -4,6 +4,7 @@ import { resolve, extname, sep } from 'node:path';
 import { Readable } from 'node:stream';
 import { pipeline } from 'node:stream/promises';
 import { pathToFileURL } from 'node:url';
+import { parseEnv } from 'node:util';
 import { HTMLRewriter } from '@worker-tools/html-rewriter/base64';
 import worker from '../public/_worker.js';
 
@@ -118,7 +119,8 @@ export async function makeApp(options = {}) {
     // redirect. Serve the new homepage here too, avoiding a /bg/ -> / loop.
     else if (path === '/bg' || path === '/bg/') response = await assets(new Request(new URL('/', request.url), request));
     else if (path === '/api/health') response = Response.json({ ok: true, site: 'new-pdk',
-      release: env.SITE_RELEASE || 'local', mail: Boolean(bindings.RESEND_API_KEY && bindings.CONTACT_TO && bindings.CONTACT_FROM) });
+      release: env.SITE_RELEASE || 'local', base_url: origin, catalog_base_url: catalog,
+      mail: Boolean(bindings.RESEND_API_KEY && bindings.CONTACT_TO && bindings.CONTACT_FROM) });
     else response = await worker.fetch(request, bindings, { waitUntil(promise) { promise.catch(console.error); } });
     // Clone immutable redirect responses before adding diagnostic headers.
     response = new Response(response.body, response);
@@ -161,6 +163,12 @@ export async function startServer(options = {}) {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  // Both origins come from the same public file used by the Astro build.
+  const settings = parseEnv(await readFile(new URL('../.env.local', import.meta.url), 'utf8'));
+  for (const key of ['BASE_URL', 'CATALOG_BASE_URL']) {
+    if (!settings[key]) throw new Error(`Missing ${key} in .env.local`);
+    process.env[key] = settings[key];
+  }
   if (process.argv.includes('--check')) { await makeApp(); console.log('New site build and runtime configuration OK'); }
   else {
     const server = await startServer();

@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import { loadEnv } from 'vite';
+import { readFileSync } from 'node:fs';
+import { parseEnv } from 'node:util';
 
 /**
  * АДРЕСИТЕ СЕ ЧЕТАТ ОТ `.env.local`, НЕ СЕ ЗАШИВАТ.
@@ -27,6 +29,13 @@ for (const [k, v] of Object.entries(env)) {
   // истинската среда бие файла: така Pages и еднократното
   // `BASE_URL=… npm run build` продължават да работят
   if (process.env[k] === undefined) process.env[k] = v;
+}
+
+// The two origins have one source for both the VPS image and the build.
+const origins = parseEnv(readFileSync(new URL('./.env.local', import.meta.url), 'utf8'));
+for (const key of ['BASE_URL', 'CATALOG_BASE_URL']) {
+  if (!origins[key]) throw new Error(`Missing ${key} in .env.local`);
+  process.env[key] = origins[key];
 }
 
 /**

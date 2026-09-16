@@ -13,14 +13,23 @@
 живия каталог, дилърския портал и формите като `site/public/_worker.js`.
 Базата остава на сървъра на клиента; тук няма копие от нея.
 
-`BASE_URL` е публичният адрес (сега `https://new.pdktuning.com`).
-`CATALOG_BASE_URL` е отделният сървър за каталога (сега `https://www.pdktuning.com`).
-Преди IT да прехвърли основния домейн, трябва да настрои отделен работещ адрес
-за каталога и портала и да обнови тези две стойности при билд и изпълнение.
+## Един файл за адресите
 
-Публичните стойности за билда са GitHub repository variables; стойностите за
-изпълнение и тайните са `.env`/`.env.local` на VPS. Формата приема `CONTACT_TO`
-и `CONTACT_FROM`, както и старите `MAIL_TO` и `MAIL_FROM`.
+[`site/.env.local`](site/.env.local) е единственият източник за билда и VPS:
+
+```dotenv
+CATALOG_BASE_URL=https://catalog.pdktuning.com
+BASE_URL=https://www.pdktuning.com
+```
+
+Файлът съдържа само публични адреси и влиза в образа. Смяна на адрес се прави
+тук, след което се публикува нов таг. Docker, CI и runtime не поддържат
+отделни копия или подразбиращи се стойности за тези два ключа.
+
+DNS и работещият HTTPS на `catalog.pdktuning.com` се настройват от IT на клиента.
+Формата чете тайните от средата на сървъра: `RESEND_API_KEY`, `CONTACT_TO` и
+`CONTACT_FROM` (приемат се и старите `MAIL_TO` и `MAIL_FROM`). Тайни не се
+записват в публичния `site/.env.local`.
 
 `/__alive` проверява процеса; `/api/health` показва `site: new-pdk`, идентификатора
 на комита и дали пощата е настроена. `X-PDK-Site` и `X-PDK-Release` позволяват
@@ -30,8 +39,8 @@
 
 ```sh
 npm ci --prefix site
-npm run build:etap1 --prefix site
-BASE_URL=https://new.pdktuning.com CATALOG_BASE_URL=https://www.pdktuning.com PORT=8000 node site/server/server.mjs
+npm run build --prefix site
+PORT=8000 node site/server/server.mjs
 node --test site/server/*.test.mjs
 python3 -m unittest discover -s scripts/deploy -p 'test_*.py' -v
 ```

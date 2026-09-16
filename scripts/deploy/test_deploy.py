@@ -25,16 +25,16 @@ class PublicConfigTests(unittest.TestCase):
             'PUBLIC_GSC_VERIFY': '0x4AAAA-test-key',
             'PRIVATE_SETTING': 'never-export-this',
         }))
-        self.assertEqual(result, 'BASE_URL=\nCATALOG_BASE_URL=\nPUBLIC_INDEXABLE=\nPUBLIC_GA_ID=GTM-5MKF4JB\nPUBLIC_GSC_VERIFY=0x4AAAA-test-key\n')
+        self.assertEqual(result, 'PUBLIC_INDEXABLE=\nPUBLIC_GA_ID=GTM-5MKF4JB\nPUBLIC_GSC_VERIFY=0x4AAAA-test-key\n')
 
     def test_compose_without_trailing_newline(self):
         output = self.output({}).replace('}\nPDK_PUBLIC_CONFIG_END', '}PDK_PUBLIC_CONFIG_END')
         self.assertEqual(public_config.build_settings(output),
-                         'BASE_URL=\nCATALOG_BASE_URL=\nPUBLIC_INDEXABLE=\nPUBLIC_GA_ID=\nPUBLIC_GSC_VERIFY=\n')
+                         'PUBLIC_INDEXABLE=\nPUBLIC_GA_ID=\nPUBLIC_GSC_VERIFY=\n')
 
     def test_empty_configuration(self):
         self.assertEqual(public_config.build_settings(self.output({})),
-                         'BASE_URL=\nCATALOG_BASE_URL=\nPUBLIC_INDEXABLE=\nPUBLIC_GA_ID=\nPUBLIC_GSC_VERIFY=\n')
+                         'PUBLIC_INDEXABLE=\nPUBLIC_GA_ID=\nPUBLIC_GSC_VERIFY=\n')
 
     def test_reject_env_injection(self):
         for value in ['key\nOTHER=value', 'key\rOTHER=value', 'key\0', 123]:

@@ -8,3 +8,6 @@
 .crawl
 .git
 .github
+
+# Public deployment origins, deliberately included in both build and runtime.
+!site/.env.local

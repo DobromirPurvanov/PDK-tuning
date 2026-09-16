@@ -22,8 +22,6 @@ jobs:
     env:
       WEB_IMAGE: pdk-tuning-web:${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
       API_IMAGE: pdk-tuning-api:${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
-      BASE_URL: ${{ vars.BASE_URL || 'https://new.pdktuning.com' }}
-      CATALOG_BASE_URL: ${{ vars.CATALOG_BASE_URL || 'https://www.pdktuning.com' }}
       PUBLIC_INDEXABLE: ${{ vars.PUBLIC_INDEXABLE || 'false' }}
       PUBLIC_GA_ID: ${{ vars.PUBLIC_GA_ID }}
       PUBLIC_GSC_VERIFY: ${{ vars.PUBLIC_GSC_VERIFY }}
@@ -72,8 +70,6 @@ jobs:
               config:
                 image: scratch
                 environment:
-                  BASE_URL: ${BASE_URL:-https://new.pdktuning.com}
-                  CATALOG_BASE_URL: ${CATALOG_BASE_URL:-https://www.pdktuning.com}
                   PUBLIC_INDEXABLE: ${PUBLIC_INDEXABLE:-false}
                   PUBLIC_GA_ID: ${PUBLIC_GA_ID:-}
                   PUBLIC_GSC_VERIFY: ${PUBLIC_GSC_VERIFY:-}
@@ -96,8 +92,6 @@ jobs:
           load: true
           tags: ${{ env.WEB_IMAGE }}
           build-args: |
-            BASE_URL=${{ env.BASE_URL }}
-            CATALOG_BASE_URL=${{ env.CATALOG_BASE_URL }}
             PUBLIC_INDEXABLE=${{ env.PUBLIC_INDEXABLE }}
             PUBLIC_GA_ID=${{ env.PUBLIC_GA_ID }}
             PUBLIC_GSC_VERIFY=${{ env.PUBLIC_GSC_VERIFY }}
