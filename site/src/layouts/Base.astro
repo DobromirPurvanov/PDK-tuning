@@ -49,6 +49,8 @@ const { bodyClass = '', ...head } = Astro.props;
 
     :root{
       --black:#080808; --grey9:#232323; --grey5:#999898; --white:#FFFFFF;
+      /* четивният текст — НЕ е чисто бяло; виж бележката при `body` */
+      --ink:#E8E8E8;
       --green:#05AD02; --lime:#52FB09;
       --head:'Oswald','Arial Narrow',sans-serif;
       --body:'Golos Text',system-ui,sans-serif;
@@ -58,8 +60,26 @@ const { bodyClass = '', ...head } = Astro.props;
     @media(min-width:900px){:root{--gut:56px}}
     *,*::before,*::after{box-sizing:border-box}
     html{scroll-padding-top:88px}
-    body{margin:0;background:var(--black);color:var(--white);font:400 17px/1.55 var(--body);
-      -webkit-font-smoothing:antialiased;overflow-x:hidden}
+    /*
+      ЧЕТИВНИЯТ ТЕКСТ НЕ Е ЧИСТО БЯЛО, и това не е дребна настройка.
+
+      `#FFFFFF` върху `#080808` дава контраст 20:1 — максималният възможен.
+      На тъмен фон толкова силен светъл текст halate-ва: буквите „греят“ в
+      тъмното и след няколко абзаца очите започват да парят. Прагът на WCAG е
+      долна граница (4,5:1), не цел; за дълъг текст на тъмна тема таванът е
+      около 16:1. `--ink` е `#E8E8E8` → 16,3:1, тоест четири пъти над прага.
+
+      `-webkit-font-smoothing:antialiased` беше вторият половин проблем: на
+      macOS той ИЗТЪНЯВА буквите, а Golos при тегло 400 и без това е лек.
+      Тънки ярки линии върху черно е точно рецептата за трептене. Върнато на
+      `auto` — буквите получават тяло.
+
+      Заглавията остават чисто бели: те са едри и кратки, там халация няма, а
+      разликата в цвета сама подрежда йерархията.
+    */
+    body{margin:0;background:var(--black);color:var(--ink);font:400 17px/1.65 var(--body);
+      overflow-x:hidden}
+    h1,h2,h3,h4{color:var(--white)}
     img{display:block;max-width:100%}
     /* УЛОВКА: правило с `display` от таблицата бие `[hidden]` на браузъра. Така
        скритите марки в каталога и грешките под полетата се виждаха ВЕДНАГА.
