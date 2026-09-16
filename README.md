@@ -55,3 +55,7 @@ Cloudflare Pages остава възможен отделен начин за х
 `scripts/deploy/activate.sh` проверява контролната сума, конфигурацията и новия
 сайт, обновява само услугите `web` и `api`, и записва `.compose.active.yml` и
 `.images.env`. Другите проекти на сървъра не се променят.
+
+Git checkout-ът на сървъра може да остане на стар таг: кодът се доставя с
+Docker образите, не с `git checkout`. Активният таг се вижда в `version` на
+`/api/health` и в HTTP заглавката `X-PDK-Version`; `release` е точният комит.

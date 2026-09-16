@@ -96,6 +96,7 @@ jobs:
             PUBLIC_GA_ID=${{ env.PUBLIC_GA_ID }}
             PUBLIC_GSC_VERIFY=${{ env.PUBLIC_GSC_VERIFY }}
             SITE_RELEASE=${{ github.sha }}
+            SITE_VERSION=${{ github.ref_name }}
           cache-from: type=gha,scope=pdk-web
           cache-to: type=gha,mode=max,scope=pdk-web
 

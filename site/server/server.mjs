@@ -119,13 +119,14 @@ export async function makeApp(options = {}) {
     // redirect. Serve the new homepage here too, avoiding a /bg/ -> / loop.
     else if (path === '/bg' || path === '/bg/') response = await assets(new Request(new URL('/', request.url), request));
     else if (path === '/api/health') response = Response.json({ ok: true, site: 'new-pdk',
-      release: env.SITE_RELEASE || 'local', base_url: origin, catalog_base_url: catalog,
+      release: env.SITE_RELEASE || 'local', version: env.SITE_VERSION || 'local', base_url: origin, catalog_base_url: catalog,
       mail: Boolean(bindings.RESEND_API_KEY && bindings.CONTACT_TO && bindings.CONTACT_FROM) });
     else response = await worker.fetch(request, bindings, { waitUntil(promise) { promise.catch(console.error); } });
     // Clone immutable redirect responses before adding diagnostic headers.
     response = new Response(response.body, response);
     response.headers.set('x-pdk-site', 'new-pdk');
     response.headers.set('x-pdk-release', env.SITE_RELEASE || 'local');
+    response.headers.set('x-pdk-version', env.SITE_VERSION || 'local');
     if (env.PUBLIC_INDEXABLE !== 'true') response.headers.set('x-robots-tag', 'noindex, nofollow');
     return response;
   };

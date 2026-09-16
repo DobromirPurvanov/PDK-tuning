@@ -19,7 +19,8 @@ COPY site/.env.local ./.env.local
 COPY site/public/_worker.js ./public/_worker.js
 COPY site/server ./server
 ARG SITE_RELEASE=local
-ENV NODE_ENV=production PORT=80 SITE_RELEASE=$SITE_RELEASE
+ARG SITE_VERSION=local
+ENV NODE_ENV=production PORT=80 SITE_RELEASE=$SITE_RELEASE SITE_VERSION=$SITE_VERSION
 EXPOSE 80
 USER node
 CMD ["node", "server/server.mjs"]
