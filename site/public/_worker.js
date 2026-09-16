@@ -61,8 +61,12 @@ const dedupe = (s) => { const w = s.split(' '); return w.length > 1 && w.at(-1) 
  */
 const tidy = (s) => {
   let out = dedupe(s);
+  // `\b` беше твърде строго: в „116D 116hp (1995cc) 116hp“ границата след 116
+  // липсва и в „116D“, и в „116hp“ (следва буква), затова повторението
+  // оставаше и излизаше „116D 116hp (1995cc)   116 к.с.“ — три пъти едно число.
+  // Търси се ЧИСЛОТО, а не думата: без цифра преди и след него.
   out = out.replace(/\s*(\d+)\s*hp\s*$/i, (m, n) =>
-    new RegExp(`\\b${n}\\b`).test(out.slice(0, out.length - m.length)) ? '' : m);
+    new RegExp(`(?:^|\\D)${n}(?!\\d)`).test(out.slice(0, out.length - m.length)) ? '' : m);
   return out.replace(/\s*->\s*/g, ' → ').replace(/\.\.\./g, '…').replace(/\s+/g, ' ').trim();
 };
 
