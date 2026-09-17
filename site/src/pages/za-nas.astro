@@ -102,12 +102,9 @@ const numbers = [
             <dd><a href={`mailto:${b.email}`} style="color:inherit;border-bottom:1px solid var(--line-soft)">{b.email}</a></dd>
           </dl>
           {/*
-            ТУК СТОЕШЕ бележка, че адресът в правните страници (ул. „Прилеп“ 164)
-            се разминава с този в профила в Google (96) и че разминаването чака
-            възложителя. Това е работна бележка, не съобщение за клиента —
-            махната е по същата причина като рамките „чака се“.
-            Разминаването ОСТАВА: `legalAddress` е 164, `address.street` е 96.
-            Напомнянето живее в `_todo` в src/data/business.json.
+            Седалището в правните страници СЕ СТРОИ от `business.address` —
+            вж. `legalAddress` в src/config/site.ts и `_legalAddress_todo`
+            в src/data/business.json.
           */}
         </aside>
       </div>
