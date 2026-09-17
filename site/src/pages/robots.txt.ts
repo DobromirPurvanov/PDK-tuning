@@ -18,7 +18,7 @@ export const GET: APIRoute = ({ site }) => {
 Allow: /
 # служебните адреси нямат работа в индекса
 Disallow: /api/
-Disallow: /live/
+Disallow: /api/live/
 
 Sitemap: ${base}/sitemap.xml
 `

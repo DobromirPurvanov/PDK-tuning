@@ -46,7 +46,7 @@ test('VPS serves the new build and preserves catalogue and dealer sessions', asy
   assert.equal(oldHome.headers.get('location'), null);
   assert.match(await oldHome.text(), /New PDK/);
   assert.equal((await get('/bg/bmw')).headers.get('location'), 'https://preview.example/katalog/bmw/');
-  const live = await (await get('/live/brands')).json();
+  const live = await (await get('/api/live/brands')).json();
   assert.deepEqual(live.data, [{ slug: 'bmw', label: 'BMW' }]);
   const portal = await app(new Request('https://preview.example/bg/login', {
     method: 'POST', body: 'test-body', headers: { cookie: 'PHPSESSID=incoming' },

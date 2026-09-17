@@ -7,7 +7,7 @@
  * начинът един ден да се окажат три различни версии.
  *
  * Тук НЕ се пази нищо от каталога. Всяко ниво е една заявка към
- * `/live/*` в public/_worker.js, който чете стария сайт в момента на
+ * `/api/live/*` в public/_worker.js, който чете стария сайт в момента на
  * заявката. Кешът е само в паметта на отворената страница.
  *
  * ВНИМАНИЕ С ИМЕНАТА НА КЛАСОВЕТЕ. Стиловете са `is:global`, защото
@@ -110,7 +110,7 @@ const {
 </section>
 
 <script>
-// Всяко ниво е ЕДНА заявка към живата база през /live/* (виж public/_worker.js).
+// Всяко ниво е ЕДНА заявка към живата база през /api/live/* (виж public/_worker.js).
 type Item = { slug: string; label: string; right?: string; value?: any; key?: string };
 
 const panel = document.getElementById('picker');
@@ -126,7 +126,7 @@ if (panel) {
 
   async function live(path: string) {
     if (mem.has(path)) return mem.get(path);
-    const r = await fetch('/live/' + path);
+    const r = await fetch('/api/live/' + path);
     const j = await r.json();
     if (!r.ok) throw new Error(j.error || r.status);
     mem.set(path, j.data);

@@ -7,11 +7,11 @@
  * отговорът се разчита от HTML-а и се връща като JSON.
  *
  * Едно ниво = една заявка към стария сайт:
- *   /live/brands                                → марките от началната
- *   /live/models/<марка>                        → моделите
- *   /live/years/<марка>/<модел>                 → годините
- *   /live/engines/<марка>/<модел>/<години>      → двигателите
- *   /live/result/<марка>/<модел>/<години>/<a>/<b> → числата преди и след
+ *   /api/live/brands                                → марките от началната
+ *   /api/live/models/<марка>                        → моделите
+ *   /api/live/years/<марка>/<модел>                 → годините
+ *   /api/live/engines/<марка>/<модел>/<години>      → двигателите
+ *   /api/live/result/<марка>/<модел>/<години>/<a>/<b> → числата преди и след
  *
  * Отговорите се кешират на ръба, за да не удряме стария сайт при всяко зареждане.
  *
@@ -640,7 +640,7 @@ export default {
     // преминаването се включва САМО когато стоим на тяхно място (виж бележката горе)
     const takenOver = Boolean(src);
 
-    if (!url.pathname.startsWith('/live/')) {
+    if (!url.pathname.startsWith('/api/live/')) {
       /* Пренасочванията вървят ПРЕДИ преминаването: адрес с наследник при нас
          не бива да се обслужва от стария сайт, иначе едно и също нещо живее на
          два адреса и индексираният е старият. */
@@ -658,7 +658,7 @@ export default {
     const hit = await cache.match(request);
     if (hit) return hit;
 
-    const [kind, ...parts] = url.pathname.slice('/live/'.length).split('/').filter(Boolean);
+    const [kind, ...parts] = url.pathname.slice('/api/live/'.length).split('/').filter(Boolean);
     const read = readers[kind];
     if (!read) return json({ error: 'непознато ниво' }, 404, 0);
 
