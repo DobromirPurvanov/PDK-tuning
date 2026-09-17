@@ -1,0 +1,292 @@
+---
+/**
+ * ДИЗАЙН СИСТЕМАТА НА ЖИВО.
+ *
+ * Не е част от сайта: `noindex`, няма я в `sitemap.xml.ts`, не се стига до нея
+ * от меню. Служи за три неща — да се одобри системата с очи, да се провери
+ * дали нещо е мръднало след промяна, и да се види какво вече съществува, преди
+ * да се напише поредният нов бутон.
+ *
+ * Тук НЯМА нито един собствен цвят, размер или радиус. Всичко се чете от
+ * жетоните с `getComputedStyle`, тоест страницата не описва системата, а я
+ * ПОКАЗВА — ако утре някой смени `--lime`, тази страница се сменя с него.
+ * Списък, писан на ръка, щеше да остарее още първия път.
+ *
+ * Правилата са в `docs/DIZAYN.md`, стойностите — в `src/styles/tokens.css`.
+ */
+import Page from '../layouts/Page.astro';
+
+/** Жетоните по групи. Имената се четат от `:root` в браузъра — тук е само редът. */
+const GROUPS: { title: string; note: string; names: string[] }[] = [
+  {
+    title: 'Повърхности',
+    note: 'Девет почти-черни станаха четири. Разликата между тях е 2/255 — тя не се вижда, но ролите са различни.',
+    names: ['--bg', '--bg-bar', '--surface', '--hair'],
+  },
+  {
+    title: 'Текст',
+    note: 'Пет нива вместо трийсет и две прозрачности. Под --ink-5 нищо не стига 4,5:1 — по-бледо от това не е текст.',
+    names: ['--white', '--ink', '--ink-2', '--ink-3', '--ink-4', '--ink-5'],
+  },
+  {
+    title: 'Линии и подложки',
+    note: 'Плътната граница и трите прозрачни, за неща върху повърхност.',
+    names: ['--line', '--line-soft', '--line-mid', '--line-strong', '--tint-1', '--tint-2'],
+  },
+  {
+    title: 'Акцентът',
+    note: 'Марката. --lime-ink е текстът ВЪРХУ лайм: черното изглежда мръсно върху толкова наситен цвят.',
+    names: ['--lime', '--green', '--lime-ink', '--lime-line', '--lime-wash', '--lime-dim'],
+  },
+  {
+    title: 'Сигналът',
+    note: 'Единственият топъл цвят. Ако се появи извън „кога няма смисъл“, правната граница и грешка във форма, спира да значи нещо.',
+    names: ['--warn', '--warn-line', '--warn-bg', '--warn-ink', '--ok-ink'],
+  },
+  {
+    title: 'Затъмнение',
+    note: 'Ляга ВЪРХУ кадър, не образува кутия. --shade-hard държи заглавието на хирото четимо, когато под него мине светъл кадър.',
+    names: ['--shade', '--shade-hard', '--tick', '--green-glow'],
+  },
+];
+
+const SIZES = [
+  { n: '--fz-lab', what: 'микро-етикет' },
+  { n: '--fz-btn', what: 'текст на бутон' },
+  { n: '--fz-xs', what: 'дребен текст' },
+  { n: '--fz-s', what: 'текст в карта и списък' },
+  { n: '--fz-m', what: 'основният абзац' },
+  { n: '--fz-l', what: 'въвеждащ абзац' },
+  { n: '--fz-h3', what: 'заглавие в проза' },
+  { n: '--fz-h2', what: 'заглавие на раздел' },
+  { n: '--fz-h1', what: 'заглавие на страница' },
+];
+
+const SPACE = ['--sp-1', '--sp-2', '--sp-3', '--sp-4', '--sp-5', '--sp-6', '--sp-7', '--sp-8', '--gut', '--sec-y'];
+const RADII = ['--r-xs', '--r-s', '--r-m', '--r-pill'];
+const TIMES = ['--t-fast', '--t', '--t-slow'];
+const WIDTHS = ['--w-page', '--w-panel', '--w-text', '--w-prose', '--w-read'];
+const BREAKPOINTS = [420, 560, 620, 700, 760, 900, 980, 1060, 1180];
+---
+<Page
+  title="Дизайн система — PDK Tuning"
+  description="Жетоните и примитивите на сайта, показани на живо. Служебна страница, не е част от сайта."
+  kicker="Служебна"
+  heading="Дизайн система"
+  lead="Всичко, с което е нарисуван сайтът, на едно място. Стойностите се четат от самите жетони — ако се смени жетон, тази страница се сменя с него."
+  crumbs={[{ href: '/stil/', label: 'Дизайн система' }]}
+  noindex={true}
+  cta={false}
+>
+  <div class="p-wrap">
+
+    {GROUPS.map((g) => (
+      <section class="p-sec">
+        <h2>{g.title}</h2>
+        <p class="p-note">{g.note}</p>
+        <div class="sw-grid">
+          {g.names.map((n) => (
+            <div class="sw panel">
+              <i class="sw-chip" style={`background:var(${n})`}></i>
+              <code class="sw-name">{n}</code>
+              <span class="sw-val" data-token={n}>…</span>
+            </div>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <section class="p-sec">
+      <h2>Шрифтове</h2>
+      <p class="p-note">Три семейства, две тегла. Кирилицата и латиницата са отделни файлове — българският текст не чака латинските знаци.</p>
+      <div class="sw-grid">
+        <div class="sw panel"><span class="fnt" style="font-family:var(--head);font-weight:700">Отключим 220 к.с.</span><code class="sw-name">--head</code><span class="sw-val">Oswald 700 · заглавия</span></div>
+        <div class="sw panel"><span class="fnt" style="font-family:var(--body)">Всеки автомобил има потенциал</span><code class="sw-name">--body</code><span class="sw-val">Golos Text 400 · проза</span></div>
+        <div class="sw panel"><span class="fnt" style="font-family:var(--mono)">001 // МОЩНОСТ +30</span><code class="sw-name">--mono</code><span class="sw-val">JetBrains Mono 400 · етикети и числа</span></div>
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <h2>Размери</h2>
+      <p class="p-note">По роля, не по число — „етикетът“ е един размер навсякъде, вместо 9, 10 или 11 според това кой го е писал.</p>
+      <table class="tbl">
+        <thead><tr><th>Жетон</th><th>Стойност</th><th>За какво</th><th>Как изглежда</th></tr></thead>
+        <tbody>
+          {SIZES.map((s) => (
+            <tr>
+              <td data-l="Жетон"><code>{s.n}</code></td>
+              <td data-l="Стойност"><span data-token={s.n}>…</span></td>
+              <td data-l="За какво">{s.what}</td>
+              <td data-l="Как изглежда"><span style={`font-size:var(${s.n});font-family:var(--head);text-transform:uppercase;line-height:1`}>220 к.с.</span></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="p-sec">
+      <h2>Отстояния</h2>
+      <p class="p-note">Скала на базата четири. --gut е полето отстрани, --sec-y е ритъмът между разделите; и двете се менят с ширината — смали прозореца и виж.</p>
+      <div class="bars">
+        {SPACE.map((s) => (
+          <div class="bar-row">
+            <code class="sw-name">{s}</code>
+            <i class="bar-fill" style={`width:var(${s})`}></i>
+            <span class="sw-val" data-token={s}>…</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <h2>Радиуси</h2>
+      <p class="p-note">Петнайсет станаха четири. --r-xs е само за контура на фокуса.</p>
+      <div class="sw-grid">
+        {RADII.map((r) => (
+          <div class="sw panel">
+            <i class="sw-box" style={`border-radius:var(${r})`}></i>
+            <code class="sw-name">{r}</code>
+            <span class="sw-val" data-token={r}>…</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <h2>Движение</h2>
+      <p class="p-note">Три времена вместо дванайсет. Кривата остава браузърната нарочно: свой easing мени усещането на всяко движение наведнъж. Посочи квадратите.</p>
+      <div class="sw-grid">
+        {TIMES.map((t) => (
+          <div class="sw panel">
+            <i class="sw-move" style={`transition:transform var(${t})`}></i>
+            <code class="sw-name">{t}</code>
+            <span class="sw-val" data-token={t}>…</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <h2>Ширини и прагове</h2>
+      <p class="p-note">Праговете не могат да са жетони — CSS не приема var() в media query. Затова са договор, който scripts/check-tokens.mjs пази.</p>
+      <table class="tbl">
+        <thead><tr><th>Жетон</th><th>Стойност</th></tr></thead>
+        <tbody>
+          {WIDTHS.map((w) => (
+            <tr><td data-l="Жетон"><code>{w}</code></td><td data-l="Стойност"><span data-token={w}>…</span></td></tr>
+          ))}
+          <tr><td data-l="Жетон"><code>прагове</code></td><td data-l="Стойност">{BREAKPOINTS.join(' · ')}</td></tr>
+        </tbody>
+      </table>
+      <p class="p-note" style="margin-top:var(--sp-5)">Сега този прозорец е <b data-w>…</b> широк.</p>
+    </section>
+
+    <section class="p-sec">
+      <h2>Бутон</h2>
+      <p class="p-note">Един клас, три вида и две форми. Преди беше написан наново на единайсет места, с три височини и три радиуса.</p>
+      <div class="row">
+        <a class="btn btn--go" href="#stil">Плътен</a>
+        <a class="btn" href="#stil">Контурен</a>
+        <a class="btn btn--ghost" href="#stil">Блед</a>
+        <button class="btn btn--go" disabled>Изключен</button>
+      </div>
+      <div class="row" style="margin-top:var(--sp-4)">
+        <a class="btn btn--pill btn--sm btn--go" href="#stil">Хапче, плътно</a>
+        <a class="btn btn--pill btn--sm" href="#stil">Хапче</a>
+      </div>
+      <p class="p-note" style="margin-top:var(--sp-5)">С пръст всяко копче е поне 48px; на мишка плътността остава одобрената.</p>
+    </section>
+
+    <section class="p-sec">
+      <h2>Повърхност и етикет</h2>
+      <p class="p-note">Низът „фон, рамка, радиус“ се повтаряше дословно на петнайсет места. Сега е .panel.</p>
+      <div class="p-cards">
+        <div class="panel" style="padding:var(--sp-5)">
+          <p class="lab">Обикновена</p>
+          <p style="margin:var(--sp-3) 0 0;color:var(--ink-2)">Карта, панел, изскачащ прозорец — всичко издигнато над фона.</p>
+        </div>
+        <div class="panel panel--link" style="padding:var(--sp-5)">
+          <p class="lab lab--lime">Като връзка</p>
+          <p style="margin:var(--sp-3) 0 0;color:var(--ink-2)">Посочи я: рамката пали в лайм.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <h2>Въпрос и отговор</h2>
+      <div class="qa">
+        <details>
+          <summary><h3>Плюсът е два псевдоелемента, не икона</h3><i></i></summary>
+          <div class="ans"><p>Така е един цвят с текста и не тегли нищо. При отворено остава само хоризонталната черта.</p></div>
+        </details>
+        <details>
+          <summary><h3>Този акордеон стоеше в два екземпляра</h3><i></i></summary>
+          <div class="ans"><p>Един в началната, един във вътрешните страници — същата логика, разлика само в clamp-а и едно отстояние.</p></div>
+        </details>
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <h2>Плоча и поле</h2>
+      <div class="warn">
+        <b>Границата, която не прекрачваме</b>
+        <p>Изключване на DPF, EGR и AdBlue се прави само за техника извън обществените пътища. Така стои на пет страници и навсякъде изглежда еднакво.</p>
+      </div>
+      <p style="color:var(--ink-2)">Цена: <span class="fill">чака клиента</span> — пунктирът е нарочен, за да се ВИЖДА празното място.</p>
+    </section>
+
+    <section class="p-sec">
+      <h2>Таблица</h2>
+      <p class="p-note">Под 620px се пренарежда на редове: главата се маха от потока, а всяка клетка си носи името. Смали прозореца.</p>
+      <table class="tbl">
+        <thead><tr><th>Двигател</th><th>Стоково</th><th>PDK</th><th>Разлика</th></tr></thead>
+        <tbody>
+          <tr><td data-l="Двигател">320d 2015–2019</td><td data-l="Стоково">190 к.с.</td><td data-l="PDK"><b>220 к.с.</b></td><td data-l="Разлика">+30</td></tr>
+          <tr><td data-l="Двигател">330d</td><td data-l="Стоково">258 к.с.</td><td data-l="PDK"><b>300 к.с.</b></td><td data-l="Разлика">+42</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+  </div>
+
+<script is:inline>
+  // Стойностите се четат от самите жетони — страницата показва системата,
+  // а не описание на системата, писано на ръка и остаряло от първата промяна.
+  (function () {
+    var cs = getComputedStyle(document.documentElement);
+    document.querySelectorAll('[data-token]').forEach(function (el) {
+      el.textContent = cs.getPropertyValue(el.getAttribute('data-token')).trim() || '—';
+    });
+    var w = document.querySelector('[data-w]');
+    var show = function () { if (w) w.textContent = window.innerWidth + 'px'; };
+    show();
+    addEventListener('resize', show);
+    // --gut и --sec-y се менят с ширината; след resize се четат наново
+    addEventListener('resize', function () {
+      var c = getComputedStyle(document.documentElement);
+      document.querySelectorAll('[data-token]').forEach(function (el) {
+        el.textContent = c.getPropertyValue(el.getAttribute('data-token')).trim() || '—';
+      });
+    });
+  })();
+</script>
+
+<style is:global>
+.sw-grid{display:grid;gap:var(--sp-3);grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.sw{display:grid;gap:var(--sp-2);padding:var(--sp-4);align-content:start}
+.sw-chip{display:block;height:44px;border-radius:var(--r-s);border:1px solid var(--line)}
+.sw-box{display:block;height:44px;background:var(--lime);border:1px solid var(--line)}
+.sw-move{display:block;height:44px;background:var(--tint-2);border:1px solid var(--line);border-radius:var(--r-s)}
+.sw:hover .sw-move{transform:translateX(38%)}
+.sw-name{font:400 var(--fz-btn)/1.4 var(--mono);color:var(--white);word-break:break-all}
+.sw-val{font:400 var(--fz-lab)/1.5 var(--mono);color:var(--ink-4);word-break:break-all}
+.fnt{display:block;font-size:22px;line-height:1.2;color:var(--white)}
+
+.bars{display:grid;gap:var(--sp-2);max-width:var(--w-text)}
+.bar-row{display:grid;grid-template-columns:110px 1fr auto;gap:var(--sp-3);align-items:center}
+.bar-fill{display:block;height:14px;background:var(--lime);border-radius:var(--r-xs)}
+@media(max-width:559px){.bar-row{grid-template-columns:96px 1fr auto}}
+
+.row{display:flex;flex-wrap:wrap;gap:var(--sp-2);align-items:center}
+</style>
+</Page>

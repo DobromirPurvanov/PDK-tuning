@@ -170,20 +170,15 @@ export const CATALOG_URL = (import.meta.env.PDK_CATALOG_URL ?? '').replace(/\/+$
 /**
  * ПОРТАЛЪТ НА ДИЛЪРИТЕ — „Вход“, „Качи файл“, „Портал за партньори“.
  *
- * Връзката е ОТНОСИТЕЛНА (`/bg/login`) и това е нарочно. Порталът си остава на
- * стария сървър; работникът (`PORTAL_PATHS` в public/_worker.js) препредава
- * `/bg/login` натам както е — с метода, заглавките и тялото — а `PHPSESSID`
- * се връща без `Domain` и залепва за нашия домейн. Тоест адресът работи на
- * всеки етап, без да знае кой е произходът в момента:
+ * Връзките водят директно към отделния адрес на каталога и пазят езика в пътя:
+ * `catalog.pdktuning.com/<lang>/login`. Така входът не зависи от проксито на
+ * основния сайт, а английската версия може да използва същия строител с `en`.
  *
- *   етап 1  наш адрес/bg/login  →  www.pdktuning.com/bg/login
- *   етап 2  www/bg/login        →  catalog.pdktuning.com/bg/login
- *
- * Зашит абсолютен адрес би бил грешен и на двата етапа: на етап 1 щеше да
- * извежда хората извън сайта, на етап 2 щеше да сочи `catalog` — вътрешния
- * произход, който няма нашите заглавки и няма работа пред дилър.
- *
- * `PORTAL_URL` в средата пренаписва това, ако някой ден потрябва абсолютен
- * адрес (например докато работникът още не е пуснат).
+ * `PORTAL_URL` остава като изрично пренаписване за временна или друга среда.
  */
-export const PORTAL = import.meta.env.PDK_PORTAL_URL || '/bg/login';
+export type PortalLanguage = 'bg' | 'en';
+
+export const portalUrl = (lang: PortalLanguage) =>
+  import.meta.env.PDK_PORTAL_URL || `${CATALOG_URL}/${lang}/login`;
+
+export const PORTAL = portalUrl('bg');

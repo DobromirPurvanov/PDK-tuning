@@ -73,20 +73,20 @@ const flow = [
           </p>
         </div>
 
-        <aside class="p-facts">
+        <aside class="p-facts panel">
           <h2>Достъп</h2>
           <dl>
             <dt>Порталът</dt>
             <dd>
               <a href={PORTAL} target="_blank" rel="noopener noreferrer"
-                 style="color:var(--lime);border-bottom:1px solid rgba(82,251,9,.4)">Вход за партньори ↗</a>
+                 style="color:var(--lime);border-bottom:1px solid var(--lime-line)">Вход за партньори ↗</a>
             </dd>
             <dt>Нов профил</dt>
             <dd>по телефон, след разговор</dd>
             <dt>Телефон</dt>
-            <dd><a href={`tel:${b.phone}`} style="color:inherit;border-bottom:1px solid rgba(255,255,255,.2)">{b.phoneDisplay}</a></dd>
+            <dd><a href={`tel:${b.phone}`} style="color:inherit;border-bottom:1px solid var(--line-soft)">{b.phoneDisplay}</a></dd>
             <dt>Имейл</dt>
-            <dd><a href={`mailto:${b.email}`} style="color:inherit;border-bottom:1px solid rgba(255,255,255,.2)">{b.email}</a></dd>
+            <dd><a href={`mailto:${b.email}`} style="color:inherit;border-bottom:1px solid var(--line-soft)">{b.email}</a></dd>
           </dl>
         </aside>
       </div>

@@ -36,7 +36,7 @@ const schema = [bizRef(site), crumbSchema(site, [{ href: '/', label: 'Начал
 >
   <div class="p-wrap">
     <section class="p-sec">
-      <div class="p-warn">
+      <div class="warn">
         <b>Тези числа чакат потвърждение от сервиза</b>
         <p>
           Стойностите по-долу са ориентировъчни и стоят тук, за да се вижда как ще изглежда
@@ -45,7 +45,7 @@ const schema = [bizRef(site), crumbSchema(site, [{ href: '/', label: 'Начал
         </p>
       </div>
 
-      <table class="p-table">
+      <table class="tbl">
         <thead>
           <tr><th>Услуга</th><th>От</th><th>Времето</th></tr>
         </thead>
@@ -53,7 +53,7 @@ const schema = [bizRef(site), crumbSchema(site, [{ href: '/', label: 'Начал
           {rows.map(({ s, p }) => (
             <tr>
               <td data-l="Услуга"><a href={`/uslugi/${s.slug}/`}>{s.name}</a></td>
-              <td data-l="От">{p ? <b>{p.from} €</b> : <span class="p-fill">по оглед</span>}</td>
+              <td data-l="От">{p ? <b>{p.from} €</b> : <span class="fill">по оглед</span>}</td>
               <td data-l="Времето">{p ? p.time : '—'}</td>
             </tr>
           ))}

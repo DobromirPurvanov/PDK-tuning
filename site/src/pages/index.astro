@@ -237,7 +237,7 @@ const hoursText = b.hours.map((h) => {
         Записва се от вас, през телефона, без да идвате до Варна.
       </p>
     </div>
-    <a class="ev-band-go" href="/elektricheski/">Виж своя модел →</a>
+    <a class="btn btn--go ev-band-go" href="/elektricheski/">Виж своя модел →</a>
   </div>
 </section>
 
@@ -352,7 +352,7 @@ const hoursText = b.hours.map((h) => {
       <h2>Запази час.</h2>
       <p class="note">Пишете ни или се обадете. Отговаряме в рамките на работния ден.</p>
 
-      <dl class="nap">
+      <dl class="nas-dl">
         <dt>Адрес</dt>
         <dd>
           <a href={business.social.maps} target="_blank" rel="noopener noreferrer">
@@ -365,8 +365,8 @@ const hoursText = b.hours.map((h) => {
         <dd><a href={`mailto:${business.email}`}>{business.email}</a></dd>
         <dt>Работно време</dt>
         <dd>
-          {hoursText.map((h) => <span class="hrow"><b>{h.d}</b>{h.t}</span>)}
-          <span class="hrow"><b>Неделя</b>почивен ден</span>
+          {hoursText.map((h) => <span class="nas-hours"><b>{h.d}</b>{h.t}</span>)}
+          <span class="nas-hours"><b>Неделя</b>почивен ден</span>
         </dd>
       </dl>
     </div>
@@ -381,23 +381,19 @@ const hoursText = b.hours.map((h) => {
 /* ── електрическите: лентата под избирача ──────────────── */
 .ev-band{padding:0 var(--gut) 104px}
 .ev-band-in{position:relative;max-width:1000px;margin:0 auto;padding:34px 36px;overflow:hidden;
-  background:#0C0C0C;border:1px solid var(--grey9);border-radius:14px;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r-m);
   display:grid;gap:22px;align-items:center}
-@media(min-width:820px){.ev-band-in{grid-template-columns:1fr auto;gap:40px}}
+@media(min-width:900px){.ev-band-in{grid-template-columns:1fr auto;gap:40px}}
 .ev-band-in::before{content:'';position:absolute;inset:0;pointer-events:none;
-  background:repeating-linear-gradient(45deg,#1A1A1A 0 1px,transparent 1px 8px);
+  background:repeating-linear-gradient(45deg,var(--hair) 0 1px,transparent 1px 8px);
   -webkit-mask-image:radial-gradient(110% 90% at 100% 0,#000 0%,transparent 62%);
   mask-image:radial-gradient(110% 90% at 100% 0,#000 0%,transparent 62%)}
 .ev-band-in > *{position:relative}
-.ev-band-kick{margin:0 0 10px;font:400 9px/1 var(--mono);letter-spacing:.3em;text-transform:uppercase;color:var(--lime)}
+.ev-band-kick{margin:0 0 10px;font:400 var(--fz-lab)/1 var(--mono);letter-spacing:.3em;text-transform:uppercase;color:var(--lime)}
 .ev-band h2{margin:0;font:700 clamp(26px,3.6vw,40px)/1 var(--head);text-transform:uppercase;letter-spacing:-.015em}
 .ev-band h2 em{font-style:normal;color:var(--lime)}
-.ev-band-p{margin:12px 0 0;max-width:56ch;font:400 15px/1.6 var(--body);color:rgba(255,255,255,.7)}
-.ev-band-go{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;
-  border-radius:10px;background:var(--lime);color:#041000;white-space:nowrap;
-  font:700 11px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;transition:filter .18s}
-.ev-band-go:hover{filter:brightness(1.12)}
-@media(max-width:820px){
+.ev-band-p{margin:12px 0 0;max-width:56ch;font:400 var(--fz-s)/1.6 var(--body);color:var(--ink-3)}
+@media(max-width:899px){
   .ev-band{padding-bottom:64px}
   .ev-band-in{padding:26px 22px}
   .ev-band-go{width:100%}
@@ -405,17 +401,17 @@ const hoursText = b.hours.map((h) => {
 
 /* ── хиро ──────────────────────────────────────────────── */
 .hero{position:relative;min-height:100vh;overflow:hidden;
-  background:linear-gradient(180deg,#0A1206 0%,#111B08 46%,var(--black) 100%)}
+  background:linear-gradient(180deg,#0A1206 0%,#111B08 46%,var(--bg) 100%)}
 .hero .shot{position:absolute;inset:-3%;overflow:hidden}
 .hero .shot video,.hero .shot img{width:100%;height:100%;object-fit:cover;object-position:52% 64%;
   filter:contrast(1.2) brightness(.5) saturate(.34);opacity:.95;
-  transform:scale(1.04) translate3d(var(--px,0),var(--py,0),0);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  transform:scale(1.04) translate3d(var(--px,0),var(--py,0),0);transition:transform var(--t-slow) cubic-bezier(.2,.8,.2,1)}
 
 /* ── „фото режим“: подът и хоризонтът, както в играта ──────────────────── */
 .stagelines{position:absolute;inset:0;pointer-events:none;opacity:.5;
   background:
-    linear-gradient(transparent 0 calc(100% - 1px), rgba(82,251,9,.16) calc(100% - 1px)) 0 0/100% 62px,
-    linear-gradient(90deg, transparent 0 calc(100% - 1px), rgba(255,255,255,.045) calc(100% - 1px)) 0 0/62px 100%;
+    linear-gradient(transparent 0 calc(100% - 1px), var(--lime-wash) calc(100% - 1px)) 0 0/100% 62px,
+    linear-gradient(90deg, transparent 0 calc(100% - 1px), var(--tint-2) calc(100% - 1px)) 0 0/62px 100%;
   -webkit-mask-image:linear-gradient(180deg,transparent 42%,#000 88%,transparent 100%);
   mask-image:linear-gradient(180deg,transparent 42%,#000 88%,transparent 100%)}
 
@@ -423,7 +419,7 @@ const hoursText = b.hours.map((h) => {
 /* горният ръб е под лентата — иначе ъгловата скоба сечеше логото */
 .hud{position:absolute;inset:82px 22px 22px;pointer-events:none;z-index:5}
 @media(min-width:900px){.hud{inset:96px 34px 34px}}
-.cn{position:absolute;width:26px;height:26px;border:1px solid rgba(82,251,9,.5);opacity:0;
+.cn{position:absolute;width:26px;height:26px;border:1px solid var(--lime-line);opacity:0;
   animation:cn-in .5s ease forwards}
 .cn.tl{top:0;left:0;border-right:0;border-bottom:0;animation-delay:.15s}
 .cn.tr{top:0;right:0;border-left:0;border-bottom:0;animation-delay:.25s}
@@ -431,32 +427,32 @@ const hoursText = b.hours.map((h) => {
 .cn.br{bottom:0;right:0;border-left:0;border-top:0;animation-delay:.45s}
 @keyframes cn-in{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
 .ticks{position:absolute;left:38px;right:38px;bottom:0;height:9px;
-  background:repeating-linear-gradient(90deg, rgba(255,255,255,.28) 0 1px, transparent 1px 26px);
+  background:repeating-linear-gradient(90deg, var(--line-mid) 0 1px, transparent 1px 26px);
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent);
   mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent)}
 
 /* лентата на мощността: стоково → след файла, като телеметрия в игра */
 .power{max-width:640px}
 .p-head{display:flex;align-items:baseline;gap:14px;margin:0 0 10px;
-  font:400 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.62)}
-.p-head b{color:#fff;font-weight:400;font-size:13px}
+  font:400 var(--fz-lab)/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-4)}
+.p-head b{color:var(--white);font-weight:400;font-size:var(--fz-xs)}
 .p-head span:last-child b{color:var(--lime)}
-.p-mid{margin:0 auto;letter-spacing:.1em;color:rgba(255,255,255,.56)}
-@media(max-width:560px){.p-mid{display:none}}
-.p-bar{position:relative;height:7px;background:rgba(255,255,255,.06);overflow:hidden}
+.p-mid{margin:0 auto;letter-spacing:.1em;color:var(--ink-4)}
+@media(max-width:559px){.p-mid{display:none}}
+.p-bar{position:relative;height:7px;background:var(--tint-2);overflow:hidden}
 /* деленията са НАД запълването, но леки — иначе изяждаха зеленото */
 .p-bar::after{content:'';position:absolute;inset:0;pointer-events:none;
-  background:repeating-linear-gradient(90deg,transparent 0 15px,rgba(8,8,8,.4) 15px 16px)}
+  background:repeating-linear-gradient(90deg,transparent 0 15px,var(--tick) 15px 16px)}
 .p-bar i{display:block;height:100%;width:0;
-  background:linear-gradient(90deg,#2FCF06,#52FB09);
-  box-shadow:0 0 16px rgba(82,251,9,.6);transition:width 1.7s cubic-bezier(.2,.8,.2,1)}
+  background:linear-gradient(90deg,var(--green),var(--lime));
+  box-shadow:0 0 16px var(--lime-line);transition:width 1.7s cubic-bezier(.2,.8,.2,1)}
 
 /* ── зеленият дим: тънка мъгла по дъното, не петно ────────────────────── */
 .smoke{position:absolute;left:0;right:0;bottom:0;height:46%;pointer-events:none;overflow:hidden;z-index:2;
   -webkit-mask-image:linear-gradient(180deg,transparent,#000 62%,#000);
   mask-image:linear-gradient(180deg,transparent,#000 62%,#000)}
 .smoke i{position:absolute;border-radius:50%;filter:blur(70px);opacity:0;
-  background:radial-gradient(circle,rgba(82,251,9,.34) 0%,rgba(5,173,2,.12) 46%,transparent 74%);
+  background:radial-gradient(circle,var(--lime-line) 0%,var(--green-glow) 46%,transparent 74%);
   animation:puff 15s ease-in-out infinite}
 .smoke i:nth-child(1){width:520px;height:190px;left:-4%;bottom:-8%;animation-delay:0s}
 .smoke i:nth-child(2){width:420px;height:160px;left:24%;bottom:-12%;animation-delay:-5s}
@@ -469,7 +465,7 @@ const hoursText = b.hours.map((h) => {
 
 /* ── еднократно метене при зареждане, като сканиране в игра ───────────── */
 .sweep{position:absolute;inset:0;pointer-events:none;z-index:4;
-  background:linear-gradient(90deg,transparent,rgba(82,251,9,.16) 46%,rgba(82,251,9,.5) 50%,rgba(82,251,9,.16) 54%,transparent);
+  background:linear-gradient(90deg,transparent,var(--lime-wash) 46%,var(--lime-line) 50%,var(--lime-wash) 54%,transparent);
   transform:translateX(-100%);animation:sweep-go 1.5s cubic-bezier(.5,0,.2,1) .35s 1}
 @keyframes sweep-go{to{transform:translateX(100%)}}
 
@@ -493,7 +489,7 @@ const hoursText = b.hours.map((h) => {
 
 .inner{position:relative;z-index:10;min-height:100vh;display:flex;flex-direction:column;
   justify-content:space-between;padding:120px var(--gut) 54px;gap:40px}
-@media(min-width:1000px){.inner{flex-direction:row;align-items:stretch;padding-top:130px}}
+@media(min-width:980px){.inner{flex-direction:row;align-items:stretch;padding-top:130px}}
 .left{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-between;gap:38px}
 
 /* жива точка + моно надпис — от Experience Hero */
@@ -501,15 +497,15 @@ const hoursText = b.hours.map((h) => {
 .dot{position:relative;width:9px;height:9px;border-radius:50%;background:var(--lime)}
 .dot::after{content:'';position:absolute;inset:0;border-radius:50%;background:var(--lime);animation:ping 1.9s cubic-bezier(0,0,.2,1) infinite}
 @keyframes ping{75%,100%{transform:scale(2.6);opacity:0}}
-.live span{font:400 10px/1 var(--mono);font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+.live span{font:400 var(--fz-lab)/1 var(--mono);font-weight:700;letter-spacing:.22em;text-transform:uppercase}
 
-.eyebrow{font:italic 400 clamp(15px,1.4vw,19px)/1.4 var(--body);color:rgba(255,255,255,.72);
-  margin:0 0 16px;text-shadow:0 1px 12px rgba(8,8,8,.95)}
+.eyebrow{font:italic 400 clamp(15px,1.4vw,19px)/1.4 var(--body);color:var(--ink-3);
+  margin:0 0 16px;text-shadow:0 1px 12px var(--shade-hard)}
 h1{margin:0;font-family:var(--head);font-weight:700;--stroke:2px;
   font-size:clamp(2.9rem,10.4vw,9.5rem);line-height:1.02;letter-spacing:-.022em;text-transform:uppercase}
 /* Стъпаловидно: изречението е подстъп на един по-дребен ред, думата е кулминацията.
    Трите равни реда се слепваха един върху друг — това дава йерархия и въздух. */
-h1 .lead{display:block;font-size:.46em;line-height:1.12;letter-spacing:.02em;color:rgba(255,255,255,.9)}
+h1 .lead{display:block;font-size:.46em;line-height:1.12;letter-spacing:.02em;color:var(--ink)}
 @media(min-width:900px){h1{--stroke:3px}}
 /* Вторият ред е КОНТУР (ходът е от Experience Hero, цветът от таблото).
    -webkit-text-stroke рисува линията ЦЕНТРИРАНО върху буквата — половината излиза
@@ -518,80 +514,80 @@ h1 .lead{display:block;font-size:.46em;line-height:1.12;letter-spacing:.02em;col
    защото при контур съседните букви се слепват. */
 h1 .out{display:block;color:transparent;-webkit-text-stroke:var(--stroke) var(--lime);
   paint-order:stroke fill;margin-left:calc(var(--stroke) / 2);letter-spacing:-.008em;margin-top:.1em}
-.sub{margin:30px 0 0;font:400 10px/1.9 var(--mono);letter-spacing:.34em;text-transform:uppercase;
-  color:rgba(255,255,255,.72);max-width:52ch;text-shadow:0 1px 12px rgba(8,8,8,.95)}
+.sub{margin:30px 0 0;font:400 var(--fz-lab)/1.9 var(--mono);letter-spacing:.34em;text-transform:uppercase;
+  color:var(--ink-3);max-width:52ch;text-shadow:0 1px 12px var(--shade-hard)}
 
 .cta{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
 .circle{display:flex;align-items:center;gap:18px;cursor:pointer}
-.circle i{width:62px;height:62px;border-radius:50%;border:1px solid rgba(255,255,255,.18);
-  display:grid;place-items:center;transition:.45s}
+.circle i{width:62px;height:62px;border-radius:50%;border:1px solid var(--line-soft);
+  display:grid;place-items:center;transition:var(--t-slow)}
 .circle:hover i{background:var(--lime);border-color:var(--lime)}
-.circle svg{stroke:var(--white);transition:.45s}
-.circle:hover svg{stroke:#041000}
-.circle b{font:400 10px/1 var(--mono);font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.circle svg{stroke:var(--white);transition:var(--t-slow)}
+.circle:hover svg{stroke:var(--lime-ink)}
+.circle b{font:400 var(--fz-lab)/1 var(--mono);font-weight:700;letter-spacing:.2em;text-transform:uppercase}
 .tel{display:inline-flex;align-items:center;min-height:44px;
-  font:400 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+  font:400 var(--fz-lab)/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
 .tel b{color:var(--white);font-weight:400}
 
 /* командните клетки — от Experience Hero, съдържанието е нашето */
 .deck{width:100%;display:flex;flex-direction:column;gap:14px;justify-content:center}
-@media(min-width:1000px){.deck{width:340px;flex:0 0 340px}}
-@media(min-width:1240px){.deck{width:390px;flex:0 0 390px}}
-.cell{padding:24px 26px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);
-  backdrop-filter:blur(12px);border-radius:2px}
-.cell .id{display:block;margin-bottom:14px;font:400 9px/1 var(--mono);letter-spacing:.2em;
-  text-transform:uppercase;color:rgba(255,255,255,.62)}
+@media(min-width:980px){.deck{width:340px;flex:0 0 340px}}
+@media(min-width:1180px){.deck{width:390px;flex:0 0 390px}}
+.cell{padding:24px 26px;border:1px solid var(--tint-2);background:var(--tint-1);
+  backdrop-filter:blur(12px);border-radius:var(--r-xs)}
+.cell .id{display:block;margin-bottom:14px;font:400 var(--fz-lab)/1 var(--mono);letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink-4)}
 .cell .row{display:flex;align-items:flex-end;gap:9px}
 .cell .track{margin-left:auto;margin-bottom:9px}
 /* Беше <h4>. Числото е СТОЙНОСТ, не заглавие — като заглавие правеше скок
    h1 → h4 на началната и обявяваше раздел, който не съществува. */
 .cell .cell-val{display:block;margin:0;font:700 clamp(30px,3.2vw,42px)/1 var(--head);
   letter-spacing:-.02em;color:var(--lime);font-variant-numeric:tabular-nums}
-.cell .unit{font:400 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.62);padding-bottom:5px}
-.track{height:2px;width:84px;background:rgba(255,255,255,.08);overflow:hidden}
+.cell .unit{font:400 var(--fz-lab)/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-4);padding-bottom:5px}
+.track{height:2px;width:84px;background:var(--tint-2);overflow:hidden}
 .track i{display:block;height:100%;background:var(--lime);width:62%}
-.cell .kv{display:flex;justify-content:space-between;font:400 10px/1 var(--mono);color:rgba(255,255,255,.62);padding:9px 0}
-.cell .kv + .kv{border-top:1px solid rgba(255,255,255,.06)}
+.cell .kv{display:flex;justify-content:space-between;font:400 var(--fz-lab)/1 var(--mono);color:var(--ink-4);padding:9px 0}
+.cell .kv + .kv{border-top:1px solid var(--tint-2)}
 .cell .kv b{color:var(--white);font-weight:400}
 
 /* ── стената: подредбата САМА казва „леки, камиони, селскостопански“ —
       три реда с етикет отляво, вместо заглавие, увиснало в средата. ─────────── */
 .wall{padding:84px var(--gut) 96px;content-visibility:auto;contain-intrinsic-size:auto 900px}
-.wall-in{max-width:1180px;margin:0 auto}
+.wall-in{max-width:var(--w-page);margin:0 auto}
 .wall-head{display:flex;align-items:baseline;gap:20px;flex-wrap:wrap;margin:0 0 40px;
-  padding-bottom:18px;border-bottom:1px solid var(--grey9)}
-.kick{margin:0;font:400 10px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.62)}
-.wall-sum{margin:0 0 0 auto;font:400 12px/1 var(--mono);color:rgba(255,255,255,.62)}
+  padding-bottom:18px;border-bottom:1px solid var(--line)}
+.kick{margin:0;font:400 var(--fz-lab)/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--ink-4)}
+.wall-sum{margin:0 0 0 auto;font:400 var(--fz-2xs)/1 var(--mono);color:var(--ink-4)}
 .wall-sum b{color:var(--lime);font-weight:400}
 
-.row{display:grid;grid-template-columns:1fr;gap:18px;padding:26px 0;border-bottom:1px solid var(--grey9)}
-@media(min-width:820px){.row{grid-template-columns:220px 1fr;gap:34px;align-items:center;padding:30px 0}}
+.row{display:grid;grid-template-columns:1fr;gap:18px;padding:26px 0;border-bottom:1px solid var(--line)}
+@media(min-width:900px){.row{grid-template-columns:220px 1fr;gap:34px;align-items:center;padding:30px 0}}
 .row:last-child{border-bottom:0}
 .row-lab h3{margin:0 0 6px;font:700 24px/1 var(--head);text-transform:uppercase;letter-spacing:.01em}
 /* етикетът отляво вече води към категорийната страница, а не е мъртъв надпис */
-.row-lab h3 a{border-bottom:1px solid transparent;transition:color .18s,border-color .18s}
-.row-lab h3 a:hover{color:var(--lime);border-bottom-color:rgba(82,251,9,.5)}
-.row-lab span{font:400 11px/1.5 var(--mono);color:rgba(255,255,255,.56)}
+.row-lab h3 a{border-bottom:1px solid transparent;transition:color var(--t-fast),border-color var(--t-fast)}
+.row-lab h3 a:hover{color:var(--lime);border-bottom-color:var(--lime-line)}
+.row-lab span{font:400 var(--fz-btn)/1.5 var(--mono);color:var(--ink-4)}
 
 /* „виж всичко“ — на дъното на стената и под всяка решетка от плочки */
 .wall-more,.srv-more{margin:26px 0 0}
 .wall-more a,.srv-more a{display:inline-flex;align-items:center;min-height:44px;
-  font:400 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--lime);
-  border-bottom:1px solid rgba(82,251,9,.35);transition:border-color .18s}
+  font:400 var(--fz-btn)/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--lime);
+  border-bottom:1px solid var(--lime-line);transition:border-color var(--t-fast)}
 .wall-more a:hover,.srv-more a:hover{border-bottom-color:var(--lime)}
 @media(pointer:coarse){.wall-more a,.srv-more a{min-height:48px}}
 /* Плочките на марките (.row-marks/.mark) живеят в MarkGrid.astro —
    ползват ги и стоте страници на марките, затова не стоят тук. */
 
-.more{padding:22px 0 30px;border-bottom:1px solid var(--grey9)}
-@media(min-width:820px){.more{padding-left:254px}}
+.more{padding:22px 0 30px;border-bottom:1px solid var(--line)}
+@media(min-width:900px){.more{padding-left:254px}}
 #moreBtn{display:inline-flex;align-items:center;gap:12px;cursor:pointer;min-height:44px;
-  padding:12px 20px;border:1px solid var(--grey9);border-radius:999px;background:none;
-  font:400 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;
-  color:rgba(255,255,255,.72);transition:.18s}
-#moreBtn:hover{border-color:rgba(82,251,9,.45);color:#fff}
+  padding:12px 20px;border:1px solid var(--line);border-radius:var(--r-pill);background:none;
+  font:400 var(--fz-btn)/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-3);transition:var(--t-fast)}
+#moreBtn:hover{border-color:var(--lime-line);color:var(--white)}
 #moreBtn i{width:7px;height:7px;border-right:1.5px solid var(--lime);border-bottom:1.5px solid var(--lime);
-  transform:rotate(45deg) translate(-2px,-2px);transition:transform .22s}
+  transform:rotate(45deg) translate(-2px,-2px);transition:transform var(--t-fast)}
 #moreBtn[aria-expanded="true"] i{transform:rotate(-135deg) translate(-2px,-2px)}
 .rest{margin-top:20px}
 
@@ -601,77 +597,65 @@ h1 .out{display:block;color:transparent;-webkit-text-stroke:var(--stroke) var(--
 .faq{padding-top:0}
 /* диагоналните косъм-линии с радиална маска са техни; цветът е нашият */
 .srv::before{content:'';position:absolute;inset:0;
-  background:repeating-linear-gradient(45deg,#1A1A1A 0px 1px,transparent 1px 8px);
+  background:repeating-linear-gradient(45deg,var(--hair) 0px 1px,transparent 1px 8px);
   -webkit-mask-image:radial-gradient(ellipse 80% 50% at 50% 0%,#000 70%,transparent 110%);
   mask-image:radial-gradient(ellipse 80% 50% at 50% 0%,#000 70%,transparent 110%)}
-.srv .in,.faq .in,.cnt .in{position:relative;z-index:2;max-width:1160px;margin:0 auto}
+.srv .in,.faq .in,.cnt .in{position:relative;z-index:2;max-width:var(--w-page);margin:0 auto}
 .srv .top,.faq .top{display:flex;flex-direction:column;gap:26px;justify-content:space-between;
-  border-bottom:1px solid var(--grey9);padding-bottom:40px;margin-bottom:56px}
-@media(min-width:860px){.srv .top,.faq .top{flex-direction:row;align-items:flex-end;gap:48px}}
+  border-bottom:1px solid var(--line);padding-bottom:40px;margin-bottom:56px}
+@media(min-width:900px){.srv .top,.faq .top{flex-direction:row;align-items:flex-end;gap:48px}}
 .srv h2,.faq h2,.cnt h2{margin:0;font:700 clamp(2.4rem,5.2vw,4.4rem)/.94 var(--head);
   letter-spacing:-.025em;text-transform:uppercase}
-.srv .note,.faq .note,.cnt .note{margin:0;max-width:22rem;font:400 10px/1.85 var(--mono);
-  letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+.srv .note,.faq .note,.cnt .note{margin:0;max-width:22rem;font:400 var(--fz-lab)/1.85 var(--mono);
+  letter-spacing:.2em;text-transform:uppercase;color:var(--ink-4)}
 .tiles{display:grid;grid-template-columns:1fr;gap:16px}
 @media(min-width:700px){.tiles{grid-template-columns:1fr 1fr}}
 @media(min-width:1060px){.tiles{grid-template-columns:repeat(3,1fr)}}
 .tile{position:relative;display:block;overflow:hidden;padding:38px 34px 34px;
-  background:#0C0C0C;border:1px solid var(--grey9);border-radius:14px;transition:border-color .5s}
-.tile:hover{border-color:rgba(82,251,9,.45)}
-.tile .wash{position:absolute;inset:0;opacity:0;transition:opacity .7s;
-  background:linear-gradient(135deg,rgba(82,251,9,.16) 0%,transparent 62%)}
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r-m);transition:border-color var(--t-slow)}
+.tile:hover{border-color:var(--lime-line)}
+.tile .wash{position:absolute;inset:0;opacity:0;transition:opacity var(--t-slow);
+  background:linear-gradient(135deg,var(--lime-wash) 0%,transparent 62%)}
 .tile:hover .wash{opacity:1}
 .tile .body{position:relative;z-index:2;display:flex;flex-direction:column;gap:52px}
-.tile .ic{width:54px;height:54px;border-radius:14px;background:rgba(255,255,255,.07);display:grid;place-items:center}
+.tile .ic{width:54px;height:54px;border-radius:var(--r-m);background:var(--tint-2);display:grid;place-items:center}
 .tile .ic svg{width:24px;height:24px;stroke:var(--lime);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.tile .lab{display:block;margin-bottom:12px;font:400 10px/1 var(--mono);letter-spacing:.3em;
-  text-transform:uppercase;color:rgba(255,255,255,.62)}
+.tile .lab{display:block;margin-bottom:12px;font:400 var(--fz-lab)/1 var(--mono);letter-spacing:.3em;
+  text-transform:uppercase;color:var(--ink-4)}
 .tile h3{margin:0 0 10px;font:700 clamp(22px,2.2vw,29px)/1.05 var(--head);letter-spacing:-.015em;text-transform:uppercase}
-.tile p{margin:0;font:400 13px/1.6 var(--mono);color:rgba(255,255,255,.66)}
+.tile p{margin:0;font:400 var(--fz-xs)/1.6 var(--mono);color:var(--ink-4)}
 .tile p b{color:var(--lime);font-weight:400}
 /* ясното действие на плочката — преди картата водеше към „#“ и не правеше нищо */
-.tile-go{display:inline-block;margin-top:18px;font:400 10px/1 var(--mono);letter-spacing:.2em;
-  text-transform:uppercase;color:var(--lime);opacity:.85;transition:opacity .2s}
+.tile-go{display:inline-block;margin-top:18px;font:400 var(--fz-lab)/1 var(--mono);letter-spacing:.2em;
+  text-transform:uppercase;color:var(--lime);opacity:.85;transition:opacity var(--t-fast)}
 .tile:hover .tile-go{opacity:1}
 
-/* ── въпросите ─────────────────────────────────────────── */
-.qa{max-width:900px}
-.qa details{border-bottom:1px solid var(--grey9)}
-.qa summary{display:flex;align-items:center;justify-content:space-between;gap:20px;
-  padding:22px 0;min-height:48px;cursor:pointer;list-style:none;
-  font:700 clamp(17px,1.9vw,21px)/1.3 var(--head);text-transform:uppercase;letter-spacing:.005em;
-  transition:color .18s}
-.qa summary::-webkit-details-marker{display:none}
-.qa summary h3{margin:0;font:inherit;color:inherit;text-transform:inherit;letter-spacing:inherit}
-.qa summary:hover{color:var(--lime)}
-.qa summary i{flex:0 0 auto;width:11px;height:11px;position:relative}
-.qa summary i::before,.qa summary i::after{content:'';position:absolute;background:var(--lime);
-  transition:transform .22s,opacity .22s}
-.qa summary i::before{left:0;right:0;top:5px;height:1.5px}
-.qa summary i::after{top:0;bottom:0;left:5px;width:1.5px}
-.qa details[open] summary i::after{transform:scaleY(0);opacity:0}
-.qa .ans{padding:0 0 26px;max-width:62ch}
-.qa .ans p{margin:0;font:400 15px/1.65 var(--body);color:rgba(255,255,255,.72)}
+/* ── въпросите ───────────────────────────────────────────────────────────────
+   Акордеонът е примитив (`.qa` в `styles/ui.css`). Тук стоеше втори, почти
+   еднакъв екземпляр — същата логика, същата плюс-икона от два псевдоелемента,
+   разлика само в clamp-а и едно отстояние. Останало е единствено онова, с
+   което началната се РАЗЛИЧАВА: заглавието ѝ е с една степен по-едро. */
+.qa summary{font-size:clamp(17px,1.9vw,21px);line-height:1.3;letter-spacing:.005em}
 
 /* ── статиите: три реда, не картички — тук текстът е стоката ────────────── */
 .reads{position:relative;padding:0 var(--gut) 96px;content-visibility:auto;contain-intrinsic-size:auto 700px}
-.reads .in{position:relative;z-index:2;max-width:1160px;margin:0 auto}
+.reads .in{position:relative;z-index:2;max-width:var(--w-page);margin:0 auto}
 .reads .top{display:flex;flex-direction:column;gap:26px;justify-content:space-between;
-  border-bottom:1px solid var(--grey9);padding-bottom:40px;margin-bottom:20px}
-@media(min-width:860px){.reads .top{flex-direction:row;align-items:flex-end;gap:48px}}
+  border-bottom:1px solid var(--line);padding-bottom:40px;margin-bottom:20px}
+@media(min-width:900px){.reads .top{flex-direction:row;align-items:flex-end;gap:48px}}
 .reads h2{margin:0;font:700 clamp(2.4rem,5.2vw,4.4rem)/.94 var(--head);letter-spacing:-.025em;text-transform:uppercase}
-.reads .note{margin:0;max-width:22rem;font:400 10px/1.85 var(--mono);letter-spacing:.2em;
-  text-transform:uppercase;color:rgba(255,255,255,.62)}
+.reads .note{margin:0;max-width:22rem;font:400 var(--fz-lab)/1.85 var(--mono);letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink-4)}
 .reads-list{display:grid;gap:0}
-.read{display:block;padding:28px 0;border-bottom:1px solid var(--grey9);transition:padding-left .25s}
+.read{display:block;padding:28px 0;border-bottom:1px solid var(--line);transition:padding-left var(--t)}
 .read:hover{padding-left:14px}
-.read-lab{display:block;margin-bottom:10px;font:400 10px/1 var(--mono);letter-spacing:.22em;
+.read-lab{display:block;margin-bottom:10px;font:400 var(--fz-lab)/1 var(--mono);letter-spacing:.22em;
   text-transform:uppercase;color:var(--lime)}
 .read h3{margin:0 0 8px;font:700 clamp(19px,2.2vw,26px)/1.12 var(--head);
-  letter-spacing:-.016em;text-transform:uppercase;transition:color .18s}
+  letter-spacing:-.016em;text-transform:uppercase;transition:color var(--t-fast)}
 .read:hover h3{color:var(--lime)}
-.read p{margin:0;max-width:62ch;font:400 15px/1.62 var(--body);color:rgba(255,255,255,.7)}
-@media(max-width:760px){
+.read p{margin:0;max-width:62ch;font:400 var(--fz-s)/1.62 var(--body);color:var(--ink-3)}
+@media(max-width:759px){
   .reads{padding:0 var(--gut) 64px}
   .reads .top{padding-bottom:28px;margin-bottom:12px}
   .read{padding:22px 0}
@@ -680,19 +664,13 @@ h1 .out{display:block;color:transparent;-webkit-text-stroke:var(--stroke) var(--
 /* ── контакти и форма ──────────────────────────────────── */
 .cnt{padding:0 var(--gut) 104px}
 .cnt .in{display:grid;gap:44px;grid-template-columns:1fr}
-@media(min-width:940px){.cnt .in{grid-template-columns:1fr 1.15fr;gap:64px;align-items:start}}
+@media(min-width:980px){.cnt .in{grid-template-columns:1fr 1.15fr;gap:64px;align-items:start}}
 .cnt .note{margin:18px 0 34px;max-width:26rem}
 
-.nap{margin:0;display:grid;grid-template-columns:auto;gap:0}
-.nap dt{margin-top:22px;font:400 10px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--lime)}
-.nap dt:first-child{margin-top:0}
-.nap dd{margin:8px 0 0;font:400 15px/1.6 var(--body);color:rgba(255,255,255,.82)}
-.nap dd a{display:inline-flex;align-items:center;min-height:44px;
-  border-bottom:1px solid rgba(255,255,255,.2);transition:color .18s,border-color .18s}
-.nap dd a:hover{color:var(--lime);border-bottom-color:rgba(82,251,9,.6)}
-.hrow{display:flex;gap:14px;font:400 13px/2 var(--mono);color:rgba(255,255,255,.72)}
-.hrow b{min-width:11rem;font-weight:400;color:rgba(255,255,255,.56)}
-@media(max-width:420px){.hrow b{min-width:9rem}}
+/* Адресът и работното време са примитив (`.nas-*` в `styles/ui.css`). Същият
+   блок стоеше и тук, и в /kontakti/, в ГЛОБАЛЕН обхват и под общите имена
+   `.nap` и `.hrow` — с разлика от един ред. Две правила за едно име в глобален
+   обхват вече са ни стрували два кръга гледане в грешния елемент. */
 
 /* Формата (.form/.fld/.fmsg…) живее в ContactForm.astro — ползва я и /kontakti/. */
 
@@ -706,26 +684,26 @@ h1 .out{display:block;color:transparent;-webkit-text-stroke:var(--stroke) var(--
    ══════════════════════════════════════════════════════════════════════════ */
 
 /* ── хиро ────────────────────────────────────────────────────────────────── */
-@media(max-width:999px){
+@media(max-width:979px){
   .inner{padding-top:96px;padding-bottom:44px;gap:34px}
   .left{gap:28px}
   .deck{gap:12px}
   .cell{padding:18px 20px}
   .cta{gap:18px}
 }
-@media(min-width:561px) and (max-width:999px){
+@media(min-width:560px) and (max-width:979px){
   /* трите клетки: две горе, третата през цялата ширина */
   .deck{display:grid;grid-template-columns:1fr 1fr;width:100%;flex:none}
   .cell:last-child{grid-column:1 / -1}
 }
-@media(max-width:400px){
-  .live span{font-size:9px;letter-spacing:.16em}
+@media(max-width:419px){
+  .live span{font-size:var(--fz-lab);letter-spacing:.16em}
   .sub{letter-spacing:.24em}
   .circle i{width:54px;height:54px}
 }
 
 /* ── стената на тесен екран ─────────────────────────────────────────────── */
-@media(max-width:760px){
+@media(max-width:759px){
   .wall{padding:56px var(--gut) 64px}
   .wall-head{margin-bottom:26px}
   .row{padding:22px 0;gap:14px}
@@ -733,7 +711,7 @@ h1 .out{display:block;color:transparent;-webkit-text-stroke:var(--stroke) var(--
 }
 
 /* ── услугите, въпросите и контактите ───────────────────────────────────── */
-@media(max-width:760px){
+@media(max-width:759px){
   .srv{padding:64px var(--gut) 72px}
   .faq{padding:0 var(--gut) 72px}
   .cnt{padding:0 var(--gut) 72px}
@@ -746,7 +724,6 @@ h1 .out{display:block;color:transparent;-webkit-text-stroke:var(--stroke) var(--
 @media(pointer:coarse){
   #moreBtn{min-height:48px}
   .tel{min-height:48px}
-  .nap dd a{min-height:48px}
 }
 </style>
 

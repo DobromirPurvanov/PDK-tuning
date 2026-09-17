@@ -252,11 +252,11 @@ const schema = [{
 <style is:global>
 /* формулярът за отказ: личи си, че е образец за попълване, а не текст за четене */
 .form-otkaz{margin:0 0 22px;padding:22px 24px;border-left:2px solid var(--lime);
-  background:rgba(82,251,9,.04);border-radius:0 10px 10px 0}
+  background:var(--lime-dim);border-radius:0 var(--r-s) var(--r-s) 0}
 /* Редовете за попълване са дълъг НЕПРЕКЪСВАЕМ низ от точки. На 320px той
    изкарваше документа на 330px — нищо не се виждаше отдясно, но скролът беше
    там. `anywhere` позволява прекъсване вътре в низа, без да чупи думите. */
-.form-otkaz p{margin:0 0 12px;font:400 15px/1.75 var(--body);color:rgba(255,255,255,.82);
+.form-otkaz p{margin:0 0 12px;font:400 var(--fz-s)/1.75 var(--body);color:var(--ink-2);
   overflow-wrap:anywhere}
 .form-otkaz p:last-child{margin-bottom:0}
 </style>

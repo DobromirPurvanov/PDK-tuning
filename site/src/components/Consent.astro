@@ -48,7 +48,7 @@ const CATS = [
   },
 ] as const;
 ---
-<div class="cc" id="cookieBar" role="dialog" aria-modal="true" aria-labelledby="ccTitle"
+<div class="cc panel" id="cookieBar" role="dialog" aria-modal="true" aria-labelledby="ccTitle"
      aria-describedby="ccText" tabindex="-1" hidden>
   <div class="cc-in">
     <div class="cc-txt">
@@ -86,10 +86,10 @@ const CATS = [
     </div>
 
     <div class="cc-btns">
-      <button type="button" id="ccCustom" class="cc-b ghost" aria-expanded="false" aria-controls="ccCats">Настрой</button>
-      <button type="button" id="ccNo" class="cc-b">Само необходимите</button>
-      <button type="button" id="ccYes" class="cc-b yes">Приемам всички</button>
-      <button type="button" id="ccSave" class="cc-b yes" hidden>Запази избора</button>
+      <button type="button" id="ccCustom" class="btn btn--ghost cc-b" aria-expanded="false" aria-controls="ccCats">Настрой</button>
+      <button type="button" id="ccNo" class="btn cc-b">Само необходимите</button>
+      <button type="button" id="ccYes" class="btn btn--go cc-b">Приемам всички</button>
+      <button type="button" id="ccSave" class="btn btn--go cc-b" hidden>Запази избора</button>
     </div>
   </div>
 </div>
@@ -200,40 +200,35 @@ const CATS = [
 </script>
 
 <style>
-.cc{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;
-  background:#0C0C0C;border:1px solid var(--grey9);border-radius:14px;
-  box-shadow:0 18px 50px rgba(0,0,0,.6);max-height:calc(100vh - 24px);overflow-y:auto}
+.cc{position:fixed;left:12px;right:12px;bottom:12px;z-index:var(--z-modal);
+  box-shadow:var(--shadow);max-height:calc(100vh - 24px);overflow-y:auto}
 @media(min-width:900px){.cc{left:auto;right:24px;bottom:24px;max-width:520px;max-height:calc(100vh - 48px)}}
 .cc[hidden]{display:none}
 .cc-in{padding:22px 24px;display:flex;flex-direction:column;gap:18px}
 .cc-t{margin:0 0 8px;font:700 18px/1 var(--head);text-transform:uppercase;letter-spacing:.01em}
-.cc-p{margin:0;font:400 13px/1.6 var(--body);color:rgba(255,255,255,.7)}
-.cc-p a{color:var(--lime);border-bottom:1px solid rgba(82,251,9,.4)}
+.cc-p{margin:0;font:400 var(--fz-xs)/1.6 var(--body);color:var(--ink-3)}
+.cc-p a{color:var(--lime);border-bottom:1px solid var(--lime-line)}
 
 /* ── категориите ─────────────────────────────────────────────────────────── */
 .cc-cats fieldset{margin:0;padding:0;border:0}
-.cc-leg{padding:0 0 12px;font:400 10px/1 var(--mono);letter-spacing:.2em;
-  text-transform:uppercase;color:rgba(255,255,255,.62)}
+.cc-leg{padding:0 0 12px;font:400 var(--fz-lab)/1 var(--mono);letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink-4)}
 .cc-cat{display:grid;grid-template-columns:auto 1fr;gap:0 12px;align-items:start;
-  padding:12px 0;border-top:1px solid var(--grey9);cursor:pointer}
+  padding:12px 0;border-top:1px solid var(--line);cursor:pointer}
 .cc-cat.locked{cursor:default}
 .cc-cat input{width:24px;height:24px;margin:1px 0 0;accent-color:var(--lime);cursor:pointer}
 .cc-cat.locked input{cursor:not-allowed;opacity:.55}
 .cc-cat-b b{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 10px;
-  font:400 14px/1.4 var(--body);color:var(--white)}
-.cc-cat-b b em{font-style:normal;font:400 9px/1 var(--mono);letter-spacing:.18em;
-  text-transform:uppercase;color:rgba(255,255,255,.5)}
-.cc-note{display:block;margin-top:5px;font:400 12px/1.55 var(--body);color:rgba(255,255,255,.62)}
+  font:400 var(--fz-s)/1.4 var(--body);color:var(--white)}
+.cc-cat-b b em{font-style:normal;font:400 var(--fz-lab)/1 var(--mono);letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink-5)}
+.cc-note{display:block;margin-top:5px;font:400 var(--fz-2xs)/1.55 var(--body);color:var(--ink-4)}
 
 /* ── копчетата: отказът НЕ е по-дребен от приемането ──────────────────────── */
 .cc-btns{display:flex;flex-wrap:wrap;gap:10px}
-.cc-b{flex:1 1 auto;min-height:48px;padding:14px 18px;border-radius:10px;cursor:pointer;
-  border:1px solid var(--grey9);background:none;color:var(--white);
-  font:400 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;transition:.18s}
-.cc-b:hover{border-color:rgba(255,255,255,.42)}
+/* видът идва от `.btn`; тук е само как се делят по ширина */
+.cc-b{flex:1 1 auto;--btn-h:48px;--btn-py:14px;--btn-px:18px}
 .cc-b[hidden]{display:none}
-.cc-b.ghost{flex:0 1 auto;color:rgba(255,255,255,.72)}
-.cc-b.yes{background:var(--lime);border-color:var(--lime);color:#041000;font-weight:700}
-.cc-b.yes:hover{filter:brightness(1.1)}
-@media(max-width:420px){.cc-b{flex:1 1 100%}}
+.cc-b.btn--ghost{flex:0 1 auto}
+@media(max-width:419px){.cc-b{flex:1 1 100%}}
 </style>

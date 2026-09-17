@@ -67,7 +67,7 @@ const groups = [
             const s = SERVICES.find((x) => x.slug === k)!;
             const pr = s.priceKey ? P[s.priceKey] : undefined;
             return (
-              <a class="p-card" href={`/uslugi/${s.slug}/`}>
+              <a class="p-card panel panel--link" href={`/uslugi/${s.slug}/`}>
                 <span class="wash"></span>
                 <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><Fragment set:html={ICONS[s.icon]} /></svg></span>
                 <span class="lab">{s.kicker}</span>
@@ -86,7 +86,7 @@ const groups = [
       <p class="p-note">Не всяка услуга има смисъл за всяка машина.</p>
       <div class="p-cards three">
         {CATEGORIES.map((c) => (
-          <a class="p-card" href={`/${c.slug}/`}>
+          <a class="p-card panel panel--link" href={`/${c.slug}/`}>
             <span class="wash"></span>
             <span class="lab">{c.services.length} услуги</span>
             <h3>{c.name}</h3>

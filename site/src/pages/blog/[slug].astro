@@ -66,7 +66,7 @@ const fmt = (iso: string) =>
       <h2>Свързани услуги</h2>
       <div class="p-cards three">
         {related.map((s) => (
-          <a class="p-card" href={`/uslugi/${s.slug}/`}>
+          <a class="p-card panel panel--link" href={`/uslugi/${s.slug}/`}>
             <span class="wash"></span>
             <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><Fragment set:html={ICONS[s.icon]} /></svg></span>
             <span class="lab">{s.kicker}</span>
@@ -82,7 +82,7 @@ const fmt = (iso: string) =>
       <h2>Още статии</h2>
       <div class="p-cards three">
         {others.map((o) => (
-          <a class="p-card" href={`/blog/${o.slug}/`}>
+          <a class="p-card panel panel--link" href={`/blog/${o.slug}/`}>
             <span class="wash"></span>
             <span class="lab">{o.kicker}</span>
             <h3>{o.h1}</h3>
@@ -97,11 +97,11 @@ const fmt = (iso: string) =>
 
 <style is:global>
 .art-meta{display:flex;flex-wrap:wrap;gap:0 8px;margin:0 0 34px;
-  font:400 10px/1.6 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.56)}
-.art-meta span[aria-hidden]{color:rgba(255,255,255,.3)}
+  font:400 var(--fz-lab)/1.6 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-4)}
+.art-meta span[aria-hidden]{color:var(--line-mid)}
 .p-prose.art{max-width:68ch}
 .p-prose.art h2{margin:44px 0 14px;font:700 clamp(21px,2.4vw,27px)/1.16 var(--head);
   text-transform:uppercase;letter-spacing:-.012em}
 .p-prose.art h2:first-child{margin-top:0}
-.p-prose.art p{font-size:17px;line-height:1.75}
+.p-prose.art p{font-size:var(--fz-m);line-height:1.75}
 </style>

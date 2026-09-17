@@ -39,7 +39,7 @@ const crumbs = [
   <div class="p-wrap">
     <section class="p-sec">
       <div class="ord">
-        <form class="form" id="oform" novalidate data-live={CHECKOUT_LIVE ? '1' : ''}>
+        <form class="form panel" id="oform" novalidate data-live={CHECKOUT_LIVE ? '1' : ''}>
           <p class="onote">
             {CHECKOUT_LIVE ? (
               <>
@@ -167,7 +167,7 @@ const crumbs = [
           </p>
 
           <div class="fsub">
-            <button type="submit" class="send" id="osend">Изпрати поръчката</button>
+            <button type="submit" class="btn btn--go send" id="osend">Изпрати поръчката</button>
             <span class="fnote">Полетата със <span aria-hidden="true">*</span> са задължителни.</span>
           </div>
 
@@ -175,7 +175,7 @@ const crumbs = [
           <p class="fmsg bad" id="obad" role="alert" hidden></p>
         </form>
 
-        <aside class="oside">
+        <aside class="oside panel">
           <h2>Какво следва</h2>
           <ol>
             {CHECKOUT_LIVE
@@ -326,38 +326,38 @@ if (form) {
 .ord{display:grid;gap:28px}
 @media(min-width:980px){.ord{grid-template-columns:1.35fr .65fr;gap:40px;align-items:start}}
 
-.onote{margin:0 0 26px;padding:14px 16px;border-radius:10px;
-  background:rgba(255,255,255,.04);border:1px solid var(--grey9);
-  font:400 13px/1.6 var(--body);color:rgba(255,255,255,.74)}
+.onote{margin:0 0 26px;padding:14px 16px;border-radius:var(--r-s);
+  background:var(--tint-2);border:1px solid var(--line);
+  font:400 var(--fz-xs)/1.6 var(--body);color:var(--ink-3)}
 .onote b{display:block;margin-bottom:4px;color:var(--white)}
 
 .oprice{display:flex;align-items:baseline;justify-content:space-between;gap:14px;
-  margin:-6px 0 22px;padding:14px 16px;border-radius:10px;
-  background:rgba(82,251,9,.07);border:1px solid rgba(82,251,9,.3)}
-.oprice span{font:400 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+  margin:-6px 0 22px;padding:14px 16px;border-radius:var(--r-s);
+  background:var(--lime-dim);border:1px solid var(--lime-line)}
+.oprice span{font:400 var(--fz-lab)/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
 .oprice b{font:700 24px/1 var(--head);color:var(--lime);font-variant-numeric:tabular-nums}
 
 /* Съгласието по чл. 57, т. 13 е отделено с линия: то е ДРУГО решение, не
    продължение на отметката за лични данни отгоре. */
-.onow{margin-top:-6px;padding-top:16px;border-top:1px solid var(--grey9)}
+.onow{margin-top:-6px;padding-top:16px;border-top:1px solid var(--line)}
 .onow .hint{grid-column:1 / -1;margin-top:2px}
 
 .ogroup{border:0;padding:0;margin:0 0 18px}
-.ogroup legend{padding:0;margin-bottom:8px;font:400 10px/1 var(--mono);letter-spacing:.2em;
-  text-transform:uppercase;color:rgba(255,255,255,.72)}
+.ogroup legend{padding:0;margin-bottom:8px;font:400 var(--fz-lab)/1 var(--mono);letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink-3)}
 .ogroup legend span{color:var(--lime)}
 .opay{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 18px;margin-right:10px;
-  border:1px solid var(--grey9);border-radius:9px;cursor:pointer;
-  font:400 14px/1 var(--body);color:rgba(255,255,255,.8);transition:.16s}
-.opay:hover{border-color:rgba(255,255,255,.4)}
+  border:1px solid var(--line);border-radius:var(--r-s);cursor:pointer;
+  font:400 var(--fz-s)/1 var(--body);color:var(--ink-2);transition:var(--t-fast)}
+.opay:hover{border-color:var(--line-strong)}
 .opay input{width:20px;height:20px;accent-color:var(--lime);cursor:pointer}
-.opay:has(input:checked){border-color:var(--lime);background:rgba(82,251,9,.08);color:var(--white)}
+.opay:has(input:checked){border-color:var(--lime);background:var(--lime-dim);color:var(--white)}
 
-.oside{background:#0C0C0C;border:1px solid var(--grey9);border-radius:14px;padding:26px 24px}
-.oside h2{margin:0 0 16px;font:700 16px/1 var(--head);text-transform:uppercase;letter-spacing:.05em}
+.oside{padding:var(--sp-5)}
+.oside h2{margin:0 0 16px;font:700 var(--fz-body)/1 var(--head);text-transform:uppercase;letter-spacing:.05em}
 .oside ol{margin:0;padding-left:20px}
-.oside li{margin-bottom:10px;font:400 14px/1.55 var(--body);color:rgba(255,255,255,.74)}
-.ohelp{margin:20px 0 0;padding-top:18px;border-top:1px solid var(--grey9);
-  font:400 12px/1.9 var(--mono);color:rgba(255,255,255,.6)}
+.oside li{margin-bottom:10px;font:400 var(--fz-s)/1.55 var(--body);color:var(--ink-3)}
+.ohelp{margin:20px 0 0;padding-top:18px;border-top:1px solid var(--line);
+  font:400 var(--fz-2xs)/1.9 var(--mono);color:var(--ink-4)}
 .ohelp a{color:var(--lime)}
 </style>

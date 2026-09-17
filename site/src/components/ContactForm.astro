@@ -24,7 +24,7 @@ interface Props {
 }
 const { heading } = Astro.props;
 ---
-<form class="form" id="cform" novalidate>
+<form class="form panel" id="cform" novalidate>
   {heading && <h2 class="fhead">{heading}</h2>}
 
   <div class="f2">
@@ -84,7 +84,7 @@ const { heading } = Astro.props;
   </p>
 
   <div class="fsub">
-    <button type="submit" class="send" id="fsend">Изпрати запитване</button>
+    <button type="submit" class="btn btn--go send" id="fsend">Изпрати запитване</button>
     <span class="fnote">Полетата със <span aria-hidden="true">*</span> са задължителни.</span>
   </div>
 

@@ -112,53 +112,53 @@ const social = [
 </footer>
 
 <style>
-.foot{border-top:1px solid var(--grey9);padding:56px var(--gut) 28px;background:#0A0A0A}
+.foot{border-top:1px solid var(--line);padding:56px var(--gut) 28px;background:var(--bg-bar)}
 /* На телефон трите колони с връзки стояха ЕДНА ПОД ДРУГА и футърът ставаше
    1330px — един екран и половина само за навигация. Заглавията им са по две
    думи, тоест се събират по две на ред и при 390px. Данните на фирмата остават
    на цял ред: адресът и имейлът не се пречупват добре в половин колона. */
 .foot-in{max-width:1180px;margin:0 auto;display:grid;gap:30px 24px;grid-template-columns:1fr 1fr}
 address.fcol{grid-column:1 / -1}
-@media(min-width:960px){
+@media(min-width:980px){
   .foot-in{grid-template-columns:1.4fr 1fr 1fr 1fr;gap:34px 26px}
   address.fcol{grid-column:auto}
 }
 
 /* <address> носи наклонен шрифт по подразбиране — тук е блок с данни, не цитат */
 address.fcol{font-style:normal}
-.ftitle{margin:0 0 16px;font:400 10px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--lime)}
+.ftitle{margin:0 0 16px;font:400 var(--fz-lab)/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--lime)}
 /* Разделителят е декоративен и е aria-hidden, но СЕ ВИЖДА — значи важи прагът
-   за контраст. При .3 даваше 2,59:1 върху #0A0A0A. Минималната алфа за 4,5:1
+   за контраст. При .3 даваше 2,59:1 върху var(--bg-bar). Минималната алфа за 4,5:1
    на този фон е около 0,45; .5 оставя запас. */
-.fsep{padding:0 6px;color:rgba(255,255,255,.5)}
-.ftitle a{border-bottom:1px solid transparent;transition:border-color .18s}
-.ftitle a:hover{border-bottom-color:rgba(82,251,9,.5)}
-.fline{margin:0;font:400 13px/1.5 var(--body);color:rgba(255,255,255,.66)}
+.fsep{padding:0 6px;color:var(--ink-5)}
+.ftitle a{border-bottom:1px solid transparent;transition:border-color var(--t-fast)}
+.ftitle a:hover{border-bottom-color:var(--lime-line)}
+.fline{margin:0;font:400 var(--fz-xs)/1.5 var(--body);color:var(--ink-4)}
 .fline + .fline{margin-top:4px}
-.fline a,.linky{display:inline-flex;align-items:center;min-height:32px;color:rgba(255,255,255,.66);
+.fline a,.linky{display:inline-flex;align-items:center;min-height:32px;color:var(--ink-4);
   border:0;background:none;padding:0;cursor:pointer;text-align:left;font:inherit;
-  border-bottom:1px solid transparent;transition:color .18s,border-color .18s}
-.fline a:hover,.linky:hover{color:var(--lime);border-bottom-color:rgba(82,251,9,.5)}
+  border-bottom:1px solid transparent;transition:color var(--t-fast),border-color var(--t-fast)}
+.fline a:hover,.linky:hover{color:var(--lime);border-bottom-color:var(--lime-line)}
 /* заглавията на колоните вече са връзки („Услуги", „Каталог") — и те искат пръст */
 @media(pointer:coarse){.fline a,.linky,.ftitle a{min-height:48px;display:inline-flex;align-items:center}}
 
 /* Долният ред пое правното и социалните. Те са по три думи всяка и като
    вертикални списъци държаха цяла колона; наредени водоравно се събират на
    един-два реда. */
-.foot-end{max-width:1180px;margin:30px auto 0;padding-top:18px;border-top:1px solid var(--grey9);
+.foot-end{max-width:1180px;margin:30px auto 0;padding-top:18px;border-top:1px solid var(--line);
   display:flex;flex-wrap:wrap;align-items:center;gap:10px 28px}
 .fend-links{display:flex;flex-wrap:wrap;gap:4px 20px;align-items:center}
-.fend-links a,.fend-links .linky{font:400 12px/1.5 var(--body);color:rgba(255,255,255,.62);
+.fend-links a,.fend-links .linky{font:400 var(--fz-2xs)/1.5 var(--body);color:var(--ink-4);
   border:0;background:none;padding:0;cursor:pointer;display:inline-flex;align-items:center;min-height:30px;
-  border-bottom:1px solid transparent;transition:color .18s,border-color .18s}
-.fend-links a:hover,.fend-links .linky:hover{color:var(--lime);border-bottom-color:rgba(82,251,9,.5)}
+  border-bottom:1px solid transparent;transition:color var(--t-fast),border-color var(--t-fast)}
+.fend-links a:hover,.fend-links .linky:hover{color:var(--lime);border-bottom-color:var(--lime-line)}
 /* социалните се отделят от правните, за да не се четат като един списък */
 .fend-social{margin-left:auto}
-.fend-social a{font:400 10px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.fend-social a{font:400 var(--fz-lab)/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase}
 .fend-note{flex-basis:100%;margin:2px 0 0;display:flex;flex-wrap:wrap;gap:4px 18px;
-  font:400 11px/1.6 var(--mono);color:rgba(255,255,255,.5)}
+  font:400 var(--fz-btn)/1.6 var(--mono);color:var(--ink-5)}
 @media(pointer:coarse){.fend-links a,.fend-links .linky{min-height:48px}}
-@media(max-width:620px){
+@media(max-width:619px){
   .fend-social{margin-left:0}
   .fend-note{flex-direction:column;gap:4px}
 }

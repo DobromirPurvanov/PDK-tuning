@@ -73,8 +73,8 @@ export default defineConfig({
       'import.meta.env.PDK_CATALOG_URL': JSON.stringify(
         process.env.CATALOG_BASE_URL || process.env.LEGACY_ORIGIN || '',
       ),
-      // по избор: абсолютен адрес на портала. Празно = относителен /bg/login,
-      // който работникът препредава. Виж бележката при PORTAL в config/site.ts.
+      // По избор: изрично пренаписва адреса на портала. Празно означава
+      // CATALOG_BASE_URL/<lang>/login. Виж PORTAL в config/site.ts.
       'import.meta.env.PDK_PORTAL_URL': JSON.stringify(process.env.PORTAL_URL || ''),
     },
   },

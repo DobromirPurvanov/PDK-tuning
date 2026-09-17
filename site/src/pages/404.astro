@@ -29,8 +29,8 @@ const quick = NAV.map((n) => ({ href: n.href, label: n.label }));
       </p>
 
       <nav class="nf-links" aria-label="Накъде оттук">
-        <a class="nf-go" href="/">Към началната страница</a>
-        {quick.map((q) => <a class="nf-alt" href={q.href}>{q.label}</a>)}
+        <a class="btn btn--go btn--pill nf-go" href="/">Към началната страница</a>
+        {quick.map((q) => <a class="btn btn--pill nf-alt" href={q.href}>{q.label}</a>)}
       </nav>
 
       {/*
@@ -43,7 +43,7 @@ const quick = NAV.map((n) => ({ href: n.href, label: n.label }));
         <label for="nf-q">Търсите марка?</label>
         <div class="nf-row">
           <input id="nf-q" name="q" type="search" placeholder="BMW, DAF, Claas…" autocomplete="off" />
-          <button type="submit">Търси в каталога</button>
+          <button type="submit" class="btn btn--go">Търси в каталога</button>
         </div>
       </form>
 
@@ -59,7 +59,7 @@ const quick = NAV.map((n) => ({ href: n.href, label: n.label }));
 .nf{position:relative;min-height:78vh;display:grid;place-items:center;
   padding:150px var(--gut) 90px;overflow:hidden}
 .nf::before{content:'';position:absolute;inset:0;
-  background:repeating-linear-gradient(45deg,#1A1A1A 0px 1px,transparent 1px 8px);
+  background:repeating-linear-gradient(45deg,var(--hair) 0px 1px,transparent 1px 8px);
   -webkit-mask-image:radial-gradient(ellipse 70% 55% at 50% 40%,#000 55%,transparent 100%);
   mask-image:radial-gradient(ellipse 70% 55% at 50% 40%,#000 55%,transparent 100%)}
 .nf-in{position:relative;z-index:2;max-width:640px;text-align:center}
@@ -69,31 +69,23 @@ const quick = NAV.map((n) => ({ href: n.href, label: n.label }));
 @media(min-width:900px){.nf-code{-webkit-text-stroke-width:3px}}
 .nf h1{margin:0;font:700 clamp(1.9rem,4.6vw,3rem)/1.02 var(--head);
   letter-spacing:-.02em;text-transform:uppercase}
-.nf-lead{margin:20px auto 0;max-width:46ch;font:400 16px/1.65 var(--body);color:rgba(255,255,255,.78)}
+.nf-lead{margin:var(--sp-5) auto 0;max-width:46ch;font:400 var(--fz-body)/1.65 var(--body);color:var(--ink-2)}
 
 .nf-links{margin:38px 0 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-.nf-go,.nf-alt{display:inline-flex;align-items:center;justify-content:center;min-height:48px;
-  padding:14px 22px;border-radius:999px;font:400 10px/1 var(--mono);letter-spacing:.18em;
-  text-transform:uppercase;transition:.18s}
-.nf-go{background:var(--lime);color:#041000;font-weight:700}
-.nf-go:hover{filter:brightness(1.1)}
-.nf-alt{border:1px solid var(--grey9);color:rgba(255,255,255,.72)}
-.nf-alt:hover{border-color:rgba(82,251,9,.45);color:#fff}
+/* видът идва от `.btn`; `.nf-alt` е контурният вариант */
+.nf-alt:hover{border-color:var(--lime-line);color:var(--white)}
 
 .nf-find{margin:34px auto 0;max-width:460px;text-align:left}
-.nf-find label{display:block;margin-bottom:8px;font:400 10px/1 var(--mono);letter-spacing:.2em;
-  text-transform:uppercase;color:rgba(255,255,255,.72)}
+.nf-find label{display:block;margin-bottom:8px;font:400 var(--fz-lab)/1 var(--mono);letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink-3)}
 .nf-row{display:flex;gap:8px;flex-wrap:wrap}
 .nf-find input{flex:1 1 180px;min-width:0;min-height:48px;padding:13px 15px;
-  background:rgba(255,255,255,.04);border:1px solid var(--grey9);border-radius:9px;
-  color:var(--white);font:400 15px/1.4 var(--body);outline:none;transition:border-color .18s}
+  background:var(--tint-2);border:1px solid var(--line);border-radius:var(--r-s);
+  color:var(--white);font:400 var(--fz-s)/1.4 var(--body);outline:none;transition:border-color var(--t-fast)}
 .nf-find input:focus{border-color:var(--lime)}
-.nf-find button{flex:0 0 auto;min-height:48px;padding:14px 20px;border:0;border-radius:9px;cursor:pointer;
-  background:var(--lime);color:#041000;font:700 10px/1 var(--mono);letter-spacing:.16em;
-  text-transform:uppercase;transition:filter .18s}
-.nf-find button:hover{filter:brightness(1.1)}
-@media(max-width:420px){.nf-find button{flex:1 1 100%}}
+.nf-find button{flex:0 0 auto;--btn-h:48px;--btn-py:14px;--btn-px:20px}
+@media(max-width:419px){.nf-find button{flex:1 1 100%}}
 
-.nf-tel{margin:32px 0 0;font:400 12px/1.6 var(--mono);color:rgba(255,255,255,.62)}
-.nf-tel a{color:var(--lime);border-bottom:1px solid rgba(82,251,9,.4)}
+.nf-tel{margin:32px 0 0;font:400 var(--fz-2xs)/1.6 var(--mono);color:var(--ink-4)}
+.nf-tel a{color:var(--lime);border-bottom:1px solid var(--lime-line)}
 </style>

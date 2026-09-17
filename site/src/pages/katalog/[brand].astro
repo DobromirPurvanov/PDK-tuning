@@ -104,11 +104,11 @@ const schema = [
           </p>
         </div>
 
-        <aside class="p-facts">
+        <aside class="p-facts panel">
           <h2>{m.name}</h2>
           <dl>
             <dt>Категория</dt>
-            <dd><a href={`/${cat.slug}/`} style="color:inherit;border-bottom:1px solid rgba(255,255,255,.2)">{cat.name}</a></dd>
+            <dd><a href={`/${cat.slug}/`} style="color:inherit;border-bottom:1px solid var(--line-soft)">{cat.name}</a></dd>
             <dt>Марки в категорията</dt>
             <dd>{siblings.length + 1}</dd>
             <dt>Източник на числата</dt>
@@ -132,7 +132,7 @@ const schema = [
       <h2>Услуги за {m.name}</h2>
       <div class="p-cards three">
         {services.map((s) => (
-          <a class="p-card" href={`/uslugi/${s.slug}/`}>
+          <a class="p-card panel panel--link" href={`/uslugi/${s.slug}/`}>
             <span class="wash"></span>
             <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><Fragment set:html={ICONS[s.icon]} /></svg></span>
             <span class="lab">{s.kicker}</span>

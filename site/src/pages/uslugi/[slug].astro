@@ -56,7 +56,7 @@ const schema = [
         <div class="p-prose">
           {s.body.map((sec) => (
             sec.tone === 'warn'
-              ? <div class="p-warn">
+              ? <div class="warn">
                   <b>{sec.h}</b>
                   {sec.p.map((t) => <p>{t}</p>)}
                 </div>
@@ -67,7 +67,7 @@ const schema = [
           ))}
         </div>
 
-        <aside class="p-facts">
+        <aside class="p-facts panel">
           <h2>Накратко</h2>
           <dl>
             {s.facts?.map((f) => (<><dt>{f.k}</dt><dd>{f.v}</dd></>))}
@@ -87,12 +87,12 @@ const schema = [
       <section class="p-sec">
         <h2>За кого е</h2>
         <div class="p-lists">
-          <div class="p-list yes">
+          <div class="p-list panel yes">
             <h3>Има смисъл при</h3>
             <ul>{s.fits.map((t) => <li>{t}</li>)}</ul>
           </div>
           {s.notFor?.length && (
-            <div class="p-list no">
+            <div class="p-list panel no">
               <h3>Няма смисъл при</h3>
               <ul>{s.notFor.map((t) => <li>{t}</li>)}</ul>
             </div>
@@ -118,7 +118,7 @@ const schema = [
     {s.faq?.length && (
       <section class="p-sec">
         <h2>Въпроси за тази услуга</h2>
-        <div class="p-qa">
+        <div class="qa">
           {s.faq.map((f, i) => (
             <details name="sfaq" open={i === 0}>
               <summary><h3>{f.q}</h3><i aria-hidden="true"></i></summary>
@@ -136,7 +136,7 @@ const schema = [
       <h2>Свързани услуги</h2>
       <div class="p-cards three">
         {related.map((r) => (
-          <a class="p-card" href={`/uslugi/${r.slug}/`}>
+          <a class="p-card panel panel--link" href={`/uslugi/${r.slug}/`}>
             <span class="wash"></span>
             <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><Fragment set:html={ICONS[r.icon]} /></svg></span>
             <span class="lab">{r.kicker}</span>

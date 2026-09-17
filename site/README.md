@@ -68,7 +68,7 @@ PUBLIC_INDEXABLE   НЕ се задава на етап 1 — иначе new и 
                    и същи думи, а по-силният адрес е техният
 PUBLIC_GA_ID       GA4 маркерът на клиента (G-13T4ZTVM1W) — виж docs/mereneto.md
 PUBLIC_GSC_VERIFY  кодът за Search Console, само съдържанието на `content`
-PORTAL_URL         по избор: абсолютен адрес на портала. Празно = относителен
+PORTAL_URL         по избор: пренаписва CATALOG_BASE_URL/<lang>/login
 RESEND_API_KEY / CONTACT_TO / CONTACT_FROM    без тях формата връща 503
 STRIPE_SECRET_KEY + PUBLIC_CHECKOUT=true      вдигат се ЗАЕДНО
 ```

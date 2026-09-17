@@ -16,6 +16,7 @@
  */
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
+import { proseLines } from './lib/prose.mjs';
 
 const root = new URL('..', import.meta.url).pathname;
 const SKIP_DIRS = new Set(['node_modules', 'dist', '.astro', '.wrangler', '.git', '.kaskada']);
@@ -27,30 +28,6 @@ const EXT = /\.(astro|ts|tsx|js|mjs|json)$/;
 const isHelpText = (line) => /^\s*'\s*(BASE_URL|CATALOG_BASE_URL|PORTAL_URL)=/.test(line);
 
 const isEmail = (line, i) => /[\w.+-]+@[\w.-]*pdktuning\.com/.test(line.slice(Math.max(0, i - 40), i + 20));
-
-/**
- * Кои редове са ПРОЗА, а не код.
- *
- * Първата版 гледаше само началото на реда и пропускаше продълженията на
- * блоковите коментари — ред без звездичка насред `{/* … *\/}` изглеждаше като
- * код и вдигаше фалшива тревога на четири места. Затова състоянието „вътре в
- * блоков коментар“ се носи през файла, вместо да се гадае по един ред.
- */
-function proseLines(text) {
-  const out = new Set();
-  let inBlock = false;
-  text.split('\n').forEach((line, n) => {
-    const t = line.trim();
-    const opens = line.lastIndexOf('/*');
-    const closes = line.lastIndexOf('*/');
-    const wasInBlock = inBlock;
-    if (!inBlock && opens >= 0 && closes < opens) inBlock = true;
-    else if (inBlock && closes >= 0) inBlock = false;
-    if (wasInBlock || inBlock || t.startsWith('//') || t.startsWith('#')
-        || t.startsWith('*') || /"_[a-z_]+":/.test(t)) out.add(n);
-  });
-  return out;
-}
 
 const hits = [];
 (function walk(dir) {

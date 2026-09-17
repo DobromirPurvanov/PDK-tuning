@@ -67,7 +67,7 @@ const schema = [
     <section class="p-sec">
       <h2>Какво печели тази техника</h2>
       <p class="p-note">Обичайни стойности. Точното число за конкретния двигател е в каталога.</p>
-      <table class="p-table">
+      <table class="tbl">
         <thead><tr><th>Какво</th><th>Колко</th></tr></thead>
         <tbody>
           {c.gains.map((g) => (
@@ -101,7 +101,7 @@ const schema = [
       <h2>Услуги за {c.name.toLowerCase()}</h2>
       <div class="p-cards three">
         {services.map((s) => (
-          <a class="p-card" href={`/uslugi/${s.slug}/`}>
+          <a class="p-card panel panel--link" href={`/uslugi/${s.slug}/`}>
             <span class="wash"></span>
             <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><Fragment set:html={ICONS[s.icon]} /></svg></span>
             <span class="lab">{s.kicker}</span>
@@ -117,7 +117,7 @@ const schema = [
       <h2>Другите категории</h2>
       <div class="p-cards three">
         {CATEGORIES.filter((x) => x.slug !== c.slug).map((x) => (
-          <a class="p-card" href={`/${x.slug}/`}>
+          <a class="p-card panel panel--link" href={`/${x.slug}/`}>
             <span class="wash"></span>
             <span class="lab">{all.filter((m) => m.kind === x.kind).length} марки</span>
             <h3>{x.name}</h3>
@@ -125,7 +125,7 @@ const schema = [
             <span class="go">Виж категорията →</span>
           </a>
         ))}
-        <a class="p-card" href="/katalog/">
+        <a class="p-card panel panel--link" href="/katalog/">
           <span class="wash"></span>
           <span class="lab">{all.length} марки</span>
           <h3>Целият каталог</h3>

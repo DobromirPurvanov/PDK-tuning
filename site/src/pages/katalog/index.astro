@@ -53,7 +53,7 @@ const schema = [
       <h2>Трите категории</h2>
       <div class="p-cards three">
         {groups.map((g) => (
-          <a class="p-card" href={`/${g.cat.slug}/`}>
+          <a class="p-card panel panel--link" href={`/${g.cat.slug}/`}>
             <span class="wash"></span>
             <span class="lab">{g.items.length} марки</span>
             <h3>{g.cat.name}</h3>
@@ -142,19 +142,19 @@ if (q) {
 
 <style is:global>
 .mfind{display:block;max-width:420px;margin:0 0 30px}
-.mfind span{display:block;margin-bottom:8px;font:400 10px/1 var(--mono);letter-spacing:.2em;
-  text-transform:uppercase;color:rgba(255,255,255,.72)}
-.mfind input{width:100%;min-height:48px;padding:13px 15px;background:rgba(255,255,255,.04);
-  border:1px solid var(--grey9);border-radius:9px;color:var(--white);font:400 15px/1.4 var(--body);outline:none;
-  transition:border-color .18s}
+.mfind span{display:block;margin-bottom:8px;font:400 var(--fz-lab)/1 var(--mono);letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink-3)}
+.mfind input{width:100%;min-height:48px;padding:13px 15px;background:var(--tint-2);
+  border:1px solid var(--line);border-radius:var(--r-s);color:var(--white);font:400 var(--fz-s)/1.4 var(--body);outline:none;
+  transition:border-color var(--t-fast)}
 .mfind input:focus{border-color:var(--lime)}
-.mnone{margin:0 0 26px;font:400 14px/1.6 var(--body);color:#FF8E72}
+.mnone{margin:0 0 26px;font:400 var(--fz-s)/1.6 var(--body);color:var(--warn)}
 
 .mgroup + .mgroup{margin-top:44px}
 .mhead{display:flex;align-items:baseline;gap:16px;margin:0 0 18px;padding-bottom:12px;
-  border-bottom:1px solid var(--grey9)}
+  border-bottom:1px solid var(--line)}
 .mhead h3{margin:0;font:700 20px/1.1 var(--head);text-transform:uppercase;letter-spacing:.005em}
-.mhead h3 a{border-bottom:1px solid transparent;transition:.18s}
-.mhead h3 a:hover{color:var(--lime);border-bottom-color:rgba(82,251,9,.5)}
-.mhead span{margin-left:auto;font:400 11px/1 var(--mono);color:rgba(255,255,255,.56)}
+.mhead h3 a{border-bottom:1px solid transparent;transition:var(--t-fast)}
+.mhead h3 a:hover{color:var(--lime);border-bottom-color:var(--lime-line)}
+.mhead span{margin-left:auto;font:400 var(--fz-btn)/1 var(--mono);color:var(--ink-4)}
 </style>

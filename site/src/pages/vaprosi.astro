@@ -39,7 +39,7 @@ const schema = [
     {groups.map((grp) => (
       <section class="p-sec">
         <h2>{grp.g}</h2>
-        <div class="p-qa">
+        <div class="qa">
           {grp.items.map((f, i) => (
             <details name={`qa-${grp.g}`} open={i === 0}>
               <summary><h3>{f.q}</h3><i aria-hidden="true"></i></summary>
@@ -68,6 +68,6 @@ const schema = [
 
 <style is:global>
 .p-prose ul{margin:0 0 18px;padding-left:22px}
-.p-prose li{margin:0 0 9px;font:400 16px/1.7 var(--body);color:rgba(255,255,255,.78)}
+.p-prose li{margin:0 0 var(--sp-2);font:400 var(--fz-body)/1.7 var(--body);color:var(--ink-2)}
 .p-prose li::marker{color:var(--lime)}
 </style>

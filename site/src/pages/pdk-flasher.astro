@@ -88,7 +88,7 @@ const schema = [
           </p>
         </div>
 
-        <aside class="p-facts">
+        <aside class="p-facts panel">
           <h2>Накратко</h2>
           <dl>
             <dt>Връзка с колата</dt><dd>OBD-II, диагностичен куплунг</dd>
@@ -148,7 +148,7 @@ const schema = [
 
     <section class="p-sec">
       <h2>Въпроси</h2>
-      <div class="p-qa">
+      <div class="qa">
         {faq.map((f, i) => (
           <details name="flfaq" open={i === 0}>
             <summary><h3>{f.q}</h3><i aria-hidden="true"></i></summary>
@@ -161,10 +161,10 @@ const schema = [
 </Page>
 
 <style>
-.fl-apps{display:grid;gap:10px;margin-top:20px;padding-top:18px;border-top:1px solid var(--grey9)}
+.fl-apps{display:grid;gap:10px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
 .fl-apps a{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
-  min-height:52px;padding:0 18px;border:1px solid var(--grey9);border-radius:10px;transition:.16s}
+  min-height:52px;padding:0 18px;border:1px solid var(--line);border-radius:var(--r-s);transition:var(--t-fast)}
 .fl-apps a:hover{border-color:var(--lime)}
-.fl-apps b{font:700 13px/1 var(--head);text-transform:uppercase;letter-spacing:.06em}
-.fl-apps span{font:400 10px/1 var(--mono);color:rgba(255,255,255,.56)}
+.fl-apps b{font:700 var(--fz-xs)/1 var(--head);text-transform:uppercase;letter-spacing:.06em}
+.fl-apps span{font:400 var(--fz-lab)/1 var(--mono);color:var(--ink-4)}
 </style>
