@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import { loadEnv } from 'vite';
 import { readFileSync } from 'node:fs';
 import { parseEnv } from 'node:util';
+import rocketLoaderOptOut from './scripts/rocket-loader.mjs';
 
 /**
  * АДРЕСИТЕ СЕ ЧЕТАТ ОТ `.env.local`, НЕ СЕ ЗАШИВАТ.
@@ -60,13 +61,27 @@ if (!site) {
 }
 
 export default defineConfig({
+  integrations: [rocketLoaderOptOut()],
   // Изцяло статичен изход. Динамичното е само _worker.js, който чете живата база
   // от стария сайт (виж public/_worker.js). Нищо от каталога не се пази тук.
   site,
-  build: { format: 'directory', inlineStylesheets: 'always' },
+  build: { format: 'directory', inlineStylesheets: 'always', assets: 'assets' },
   compressHTML: true,
   devToolbar: { enabled: false },
   vite: {
+    environments: {
+      client: {
+        build: {
+          rolldownOptions: {
+            output: {
+              entryFileNames: 'assets/script.[hash].js',
+              chunkFileNames: 'assets/chunk.[hash].js',
+              assetFileNames: 'assets/[hash][extname]',
+            },
+          },
+        },
+      },
+    },
     define: {
       // стойностите трябват и в кода на страниците; влизат при билда, не в браузъра
       'import.meta.env.PDK_BASE_URL': JSON.stringify(site),
