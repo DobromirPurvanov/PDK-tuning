@@ -10,7 +10,9 @@
  * ни струва два кръга гледане в грешния елемент.
  */
 import Base from './Base.astro';
-import { BUSINESS as b, PORTAL } from '../config/site';
+import { BUSINESS as b, portalUrl } from '../config/site';
+import { langOf } from '../i18n';
+import { dict } from '../i18n/ui';
 
 export type Crumb = { href: string; label: string };
 
@@ -32,22 +34,29 @@ interface Props {
   ctaTitle?: string;
   ctaText?: string;
 }
+const lang = langOf(Astro.url.pathname);
+const t = dict(lang);
+const portal = portalUrl(lang);
+
+/* Подразбиранията на заключителния блок идват от речника, не от подписа на
+   компонента: зашити български низове тук значеха български призив под всяка
+   английска страница. Страница, която ги подава сама, ги надвива както преди. */
 const {
   kicker,
   heading,
   lead,
   crumbs = [],
   cta = true,
-  ctaTitle = 'Да го измерим.',
-  ctaText = 'Кажете ни колата и какво искате от нея. Ако не си струва, ще го чуете от нас.',
+  ctaTitle = t.ctaTitle,
+  ctaText = t.ctaText,
   ...head
 } = Astro.props;
 
-const trail: Crumb[] = [{ href: '/', label: 'Начало' }, ...crumbs];
+const trail: Crumb[] = [{ href: lang === 'en' ? '/en/' : '/', label: t.home }, ...crumbs];
 ---
 <Base {...head}>
   <div class="p-top">
-    <nav class="crumbs" aria-label="Пътека">
+    <nav class="crumbs" aria-label={t.trailAria}>
       <ol>
         {trail.map((c, i) => (
           <li>
@@ -77,8 +86,8 @@ const trail: Crumb[] = [{ href: '/', label: 'Начало' }, ...crumbs];
         </div>
         <div class="p-cta-do">
           <a class="btn btn--go" href={`tel:${b.phone}`}>{b.phoneDisplay}</a>
-          <a class="btn" href="/kontakti/">Пиши запитване</a>
-          <a class="btn btn--ghost" href={PORTAL} target="_blank" rel="noopener noreferrer">Портал за партньори ↗</a>
+          <a class="btn" href={lang === 'en' ? '/en/contact/' : '/kontakti/'}>{t.ctaWrite}</a>
+          <a class="btn btn--ghost" href={portal} target="_blank" rel="noopener noreferrer">{t.portal}</a>
         </div>
       </div>
     </section>
@@ -99,15 +108,20 @@ const trail: Crumb[] = [{ href: '/', label: 'Начало' }, ...crumbs];
   letter-spacing:var(--ls-lab);text-transform:uppercase;color:var(--lime)}
 .p-hero h1{margin:0;max-width:19ch;font:700 var(--fz-h1)/.96 var(--head);
   letter-spacing:var(--ls-tight);text-transform:uppercase}
-.p-lead{margin:var(--sp-5) 0 0;max-width:60ch;font:400 var(--fz-l)/1.6 var(--body);color:var(--ink-2)}
+.p-lead{margin:var(--h-gap) 0 0;max-width:60ch;font:400 var(--fz-l)/1.6 var(--body);color:var(--ink-2)}
 
 /* ── общият контейнер на разделите ──────────────────────────────────────── */
 .p-wrap{max-width:var(--w-page);margin:0 auto;padding:0 var(--gut)}
 .p-sec{padding:var(--sec-y) 0}
 .p-sec + .p-sec{border-top:1px solid var(--line)}
-.p-sec > h2{margin:0 0 var(--sp-6);font:700 var(--fz-h2)/1.04 var(--head);
+.p-sec > h2{margin:0 0 var(--h-gap);font:700 var(--fz-h2)/1.04 var(--head);
   letter-spacing:var(--ls-snug);text-transform:uppercase}
-.p-sec > .p-note{margin:calc(var(--sp-4) * -1) 0 var(--sp-6);max-width:56ch;
+/* Бележката е ПОДЗАГЛАВЕН ред, не съдържание — стои с една стъпка по-близо до
+   заглавието, отколкото съдържанието. Преди това се постигаше с отрицателен
+   марджин върху бележката: двете правила се изваждаха и никое от тях не казваше
+   колко е отстоянието накрая. */
+.p-sec > h2:has(+ .p-note){margin-bottom:var(--h-gap-tight)}
+.p-sec > .p-note{margin:0 0 var(--h-gap);max-width:56ch;
   font:400 var(--fz-lab)/1.85 var(--mono);
   letter-spacing:var(--ls-lab);text-transform:uppercase;color:var(--ink-4)}
 
@@ -118,7 +132,7 @@ const trail: Crumb[] = [{ href: '/', label: 'Начало' }, ...crumbs];
    Затова h2 и h3 тук изглеждат ЕДНАКВО: нивото се избира по смисъл, а
    външният вид не се мени според това дали разделът има собствено заглавие. */
 .p-prose{max-width:var(--w-prose)}
-.p-prose h2,.p-prose h3{margin:var(--sp-7) 0 var(--sp-3);font:700 var(--fz-h3)/1.2 var(--head);
+.p-prose h2,.p-prose h3{margin:var(--sp-7) 0 var(--h-gap-tight);font:700 var(--fz-h3)/1.2 var(--head);
   text-transform:uppercase;letter-spacing:var(--ls-h3)}
 .p-prose h2:first-child,.p-prose h3:first-child{margin-top:0}
 .p-prose p{margin:0 0 var(--sp-4);font:400 var(--fz-body)/1.72 var(--body);color:var(--ink-2)}
@@ -134,7 +148,7 @@ const trail: Crumb[] = [{ href: '/', label: 'Начало' }, ...crumbs];
 .p-lists{display:grid;gap:var(--sp-5);grid-template-columns:1fr}
 @media(min-width:760px){.p-lists{grid-template-columns:1fr 1fr}}
 .p-list{padding:var(--sp-5)}
-.p-list h3{margin:0 0 var(--sp-4);font:400 var(--fz-lab)/1 var(--mono);
+.p-list h3{margin:0 0 var(--h-gap-tight);font:400 var(--fz-lab)/1 var(--mono);
   letter-spacing:var(--ls-lab);text-transform:uppercase}
 .p-list.yes h3{color:var(--lime)}
 .p-list.no h3{color:var(--warn)}
@@ -152,7 +166,7 @@ const trail: Crumb[] = [{ href: '/', label: 'Начало' }, ...crumbs];
 .p-step:last-child{border-bottom:0}
 .p-step::before{content:counter(st,decimal-leading-zero);
   font:400 var(--fz-btn)/1.5 var(--mono);letter-spacing:var(--ls-btn);color:var(--lime)}
-.p-step h3{margin:0 0 var(--sp-1);font:700 var(--fz-h4)/1.25 var(--head);
+.p-step h3{margin:0 0 var(--h-gap-card);font:700 var(--fz-h4)/1.25 var(--head);
   text-transform:uppercase;letter-spacing:.005em}
 .p-step p{margin:0;font:400 var(--fz-s)/1.65 var(--body);color:var(--ink-3)}
 
@@ -161,7 +175,7 @@ const trail: Crumb[] = [{ href: '/', label: 'Начало' }, ...crumbs];
 @media(max-width:979px){.p-facts{position:static}}
 /* Заглавието на страничната колона е `h2`: тя е самостоятелен раздел на
    страницата, а не подраздел на прозата до нея. */
-.p-facts h2,.p-facts h3{margin:0 0 var(--sp-4);font:400 var(--fz-lab)/1 var(--mono);
+.p-facts h2,.p-facts h3{margin:0 0 var(--h-gap-tight);font:400 var(--fz-lab)/1 var(--mono);
   letter-spacing:var(--ls-lab);text-transform:uppercase;color:var(--lime)}
 .p-facts dl{margin:0}
 .p-facts dt{font:400 var(--fz-lab)/1.5 var(--mono);letter-spacing:var(--ls-btn);
@@ -187,7 +201,7 @@ const trail: Crumb[] = [{ href: '/', label: 'Начало' }, ...crumbs];
 .p-card .ic svg{width:22px;height:22px;stroke:var(--lime);stroke-width:1.8;fill:none;
   stroke-linecap:round;stroke-linejoin:round}
 .p-card .lab{display:block;margin-bottom:var(--sp-3)}
-.p-card h3{margin:0 0 var(--sp-2);font:700 clamp(19px,2vw,25px)/1.08 var(--head);
+.p-card h3{margin:0 0 var(--h-gap-card);font:700 clamp(19px,2vw,25px)/1.08 var(--head);
   letter-spacing:var(--ls-h3);text-transform:uppercase}
 .p-card p{margin:0;font:400 var(--fz-xs)/1.62 var(--mono);color:var(--ink-4)}
 .p-card p b{color:var(--lime);font-weight:400}
@@ -207,7 +221,7 @@ const trail: Crumb[] = [{ href: '/', label: 'Начало' }, ...crumbs];
   flex-wrap:wrap;gap:var(--sp-6);align-items:flex-end;justify-content:space-between}
 .p-cta h2{margin:0;font:700 clamp(2rem,4.6vw,3.4rem)/.98 var(--head);
   letter-spacing:var(--ls-tight);text-transform:uppercase}
-.p-cta p{margin:var(--sp-4) 0 0;max-width:44ch;font:400 var(--fz-s)/1.65 var(--body);color:var(--ink-3)}
+.p-cta p{margin:var(--h-gap-tight) 0 0;max-width:44ch;font:400 var(--fz-s)/1.65 var(--body);color:var(--ink-3)}
 .p-cta-do{display:flex;flex-wrap:wrap;gap:var(--sp-2)}
 @media(max-width:619px){.p-cta{padding:var(--sp-8) var(--gut)}.p-cta-do{width:100%}.p-cta-do .btn{flex:1 1 100%}}
 </style>

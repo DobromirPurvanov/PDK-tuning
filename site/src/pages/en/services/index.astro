@@ -1,0 +1,105 @@
+---
+/**
+ * Хъбът на английските услуги — огледало на `src/pages/uslugi/index.astro`.
+ *
+ * Две разлики от българския и двете са нарочни:
+ *  • НЯМА раздел „по вид техника“. Категориите (`/leki-avtomobili/`, `/kamioni/`,
+ *    `/selskostopanska-tehnika/`) са български страници; връзка към тях оттук
+ *    щеше да извади англичанина от английския сайт.
+ *  • Групите се рисуват само ако имат какво. Докато английските текстове се
+ *    пишат един по един, хъбът показва готовите и мълчи за останалите, вместо
+ *    да остави празно заглавие на раздел.
+ */
+import Page from '../../../layouts/Page.astro';
+import { ICONS } from '../../../data/services';
+import { SERVICES_EN } from '../../../i18n/en/services/index';
+import prices from '../../../data/prices.json';
+import { crumbSchema, bizRef } from '../../../lib/seo';
+
+const P = prices.items as Record<string, { from: number; time: string }>;
+const site = Astro.site!.href.replace(/\/$/, '');
+const crumbs = [{ href: '/en/services/', label: 'Services' }];
+
+const schema = [
+  bizRef(site, 'en'),
+  crumbSchema(site, [{ href: '/en/', label: 'Home' }, ...crumbs]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'PDK Tuning services',
+    itemListElement: SERVICES_EN.map((s, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: s.name,
+      url: `${site}/en/services/${s.slug}/`,
+    })),
+  },
+];
+
+/** трите семейства — същото разделение като българското, с английски слугове */
+const groups = [
+  {
+    lab: 'Power',
+    note: 'Work inside the margin the manufacturer left.',
+    keys: ['chip-tuning', 'stage-2', 'tcu-dsg', 'pops-bangs', 'vmax-off'],
+  },
+  {
+    lab: 'Diesel and exhaust after-treatment',
+    note: 'Diagnostics first. Repair, not deletion — for cars used on the road.',
+    keys: ['dpf-fap', 'egr', 'adblue'],
+  },
+  {
+    lab: 'Diagnostics and repair',
+    note: 'Everything else starts here.',
+    keys: ['diagnostics', 'dtc-errors', 'lambda-maf', 'software-repair', 'dyno'],
+  },
+].map((g) => ({ ...g, items: g.keys.map((k) => SERVICES_EN.find((x) => x.slug === k)).filter((x) => !!x) }))
+ .filter((g) => g.items.length > 0);
+---
+<Page
+  title="Services — chip tuning and ECU software repair | PDK Tuning"
+  description="Chip tuning and Stage 2, gearbox calibration, DPF, EGR, AdBlue, diagnostics, dyno runs and ECU software repair. Varna, Bulgaria."
+  kicker="What we do"
+  heading="Services"
+  lead="Diagnostics before any file. If the fault is a sensor, we say so — and write nothing."
+  crumbs={crumbs}
+  schema={schema}
+>
+  <div class="p-wrap">
+    {groups.map((g) => (
+      <section class="p-sec">
+        <h2>{g.lab}</h2>
+        <p class="p-note">{g.note}</p>
+        <div class="p-cards three">
+          {g.items.map((s) => {
+            const pr = s.priceKey ? P[s.priceKey] : undefined;
+            return (
+              <a class="p-card panel panel--link" href={`/en/services/${s.slug}/`}>
+                <span class="wash"></span>
+                <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><Fragment set:html={ICONS[s.icon]} /></svg></span>
+                <span class="lab">{s.kicker}</span>
+                <h3>{s.name}</h3>
+                <p>{s.short}{pr && <><br /><b>from €{pr.from}</b> · {pr.time}</>}</p>
+                <span class="go">See the service →</span>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    ))}
+
+    <section class="p-sec">
+      <h2>Prices</h2>
+      <p class="p-note">The full table of indicative figures and what moves them.</p>
+      <div class="p-prose">
+        <p>
+          Every service has a starting price; the final one is given after we have seen the
+          car. That is not caution. The same job on two different cars takes different
+          amounts of time and needs different parts, so the figure next to a service is a
+          starting point rather than a quote.
+        </p>
+        <p><a href="/en/prices/">See all prices →</a></p>
+      </div>
+    </section>
+  </div>
+</Page>

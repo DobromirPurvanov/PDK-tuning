@@ -19,45 +19,31 @@
  * покрие нещо, което не е било описано, когато е дадено.
  */
 import { LEGAL } from '../config/site';
+import { LEGAL_EN, langOf } from '../i18n';
+import { dict } from '../i18n/ui';
 
-const privacy = LEGAL[0].href;
-const cookies = LEGAL.find((l) => l.href === '/cookie-policy/')!;
+const lang = langOf(Astro.url.pathname);
+const t = dict(lang);
+const legal = lang === 'en' ? LEGAL_EN : LEGAL;
+
+const privacy = legal[0].href;
+const cookies = legal.find((l) => l.href.includes('cookie'))!;
 
 /** категориите, както се виждат и в /cookie-policy/ */
 const CATS = [
-  {
-    key: 'necessary',
-    name: 'Строго необходими',
-    note: 'Помнят избора ви тук и пазят формата от автоматични злоупотреби. Без тях сайтът не може да свърши поисканото.',
-    locked: true,
-    on: true,
-  },
-  {
-    key: 'analytics',
-    name: 'Статистика',
-    note: 'Колко души идват и кои страници четат. Google Analytics с анонимизиран IP. Не се зарежда, докато не разрешите.',
-    locked: false,
-    on: false,
-  },
-  {
-    key: 'marketing',
-    name: 'Маркетинг',
-    note: 'Не се ползва. На сайта няма рекламни пиксели и не изграждаме рекламни профили — няма какво да се разреши.',
-    locked: true,
-    on: false,
-  },
+  { key: 'necessary', name: t.ccNecessary, note: t.ccNecessaryNote, locked: true, on: true },
+  { key: 'analytics', name: t.ccStats, note: t.ccStatsNote, locked: false, on: false },
+  { key: 'marketing', name: t.ccMarketing, note: t.ccMarketingNote, locked: true, on: false },
 ] as const;
 ---
 <div class="cc panel" id="cookieBar" role="dialog" aria-modal="true" aria-labelledby="ccTitle"
      aria-describedby="ccText" tabindex="-1" hidden>
   <div class="cc-in">
     <div class="cc-txt">
-      <p class="cc-t" id="ccTitle">Бисквитки</p>
+      <p class="cc-t" id="ccTitle">{t.ccTitle}</p>
       <p class="cc-p" id="ccText">
-        Сайтът работи и без тях. Ако се съгласите, ще ползваме бисквитки само за анонимна
-        статистика — колко души идват и кои страници четат. Никаква реклама.
-        Подробно в <a href={cookies.href}>{cookies.label}</a> и в
-        <a href={privacy}>Политиката за поверителност</a>.
+        {t.ccText} <a href={cookies.href}>{cookies.label}</a> {t.ccAnd}
+        <a href={privacy}>{t.ccPrivacy}</a>.
       </p>
     </div>
 
@@ -65,7 +51,7 @@ const CATS = [
          банерът се разгъва на място, за да не се губи контекстът. -->
     <div class="cc-cats" id="ccCats" hidden>
       <fieldset>
-        <legend class="cc-leg">Изберете по категория</legend>
+        <legend class="cc-leg">{t.ccLegend}</legend>
         {CATS.map((c) => (
           <label class:list={['cc-cat', c.locked && 'locked']} for={`cc-${c.key}`}>
             <input
@@ -77,7 +63,7 @@ const CATS = [
               aria-describedby={`cc-n-${c.key}`}
             />
             <span class="cc-cat-b">
-              <b>{c.name}{c.locked && <em>{c.on ? 'винаги активни' : 'не се ползва'}</em>}</b>
+              <b>{c.name}{c.locked && <em>{c.on ? t.ccAlways : t.ccUnused}</em>}</b>
               <span class="cc-note" id={`cc-n-${c.key}`}>{c.note}</span>
             </span>
           </label>
@@ -86,10 +72,10 @@ const CATS = [
     </div>
 
     <div class="cc-btns">
-      <button type="button" id="ccCustom" class="btn btn--ghost cc-b" aria-expanded="false" aria-controls="ccCats">Настрой</button>
-      <button type="button" id="ccNo" class="btn cc-b">Само необходимите</button>
-      <button type="button" id="ccYes" class="btn btn--go cc-b">Приемам всички</button>
-      <button type="button" id="ccSave" class="btn btn--go cc-b" hidden>Запази избора</button>
+      <button type="button" id="ccCustom" class="btn btn--ghost cc-b" aria-expanded="false" aria-controls="ccCats">{t.ccCustom}</button>
+      <button type="button" id="ccNo" class="btn cc-b">{t.ccNo}</button>
+      <button type="button" id="ccYes" class="btn btn--go cc-b">{t.ccYes}</button>
+      <button type="button" id="ccSave" class="btn btn--go cc-b" hidden>{t.ccSave}</button>
     </div>
   </div>
 </div>

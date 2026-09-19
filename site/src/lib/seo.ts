@@ -8,8 +8,24 @@
  *     правилата — затова `aggregateRating` не съществува тук.
  */
 import business from '../data/business.json';
+import type { Lang } from '../i18n';
 
 export const bizId = (site: string) => `${site}/#business`;
+
+/**
+ * Адресът на фирмата за схемата.
+ *
+ * Латинската форма НЕ е транслитерация в движение — тя стои в `business.json`
+ * като `streetEn` / `cityEn`, защото „ул. „Прилеп“ 96“ има точно един правилен
+ * английски вид и той е решен веднъж, от човек.
+ */
+const postal = (lang: Lang) => ({
+  '@type': 'PostalAddress',
+  streetAddress: lang === 'en' ? business.address.streetEn : business.address.street,
+  addressLocality: lang === 'en' ? business.address.cityEn : business.address.city,
+  postalCode: business.address.postalCode,
+  addressCountry: business.address.country,
+});
 
 /**
  * Избира описание, което се побира в 120–158 знака.
@@ -69,15 +85,16 @@ export const serviceSchema = (
   site: string,
   s: { name: string; description: string; slug: string },
   price?: { from: number; currency: string },
+  lang: Lang = 'bg',
 ) => ({
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: s.name,
   description: s.description,
-  url: `${site}/uslugi/${s.slug}/`,
+  url: lang === 'en' ? `${site}/en/services/${s.slug}/` : `${site}/uslugi/${s.slug}/`,
   serviceType: s.name,
   provider: { '@id': bizId(site) },
-  areaServed: { '@type': 'City', name: 'Варна' },
+  areaServed: { '@type': 'City', name: lang === 'en' ? business.address.cityEn : business.address.city },
   ...(price
     ? {
         offers: {
@@ -147,8 +164,14 @@ export const articleSchema = (
   mainEntityOfPage: { '@type': 'WebPage', '@id': `${site}/blog/${a.slug}/` },
 });
 
-/** кратката визитка — стои на вътрешните страници, за да сочат към бизнеса */
-export const bizRef = (site: string) => ({
+/**
+ * Кратката визитка — стои на вътрешните страници, за да сочат към бизнеса.
+ *
+ * `@id` е ЕДИН И СЪЩ на двата езика (`<site>/#business`) и това е нарочно:
+ * фирмата е една. Схемата описва сервиза, не страницата — два различни
+ * идентификатора щяха да направят от един сервиз два за Google.
+ */
+export const bizRef = (site: string, lang: Lang = 'bg') => ({
   '@context': 'https://schema.org',
   '@type': 'AutoRepair',
   '@id': bizId(site),
@@ -160,11 +183,5 @@ export const bizRef = (site: string) => ({
   // празен идентификатор НЕ се изписва — по-добре липсва, отколкото да лъже
   ...(business.eik ? { identifier: business.eik, taxID: business.eik } : {}),
   ...(business.vat ? { vatID: business.vat } : {}),
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: business.address.street,
-    addressLocality: business.address.city,
-    postalCode: business.address.postalCode,
-    addressCountry: business.address.country,
-  },
+  address: postal(lang),
 });

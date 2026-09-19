@@ -1,0 +1,32 @@
+{
+  "zadacha": "Английското съдържание на PDK Tuning — услуги, правни страници, въпроси",
+  "papka": "/Users/dobromirpurvanov/dev/pdk-tuning/site",
+  "dogovor": "/Users/dobromirpurvanov/dev/pdk-tuning/site/docs/ANGLIYSKI-DOGOVOR.md",
+  "moduli": [
+    {
+      "ime": "usluga",
+      "za_vseki": "chip-tuning,stage-2,tcu-dsg,dpf-fap,egr,adblue,lambda-maf,dtc-greshki,pops-bangs,vmax-off,diagnostika,dyno-stend,softueren-remont",
+      "pool": "codex",
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "naryad": "Прочети договора. После отвори src/data/services.ts и намери обекта със slug: '{{tova}}'. Напиши АНГЛИЙСКИЯ му двойник в нов файл src/i18n/en/services/<английски-слуг>.ts по таблицата в договора (за '{{tova}}' виж кой е английският слуг и кое е името на експорта). Един файл, един експортиран обект от тип Service, `import type { Service } from '../../../data/services';`. Превеждай ФАКТИТЕ, не думите: същите проценти, часове, обороти, цени и същата правна граница, но текстът се пише наново на естествен британски английски. Запази СЪЩИТЕ icon, priceKey и featured. slug и related са АНГЛИЙСКИТЕ слугове. Ако услугата има раздел с tone:'warn' за забраната по обществени пътища, използвай OFFROAD_NOTE_EN от src/i18n/en/services/index.ts (внеси го, не го преписвай). НЕ пипай никакъв друг файл — нито index.ts, нито български файл. Накрая пусни `npx astro check` в site/ и поправи само своите грешки.",
+      "write": true
+    },
+    {
+      "ime": "pravna",
+      "za_vseki": "privacy,terms,cookie-policy,otkaz-i-reklamacii",
+      "pool": "kimi",
+      "effort": "medium",
+      "naryad": "Прочети договора. После отвори src/pages/{{tova}}.astro — това е българската правна страница. Направи английския ѝ двойник в src/pages/en/ по таблицата в договора (privacy→privacy.astro, terms→terms.astro, cookie-policy→cookies.astro, otkaz-i-reklamacii→returns.astro). Използвай СЪЩАТА обвивка Text.astro и същата структура на разделите, същите таблици, СЪЩАТА дата `updated`. Пътищата за import са с две нива нагоре ('../../layouts/Text.astro'). Схемата носи inLanguage:'en'. ВСИЧКИ вътрешни връзки сочат /en/… (privacy→/en/privacy/, terms→/en/terms/, cookie-policy→/en/cookies/, otkaz-i-reklamacii→/en/returns/, kontakti→/en/contact/). Добави ЕДНО изречение в началото на текста: българската версия е водеща, английската е за удобство и не е юридически превод. Текстът се пише на естествен британски английски, без юридически буквализми. НЕ пипай българските файлове. Накрая `npx astro check` в site/ трябва да е 0 errors.",
+      "write": true
+    },
+    {
+      "ime": "vaprosi",
+      "pool": "codex",
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "naryad": "Прочети договора. Отвори src/data/faq.ts и направи английския му двойник в src/i18n/en/faq.ts — същите експорти със същите имена и суфикс _EN (например FAQ_HOME → FAQ_HOME_EN), същите типове, същият брой въпроси и същият им ред. Отговорите се пишат наново на естествен британски английски по същите факти — същите числа, срокове и същата правна граница. НЕ пипай src/data/faq.ts. Накрая `npx astro check` в site/ трябва да е 0 errors.",
+      "write": true
+    }
+  ]
+}

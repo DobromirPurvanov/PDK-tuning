@@ -10,7 +10,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Consent from '../components/Consent.astro';
 import Analytics from '../components/Analytics.astro';
-import { SITE } from '../config/site';
+import { langOf } from '../i18n';
+import { dict } from '../i18n/ui';
 /* Жетоните и примитивите. Внасят се ТУК, за да важат за всяка страница —
    `tokens.css` е единственият източник на цвят, размер и движение, а `ui.css`
    държи нещата, които се срещат на повече от едно място. Виж `docs/DIZAYN.md`. */
@@ -28,9 +29,14 @@ interface Props {
   bodyClass?: string;
 }
 const { bodyClass = '', ...head } = Astro.props;
+/* Езикът се чете от АДРЕСА, не се подава от страницата — вж. бележката в
+   `src/i18n/index.ts`. Сто осемдесет и три страници не могат да го подадат
+   правилно сто осемдесет и три пъти. */
+const lang = langOf(Astro.url.pathname);
+const t = dict(lang);
 ---
 <!doctype html>
-<html lang={SITE.lang}>
+<html lang={lang}>
 <head>
   <Head {...head} />
   <!--
@@ -78,7 +84,7 @@ const { bodyClass = '', ...head } = Astro.props;
   </style>
 </head>
 <body class={bodyClass}>
-  <a class="skip" href="#content">Към съдържанието</a>
+  <a class="skip" href="#content">{t.skip}</a>
   <Header />
   <main id="content" tabindex="-1">
     <slot />

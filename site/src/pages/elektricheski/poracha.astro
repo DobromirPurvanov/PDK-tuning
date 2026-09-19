@@ -28,10 +28,10 @@ const crumbs = [
 ---
 <Page
   title="Поръчка — тунинг за електрически автомобил | PDK Tuning"
-  description="Избери модела, начина на плащане и адреса за доставка. Потвърждаваме поръчката с обаждане, преди да тръгне каквото и да е."
+  description="Изберете модела, начина на плащане и адреса за доставка. Потвърждаваме поръчката с обаждане, преди да тръгне каквото и да е."
   kicker="Поръчка"
-  heading="Поръчай своя пакет"
-  lead="Избери модела и как ти е удобно да платиш. Обаждаме се да потвърдим, преди да тръгне устройството."
+  heading="Поръчайте своя пакет"
+  lead="Изберете модела и удобния за вас начин на плащане. Обаждаме се да потвърдим, преди да тръгне устройството."
   crumbs={crumbs}
   noindex={true}
   cta={false}
@@ -44,14 +44,14 @@ const crumbs = [
             {CHECKOUT_LIVE ? (
               <>
                 <b>Плащането е с карта или PayPal.</b>
-                След „Плати“ отиваш на защитената страница на доставчика на платежни
+                След „Към плащането“ отивате на защитената страница на доставчика на платежни
                 услуги. Данните от картата не минават през нас и не се пазят тук.
               </>
             ) : (
               <>
                 <b>Плащането още не става онлайн.</b>
                 Поръчката идва при нас, обаждаме се да я потвърдим и тогава уговаряме
-                плащането — с карта или PayPal, както си избрал тук. Нищо не се удържа
+                плащането — с карта или PayPal, както сте избрали тук. Нищо не се удържа
                 от тази страница.
               </>
             )}
@@ -60,7 +60,7 @@ const crumbs = [
           <p class="fld">
             <label for="f-model">Автомобил <span aria-hidden="true">*</span></label>
             <select id="f-model" name="model" required>
-              <option value="">— избери модел —</option>
+              <option value="">— изберете модел —</option>
               {EV_BY_BRAND.map((br) => (
                 <optgroup label={br.name}>
                   {br.models.map((m) => (
@@ -167,7 +167,7 @@ const crumbs = [
           </p>
 
           <div class="fsub">
-            <button type="submit" class="btn btn--go send" id="osend">Изпрати поръчката</button>
+            <button type="submit" class="btn btn--go send" id="osend">Изпратете поръчката</button>
             <span class="fnote">Полетата със <span aria-hidden="true">*</span> са задължителни.</span>
           </div>
 
@@ -227,7 +227,7 @@ if (form) {
     priceBox.hidden = !p;
     // Модел без обявена цена НИКОГА не води до плащане, дори чекаутът да е жив.
     const askOnly = !p || p === 'Цена по запитване';
-    send.textContent = askOnly ? 'Заяви оферта' : live ? 'Плати' : 'Изпрати поръчката';
+    send.textContent = askOnly ? 'Заявете оферта' : live ? 'Към плащането' : 'Изпратете поръчката';
   }
 
   // Бутонът „Купи“ носи модела в адреса: /elektricheski/poracha/?m=taycan-4
@@ -354,7 +354,7 @@ if (form) {
 .opay:has(input:checked){border-color:var(--lime);background:var(--lime-dim);color:var(--white)}
 
 .oside{padding:var(--sp-5)}
-.oside h2{margin:0 0 16px;font:700 var(--fz-body)/1 var(--head);text-transform:uppercase;letter-spacing:.05em}
+.oside h2{margin:0 0 var(--h-gap-tight);font:700 var(--fz-body)/1 var(--head);text-transform:uppercase;letter-spacing:.05em}
 .oside ol{margin:0;padding-left:20px}
 .oside li{margin-bottom:10px;font:400 var(--fz-s)/1.55 var(--body);color:var(--ink-3)}
 .ohelp{margin:20px 0 0;padding-top:18px;border-top:1px solid var(--line);

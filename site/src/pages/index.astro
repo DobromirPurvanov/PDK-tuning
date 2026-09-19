@@ -154,13 +154,13 @@ const hoursText = b.hours.map((h) => {
   <Fragment slot="head">
     <!-- само това, което рисува първия екран; останалите шрифтове идват при нужда -->
     <link rel="preload" as="font" type="font/woff2" href="/fonts/jetbrains-mono-400-cyrillic.woff2" crossorigin />
-    <link rel="preload" as="image" href="/img/pdk-hero.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="/img/pdk-hero2.webp" fetchpriority="high" />
   </Fragment>
 
 <section class="hero">
   <div class="shot">
-    <video id="shot" poster="/img/pdk-hero.jpg" muted loop playsinline preload="none"
-           width="1280" height="704" aria-hidden="true"></video>
+    <video id="shot" poster="/img/pdk-hero2.webp" muted loop playsinline preload="none"
+           width="1470" height="630" aria-hidden="true"></video>
   </div>
   <div class="smoke" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="stagelines" aria-hidden="true"></div>
@@ -192,7 +192,7 @@ const hoursText = b.hours.map((h) => {
       <div class="cta">
         <a class="circle" href="#picker">
           <i><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i>
-          <b>Намери своя автомобил</b>
+          <b>Изберете своя автомобил</b>
         </a>
         <a class="tel" href={`tel:${business.phone}`}><b>{business.phoneDisplay}</b></a>
       </div>
@@ -233,11 +233,11 @@ const hoursText = b.hours.map((h) => {
       <p class="ev-band-kick">Ново направление</p>
       <h2 id="ev-band-h">Вече и за <em>електрически</em></h2>
       <p class="ev-band-p">
-        {EV_COUNT} модела на {evBrands}. Заводът ги продава занижени; разликата е софтуер.
-        Записва се от вас, през телефона, без да идвате до Варна.
+        {EV_COUNT} модела на {evBrands}. Заводът ги продава с ограничена мощност;
+        разликата е в софтуера. Записва се дистанционно, през телефона, без да идвате до Варна.
       </p>
     </div>
-    <a class="btn btn--go ev-band-go" href="/elektricheski/">Виж своя модел →</a>
+    <a class="btn btn--go ev-band-go" href="/elektricheski/">Вижте своя модел →</a>
   </div>
 </section>
 
@@ -296,7 +296,7 @@ const hoursText = b.hours.map((h) => {
               <span class="lab">{s.kicker}</span>
               <h3>{s.name}</h3>
               <p>{s.short}<br />{s.priceKey && P[s.priceKey] && <><b>от {P[s.priceKey].from} €</b> · {P[s.priceKey].time}</>}</p>
-              <span class="tile-go">Виж услугата →</span>
+              <span class="tile-go">Вижте услугата →</span>
             </div>
           </div>
         </a>
@@ -349,7 +349,7 @@ const hoursText = b.hours.map((h) => {
 <section class="cnt" id="contact">
   <div class="in">
     <div class="cnt-info">
-      <h2>Запази час.</h2>
+      <h2>Запазете час.</h2>
       <p class="note">Пишете ни или се обадете. Отговаряме в рамките на работния ден.</p>
 
       <dl class="nas-dl">
@@ -403,9 +403,26 @@ const hoursText = b.hours.map((h) => {
 .hero{position:relative;min-height:100vh;overflow:hidden;
   background:linear-gradient(180deg,#0A1206 0%,#111B08 46%,var(--bg) 100%)}
 .hero .shot{position:absolute;inset:-3%;overflow:hidden}
-.hero .shot video,.hero .shot img{width:100%;height:100%;object-fit:cover;object-position:52% 64%;
-  filter:contrast(1.2) brightness(.5) saturate(.34);opacity:.95;
+/* ЦВЕТОКОРЕКЦИЯТА Е ЗАПЕЧЕНА ВЪВ ФАЙЛА, не се смята в браузъра.
+   Тук стоеше `filter:contrast(1.2) brightness(.5) saturate(.34)` върху въртящо
+   се видео през целия екран — тоест всеки декодиран кадър минаваше през филтър
+   на площ 4608×2044 при dpr 2, двайсет и четири пъти в секунда.
+   `public/img/pdk-hero2.*` носи същата корекция, сметната веднъж от ffmpeg
+   (`docs/HIRO-VIDEO.md` пази командата). Проверено: кадър, минат през ffmpeg, и
+   същият кадър, минат през `ctx.filter` в Chrome, се разминават средно с 0,18
+   от 255. Файловете са НОВИ имена нарочно — `/img/*` се кешира месец, а старото
+   име с ново съдържание значеше светло видео под тъмния макет до месец. */
+/* Кадърът е 1470×630, тоест по-широк от всеки екран, на който ще застане:
+   `cover` го мащабира по ВИСОЧИНА и реже отстрани. Затова вертикалната стойност
+   тук е без значение, а хоризонталната решава какво се вижда.
+   На телефон от кадъра остава ивица от около една пета — при 52% тя пада в
+   най-черната част и хирото изглежда като празно черно поле. 30% я мести върху
+   калника и колелото. Мерено на 390px: средната яркост се вдига от 14,0 на 20,8,
+   а на снимката се вижда каросерията, не черно. */
+.hero .shot video,.hero .shot img{width:100%;height:100%;object-fit:cover;object-position:52% 50%;
+  opacity:.95;
   transform:scale(1.04) translate3d(var(--px,0),var(--py,0),0);transition:transform var(--t-slow) cubic-bezier(.2,.8,.2,1)}
+@media(max-width:759px){.hero .shot video,.hero .shot img{object-position:30% 50%}}
 
 /* ── „фото режим“: подът и хоризонтът, както в играта ──────────────────── */
 .stagelines{position:absolute;inset:0;pointer-events:none;opacity:.5;
@@ -448,15 +465,23 @@ const hoursText = b.hours.map((h) => {
   box-shadow:0 0 16px var(--lime-line);transition:width 1.7s cubic-bezier(.2,.8,.2,1)}
 
 /* ── зеленият дим: тънка мъгла по дъното, не петно ────────────────────── */
+/* ТУК СТОЕШЕ `filter:blur(70px)` върху трите петна. Размазването се смята на
+   всеки кадър, защото анимацията мени `scale()` — тоест слоят не може да се
+   кешира и три огромни ядра се преминават по 60 пъти в секунда, докато
+   страницата е отворена. Мерено (headless, софтуерен растер): само димът сваляше
+   хирото от 35 на 21 кадъра в секунда.
+   Размазаното петно и без това е меко — затова падането е в САМИЯ градиент, а
+   елементите са пораснали с толкова, с колкото размазването ги е разливало.
+   Сравнено кадър по кадър при закована анимация: средна разлика 0,47 от 255. */
 .smoke{position:absolute;left:0;right:0;bottom:0;height:46%;pointer-events:none;overflow:hidden;z-index:2;
   -webkit-mask-image:linear-gradient(180deg,transparent,#000 62%,#000);
   mask-image:linear-gradient(180deg,transparent,#000 62%,#000)}
-.smoke i{position:absolute;border-radius:50%;filter:blur(70px);opacity:0;
-  background:radial-gradient(circle,var(--lime-line) 0%,var(--green-glow) 46%,transparent 74%);
+.smoke i{position:absolute;border-radius:50%;opacity:0;
+  background:radial-gradient(closest-side,var(--smoke) 0%,var(--green-glow) 34%,var(--lime-dim) 62%,transparent 100%);
   animation:puff 15s ease-in-out infinite}
-.smoke i:nth-child(1){width:520px;height:190px;left:-4%;bottom:-8%;animation-delay:0s}
-.smoke i:nth-child(2){width:420px;height:160px;left:24%;bottom:-12%;animation-delay:-5s}
-.smoke i:nth-child(3){width:340px;height:140px;left:50%;bottom:-10%;animation-delay:-10s}
+.smoke i:nth-child(1){width:760px;height:430px;left:-14%;bottom:-30%;animation-delay:0s}
+.smoke i:nth-child(2){width:660px;height:400px;left:16%;bottom:-34%;animation-delay:-5s}
+.smoke i:nth-child(3){width:580px;height:380px;left:42%;bottom:-32%;animation-delay:-10s}
 @keyframes puff{
   0%{opacity:0;transform:translate3d(0,26px,0) scale(.9)}
   40%{opacity:.75}
@@ -480,10 +505,16 @@ const hoursText = b.hours.map((h) => {
 .deck .cell:nth-child(3){animation-delay:.9s}
 @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 
+/* Хирото извън екрана или в скрит таб: безкрайните анимации спират на място.
+   `paused`, не `none` — при връщане пухът продължава оттам, където е стоял,
+   вместо да скочи на нула и да се види като мигване. */
+.hero.rest .smoke i,
+.hero.rest .dot::after{animation-play-state:paused}
+
 @media(prefers-reduced-motion:reduce){
   .smoke i,.sweep,.cn,.left > *,.deck .cell{animation:none;opacity:1;transform:none}
   .hero .shot video{display:none}
-  .hero .shot{background:url(/img/pdk-hero.jpg) center/cover no-repeat}
+  .hero .shot{background:url(/img/pdk-hero2.webp) center/cover no-repeat}
   .g-val{transition:none}
 }
 
@@ -563,7 +594,7 @@ h1 .out{display:block;color:transparent;-webkit-text-stroke:var(--stroke) var(--
 .row{display:grid;grid-template-columns:1fr;gap:18px;padding:26px 0;border-bottom:1px solid var(--line)}
 @media(min-width:900px){.row{grid-template-columns:220px 1fr;gap:34px;align-items:center;padding:30px 0}}
 .row:last-child{border-bottom:0}
-.row-lab h3{margin:0 0 6px;font:700 24px/1 var(--head);text-transform:uppercase;letter-spacing:.01em}
+.row-lab h3{margin:0 0 var(--h-gap-card);font:700 24px/1 var(--head);text-transform:uppercase;letter-spacing:.01em}
 /* етикетът отляво вече води към категорийната страница, а не е мъртъв надпис */
 .row-lab h3 a{border-bottom:1px solid transparent;transition:color var(--t-fast),border-color var(--t-fast)}
 .row-lab h3 a:hover{color:var(--lime);border-bottom-color:var(--lime-line)}
@@ -622,7 +653,7 @@ h1 .out{display:block;color:transparent;-webkit-text-stroke:var(--stroke) var(--
 .tile .ic svg{width:24px;height:24px;stroke:var(--lime);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .tile .lab{display:block;margin-bottom:12px;font:400 var(--fz-lab)/1 var(--mono);letter-spacing:.3em;
   text-transform:uppercase;color:var(--ink-4)}
-.tile h3{margin:0 0 10px;font:700 clamp(22px,2.2vw,29px)/1.05 var(--head);letter-spacing:-.015em;text-transform:uppercase}
+.tile h3{margin:0 0 var(--h-gap-card);font:700 clamp(22px,2.2vw,29px)/1.05 var(--head);letter-spacing:-.015em;text-transform:uppercase}
 .tile p{margin:0;font:400 var(--fz-xs)/1.6 var(--mono);color:var(--ink-4)}
 .tile p b{color:var(--lime);font-weight:400}
 /* ясното действие на плочката — преди картата водеше към „#“ и не правеше нищо */
@@ -651,7 +682,7 @@ h1 .out{display:block;color:transparent;-webkit-text-stroke:var(--stroke) var(--
 .read:hover{padding-left:14px}
 .read-lab{display:block;margin-bottom:10px;font:400 var(--fz-lab)/1 var(--mono);letter-spacing:.22em;
   text-transform:uppercase;color:var(--lime)}
-.read h3{margin:0 0 8px;font:700 clamp(19px,2.2vw,26px)/1.12 var(--head);
+.read h3{margin:0 0 var(--h-gap-card);font:700 clamp(19px,2.2vw,26px)/1.12 var(--head);
   letter-spacing:-.016em;text-transform:uppercase;transition:color var(--t-fast)}
 .read:hover h3{color:var(--lime)}
 .read p{margin:0;max-width:62ch;font:400 var(--fz-s)/1.62 var(--body);color:var(--ink-3)}
@@ -765,30 +796,61 @@ setTimeout(() => {
 //    движение изобщо не се тегли.
 (() => {
   const v = document.getElementById('shot') as HTMLVideoElement | null;
-  if (!v) return;
+  const hero = document.querySelector('.hero') as HTMLElement | null;
+  if (!v || !hero) return;
   const c = (navigator as any).connection || {};
   const slow = c.saveData === true || /^(slow-)?2g$/.test(c.effectiveType || '') || c.effectiveType === '3g';
-  if (reduce || slow) return;                 // остава плакатът
-  const start = () => {
-    for (const [src, type] of [['/img/pdk-hero.webm', 'video/webm'], ['/img/pdk-hero.mp4', 'video/mp4']]) {
-      const s = document.createElement('source'); s.src = src; s.type = type; v.appendChild(s);
-    }
-    v.preload = 'auto'; v.load();
-    v.play().catch(() => {});                 // ако браузърът откаже — плакатът остава
+  if (!reduce && !slow) {                     // иначе остава плакатът
+    const start = () => {
+      for (const [src, type] of [['/img/pdk-hero2.webm', 'video/webm'], ['/img/pdk-hero2.mp4', 'video/mp4']]) {
+        const s = document.createElement('source'); s.src = src; s.type = type; v.appendChild(s);
+      }
+      v.preload = 'auto'; v.load();
+      v.play().catch(() => {});               // ако браузърът откаже — плакатът остава
+    };
+    if ('requestIdleCallback' in window) requestIdleCallback(start, { timeout: 2500 });
+    else addEventListener('load', () => setTimeout(start, 400));
+  }
+
+  // ── ХИРОТО СПИ, КОГАТО НЕ СЕ ГЛЕДА ──────────────────────────────────────
+  // Важи и когато видеото го няма: при `saveData` или бавна мрежа плакатът
+  // стои, но димът и живата точка пак се въртят, а точно тези машини имат
+  // най-малко ток за излишно рисуване. Затова наблюдателят се закача винаги.
+  // Видеото върви в примка, а димът и живата точка са безкрайни анимации.
+  // Дотук всичко това продължаваше да се декодира и рисува, докато човекът
+  // чете каталога три екрана по-надолу или е отишъл в друг таб: декодер,
+  // компоновка и `backdrop-filter` в трите клетки, за кадър, който никой не
+  // вижда. `.rest` спира анимациите с CSS, видеото се пауза направо.
+  let inView = true, tabOn = !document.hidden;
+  const settle = () => {
+    const awake = inView && tabOn;
+    hero.classList.toggle('rest', !awake);
+    if (awake) { if (v.paused && v.currentSrc) v.play().catch(() => {}); }
+    else if (!v.paused) v.pause();
   };
-  if ('requestIdleCallback' in window) requestIdleCallback(start, { timeout: 2500 });
-  else addEventListener('load', () => setTimeout(start, 400));
+  new IntersectionObserver(([e]) => { inView = e.isIntersecting; settle(); }).observe(hero);
+  document.addEventListener('visibilitychange', () => { tabOn = !document.hidden; settle(); });
 })();
 
 // дълбочина: кадърът се измества съвсем малко след показалеца
 if (!reduce && matchMedia('(pointer:fine)').matches) {
   const hero = document.querySelector('.hero') as HTMLElement;
   const shot = document.getElementById('shot') as HTMLElement;
+  // Мишката праща до няколкостотин събития в секунда, а всяко пипаше
+  // преобразуването на видеото през целия екран. Сега пише най-много веднъж на
+  // кадър: последното положение се запомня и се прилага в следващия кадър.
+  let px = 0, py = 0, queued = false;
+  const apply = () => {
+    queued = false;
+    shot.style.setProperty('--px', px + 'px');
+    shot.style.setProperty('--py', py + 'px');
+  };
   hero.addEventListener('pointermove', (e) => {
     const r = hero.getBoundingClientRect();
-    shot.style.setProperty('--px', ((e.clientX - r.left) / r.width - .5) * -18 + 'px');
-    shot.style.setProperty('--py', ((e.clientY - r.top) / r.height - .5) * -12 + 'px');
-  });
+    px = ((e.clientX - r.left) / r.width - .5) * -18;
+    py = ((e.clientY - r.top) / r.height - .5) * -12;
+    if (!queued) { queued = true; requestAnimationFrame(apply); }
+  }, { passive: true });
   hero.addEventListener('pointerleave', () => {
     shot.style.setProperty('--px', '0px'); shot.style.setProperty('--py', '0px');
   });

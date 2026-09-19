@@ -15,14 +15,46 @@
  * от адреси, а две от точките имат подсписък. Прагът за широкото меню се качи
  * на 1180px: шест точки с моно разредка не се побират под това.
  */
-import { NAV, PORTAL } from '../config/site';
+import { EN_LIVE, NAV, portalUrl } from '../config/site';
+import { NAV_EN, langOf, twin } from '../i18n';
+import { dict } from '../i18n/ui';
 
 const path = Astro.url.pathname;
+const lang = langOf(path);
+const t = dict(lang);
+const nav = lang === 'en' ? NAV_EN : NAV;
+/** порталът пази езика в пътя: адресът на каталога + `/<lang>/login` */
+const portal = portalUrl(lang);
+const home = lang === 'en' ? '/en/' : '/';
+
 /** текущата точка: „/uslugi/chip-tuning/“ свети „Услуги“ */
-const active = (href: string) => (href === '/' ? path === '/' : path.startsWith(href.replace(/\/$/, '')));
+const active = (href: string) =>
+  href === home ? path === home : path.startsWith(href.replace(/\/$/, ''));
+
+/**
+ * ПРЕВКЛЮЧВАТЕЛЯТ. Дотук тук стоеше `<span>BG / EN</span>` — надпис, който
+ * ИЗГЛЕЖДА като копче (носи `btn btn--pill`), а не води наникъде. Възложителят
+ * го прочете като счупено и беше прав: неактивно копче се различава от
+ * счупено само ако някой прочете `title`.
+ *
+ * Сега е връзка и казва накъде води — „EN“ на българска страница, „BG“ на
+ * английска, не „BG / EN“ на двете. Страница без двойник (електрическите,
+ * статиите, PDK Flasher) води към началната на другия език и го признава в
+ * `title`, вместо копчето да изчезне: изчезващо копче на част от страниците е
+ * по-объркващо от копче, което казва къде отива.
+ */
+const other = twin(path);
+const switchHref = other?.href ?? (lang === 'bg' ? '/en/' : '/');
+const switchTitle = other ? t.switchTo : t.switchHome;
+const switchLang = lang === 'bg' ? 'en' : 'bg';
+/* Докато `PUBLIC_EN` не е вдигнат, копчето изобщо го няма: английската част се
+   строи на етапи и половин сайт зад видимо копче е по-лошо от липсващо копче.
+   На самите английски страници то ОСТАВА — те не се стигат отникъде, но който
+   е попаднал там, трябва да има изход. */
+const showSwitch = EN_LIVE || lang === 'en';
 ---
 <header class="bar">
-  <a class="logo" href="/" aria-label="PDK Tuning — начална страница">
+  <a class="logo" href={home} aria-label={t.homeAria}>
     <picture>
       <source srcset="/pdk-logo.webp" type="image/webp" />
       <img src="/pdk-logo.jpg" alt="" width="40" height="40" />
@@ -30,8 +62,8 @@ const active = (href: string) => (href === '/' ? path === '/' : path.startsWith(
     <span>PDK Tuning</span>
   </a>
 
-  <nav class="menu" id="menu" aria-label="Основно меню">
-    {NAV.map((n) => (
+  <nav class="menu" id="menu" aria-label={t.menuAria}>
+    {nav.map((n) => (
       n.children
         ? <div class="has-sub">
             <a href={n.href} aria-current={active(n.href) ? 'page' : undefined}>
@@ -48,9 +80,12 @@ const active = (href: string) => (href === '/' ? path === '/' : path.startsWith(
   </nav>
 
   <div class="right">
-    <span class="btn btn--pill btn--sm lang-pill" lang="bg" title="Страницата е на български. Английската версия предстои.">BG / EN</span>
-    <a class="btn btn--pill btn--sm btn--go" href={PORTAL} target="_blank" rel="noopener noreferrer">Качи файл</a>
-    <button class="burger" id="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="menu">
+    {showSwitch && (
+      <a class="btn btn--pill btn--sm lang-pill" href={switchHref} lang={switchLang}
+         hreflang={switchLang} title={switchTitle}>{t.switchLabel}</a>
+    )}
+    <a class="btn btn--pill btn--sm btn--go" href={portal} target="_blank" rel="noopener noreferrer">{t.upload}</a>
+    <button class="burger" id="burger" type="button" aria-label={t.menuLabel} aria-expanded="false" aria-controls="menu">
       <i></i><i></i><i></i>
     </button>
   </div>
@@ -126,7 +161,10 @@ const active = (href: string) => (href === '/' ? path === '/' : path.startsWith(
 .sub-in a:hover{background:var(--lime-wash);color:var(--lime)}
 
 .right{margin-left:auto;display:flex;align-items:center;gap:10px}
-.lang-pill{color:var(--ink-3);cursor:default}
+/* Вече е ВРЪЗКА, не мъртъв надпис — затова няма `cursor:default` и се държи
+   като останалите копчета в лентата. */
+.lang-pill{color:var(--ink-3)}
+.lang-pill:hover{color:var(--white);border-color:var(--lime-line)}
 
 .burger{display:none;width:44px;height:44px;border:1px solid var(--line-soft);
   border-radius:var(--r-pill);background:none;cursor:pointer;position:relative;flex:0 0 auto}
@@ -164,7 +202,11 @@ const active = (href: string) => (href === '/' ? path === '/' : path.startsWith(
   .sub-in a:hover{background:none}
 }
 @media(max-width:559px){
-  .lang-pill{display:none}
+  /* Копчето за език ОСТАВА и на телефон. Криеше се, докато беше мъртъв надпис;
+     сега е единственият вход към другия език, а англичанинът на телефон е
+     точно посетителят, заради когото го има — 5 585 от 5 586 индексирани
+     адреса на стария сайт са английски. Надписът е две букви и не разлива
+     лентата; „PDK TUNING“ до логото си остава скрито. */
   .logo span{display:none}
 }
 /* с пръст всяко копче е поне 48px — на мишка плътността остава каквато е одобрена */

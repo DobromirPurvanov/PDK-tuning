@@ -16,6 +16,7 @@
  * `position:fixed`, та легна през целия екран. Затова е `pline`.
  */
 import { BUSINESS } from '../config/site';
+import { langOf } from '../i18n';
 
 interface Props {
   /** заглавие над избирача */
@@ -23,41 +24,97 @@ interface Props {
   sub?: string;
   /** марка, която да се избере сама при зареждане (страниците на марките) */
   brand?: string;
-  /** къде отива „Запази час", когато на страницата няма форма */
+  /** къде отива „Запазете час", когато на страницата няма форма */
   formHref?: string;
 }
+
+/**
+ * НАДПИСИТЕ НА ИЗБИРАЧА.
+ *
+ * Държани тук, а не в `i18n/ui.ts`, защото са негови и само негови — двайсет и
+ * пет реда, които никой друг компонент не чете. В общия речник те щяха да
+ * удвоят дължината му и да го направят по-труден за преглед точно когато се
+ * проверява дали превод липсва.
+ *
+ * Скриптът долу ги получава като ЕДИН data-атрибут: `<script>` в Astro се
+ * бъндълва отделно и не вижда променливите отгоре. Същият похват като във
+ * `ContactForm.astro`.
+ */
+const L = {
+  bg: {
+    heading: 'Изберете своя автомобил',
+    sub: 'Четири стъпки до реалните числа за вашия двигател.',
+    clear: 'Изчистване на избора',
+    step: 'завършени',
+    brand: 'Марка', model: 'Модел', year: 'Година', engine: 'Двигател',
+    searchBrand: 'Търсене на марка…',
+    loadingDb: 'Тегли от базата…', loading: 'Тегли…',
+    pickBrand: 'Изберете марка', pickModel: 'Изберете модел', pickYear: 'Изберете година',
+    allYears: 'Всички години',
+    noBrand: 'Няма такава марка', noAnswer: 'Старият сайт не отговаря',
+    diff: 'Разликата', hp: 'к.с.', power: 'Мощност', torque: 'Момент',
+    noData: 'няма данни',
+    note: 'Числата са от базата. Точната стойност за вашата кола се мери на стенда.',
+    noteEmpty: 'За този двигател базата няма числа — обадете се и ще проверим.',
+    noteFail: 'Базата не отговаря. Обадете се — числата ги имаме.',
+    help: 'Нужна ли ви е помощ? ↗', back: 'Назад', next: 'Запазете час',
+  },
+  en: {
+    heading: 'Find your car',
+    sub: 'Four steps to the real figures for your engine.',
+    clear: 'Clear the selection',
+    step: 'complete',
+    brand: 'Make', model: 'Model', year: 'Year', engine: 'Engine',
+    searchBrand: 'Search for a make…',
+    loadingDb: 'Loading from the database…', loading: 'Loading…',
+    pickBrand: 'Choose a make', pickModel: 'Choose a model', pickYear: 'Choose a year',
+    allYears: 'All years',
+    noBrand: 'No such make', noAnswer: 'The catalogue is not responding',
+    diff: 'The difference', hp: 'hp', power: 'Power', torque: 'Torque',
+    noData: 'no data',
+    note: 'Figures come from the database. The exact value for your car is measured on the dyno.',
+    noteEmpty: 'The database has no figures for this engine — call us and we will check.',
+    noteFail: 'The database is not responding. Call us — we have the figures.',
+    help: 'Need help? ↗', back: 'Back', next: 'Book a slot',
+  },
+} as const;
+
+const lang = langOf(Astro.url.pathname);
+const t = L[lang];
+
 const {
-  heading = 'Намери своя автомобил',
-  sub = 'Четири стъпки до реалните числа за твоя двигател.',
+  heading = t.heading,
+  sub = t.sub,
   brand = '',
-  formHref = '/kontakti/',
+  formHref = lang === 'en' ? '/en/contact/' : '/kontakti/',
 } = Astro.props;
 ---
 
 <section class="pick">
-  <div class="panel pick-panel" id="picker" data-brand={brand} data-form={formHref}>
+  <div class="panel pick-panel" id="picker" data-brand={brand} data-form={formHref}
+       data-lab={JSON.stringify(t)}>
     <div class="ph">
       <div class="line">
         <div>
           <h2>{heading}</h2>
           <p>{sub}</p>
         </div>
-        <button class="x" type="button" id="pclear" aria-label="Изчисти избора">✕</button>
+        <button class="x" type="button" id="pclear" aria-label={t.clear}>✕</button>
       </div>
-      <div class="prog"><span class="pline"><i id="pbar"></i></span><span id="pstep">1 / 4 завършени</span></div>
+      <div class="prog"><span class="pline"><i id="pbar"></i></span><span id="pstep">1 / 4 {t.step}</span></div>
     </div>
 
     <div class="cols">
       <div class="col">
-        <b id="lab-brand">Марка</b>
-        <input id="bq" class="q" type="search" placeholder="Търси марка…" autocomplete="off" aria-label="Търси марка" />
-        <ul id="c1" aria-labelledby="lab-brand"><li class="empty">Тегли от базата…</li></ul>
+        <b id="lab-brand">{t.brand}</b>
+        <input id="bq" class="q" type="search" placeholder={t.searchBrand} autocomplete="off" aria-label={t.searchBrand} />
+        <ul id="c1" aria-labelledby="lab-brand"><li class="empty">{t.loadingDb}</li></ul>
       </div>
-      <div class="col"><b id="lab-model">Модел</b><ul id="c2" aria-labelledby="lab-model"><li class="empty">Избери марка</li></ul></div>
-      <div class="col"><b id="lab-year">Година</b><ul id="c3" aria-labelledby="lab-year"><li class="empty">Избери модел</li></ul></div>
+      <div class="col"><b id="lab-model">{t.model}</b><ul id="c2" aria-labelledby="lab-model"><li class="empty">{t.pickBrand}</li></ul></div>
+      <div class="col"><b id="lab-year">{t.year}</b><ul id="c3" aria-labelledby="lab-year"><li class="empty">{t.pickModel}</li></ul></div>
       <div class="col">
-        <b id="lab-engine">Двигател</b>
-        <ul id="c4" aria-labelledby="lab-engine"><li class="empty">Избери година</li></ul>
+        <b id="lab-engine">{t.engine}</b>
+        <ul id="c4" aria-labelledby="lab-engine"><li class="empty">{t.pickYear}</li></ul>
       </div>
     </div>
 
@@ -75,35 +132,35 @@ const {
     */}
     <div class="res" id="res" role="status" aria-live="polite">
       <div class="res-l">
-        <p class="res-k">Разликата</p>
-        <div class="res-big"><b id="rhp">+0</b><span>к.с.</span></div>
+        <p class="res-k">{t.diff}</p>
+        <div class="res-big"><b id="rhp">+0</b><span>{t.hp}</span></div>
         <p class="res-car" id="rcar"></p>
       </div>
 
       <div class="res-r">
         <div class="res-row" id="row-hp">
-          <span class="res-lab">Мощност</span>
+          <span class="res-lab">{t.power}</span>
           <span class="res-a" id="rp0">—</span>
           <span class="res-bar"><i></i></span>
           <span class="res-b" id="rp1">—</span>
           <span class="res-d" id="rpd"></span>
         </div>
         <div class="res-row" id="row-nm">
-          <span class="res-lab">Момент</span>
+          <span class="res-lab">{t.torque}</span>
           <span class="res-a" id="rn0">—</span>
           <span class="res-bar"><i></i></span>
           <span class="res-b" id="rn1">—</span>
           <span class="res-d" id="rnd"></span>
         </div>
-        <p class="res-note" id="rnote">Числата са от базата. Точната стойност за вашата кола се мери на стенда.</p>
+        <p class="res-note" id="rnote">{t.note}</p>
       </div>
     </div>
 
     <div class="pf">
-      <a class="help" href={`tel:${BUSINESS.phone}`}>Нужна ти е помощ? ↗</a>
+      <a class="help" href={`tel:${BUSINESS.phone}`}>{t.help}</a>
       <div class="btns">
-        <button id="pback" type="button" disabled>Назад</button>
-        <button class="go" id="pnext" type="button">Запази час</button>
+        <button id="pback" type="button" disabled>{t.back}</button>
+        <button class="go" id="pnext" type="button">{t.next}</button>
       </div>
     </div>
   </div>
@@ -115,6 +172,8 @@ type Item = { slug: string; label: string; right?: string; value?: any; key?: st
 
 const panel = document.getElementById('picker');
 if (panel) {
+  // надписите идват от страницата (data-lab) — вж. `L` в началото на файла
+  const L = JSON.parse(panel.dataset.lab!) as Record<string, string>;
   const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
   // Нарочно НЕ е `!`: същият скрипт върви и на страници без форма и без
   // броячи в хирото. Липсващ възел значи „тази страница няма това“, не грешка.
@@ -167,11 +226,11 @@ if (panel) {
   const step = (n: number) => {
     cols4.dataset.step = String(n);   // на тесен екран се вижда само тази колона
     need('pbar').style.width = (n / 4 * 100) + '%';
-    need('pstep').textContent = `${n} / 4 завършени`;
+    need('pstep').textContent = `${n} / 4 ${L.step}`;
     (need('pback') as HTMLButtonElement).disabled = n <= 1;
   };
   const reset = (from: number) => {
-    const hints = ['', 'Избери марка', 'Избери модел', 'Избери година'];
+    const hints = ['', L.pickBrand, L.pickModel, L.pickYear];
     for (let i = from; i < 4; i++) note(cols[i], hints[i]);
     need('res').classList.remove('on');
   };
@@ -184,7 +243,7 @@ if (panel) {
   const hpOf = (label: string) => {
     if (/\d\s*hp/i.test(stripHp(label))) return '';
     const m = label.match(/(\d+)\s*hp/i);
-    return m ? m[1] + ' к.с.' : '';
+    return m ? m[1] + ' ' + L.hp : '';
   };
   // …и я МАХАМЕ от самото име, иначе редът излиза „3.0i Bi-turbo 340hp   340 hp“.
   // Старата база лепи мощността накрая ту с интервал, ту без. Реже се само в
@@ -207,7 +266,7 @@ if (panel) {
     const fill = row.querySelector('.res-bar i') as HTMLElement;
     if (!pair) {
       row.classList.add('nodata');
-      need(a0).textContent = '—'; need(b0).textContent = 'няма данни';
+      need(a0).textContent = '—'; need(b0).textContent = L.noData;
       need(d0).textContent = ''; fill.style.width = '0';
       return;
     }
@@ -247,22 +306,22 @@ if (panel) {
       const real = (p: number[] | null) => (p && p[0] > 0 && p[1] > p[0] ? p : null);
       const hp = real(r.hp), nm = real(r.nm);
       need('rhp').textContent = hp ? '+' + (hp[1] - hp[0]) : '—';
-      bar('row-hp', 'rp0', 'rp1', 'rpd', hp, 'к.с.', 0);
+      bar('row-hp', 'rp0', 'rp1', 'rpd', hp, L.hp, 0);
       bar('row-nm', 'rn0', 'rn1', 'rnd', nm, 'Nm', 0.18);
       need('rnote').textContent = hp
-        ? 'Числата са от базата. Точната стойност за вашата кола се мери на стенда.'
-        : 'За този двигател базата няма числа — обадете се и ще проверим.';
+        ? L.note
+        : L.noteEmpty;
     } catch {
       need('rhp').textContent = '—';
       bar('row-hp', 'rp0', 'rp1', 'rpd', null, '', 0);
       bar('row-nm', 'rn0', 'rn1', 'rnd', null, '', 0);
-      need('rnote').textContent = 'Базата не отговаря. Обадете се — числата ги имаме.';
+      need('rnote').textContent = L.noteFail;
     }
   }
 
   async function pickYear(y: Item) {
     state.y = y; reset(3); step(3);
-    note(cols[3], 'Тегли…');
+    note(cols[3], L.loading);
     try {
       const list = await live(`engines/${state.b.slug}/${state.m.slug}/${y.slug}`);
       // `value` пази ЦЯЛОТО име — то отива в запитването и в полето „Автомобил“;
@@ -275,20 +334,20 @@ if (panel) {
 
   async function pickModel(m: Item) {
     state.m = m; reset(2); step(2);
-    note(cols[2], 'Тегли…');
+    note(cols[2], L.loading);
     try {
       // Старата база пише поколението „без години“ като `All` — английска дума
       // насред български списък. Слугът остава какъвто е (той отива в заявката),
       // сменя се само видимото.
       const years = await live(`years/${state.b.slug}/${m.slug}`);
       fill(cols[2], years.map((y: Item) =>
-        /^all$/i.test(y.label) ? { ...y, label: 'Всички години' } : y), pickYear);
+        /^all$/i.test(y.label) ? { ...y, label: L.allYears } : y), pickYear);
     } catch (err: any) { note(cols[2], String(err.message)); }
   }
 
   async function pickBrand(b: Item) {
     state.b = b; reset(1); step(1);
-    note(cols[1], 'Тегли…');
+    note(cols[1], L.loading);
     try {
       fill(cols[1], await live(`models/${b.slug}`), pickModel);
     } catch (err: any) { note(cols[1], String(err.message)); }
@@ -320,7 +379,7 @@ if (panel) {
         }
       }
     } catch {
-      note(cols[0], 'Старият сайт не отговаря');
+      note(cols[0], L.noAnswer);
       const hb = $('hBrands'); if (hb) hb.textContent = '—';
     }
   })();
@@ -329,7 +388,7 @@ if (panel) {
   need('bq').addEventListener('input', (ev) => {
     const q = (ev.target as HTMLInputElement).value.trim().toLowerCase();
     const hit = q ? brandItems.filter((b) => b.key!.includes(q)) : brandItems;
-    if (!hit.length) { note(cols[0], 'Няма такава марка'); return; }
+    if (!hit.length) { note(cols[0], L.noBrand); return; }
     fill(cols[0], hit, pickBrand);
   });
 

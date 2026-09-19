@@ -1,0 +1,158 @@
+---
+/**
+ * Страниците на английските услуги — огледало на `src/pages/uslugi/[slug].astro`.
+ *
+ * СЪЩИЯТ шаблон, друг набор данни. Нищо тук не се пише на ръка за конкретна
+ * услуга: липсва ли раздел, той не се рисува.
+ *
+ * `getStaticPaths` чете `SERVICES_EN`, тоест изгражда толкова страници, колкото
+ * английски текстове наистина има. Празен набор → нула страници, а не тринайсет
+ * празни адреса, които Google да обходи преди да са написани.
+ */
+import Page from '../../../layouts/Page.astro';
+import { ICONS } from '../../../data/services';
+import { SERVICES_EN, BY_SLUG_EN } from '../../../i18n/en/services/index';
+import prices from '../../../data/prices.json';
+import { crumbSchema, faqSchema, serviceSchema, bizRef } from '../../../lib/seo';
+
+export function getStaticPaths() {
+  return SERVICES_EN.map((s) => ({ params: { slug: s.slug } }));
+}
+
+const { slug } = Astro.params;
+const s = BY_SLUG_EN.get(slug!)!;
+
+/* Цените са ОБЩИ за двата езика и са в евро — `priceKey` сочи същия ред. */
+const P = prices.items as Record<string, { from: number; time: string }>;
+const price = s.priceKey ? P[s.priceKey] : undefined;
+
+const site = Astro.site!.href.replace(/\/$/, '');
+const crumbs = [
+  { href: '/en/services/', label: 'Services' },
+  { href: `/en/services/${s.slug}/`, label: s.name },
+];
+const trail = [{ href: '/en/', label: 'Home' }, ...crumbs];
+
+const related = s.related.map((r) => BY_SLUG_EN.get(r)!).filter(Boolean);
+
+const schema = [
+  bizRef(site, 'en'),
+  serviceSchema(site, { name: s.name, description: s.description, slug: s.slug },
+    price ? { from: price.from, currency: prices.currency } : undefined, 'en'),
+  crumbSchema(site, trail),
+  // FAQPage само когато въпросите наистина стоят в текста по-долу
+  ...(s.faq?.length ? [faqSchema(s.faq)] : []),
+];
+---
+<Page
+  title={s.title}
+  description={s.description}
+  kicker={s.kicker}
+  heading={s.name}
+  lead={s.lead}
+  crumbs={crumbs}
+  schema={schema}
+  ctaTitle="Let us look at it."
+  ctaText={`Tell us the car and what it does now. For ${s.name.toLowerCase()} we start with diagnostics, not with a quote.`}
+>
+  <div class="p-wrap">
+    <section class="p-sec">
+      <div class="p-split">
+        <div class="p-prose">
+          {s.body.map((sec) => (
+            sec.tone === 'warn'
+              ? <div class="warn">
+                  <b>{sec.h}</b>
+                  {sec.p.map((t) => <p>{t}</p>)}
+                </div>
+              : <>
+                  <h2>{sec.h}</h2>
+                  {sec.p.map((t) => <p>{t}</p>)}
+                </>
+          ))}
+        </div>
+
+        <aside class="p-facts panel">
+          <h2>In short</h2>
+          <dl>
+            {s.facts?.map((f) => (<><dt>{f.k}</dt><dd>{f.v}</dd></>))}
+            {price && (<><dt>Indicative time</dt><dd>{price.time}</dd></>)}
+          </dl>
+          {price && (
+            <p class="p-price">
+              <b>from €{price.from}</b>
+              <span>Final price after inspection. The figure is a starting point, not a quote.</span>
+            </p>
+          )}
+        </aside>
+      </div>
+    </section>
+
+    {(s.fits.length || s.notFor?.length) && (
+      <section class="p-sec">
+        <h2>Who it is for</h2>
+        <div class="p-lists">
+          <div class="p-list panel yes">
+            <h3>Worth doing when</h3>
+            <ul>{s.fits.map((t) => <li>{t}</li>)}</ul>
+          </div>
+          {s.notFor?.length && (
+            <div class="p-list panel no">
+              <h3>Not worth doing when</h3>
+              <ul>{s.notFor.map((t) => <li>{t}</li>)}</ul>
+            </div>
+          )}
+        </div>
+      </section>
+    )}
+
+    <section class="p-sec">
+      <h2>How it works here</h2>
+      <div class="p-steps">
+        {s.steps.map((st) => (
+          <div class="p-step">
+            <div>
+              <h3>{st.t}</h3>
+              <p>{st.d}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {s.faq?.length && (
+      <section class="p-sec">
+        <h2>Questions about this service</h2>
+        <div class="qa">
+          {s.faq.map((f, i) => (
+            <details name="sfaq" open={i === 0}>
+              <summary><h3>{f.q}</h3><i aria-hidden="true"></i></summary>
+              <div class="ans"><p>{f.a}</p></div>
+            </details>
+          ))}
+        </div>
+        <p class="p-prose" style="margin-top:26px">
+          <a href="/en/faq/">All questions and answers →</a>
+        </p>
+      </section>
+    )}
+
+    {related.length > 0 && (
+      <section class="p-sec">
+        <h2>Related services</h2>
+        <div class="p-cards three">
+          {related.map((r) => (
+            <a class="p-card panel panel--link" href={`/en/services/${r.slug}/`}>
+              <span class="wash"></span>
+              <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><Fragment set:html={ICONS[r.icon]} /></svg></span>
+              <span class="lab">{r.kicker}</span>
+              <h3>{r.name}</h3>
+              <p>{r.short}</p>
+              <span class="go">See the service →</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+  </div>
+</Page>

@@ -23,7 +23,7 @@ interface Props {
   model?: string;
 }
 const {
-  heading = 'Избери електрическия си автомобил',
+  heading = 'Изберете своя електрически автомобил',
   sub = 'Две стъпки до числата и цената.',
   brand = '',
   model = '',
@@ -53,7 +53,7 @@ const attrs = (m: EvModel) => ({
         <h2>{heading}</h2>
         <p>{sub}</p>
       </div>
-      <button class="evx" type="button" id="evclear" aria-label="Изчисти избора">✕</button>
+      <button class="evx" type="button" id="evclear" aria-label="Изчистване на избора">✕</button>
     </div>
 
     <div class="evcols" data-step="1">
@@ -85,14 +85,14 @@ const attrs = (m: EvModel) => ({
               </li>
             )),
           )}
-          <li class="evempty" id="evhint">Избери марка</li>
+          <li class="evempty" id="evhint">Изберете марка</li>
         </ul>
       </div>
 
       <div class="evcol evcol-res">
-        <b>Твоята кола</b>
+        <b>Вашият автомобил</b>
         <div class="evres" id="evres" role="status" aria-live="polite">
-          <p class="evempty" id="evres-empty">Избери модел, за да видиш числата.</p>
+          <p class="evempty" id="evres-empty">Изберете модел, за да видите числата.</p>
 
           <div class="evcard" id="evcard" hidden>
             <p class="evname"><b id="ev-full"></b> <span id="ev-years"></span></p>
@@ -101,7 +101,7 @@ const attrs = (m: EvModel) => ({
                 целият блок изчезва: тире, набрано 46px в Oswald, се чете като
                 счупена зелена черта, а не като „няма данни“. */}
             <div class="evbig" id="evbig" hidden>
-              <b id="ev-gain"></b><span>к.с. отгоре</span>
+              <b id="ev-gain"></b><span>к.с. повече</span>
             </div>
 
             <dl class="evkv">
@@ -112,7 +112,7 @@ const attrs = (m: EvModel) => ({
 
             <p class="evprice" id="ev-price">—</p>
             <p class="evnote" id="ev-note" hidden>
-              Числата за този модел още не са обявени. Пиши ни и ти казваме какво вадим от него.
+              Числата за този модел още не са обявени. Пишете ни и ще ви кажем какво постигаме с него.
             </p>
           </div>
         </div>
@@ -123,7 +123,7 @@ const attrs = (m: EvModel) => ({
       <a class="evmore" id="ev-more" href="/elektricheski/" hidden>Всичко за този модел ↗</a>
       <div class="evbtns">
         <button id="evback" type="button" disabled>Назад</button>
-        <a class="evgo" id="evbuy" href="/elektricheski/poracha/" aria-disabled="true">Избери модел</a>
+        <a class="evgo" id="evbuy" href="/elektricheski/poracha/" aria-disabled="true">Изберете модел</a>
       </div>
     </div>
   </div>
@@ -181,7 +181,7 @@ if (panel) {
     more.hidden = false;
     buy.href = `/elektricheski/poracha/?m=${encodeURIComponent(d.slug!)}`;
     buy.removeAttribute('aria-disabled');
-    buy.textContent = d.price === 'Цена по запитване' ? 'Заяви оферта' : 'Купи';
+    buy.textContent = d.price === 'Цена по запитване' ? 'Заявете оферта' : 'Към поръчката';
     step(3);
   }
 
@@ -206,7 +206,7 @@ if (panel) {
     more.hidden = true;
     buy.href = '/elektricheski/poracha/';
     buy.setAttribute('aria-disabled', 'true');
-    buy.textContent = 'Избери модел';
+    buy.textContent = 'Изберете модел';
   }
 
   brands.forEach((b) => b.addEventListener('click', () => pickBrand(b.dataset.key!)));
