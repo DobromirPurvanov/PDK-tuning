@@ -215,7 +215,7 @@ const hoursText = b.hours.map((h) => {
       */}
       <div class="cell">
         <span class="id">003 // Обхватът</span>
-        <div class="kv"><span>Леки</span><span><b>{cars.length}</b> марки</span></div>
+        <div class="kv"><span>{carsCat.wallLabel}</span><span><b>{cars.length}</b> марки</span></div>
         {groups.map((g) => (
           <div class="kv"><span>{g.cat.wallLabel}</span><span><b>{g.items.length}</b> марки</span></div>
         ))}
@@ -250,7 +250,7 @@ const hoursText = b.hours.map((h) => {
 
     <div class="row big">
       <div class="row-lab">
-        <h3><a href={`/${carsCat.slug}/`}>Леки</a></h3>
+        <h3><a href={`/${carsCat.slug}/`}>{carsCat.wallLabel}</a></h3>
         <span>{cars.length} марки в базата</span>
       </div>
       <MarkGrid marks={carsTop} big />

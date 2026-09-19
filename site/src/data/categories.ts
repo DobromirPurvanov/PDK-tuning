@@ -33,7 +33,7 @@ export const CATEGORIES: Category[] = [
     slug: 'leki-avtomobili',
     kind: 'леки',
     name: 'Леки автомобили',
-    wallLabel: 'Леки',
+    wallLabel: 'Леки автомобили',
     title: 'Чип тунинг на леки автомобили | PDK Tuning Варна',
     description:
       'Чип тунинг, Stage 2, настройка на скоростна кутия и софтуерни ремонти за леки автомобили. Изберете двигателя си и вижте числата преди и след.',

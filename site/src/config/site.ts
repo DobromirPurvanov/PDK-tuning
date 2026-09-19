@@ -144,7 +144,7 @@ export const NAV: NavItem[] = [
   },
   // Собствен вход в лентата, а не само в падащия списък: това е новото
   // направление и рекламата на началната води точно тук.
-  { href: '/elektricheski/', label: 'Електрически' },
+  { href: '/elektricheski/', label: 'Електрически автомобили' },
   { href: '/tseni/', label: 'Цени' },
   { href: '/kak-rabotim/', label: 'Как работим' },
   { href: '/za-nas/', label: 'За нас' },
