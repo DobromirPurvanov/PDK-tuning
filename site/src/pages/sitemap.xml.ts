@@ -18,6 +18,8 @@ import { CATEGORIES } from '../data/categories';
 import { ARTICLES } from '../data/articles';
 import { EV_MODELS } from '../data/ev';
 import marks from '../data/marks.json';
+import { EN_LIVE } from '../config/site';
+import { ROUTES } from '../i18n';
 
 type Mark = { slug: string };
 type Page = { path: string; file: string; changefreq: string; priority: string };
@@ -94,6 +96,20 @@ const pages: Page[] = [
   { path: '/terms/', file: 'terms.astro', changefreq: 'yearly', priority: '0.3' },
   { path: '/cookie-policy/', file: 'cookie-policy.astro', changefreq: 'yearly', priority: '0.3' },
   { path: '/otkaz-i-reklamacii/', file: 'otkaz-i-reklamacii.astro', changefreq: 'yearly', priority: '0.3' },
+
+  /* АНГЛИЙСКИТЕ. Влизат САМО когато `PUBLIC_EN=true` — дотогава страниците се
+     изграждат, но носят `noindex` и картата не бива да ги обещава. `ROUTES`
+     знае кои двойки съществуват и от двете страни, затова списъкът тук не се
+     поддържа втори път на ръка. Каталогът на марките не е в него: неговите
+     английски страници са на СТАРИЯ сайт и са в тяхната карта. */
+  ...(EN_LIVE
+    ? ROUTES.map((r) => ({
+        path: r.en,
+        file: '../i18n/index.ts',
+        changefreq: r.en === '/en/' ? 'weekly' : 'monthly',
+        priority: r.en === '/en/' ? '1.0' : '0.7',
+      }))
+    : []),
 ];
 
 export const GET: APIRoute = ({ site }) => {

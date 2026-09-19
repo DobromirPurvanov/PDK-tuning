@@ -1,0 +1,141 @@
+---
+/**
+ * „About“ — огледало на `src/pages/za-nas.astro`.
+ *
+ * Числата в четирите плочки идват от СЪЩИТЕ източници като българската страница:
+ * годините и държавите от `business.json`, марките от `marks.json`, услугите —
+ * от българския набор. Услугите се броят от `SERVICES`, НЕ от `SERVICES_EN`:
+ * сервизът предлага тринайсет услуги независимо на какъв език е страницата, а
+ * английският набор още се пълни. Число, което се мени според превода, е грешно
+ * число.
+ */
+import Page from '../../layouts/Page.astro';
+import { crumbSchema, bizRef } from '../../lib/seo';
+import { BUSINESS as b } from '../../config/site';
+import marks from '../../data/marks.json';
+import { SERVICES } from '../../data/services';
+
+const site = Astro.site!.href.replace(/\/$/, '');
+const crumbs = [{ href: '/en/about/', label: 'About' }];
+const schema = [bizRef(site, 'en'), crumbSchema(site, [{ href: '/en/', label: 'Home' }, ...crumbs])];
+
+const numbers = [
+  { n: String(b.yearsExperience), l: 'years with ECUs' },
+  { n: String((marks as unknown[]).length), l: 'makes in the database' },
+  { n: String(SERVICES.length), l: 'services' },
+  { n: String(b.countries), l: 'countries with partners' },
+];
+---
+<Page
+  title="About us — PDK Tuning, chip tuning in Varna"
+  description="A chip tuning and ECU software repair workshop in Varna with its own dyno. We work both with car owners and with partner workshops in several countries."
+  kicker="Who we are"
+  heading="About us"
+  lead="A workshop in Varna with its own dyno. We have worked on ECUs for fifteen years — for car owners and for workshops that send us their files."
+  crumbs={crumbs}
+  schema={schema}
+>
+  <div class="p-wrap">
+    <section class="p-sec">
+      <div class="nums">
+        {numbers.map((x) => (
+          <div class="num">
+            <b>{x.n}</b>
+            <span>{x.l}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <div class="p-split">
+        <div class="p-prose">
+          <h2>What we actually do</h2>
+          <p>
+            We write and repair software for engine control units. Half the work is tuning —
+            chip tuning, Stage 2, automatic gearbox calibration. The other half is repair:
+            blocked particulate filters, failures in the urea system, and ECUs that stopped
+            responding after an unsuccessful write somewhere else.
+          </p>
+          <p>
+            The second half is rarely advertised, because it does not sound impressive. It is
+            also the reason workshops in several countries send us work.
+          </p>
+
+          <h2>The dyno</h2>
+          <p>
+            We have our own dyno and that changes the conversation. Every claim about a result
+            is backed by two curves — before and after — measured on the same machine on the
+            same day. Without a dyno all that is left is a feeling, and a feeling cannot be
+            argued with.
+          </p>
+
+          <h2>Why we say no</h2>
+          <p>
+            We turn work down more often than is comfortable. A car days from the end of its
+            warranty, an engine with a failing turbocharger, a naturally aspirated petrol unit
+            where the gain does not justify the money — each of those is a conversation that
+            ends with “not worth it”.
+          </p>
+          <p>
+            The reason is practical: a file on a sick car brings forward the failure of the
+            sick part, and the blame lands on us afterwards. Not taking the work is cheaper.
+          </p>
+
+          <h2>Partner workshops</h2>
+          <p>
+            Part of our work comes from other workshops, which upload files through the portal
+            and receive the finished file back there. The portal is separate from this site and
+            access is arranged individually. Ask us on the
+            <a href="/en/contact/"> contact page</a>.
+          </p>
+        </div>
+
+        <aside class="p-facts panel">
+          <h2>The company</h2>
+          <dl>
+            <dt>Legal entity</dt>
+            <dd>{b.legalName}</dd>
+            {/* няма стойност → двойката отпада, вместо да стои празна рамка */}
+            {b.eik && <><dt>Company no.</dt><dd>{b.eik}</dd></>}
+            {b.vat && <><dt>VAT no.</dt><dd>{b.vat}</dd></>}
+            <dt>Workshop</dt>
+            <dd>{b.address.streetEn}, {b.address.cityEn}</dd>
+            <dt>Phone</dt>
+            <dd><a href={`tel:${b.phone}`} style="color:inherit;border-bottom:1px solid var(--line-soft)">{b.phoneIntl}</a></dd>
+            <dt>Email</dt>
+            <dd><a href={`mailto:${b.email}`} style="color:inherit;border-bottom:1px solid var(--line-soft)">{b.email}</a></dd>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <h2>Where we are</h2>
+      <div class="p-prose">
+        <p>
+          Varna, {b.address.streetEn}. Most of our customers are from Varna and the region, but
+          for Stage 2 and for ECU repair people come from further afield — this work is not done
+          everywhere.
+        </p>
+        <p>
+          <a href={b.social.maps} target="_blank" rel="noopener noreferrer">Open in Google Maps →</a>
+        </p>
+        <p>
+          Opening hours, phone and an enquiry form are on the
+          <a href="/en/contact/"> contact page</a>.
+        </p>
+      </div>
+    </section>
+  </div>
+</Page>
+
+<style is:global>
+.nums{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+@media(min-width:760px){.nums{grid-template-columns:repeat(4,1fr);gap:18px}}
+.num{padding:26px 24px;border:1px solid var(--line);border-radius:var(--r-m);background:var(--surface)}
+.num b{display:block;font:700 clamp(34px,4.4vw,52px)/1 var(--head);color:var(--lime);
+  letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.num span{display:block;margin-top:10px;font:400 var(--fz-lab)/1.5 var(--mono);letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink-4)}
+</style>

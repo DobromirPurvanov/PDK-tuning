@@ -8,28 +8,36 @@
  */
 import Base from '../layouts/Base.astro';
 import { NAV, BUSINESS as b } from '../config/site';
+import { dict } from '../i18n/ui';
+
+/**
+ * 404 Е ЕДНА И Е БЪЛГАРСКА — нарочно.
+ *
+ * Останалите страници четат езика от адреса си, но тази се показва ВМЕСТО
+ * непознат адрес: `dist/404.html` е един файл и нито Pages, нито `server.mjs`
+ * знаят кой език е искал посетителят, когато са стигнали до него. Отделна
+ * `/en/404.html` би трябвало да се избира от сървъра по пътя — това е етап 6
+ * работа, заедно с пренасочванията.
+ *
+ * Дотогава страницата е българска, но копчето за език в лентата води към
+ * английската начална (тя няма двойник), тоест изходът съществува.
+ */
+const t = dict('bg');
 
 // Сочехме котви на началната (`/#services`), когато сайтът беше една страница.
 // Сега страниците са 144 и човек, попаднал на сгрешен адрес, трябва да стигне
 // до ИСТИНСКАТА страница, а не до раздел, покрай който да скролва.
 const quick = NAV.map((n) => ({ href: n.href, label: n.label }));
 ---
-<Base
-  title="Страницата я няма (404) — PDK Tuning"
-  description="Адресът не съществува или страницата е преместена. Оттук се стига до услугите, каталога с 110 марки, цените и контактите на PDK Tuning във Варна."
-  noindex
->
+<Base title={t.nfTitle} description={t.nfDescription} noindex>
   <section class="nf">
     <div class="nf-in">
       <p class="nf-code" aria-hidden="true">404</p>
-      <h1>Тази страница я няма.</h1>
-      <p class="nf-lead">
-        Адресът е сгрешен или страницата е преместена. Нищо не е загубено —
-        каталогът и услугите са на един клик.
-      </p>
+      <h1>{t.nfHeading}</h1>
+      <p class="nf-lead">{t.nfLead}</p>
 
-      <nav class="nf-links" aria-label="Накъде оттук">
-        <a class="btn btn--go btn--pill nf-go" href="/">Към началната страница</a>
+      <nav class="nf-links" aria-label={t.nfWhereAria}>
+        <a class="btn btn--go btn--pill nf-go" href="/">{t.nfHome}</a>
         {quick.map((q) => <a class="btn btn--pill nf-alt" href={q.href}>{q.label}</a>)}
       </nav>
 
@@ -40,16 +48,15 @@ const quick = NAV.map((n) => ({ href: n.href, label: n.label }));
         мястото, където нищо не бива да зависи от скрипт.
       */}
       <form class="nf-find" action="/katalog/" method="get" role="search">
-        <label for="nf-q">Търсите марка?</label>
+        <label for="nf-q">{t.nfFind}</label>
         <div class="nf-row">
           <input id="nf-q" name="q" type="search" placeholder="BMW, DAF, Claas…" autocomplete="off" />
-          <button type="submit" class="btn btn--go">Търси в каталога</button>
+          <button type="submit" class="btn btn--go">{t.nfSearch}</button>
         </div>
       </form>
 
       <p class="nf-tel">
-        Или се обадете на <a href={`tel:${b.phone}`}>{b.phoneDisplay}</a> —
-        по телефона се решава повече, отколкото изглежда.
+        {t.nfTel} <a href={`tel:${b.phone}`}>{b.phoneDisplay}</a> {t.nfTelTail}
       </p>
     </div>
   </section>

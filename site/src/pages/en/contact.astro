@@ -1,0 +1,126 @@
+---
+/**
+ * Contact — адрес, работно време, телефон и работещата форма.
+ *
+ * ═══════════════════════════════════════════════════════════════════════════
+ * ТОВА Е ОБРАЗЕЦЪТ ЗА ВСИЧКИ СТРАНИЦИ ПОД `/en/`. Каквото тук е решено веднъж,
+ * останалите го повтарят:
+ *
+ *  1. ЕЗИКЪТ НЕ СЕ ПОДАВА. `Page`/`Base` го четат от адреса — пътят вече е
+ *     `/en/…`, значи лентата, футърът, бисквитките и формата излизат английски
+ *     сами. Страницата не внася `dict` заради обвивката.
+ *  2. ПЪТЕКАТА тръгва от английската начална — `Page` слага първото звено сама.
+ *  3. СХЕМИТЕ носят `'en'`: адресът в тях е латинският от `business.json`,
+ *     а `@id` на бизнеса остава същият — фирмата е една.
+ *  4. `inLanguage` СЕ ИЗПИСВА. Без него Google има две страници с еднакви
+ *     структурирани данни и никакъв признак коя за кого е.
+ *  5. ЦИФРИТЕ НЕ СЕ ПИПАТ. Телефон, адрес, работно време и цени идват от
+ *     `business.json` и `prices.json` — един източник за двата езика. Цените
+ *     са в евро и НЕ се превалутират.
+ *  6. Текстът се пише наново по същите факти, не се превежда дословно.
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+import Page from '../../layouts/Page.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import { crumbSchema, bizRef } from '../../lib/seo';
+import { BUSINESS as b, portalUrl } from '../../config/site';
+
+const site = Astro.site!.href.replace(/\/$/, '');
+const crumbs = [{ href: '/en/contact/', label: 'Contact' }];
+const portal = portalUrl('en');
+
+/** същата сметка като българската страница, само имената на дните са други */
+const days: Record<string, string> = {
+  Monday: 'Monday', Tuesday: 'Tuesday', Wednesday: 'Wednesday', Thursday: 'Thursday',
+  Friday: 'Friday', Saturday: 'Saturday', Sunday: 'Sunday',
+};
+const hoursText = b.hours.map((h) => {
+  const d = h.days.length > 1 ? `${days[h.days[0]]} – ${days[h.days[h.days.length - 1]]}` : days[h.days[0]];
+  return { d, t: `${h.opens} – ${h.closes}` };
+});
+
+const schema = [
+  bizRef(site, 'en'),
+  crumbSchema(site, [{ href: '/en/', label: 'Home' }, ...crumbs]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    url: `${site}/en/contact/`,
+    name: 'Contact — PDK Tuning',
+    inLanguage: 'en',
+    about: { '@id': `${site}/#business` },
+  },
+];
+---
+<Page
+  title="Contact — PDK Tuning, chip tuning in Varna"
+  description={`The workshop is at ${b.address.streetEn}, ${b.address.cityEn}. Phone ${b.phoneIntl}, email and Viber. Opening hours, map and an enquiry form answered within the working day.`}
+  kicker="How to find us"
+  heading="Contact"
+  lead="Call or write. We answer within the working day."
+  crumbs={crumbs}
+  cta={false}
+  schema={schema}
+>
+  <div class="p-wrap">
+    <section class="p-sec">
+      <div class="k-grid">
+        <div>
+          <dl class="nas-dl">
+            <dt>Address</dt>
+            <dd>
+              <a href={b.social.maps} target="_blank" rel="noopener noreferrer">
+                {b.address.streetEn}, {b.address.cityEn} {b.address.postalCode}
+              </a>
+            </dd>
+            <dt>Phone</dt>
+            <dd><a href={`tel:${b.phone}`}>{b.phoneIntl}</a></dd>
+            <dt>Viber</dt>
+            <dd><a href={`viber://chat?number=${encodeURIComponent(b.viber)}`}>{b.phoneIntl}</a></dd>
+            <dt>Email</dt>
+            <dd><a href={`mailto:${b.email}`}>{b.email}</a></dd>
+            <dt>Opening hours</dt>
+            <dd>
+              {hoursText.map((h) => <span class="nas-hours"><b>{h.d}</b>{h.t}</span>)}
+              <span class="nas-hours"><b>Sunday</b>closed</span>
+            </dd>
+            <dt>For partners</dt>
+            <dd><a href={portal} target="_blank" rel="noopener noreferrer">File portal ↗</a></dd>
+          </dl>
+        </div>
+
+        <div>
+          <ContactForm heading="Enquiry" />
+        </div>
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <h2>Before you call</h2>
+      <div class="p-prose">
+        <p>
+          The call goes fastest if you know three things: make and model, the engine
+          (capacity and power, or its code) and roughly how many kilometres it has done.
+          With those we can tell you on the phone whether the job is one for us and what
+          range the price is in.
+        </p>
+        <p>
+          We work in Bulgarian and English. Files from partners abroad go through the
+          <a href={portal} target="_blank" rel="noopener noreferrer"> file portal</a>;
+          the answer comes back the same way.
+        </p>
+        <p>
+          If your question is a general one — warranty, risk, fuel consumption — read the
+          <a href="/en/faq/"> questions and answers</a> first. The answers we give most
+          often are there.
+        </p>
+      </div>
+    </section>
+  </div>
+</Page>
+
+<style is:global>
+/* същата решетка като българските контакти — `.nas-*` идват от `styles/ui.css` */
+.k-grid{display:grid;gap:44px;grid-template-columns:1fr}
+@media(min-width:980px){.k-grid{grid-template-columns:1fr 1.15fr;gap:64px;align-items:start}}
+</style>

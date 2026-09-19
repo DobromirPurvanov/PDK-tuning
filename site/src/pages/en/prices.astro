@@ -1,0 +1,112 @@
+---
+/**
+ * Цените на английски — огледало на `src/pages/tseni.astro`.
+ *
+ * ТАБЛИЦАТА Е ОБЩА: чете се от `prices.json`, същият файл, същите числа, същата
+ * валута. Цените са в евро и НЕ се превалутират — превалутиране тук значеше
+ * две таблици, които се разминават при първата промяна на курса.
+ *
+ * Редовете идват от `SERVICES_EN`: услуга без английски текст няма ред, защото
+ * няма къде да води. Докато наборът се пълни, таблицата расте сама.
+ *
+ * Кутията „числата чакат потвърждение“ е СЪЩАТА като българската и си отива от
+ * двете страници заедно — когато възложителят потвърди цените.
+ */
+import Page from '../../layouts/Page.astro';
+import { SERVICES_EN } from '../../i18n/en/services/index';
+import prices from '../../data/prices.json';
+import { crumbSchema, bizRef } from '../../lib/seo';
+
+const P = prices.items as Record<string, { from: number; time: string }>;
+const site = Astro.site!.href.replace(/\/$/, '');
+const crumbs = [{ href: '/en/prices/', label: 'Prices' }];
+
+const rows = SERVICES_EN.map((s) => ({ s, p: s.priceKey ? P[s.priceKey] : undefined }));
+
+const schema = [bizRef(site, 'en'), crumbSchema(site, [{ href: '/en/', label: 'Home' }, ...crumbs])];
+---
+<Page
+  title="Prices for chip tuning and ECU repair | PDK Tuning Varna"
+  description="Indicative prices for chip tuning, Stage 2, DPF, EGR, AdBlue, diagnostics, dyno runs and ECU software repair. The final price is given after inspection."
+  kicker="In the open"
+  heading="Prices"
+  lead="A starting figure for every service. The final price is given after we have seen the car — and before any work begins."
+  crumbs={crumbs}
+  schema={schema}
+  ctaTitle="Ask about your car."
+  ctaText="Tell us the make, model and engine and we will say what the price covers and what it does not."
+>
+  <div class="p-wrap">
+    <section class="p-sec">
+      <div class="warn">
+        <b>These figures are awaiting confirmation by the workshop</b>
+        <p>
+          The values below are indicative and are here to show how the table will look. The
+          owner confirms them before the site goes live. Please do not treat them as a quote.
+        </p>
+      </div>
+
+      {rows.length > 0 && (
+        <table class="tbl">
+          <thead>
+            <tr><th>Service</th><th>From</th><th>Time</th></tr>
+          </thead>
+          <tbody>
+            {rows.map(({ s, p }) => (
+              <tr>
+                <td data-l="Service"><a href={`/en/services/${s.slug}/`}>{s.name}</a></td>
+                <td data-l="From">{p ? <b>€{p.from}</b> : <span class="fill">on inspection</span>}</td>
+                <td data-l="Time">{p ? p.time : '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+    </section>
+
+    <section class="p-sec">
+      <h2>What moves the price</h2>
+      <div class="p-prose">
+        <h3>The engine, not the badge</h3>
+        <p>
+          The same service on two different cars takes different amounts of time. An ECU that
+          can be read through the diagnostic socket is one job; an ECU that has to come out
+          and be opened is another entirely. That is why the figure next to a service is a
+          starting point and not a quote.
+        </p>
+
+        <h3>Condition</h3>
+        <p>
+          If diagnostics show the engine is not ready, the work stops there. You pay for the
+          diagnostics and leave with a clear list of what needs doing. Of the two possible
+          outcomes, that is the cheaper one.
+        </p>
+
+        <h3>What is always included</h3>
+        <p>
+          Archiving the original file, dyno measurement on any power-related work, and
+          returning the car to standard if you decide you want that. These three are not
+          extras and are not charged separately.
+        </p>
+
+        <h3>How payment works</h3>
+        <p>
+          The price is agreed before the work. If something appears during the job that was
+          not visible at the start, we stop and ask — we do not finish and present the bill
+          at the end.
+        </p>
+      </div>
+    </section>
+
+    <section class="p-sec">
+      <h2>Trade prices</h2>
+      <div class="p-prose">
+        <p>
+          Workshops and dealers who work with us regularly use a separate price list and send
+          their files through the portal. Terms are agreed individually according to volume.
+        </p>
+        <p><a href="/en/contact/">Get in touch →</a></p>
+      </div>
+    </section>
+  </div>
+</Page>

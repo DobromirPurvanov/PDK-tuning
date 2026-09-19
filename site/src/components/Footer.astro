@@ -5,13 +5,30 @@
  * страници, затова носи и втория ред връзки, който не се побра в лентата:
  * въпросите, мит/факт, статиите и порталът за партньори.
  */
-import { NAV, MORE, LEGAL, BUSINESS as b, PORTAL } from '../config/site';
+import { NAV, MORE, LEGAL, BUSINESS as b, portalUrl } from '../config/site';
+import { LEGAL_EN, MORE_EN, NAV_EN, langOf } from '../i18n';
+import { dict } from '../i18n/ui';
 
 const year = new Date().getFullYear();
 
-/** услугите и каталогът се разгъват — те са единствените с подниво */
-const services = NAV.find((n) => n.href === '/uslugi/')!;
-const catalog = NAV.find((n) => n.href === '/katalog/')!;
+const lang = langOf(Astro.url.pathname);
+const t = dict(lang);
+const en = lang === 'en';
+const nav = en ? NAV_EN : NAV;
+const more = en ? MORE_EN : MORE;
+const legal = en ? LEGAL_EN : LEGAL;
+const portal = portalUrl(lang);
+const servicesHref = en ? '/en/services/' : '/uslugi/';
+
+/**
+ * Колоните с подниво. На български това са услугите и каталогът; на английски
+ * каталог НЯМА (вж. бележката при `NAV_EN` в `src/i18n/index.ts`), а услугите
+ * го получават чак когато английските им текстове са написани. `?.children`,
+ * не `!` — докато наборът е празен, колоната просто не се рисува, вместо
+ * билдът да падне върху удивителна.
+ */
+const services = nav.find((n) => n.href === servicesHref)?.children;
+const catalog = en ? undefined : NAV.find((n) => n.href === '/katalog/')?.children;
 
 const social = [
   { href: b.social.facebook, label: 'Facebook' },
@@ -38,16 +55,20 @@ const social = [
       <p class="fline">{b.legalName}</p>
       {(b.eik || b.vat) && (
         <p class="fline">
-          {b.eik && <>ЕИК: {b.eik}</>}
+          {b.eik && <>{t.eik}: {b.eik}</>}
           {b.eik && b.vat && <span class="fsep" aria-hidden="true">·</span>}
-          {b.vat && <>ДДС: {b.vat}</>}
+          {b.vat && <>{t.vat}: {b.vat}</>}
         </p>
       )}
-      <p class="fline">{b.address.street}, {b.address.city} {b.address.postalCode}</p>
+      {/* адресът има латинска форма в business.json — не се транслитерира тук */}
+      <p class="fline">
+        {en ? `${b.address.streetEn}, ${b.address.cityEn} ${b.address.postalCode}`
+            : `${b.address.street}, ${b.address.city} ${b.address.postalCode}`}
+      </p>
       <p class="fline"><a href={`tel:${b.phone}`}>{b.phoneDisplay}</a></p>
       <p class="fline"><a href={`mailto:${b.email}`}>{b.email}</a></p>
       <p class="fline" style="margin-top:14px">
-        <a href={PORTAL} target="_blank" rel="noopener noreferrer">Портал за партньори ↗</a>
+        <a href={portal} target="_blank" rel="noopener noreferrer">{t.portal}</a>
       </p>
     </address>
 
@@ -56,11 +77,13 @@ const social = [
       тук са само най-търсените, за да не надвиши тази колона всички останали и
       да разтегли футъра заради себе си. „Всички услуги“ поема останалите.
     */}
-    <nav class="fcol" aria-label="Услуги">
-      <p class="ftitle"><a href="/uslugi/">Услуги</a></p>
-      {services.children!.slice(0, 6).map((s) => <p class="fline"><a href={s.href}>{s.label}</a></p>)}
-      <p class="fline"><a href="/uslugi/">Всички услуги →</a></p>
-    </nav>
+    {services && (
+      <nav class="fcol" aria-label={t.services}>
+        <p class="ftitle"><a href={servicesHref}>{t.services}</a></p>
+        {services.slice(0, 6).map((s) => <p class="fline"><a href={s.href}>{s.label}</a></p>)}
+        <p class="fline"><a href={servicesHref}>{t.allServices}</a></p>
+      </nav>
+    )}
 
     {/*
       „Сайтът“ (Електрически, Цени, Как работим, За нас, Контакти) беше ТУК и
@@ -68,10 +91,12 @@ const social = [
       никъде. Махнат. Останалото в тази колона е каталогът, който наистина има
       подниво.
     */}
-    <nav class="fcol" aria-label="Каталог">
-      <p class="ftitle"><a href="/katalog/">Каталог</a></p>
-      {catalog.children!.map((c) => <p class="fline"><a href={c.href}>{c.label}</a></p>)}
-    </nav>
+    {catalog && (
+      <nav class="fcol" aria-label={t.catalog}>
+        <p class="ftitle"><a href="/katalog/">{t.catalog}</a></p>
+        {catalog.map((c) => <p class="fline"><a href={c.href}>{c.label}</a></p>)}
+      </nav>
+    )}
 
     {/*
       „Полезно“ остава на своето място, защото това е ЕДИНСТВЕНИЯТ вход към
@@ -79,21 +104,21 @@ const social = [
       долния ред: те са по три думи всяка и вертикалният списък им отпускаше
       цяла колона за нищо.
     */}
-    <nav class="fcol" aria-label="Полезно">
-      <p class="ftitle">Полезно</p>
-      {MORE.map((m) => <p class="fline"><a href={m.href}>{m.label}</a></p>)}
+    <nav class="fcol" aria-label={t.useful}>
+      <p class="ftitle">{t.useful}</p>
+      {more.map((m) => <p class="fline"><a href={m.href}>{m.label}</a></p>)}
     </nav>
   </div>
 
   <div class="foot-end">
-    <nav class="fend-links" aria-label="Правно">
-      {LEGAL.map((l) => <a href={l.href}>{l.label}</a>)}
+    <nav class="fend-links" aria-label={t.legalAria}>
+      {legal.map((l) => <a href={l.href}>{l.label}</a>)}
       {/* „Бисквитки“ до „Политика за бисквитки“ се четеше като две страници за
           едно и също. Това е бутон, който отваря избора — казва се какъв е. */}
-      <button type="button" id="cookieOpen" class="linky">Настройки за бисквитки</button>
+      <button type="button" id="cookieOpen" class="linky">{t.cookieSettings}</button>
     </nav>
 
-    <nav class="fend-links fend-social" aria-label="Социални мрежи">
+    <nav class="fend-links fend-social" aria-label={t.socialAria}>
       {social.map((s) => (
         <a href={s.href} target="_blank" rel="noopener noreferrer">{s.label}</a>
       ))}

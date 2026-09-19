@@ -15,6 +15,10 @@
  * от адрес.
  */
 import { SERVICES } from '../data/services';
+import { BUSINESS as b } from '../config/site';
+import { SERVICES_EN } from '../i18n/en/services/index';
+import { langOf } from '../i18n';
+import { dict } from '../i18n/ui';
 // Стиловете на полетата са общи с поръчката за електрически — src/styles/form.css.
 import '../styles/form.css';
 
@@ -23,69 +27,99 @@ interface Props {
   heading?: string;
 }
 const { heading } = Astro.props;
+
+const lang = langOf(Astro.url.pathname);
+const t = dict(lang);
+const en = lang === 'en';
+const privacyHref = en ? '/en/privacy/' : '/privacy/';
+/* Падащото поле показва английските имена, ако ги има; докато `SERVICES_EN` е
+   празен, английската форма остава с „— choose —“ и „Other“ и нищо не лъже. */
+const services = en ? SERVICES_EN : SERVICES;
+
+/**
+ * НАДПИСИТЕ ЗА СКРИПТА пътуват като един data-атрибут.
+ *
+ * `<script>` в Astro се бъндълва отделно и НЕ вижда променливите отгоре.
+ * Досега това не личеше, защото съобщенията бяха на български и зашити в него —
+ * заедно с телефона и имейла, които при смяна трябваше да се търсят и тук.
+ * Сега и двете идват оттук: един `JSON.parse` вместо девет data-атрибута и
+ * нула зашити низа в скрипта.
+ */
+const MSG = JSON.stringify({
+  sending: t.fSending,
+  ok: t.fOk,
+  notConfigured: t.fNotConfigured,
+  rate: t.fRate,
+  fail: t.fFail,
+  callUs: t.fCallUs,
+  orWrite: t.fOrWrite,
+  offline: t.fOffline,
+  phone: b.phone,
+  phoneDisplay: b.phoneDisplay,
+  email: b.email,
+});
 ---
-<form class="form panel" id="cform" novalidate>
+<form class="form panel" id="cform" novalidate data-msg={MSG}>
   {heading && <h2 class="fhead">{heading}</h2>}
 
   <div class="f2">
     <p class="fld">
-      <label for="f-name">Име <span aria-hidden="true">*</span></label>
+      <label for="f-name">{t.fName} <span aria-hidden="true">*</span></label>
       <input id="f-name" name="name" type="text" required autocomplete="name" maxlength="80" />
-      <span class="err" id="e-name" hidden>Моля, напишете името си.</span>
+      <span class="err" id="e-name" hidden>{t.eName}</span>
     </p>
     <p class="fld">
-      <label for="f-phone">Телефон <span aria-hidden="true">*</span></label>
+      <label for="f-phone">{t.fPhone} <span aria-hidden="true">*</span></label>
       <input id="f-phone" name="phone" type="tel" required autocomplete="tel" maxlength="30" inputmode="tel" />
-      <span class="err" id="e-phone" hidden>Трябва ни телефон, за да отговорим.</span>
+      <span class="err" id="e-phone" hidden>{t.ePhone}</span>
     </p>
   </div>
 
   <div class="f2">
     <p class="fld">
-      <label for="f-email">Имейл</label>
+      <label for="f-email">{t.fEmail}</label>
       <input id="f-email" name="email" type="email" autocomplete="email" maxlength="120" />
-      <span class="err" id="e-email" hidden>Проверете адреса — липсва @ или домейн.</span>
+      <span class="err" id="e-email" hidden>{t.eEmail}</span>
     </p>
     <p class="fld">
-      <label for="f-service">Услуга</label>
+      <label for="f-service">{t.fService}</label>
       <select id="f-service" name="service">
-        <option value="">— изберете —</option>
-        {SERVICES.map((s) => <option value={s.name}>{s.name}</option>)}
-        <option value="Друго">Друго</option>
+        <option value="">{t.fChoose}</option>
+        {services.map((s) => <option value={s.name}>{s.name}</option>)}
+        <option value={t.fOther}>{t.fOther}</option>
       </select>
     </p>
   </div>
 
   <p class="fld">
-    <label for="f-car">Автомобил</label>
-    <input id="f-car" name="car" type="text" maxlength="120"
-           placeholder="Марка, модел, година, двигател" />
-    <span class="hint">Попълва се само̀, ако сте минали през избирача в каталога.</span>
+    <label for="f-car">{t.fCar}</label>
+    <input id="f-car" name="car" type="text" maxlength="120" placeholder={t.fCarPlaceholder} />
+    <span class="hint">{t.fCarHint}</span>
   </p>
 
   <p class="fld">
-    <label for="f-msg">Съобщение</label>
+    <label for="f-msg">{t.fMessage}</label>
     <textarea id="f-msg" name="message" rows="4" maxlength="1500"></textarea>
   </p>
 
   <p class="fld check">
     <input id="f-gdpr" name="gdpr" type="checkbox" required />
     <label for="f-gdpr">
-      Съгласен съм данните ми да бъдат обработени, за да получа отговор.
-      <a href="/privacy/">Политика за поверителност</a>. <span aria-hidden="true">*</span>
+      {t.fGdpr}
+      <a href={privacyHref}>{t.fGdprLink}</a>. <span aria-hidden="true">*</span>
     </label>
-    <span class="err" id="e-gdpr" hidden>Без съгласие не можем да обработим запитването.</span>
+    <span class="err" id="e-gdpr" hidden>{t.eGdpr}</span>
   </p>
 
   {/* примамка за роботи: истински човек не я вижда и не я попълва */}
   <p class="trap" aria-hidden="true">
-    <label for="f-web">Не попълвайте това поле</label>
+    <label for="f-web">{t.fTrap}</label>
     <input id="f-web" name="pdk_extra" type="text" tabindex="-1" autocomplete="off" />
   </p>
 
   <div class="fsub">
-    <button type="submit" class="btn btn--go send" id="fsend">Изпрати запитване</button>
-    <span class="fnote">Полетата със <span aria-hidden="true">*</span> са задължителни.</span>
+    <button type="submit" class="btn btn--go send" id="fsend">{t.fSend}</button>
+    <span class="fnote">{t.fRequired}</span>
   </div>
 
   <p class="fmsg ok" id="fok" role="status" hidden></p>
@@ -97,6 +131,10 @@ const { heading } = Astro.props;
 // докато трае заявката, а резултатът се казва с думи — не с мълчание.
 const form = document.getElementById('cform') as HTMLFormElement | null;
 if (form) {
+  // надписите и контактите идват от страницата (data-msg) — вж. MSG отгоре
+  const m = JSON.parse(form.dataset.msg!) as Record<string, string>;
+  const tel = `<a href="tel:${m.phone}">${m.phoneDisplay}</a>`;
+  const mail = `<a href="mailto:${m.email}">${m.email}</a>`;
   const send = document.getElementById('fsend') as HTMLButtonElement;
   const ok = document.getElementById('fok')!;
   const bad = document.getElementById('fbad')!;
@@ -152,7 +190,7 @@ if (form) {
 
     send.disabled = true;
     const label = send.textContent;
-    send.textContent = 'Изпращане…';
+    send.textContent = m.sending;
 
     try {
       const r = await fetch('/api/contact', {
@@ -163,20 +201,18 @@ if (form) {
       const j = await r.json().catch(() => ({}));
       if (r.ok && j.ok) {
         form.reset();
-        ok.textContent = 'Благодарим — запитването е при нас. Ще се обадим в рамките на работния ден.';
+        ok.textContent = m.ok;
         ok.hidden = false;
         ok.scrollIntoView({ block: 'nearest' });
       } else {
-        const why = j.code === 'not-configured'
-          ? 'Формата още не е свързана с пощата на сервиза. '
-          : j.code === 'rate' ? 'Твърде много запитвания от този адрес. '
-          : 'Нещо се обърка при изпращането. ';
-        bad.innerHTML = why + 'Обадете се на <a href="tel:+359883331609">088 333 1609</a> ' +
-          'или пишете на <a href="mailto:office@pdktuning.com">office@pdktuning.com</a>.';
+        const why = j.code === 'not-configured' ? m.notConfigured
+          : j.code === 'rate' ? m.rate
+          : m.fail;
+        bad.innerHTML = `${why}${m.callUs} ${tel} ${m.orWrite} ${mail}.`;
         bad.hidden = false;
       }
     } catch {
-      bad.innerHTML = 'Няма връзка със сървъра. Обадете се на <a href="tel:+359883331609">088 333 1609</a>.';
+      bad.innerHTML = `${m.offline} ${tel}.`;
       bad.hidden = false;
     } finally {
       send.disabled = false;

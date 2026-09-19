@@ -6,7 +6,8 @@
  * Каноникълът се смята от `site` в astro.config.mjs, а НЕ от адреса, на който
  * страницата е отворена — така макетът никога не сочи към localhost.
  */
-import { SITE, INDEXABLE, GSC_VERIFY } from '../config/site';
+import { SITE, INDEXABLE, EN_LIVE, GSC_VERIFY } from '../config/site';
+import { alternates, langOf, LOCALE } from '../i18n';
 
 interface Props {
   title: string;
@@ -27,7 +28,26 @@ const { title, description, image = SITE.ogImage, ogType = 'website', noindex = 
 const path = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
 const canonical = new URL(path, Astro.site).href;
 const ogImage = new URL(image, Astro.site).href;
-const robots = noindex || !INDEXABLE ? 'noindex, nofollow' : 'index, follow, max-image-preview:large';
+const lang = langOf(path);
+/* Недопусната английска страница НЕ се индексира, дори когато сайтът е отворен
+   за обхождане. Тя се изгражда (билдът е статичен и не знае условия), но не се
+   сочи отникъде — а Google намира и несочени адреси. */
+const hidden = noindex || (lang === 'en' && !EN_LIVE);
+const robots = hidden || !INDEXABLE ? 'noindex, nofollow' : 'index, follow, max-image-preview:large';
+/**
+ * ДВОЙКИТЕ ЗА `hreflang`. Празен списък за страница, която съществува само на
+ * един език — електрическите, статиите, PDK Flasher.
+ *
+ * `hreflang` със САМО един ред не значи нищо (Google го пропуска мълчаливо), а
+ * алтернатива към адрес, който билдът не изгражда, е истинска грешка в Search
+ * Console. Затова `alternates()` ги вади от ROUTES, а ROUTES знае само за
+ * двойки, които съществуват и от двете страни.
+ *
+ * `x-default` сочи БЪЛГАРСКАТА страница: сервизът е във Варна и работи на
+ * български; английската е за чуждия посетител, не обратното.
+ */
+const alts = hidden ? [] : alternates(path);
+const xDefault = alts.find((a) => a.lang === 'bg');
 ---
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -37,6 +57,8 @@ const robots = noindex || !INDEXABLE ? 'noindex, nofollow' : 'index, follow, max
 {/* 404 няма собствен адрес — каноникъл към „/404/“ би сочил страница, която не е съдържание */}
 {!noindex && <link rel="canonical" href={canonical} />}
 <meta name="robots" content={robots} />
+{alts.map((a) => <link rel="alternate" hreflang={a.lang} href={new URL(a.href, Astro.site).href} />)}
+{xDefault && <link rel="alternate" hreflang="x-default" href={new URL(xDefault.href, Astro.site).href} />}
 {/*
   Удостоверяването за Search Console. Празен ключ = тагът го няма изобщо —
   чужд или сгрешен код е по-лошо от липсващ. Виж бележката при GSC_VERIFY.
@@ -48,7 +70,7 @@ const robots = noindex || !INDEXABLE ? 'noindex, nofollow' : 'index, follow, max
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />
 <meta property="og:type" content={ogType} />
-<meta property="og:locale" content={SITE.locale} />
+<meta property="og:locale" content={LOCALE[lang]} />
 <meta property="og:image" content={ogImage} />
 <meta property="og:image:secure_url" content={ogImage} />
 <meta property="og:image:alt" content={SITE.ogImageAlt} />
