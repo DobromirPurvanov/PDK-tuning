@@ -72,7 +72,7 @@ const fmt = (iso: string) =>
             <span class="lab">{s.kicker}</span>
             <h3>{s.name}</h3>
             <p>{s.short}</p>
-            <span class="go">Виж услугата →</span>
+            <span class="go">Вижте услугата →</span>
           </a>
         ))}
       </div>
@@ -100,7 +100,7 @@ const fmt = (iso: string) =>
   font:400 var(--fz-lab)/1.6 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-4)}
 .art-meta span[aria-hidden]{color:var(--line-mid)}
 .p-prose.art{max-width:68ch}
-.p-prose.art h2{margin:44px 0 14px;font:700 clamp(21px,2.4vw,27px)/1.16 var(--head);
+.p-prose.art h2{margin:var(--sp-7) 0 var(--h-gap-tight);font:700 clamp(21px,2.4vw,27px)/1.16 var(--head);
   text-transform:uppercase;letter-spacing:-.012em}
 .p-prose.art h2:first-child{margin-top:0}
 .p-prose.art p{font-size:var(--fz-m);line-height:1.75}
