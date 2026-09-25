@@ -25,7 +25,7 @@
 import type { Service } from '../../../data/services';
 
 export const OFFROAD_NOTE_EN =
-  'Switching off an exhaust after-treatment system is done ONLY for machines that do not travel on public roads — race, agricultural and industrial equipment. For a car on the road we repair the system instead. This is not caution but law: a car with the system removed does not pass its roadworthiness test and is not legal on the road.';
+  'Switching off an exhaust after-treatment system is done ONLY for machines that do not travel on public roads, such as race, agricultural and industrial equipment. For a car on the road we repair the system instead, because this is a legal requirement: a car with the system removed does not pass its roadworthiness test and is not legal on the road.';
 
 /**
  * Услугите, които вече имат английски текст.

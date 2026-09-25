@@ -11,7 +11,7 @@ export const dyno: Service = {
   description:
     'Two curves, before and after the file, on the same dyno on the same day. A dyno run is the only evidence of what actually changed in your car.',
   lead:
-    'Numbers rather than impressions. The dyno is why we can make any claim about the result at all.',
+    'The dyno gives numbers rather than impressions, which is why we can make any claim about the result at all.',
   short: 'Two curves, before and after the file. The measurement is the evidence.',
   fits: [
     'Before and after chip tuning',
@@ -34,7 +34,7 @@ export const dyno: Service = {
     },
     {
       t: 'Printout',
-      d: 'You receive the curves. They remain yours, whatever you decide to do next.',
+      d: 'You receive the curves, which remain yours, whatever you decide to do next.',
     },
   ],
   body: [
@@ -46,7 +46,7 @@ export const dyno: Service = {
       ],
     },
     {
-      h: 'How to read dyno figures',
+      h: 'How to read the numbers',
       p: [
         'Figures depend on the dyno, its atmospheric correction and the condition of the car that day. A comparison only means something when both measurements are made on the same dyno, close together in time. That is how we work here.',
         'Figures from different dynos are not comparable. If someone presents power from another dyno as evidence of what will happen to your car, that is advertising, not measurement.',

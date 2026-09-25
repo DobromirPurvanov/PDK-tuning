@@ -121,7 +121,7 @@ const schema = [
     '@type': 'WebSite',
     '@id': `${site}/#website`,
     url: `${site}/`,
-    name: `${b.name} — чип тунинг Варна`,
+    name: `${b.name}, чип тунинг Варна`,
     inLanguage: 'bg-BG',
     publisher: { '@id': `${site}/#business` },
   },
@@ -147,7 +147,7 @@ const hoursText = b.hours.map((h) => {
 ---
 
 <Base
-  title="PDK Tuning — чип тунинг и софтуерни ремонти във Варна"
+  title="PDK Tuning, чип тунинг и софтуерни ремонти във Варна"
   description="Чип тунинг с измерване на собствен стенд, DPF, EGR и AdBlue във Варна. Изберете двигателя си и вижте реалните числа преди и след."
   schema={schema}
 >
@@ -177,7 +177,7 @@ const hoursText = b.hours.map((h) => {
       <div>
         <p class="eyebrow">Всеки автомобил има потенциал</p>
         <h1><span class="lead">Ние знаем как да го</span><span class="out">отключим</span></h1>
-        <p class="sub">Анализ · Настройка · Оптимизация — измерено на собствен стенд</p>
+        <p class="sub">Анализ · Настройка · Оптимизация, измерено на собствен стенд</p>
       </div>
 
       <div class="power">
@@ -275,7 +275,7 @@ const hoursText = b.hours.map((h) => {
     ))}
 
     <p class="wall-more">
-      <a href="/katalog/">Целият каталог — всички {all.length} марки →</a>
+      <a href="/katalog/">Целият каталог, всички {all.length} марки →</a>
     </p>
   </div>
 </section>
@@ -284,7 +284,7 @@ const hoursText = b.hours.map((h) => {
   <div class="in">
     <div class="top">
       <h2>Чип тунинг<br />и софтуерни ремонти.</h2>
-      <p class="note">Диагностика преди файл. Ако проблемът е датчик, го казваме — и не пишем нищо.</p>
+      <p class="note">Диагностика преди файл. Ако проблемът е датчик, го казваме и не пишем нищо.</p>
     </div>
     <div class="tiles">
       {services.map((s) => (
@@ -310,7 +310,7 @@ const hoursText = b.hours.map((h) => {
   <div class="in">
     <div class="top">
       <h2>Въпросите,<br />които ни задавате.</h2>
-      <p class="note">Кратки отговори, без заобикаляне. Ако нещо липсва — обадете се.</p>
+      <p class="note">Кратки отговори, без заобикаляне. Ако нещо липсва, обадете се.</p>
     </div>
     <div class="qa">
       {faq.map((f, i) => (
@@ -331,7 +331,7 @@ const hoursText = b.hours.map((h) => {
   <div class="in">
     <div class="top">
       <h2>Преди да<br />решите.</h2>
-      <p class="note">Написано, за да отговори на въпрос — не за да заеме място между две ключови думи.</p>
+      <p class="note">Написано, за да отговори на въпрос, не за да заеме място между две ключови думи.</p>
     </div>
     <div class="reads-list">
       {ARTICLES.slice(0, 3).map((a) => (

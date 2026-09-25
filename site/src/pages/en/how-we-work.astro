@@ -17,12 +17,12 @@ const steps = [
   { t: 'The conversation before the work', d: 'We tell you what we found, what we propose and what it costs. If the car is not ready, you hear it here.' },
   { t: 'Baseline dyno run', d: 'The first curve. It is the starting point and the record of what the car produced before we touched it.' },
   { t: 'Archiving the original', d: 'The factory file is read and kept. From then on, going back is a matter of minutes rather than negotiation.' },
-  { t: 'The work', d: 'A file, a repair, or both. If something new appears during the job, we stop and ask — we do not finish and present the bill at the end.' },
+  { t: 'The work', d: 'A file, a repair, or both. If something new appears during the job, we stop and ask. We do not finish and present the bill at the end.' },
   { t: 'Second curve and handover', d: 'We measure again and compare. You get the printout, and the car comes back with an explanation of what changed.' },
 ];
 
 const rules = [
-  { t: 'Diagnostics before any file — always', d: 'Writing to a sick car improves nothing. It brings forward the failure of the sick part, and the file gets the blame afterwards.' },
+  { t: 'Always diagnostics before any file', d: 'Writing to a sick car improves nothing. It brings forward the failure of the sick part, and the file gets the blame afterwards.' },
   { t: 'The original is kept', d: 'Before every change. Returning to standard is not a service to be haggled over; it is part of the job.' },
   { t: 'We say so when it is not worth it', d: 'A naturally aspirated petrol engine, a car days from the end of its warranty, a machine with a worn clutch. Work turned down is cheaper than work done badly.' },
   { t: 'We do not delete systems on road cars', d: 'DPF, EGR and AdBlue are switched off only for machines outside public roads. For a car on the road, we repair the system.' },
@@ -43,7 +43,7 @@ const schema = [
 ];
 ---
 <Page
-  title="How we work — from the call to the car | PDK Tuning"
+  title="How we work, from the call to the car | PDK Tuning"
   description="Eight steps: diagnostics before any file, the original archived, dyno runs before and after. And the five rules we do not bend."
   kicker="The process"
   heading="How we work"
@@ -65,7 +65,7 @@ const schema = [
 
     <section class="p-sec">
       <h2>What we do not bend on</h2>
-      <p class="p-note">Five rules that cost us work — which is exactly why we write them down.</p>
+      <p class="p-note">Five rules that cost us work. That is exactly why we write them down.</p>
       <div class="p-steps">
         {rules.map((r) => (
           <div class="p-step">
@@ -85,7 +85,7 @@ const schema = [
         <p>
           Stage 2 and transmission work are planned in advance, because the calibration goes
           through several writes with measurement in between. ECU software repair depends on
-          the state of the unit — we give a timescale once we have seen whether the ECU
+          the state of the unit, and we give a timescale once we have seen whether the ECU
           responds at all.
         </p>
         <p>

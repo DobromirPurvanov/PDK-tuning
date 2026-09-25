@@ -21,7 +21,7 @@ export const tcuDsg: Service = {
   ],
   notFor: [
     'A gearbox with a mechanical fault: repair comes before software',
-    'Worn clutches in a wet clutch pack; software will only finish them off',
+    'Worn clutches in a wet clutch pack. Software will only finish them off.',
   ],
   steps: [
     {
@@ -53,7 +53,7 @@ export const tcuDsg: Service = {
       h: 'What changes behind the wheel',
       p: [
         'Shifts become shorter and more defined, especially at full load. The gearbox stops chasing the tallest gear at every opportunity and does not upshift immediately when you ease the accelerator. In manual mode, it holds the gear to the limiter instead of shifting for you.',
-        'We do not deliberately make everyday driving worse: crawling in traffic and pulling away uphill remain smooth. A gearbox that jerks at every stop is not tuned; it is unfinished.',
+        'We do not deliberately make everyday driving worse: crawling in traffic and pulling away uphill remain smooth, because a gearbox that jerks at every stop is simply unfinished.',
       ],
     },
     {

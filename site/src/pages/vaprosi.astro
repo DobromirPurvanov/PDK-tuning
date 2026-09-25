@@ -29,7 +29,7 @@ const schema = [
   description="Гаранция, риск за двигателя, връщане на фабричния софтуер, разход на гориво, DPF и AdBlue. Четиринайсет кратки отговора, без заобикаляне и без обещания."
   kicker={`${FAQ.length} въпроса`}
   heading="Въпроси и отговори"
-  lead="Кратки отговори, без заобикаляне. Ако нещо липсва — обадете се и питайте направо."
+  lead="Кратки отговори, без заобикаляне, а ако нещо липсва, обадете се и питайте направо."
   crumbs={crumbs}
   schema={schema}
   ctaTitle="Останал е въпрос?"
@@ -57,7 +57,7 @@ const schema = [
         <ul>
           {withFaq.map((s) => (
             <li style="margin-bottom:10px">
-              <a href={`/uslugi/${s.slug}/`}>{s.name}</a> — {s.faq!.length === 1 ? 'един въпрос' : `${s.faq!.length} въпроса`}
+              <a href={`/uslugi/${s.slug}/`}>{s.name}</a> · {s.faq!.length === 1 ? 'един въпрос' : `${s.faq!.length} въпроса`}
             </li>
           ))}
         </ul>

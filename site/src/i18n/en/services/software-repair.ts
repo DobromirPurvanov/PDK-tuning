@@ -11,7 +11,7 @@ export const softwareRepair: Service = {
     'ECU no longer responding after an interrupted write, failed update or damaged software? We restore the correct software for its exact hardware number.',
   lead:
     'An ECU that stopped responding after a failed write is the work other workshops send on to us.',
-  short: 'An ECU that no longer responds after a failed write. We recover it.',
+  short: 'We recover an ECU that no longer responds after a failed write.',
   fits: [
     'An interrupted write caused by low voltage or a disconnected cable',
     'An ECU left unusable after a failed workshop update',
@@ -41,7 +41,7 @@ export const softwareRepair: Service = {
       h: 'How software can stop an ECU',
       p: [
         'Writing the ECU memory takes minutes and needs stable voltage throughout. A flat battery midway through, a disconnected cable or a power cut leaves the software only half written. The ECU stops responding and the car will not start.',
-        'This is almost never a hardware fault. The circuit board is sound; its contents are missing. That is why the answer is a correct write rather than a replacement ECU, which can often cost ten times as much.',
+        'This is almost never a hardware fault. The circuit board is sound; its contents are missing. That is why we do a correct write instead of fitting a replacement ECU, which can often cost ten times as much.',
       ],
     },
     {

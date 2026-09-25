@@ -10,14 +10,14 @@ export const dpfFap: Service = {
   featured: true,
   title: 'DPF and FAP Filter Repair in Varna | PDK Tuning',
   description:
-    'A blocked particulate filter is rarely the root cause. We diagnose the pressure sensor, hoses and engine first; in about one third, it is a €40 sensor.',
+    'A blocked particulate filter is rarely the root cause. We diagnose the pressure sensor, hoses and engine first. In about one third of cases, it is a €40 sensor.',
   lead:
     'A blocked filter is almost never the root cause. Before discussing the filter itself, we find what blocked it.',
   short:
     'Diagnostics first: in around one third of cases, the fault is a €40 sensor rather than the filter.',
   fits: [
     'A particulate-filter warning that comes on more and more often',
-    'Limp mode and power loss on a longer journey',
+    'Limp mode and power loss on a longer trip',
     'Regeneration every 100–150 km rather than every 500 km',
     'A burning smell and high temperature after city driving',
   ],
@@ -64,7 +64,7 @@ export const dpfFap: Service = {
     { k: 'First', v: 'diagnostics, not a quote for a filter' },
     { k: 'Common real cause', v: 'pressure sensor or hose' },
     { k: 'We also check', v: 'oil diluted by incomplete regenerations' },
-    { k: 'For road cars', v: 'repair; removal is not offered' },
+    { k: 'For road cars', v: 'repair, not removal' },
   ],
   faq: [
     {

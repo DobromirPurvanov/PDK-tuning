@@ -34,12 +34,12 @@ export const FAQ_EN: Qa_EN[] = [
   {
     group: 'The result',
     q: 'What is the difference between Stage 1 and Stage 2?',
-    a: 'Stage 1 is software only, on factory hardware. Stage 2 assumes modified hardware — an intercooler, exhaust system or different turbocharger — and the file is written for that exact build after measurement.',
+    a: 'Stage 1 is software only, on factory hardware. Stage 2 assumes modified hardware, such as an intercooler, exhaust system or different turbocharger, and the file is written for that exact build after measurement.',
   },
   {
     group: 'The result',
     q: 'Is a dyno measurement essential?',
-    a: 'It is not essential, but it is the only proof. The dyno gives two curves — before and after — so you can see exactly what changed rather than rely on a feeling.',
+    a: "It isn't required, though it is the only proof. The dyno gives two curves, before and after, so you can see exactly what changed instead of relying on a feeling.",
   },
   {
     group: 'The result',
@@ -49,7 +49,7 @@ export const FAQ_EN: Qa_EN[] = [
   {
     group: 'Exhaust emissions',
     q: 'Do you remove DPF, EGR and AdBlue systems from cars driven on public roads?',
-    a: 'No. Disabling exhaust-emissions systems is permitted only for machines used away from public roads — racing, agricultural and industrial equipment. For a road car, we work on the repair: diagnostics, cleaning, or replacing a sensor or filter. In about one third of cases, the fault is a sensor and the car needs nothing else.',
+    a: 'No, disabling exhaust-emissions systems is permitted only for machines used away from public roads, such as racing, agricultural and industrial equipment. For a road car, we work on the repair: diagnostics, cleaning, or replacing a sensor or filter. In about one third of cases, the fault is a sensor and the car needs nothing else.',
   },
   {
     group: 'Exhaust emissions',

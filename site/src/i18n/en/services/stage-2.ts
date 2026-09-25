@@ -38,7 +38,7 @@ export const stage2: Service = {
     },
     {
       t: 'Calibration over several writes',
-      d: 'Measure, adjust, measure. We keep mixture and temperatures within the limits of the parts actually fitted.',
+      d: 'We measure, adjust the calibration and measure again, keeping mixture and temperatures within the limits of the parts actually fitted.',
     },
     {
       t: 'Final curve',
@@ -56,14 +56,14 @@ export const stage2: Service = {
     {
       h: 'What must be ready before the software',
       p: [
-        'The clutch is the first component to give way as torque rises; with manual gearboxes, it is the most common issue after Stage 2. Cooling comes next: a more powerful engine creates more heat, and the standard intercooler quickly becomes restrictive.',
+        'The clutch is the first component to give way as torque rises. With manual gearboxes, it is the most common issue after Stage 2. Cooling comes next: a more powerful engine creates more heat, and the standard intercooler quickly becomes restrictive.',
         'We also check fuel delivery. At higher pressures, the standard fuel pump and injectors may already be at their limit. If they are, we say so before writing a file, not after the mixture runs lean.',
       ],
     },
     {
       h: 'Being honest about the figures',
       p: [
-        'A Stage 2 gain depends entirely on the build. The same engine with a different turbocharger produces a different result, and the difference can be twofold. We therefore do not give a figure before measuring the car; after seeing it, we give a range.',
+        'A Stage 2 gain depends entirely on the build. The same engine with a different turbocharger produces a different result, and the difference can be twofold. We therefore do not give a figure before measuring the car. After seeing it, we give a range.',
       ],
     },
   ],

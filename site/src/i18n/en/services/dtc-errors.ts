@@ -22,7 +22,7 @@ export const dtcErrors: Service = {
   steps: [
     {
       t: 'Full scan',
-      d: 'Every control unit, not only the engine. A fault in the comfort system can affect the engine.',
+      d: 'Every control unit, not just the engine. A fault in the comfort system can affect the engine.',
     },
     {
       t: 'Freeze-frame data',
@@ -30,7 +30,7 @@ export const dtcErrors: Service = {
     },
     {
       t: 'Checks on the car',
-      d: 'Mechanical and electrical. A code points to a direction, not to a replacement part.',
+      d: 'We check mechanical and electrical causes. A code points to a direction, not to a replacement part.',
     },
     {
       t: 'Repair and confirmation',

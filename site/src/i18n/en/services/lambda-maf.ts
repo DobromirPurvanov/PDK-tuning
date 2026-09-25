@@ -21,11 +21,11 @@ export const lambdaMaf: Service = {
   steps: [
     {
       t: 'Live data',
-      d: 'We look at what the sensor reports at different engine speeds and loads, not only at the fault code.',
+      d: 'We look at what the sensor reports at different engine speeds and loads, not just at the fault code.',
     },
     {
       t: 'Circuit check',
-      d: 'Supply, earth, oxidised connector. Half of the supposedly dead sensors are poor connections.',
+      d: 'We check the supply, earth and connector for oxidation. Half of the supposedly dead sensors are poor connections.',
     },
     {
       t: 'Looking upstream',

@@ -27,7 +27,7 @@ const crumbs = [
 ];
 ---
 <Page
-  title="Поръчка — тунинг за електрически автомобил | PDK Tuning"
+  title="Поръчка на тунинг за електрически автомобил | PDK Tuning"
   description="Изберете модела, начина на плащане и адреса за доставка. Потвърждаваме поръчката с обаждане, преди да тръгне каквото и да е."
   kicker="Поръчка"
   heading="Поръчайте своя пакет"
@@ -51,7 +51,7 @@ const crumbs = [
               <>
                 <b>Плащането още не става онлайн.</b>
                 Поръчката идва при нас, обаждаме се да я потвърдим и тогава уговаряме
-                плащането — с карта или PayPal, както сте избрали тук. Нищо не се удържа
+                плащането, с карта или PayPal, както сте избрали тук. Нищо не се удържа
                 от тази страница.
               </>
             )}
@@ -60,7 +60,7 @@ const crumbs = [
           <p class="fld">
             <label for="f-model">Автомобил <span aria-hidden="true">*</span></label>
             <select id="f-model" name="model" required>
-              <option value="">— изберете модел —</option>
+              <option value="">Изберете модел</option>
               {EV_BY_BRAND.map((br) => (
                 <optgroup label={br.name}>
                   {br.models.map((m) => (
@@ -107,7 +107,7 @@ const crumbs = [
             <p class="fld">
               <label for="f-email">Имейл</label>
               <input id="f-email" name="email" type="email" autocomplete="email" maxlength="120" />
-              <span class="err" id="e-email" hidden>Проверете адреса — липсва @ или домейн.</span>
+              <span class="err" id="e-email" hidden>Проверете адреса. Липсва @ или домейн.</span>
             </p>
             <p class="fld">
               <label for="f-vin">VIN</label>
@@ -179,11 +179,11 @@ const crumbs = [
           <h2>Какво следва</h2>
           <ol>
             {CHECKOUT_LIVE
-              ? <li>Плащате на страницата на доставчика — карта или PayPal.</li>
+              ? <li>Плащате на страницата на доставчика, с карта или PayPal.</li>
               : <li>Обаждаме се да потвърдим модела и адреса.</li>}
             {CHECKOUT_LIVE
               ? <li>Обаждаме се да сверим модела с автомобила.</li>
-              : <li>Уговаряме плащането — карта или PayPal.</li>}
+              : <li>Уговаряме плащането, с карта или PayPal.</li>}
             <li>PDK Flasher тръгва към вас. Доставката до адрес в България е в цената.</li>
             <li>Четете оригинала през приложението.</li>
             <li>Връщаме готовия файл и го записвате сами.</li>
@@ -299,7 +299,7 @@ if (form) {
       if (r.ok && j.ok) {
         form.reset();
         showPrice();
-        ok.textContent = 'Поръчката е при нас. Обаждаме се в рамките на работния ден, за да я потвърдим и да уговорим плащането.';
+        ok.textContent = 'Приехме поръчката. Обаждаме се в рамките на работния ден, за да я потвърдим и да уговорим плащането.';
         ok.hidden = false;
         ok.scrollIntoView({ block: 'nearest' });
       } else {

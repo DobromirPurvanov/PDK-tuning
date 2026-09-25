@@ -22,7 +22,7 @@ export const diagnostics: Service = {
   steps: [
     {
       t: 'Every control unit',
-      d: 'Not only the engine: gearbox, ABS, comfort systems and airbags. Faults can lead from one system to another.',
+      d: 'Not just the engine: gearbox, ABS, comfort systems and airbags. Faults can lead from one system to another.',
     },
     {
       t: 'Live data',
@@ -42,7 +42,7 @@ export const diagnostics: Service = {
       h: 'Why it comes first',
       p: [
         'A file written to an engine with a weak turbocharger, worn injectors or a slipping clutch improves nothing. It only hastens the failure of the faulty part. The file then gets blamed, although the cause was already there.',
-        'That is why diagnostics is not an optional extra but a condition of the work. If the figures show that the engine is not ready, we say so instead of writing a file and taking the money.',
+        'That is why diagnostics is a condition of the work, not an optional extra. If the figures show that the engine is not ready, we say so instead of writing a file and taking the money.',
       ],
     },
     {
@@ -54,7 +54,7 @@ export const diagnostics: Service = {
   ],
   facts: [
     { k: 'Time', v: 'around 30 minutes' },
-    { k: 'Scope', v: 'every control unit, not only the engine' },
+    { k: 'Scope', v: 'every control unit, not just the engine' },
     { k: 'Before tuning', v: 'required' },
   ],
   related: ['chip-tuning', 'dtc-errors', 'dpf-fap'],

@@ -7,9 +7,9 @@ export const chipTuning: Service = {
   icon: 'chip',
   priceKey: 'chip-tuning',
   featured: true,
-  title: 'Chip Tuning in Varna — Stage 1 on the Dyno | PDK Tuning',
+  title: 'Chip Tuning in Varna, Stage 1 on the Dyno | PDK Tuning',
   description:
-    'A custom file for the engine in front of us, never a download by engine code. Dyno runs before and after; the original software stays archived.',
+    'A custom file for the engine in front of us, never a download by engine code. Dyno runs before and after, and the original software stays archived.',
   lead:
     'We build a file for the specific ECU after reading its original software, not a generic download matched only to an engine code.',
   short: 'A custom file for the specific ECU, measured on the dyno before and after.',
@@ -55,13 +55,13 @@ export const chipTuning: Service = {
       h: 'Why standard software leaves room',
       p: [
         'A manufacturer writes one calibration for the world. It has to run on fuel of varying quality, at −30 and +45 degrees, with missed servicing and drivers who ignore temperatures. There is also product planning: the same engine is sold at three output levels so there is a reason to pay more.',
-        'That leaves a margin between the standard calibration and the hardware\'s physical limit. Chip tuning works within that margin. It does not invent power; it brings the safeguards closer to what this particular engine can actually support.',
+        'That leaves a margin between the standard calibration and the hardware\'s physical limit. Chip tuning works within that margin. It does not invent power. It brings the safeguards closer to what this particular engine can actually support.',
       ],
     },
     {
       h: 'What we change in the ECU',
       p: [
-        'We work with turbocharger pressure, injection quantity and timing, ignition timing on petrol engines, gear-based torque limiters and pedal mapping. On diesels, most of the gain comes from injection and boost; on direct-injection petrol engines, timing and boost work together.',
+        'We work with turbocharger pressure, injection quantity and timing, ignition timing on petrol engines, gear-based torque limiters and pedal mapping. On diesels, most of the gain comes from injection and boost. On direct-injection petrol engines, timing and boost work together.',
         'We leave every protection that prevents the engine damaging itself in place: temperature protection, lean-mixture protection and limp modes remain active. A file that removes them trades ten horsepower for an engine.',
       ],
     },
@@ -83,8 +83,8 @@ export const chipTuning: Service = {
     { k: 'Time', v: '2–4 hours with the car in our workshop' },
     { k: 'Typical diesel gain', v: '+15 to +25% power' },
     { k: 'Typical turbo petrol gain', v: '+15 to +30% power' },
-    { k: 'Evidence', v: 'two dyno curves — before and after' },
-    { k: 'Return to standard', v: 'any time; the original file is archived' },
+    { k: 'Evidence', v: 'two dyno curves, before and after' },
+    { k: 'Return to standard', v: 'any time, using the archived original file' },
   ],
   faq: [
     {
@@ -93,7 +93,7 @@ export const chipTuning: Service = {
     },
     {
       q: 'Will it be possible to tell that the software was changed?',
-      a: 'Modern ECUs retain a write counter and checksum. A main dealer using factory diagnostics may see that the ECU has been written to. That is why we ask about warranty at the start; we do not promise invisibility.',
+      a: 'Modern ECUs retain a write counter and checksum. A main dealer using factory diagnostics may see that the ECU has been written to. That is why we ask about warranty at the start. We do not promise invisibility.',
     },
   ],
   related: ['stage-2', 'dyno', 'diagnostics'],
