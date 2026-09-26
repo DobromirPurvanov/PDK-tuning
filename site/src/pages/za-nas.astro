@@ -1,28 +1,17 @@
 ---
 /**
- * „КОИ СМЕ НИЕ?“ — заглавие от собствения им речник.
- *
- * ВНИМАНИЕ: тук стоят полета, които ЧАКАТ клиента (ЕИК, точният адрес, годината
- * на започване). Те са в рамка `p-fill`, за да се вижда с очи, че не са
- * попълнени — а не да минат за факт. Оценката от Google НЕ се маркира като
- * `aggregateRating`: самооценка без видими отзиви е против правилата.
+ * „КОИ СМЕ НИЕ?“ — the text is the client's own (26.09.2026); nothing is added
+ * around it. Company details live in the footer and on /kontakti/. The Google
+ * rating is NOT marked up as `aggregateRating`: self-rating without visible
+ * reviews is against the rules.
  */
 import Page from '../layouts/Page.astro';
 import { crumbSchema, bizRef } from '../lib/seo';
 import { BUSINESS as b } from '../config/site';
-import marks from '../data/marks.json';
-import { SERVICES } from '../data/services';
 
 const site = Astro.site!.href.replace(/\/$/, '');
 const crumbs = [{ href: '/za-nas/', label: 'За нас' }];
 const schema = [bizRef(site), crumbSchema(site, [{ href: '/', label: 'Начало' }, ...crumbs])];
-
-const numbers = [
-  { n: String(b.yearsExperience), l: 'години с блокове' },
-  { n: String((marks as unknown[]).length), l: 'марки в базата' },
-  { n: String(SERVICES.length), l: 'услуги' },
-  { n: String(b.countries), l: 'държави с партньори' },
-];
 ---
 <Page
   title="Кои сме ние: PDK Tuning, чип тунинг във Варна"
@@ -35,18 +24,6 @@ const numbers = [
 >
   <div class="p-wrap">
     <section class="p-sec">
-      <div class="nums">
-        {numbers.map((x) => (
-          <div class="num">
-            <b>{x.n}</b>
-            <span>{x.l}</span>
-          </div>
-        ))}
-      </div>
-    </section>
-
-    <section class="p-sec">
-      <div class="p-split">
         <div class="p-prose">
           <h2>С какво се занимаваме</h2>
           <p>
@@ -85,29 +62,6 @@ const numbers = [
             Повече информация има на страницата <a href="/za-dileri/">За дилъри и сервизи</a>.
           </p>
         </div>
-
-        <aside class="p-facts panel">
-          <h2>Фирмата</h2>
-          <dl>
-            <dt>Юридическо лице</dt>
-            <dd>{b.legalName}</dd>
-            {/* няма стойност → двойката отпада, вместо да стои празна рамка */}
-            {b.eik && <><dt>ЕИК</dt><dd>{b.eik}</dd></>}
-            {b.vat && <><dt>ДДС номер</dt><dd>{b.vat}</dd></>}
-            <dt>Сервиз</dt>
-            <dd>{b.address.street}, {b.address.city}</dd>
-            <dt>Телефон</dt>
-            <dd><a href={`tel:${b.phone}`} style="color:inherit;border-bottom:1px solid var(--line-soft)">{b.phoneDisplay}</a></dd>
-            <dt>Имейл</dt>
-            <dd><a href={`mailto:${b.email}`} style="color:inherit;border-bottom:1px solid var(--line-soft)">{b.email}</a></dd>
-          </dl>
-          {/*
-            Седалището в правните страници СЕ СТРОИ от `business.address` —
-            вж. `legalAddress` в src/config/site.ts и `_legalAddress_todo`
-            в src/data/business.json.
-          */}
-        </aside>
-      </div>
     </section>
 
     <section class="p-sec">
@@ -122,20 +76,7 @@ const numbers = [
           Работим с клиенти от Варна и с партньорски сервизи от други населени места. За
           посещение, работно време и запитвания вижте страницата <a href="/kontakti/">Контакти</a>.
         </p>
-        <p>
-          <a href={b.social.maps} target="_blank" rel="noopener noreferrer">Вижте ни в Google Карти →</a>
-        </p>
       </div>
     </section>
   </div>
 </Page>
-
-<style is:global>
-.nums{display:grid;gap:14px;grid-template-columns:1fr 1fr}
-@media(min-width:760px){.nums{grid-template-columns:repeat(4,1fr);gap:18px}}
-.num{padding:26px 24px;border:1px solid var(--line);border-radius:var(--r-m);background:var(--surface)}
-.num b{display:block;font:700 clamp(34px,4.4vw,52px)/1 var(--head);color:var(--lime);
-  letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-.num span{display:block;margin-top:10px;font:400 var(--fz-lab)/1.5 var(--mono);letter-spacing:.18em;
-  text-transform:uppercase;color:var(--ink-4)}
-</style>

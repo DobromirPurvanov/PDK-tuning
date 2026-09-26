@@ -83,7 +83,7 @@ const schema = [
       </div>
     </section>
 
-    {(s.fits.length || s.notFor?.length) && (
+    {(s.fits.length > 0 || (s.notFor?.length ?? 0) > 0) && (
       <section class="p-sec">
         <h2>За кого е</h2>
         <div class="p-lists">
@@ -101,7 +101,7 @@ const schema = [
       </section>
     )}
 
-    <section class="p-sec">
+    {s.steps.length > 0 && <section class="p-sec">
       <h2>{s.stepsTitle ?? 'Как минава при нас'}</h2>
       <div class="p-steps">
         {s.steps.map((st) => (
@@ -113,9 +113,9 @@ const schema = [
           </div>
         ))}
       </div>
-    </section>
+    </section>}
 
-    {s.faq?.length && (
+    {(s.faq?.length ?? 0) > 0 && s.faq && (
       <section class="p-sec">
         <h2>Въпроси за тази услуга</h2>
         <div class="qa">

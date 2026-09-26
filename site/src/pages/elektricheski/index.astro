@@ -11,7 +11,7 @@
  */
 import Page from '../../layouts/Page.astro';
 import EvPicker from '../../components/EvPicker.astro';
-import { EV_COUNT, EV_BEST, EV_BY_BRAND, money } from '../../data/ev';
+import { EV_COUNT, EV_BY_BRAND, money } from '../../data/ev';
 import { crumbSchema, faqSchema, bizRef } from '../../lib/seo';
 // стъпките и екраните на приложението живеят в данните — ползва ги и /pdk-flasher/
 import { FLASHER_STEPS, FLASHER_APP } from '../../data/flasher';
@@ -20,7 +20,6 @@ const site = Astro.site!.href.replace(/\/$/, '');
 const crumbs = [{ href: '/elektricheski/', label: 'Електрически автомобили' }];
 
 const brandLine = EV_BY_BRAND.map((b) => b.name).join(', ');
-const bestGain = EV_BEST.ceilingPs - EV_BEST.stockPs;
 
 const faq = [
   {
@@ -57,7 +56,7 @@ const schema = [
 ---
 <Page
   title="Тунинг на електрически автомобили | PDK Tuning"
-  description={`Софтуер за електрически автомобили на ${brandLine}, ${EV_COUNT} модела. Четете и записвате сами през PDK Flasher, от всяка точка на света.`}
+  description="Софтуерни настройки за определени модели електрически автомобили. Проверяваме конкретния автомобил, преди да кажем каква настройка е възможна."
   kicker="Ново направление"
   heading="Софтуерни настройки за електрически автомобили"
   lead="За определени модели предлагаме софтуерни настройки, които могат да променят характеристиките на автомобила. Възможностите зависят от конкретния модел, версията на софтуера и оборудването. Ако автомобилът се поддържа, ще ви обясним как протича услугата и дали може да се извърши дистанционно."
@@ -68,7 +67,6 @@ const schema = [
 >
   <div class="p-wrap">
     <section class="p-sec">
-      <div class="p-split">
         <div class="p-prose">
           <h2>Какво може да се промени</h2>
           <p>
@@ -91,19 +89,6 @@ const schema = [
             представяме данни от друг автомобил като резултат за вашия.
           </p>
         </div>
-
-        <aside class="p-facts panel">
-          <h2>Накратко</h2>
-          <dl>
-            <dt>Модели в списъка</dt><dd>{EV_COUNT}</dd>
-            <dt>Марки</dt><dd>{brandLine}</dd>
-            <dt>Най-голяма разлика</dt>
-            <dd>{EV_BEST.full}, {EV_BEST.stockPs} к.с. фабрично, {EV_BEST.ceilingPs} к.с. таван на блока (+{bestGain})</dd>
-            <dt>Къде се прави</dt><dd>При вас, през PDK Flasher</dd>
-            <dt>Връщане на оригинала</dt><dd>По всяко време, от вас</dd>
-          </dl>
-        </aside>
-      </div>
     </section>
   </div>
 
