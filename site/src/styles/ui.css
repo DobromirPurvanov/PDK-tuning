@@ -26,8 +26,8 @@
 */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;
-  min-height:var(--btn-h,52px);
-  padding:var(--btn-py,15px) var(--btn-px,26px);
+  min-height:var(--btn-h,58px);
+  padding:var(--btn-py,17px) var(--btn-px,32px);
   border:1px solid var(--line-soft);
   border-radius:var(--btn-r,var(--r-s));
   background:none;color:inherit;cursor:pointer;white-space:nowrap;
@@ -40,9 +40,9 @@
 .btn--go:hover{border-color:var(--lime);filter:brightness(1.1)}
 .btn--ghost{color:var(--ink-4)}
 .btn--pill{--btn-r:var(--r-pill)}
-.btn--sm{--btn-h:0;--btn-py:12px;--btn-px:16px;font-size:var(--fz-lab)}
+.btn--sm{--btn-h:0;--btn-py:14px;--btn-px:20px;font-size:var(--fz-2xs)}
 .btn[disabled],.btn[aria-disabled="true"]{opacity:.55;cursor:progress}
-@media(pointer:coarse){.btn{--btn-h:48px}}
+@media(pointer:coarse){.btn{--btn-h:52px}}
 
 /* ── повърхност ──────────────────────────────────────────────────────────────
    Картите, панелите, изскачащите — всичко издигнато над фона изглежда така.

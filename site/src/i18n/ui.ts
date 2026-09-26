@@ -34,8 +34,8 @@ const bg = {
   /* ── пътека и заключително действие (Page.astro) ───────────────────────── */
   home: 'Начало',
   trailAria: 'Пътека',
-  ctaTitle: 'Да го измерим.',
-  ctaText: 'Кажете ни колата и какво искате от нея. Ако не си струва, ще го чуете от нас.',
+  ctaTitle: 'Запишете час за измерване',
+  ctaText: 'Кажете ни марката, модела и двигателя на автомобила, както и какво искате да проверите. Ще ви обясним какво може да покаже измерването и дали е подходящо за вашия случай.',
   ctaWrite: 'Изпратете запитване',
   portal: 'Портал за партньори ↗',
 
@@ -131,7 +131,7 @@ export type Dict = Record<keyof typeof bg, string>;
 
 /**
  * Английското НЕ е превод дума по дума. Там, където българското е разговорно
- * („Да го измерим.“), английското е също толкова късо и също толкова сухо —
+ * („Да я погледнем.“), английското е също толкова късо и също толкова сухо —
  * буквалният превод на такива изречения звучи като инструкция за пералня.
  */
 const en: Dict = {
@@ -146,8 +146,8 @@ const en: Dict = {
 
   home: 'Home',
   trailAria: 'Breadcrumb',
-  ctaTitle: 'Let us measure it.',
-  ctaText: 'Tell us the car and what you want from it. If it is not worth doing, you will hear that from us.',
+  ctaTitle: 'Book a dyno session',
+  ctaText: 'Tell us the make, model and engine of the car and what you want to check. We will explain what the measurement can show and whether it suits your case.',
   ctaWrite: 'Send an enquiry',
   portal: 'Partner portal ↗',
 

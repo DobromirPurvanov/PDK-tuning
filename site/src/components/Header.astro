@@ -130,13 +130,13 @@ const showSwitch = EN_LIVE || lang === 'en';
 
 .logo{display:flex;align-items:center;gap:12px;flex:0 0 auto}
 .logo img{width:40px;height:40px;border-radius:var(--r-s);border:1px solid var(--line-soft);display:block}
-.logo span{font:400 var(--fz-btn)/1 var(--mono);letter-spacing:.26em;text-transform:uppercase;white-space:nowrap}
+.logo span{font:400 var(--fz-nav)/1 var(--mono);letter-spacing:.26em;text-transform:uppercase;white-space:nowrap}
 
 /* тънка черта дели марката от менюто — преди „PDK TUNING“ и „КАТАЛОГ“ се сливаха */
-.menu{display:none;gap:26px;margin-left:12px;padding-left:24px;border-left:1px solid var(--line)}
+.menu{display:none;gap:clamp(18px,1.4vw,32px);margin-left:12px;padding-left:24px;border-left:1px solid var(--line)}
 @media(min-width:1180px){.menu{display:flex;align-items:center}}
 .menu > a,.has-sub > a{position:relative;display:inline-flex;align-items:center;gap:6px;
-  font:400 var(--fz-btn)/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;
+  font:400 var(--fz-nav)/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;
   color:var(--ink-3);padding:6px 0;transition:color var(--t-fast);white-space:nowrap}
 .menu .only-narrow{display:none}
 .menu > a::after,.has-sub > a::after{content:'';position:absolute;left:0;right:100%;bottom:0;

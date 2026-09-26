@@ -135,27 +135,33 @@
      По роля, не по число: така „етикетът“ е един размер навсякъде, вместо да
      е 9, 10 или 11 според това кой го е писал.
   */
-  --fz-lab:10px;
-  --fz-btn:11px;
+  /* Fluid on purpose: fixed px sizes read as fine print on large high-res
+     monitors (client complaint, 26.09.2026). Each step grows with the viewport
+     and stops at a ceiling, so phones stay close to the approved density. */
+  --fz-lab:clamp(11px,.25vw + 9px,13px);
+  --fz-btn:clamp(12px,.3vw + 9.5px,14px);
+  /* Desktop menu: appears at 1180px, where eight items barely fit, so it starts
+     at the old 11px and only grows on wide screens. */
+  --fz-nav:clamp(11px,.55vw + 4px,14px);
   /* Дъното на скалата. В кода имаше и 8px, и 9px — на екран това вече не е
      надпис, а текстура; вдигнати са дотук. По-дребно от 10px в моно с широка
      разредка не се чете, а точно широката разредка е характерът на бранда. */
-  --fz-2xs:12px;
-  --fz-xs:13px;
-  --fz-s:15px;
+  --fz-2xs:clamp(13px,.15vw + 11.5px,14px);
+  --fz-xs:clamp(14px,.2vw + 12px,15px);
+  --fz-s:clamp(15px,.3vw + 12.5px,17px);
   /* ДЪЛЪГ ТЕКСТ ЗА ЧЕТЕНЕ — правните страници, прозата в услугите, статиите.
      Не е `--fz-s`: 15px е за карта и списък, където текстът е кратък и гледан
      на пробег. В колона от 70 знака, която се чете изречение по изречение, един
      пиксел по-малко се усеща — правните страници се свиха с 3 до 6 %, когато
      двата размера бяха слети, и това се ВИЖДА. Не е и `--fz-m`: той е ръстът на
      `body` и се наследява от всичко останало. */
-  --fz-body:16px;
-  --fz-m:17px;
-  --fz-l:clamp(16px,1.5vw,19px);
+  --fz-body:clamp(16px,.35vw + 13px,19px);
+  --fz-m:clamp(17px,.35vw + 14px,20px);
+  --fz-l:clamp(17px,1.5vw,21px);
   --fz-h1:clamp(2.3rem,6vw,4.6rem);
-  --fz-h2:clamp(1.6rem,3.2vw,2.5rem);
-  --fz-h3:clamp(19px,2.1vw,23px);
-  --fz-h4:17px;
+  --fz-h2:clamp(1.6rem,3.2vw,2.6rem);
+  --fz-h3:clamp(19px,2.1vw,25px);
+  --fz-h4:clamp(17px,.3vw + 14px,19px);
 
   /* ── разредка ──────────────────────────────────────────────────────────────
      Отрицателна за заглавията (Oswald при едър кегел се разкрачва), силно
