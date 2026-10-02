@@ -605,7 +605,9 @@ async function legacyTarget(pathname, env, origin) {
   if (m[1].toLowerCase() === 'en') {
     const key = rest.toLowerCase();
     const page = LEGACY_PAGES_EN.get(key);
-    if (page) return page;
+    // /en/contact (theirs) and /en/contact/ (ours) differ only by the slash:
+    // never send a page to itself
+    if (page && page !== pathname) return page;
     if (/^tuning\//.test(key)) return '/en/services/';
     return null;
   }
