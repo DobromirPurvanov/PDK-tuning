@@ -82,7 +82,12 @@ const tidy = (s) => {
 };
 
 async function fetchPage(src, path) {
-  const r = await fetch(src + path, { headers: { 'user-agent': UA, 'accept-language': 'en' } });
+  // A hanging old site must not hold the picker: after the timeout the
+  // answer comes from our own copy (see `snapshot` below).
+  const r = await fetch(src + path, {
+    headers: { 'user-agent': UA, 'accept-language': 'en' },
+    signal: AbortSignal.timeout(8000),
+  });
   if (!r.ok) throw new Error(`${path} → ${r.status}`);
   return r.text();
 }
@@ -133,6 +138,69 @@ const readers = {
     const info = {};
     for (const m of html.matchAll(/<strong>\s*([^<:]+):\s*<\/strong>\s*([^<]*)/gi)) info[txt(m[1])] = txt(m[2]);
     return { hp: pair(/power/i), nm: pair(/torque/i), info };
+  },
+};
+
+/* ══════════════════════════════════════════════════════════════════════════
+   FALLBACK CATALOGUE
+   The same five answers, read from our own copy in /catalog/<brand>.json
+   (written by scripts/catalog-snapshot.mjs). Used ONLY when the live read
+   fails, so a dead or blocked old site no longer empties the picker. The
+   slugs are the old site's own, so the browser cannot tell the two apart.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+const yearLabel = (from, to) => (from ? `${from} → ${to || '…'}` : 'All');
+
+async function snapshotBrand(env, origin, slug) {
+  if (!/^[a-z0-9-]+$/.test(slug || '')) throw new Error('bad brand');
+  const r = await env.ASSETS.fetch(new Request(`${origin}/catalog/${slug}.json`));
+  if (!r.ok) throw new Error(`no snapshot for ${slug}`);
+  return (await r.json()).m;
+}
+
+const find = (list, slug, what) => {
+  const hit = list.find((x) => x[0] === slug);
+  if (!hit) throw new Error(`unknown ${what}`);
+  return hit;
+};
+
+/** slug → our display name, from marks.json; empty when it cannot be read */
+async function markNames(env, origin) {
+  try {
+    const r = await env.ASSETS.fetch(new Request(origin + '/marks.json'));
+    if (!r.ok) return new Map();
+    return new Map((await r.json()).filter((m) => m.name).map((m) => [m.slug, m.name]));
+  } catch { return new Map(); }
+}
+
+const snapshot = {
+  async brands(env, origin) {
+    const names = await markNames(env, origin);
+    if (!names.size) throw new Error('marks.json missing');
+    return [...names].map(([slug, label]) => ({ slug, label }));
+  },
+  async models(env, origin, [b]) {
+    return (await snapshotBrand(env, origin, b)).map(([slug, label]) => ({ slug, label }));
+  },
+  async years(env, origin, [b, m]) {
+    const [, , gens] = find(await snapshotBrand(env, origin, b), m, 'model');
+    return gens.map(([slug, from, to]) => ({ slug, label: yearLabel(from, to) }));
+  },
+  async engines(env, origin, [b, m, y]) {
+    const [, , gens] = find(await snapshotBrand(env, origin, b), m, 'model');
+    return find(gens, y, 'years')[3].map(([slug, name]) => ({ slug, label: tidy(name) }));
+  },
+  async result(env, origin, [b, m, y, ...path]) {
+    const models = await snapshotBrand(env, origin, b);
+    const [, model, gens] = find(models, m, 'model');
+    const [, from, to, list] = find(gens, y, 'years');
+    const [, name, hp0, hp1, nm0, nm1] = find(list, path.join('/'), 'engine');
+    const brand = (await markNames(env, origin)).get(b) ?? b;
+    return {
+      hp: [hp0, hp1],
+      nm: [nm0, nm1],
+      info: { Brand: brand, Model: model, Years: yearLabel(from, to), Engine: tidy(name) },
+    };
   },
 };
 
@@ -663,13 +731,28 @@ export default {
     if (!read) return json({ error: 'непознато ниво' }, 404, 0);
 
     try {
-      const data = await read(src, parts);
+      let data = await read(src, parts);
+      // Brand names are ours (marks.json), not the old site's spelling
+      // („Mc Cormick“, „Renault truck“), so the picker matches the catalogue pages.
+      if (kind === 'brands') {
+        const ours = await markNames(env, url.origin);
+        data = data.map((b) => ({ ...b, label: ours.get(b.slug) ?? b.label }));
+      }
       const res = json({ source: src, kind, data }, 200, TTL[kind] ?? 3600);
       ctx.waitUntil(cache.put(request, res.clone()));
       return res;
     } catch (e) {
-      // старият сайт е единственият източник — ако мълчи, го казваме честно
-      return json({ error: 'старият сайт не отговаря', detail: String(e.message || e) }, 502, 0);
+      // The old site is down or blocked: answer from our own copy. Cached only
+      // briefly, so the live data takes over again as soon as it is back.
+      console.error(`live catalogue failed (${kind}/${parts.join('/')}): ${e.message || e}`);
+      try {
+        const data = await snapshot[kind](env, url.origin, parts);
+        const res = json({ source: 'snapshot', kind, data }, 200, 300);
+        ctx.waitUntil(cache.put(request, res.clone()));
+        return res;
+      } catch (e2) {
+        return json({ error: 'catalogue unavailable', detail: String(e.message || e) }, 502, 0);
+      }
     }
   },
 };

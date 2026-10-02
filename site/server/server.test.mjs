@@ -48,6 +48,11 @@ test('VPS serves the new build and preserves catalogue and dealer sessions', asy
   assert.equal((await get('/bg/bmw')).headers.get('location'), 'https://preview.example/katalog/bmw/');
   const live = await (await get('/api/live/brands')).json();
   assert.deepEqual(live.data, [{ slug: 'bmw', label: 'BMW' }]);
+  // our spelling wins over the old site's once marks.json carries a name
+  await writeFile(join(root, 'marks.json'), '[{"slug":"bmw","name":"BMW Group"}]');
+  globalThis.caches.default = new MemoryCache();
+  const named = await (await (await makeApp(options))(new Request('https://preview.example/api/live/brands'))).json();
+  assert.deepEqual(named.data, [{ slug: 'bmw', label: 'BMW Group' }]);
   const portal = await app(new Request('https://preview.example/bg/login', {
     method: 'POST', body: 'test-body', headers: { cookie: 'PHPSESSID=incoming' },
   }));
@@ -78,4 +83,43 @@ test('cache enforces expiry and memory limits', async () => {
   assert.equal(cache.bytes, 0);
   await cache.put(a, response('too large for cache'));
   assert.equal(await cache.match(a), undefined);
+});
+
+test('picker falls back to the bundled catalogue when the old site is unreachable', async t => {
+  const root = await mkdtemp(join(tmpdir(), 'pdk-snapshot-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  await writeFile(join(root, 'index.html'), '<a href="/uslugi/">S</a><a href="/katalog/">C</a>');
+  await writeFile(join(root, '_headers'), '/*\n  X-Content-Type-Options: nosniff\n');
+  await writeFile(join(root, 'marks.json'), '[{"slug":"bmw","name":"BMW"}]');
+  await mkdir(join(root, 'catalog'));
+  await writeFile(join(root, 'catalog', 'bmw.json'), JSON.stringify({ m: [['3-series-56', '3 Series', [
+    ['0-0', 0, null, [['620/431', '318 TDS 90hp', 90, 115, 190, 240]]],
+    ['2015-0', 2015, null, [['682/493', '316D 116hp', 116, 190, 270, 400]]],
+  ]]] }));
+  // a port nobody listens on: the live read fails at once
+  const dead = createServer();
+  await new Promise(resolve => dead.listen(0, '127.0.0.1', resolve));
+  const deadOrigin = `http://127.0.0.1:${dead.address().port}`;
+  await new Promise(resolve => dead.close(resolve));
+  globalThis.caches.default = new MemoryCache();
+  const app = await makeApp({ DIST_DIR: root, BASE_URL: 'https://preview.example', CATALOG_BASE_URL: deadOrigin });
+  const get = async path => {
+    const r = await app(new Request('https://preview.example/api/live/' + path));
+    return { status: r.status, body: await r.json() };
+  };
+  const brands = await get('brands');
+  assert.equal(brands.status, 200);
+  assert.equal(brands.body.source, 'snapshot');
+  assert.deepEqual(brands.body.data, [{ slug: 'bmw', label: 'BMW' }]);
+  assert.deepEqual((await get('models/bmw')).body.data, [{ slug: '3-series-56', label: '3 Series' }]);
+  assert.deepEqual((await get('years/bmw/3-series-56')).body.data,
+    [{ slug: '0-0', label: 'All' }, { slug: '2015-0', label: '2015 → …' }]);
+  assert.deepEqual((await get('engines/bmw/3-series-56/2015-0')).body.data, [{ slug: '682/493', label: '316D 116hp' }]);
+  const result = await get('result/bmw/3-series-56/2015-0/682/493');
+  assert.deepEqual(result.body.data.hp, [116, 190]);
+  assert.deepEqual(result.body.data.nm, [270, 400]);
+  assert.equal(result.body.data.info.Brand, 'BMW');
+  for (const path of ['models/audi', 'models/..%2f..', 'engines/bmw/3-series-56/1999-0', 'result/bmw/3-series-56/2015-0/1/2']) {
+    assert.equal((await get(path)).status, 502, path);
+  }
 });

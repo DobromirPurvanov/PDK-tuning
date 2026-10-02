@@ -1,5 +1,8 @@
 /**
- * ТРИТЕ КАТЕГОРИИ — леки, камиони, селскостопанска техника.
+ * ТРИТЕ КАТЕГОРИИ — леки, камиони, селскостопанска и индустриална техника.
+ *
+ * The third group also holds construction machinery (JCB, Caterpillar, Doosan,
+ * Hitachi): the catalogue files them with the tractors, so the name says so.
  *
  * Тук е най-големият пропуснат актив на стария сайт: камионите и селскостопанската
  * техника СЪЩЕСТВУВАТ в базата (26 марки), но на стария сайт нямаха нито входна
@@ -116,12 +119,12 @@ export const CATEGORIES: Category[] = [
   {
     slug: 'selskostopanska-tehnika',
     kind: 'селскостопански',
-    name: 'Селскостопанска техника',
-    wallLabel: 'Селскостопански',
-    title: 'Чип тунинг на трактори и земеделска техника | PDK',
+    name: 'Селскостопанска и индустриална техника',
+    wallLabel: 'Селскостопански и индустриални',
+    title: 'Чип тунинг на трактори и индустриална техника | PDK',
     description:
-      'Настройка на софтуера при трактори, комбайни и индустриална техника. John Deere, Claas, New Holland, Fendt, Case, Massey Ferguson, Valtra, Deutz, Same, Steyr.',
-    h1: 'Селскостопанска техника',
+      'Настройка на софтуера при трактори, комбайни и индустриална техника. John Deere, Claas, New Holland, Fendt, Case, Massey Ferguson, JCB, Caterpillar, Doosan, Hitachi.',
+    h1: 'Селскостопанска и индустриална техника',
     lead:
       'Машина, която работи по осемнайсет часа в кампания. Тук печалбата се мери в декари на ден и в литри на декар, не в секунди до сто.',
     gains: [

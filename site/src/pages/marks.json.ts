@@ -17,10 +17,10 @@
 import type { APIRoute } from 'astro';
 import marks from '../data/marks.json';
 
-type Mark = { slug: string };
+type Mark = { slug: string; name: string };
 
 export const GET: APIRoute = () =>
-  new Response(JSON.stringify((marks as Mark[]).map((m) => ({ slug: m.slug }))), {
+  new Response(JSON.stringify((marks as Mark[]).map((m) => ({ slug: m.slug, name: m.name }))), {
     headers: {
       'content-type': 'application/json; charset=utf-8',
       'cache-control': 'public, max-age=86400',
