@@ -161,7 +161,7 @@ export const LEGAL_EN = [
   { href: '/en/privacy/', label: 'Privacy' },
   { href: '/en/terms/', label: 'Terms' },
   { href: '/en/cookies/', label: 'Cookie policy' },
-  { href: '/en/returns/', label: 'Returns and complaints' },
+  { href: '/en/returns/', label: 'Withdrawal and complaints' },
 ] as const;
 
 /**
@@ -176,3 +176,12 @@ export const LEGAL_EN = [
  * ден се разминават.
  */
 export const OUR_EN_PATHS = ROUTES.map((r) => r.en).filter((p) => p.startsWith('/en/'));
+
+/**
+ * The working time from prices.json in English: "2–4 ч" → "2–4 h",
+ * "30 мин" → "30 min". prices.json stays the single source; only the units
+ * and the two worded values are rendered differently.
+ */
+export const timeEn = (t: string): string =>
+  ({ 'по уговорка': 'by arrangement', 'по състояние': 'depends on condition' })[t] ??
+  t.replace(/\s*мин$/, ' min').replace(/\s*ч$/, ' h');

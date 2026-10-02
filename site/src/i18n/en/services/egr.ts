@@ -1,5 +1,5 @@
 import type { Service } from '../../../data/services';
-import { OFFROAD_NOTE_EN } from './index';
+import { OFFROAD_NOTE_EN } from './offroad';
 
 export const egr: Service = {
   slug: 'egr',

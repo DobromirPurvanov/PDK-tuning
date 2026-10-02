@@ -551,6 +551,17 @@ const LEGACY_PAGES = new Map([
   ['tuning/software-repair', '/uslugi/softueren-remont/'],
 ]);
 
+/** the old site's English pages → ours; `''` (/en/) is not here, our /en/ is served directly */
+const LEGACY_PAGES_EN = new Map([
+  ['about-us', '/en/about/'],
+  ['contact', '/en/contact/'],
+  ['contacts', '/en/contact/'],
+  ['privacy-policy', '/en/privacy/'],
+  ['tuning', '/en/services/'],
+  ['tuning/chip-tuning', '/en/services/chip-tuning/'],
+  ['tuning/software-repair', '/en/services/software-repair/'],
+]);
+
 /** порталът на дилърите — стои на стария сървър, не се пренасочва */
 const PORTAL_PATHS = new Set(['login', 'logout', 'sign-up', 'register', 'upload', 'upload-file']);
 
@@ -585,10 +596,19 @@ async function legacyTarget(pathname, env, origin) {
      стария сайт, където имат английски отговор. Пренасочването им се връща на
      етап 6 от `docs/ANGLIYSKI.md` — тогава ще водят към НАШИ английски
      страници, не към български. */
-  if (m[1].toLowerCase() === 'en') return null;
-
   // режем крайната наклонена черта и опашката, за да сравняваме едно и също
   const rest = (m[2] || '').replace(/\/+$/, '');
+
+  /* English: the old site's own English pages now have English successors of
+     ours (stage 6 of docs/ANGLIYSKI.md). Everything else under /en/ (the 110
+     makes, the deep catalogue, the dealer portal) stays with the old site. */
+  if (m[1].toLowerCase() === 'en') {
+    const key = rest.toLowerCase();
+    const page = LEGACY_PAGES_EN.get(key);
+    if (page) return page;
+    if (/^tuning\//.test(key)) return '/en/services/';
+    return null;
+  }
 
   const page = LEGACY_PAGES.get(rest.toLowerCase());
   if (page) return page;
@@ -714,7 +734,18 @@ export default {
          два адреса и индексираният е старият. */
       const to = await legacyTarget(url.pathname, env, url.origin);
       if (to) {
-        return Response.redirect(url.origin + to + url.search, 301);
+        // Relative on purpose: on the VPS `url.origin` is the configured BASE_URL
+        // (www), not the host the visitor is on, and www is still the old site.
+        return new Response(null, { status: 301, headers: { location: to + url.search } });
+      }
+
+      /* Our own English pages (/en/, /en/services/, /en/about/…) live under the
+         same /en/ prefix as the old site's English catalogue. Whatever the build
+         has is ours and is served first; only what we do not have (/en/bmw/…,
+         /en/login) goes on to the old site. */
+      if (takenOver && /^\/en(\/|$)/i.test(url.pathname) && ['GET', 'HEAD'].includes(request.method)) {
+        const own = await env.ASSETS.fetch(request);
+        if (own.status < 400) return own;
       }
 
       return takenOver && LEGACY_PATHS.test(url.pathname)

@@ -4,6 +4,7 @@
  * Типографията е една: мярка около 70 знака, дишащи заглавия, четим сив.
  */
 import Base from './Base.astro';
+import { langOf } from '../i18n';
 
 interface Props {
   title: string;
@@ -16,6 +17,8 @@ interface Props {
   schema?: Record<string, unknown>[];
 }
 const { heading, updated, lead, ...head } = Astro.props;
+// the date label follows the page language; English legal pages pass `updated` too
+const effective = langOf(Astro.url.pathname) === 'en' ? 'Effective from' : 'В сила от';
 ---
 <Base {...head} ogType="article">
   <article class="doc">
@@ -23,7 +26,7 @@ const { heading, updated, lead, ...head } = Astro.props;
       <p class="doc-kick">PDK Tuning</p>
       <h1>{heading}</h1>
       {lead && <p class="doc-lead">{lead}</p>}
-      {updated && <p class="doc-date">В сила от {updated}</p>}
+      {updated && <p class="doc-date">{effective} {updated}</p>}
     </header>
     <div class="doc-body">
       <slot />

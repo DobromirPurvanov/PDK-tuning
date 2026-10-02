@@ -1,0 +1,262 @@
+---
+/**
+ * Privacy policy: the English counterpart of `src/pages/privacy.astro`.
+ *
+ * Same facts, same structure and the same effective date as the Bulgarian page.
+ * The Bulgarian page is the legally binding one; this page says so in its first
+ * paragraph and links to it through the route map, not a hard-coded path.
+ *
+ *
+ * Business data comes from `business.json` via `config/site`. The company no.
+ * and VAT no. are drawn only when they are present there.
+ */
+import Text from '../../layouts/Text.astro';
+import { crumbSchema, bizRef } from '../../lib/seo';
+import { BUSINESS as b } from '../../config/site';
+import { LEGAL_EN, ROUTES } from '../../i18n';
+import { dict } from '../../i18n/ui';
+
+const path = '/en/privacy/';
+const bgPath = ROUTES.find((r) => r.en === path)!.bg;
+const [, terms, cookies, returns] = LEGAL_EN;
+const t = dict('en');
+
+const updated = '4 September 2026';
+const address = `${b.address.streetEn}, ${b.address.cityEn} ${b.address.postalCode}`;
+
+const site = Astro.site!.href.replace(/\/$/, '');
+const schema = [
+  bizRef(site, 'en'),
+  crumbSchema(site, [{ href: '/en/', label: 'Home' }, { href: path, label: 'Privacy policy' }]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    url: `${site}${path}`,
+    name: 'Privacy policy',
+    description: 'How PDK Tuning collects, uses and protects personal data.',
+    inLanguage: 'en',
+    dateModified: '2026-09-04',
+    about: { '@id': `${site}/#business` },
+  },
+];
+---
+<Text
+  title="Privacy policy — PDK Tuning"
+  description="What personal data PDK Tuning collects, on what legal basis, how long it is kept, who receives it and how to exercise your rights under the GDPR and CCPA."
+  heading="Privacy policy"
+  lead="We collect little data and for a clear reason: to answer your enquiry. This page says exactly what, why, for how long and how to stop it."
+  updated={updated}
+  schema={schema}
+>
+  <p class="doc-binding">
+    This English text is provided for convenience and has not been reviewed by a lawyer;
+    the legally binding version is the <a href={bgPath} hreflang="bg">Bulgarian original</a>.
+  </p>
+
+  <h2>1. Who processes the data</h2>
+  <p>
+    The controller of personal data is <strong>{b.legalName}</strong>, a trader operating
+    under the brand {b.name}, with its registered office at {address}.
+  </p>
+  <dl>
+    {b.eik && <><dt>{t.eik} (EIK)</dt><dd>{b.eik}</dd></>}
+    {b.vat && <><dt>{t.vat}</dt><dd>{b.vat}</dd></>}
+    <dt>Correspondence address</dt>
+    <dd>{address}</dd>
+    <dt>Phone</dt>
+    <dd><a href={`tel:${b.phone}`}>{b.phoneIntl}</a></dd>
+    <dt>Email</dt>
+    <dd><a href={`mailto:${b.email}`}>{b.email}</a></dd>
+    <dt>Data protection officer</dt>
+    <dd>none appointed; one is not required for an operation of this size</dd>
+  </dl>
+
+  <h2>2. What data we collect</h2>
+  <h3>Data you give us yourself</h3>
+  <p>The enquiry form on this site has the following fields:</p>
+  <ul>
+    <li><strong>Name</strong> and <strong>phone</strong>: required, because without them we cannot reply;</li>
+    <li><strong>email</strong>: optional, if you prefer a written reply;</li>
+    <li><strong>vehicle</strong> and <strong>service</strong>: so that we can prepare a useful answer;</li>
+    <li><strong>message</strong>: free text. Please do not write anything there about your health,
+      finances or other sensitive matters. We do not need it.</li>
+  </ul>
+  <p>We collect the same data when you call us or write to our email address.</p>
+
+  <h3>Data collected automatically</h3>
+  <ul>
+    <li><strong>Technical request data</strong>: IP address, browser type, time of the request.
+      It comes from the site's protection and from our provider's servers (Cloudflare) and is
+      used only for security and to stop automated abuse.</li>
+    <li><strong>Anonymous statistics</strong>: only if you have agreed to them in the cookie banner.
+      See section 7.</li>
+  </ul>
+  <p>
+    The site shows engine data that is read live from the catalogue on our own older website.
+    This is a technical request from our server to our own site and carries none of your
+    personal data.
+  </p>
+
+  <h2>3. Legal basis and purpose</h2>
+  <table class="tbl">
+    <thead>
+      <tr><th>Purpose</th><th>Data</th><th>Legal basis (Art. 6 GDPR)</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-l="Purpose">Replying to an enquiry and booking an appointment</td>
+        <td data-l="Data">name, phone, email, vehicle, message</td>
+        <td data-l="Basis">Art. 6(1)(b): steps taken at the request of the data subject before entering into a contract</td>
+      </tr>
+      <tr>
+        <td data-l="Purpose">Performing the service and issuing a document</td>
+        <td data-l="Data">name, phone, vehicle details, payment details</td>
+        <td data-l="Basis">Art. 6(1)(b) and (c): contract and legal obligation</td>
+      </tr>
+      <tr>
+        <td data-l="Purpose">Site security, stopping spam</td>
+        <td data-l="Data">IP address, time of the request</td>
+        <td data-l="Basis">Art. 6(1)(f): legitimate interest in keeping the site running</td>
+      </tr>
+      <tr>
+        <td data-l="Purpose">Anonymous visitor statistics</td>
+        <td data-l="Data">statistics cookies</td>
+        <td data-l="Basis">Art. 6(1)(a): your consent, which you can withdraw</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <strong>We do not send marketing messages</strong> based on the data from the form, and we
+    do not use it for profiling or automated decision-making.
+  </p>
+
+  <h2>4. How long we keep it</h2>
+  <ul>
+    <li><strong>An enquiry that did not become an order</strong>: up to 12 months, then it is deleted.</li>
+    <li><strong>Data on a completed service</strong>: 5 years from completion, because of possible
+      claims; accounting documents: 10 years, as required by the Accountancy Act.</li>
+    <li><strong>Security logs</strong>: up to 30 days.</li>
+    <li><strong>Cookie consent</strong>: stored in your browser for up to 12 months or until you
+      change it.</li>
+  </ul>
+
+  <h2>5. Who we pass it to</h2>
+  <p>We do not sell or rent out data. We use the following providers, which process data on our behalf:</p>
+  <table class="tbl">
+    <thead><tr><th>Provider</th><th>What for</th><th>Where</th></tr></thead>
+    <tbody>
+      <tr>
+        <td data-l="Provider">Cloudflare, Inc.</td>
+        <td data-l="What for">hosting the site, protection against abuse</td>
+        <td data-l="Where">EU / USA, under standard contractual clauses</td>
+      </tr>
+      <tr>
+        <td data-l="Provider">Resend (email delivery)</td>
+        <td data-l="What for">carries the enquiry from the form to the workshop's inbox</td>
+        <td data-l="Where">EU / USA, under standard contractual clauses</td>
+      </tr>
+      <tr>
+        <td data-l="Provider">Google Ireland Ltd.</td>
+        <td data-l="What for">visitor statistics, <strong>only with your consent</strong></td>
+        <td data-l="Where">EU, with possible transfer to the USA under standard contractual clauses</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    Data is also passed to public authorities where the law requires it, for example during
+    an inspection or at the request of a court.
+  </p>
+
+  <h2>6. How we protect it</h2>
+  <p>
+    The site runs over HTTPS only. Enquiries travel encrypted and go straight to the workshop's
+    inbox; they are not stored in a database on the site. Only the staff who answer customers
+    have access to that inbox.
+  </p>
+
+  <h2>7. Cookies</h2>
+  <p>
+    The site works entirely without tracking cookies. The first page load starts nothing until
+    you make a choice in the banner. If you decline, the statistics are not loaded at all. They
+    are not loaded and then told not to count.
+  </p>
+  <table class="tbl">
+    <thead><tr><th>Cookie / record</th><th>What for</th><th>Duration</th></tr></thead>
+    <tbody>
+      <tr>
+        <td data-l="Record"><code>pdk-consent</code> (in browser storage)</td>
+        <td data-l="What for">remembers your cookie choice so that we do not ask again</td>
+        <td data-l="Duration">up to 12 months</td>
+      </tr>
+      <tr>
+        <td data-l="Record"><code>_ga</code>, <code>_ga_*</code></td>
+        <td data-l="What for">anonymous statistics (Google Analytics), only with consent</td>
+        <td data-l="Duration">up to 14 months</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    You can change your decision at any time with the <strong>{t.cookieSettings}</strong> link
+    at the bottom of every page. If you decline, cookies already set are deleted.
+  </p>
+  <p>
+    The full list by category, with providers and exact durations, is in the separate
+    <a href={cookies.href}>cookie policy</a>.
+  </p>
+
+  <h2>8. Your rights</h2>
+  <p>Under the General Data Protection Regulation (GDPR) you have the right to request:</p>
+  <ul>
+    <li><strong>access</strong>: what data we hold about you;</li>
+    <li><strong>rectification</strong> of inaccurate data;</li>
+    <li><strong>erasure</strong> (the "right to be forgotten"), where there is no legal basis for keeping it;</li>
+    <li><strong>restriction</strong> of processing;</li>
+    <li><strong>portability</strong>: receiving your data in a machine-readable format;</li>
+    <li><strong>objection</strong> to processing based on legitimate interest;</li>
+    <li><strong>withdrawal of consent</strong> at any time, without affecting processing carried out before the withdrawal.</li>
+  </ul>
+  <p>
+    Write to <a href={`mailto:${b.email}`}>{b.email}</a> or call us on
+    <a href={`tel:${b.phone}`}>{b.phoneIntl}</a>. We reply within one month.
+  </p>
+  <p>
+    If you believe your rights have been infringed, you can lodge a complaint with the
+    <strong>Commission for Personal Data Protection (KZLD)</strong>, 2 Prof. Tsvetan Lazarov Blvd.,
+    Sofia 1592, <a href="https://www.cpdp.bg/" target="_blank" rel="noopener noreferrer">cpdp.bg</a>.
+  </p>
+
+  <h2>9. For California residents (CCPA / CPRA)</h2>
+  <p>
+    If you are a resident of the State of California, you have additional rights: to know what
+    personal data we collect and who we share it with, to request a copy or deletion, to request
+    correction, and not to be treated differently for exercising these rights.
+  </p>
+  <p>
+    <strong>We do not sell or share personal data</strong> within the meaning of the CCPA/CPRA,
+    neither for money nor for cross-context behavioural advertising. That is why the site has no
+    "Do Not Sell or Share My Personal Information" link: there is nothing to opt out of. A CCPA
+    request is sent to the same email address, stating your state of residence.
+  </p>
+
+  <h2>10. Children</h2>
+  <p>
+    Our services are for adults. We do not knowingly collect data from anyone under 16. If we
+    find such data, we delete it.
+  </p>
+
+  <h2>11. Changes to this policy</h2>
+  <p>
+    When the policy changes, we publish the new version here and update the date at the top. If
+    the change is significant, we also announce it on the home page.
+  </p>
+  <p>
+    See also the <a href={terms.href}>terms and conditions</a>, the
+    <a href={cookies.href}>cookie policy</a> and the
+    <a href={returns.href}>withdrawal and complaints</a> page.
+  </p>
+</Text>
+
+<style is:global>
+/* The binding-version note opens the body. */
+.doc-body .doc-binding{color:var(--ink-3);font-style:italic}
+</style>

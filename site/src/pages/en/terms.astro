@@ -1,0 +1,282 @@
+---
+/**
+ * Terms and conditions: the English counterpart of `src/pages/terms.astro`.
+ *
+ * Same facts, same structure and the same effective date as the Bulgarian page,
+ * including the awkward parts: the manufacturer's warranty, the limits of
+ * liability and the fact that disabling emission systems is done ONLY for
+ * machines that are not used on public roads.
+ *
+ * The Bulgarian page is the legally binding one; the first paragraph says so.
+ *
+ * The electric vehicles section has no English counterpart yet, so it is named
+ * here without a link (no English page may link to a Bulgarian address).
+ */
+import Text from '../../layouts/Text.astro';
+import { crumbSchema, bizRef } from '../../lib/seo';
+import { BUSINESS as b, portalUrl } from '../../config/site';
+import { LEGAL_EN, ROUTES } from '../../i18n';
+
+const path = '/en/terms/';
+const bgPath = ROUTES.find((r) => r.en === path)!.bg;
+const [privacy, , , returns] = LEGAL_EN;
+const portal = portalUrl('en');
+
+const updated = '11 September 2026';
+const address = `${b.address.streetEn}, ${b.address.cityEn} ${b.address.postalCode}`;
+
+const site = Astro.site!.href.replace(/\/$/, '');
+const schema = [
+  bizRef(site, 'en'),
+  crumbSchema(site, [{ href: '/en/', label: 'Home' }, { href: path, label: 'Terms and conditions' }]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    url: `${site}${path}`,
+    name: 'Terms and conditions',
+    description: 'The terms on which PDK Tuning provides its services and on which the site is used.',
+    inLanguage: 'en',
+    dateModified: '2026-09-11',
+    about: { '@id': `${site}/#business` },
+  },
+];
+---
+<Text
+  title="Terms and conditions — PDK Tuning"
+  description="Terms for using the site and the chip tuning, ECU software repair and dyno services: warranty, liability, legal limits and how disputes are handled."
+  heading="Terms and conditions"
+  lead="Who runs the site, what we take on, what we do not, and what we expect from you. Short and without small print."
+  updated={updated}
+  schema={schema}
+>
+  <p class="doc-binding">
+    This English text is provided for convenience and has not been reviewed by a lawyer;
+    the legally binding version is the <a href={bgPath} hreflang="bg">Bulgarian original</a>.
+  </p>
+
+  <h2>1. Who we are</h2>
+  <p>
+    {/* the company no. joins the sentence only when it exists; otherwise the sentence ends at the address */}
+    The site is run by <strong>{b.legalName}</strong>, trading as {b.name},
+    {address}{b.eik && <>, company no. (EIK) {b.eik}</>}.
+    Contact: <a href={`tel:${b.phone}`}>{b.phoneIntl}</a>,
+    <a href={`mailto:${b.email}`}>{b.email}</a>.
+  </p>
+
+  <h2>2. What these terms cover</h2>
+  <p>
+    These terms apply to the use of the site and to the services we arrange through it. By
+    using the site you accept what is written here. If you disagree with something, do not use
+    it and call us instead; things get sorted out faster on the phone.
+  </p>
+
+  <h2>3. Information on the site</h2>
+  <ul>
+    <li>
+      <strong>Catalogue figures are indicative.</strong> The power and torque values are read
+      from our database and show a typical result for the engine in question. The actual result
+      depends on the condition of the specific car, the fuel and the hardware.
+    </li>
+    <li>
+      <strong>Prices are starting prices ("from") and are not an offer</strong> in the legal
+      sense. The exact price is given after an inspection or diagnostics and is confirmed before
+      work begins.
+    </li>
+    <li>
+      <strong>The enquiry form is not an order</strong>; it is an invitation for us to get in
+      touch. The only place on the site where you can order and pay is the electric vehicles
+      section (currently available in Bulgarian only); prices there are final and points 4.1 to
+      4.5 apply. Everywhere else on the site, prices are starting prices ("from") and are not an
+      offer.
+    </li>
+  </ul>
+
+  <h2>4. Booking, orders from the site, withdrawal and complaints</h2>
+  <p>
+    Appointments are made by phone or after an enquiry through the site. If you cannot come,
+    call us. The dyno and the work bay are reserved for you, and an empty slot is lost for both
+    sides.
+  </p>
+  <p>
+    When the contract is concluded at a distance (by phone or through the form) or off business
+    premises, as a consumer you have the <strong>right to withdraw within 14 days</strong> without
+    giving a reason. There is one exception, and it matters: if you asked for the service to
+    start within that period and it has been <strong>fully performed</strong>, the right of
+    withdrawal no longer applies. The full procedure, with the deadlines, the form, the
+    exceptions and how to file a complaint, is set out on the
+    <a href={returns.href}>withdrawal and complaints</a> page.
+  </p>
+
+  <h3>4.1. What is ordered from the site</h3>
+  <p>
+    Through the electric vehicles section you order a package of <strong>two different
+    things</strong>, and the difference matters for your rights:
+  </p>
+  <ul>
+    <li>
+      <strong>The PDK Flasher device</strong>: a physical item that is delivered to you and
+      remains yours.
+    </li>
+    <li>
+      <strong>Tuning software for your car</strong>: digital content made from the data read from
+      your ECU and delivered through the app. It is not supplied on a physical medium.
+    </li>
+  </ul>
+  <p>
+    Prices in the section are <strong>final, in euro, including VAT</strong>, and include
+    delivery to an address in Bulgaria. For delivery outside the country, we agree the terms
+    before confirming the order. A model without a published price cannot be bought with a
+    button; you send an enquiry for it and the price is given after review.
+  </p>
+
+  <h3>4.2. When the order becomes a contract</h3>
+  <p>
+    An order sent from the site is <strong>your offer</strong>, not a concluded contract. The
+    contract is concluded when we <strong>confirm</strong> it by phone or in writing. We also do
+    this to check that the model and year match your car: the wrong ECU means a file that does
+    not work.
+  </p>
+
+  <h3>4.3. Payment</h3>
+  <p>
+    Payment is by <strong>card or PayPal</strong>. It is processed by the payment service
+    provider; we do not see or store your card details. If online payment is not available at
+    the time of the order, the page says so and payment is arranged when the order is confirmed.
+  </p>
+
+  <h3>4.4. Delivery</h3>
+  <p>
+    The device is sent by courier to the address you give, usually within <strong>3 working
+    days</strong> of the order being confirmed. The risk of loss or damage passes to you when you
+    receive it. The software is not sent by courier; it arrives in the app after you have read
+    the original file from the car.
+  </p>
+
+  <h3>4.5. Withdrawal from an order placed on the site</h3>
+  <p>
+    For the <strong>device</strong>, you have 14 days from receiving it. For the
+    <strong>software</strong>, the right lapses if you have given express consent for preparation
+    to start immediately and have confirmed that you thereby lose the right of withdrawal
+    (Article 57, item 13 of the Consumer Protection Act (ZZP)). This consent is given with a
+    separate tick box when you order and is <strong>never pre-ticked</strong>. If you do not
+    give it, we wait for the period to expire before starting work on the file. Details are on
+    the <a href={returns.href}>withdrawal and complaints</a> page, point 2.5.
+  </p>
+
+  <h2>5. The services</h2>
+  <h3>5.1. Before any work</h3>
+  <p>
+    Every car goes through diagnostics. If the engine, turbocharger, injectors, clutch or any
+    other part is not in a condition to take the change, we say so and do not write a file.
+    Refusing to work on an unhealthy car is not poor service; it is how we keep it from getting
+    worse.
+  </p>
+  <h3>5.2. The original software</h3>
+  <p>
+    The factory file is read and archived before any change. Going back to it is possible at
+    any time. We keep the archive for the period set out in the
+    <a href={privacy.href}>privacy policy</a>.
+  </p>
+  <h3>5.3. Legal limits</h3>
+  <p>
+    <strong>Exhaust after-treatment systems (DPF/FAP, EGR, SCR/AdBlue) are disabled only on
+    machines that are not used on public roads</strong>: competition, agricultural and
+    industrial equipment. For a car that is driven on the road, we work on the repair:
+    diagnostics, cleaning, replacing a sensor or a filter. The customer is responsible for
+    truthfully declaring what the machine is used for.
+  </p>
+  <h3>5.4. The manufacturer's warranty</h3>
+  <p>
+    Changing the factory software may give an authorised dealer grounds to refuse warranty
+    repairs on the engine and transmission. We warn about this before any work; the decision is
+    the car owner's.
+  </p>
+
+  <h2>6. What we expect from you</h2>
+  <ul>
+    <li>That you own the car or have the owner's consent.</li>
+    <li>That you tell us about known faults, earlier changes to the software and replaced hardware.</li>
+    <li>That the car is in working order, roadworthy and has enough fuel for a dyno run.</li>
+    <li>That you do not ask for work that breaks the law.</li>
+  </ul>
+
+  <h2>7. Warranty on our work</h2>
+  <p>
+    We guarantee that the file we write works as agreed. If a problem appears after our work
+    and is caused by it, we fix it at no extra charge or restore the original software. The
+    warranty does not cover damage from wear, poor fuel, later work by another workshop, or
+    hardware changes made without our knowledge.
+  </p>
+
+  <h2>8. Liability</h2>
+  <p>
+    We are liable for damage caused through our fault, up to the price paid for the service in
+    question. We are not liable for lost profits, indirect damage, the consequences of incorrect
+    information given by the customer, or events beyond our control (force majeure). These
+    limits do not apply in cases of intent, gross negligence, or harm to life and health.
+  </p>
+
+  <h2>9. The partner file portal</h2>
+  <p>
+    Partner workshops upload files through a separate
+    <a href={portal} target="_blank" rel="noopener noreferrer">portal</a> with its own
+    registration. The terms published in the portal itself apply to it.
+  </p>
+
+  <h2>10. Acceptable use of the site</h2>
+  <p>The following are not allowed:</p>
+  <ul>
+    <li>automated downloading of content (scraping) that puts load on the site or copies the catalogue;</li>
+    <li>attempts to break in, get around the protection or overload the service;</li>
+    <li>sending spam, advertising or malicious code through the form;</li>
+    <li>using the brand, texts and photos without our written consent.</li>
+  </ul>
+  <p>
+    The content of the site (texts, photos, layout and catalogue data) is our property or is
+    used with permission. Car manufacturers' logos belong to the respective manufacturers and
+    are shown only to identify the make in question.
+  </p>
+
+  <h2>11. Personal data</h2>
+  <p>
+    How we process your data is set out in the <a href={privacy.href}>privacy policy</a>.
+  </p>
+
+  <h2>12. Changes</h2>
+  <p>
+    We may change these terms. The new version applies from the moment it is published here;
+    for a service already agreed, the terms in force on the day it was agreed apply.
+  </p>
+
+  <h2>13. Governing law and disputes</h2>
+  <p>
+    Bulgarian law applies. We try to settle any dispute by talking first. If that does not
+    work, the court at our registered office has jurisdiction; if you are a consumer, the court
+    for your current address has jurisdiction, as the law requires.
+  </p>
+  <p>
+    As a consumer, you can refer the matter to the <strong>Commission for Consumer Protection
+    (KZP)</strong>, 4A Slaveykov Sq., Sofia 1000, tel. 0700 111 22,
+    <a href="https://kzp.bg/" target="_blank" rel="noopener noreferrer">kzp.bg</a>.
+  </p>
+  <p>
+    For alternative dispute resolution (ADR), the competent bodies are the
+    <strong>conciliation committees at the KZP</strong>:
+    <a href="https://kzp.bg/pomiritelna-komisiya" target="_blank" rel="noopener noreferrer">kzp.bg/pomiritelna-komisiya</a>.
+    The register of all recognised bodies in the EU is at
+    <a href="https://consumer-redress.ec.europa.eu/dispute-resolution-bodies_en" target="_blank" rel="noopener noreferrer">consumer-redress.ec.europa.eu</a>.
+  </p>
+  {/*
+    A LINK TO THE EUROPEAN COMMISSION'S ODR PLATFORM USED TO STAND HERE; IT WAS REMOVED ON PURPOSE.
+    Regulation (EU) 2024/3228 repealed Regulation (EU) No 524/2013: complaints stopped being
+    accepted on 20.03.2025, the platform was shut down on 20.07.2025 and the obligation to link
+    to it went with it. Keeping the link is not just a dead link: pointing to a redress route
+    that no longer exists reads as a misleading commercial practice. Do not bring it back.
+    Directive 2013/11/EU (ADR) remains in force, hence the KZP conciliation committees above.
+  */}
+</Text>
+
+<style is:global>
+/* The binding-version note opens the body. */
+.doc-body .doc-binding{color:var(--ink-3);font-style:italic}
+</style>

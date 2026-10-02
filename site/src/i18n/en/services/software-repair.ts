@@ -3,65 +3,26 @@ import type { Service } from '../../../data/services';
 export const softwareRepair: Service = {
   slug: 'software-repair',
   name: 'ECU Software Repair',
-  kicker: 'ECU recovery',
+  kicker: 'Recovery',
   icon: 'rescue',
   priceKey: 'softueren-remont',
-  title: 'ECU software repair and recovery | PDK Tuning',
+  title: 'ECU Software Repair and Recovery | PDK Tuning',
   description:
-    'ECU no longer responding after an interrupted write, failed update or damaged software? We restore the correct software for its exact hardware number.',
+    'A control unit that stopped responding after an interrupted or failed software write. We find the cause and check whether the unit can be recovered.',
+  heading: 'Control Unit Software Repair',
   lead:
-    'An ECU that stopped responding after a failed write is the work other workshops send on to us.',
-  short: 'We recover an ECU that no longer responds after a failed write.',
-  fits: [
-    'An interrupted write caused by low voltage or a disconnected cable',
-    'An ECU left unusable after a failed workshop update',
-    'A car that will not start after software work',
-    'Original software that is damaged or missing',
-  ],
-  steps: [
-    {
-      t: 'Assessing the state',
-      d: 'We establish whether the ECU responds at all, by which protocol and at what level.',
-    },
-    {
-      t: 'Direct access',
-      d: 'When the ECU cannot be reached through the diagnostic connector, we work directly on the circuit board.',
-    },
-    {
-      t: 'Writing the software',
-      d: 'We restore correct software for the exact hardware number, not an approximate match.',
-    },
-    {
-      t: 'Adaptations',
-      d: 'After writing, the ECU must learn the car again: immobiliser, injectors, throttle and keys.',
-    },
-  ],
+    'If a control unit has stopped responding after an interrupted or failed software write, we can check the cause and whether it can be recovered. Send us details of the car, the control unit and what happened during the write.',
+  short: 'A control unit that stopped responding after a failed write. We check whether it can be recovered.',
+  fits: [],
+  steps: [],
   body: [
     {
-      h: 'How software can stop an ECU',
+      h: 'Why a control unit can stop responding after a write',
       p: [
-        'Writing the ECU memory takes minutes and needs stable voltage throughout. A flat battery midway through, a disconnected cable or a power cut leaves the software only half written. The ECU stops responding and the car will not start.',
-        'This is almost never a hardware fault. The circuit board is sound; its contents are missing. That is why we do a correct write instead of fitting a replacement ECU, which can often cost ten times as much.',
+        'Writing software needs a stable power supply and an uninterrupted connection to the control unit. If the process is interrupted, for example by a voltage drop or a lost connection, the software may be left only partly written. The unit can then stop responding and the car may not start.',
+        'The cause is established through diagnostics. In some cases the unit can be recovered by writing the software again; in others it needs further repair. We therefore check the unit first, before telling you whether it can be recovered and what it will cost.',
       ],
     },
-    {
-      h: 'The hardware number matters',
-      p: [
-        'Software must match the exact hardware number on the circuit board, not merely the car model. Writing a similar file can produce an ECU that starts the car but works incorrectly, sometimes for months before the fault becomes clear.',
-        'We therefore read the number from the circuit board itself rather than guessing it from the year and engine.',
-      ],
-    },
-    {
-      h: 'Adaptations after the write',
-      p: [
-        'A recovered ECU knows nothing about its particular car: it does not recognise the keys, injector corrections or the throttle zero point. Those settings are entered after the write. An ECU returned without adaptations works, but not properly.',
-      ],
-    },
-  ],
-  facts: [
-    { k: 'Usual cause', v: 'an interrupted write with a weak battery' },
-    { k: 'Almost never', v: 'a hardware fault on the circuit board' },
-    { k: 'After the write', v: 'adaptations: keys, injectors, throttle' },
   ],
   related: ['diagnostics', 'dtc-errors', 'chip-tuning'],
 };

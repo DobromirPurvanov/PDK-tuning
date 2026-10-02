@@ -16,6 +16,7 @@ import Page from '../../layouts/Page.astro';
 import { SERVICES_EN } from '../../i18n/en/services/index';
 import prices from '../../data/prices.json';
 import { crumbSchema, bizRef } from '../../lib/seo';
+import { timeEn } from '../../i18n';
 
 const P = prices.items as Record<string, { from: number; time: string }>;
 const site = Astro.site!.href.replace(/\/$/, '');
@@ -56,7 +57,7 @@ const schema = [bizRef(site, 'en'), crumbSchema(site, [{ href: '/en/', label: 'H
               <tr>
                 <td data-l="Service"><a href={`/en/services/${s.slug}/`}>{s.name}</a></td>
                 <td data-l="From">{p ? <b>€{p.from}</b> : <span class="fill">on inspection</span>}</td>
-                <td data-l="Time">{p ? p.time : '—'}</td>
+                <td data-l="Time">{p ? timeEn(p.time) : '—'}</td>
               </tr>
             ))}
           </tbody>

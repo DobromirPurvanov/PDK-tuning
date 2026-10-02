@@ -1,0 +1,218 @@
+---
+/**
+ * English home page: the same hero, live picker, services, questions and
+ * contact block as the Bulgarian home (src/pages/index.astro), with English
+ * text. Layout and motion come from HomeShell, so the two cannot drift apart.
+ *
+ * Left out on purpose:
+ *  - the brand wall: the English pages of the 110 makes stay on the old site
+ *    (see the note above NAV_EN in src/i18n/index.ts), and the picker below
+ *    already reads the same catalogue;
+ *  - the electric-car band and the articles: both exist only in Bulgarian.
+ */
+import Base from '../../layouts/Base.astro';
+import Picker from '../../components/Picker.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import HomeShell from '../../components/HomeShell.astro';
+import business from '../../data/business.json';
+import prices from '../../data/prices.json';
+import marks from '../../data/marks.json';
+import { ICONS } from '../../data/services';
+import { FEATURED_EN, SERVICES_EN } from '../../i18n/en/services/index';
+import { FAQ_HOME_EN } from '../../i18n/en/faq';
+import { bizRef } from '../../lib/seo';
+import { timeEn } from '../../i18n';
+
+type Mark = { slug: string; kind: string };
+const all = marks as Mark[];
+const count = (kind: string) => all.filter((m) => m.kind === kind).length;
+const coverage = [
+  { label: 'Cars', n: count('леки') },
+  { label: 'Trucks', n: count('камиони') },
+  { label: 'Agricultural and industrial', n: count('селскостопански') },
+];
+
+const P = prices.items as Record<string, { from: number; time: string }>;
+const b = business;
+const site = Astro.site!.href.replace(/\/$/, '');
+
+const schema = [
+  bizRef(site, 'en'),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${site}/en/#website`,
+    url: `${site}/en/`,
+    name: `${b.name}, chip tuning in Varna`,
+    inLanguage: 'en',
+    publisher: { '@id': `${site}/#business` },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    inLanguage: 'en',
+    mainEntity: FAQ_HOME_EN.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+
+const hoursText = b.hours.map((h) => ({
+  d: h.days.length > 1 ? `${h.days[0]} – ${h.days[h.days.length - 1]}` : h.days[0],
+  t: `${h.opens} – ${h.closes}`,
+}));
+---
+
+<Base
+  title="PDK Tuning, chip tuning and ECU repairs in Varna"
+  description="Chip tuning measured on our own dyno, plus DPF, EGR and AdBlue repairs in Varna. Choose your engine and see the real figures before and after."
+  schema={schema}
+>
+  <Fragment slot="head">
+    <link rel="preload" as="image" href="/img/pdk-hero2.webp" fetchpriority="high" />
+  </Fragment>
+
+<section class="hero">
+  <div class="shot">
+    <video id="shot" poster="/img/pdk-hero2.webp" muted loop playsinline preload="none"
+           width="1470" height="630" aria-hidden="true"></video>
+  </div>
+  <div class="smoke" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="stagelines" aria-hidden="true"></div>
+  <div class="sweep" aria-hidden="true"></div>
+  <div class="hud" aria-hidden="true">
+    <span class="cn tl"></span><span class="cn tr"></span><span class="cn bl"></span><span class="cn br"></span>
+    <div class="ticks"></div>
+  </div>
+
+  <div class="inner">
+    <div class="left">
+      <div class="live"><i class="dot"></i><span>PDK Tuning // Varna // {new Date().getFullYear() - b.yearsExperience}</span></div>
+
+      <div>
+        <p class="eyebrow">Every car has potential</p>
+        <h1><span class="lead">We know how to</span><span class="out">unlock it</span></h1>
+        <p class="sub">Analysis · Calibration · Optimisation, measured on our own dyno</p>
+      </div>
+
+      <div class="power">
+        <div class="p-head">
+          <span>Stock <b>190</b></span>
+          <span class="p-mid">BMW 320d · 2015–2019</span>
+          <span>PDK <b id="gnum">190</b></span>
+        </div>
+        <div class="p-bar"><i id="gval"></i></div>
+      </div>
+
+      <div class="cta">
+        <a class="circle" href="#picker">
+          <i><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i>
+          <b>Choose your car</b>
+        </a>
+        <a class="tel" href={`tel:${b.phone}`}><b>{b.phoneIntl}</b></a>
+      </div>
+    </div>
+
+    <div class="deck">
+      <div class="cell">
+        <span class="id">001 // Power</span>
+        <div class="row"><b class="cell-val" id="hHp" data-to="30">+0</b><span class="unit">hp</span><span class="track"><i></i></span></div>
+      </div>
+      <div class="cell">
+        <span class="id">002 // Torque</span>
+        <div class="row"><b class="cell-val" id="hNm" data-to="40">+0</b><span class="unit">Nm</span><span class="track"><i style="width:74%"></i></span></div>
+      </div>
+      <div class="cell">
+        <span class="id">003 // Coverage</span>
+        {coverage.map((c) => (
+          <div class="kv"><span>{c.label}</span><span><b>{c.n}</b> makes</span></div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<Picker />
+
+{SERVICES_EN.length > 0 && (
+  <section class="srv" id="services">
+    <div class="in">
+      <div class="top">
+        <h2>Chip tuning<br />and ECU repairs.</h2>
+        <p class="note">Diagnostics come before any file. If the fault is a sensor, we tell you and write nothing.</p>
+      </div>
+      <div class="tiles">
+        {FEATURED_EN.map((s) => (
+          <a class="tile" href={`/en/services/${s.slug}/`}>
+            <span class="wash"></span>
+            <div class="body">
+              <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><Fragment set:html={ICONS[s.icon]} /></svg></span>
+              <div>
+                <span class="lab">{s.kicker}</span>
+                <h3>{s.name}</h3>
+                <p>{s.short}<br />{s.priceKey && P[s.priceKey] && <><b>from €{P[s.priceKey].from}</b> · {timeEn(P[s.priceKey].time)}</>}</p>
+                <span class="tile-go">See the service →</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+      <p class="srv-more"><a href="/en/services/">All {SERVICES_EN.length} services →</a></p>
+    </div>
+  </section>
+)}
+
+<section class="faq" id="faq">
+  <div class="in">
+    <div class="top">
+      <h2>The questions<br />you ask us.</h2>
+      <p class="note">Short answers. If yours is not here, call us.</p>
+    </div>
+    <div class="qa">
+      {FAQ_HOME_EN.map((f, i) => (
+        <details name="faq" open={i === 0}>
+          <summary>
+            <h3>{f.q}</h3>
+            <i aria-hidden="true"></i>
+          </summary>
+          <div class="ans"><p>{f.a}</p></div>
+        </details>
+      ))}
+    </div>
+    <p class="srv-more"><a href="/en/faq/">All questions and answers →</a></p>
+  </div>
+</section>
+
+<section class="cnt" id="contact">
+  <div class="in">
+    <div class="cnt-info">
+      <h2>Book a slot.</h2>
+      <p class="note">Write or call. We reply within the working day.</p>
+
+      <dl class="nas-dl">
+        <dt>Address</dt>
+        <dd>
+          <a href={b.social.maps} target="_blank" rel="noopener noreferrer">
+            {b.address.streetEn}, {b.address.cityEn} {b.address.postalCode}
+          </a>
+        </dd>
+        <dt>Phone</dt>
+        <dd><a href={`tel:${b.phone}`}>{b.phoneIntl}</a></dd>
+        <dt>Email</dt>
+        <dd><a href={`mailto:${b.email}`}>{b.email}</a></dd>
+        <dt>Opening hours</dt>
+        <dd>
+          {hoursText.map((h) => <span class="nas-hours"><b>{h.d}</b>{h.t}</span>)}
+          <span class="nas-hours"><b>Sunday</b>closed</span>
+        </dd>
+      </dl>
+    </div>
+
+    <ContactForm />
+  </div>
+</section>
+
+<HomeShell />
+</Base>

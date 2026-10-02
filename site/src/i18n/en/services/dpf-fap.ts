@@ -1,5 +1,5 @@
 import type { Service } from '../../../data/services';
-import { OFFROAD_NOTE_EN } from './index';
+import { OFFROAD_NOTE_EN } from './offroad';
 
 export const dpfFap: Service = {
   slug: 'dpf-fap',
@@ -10,7 +10,7 @@ export const dpfFap: Service = {
   featured: true,
   title: 'DPF and FAP Filter Repair in Varna | PDK Tuning',
   description:
-    'A blocked particulate filter is rarely the root cause. We diagnose the pressure sensor, hoses and engine first. In about one third of cases, it is a €40 sensor.',
+    'A blocked particulate filter is rarely the root cause. We check the pressure sensor, hoses and engine first. In about one third of cases, it is a €40 sensor.',
   lead:
     'A blocked filter is almost never the root cause. Before discussing the filter itself, we find what blocked it.',
   short:

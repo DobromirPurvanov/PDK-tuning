@@ -1,0 +1,288 @@
+---
+/**
+ * Right of withdrawal and complaints: the English counterpart of
+ * `src/pages/otkaz-i-reklamacii.astro`.
+ *
+ * Two different rights that are routinely confused. Withdrawal is the 14-day
+ * right for distance and off-premises contracts (Art. 50 ZZP, Directive
+ * 2011/83/EU), with the exception in Art. 57, item 1 for a service fully
+ * performed with prior express consent. That exception is the one that matters
+ * for this business: the car is left and the work is done the same day.
+ * A complaint is the separate right under Art. 123 et seq. ZZP.
+ *
+ * Same facts, same structure and the same effective date as the Bulgarian page.
+ * The Bulgarian page is the legally binding one; the first paragraph says so.
+ */
+import Text from '../../layouts/Text.astro';
+import { crumbSchema, bizRef } from '../../lib/seo';
+import { BUSINESS as b } from '../../config/site';
+import { LEGAL_EN, ROUTES } from '../../i18n';
+import { dict } from '../../i18n/ui';
+
+const path = '/en/returns/';
+const bgPath = ROUTES.find((r) => r.en === path)!.bg;
+const [, terms] = LEGAL_EN;
+const t = dict('en');
+
+const updated = '11 September 2026';
+const address = `${b.address.streetEn}, ${b.address.cityEn} ${b.address.postalCode}`;
+
+const site = Astro.site!.href.replace(/\/$/, '');
+const schema = [
+  bizRef(site, 'en'),
+  crumbSchema(site, [{ href: '/en/', label: 'Home' }, { href: path, label: 'Withdrawal and complaints' }]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    url: `${site}${path}`,
+    name: 'Right of withdrawal and complaints',
+    description: 'The statutory 14-day withdrawal period for distance contracts, when it lapses and how to file a complaint.',
+    inLanguage: 'en',
+    dateModified: '2026-09-11',
+    about: { '@id': `${site}/#business` },
+  },
+];
+---
+<Text
+  title="Withdrawal and complaints — PDK Tuning"
+  description="When the 14-day right of withdrawal applies and when it lapses, how to file a complaint and how soon we refund. With a model withdrawal form and address."
+  heading="Withdrawal and complaints"
+  lead="Two different rights that are often confused: withdrawal means “I have changed my mind”, a complaint means “the work is not right”. This page says which one applies when."
+  updated={updated}
+  schema={schema}
+>
+  <p class="doc-binding">
+    This English text is provided for convenience and has not been reviewed by a lawyer;
+    the legally binding version is the <a href={bgPath} hreflang="bg">Bulgarian original</a>.
+  </p>
+
+  <h2>1. Who the other party is</h2>
+  <p>
+    <strong>{b.legalName}</strong>, a trader operating under the brand {b.name}, {address}.
+  </p>
+  <dl>
+    {b.eik && <><dt>{t.eik} (EIK)</dt><dd>{b.eik}</dd></>}
+    <dt>Address for withdrawal and complaints</dt>
+    <dd>{address}</dd>
+    <dt>Phone</dt>
+    <dd><a href={`tel:${b.phone}`}>{b.phoneIntl}</a></dd>
+    <dt>Email</dt>
+    <dd><a href={`mailto:${b.email}`}>{b.email}</a></dd>
+  </dl>
+
+  <h2>2. Right of withdrawal: 14 days</h2>
+  <p>
+    When the contract is concluded <strong>at a distance</strong> (by phone, through the form on
+    the site or by email) or <strong>off business premises</strong>, as a consumer you have the
+    right to withdraw within <strong>14 days</strong>, without paying compensation and without
+    giving a reason. The legal basis is Article 50 of the Consumer Protection Act (ZZP).
+  </p>
+  <p>
+    For a service, the period runs from the day the contract is concluded. If you have ordered
+    goods (a part, for example), it runs from the day you receive them.
+  </p>
+
+  <h3>2.1. When the right of withdrawal LAPSES</h3>
+  <p>
+    This is the most important part, and we state it plainly instead of hiding it in small print.
+  </p>
+  <ul>
+    <li>
+      <strong>The service has been fully performed.</strong> If you asked for the work to start
+      before the 14 days were up and it has been completed, the right of withdrawal lapses
+      (Article 57, item 1 ZZP). In practice this covers almost every job we do: the car is left
+      with us and the file is written the same day.
+    </li>
+    <li>
+      <strong>The work has started but is not finished.</strong> You can then withdraw, but you
+      owe a <strong>proportionate part</strong> of the price for the work already done.
+    </li>
+    <li>
+      <strong>Goods or services made to order.</strong> A file written for the specific ECU of
+      your specific car is personalised by its nature.
+    </li>
+  </ul>
+  <p>
+    Before we start work within the 14-day period, we will ask for your <strong>express
+    consent</strong> and tell you that once the work has been performed the right of withdrawal
+    lapses. Consent is given in writing or on a durable medium, not by silence.
+  </p>
+
+  <h3>2.2. How to exercise it</h3>
+  <p>
+    An unambiguous statement made before the period ends is enough: a letter, an email or the
+    completed form. It is up to you to prove that you sent it in time, so we recommend email or
+    a letter with proof of delivery.
+  </p>
+  <p>
+    Send it to <a href={`mailto:${b.email}`}>{b.email}</a> or to the address in point 1. We
+    confirm receipt without delay.
+  </p>
+
+  <h3>2.3. Model withdrawal form</h3>
+  <p>Fill it in only if you wish to. Any clear statement does the same job.</p>
+  <blockquote class="form-withdrawal">
+    <p>To {b.legalName}, {address}, {b.email}</p>
+    <p>
+      I hereby give notice that I withdraw from my contract for the purchase of the following
+      goods / for the provision of the following service: ……………………………………………………
+    </p>
+    <p>Order number (if any): ………………………</p>
+    <p>Ordered on / received on: ………………………</p>
+    <p>Name of consumer: ………………………</p>
+    <p>Address of consumer: ………………………</p>
+    <p>Signature (only if submitted on paper): ………………………</p>
+    <p>Date: ………………………</p>
+  </blockquote>
+
+  <h3>2.4. Refunds</h3>
+  <p>
+    We refund the amounts received <strong>within 14 days</strong> of the day we are informed of
+    the withdrawal. We refund them by the <strong>same means</strong> you used to pay, unless we
+    expressly agree otherwise, and you pay no fee for that.
+  </p>
+  <p>
+    If the work began at your express request, the proportionate part for what has already been
+    done is deducted from the amount.
+  </p>
+
+  <h3>2.5. Ordering PDK Flasher from the site: the device and the file</h3>
+  <p>
+    Here the rights split in two, because you are buying two different things. We set this out
+    separately because the general text for a service at the workshop does not fit an order
+    delivered by courier.
+  </p>
+  <dl>
+    <dt>The PDK Flasher device (goods)</dt>
+    <dd>
+      <strong>14 days from the day you receive it.</strong> You return it at your own cost, in the
+      condition in which you received it. You may examine and try it as you would in a shop; if
+      it is damaged or used beyond that, you are liable for the reduced value. We refund the
+      payment within 14 days, but may withhold it until we receive the device back or you show
+      that you have sent it (Article 55 ZZP).
+    </dd>
+
+    <dt>The tuning software (digital content)</dt>
+    <dd>
+      The file is not supplied on a physical medium. The right of withdrawal for it therefore
+      lapses only when <strong>three conditions are met together</strong>: you have given
+      <strong>express consent</strong> for preparation to start immediately, you have
+      <strong>confirmed</strong> that you thereby lose the right of withdrawal, and
+      <strong>performance has begun</strong> (Article 57, item 13 ZZP).
+    </dd>
+
+    <dt>If you do NOT give this consent</dt>
+    <dd>
+      Nothing is lost; we simply wait. We start preparing the file once the 14-day period has
+      expired. The device is sent to you straight away, whichever you choose.
+    </dd>
+  </dl>
+  <p>
+    Consent is given with a <strong>separate tick box</strong> in the order. It is never
+    pre-ticked, and the order goes through without it. Pre-ticked consent is not consent.
+  </p>
+  <p>
+    If you withdraw from the whole package before the file has been prepared, we refund
+    everything you paid. If you withdraw after the file has been delivered but
+    <strong>without</strong> having consented to immediate performance, we also refund
+    everything. If you did consent, we refund the value of the device, not of the software.
+  </p>
+
+  <h2>3. Complaints: when the work is not right</h2>
+  <p>
+    A complaint is something different from withdrawal: you file it when the service does not
+    match what was agreed. The legal basis is Article 123 et seq. ZZP.
+  </p>
+  <ul>
+    <li>
+      <strong>Deadline:</strong> up to <strong>14 days</strong> from discovering the
+      non-conformity, for a service. For goods, the period is up to <strong>2 years</strong> from
+      delivery.
+    </li>
+    <li>
+      <strong>What you can ask for:</strong> first, that the service is performed in line with the
+      contract; if that does not happen within a reasonable time, a price reduction or a refund.
+    </li>
+    <li>
+      <strong>What to attach:</strong> proof of payment (invoice or till receipt), a description of
+      the non-conformity and, if there is one, the printout from the dyno.
+    </li>
+  </ul>
+  <p>
+    A complaint can be filed in person, by phone or at
+    <a href={`mailto:${b.email}`}>{b.email}</a>. We enter it in a register and give you a
+    document with its number and date. We decide on it within <strong>30 days</strong>.
+  </p>
+
+  <h3>3.1. What is not grounds for a complaint</h3>
+  <p>
+    We state this too, so that there are no surprises either way:
+  </p>
+  <ul>
+    <li>damage from wear, poor fuel or a missed service;</li>
+    <li>later changes to the software by another workshop;</li>
+    <li>hardware replaced after our work without our knowledge;</li>
+    <li>an authorised dealer refusing to honour the factory warranty. We warn about this
+      <strong>before</strong> any work (see the <a href={terms.href}>terms and conditions</a>, point 5.4).</li>
+  </ul>
+
+  <h3>3.2. The device and the file bought from the site</h3>
+  <p>
+    For these we are liable under the <strong>Act on the Provision of Digital Content and
+    Digital Services and on the Sale of Goods</strong>, not under the general rules for a
+    workshop service.
+  </p>
+  <ul>
+    <li>
+      <strong>The device:</strong> we are liable for any non-conformity that becomes apparent
+      within <strong>2 years</strong> of delivery. During the first year, the non-conformity is
+      presumed to have existed at delivery unless we prove otherwise. We first repair or replace
+      it; if that does not happen within a reasonable time and without significant inconvenience
+      to you, we reduce the price or refund the payment.
+    </li>
+    <li>
+      <strong>The software:</strong> we are responsible for the file working with the car it was
+      made for. If it will not write, will not start, or the car does not achieve what was
+      described, we fix it or refund what you paid for it.
+    </li>
+    <li>
+      <strong>Delivery:</strong> if the parcel arrives damaged, have it noted with the courier
+      when you receive it and call us the same day. A photo of the packaging helps more than a
+      long letter.
+    </li>
+  </ul>
+
+  <h2>4. Cancelling a booked appointment</h2>
+  <p>
+    This is neither withdrawal nor a complaint, just an arrangement between people. If you
+    cannot come, call us. The dyno and the work bay are reserved for you, and an empty slot is
+    lost for both sides. We do not charge for a cancelled appointment.
+  </p>
+
+  <h2>5. Disputes</h2>
+  <p>
+    If we cannot reach agreement, you can refer the matter to the <strong>Commission for
+    Consumer Protection (KZP)</strong>, 4A Slaveykov Sq., Sofia 1000, tel. 0700 111 22,
+    <a href="https://kzp.bg/" target="_blank" rel="noopener noreferrer">kzp.bg</a>.
+  </p>
+  <p>
+    For alternative dispute resolution, the competent bodies are the
+    <strong>conciliation committees at the KZP</strong>:
+    <a href="https://kzp.bg/pomiritelna-komisiya" target="_blank" rel="noopener noreferrer">kzp.bg/pomiritelna-komisiya</a>.
+    The full terms are in the <a href={terms.href}>terms and conditions</a>, point 13.
+  </p>
+</Text>
+
+<style is:global>
+/* The binding-version note opens the body. */
+.doc-body .doc-binding{color:var(--ink-3);font-style:italic}
+
+/* The withdrawal form: it should read as a template to fill in, not as running text. */
+.form-withdrawal{margin:0 0 22px;padding:22px 24px;border-left:2px solid var(--lime);
+  background:var(--lime-dim);border-radius:0 var(--r-s) var(--r-s) 0}
+/* The blanks are one long UNBREAKABLE run of dots. At 320px it pushed the document
+   to 330px wide. `anywhere` allows a break inside the run without splitting words. */
+.form-withdrawal p{margin:0 0 12px;font:400 var(--fz-s)/1.75 var(--body);color:var(--ink-2);
+  overflow-wrap:anywhere}
+.form-withdrawal p:last-child{margin-bottom:0}
+</style>

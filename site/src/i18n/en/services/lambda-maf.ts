@@ -21,7 +21,7 @@ export const lambdaMaf: Service = {
   steps: [
     {
       t: 'Live data',
-      d: 'We look at what the sensor reports at different engine speeds and loads, not just at the fault code.',
+      d: 'We look at what the sensor reports at different engine speeds and loads, as well as the fault code.',
     },
     {
       t: 'Circuit check',

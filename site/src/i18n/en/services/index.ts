@@ -23,9 +23,21 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 import type { Service } from '../../../data/services';
+import { chipTuning } from './chip-tuning';
+import { stage2 } from './stage-2';
+import { tcuDsg } from './tcu-dsg';
+import { dpfFap } from './dpf-fap';
+import { egr } from './egr';
+import { adblue } from './adblue';
+import { lambdaMaf } from './lambda-maf';
+import { dtcErrors } from './dtc-errors';
+import { popsBangs } from './pops-bangs';
+import { vmaxOff } from './vmax-off';
+import { diagnostics } from './diagnostics';
+import { dyno } from './dyno';
+import { softwareRepair } from './software-repair';
 
-export const OFFROAD_NOTE_EN =
-  'Switching off an exhaust after-treatment system is done ONLY for machines that do not travel on public roads, such as race, agricultural and industrial equipment. For a car on the road we repair the system instead, because this is a legal requirement: a car with the system removed does not pass its roadworthiness test and is not legal on the road.';
+export { OFFROAD_NOTE_EN } from './offroad';
 
 /**
  * Услугите, които вече имат английски текст.
@@ -36,7 +48,21 @@ export const OFFROAD_NOTE_EN =
  * страни. Услуга се появява навсякъде наведнъж в мига, в който файлът ѝ се
  * внесе тук.
  */
-export const SERVICES_EN: Service[] = [];
+export const SERVICES_EN: Service[] = [
+  chipTuning,
+  stage2,
+  tcuDsg,
+  dpfFap,
+  egr,
+  adblue,
+  lambdaMaf,
+  dtcErrors,
+  popsBangs,
+  vmaxOff,
+  diagnostics,
+  dyno,
+  softwareRepair,
+];
 
 /** шестте на английската начална; докато наборът е празен, е празен и този */
 export const FEATURED_EN = SERVICES_EN.filter((s) => s.featured);

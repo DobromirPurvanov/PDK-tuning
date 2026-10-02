@@ -14,7 +14,7 @@ export const FAQ_EN: Qa_EN[] = [
   {
     group: 'Warranty and risk',
     q: 'Can the factory software be restored?',
-    a: 'Yes. We read and archive the original file before every change. Restoring it takes as long as writing the file and returns the software to its factory state.',
+    a: 'Yes. Before calibrating, we read and keep the car’s original software. If you wish, we can write it back, for example before a sale or if you prefer the factory settings. Restoring it does not guarantee that the earlier change will go undetected if the car is checked at a main dealer.',
   },
   {
     group: 'Warranty and risk',
@@ -29,7 +29,7 @@ export const FAQ_EN: Qa_EN[] = [
   {
     group: 'The result',
     q: 'What happens to fuel consumption?',
-    a: 'With the same driving style, fuel consumption usually falls because the engine reaches the same speed at lower revs. Use the extra power and consumption rises; there is no way around physics.',
+    a: 'Fuel consumption may change after chip tuning, but no specific reduction can be promised. It depends on your routes, how heavily the car is loaded and how you drive. If you use the extra power more often, consumption may rise.',
   },
   {
     group: 'The result',

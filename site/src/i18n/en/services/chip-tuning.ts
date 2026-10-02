@@ -3,98 +3,77 @@ import type { Service } from '../../../data/services';
 export const chipTuning: Service = {
   slug: 'chip-tuning',
   name: 'Chip Tuning',
-  kicker: 'Power and economy',
+  kicker: 'Power and torque',
   icon: 'chip',
   priceKey: 'chip-tuning',
   featured: true,
-  title: 'Chip Tuning in Varna, Stage 1 on the Dyno | PDK Tuning',
+  title: 'Stage 1 Chip Tuning in Varna, Dyno-Tested | PDK Tuning',
   description:
-    'A custom file for the engine in front of us, never a download by engine code. Dyno runs before and after, and the original software stays archived.',
+    'Software calibrated for the specific engine and its management system. We read and keep the original file and measure the result on the dyno before and after.',
   lead:
-    'We build a file for the specific ECU after reading its original software, not a generic download matched only to an engine code.',
-  short: 'A custom file for the specific ECU, measured on the dyno before and after.',
-  fits: [
-    'Turbocharged diesel and petrol engines, where the usable reserve is greatest',
-    'A car with sound hardware: turbocharger, injectors and clutch in good order',
-    'Drivers who want easier overtaking without a downshift',
-    'A car outside warranty, or an owner who understands the trade-off',
-  ],
-  notFor: [
-    'An engine with an existing fault: repair it before changing the software',
-    'A car under warranty when the owner does not want to risk an engine claim being refused',
-    'A naturally aspirated petrol engine, where the gain rarely justifies the cost',
-  ],
+    'We calibrate the software for the specific car. First we read and keep the original file, then we prepare the calibration for its engine and engine management.',
+  short: 'A calibration for the specific engine, measured before and after.',
+  fits: [],
+  stepsTitle: 'How chip tuning works with us',
   steps: [
     {
       t: 'Conversation',
-      d: 'We establish what you want from the car and what the engine can deliver. If those do not match, we say so before any file is written.',
+      d: 'We agree what you would like to improve and what result is realistic for your car.',
     },
     {
       t: 'Diagnostics',
-      d: 'We read fault codes and live data. A car with a failing turbocharger, clogged injectors or a slipping clutch does not come in for a file.',
+      d: 'We check for fault codes and follow the engine’s operating parameters. If we find a problem with the turbocharger, fuel system or clutch, we first discuss what needs to be put right.',
     },
     {
-      t: 'Baseline run',
-      d: 'The first dyno curve is the starting point and the record of what the car produced before we touched it.',
+      t: 'First measurement',
+      d: 'We measure the car on the dyno so that we have a reference point for the comparison.',
     },
     {
       t: 'Read and archive',
-      d: 'We read and archive the original file. From then on, returning to standard is a matter of minutes.',
+      d: 'We read and keep the original software before making any changes.',
     },
     {
       t: 'Calibration',
-      d: 'We tune the specific ECU: boost pressure, injection, ignition timing and limiters, all within the hardware limits.',
+      d: 'We prepare the software for the specific engine, its management system and the technical condition of the car.',
     },
     {
-      t: 'Write and second run',
-      d: 'We write the file, measure again and compare both curves. You see the difference rather than taking our word for it.',
+      t: 'Write and check',
+      d: 'We write the calibration, check how the car runs and measure it on the dyno again. Finally we compare the results and go through them with you.',
     },
   ],
   body: [
     {
-      h: 'Why standard software leaves room',
+      h: 'Where chip tuning has potential',
       p: [
-        'A manufacturer writes one calibration for the world. It has to run on fuel of varying quality, at −30 and +45 degrees, with missed servicing and drivers who ignore temperatures. There is also product planning: the same engine is sold at three output levels so there is a reason to pay more.',
-        'That leaves a margin between the standard calibration and the hardware\'s physical limit. Chip tuning works within that margin. It does not invent power. It brings the safeguards closer to what this particular engine can actually support.',
+        'Some engines have a margin between the factory calibration and what the car can achieve with its existing hardware. The most noticeable change is usually possible on turbocharged diesel and turbocharged petrol engines. Naturally aspirated petrol engines have less to give.',
+        'How much margin a particular car has depends on its engine and technical condition. We therefore check it before we propose a calibration or give an indication of the result.',
       ],
     },
     {
-      h: 'What we change in the ECU',
+      h: 'What we change in the calibration',
       p: [
-        'We work with turbocharger pressure, injection quantity and timing, ignition timing on petrol engines, gear-based torque limiters and pedal mapping. On diesels, most of the gain comes from injection and boost. On direct-injection petrol engines, timing and boost work together.',
-        'We leave every protection that prevents the engine damaging itself in place: temperature protection, lean-mixture protection and limp modes remain active. A file that removes them trades ten horsepower for an engine.',
+        'Depending on the engine, we adjust parameters such as boost pressure, injection, ignition and torque limits. Not every car allows the same changes, so we work to the specific engine management and the condition of the engine.',
+        'We keep the protective functions that guard the engine at high temperatures or when it runs outside permitted values. We do not switch them off to gain more power.',
       ],
     },
     {
-      h: 'Fuel consumption',
+      h: 'How it affects fuel consumption',
       p: [
-        'With the same driving style, consumption will usually fall because the engine reaches the same speed at lower revs and with less throttle. The difference shows most clearly on longer trips with a loaded car or a trailer.',
-        'Use the extra power and consumption rises. Physics does not bend: more power means more fuel burnt. We do not promise an extra 30 horsepower and two litres less fuel with the same driving.',
+        'Fuel consumption may change after chip tuning, but we cannot promise a specific reduction. It depends on your routes, how heavily the car is loaded and how you drive.',
+        'If you use the extra power more often, consumption may rise. For that reason we present chip tuning as a way to improve how the car drives, and we do not promise fuel savings.',
       ],
     },
     {
-      h: 'Returning to standard',
+      h: 'Returning to the original software',
       p: [
-        'We read and retain the original file before any change. Restoring it takes no longer than writing the modified file and leaves no trace in the ECU. If you sell the car, visit a main dealer or simply do not like the result, we return it to standard.',
+        'Before calibrating, we read and keep the car’s original software. If you wish, we can write it back, for example before a sale or if you prefer the factory settings.',
+        'Restoring the original software does not guarantee that the earlier change will go undetected if the car is checked at a main dealer.',
       ],
     },
   ],
-  facts: [
-    { k: 'Time', v: '2–4 hours with the car in our workshop' },
-    { k: 'Typical diesel gain', v: '+15 to +25% power' },
-    { k: 'Typical turbo petrol gain', v: '+15 to +30% power' },
-    { k: 'Evidence', v: 'two dyno curves, before and after' },
-    { k: 'Return to standard', v: 'any time, using the archived original file' },
-  ],
-  faq: [
-    {
-      q: 'What will my engine gain exactly?',
-      a: 'Choose the make, model, year and engine in the catalogue. The before-and-after figures come from our database for that specific engine code. They are results we have achieved on that engine, not average percentages.',
-    },
-    {
-      q: 'Will it be possible to tell that the software was changed?',
-      a: 'Modern ECUs retain a write counter and checksum. A main dealer using factory diagnostics may see that the ECU has been written to. That is why we ask about warranty at the start. We do not promise invisibility.',
-    },
-  ],
+  cta: {
+    title: 'Tell us about your car',
+    text: 'Send us the make, model, year and engine, and what you would like to improve. We will talk through what result is realistic and whether diagnostics are needed before the calibration.',
+  },
   related: ['stage-2', 'dyno', 'diagnostics'],
 };

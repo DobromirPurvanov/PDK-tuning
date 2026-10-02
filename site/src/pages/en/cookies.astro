@@ -1,0 +1,199 @@
+---
+/**
+ * Cookie policy: the English counterpart of `src/pages/cookie-policy.astro`.
+ *
+ * A separate route rather than a section of the privacy policy: ePrivacy requires
+ * the description of cookies to be reachable BEFORE consent is given, that is,
+ * from the banner itself.
+ *
+ * Same facts, same structure and the same effective date as the Bulgarian page:
+ * exactly the records this site really sets. Empty categories are listed as
+ * empty rather than left out.
+ *
+ * The Bulgarian page is the legally binding one; the first paragraph says so.
+ */
+import Text from '../../layouts/Text.astro';
+import { crumbSchema, bizRef } from '../../lib/seo';
+import { BUSINESS as b } from '../../config/site';
+import { LEGAL_EN, ROUTES } from '../../i18n';
+import { dict } from '../../i18n/ui';
+
+const path = '/en/cookies/';
+const bgPath = ROUTES.find((r) => r.en === path)!.bg;
+const [privacy, terms] = LEGAL_EN;
+const t = dict('en');
+
+const updated = '8 September 2026';
+const address = `${b.address.streetEn}, ${b.address.cityEn} ${b.address.postalCode}`;
+
+const site = Astro.site!.href.replace(/\/$/, '');
+const schema = [
+  bizRef(site, 'en'),
+  crumbSchema(site, [{ href: '/en/', label: 'Home' }, { href: path, label: 'Cookie policy' }]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    url: `${site}${path}`,
+    name: 'Cookie policy',
+    description: 'Which cookies PDK Tuning uses, in which categories, for how long and how to decline them.',
+    inLanguage: 'en',
+    dateModified: '2026-09-08',
+    about: { '@id': `${site}/#business` },
+  },
+];
+---
+<Text
+  title="Cookie policy — PDK Tuning"
+  description="Which cookies the PDK Tuning site uses, by category and duration, which providers set them and how to withdraw your consent at any time."
+  heading="Cookie policy"
+  lead={`The site works entirely without tracking cookies. Nothing that tracks is loaded before you press “${t.ccYes}”; it is not loaded first and switched off afterwards.`}
+  updated={updated}
+  schema={schema}
+>
+  <p class="doc-binding">
+    This English text is provided for convenience and has not been reviewed by a lawyer;
+    the legally binding version is the <a href={bgPath} hreflang="bg">Bulgarian original</a>.
+  </p>
+
+  <h2>1. What a cookie is</h2>
+  <p>
+    A cookie is a small record that a site leaves in your browser so that it can remember
+    something the next time the page loads. Besides cookies proper, the browser has another
+    kind of storage, <strong>localStorage</strong>. In law the two are treated the same, and they
+    are described together here, because for you the difference does not matter.
+  </p>
+
+  <h2>2. The four categories</h2>
+  <p>
+    The split follows the practice of the supervisory authorities. For each category we say
+    whether this site actually uses it, including when the answer is no.
+  </p>
+
+  <h3>2.1. Strictly necessary: always active</h3>
+  <p>
+    Without them the site cannot carry out an action you have explicitly asked for. No consent
+    is requested for them, because without them there is no service. They cannot be switched
+    off from the banner.
+  </p>
+  <table class="tbl">
+    <thead><tr><th>Record</th><th>Set by</th><th>What for</th><th>Duration</th></tr></thead>
+    <tbody>
+      <tr>
+        <td data-l="Record"><code>pdk-consent</code><br /><em>localStorage</em></td>
+        <td data-l="Set by">this site</td>
+        <td data-l="What for">remembers your cookie choice so that we do not ask on every page load</td>
+        <td data-l="Duration">up to 12 months</td>
+      </tr>
+      <tr>
+        <td data-l="Record"><code>__cf_bm</code></td>
+        <td data-l="Set by">Cloudflare</td>
+        <td data-l="What for">tells a person from an automated client; protects the form from abuse</td>
+        <td data-l="Duration">30 minutes</td>
+      </tr>
+      <tr>
+        <td data-l="Record"><code>cf_clearance</code></td>
+        <td data-l="Set by">Cloudflare</td>
+        <td data-l="What for">set only if the protection has asked you to pass a check; remembers that you passed it</td>
+        <td data-l="Duration">up to 30 days</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>2.2. Functional: not used</h3>
+  <p>
+    The site does not remember language, font, display preferences or anything else between
+    visits. This category is <strong>empty</strong>, which is why it does not appear in the
+    banner.
+  </p>
+
+  <h3>2.3. Statistics: only with consent</h3>
+  <p>
+    The only category we ask you about. It tells us how many people come and which pages they
+    read, not who you are.
+  </p>
+  <table class="tbl">
+    <thead><tr><th>Record</th><th>Set by</th><th>What for</th><th>Duration</th></tr></thead>
+    <tbody>
+      <tr>
+        <td data-l="Record"><code>_ga</code></td>
+        <td data-l="Set by">Google Analytics 4</td>
+        <td data-l="What for">tells one device from another, so that one person is not counted ten times</td>
+        <td data-l="Duration">up to 24 months</td>
+      </tr>
+      <tr>
+        <td data-l="Record"><code>_ga_&lt;ID&gt;</code></td>
+        <td data-l="Set by">Google Analytics 4</td>
+        <td data-l="What for">keeps the state of the visit</td>
+        <td data-l="Duration">up to 24 months</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <strong>How exactly it is held back until you say yes:</strong> Google's script is not in
+    the page. It is not downloaded, not run, and not "loaded but not counting". The code that
+    adds it runs only after you press the button. If you decline, or withdraw consent you gave
+    earlier, the tag is switched off and any <code>_ga*</code> records already set are deleted.
+  </p>
+  <p>
+    The IP address sent to Google is anonymised. Your choice is also passed on through Google
+    Consent Mode, with the advertising permissions explicitly set to <em>denied</em>.
+  </p>
+
+  <h3>2.4. Marketing: not used</h3>
+  <p>
+    There are <strong>no</strong> advertising pixels on this site: no Meta Pixel, no TikTok, no
+    LinkedIn, no Google Ads remarketing. We do not build advertising profiles and do not share
+    data for cross-site targeted advertising. The category is empty and there is nothing to
+    decline.
+  </p>
+
+  <h2>3. The partner portal</h2>
+  <p>
+    The login for partner workshops runs on a separate system on our older server. When you
+    sign in there, it sets a session cookie (<code>PHPSESSID</code>) that keeps you signed in.
+    It is strictly necessary for the login and is deleted when you close the browser. If you do
+    not use the portal, this cookie never appears.
+  </p>
+
+  <h2>4. How to change your decision</h2>
+  <p>
+    At any time, press <strong>{t.cookieSettings}</strong> at the bottom of any page. The banner
+    opens again and you can change your choice in either direction. If you decline, statistics
+    records already set are deleted straight away.
+  </p>
+  <p>
+    You can also delete and block cookies in the browser itself, under
+    <em>Settings → Privacy</em>. Bear in mind that blocking cookies completely affects many
+    sites, not just this one.
+  </p>
+
+  <h2>5. If you do not accept</h2>
+  <p>
+    The site works fully. There is no restricted content, no repeating banner and no wall. The
+    only difference is that we will not count you in the statistics.
+  </p>
+
+  <h2>6. Who is responsible</h2>
+  <p>
+    The controller is <strong>{b.legalName}</strong>, trading as {b.name}, {address}.
+    Questions and requests: <a href={`mailto:${b.email}`}>{b.email}</a>,
+    <a href={`tel:${b.phone}`}>{b.phoneIntl}</a>.
+  </p>
+  <p>
+    How we process personal data in general is set out in the
+    <a href={privacy.href}>privacy policy</a>. The terms for using the site and the services
+    are in the <a href={terms.href}>terms and conditions</a>.
+  </p>
+
+  <h2>7. Changes</h2>
+  <p>
+    If we add a new provider or a new category, we update this page, change the date at the top
+    and <strong>ask for your consent again</strong>. Consent you gave earlier does not cover
+    something that was not described when you gave it.
+  </p>
+</Text>
+
+<style is:global>
+/* The binding-version note opens the body. */
+.doc-body .doc-binding{color:var(--ink-3);font-style:italic}
+</style>

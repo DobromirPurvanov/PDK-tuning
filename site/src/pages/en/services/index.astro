@@ -15,6 +15,7 @@ import { ICONS } from '../../../data/services';
 import { SERVICES_EN } from '../../../i18n/en/services/index';
 import prices from '../../../data/prices.json';
 import { crumbSchema, bizRef } from '../../../lib/seo';
+import { timeEn } from '../../../i18n';
 
 const P = prices.items as Record<string, { from: number; time: string }>;
 const site = Astro.site!.href.replace(/\/$/, '');
@@ -79,7 +80,7 @@ const groups = [
                 <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><Fragment set:html={ICONS[s.icon]} /></svg></span>
                 <span class="lab">{s.kicker}</span>
                 <h3>{s.name}</h3>
-                <p>{s.short}{pr && <><br /><b>from €{pr.from}</b> · {pr.time}</>}</p>
+                <p>{s.short}{pr && <><br /><b>from €{pr.from}</b> · {timeEn(pr.time)}</>}</p>
                 <span class="go">See the service →</span>
               </a>
             );

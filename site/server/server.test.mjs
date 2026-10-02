@@ -45,7 +45,7 @@ test('VPS serves the new build and preserves catalogue and dealer sessions', asy
   assert.equal(oldHome.status, 200);
   assert.equal(oldHome.headers.get('location'), null);
   assert.match(await oldHome.text(), /New PDK/);
-  assert.equal((await get('/bg/bmw')).headers.get('location'), 'https://preview.example/katalog/bmw/');
+  assert.equal((await get('/bg/bmw')).headers.get('location'), '/katalog/bmw/');
   const live = await (await get('/api/live/brands')).json();
   assert.deepEqual(live.data, [{ slug: 'bmw', label: 'BMW' }]);
   // our spelling wins over the old site's once marks.json carries a name
