@@ -21,7 +21,11 @@ test('VPS serves the new build and preserves catalogue and dealer sessions', asy
     for await (const chunk of req) chunks.push(chunk);
     res.setHeader('content-type', 'text/html');
     res.setHeader('set-cookie', ['PHPSESSID=test; Domain=127.0.0.1; Path=/; HttpOnly', 'second=yes; Path=/']);
-    if (req.url === '/en/') res.end('<a href="/en/bmw">BMW</a>');
+    if (req.url.startsWith('/en/challenged')) {
+      res.statusCode = 403;
+      res.setHeader('cf-mitigated', 'challenge');
+      res.end('<title>Just a moment...</title>');
+    } else if (req.url === '/en/') res.end('<a href="/en/bmw">BMW</a>');
     else res.end(`<link rel="canonical" href="http://127.0.0.1:9100/bg/login"><form action="${upstreamOrigin}/bg/login"></form><p>${req.method}:${Buffer.concat(chunks)}:${req.headers.cookie || ''}</p>`);
   });
   await new Promise(resolve => upstream.listen(0, '127.0.0.1', resolve));
@@ -68,6 +72,10 @@ test('VPS serves the new build and preserves catalogue and dealer sessions', asy
   assert.match(html, /href="https:\/\/preview.example\/bg\/login"/);
   assert.match(html, /POST:test-body:PHPSESSID=incoming/);
   assert.equal(portal.headers.get('content-security-policy'), null);
+  // a Cloudflare challenge from the old host is never shown on ours
+  const challenged = await get('/en/challenged/x?y=1');
+  assert.equal(challenged.status, 302);
+  assert.equal(challenged.headers.get('location'), `${upstreamOrigin}/en/challenged/x?y=1`);
   const invalid = await app(new Request('https://preview.example/api/contact', { method: 'POST', body: '{}' }));
   assert.equal(invalid.status, 400);
   await writeFile(join(root, 'index.html'), '<h1>Old catalogue</h1>');

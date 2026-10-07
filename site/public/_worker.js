@@ -657,6 +657,20 @@ async function passThrough(request, url, src, indexable) {
   for (const name of ['host', 'cf-connecting-ip', 'cf-ray', 'cf-visitor', 'cf-worker',
     'x-forwarded-host', 'x-forwarded-proto', 'x-forwarded-for']) forwarded.headers.delete(name);
   const r = await fetch(forwarded, { redirect: 'manual' });
+
+  /* The client's Cloudflare zone challenges requests from the VPS. Its
+     "Just a moment…" page is bound to the old host and cannot be solved on
+     ours, so the visitor got a blank page. Send the browser to the old host
+     itself, where a real browser passes the check. Temporary (302) until
+     their zone lets our server through. */
+  if (r.headers.get('cf-mitigated') === 'challenge' && ['GET', 'HEAD'].includes(request.method)) {
+    console.error(`old site challenged ${url.pathname}; sending the visitor to ${target.host}`);
+    return new Response(null, {
+      status: 302,
+      headers: { location: target.href, 'cache-control': 'no-store' },
+    });
+  }
+
   const headers = new Headers(r.headers);
   for (const h of HOP) headers.delete(h);
 
