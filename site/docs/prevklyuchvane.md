@@ -6,7 +6,7 @@
 | | адресът на новия сайт | `www.pdktuning.com` | източникът на каталога |
 |---|---|---|---|
 | **етап 1** | `new.pdktuning.com` | старият сайт | `www.pdktuning.com` |
-| **етап 2** | `www.pdktuning.com` | новият сайт | `catalog.pdktuning.com` |
+| **етап 2** | `www.pdktuning.com` | новият сайт | `files.pdktuning.com` |
 
 Разликата в кода е **само стойността на един ключ** — `LEGACY_ORIGIN`. Затова
 етап 1 е истинска проба на етап 2, а не негово подобие.
@@ -64,7 +64,7 @@ npm run deploy:etap1
 
 Прави се отделно, след като етап 1 е стоял и е бил гледан.
 
-### Нов запис `catalog.pdktuning.com`
+### Нов запис `files.pdktuning.com`
 
 Чак сега старият сървър се нуждае от собствено име: след като `www` сме ние,
 работникът не може да чете каталога от `www`, защото ще пита сам себе си.
@@ -79,13 +79,13 @@ Proxy:    включен
 Проксито трябва да е включено — директният произход е със самоподписан
 сертификат, изтекъл 2021.
 
-**Виртуалният хост трябва да отговаря и на `catalog.pdktuning.com`** — препредадената
+**Виртуалният хост трябва да отговаря и на `files.pdktuning.com`** — препредадената
 заявка стига до произхода с `Host`, равен на новото име. Проверено.
 
 ### Проверка, преди да се пипа `www`
 
 ```
-curl -sSI https://catalog.pdktuning.com/bg/login
+curl -sSI https://files.pdktuning.com/bg/login
 ```
 
 Очаква се `200`. Ако не мине, не се продължава — иначе входът на дилърите спира.
@@ -97,7 +97,7 @@ www  CNAME  new-pdk.pages.dev   Proxy: включен
 @    CNAME  new-pdk.pages.dev   Proxy: включен
 ```
 
-Средата се сменя на `LEGACY_ORIGIN=https://catalog.pdktuning.com` и се добавят
+Средата се сменя на `LEGACY_ORIGIN=https://files.pdktuning.com` и се добавят
 `PUBLIC_INDEXABLE=true`, `PUBLIC_GA_ID` (маркерът на клиента) и
 `PUBLIC_GSC_VERIFY`, ако собствеността се потвърждава с мета таг. Билдът
 минава без `PUBLIC_SITE_URL` (по подразбиране е `www`).

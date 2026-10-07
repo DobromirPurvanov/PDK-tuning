@@ -18,7 +18,7 @@
 [`site/.env.local`](site/.env.local) е единственият източник за билда и VPS:
 
 ```dotenv
-CATALOG_BASE_URL=https://catalog.pdktuning.com
+CATALOG_BASE_URL=https://files.pdktuning.com
 BASE_URL=https://www.pdktuning.com
 ```
 
@@ -26,10 +26,14 @@ BASE_URL=https://www.pdktuning.com
 тук, след което се публикува нов таг. Docker, CI и runtime не поддържат
 отделни копия или подразбиращи се стойности за тези два ключа.
 
-DNS и работещият HTTPS на `catalog.pdktuning.com` се настройват от IT на клиента.
+DNS и работещият HTTPS на `files.pdktuning.com` се настройват от IT на клиента.
 Формата чете тайните от средата на сървъра: `RESEND_API_KEY`, `CONTACT_TO` и
 `CONTACT_FROM` (приемат се и старите `MAIL_TO` и `MAIL_FROM`). Тайни не се
 записват в публичния `site/.env.local`.
+
+Публичните `PUBLIC_INDEXABLE`, `PUBLIC_GA_ID` и `PUBLIC_GSC_VERIFY` се четат
+от `.env` на сървъра; ключ, който там липсва, се взима от променливите на
+repo-то в GitHub Actions (`gh variable set`).
 
 `/__alive` проверява процеса; `/api/health` показва `site: new-pdk`, идентификатора
 на комита и дали пощата е настроена. `X-PDK-Site` и `X-PDK-Release` позволяват

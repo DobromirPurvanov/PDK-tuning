@@ -13,9 +13,9 @@
  * ПУСКАНЕТО Е НА ДВА ЕТАПА и проверките се различават:
  *
  *   етап 1  сайтът застава на `new.pdktuning.com`, `www` остава старият.
- *           Източникът е `www` — той още е техен. `catalog.pdktuning.com` НЕ трябва.
+ *           Източникът е `www` — той още е техен. `files.pdktuning.com` НЕ трябва.
  *   етап 2  сайтът поема и `www`. Чак тогава старият сървър се нуждае от
- *           собствено име (`catalog.pdktuning.com`), иначе работникът пита сам себе си.
+ *           собствено име (`files.pdktuning.com`), иначе работникът пита сам себе си.
  *
  * Употреба:
  *   node scripts/migration/preflight.mjs                    # етап 1 (по подразбиране)
@@ -41,7 +41,7 @@ const C = { ok: '\x1b[32m✓\x1b[0m', warn: '\x1b[33m!\x1b[0m', bad: '\x1b[31m�
 /** кой етап се проверява — виж бележката горе */
 const etap = flag('--etap2') ? 2 : 1;
 const SITE = etap === 1 ? 'https://new.pdktuning.com' : 'https://www.pdktuning.com';
-const ORIGIN = etap === 1 ? 'https://www.pdktuning.com' : 'https://catalog.pdktuning.com';
+const ORIGIN = etap === 1 ? 'https://www.pdktuning.com' : 'https://files.pdktuning.com';
 
 let stops = 0, warns = 0;
 const ok = (m, d) => console.log(`  ${C.ok} ${m}${d ? '  ' + C.dim(d) : ''}`);

@@ -36,6 +36,15 @@ class PublicConfigTests(unittest.TestCase):
         self.assertEqual(public_config.build_settings(self.output({})),
                          'PUBLIC_INDEXABLE=\nPUBLIC_GA_ID=\nPUBLIC_GSC_VERIFY=\n')
 
+    def test_repository_fallback_only_fills_unset_keys(self):
+        fallback = {'PUBLIC_INDEXABLE': 'true', 'PUBLIC_GSC_VERIFY': 'repo-token', 'PUBLIC_GA_ID': 'G-REPO'}
+        result = public_config.build_settings(self.output({'PUBLIC_GA_ID': 'GTM-SERVER'}), fallback)
+        self.assertEqual(result, 'PUBLIC_INDEXABLE=true\nPUBLIC_GA_ID=GTM-SERVER\nPUBLIC_GSC_VERIFY=repo-token\n')
+
+    def test_reject_fallback_injection(self):
+        with self.assertRaises(ValueError):
+            public_config.build_settings(self.output({}), {'PUBLIC_GSC_VERIFY': 'key\nOTHER=value'})
+
     def test_reject_env_injection(self):
         for value in ['key\nOTHER=value', 'key\rOTHER=value', 'key\0', 123]:
             with self.subTest(value=value), self.assertRaises(ValueError):

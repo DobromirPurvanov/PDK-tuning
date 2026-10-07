@@ -73,7 +73,7 @@ jobs:
               config:
                 image: scratch
                 environment:
-                  PUBLIC_INDEXABLE: ${PUBLIC_INDEXABLE:-false}
+                  PUBLIC_INDEXABLE: ${PUBLIC_INDEXABLE:-}
                   PUBLIC_GA_ID: ${PUBLIC_GA_ID:-}
                   PUBLIC_GSC_VERIFY: ${PUBLIC_GSC_VERIFY:-}
             CONFIG
@@ -131,7 +131,8 @@ jobs:
           mkdir -p "$RELEASE"
           docker save --output "$RELEASE/images.tar" "$WEB_IMAGE" "$API_IMAGE"
           (cd "$RELEASE" && sha256sum images.tar > images.tar.sha256)
-          printf 'WEB_IMAGE=%s\nAPI_IMAGE=%s\n' "$WEB_IMAGE" "$API_IMAGE" > "$RELEASE/images.env"
+          # PUBLIC_INDEXABLE travels with the release so the runtime header matches the build.
+          printf 'WEB_IMAGE=%s\nAPI_IMAGE=%s\nPUBLIC_INDEXABLE=%s\n' "$WEB_IMAGE" "$API_IMAGE" "$PUBLIC_INDEXABLE" > "$RELEASE/images.env"
           cp docker-compose.production.yml "$RELEASE/docker-compose.yml"
           cp scripts/deploy/activate.sh "$RELEASE/activate.sh"
           # Сървърът е с HTTPS origin и без креденшъли за частното хранилище,

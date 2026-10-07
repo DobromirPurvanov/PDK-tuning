@@ -36,7 +36,7 @@ Cloudflare Pages е допълнителен вариант за хостван�
 `.env.local` съдържа само публичната конфигурация:
 
 ```dotenv
-CATALOG_BASE_URL=https://catalog.pdktuning.com
+CATALOG_BASE_URL=https://files.pdktuning.com
 BASE_URL=https://www.pdktuning.com
 ```
 

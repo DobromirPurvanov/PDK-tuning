@@ -14,7 +14,7 @@
  *      дотогава човекът вече чете сайта, а не рекламата.
  *   2. НЕ докато пита за бисквитки. Онази лента също е `aria-modal` и двата
  *      прозореца заедно са задънена улица за четеца. Чака се решението.
- *   3. ВЕДНЪЖ. Затварянето се помни 14 дни в localStorage. Номерът на версия
+ *   3. ВЕДНЪЖ. Показването се помни 14 дни в localStorage. Номерът на версия
  *      позволява следващата кампания да се покаже наново, без да чака изтичане.
  *   4. НЕ на човек, който вече е там. Ако адресът е /elektricheski/, мълчи.
  *
@@ -101,6 +101,9 @@ if (dlg && !location.pathname.startsWith('/elektricheski')) {
       }
       done = true;
       window.removeEventListener('scroll', onScroll);
+      // Remembered on SHOW, not on close: the CTA is a plain link and leaving the
+      // page never fires `close`, so the promo kept coming back on every visit.
+      remember();
       dlg.showModal();
       if (!calm) dlg.classList.add('in');
     };
@@ -110,9 +113,6 @@ if (dlg && !location.pathname.startsWith('/elektricheski')) {
       const past = h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight);
       if (past > 0.4) open();
     };
-
-    // Затварянето се помни, независимо дали е през копчето, Esc или подложката.
-    dlg.addEventListener('close', remember);
 
     // Щракване ИЗВЪН панела затваря. `<dialog>` праща събитието на себе си,
     // когато е ударена подложката — панелът вътре го спира.
