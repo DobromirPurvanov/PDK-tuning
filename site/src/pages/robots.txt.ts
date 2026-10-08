@@ -21,6 +21,7 @@ Disallow: /api/
 Disallow: /api/live/
 
 Sitemap: ${base}/sitemap.xml
+Sitemap: ${base}/sitemap.txt
 `
     : `# Работен макет за одобрение — не се индексира.
 # Отваря се с PUBLIC_INDEXABLE=true при пускането на истинския домейн.
