@@ -32,6 +32,15 @@ jobs:
         with:
           fetch-depth: 0
 
+      # sitemap lastmod is the file's mtime; a fresh checkout stamps every file
+      # with "now", so restore each one to its last commit before the image build
+      # (.git stays out of the Docker context, COPY keeps the mtime).
+      - name: Restore source file dates from git
+        run: |
+          git ls-files -z site/src | while IFS= read -r -d '' f; do
+            touch -d "$(git log -1 --format=%cI -- "$f")" "$f"
+          done
+
       - uses: actions/setup-node@v4
         with:
           node-version: 24
