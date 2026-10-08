@@ -203,15 +203,15 @@ jobs:
             cd /home/pdk_new/website
             printf '%s %s %s\n' "$TAG" "$SHA" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > ACTIVE-VERSION
             echo "PDK_TREE_BEGIN"
-            echo "преди: $(git describe --tags --always 2>&1)"
+            echo "before: $(git describe --tags --always 2>&1)"
             # Untracked files (.env, releases/, .compose.active.yml) are not
             # touched by checkout; tracked ones mirror the deploy, they are not a working
             # copy, so --force is safe here.
             if git fetch --force "$RELEASE/repo.bundle" "refs/tags/$TAG:refs/tags/$TAG" \
                && git checkout --detach --force "refs/tags/$TAG"; then
-              echo "след: $(git describe --tags)"
+              echo "after: $(git describe --tags)"
             else
-              echo "Дървото остава на стария таг; меродавен е ACTIVE-VERSION" >&2
+              echo "The tree stays on the old tag; ACTIVE-VERSION is authoritative" >&2
             fi
             rm -f "$RELEASE/repo.bundle"
             # The deploy does not need origin - the code came with the bundle. This is
@@ -222,15 +222,15 @@ jobs:
             if [ "$(git remote get-url origin)" != "$SSH_URL" ] \
                && git ls-remote --quiet "$SSH_URL" HEAD >/dev/null 2>&1; then
               git remote set-url origin "$SSH_URL"
-              echo "origin мина на SSH"
+              echo "origin switched to SSH"
             fi
             echo "origin: $(git remote get-url origin)"
             # --force, because the tree mirrors GitHub: a stale tag that
             # does not match would otherwise fail the whole fetch with "would clobber existing tag".
             if git fetch --force --tags --prune origin 2>&1; then
-              echo "ръчният git pull работи"
+              echo "manual git pull works"
             else
-              echo "origin не се отваря от сървъра; деплоят пак минава с bundle-а" >&2
+              echo "origin is unreachable from the server; the deploy still goes through with the bundle" >&2
             fi
             git status --porcelain | head -20
             echo "PDK_TREE_END"

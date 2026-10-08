@@ -646,7 +646,7 @@ async function passThrough(request, url, src, indexable) {
   // guard: if the origin points at ourselves, the request would loop forever
   if (target.host === url.host) {
     return new Response(
-      'LEGACY_ORIGIN сочи към този същия домейн — старият сайт трябва да е на свое име.',
+      'LEGACY_ORIGIN points at this same domain — the old site must live on its own hostname.',
       { status: 500, headers: { 'content-type': 'text/plain; charset=utf-8' } },
     );
   }
@@ -775,7 +775,7 @@ export default {
 
     const [kind, ...parts] = url.pathname.slice('/api/live/'.length).split('/').filter(Boolean);
     const read = readers[kind];
-    if (!read) return json({ error: 'непознато ниво' }, 404, 0);
+    if (!read) return json({ error: 'unknown level' }, 404, 0);
 
     try {
       let data = await read(src, parts);

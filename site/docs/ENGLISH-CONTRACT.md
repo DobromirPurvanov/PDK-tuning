@@ -3,7 +3,7 @@
 The mechanics are already built and working. This contract is only about the text.
 The strategy, the scope and the traps are in `docs/ENGLISH.md` — read it.
 
-**Working folder:** `/Users/dobromirpurvanov/dev/pdk-tuning/site`
+**Working folder:** `site/` in this repository
 
 ## What already exists and is NOT touched
 
