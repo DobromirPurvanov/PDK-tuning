@@ -1,45 +1,45 @@
 # PDK Tuning
 
-Един сайт: [`site/`](site/README.md). Старият frontend от корена е премахнат.
+One site: [`site/`](site/README.md). The old frontend in the repo root has been removed.
 
-## Публикуване на VPS
+## Publishing to the VPS
 
-Таг `v*` стартира `.github/workflows/deploy.yml`: строи новия сайт от `site/`,
-проверява съдържанието на началната страница, прехвърля готовите образи и ги
-активира на съществуващия сървър. На VPS не се строи код.
+A `v*` tag starts `.github/workflows/deploy.yml`: it builds the new site from `site/`,
+checks the home page content, transfers the finished images and activates them
+on the existing server. No code is built on the VPS.
 
-Началната страница и активите се обслужват **директно от образа**, без прокси
-към Cloudflare Pages. `site/server/server.mjs` изпълнява същата логика за
-живия каталог, дилърския портал и формите като `site/public/_worker.js`.
-Базата остава на сървъра на клиента; тук няма копие от нея.
+The home page and assets are served **directly from the image**, with no proxy
+to Cloudflare Pages. `site/server/server.mjs` runs the same logic for the live
+catalog, the dealer portal and the forms as `site/public/_worker.js`.
+The database stays on the client's server; there is no copy of it here.
 
-## Един файл за адресите
+## One file for the addresses
 
-[`site/.env.local`](site/.env.local) е единственият източник за билда и VPS:
+[`site/.env.local`](site/.env.local) is the single source for the build and the VPS:
 
 ```dotenv
 CATALOG_BASE_URL=https://files.pdktuning.com
 BASE_URL=https://www.pdktuning.com
 ```
 
-Файлът съдържа само публични адреси и влиза в образа. Смяна на адрес се прави
-тук, след което се публикува нов таг. Docker, CI и runtime не поддържат
-отделни копия или подразбиращи се стойности за тези два ключа.
+The file contains only public addresses and goes into the image. To change an
+address, edit it here, then publish a new tag. Docker, CI and the runtime keep
+no separate copies or default values for these two keys.
 
-DNS и работещият HTTPS на `files.pdktuning.com` се настройват от IT на клиента.
-Формата чете тайните от средата на сървъра: `RESEND_API_KEY`, `CONTACT_TO` и
-`CONTACT_FROM` (приемат се и старите `MAIL_TO` и `MAIL_FROM`). Тайни не се
-записват в публичния `site/.env.local`.
+DNS and working HTTPS for `files.pdktuning.com` are set up by the client's IT.
+The form reads its secrets from the server environment: `RESEND_API_KEY`, `CONTACT_TO` and
+`CONTACT_FROM` (the old `MAIL_TO` and `MAIL_FROM` are also accepted). Secrets are not
+written to the public `site/.env.local`.
 
-Публичните `PUBLIC_INDEXABLE`, `PUBLIC_GA_ID` и `PUBLIC_GSC_VERIFY` се четат
-от `.env` на сървъра; ключ, който там липсва, се взима от променливите на
-repo-то в GitHub Actions (`gh variable set`).
+The public `PUBLIC_INDEXABLE`, `PUBLIC_GA_ID` and `PUBLIC_GSC_VERIFY` are read
+from the server's `.env`; a key missing there is taken from the repo variables
+in GitHub Actions (`gh variable set`).
 
-`/__alive` проверява процеса; `/api/health` показва `site: new-pdk`, идентификатора
-на комита и дали пощата е настроена. `X-PDK-Site` и `X-PDK-Release` позволяват
-да се различи действително каченият сайт от стар кеширан отговор.
+`/__alive` checks the process; `/api/health` shows `site: new-pdk`, the commit
+identifier and whether mail is configured. `X-PDK-Site` and `X-PDK-Release` make it possible
+to tell the site that was actually deployed from an old cached response.
 
-## Местна работа
+## Local work
 
 ```sh
 npm ci --prefix site
@@ -49,27 +49,27 @@ node --test site/server/*.test.mjs
 python3 -m unittest discover -s scripts/deploy -p 'test_*.py' -v
 ```
 
-Алтернатива: `docker compose up -d --build`.
+Alternative: `docker compose up -d --build`.
 
-Cloudflare Pages остава възможен отделен начин за хостване чрез
-`npm run deploy:etap1 --prefix site`, но VPS вече не зависи от него.
+Cloudflare Pages remains a possible separate way to host the site through
+`npm run deploy:stage1 --prefix site`, but the VPS no longer depends on it.
 
-## Активиране
+## Activation
 
-`scripts/deploy/activate.sh` проверява контролната сума, конфигурацията и новия
-сайт, обновява само услугите `web` и `api`, и записва `.compose.active.yml` и
-`.images.env`. Другите проекти на сървъра не се променят.
+`scripts/deploy/activate.sh` verifies the checksum, the configuration and the new
+site, updates only the `web` and `api` services, and writes `.compose.active.yml` and
+`.images.env`. The other projects on the server are left unchanged.
 
-Кодът се доставя с Docker образите, не с `git checkout`. За да не чете никой
-стара версия при нов дизайн, деплоят накрая изравнява и работното дърво на
-сървъра с пуснатия таг и записва `ACTIVE-VERSION` в `/home/pdk_new/website`:
+The code is delivered with the Docker images, not with `git checkout`. So that nobody reads
+an old version after a new design goes out, the deploy finally brings the server's working tree
+in line with the released tag and writes `ACTIVE-VERSION` in `/home/pdk_new/website`:
 
 ```
-cat /home/pdk_new/website/ACTIVE-VERSION   # таг, комит, час на деплоя
+cat /home/pdk_new/website/ACTIVE-VERSION   # tag, commit, deploy time
 git -C /home/pdk_new/website describe --tags
 curl -sI https://new.pdktuning.com/ | grep -i x-pdk-version
 ```
 
-Трите трябва да съвпадат. Ако дървото изостане (сървърът не е стигнал до
-`origin`), меродавни са `ACTIVE-VERSION` и заглавката `X-PDK-Version` —
-`version` в `/api/health` показва същото, а `release` е точният комит.
+All three must match. If the tree lags behind (the server has not reached
+`origin`), `ACTIVE-VERSION` and the `X-PDK-Version` header are authoritative:
+`version` in `/api/health` shows the same, and `release` is the exact commit.

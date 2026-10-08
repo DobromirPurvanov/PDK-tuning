@@ -1,14 +1,14 @@
 /**
- * PDK FLASHER — стъпките и какво има в приложението.
+ * PDK FLASHER — the steps and what the app contains.
  *
- * Стояха вписани в `/elektricheski/`. Когато устройството получи своя страница,
- * копието щеше да е второ: две места, които утре описват различен ред на едни и
- * същи пет стъпки. Текстът живее тук и се внася и от двете.
+ * They used to be written inline in `/elektricheski/`. Once the device gets its own page,
+ * the copy would have been a second one: two places describing a different order of the same
+ * five steps tomorrow. The text lives here and is imported by both.
  */
 
 export type Step = { t: string; d: string };
 
-/** Петте стъпки от свързването до записа. */
+/** The five steps from connecting to writing. */
 export const FLASHER_STEPS: Step[] = [
   {
     t: 'Свързвате PDK Flasher',
@@ -32,7 +32,7 @@ export const FLASHER_STEPS: Step[] = [
   },
 ];
 
-/** Какво още може приложението, извън четенето и записа. */
+/** What else the app can do, beyond reading and writing. */
 export const FLASHER_APP: Step[] = [
   { t: 'Четене и запис', d: 'Изчитане на оригинала и запис на подготвения файл, директно през телефона.' },
   { t: 'Диагностика', d: 'Четене и изтриване на диагностичните грешки по автомобила.' },

@@ -1,13 +1,13 @@
 ---
 /**
- * Обвивката на ВСЯКА вътрешна страница — услуги, категории, марки, статии,
- * фирмени страници.
+ * The shell of EVERY inner page — services, categories, makes, articles,
+ * company pages.
  *
- * `Text.astro` остава за правните: там текстът е една колона и нищо друго.
- * Тук има трошици, заглавен блок, разделите на съдържанието и заключително
- * действие. Класовете са с представка `p-`, за да не се блъснат с общите
- * имена от началната (`row`, `col`, `tile`, `in`, `top`…) — веднъж `bar` вече
- * ни струва два кръга гледане в грешния елемент.
+ * `Text.astro` stays for the legal ones: there the text is one column and
+ * nothing else. Here there are breadcrumbs, a heading block, the content
+ * sections and a closing action. The classes are prefixed `p-` so they do not
+ * collide with the generic names from the home page (`row`, `col`, `tile`, `in`,
+ * `top`…) — once `bar` already cost us two rounds of looking at the wrong element.
  */
 import Base from './Base.astro';
 import { BUSINESS as b, portalUrl } from '../config/site';
@@ -19,17 +19,17 @@ export type Crumb = { href: string; label: string };
 interface Props {
   title: string;
   description: string;
-  /** микро-етикетът над заглавието */
+  /** the micro-label above the heading */
   kicker?: string;
   heading: string;
   lead?: string;
-  /** без началната — тя се добавя сама */
+  /** without the home page — it is added automatically */
   crumbs?: Crumb[];
   image?: string;
   ogType?: 'website' | 'article';
   noindex?: boolean;
   schema?: Record<string, unknown>[];
-  /** заключителният блок с телефона; изключва се само там, където пречи */
+  /** the closing block with the phone; switched off only where it gets in the way */
   cta?: boolean;
   ctaTitle?: string;
   ctaText?: string;
@@ -38,9 +38,10 @@ const lang = langOf(Astro.url.pathname);
 const t = dict(lang);
 const portal = portalUrl(lang);
 
-/* Подразбиранията на заключителния блок идват от речника, не от подписа на
-   компонента: зашити български низове тук значеха български призив под всяка
-   английска страница. Страница, която ги подава сама, ги надвива както преди. */
+/* The defaults of the closing block come from the dictionary, not from the
+   component signature: hard-coded Bulgarian strings here meant a Bulgarian call
+   to action under every English page. A page that passes them itself overrides
+   them as before. */
 const {
   kicker,
   heading,
@@ -95,11 +96,11 @@ const trail: Crumb[] = [{ href: lang === 'en' ? '/en/' : '/', label: t.home }, .
 </Base>
 
 <style is:global>
-/* Трошиците, бутонът, таблицата, акордеонът, плочата и полето „чака данни“ са
-   примитиви и живеят в `styles/ui.css`. Тук остава само това, което е СОБСТВЕНО
-   на вътрешната страница. */
+/* The breadcrumbs, button, table, accordion, panel and the "awaiting data" field
+   are primitives and live in `styles/ui.css`. Only what is OWN to the inner
+   page stays here. */
 
-/* ── заглавен блок ──────────────────────────────────────────────────────── */
+/* ── heading block ───────────────────────────────────────────────────────── */
 .p-top{max-width:var(--w-page);margin:0 auto;padding:132px var(--gut) 0}
 @media(max-width:759px){.p-top{padding-top:104px}}
 
@@ -110,27 +111,27 @@ const trail: Crumb[] = [{ href: lang === 'en' ? '/en/' : '/', label: t.home }, .
   letter-spacing:var(--ls-tight);text-transform:uppercase}
 .p-lead{margin:var(--h-gap) 0 0;max-width:60ch;font:400 var(--fz-l)/1.6 var(--body);color:var(--ink-2)}
 
-/* ── общият контейнер на разделите ──────────────────────────────────────── */
+/* ── the shared container of the sections ───────────────────────────────────────── */
 .p-wrap{max-width:var(--w-page);margin:0 auto;padding:0 var(--gut)}
 .p-sec{padding:var(--sec-y) 0}
 .p-sec + .p-sec{border-top:1px solid var(--line)}
 .p-sec > h2{margin:0 0 var(--h-gap);font:700 var(--fz-h2)/1.04 var(--head);
   letter-spacing:var(--ls-snug);text-transform:uppercase}
-/* Бележката е ПОДЗАГЛАВЕН ред, не съдържание — стои с една стъпка по-близо до
-   заглавието, отколкото съдържанието. Преди това се постигаше с отрицателен
-   марджин върху бележката: двете правила се изваждаха и никое от тях не казваше
-   колко е отстоянието накрая. */
+/* The note is a SUBHEADING line, not content — it sits one step closer to the
+   heading than the content does. Before, this was done with a negative margin
+   on the note: the two rules subtracted from each other and neither said what
+   the final distance was. */
 .p-sec > h2:has(+ .p-note){margin-bottom:var(--h-gap-tight)}
 .p-sec > .p-note{margin:0 0 var(--h-gap);max-width:56ch;
   font:400 var(--fz-lab)/1.85 var(--mono);
   letter-spacing:var(--ls-lab);text-transform:uppercase;color:var(--ink-4)}
 
-/* ── проза ──────────────────────────────────────────────────────────────── */
-/* ВНИМАНИЕ С НИВАТА. Когато разделът НЯМА свое `.p-sec > h2`, заглавията в
-   прозата СА заглавията на раздела и трябва да са `h2` — иначе страницата
-   скача от h1 на h3. Точно това чупеше 126 от 144 страници.
-   Затова h2 и h3 тук изглеждат ЕДНАКВО: нивото се избира по смисъл, а
-   външният вид не се мени според това дали разделът има собствено заглавие. */
+/* ── prose ───────────────────────────────────────────────────────────────── */
+/* WATCH THE LEVELS. When the section has NO `.p-sec > h2` of its own, the
+   headings in the prose ARE the section headings and must be `h2` — otherwise
+   the page jumps from h1 to h3. That is exactly what broke 126 of 144 pages.
+   So h2 and h3 look the SAME here: the level is chosen by meaning, and the
+   appearance does not change depending on whether the section has its own heading. */
 .p-prose{max-width:var(--w-prose)}
 .p-prose h2,.p-prose h3{margin:var(--sp-7) 0 var(--h-gap-tight);font:700 var(--fz-h3)/1.2 var(--head);
   text-transform:uppercase;letter-spacing:var(--ls-h3)}
@@ -140,11 +141,11 @@ const trail: Crumb[] = [{ href: lang === 'en' ? '/en/' : '/', label: t.home }, .
 .p-prose a:hover{border-bottom-color:var(--lime)}
 .p-prose strong{color:var(--white);font-weight:400}
 
-/* ── двуколонният разрез: текст вляво, сухи числа вдясно ────────────────── */
+/* ── the two-column split: text on the left, dry figures on the right ─────────────────── */
 .p-split{display:grid;gap:var(--sp-7);grid-template-columns:1fr}
 @media(min-width:980px){.p-split{grid-template-columns:1fr 320px;gap:var(--sp-8);align-items:start}}
 
-/* ── списъци „за кого е“ / „кога няма смисъл“ ───────────────────────────── */
+/* ── lists "who it is for" / "when it makes no sense" ────────────────────────────── */
 .p-lists{display:grid;gap:var(--sp-5);grid-template-columns:1fr}
 @media(min-width:760px){.p-lists{grid-template-columns:1fr 1fr}}
 .p-list{padding:var(--sp-5)}
@@ -159,7 +160,7 @@ const trail: Crumb[] = [{ href: lang === 'en' ? '/en/' : '/', label: t.home }, .
 .p-list.yes li::before{content:'+';color:var(--lime)}
 .p-list.no li::before{content:'−';color:var(--warn)}
 
-/* ── стъпките: номерирана пътека ────────────────────────────────────────── */
+/* ── the steps: a numbered path ─────────────────────────────────────────── */
 .p-steps{counter-reset:st;display:grid;gap:0;max-width:74ch}
 .p-step{counter-increment:st;display:grid;grid-template-columns:auto 1fr;gap:0 var(--sp-5);
   padding:var(--sp-5) 0;border-bottom:1px solid var(--line)}
@@ -170,11 +171,11 @@ const trail: Crumb[] = [{ href: lang === 'en' ? '/en/' : '/', label: t.home }, .
   text-transform:uppercase;letter-spacing:.005em}
 .p-step p{margin:0;font:400 var(--fz-s)/1.65 var(--body);color:var(--ink-3)}
 
-/* ── сухите числа отстрани ──────────────────────────────────────────────── */
+/* ── the dry figures at the side ───────────────────────────────────────────────── */
 .p-facts{position:sticky;top:104px;padding:var(--sp-5)}
 @media(max-width:979px){.p-facts{position:static}}
-/* Заглавието на страничната колона е `h2`: тя е самостоятелен раздел на
-   страницата, а не подраздел на прозата до нея. */
+/* The side column heading is an `h2`: it is a self-standing section of the
+   page, not a subsection of the prose next to it. */
 .p-facts h2,.p-facts h3{margin:0 0 var(--h-gap-tight);font:400 var(--fz-lab)/1 var(--mono);
   letter-spacing:var(--ls-lab);text-transform:uppercase;color:var(--lime)}
 .p-facts dl{margin:0}
@@ -186,11 +187,11 @@ const trail: Crumb[] = [{ href: lang === 'en' ? '/en/' : '/', label: t.home }, .
 .p-price b{display:block;font:700 30px/1 var(--head);color:var(--lime);font-variant-numeric:tabular-nums}
 .p-price span{display:block;margin-top:var(--sp-2);font:400 var(--fz-btn)/1.5 var(--mono);color:var(--ink-4)}
 
-/* ── карти: услуги, категории, статии ───────────────────────────────────── */
+/* ── cards: services, categories, articles ────────────────────────────────────── */
 .p-cards{display:grid;gap:var(--sp-4);grid-template-columns:1fr}
 @media(min-width:700px){.p-cards{grid-template-columns:1fr 1fr}}
 @media(min-width:1060px){.p-cards.three{grid-template-columns:repeat(3,1fr)}}
-/* фонът, рамката и радиусът идват от `.panel`; тук е само своето на картата */
+/* background, border and radius come from `.panel`; only the card's own is here */
 .p-card{position:relative;display:block;overflow:hidden;padding:var(--sp-6) var(--sp-6) var(--sp-5)}
 .p-card .wash{position:absolute;inset:0;opacity:0;transition:opacity var(--t-slow);
   background:linear-gradient(135deg,var(--lime-wash) 0%,transparent 62%)}
@@ -210,7 +211,7 @@ const trail: Crumb[] = [{ href: lang === 'en' ? '/en/' : '/', label: t.home }, .
   opacity:.85;transition:opacity var(--t)}
 .p-card:hover .go{opacity:1}
 
-/* ── заключителното действие ────────────────────────────────────────────── */
+/* ── the closing action ─────────────────────────────────────────────── */
 .p-cta{position:relative;overflow:hidden;margin-top:var(--sp-4);padding:var(--sp-8) var(--gut);
   border-top:1px solid var(--line);background:var(--bg-bar)}
 .p-cta::before{content:'';position:absolute;inset:0;

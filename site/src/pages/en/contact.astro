@@ -1,23 +1,23 @@
 ---
 /**
- * Contact — адрес, работно време, телефон и работещата форма.
+ * Contact: address, opening hours, phone and the working form.
  *
  * ═══════════════════════════════════════════════════════════════════════════
- * ТОВА Е ОБРАЗЕЦЪТ ЗА ВСИЧКИ СТРАНИЦИ ПОД `/en/`. Каквото тук е решено веднъж,
- * останалите го повтарят:
+ * THIS IS THE TEMPLATE FOR ALL PAGES UNDER `/en/`. Whatever is decided here once,
+ * the others repeat:
  *
- *  1. ЕЗИКЪТ НЕ СЕ ПОДАВА. `Page`/`Base` го четат от адреса — пътят вече е
- *     `/en/…`, значи лентата, футърът, бисквитките и формата излизат английски
- *     сами. Страницата не внася `dict` заради обвивката.
- *  2. ПЪТЕКАТА тръгва от английската начална — `Page` слага първото звено сама.
- *  3. СХЕМИТЕ носят `'en'`: адресът в тях е латинският от `business.json`,
- *     а `@id` на бизнеса остава същият — фирмата е една.
- *  4. `inLanguage` СЕ ИЗПИСВА. Без него Google има две страници с еднакви
- *     структурирани данни и никакъв признак коя за кого е.
- *  5. ЦИФРИТЕ НЕ СЕ ПИПАТ. Телефон, адрес, работно време и цени идват от
- *     `business.json` и `prices.json` — един източник за двата езика. Цените
- *     са в евро и НЕ се превалутират.
- *  6. Текстът се пише наново по същите факти, не се превежда дословно.
+ *  1. THE LANGUAGE IS NOT PASSED IN. `Page`/`Base` read it from the address: the path is already
+ *     `/en/…`, so the bar, footer, cookies and form come out in English
+ *     on their own. The page does not import `dict` for the wrapper.
+ *  2. THE BREADCRUMB starts from the English home page; `Page` adds the first item itself.
+ *  3. THE SCHEMAS carry `'en'`: the address in them is the Latin one from `business.json`,
+ *     and the business `@id` stays the same, because the company is one.
+ *  4. `inLanguage` IS SPELLED OUT. Without it Google has two pages with identical
+ *     structured data and no sign of which is for whom.
+ *  5. THE NUMBERS ARE NOT TOUCHED. Phone, address, opening hours and prices come from
+ *     `business.json` and `prices.json`: one source for both languages. Prices
+ *     are in euro and are NOT converted.
+ *  6. The text is written anew from the same facts, not translated word for word.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 import Page from '../../layouts/Page.astro';
@@ -29,7 +29,7 @@ const site = Astro.site!.href.replace(/\/$/, '');
 const crumbs = [{ href: '/en/contact/', label: 'Contact' }];
 const portal = portalUrl('en');
 
-/** същата сметка като българската страница, само имената на дните са други */
+/** same calculation as the Bulgarian page, only the day names differ */
 const days: Record<string, string> = {
   Monday: 'Monday', Tuesday: 'Tuesday', Wednesday: 'Wednesday', Thursday: 'Thursday',
   Friday: 'Friday', Saturday: 'Saturday', Sunday: 'Sunday',
@@ -120,7 +120,7 @@ const schema = [
 </Page>
 
 <style is:global>
-/* същата решетка като българските контакти — `.nas-*` идват от `styles/ui.css` */
+/* same grid as the Bulgarian contacts: `.nas-*` comes from `styles/ui.css` */
 .k-grid{display:grid;gap:44px;grid-template-columns:1fr}
 @media(min-width:980px){.k-grid{grid-template-columns:1fr 1.15fr;gap:64px;align-items:start}}
 </style>

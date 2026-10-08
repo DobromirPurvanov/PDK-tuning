@@ -1,14 +1,14 @@
 ---
 /**
- * Политика за поверителност.
+ * Privacy policy.
  *
- * Написана е за ТОЗИ сайт, не е препис от шаблон: изброени са точно полетата на
- * формата, точно бисквитките и точно доставчиците, които се ползват.
+ * Written for THIS site, not a copy of a template: it lists exactly the fields of the
+ * form, exactly the cookies and exactly the providers that are used.
  *
- * ЕИК и ДДС номерът се рисуват САМО когато ги има в business.json. Дотук на
- * тяхно място стоеше видима рамка „попълва се от възложителя“ — тя вършеше
- * работа, докато сайтът се гледаше отвътре, но пред посетител е признание за
- * недовършеност. Напомнянето живее в `_identity_todo` в самия business.json.
+ * The company ID (EIK) and VAT number are drawn ONLY when they are in business.json. Until now
+ * a visible box "to be filled in by the client" stood in their place; it did its job
+ * while the site was viewed from inside, but in front of a visitor it is an admission of
+ * being unfinished. The reminder lives in `_identity_todo` in business.json itself.
  */
 import Text from '../layouts/Text.astro';
 import { BUSINESS as b, LEGAL } from '../config/site';
@@ -46,7 +46,7 @@ const schema = [{
     <dt>Имейл</dt>
     <dd><a href={`mailto:${b.email}`}>{b.email}</a></dd>
     <dt>Длъжностно лице по защита на данните</dt>
-    {/* това НЕ чака никого — отговорът е „няма определено“; затова без рамка */}
+    {/* this waits for NO ONE: the answer is "none designated", so no box */}
     <dd>не е определено — не е задължително за дейност от този мащаб</dd>
   </dl>
 

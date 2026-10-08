@@ -1,20 +1,20 @@
 /**
- * УСЛУГИТЕ — един източник за целия сайт.
+ * THE SERVICES — one source for the whole site.
  *
- * Оттук се хранят: плочките на началната, хъбът `/uslugi/`, тринайсетте
- * страници `/uslugi/<slug>/`, падащото меню, картата на сайта и падащото поле
- * „Услуга" във формата. Ако услуга се добави или махне, се пипа САМО този файл.
+ * It feeds: the home page tiles, the `/uslugi/` hub, the thirteen
+ * `/uslugi/<slug>/` pages, the dropdown menu, the sitemap and the "Service"
+ * dropdown field in the form. If a service is added or removed, ONLY this file is touched.
  *
- * Цените НЕ стоят тук — те са в `prices.json`, за да се сменят на едно място от
- * човек, който не пипа код. Връзката е `priceKey`.
+ * Prices do NOT live here — they are in `prices.json`, so that someone who doesn't touch code
+ * can change them in one place. The link is `priceKey`.
  *
- * ПРАВНАТА ЛИНИЯ Е ЧАСТ ОТ СЪДЪРЖАНИЕТО, не украса: изключването на DPF, EGR и
- * AdBlue е позволено само за машини извън обществените пътища. Тази граница се
- * повтаря на всяка засегната страница нарочно — тя е и позицията на сервиза, и
- * това, което ни пази от обещания, които не бива да се дават.
+ * THE LEGAL LINE IS PART OF THE CONTENT, not decoration: switching off DPF, EGR and
+ * AdBlue is allowed only for machines off public roads. This boundary is
+ * repeated on every affected page on purpose — it is both the workshop's position and
+ * what protects us from promises that must not be made.
  */
 
-/** 24×24 линейни икони, 2px контур — както са в таблото на бранда */
+/** 24×24 line icons, 2px stroke — as in the brand's dashboard */
 export const ICONS = {
   chip: '<path d="M6 6h12v12H6zM10 10h4v4h-4zM9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/>',
   stage: '<path d="M4 20h16M8 20v-5M12 20v-9M16 20v-13M16 7l-2.6 2.6M16 7l2.6 2.6"/>',
@@ -36,45 +36,45 @@ export type IconKey = keyof typeof ICONS;
 
 export type Service = {
   slug: string;
-  /** името, което се вижда навсякъде — меню, плочка, падащо поле */
+  /** the name seen everywhere — menu, tile, dropdown field */
   name: string;
-  /** микро-етикетът над заглавието */
+  /** the micro-label above the heading */
   kicker: string;
   icon: IconKey;
-  /** ключът към prices.json; null = цената е само по оглед */
+  /** the key into prices.json; null = the price is by inspection only */
   priceKey: string | null;
-  /** заглавие и описание за търсачките */
+  /** heading and description for search engines */
   title: string;
   description: string;
   /** H1 of the service page when it differs from `name` (menus keep `name`) */
   heading?: string;
-  /** едно изречение под H1 */
+  /** one sentence under the H1 */
   lead: string;
-  /** краткият текст за плочката на началната */
+  /** the short text for the home page tile */
   short: string;
-  /** показва се на началната сред шестте плочки */
+  /** shown on the home page among the six tiles */
   featured?: boolean;
-  /** за кого е и кога няма смисъл */
+  /** who it is for and when it makes no sense */
   fits: string[];
   notFor?: string[];
-  /** как минава при нас */
+  /** how it goes with us */
   steps: { t: string; d: string }[];
-  /** heading above the steps; defaults to „Как минава при нас“ */
+  /** heading above the steps; defaults to "How it works with us" */
   stepsTitle?: string;
   /** closing call to action; defaults to the generic one in [slug].astro */
   cta?: { title: string; text: string };
-  /** същинският текст; `tone:'warn'` изкарва раздела в оранжева плоча —
-   *  ползва се за правната граница, която НЕ бива да се чете като дребен шрифт */
+  /** the actual text; `tone:'warn'` renders the section as an orange plate —
+   *  used for the legal boundary, which must NOT be read as fine print */
   body: { h: string; p: string[]; tone?: 'warn' }[];
-  /** сухите числа отстрани */
+  /** the dry numbers on the side */
   facts?: { k: string; v: string }[];
-  /** въпроси само за тази услуга — влизат и във FAQPage схемата */
+  /** questions for this service only — they also go into the FAQPage schema */
   faq?: { q: string; a: string }[];
-  /** съседни услуги в дъното */
+  /** neighbouring services at the bottom */
   related: string[];
 };
 
-/** Общото условие, което важи за трите страници около изгорелите газове. */
+/** The common condition that applies to the three pages around exhaust gases. */
 export const OFFROAD_NOTE =
   'Изключване на система за пречистване на изгорели газове се прави САМО за машини, които не се движат по обществени пътища (състезателна, селскостопанска и индустриална техника). За автомобил на пътя работим само по ремонта, защото законът е ясен: автомобил с премахната система не минава технически преглед и не е редовен на пътя.';
 
@@ -726,8 +726,8 @@ export const SERVICES: Service[] = [
   },
 ];
 
-/** бърз достъп по slug */
+/** quick access by slug */
 export const BY_SLUG = new Map(SERVICES.map((s) => [s.slug, s]));
 
-/** шестте на началната — редът е нарочен, не азбучен */
+/** the six on the home page — the order is deliberate, not alphabetical */
 export const FEATURED = SERVICES.filter((s) => s.featured);

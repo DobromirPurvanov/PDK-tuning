@@ -1,11 +1,11 @@
 /**
- * Структурираните данни — на едно място, за да не се разминават между страниците.
+ * Structured data — in one place, so it does not drift between pages.
  *
- * ДВЕ ПРАВИЛА, които не се нарушават:
- *  1. `FAQPage` важи САМО когато отговорът се вижда на страницата. Схема с
- *     въпроси, които ги няма в текста, е повод за ръчна санкция.
- *  2. Оценката от Google НЕ се маркира. Самооценка без видими отзиви е против
- *     правилата — затова `aggregateRating` не съществува тук.
+ * TWO RULES that are not to be broken:
+ *  1. `FAQPage` applies ONLY when the answer is visible on the page. Schema
+ *     with questions that are not in the text is grounds for a manual penalty.
+ *  2. The Google rating is NOT marked up. Self-rating without visible reviews
+ *     is against the rules — which is why `aggregateRating` does not exist here.
  */
 import business from '../data/business.json';
 import type { Lang } from '../i18n';
@@ -13,11 +13,11 @@ import type { Lang } from '../i18n';
 export const bizId = (site: string) => `${site}/#business`;
 
 /**
- * Адресът на фирмата за схемата.
+ * The company address for the schema.
  *
- * Латинската форма НЕ е транслитерация в движение — тя стои в `business.json`
- * като `streetEn` / `cityEn`, защото „ул. „Прилеп“ 96“ има точно един правилен
- * английски вид и той е решен веднъж, от човек.
+ * The Latin form is NOT transliteration on the fly — it lives in `business.json`
+ * as `streetEn` / `cityEn`, because "ул. „Прилеп“ 96" has exactly one correct
+ * English form and it was decided once, by a human.
  */
 const postal = (lang: Lang) => ({
   '@type': 'PostalAddress',
@@ -28,25 +28,25 @@ const postal = (lang: Lang) => ({
 });
 
 /**
- * Избира описание, което се побира в 120–158 знака.
+ * Picks a description that fits in 120–158 characters.
  *
- * Нужно е, защото шаблонните описания на марките вграждат името: „BMW“ и
- * „Mercedes-Benz Trucks“ дават еднакъв текст с 20 знака разлика. Google реже
- * около 155–160 и отрязаното изречение изглежда като недовършена работа.
+ * Needed because the make description templates embed the name: "BMW" and
+ * "Mercedes-Benz Trucks" give the same text with a 20-character difference.
+ * Google cuts at about 155–160 and a truncated sentence looks unfinished.
  *
- * Подават се вариантите ОТ НАЙ-ДЪЛГИЯ КЪМ НАЙ-КЪСИЯ. Връща се първият, който
- * се събира; ако нито един не се събира, се връща последният — по-къс текст е
- * по-малкото зло от отрязан. Няма съкращаване с многоточие: то произвежда
- * изречения, които не са написани от човек.
+ * Variants are passed FROM LONGEST TO SHORTEST. The first one that fits is
+ * returned; if none fits, the last is returned — shorter text is the lesser
+ * evil compared with truncated. No ellipsis shortening: it produces sentences
+ * that no human wrote.
  */
 export const pickDesc = (...variants: string[]): string => pick(158, variants);
 
 /**
- * Същото за заглавието, но с таван 60 знака.
+ * The same for the title, with a 60-character ceiling.
  *
- * Google реже по ПИКСЕЛНА ширина (~600px), не по брой знаци, но кирилицата е
- * приблизително колкото латиницата и 60 е добра работна мярка. Марката остава
- * в края на всеки вариант — тя е това, което трябва да оцелее при рязане.
+ * Google cuts by PIXEL width (~600px), not by character count, but Cyrillic is
+ * roughly as wide as Latin and 60 is a good working measure. The brand stays at
+ * the end of every variant — it is what must survive truncation.
  */
 export const pickTitle = (...variants: string[]): string => pick(60, variants);
 
@@ -58,7 +58,7 @@ const pick = (max: number, variants: string[]): string => {
   return variants[variants.length - 1].replace(/\s+/g, ' ').trim();
 };
 
-/** пътеката като схема; `trail` е същият списък, който се и вижда */
+/** the trail as schema; `trail` is the same list that is also visible */
 export const crumbSchema = (site: string, trail: { href: string; label: string }[]) => ({
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -70,7 +70,7 @@ export const crumbSchema = (site: string, trail: { href: string; label: string }
   })),
 });
 
-/** въпросите — влиза САМО ако същите въпроси стоят в текста на страницата */
+/** the questions — included ONLY if the same questions are in the page text */
 export const faqSchema = (faq: { q: string; a: string }[]) => ({
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -113,11 +113,12 @@ export const serviceSchema = (
 });
 
 /**
- * Тунинг пакетът за конкретен електрически модел.
+ * The tuning package for a specific electric model.
  *
- * `Product`, а не `Service`, защото има един модел, една цена и се купува с
- * бутон. `offers` се изписва САМО когато цената е обявена — Google отсява
- * оферта без цена като невалидна, а измислена цена е по-лошо от липсваща.
+ * `Product`, not `Service`, because there is one model, one price and it is
+ * bought with a button. `offers` is written ONLY when the price is announced —
+ * Google rejects an offer without a price as invalid, and an invented price is
+ * worse than a missing one.
  */
 export const evPackageSchema = (
   site: string,
@@ -165,11 +166,11 @@ export const articleSchema = (
 });
 
 /**
- * Кратката визитка — стои на вътрешните страници, за да сочат към бизнеса.
+ * The short business card — sits on the inner pages so they point to the business.
  *
- * `@id` е ЕДИН И СЪЩ на двата езика (`<site>/#business`) и това е нарочно:
- * фирмата е една. Схемата описва сервиза, не страницата — два различни
- * идентификатора щяха да направят от един сервиз два за Google.
+ * `@id` is ONE AND THE SAME in both languages (`<site>/#business`) and that is
+ * deliberate: the company is one. The schema describes the shop, not the page —
+ * two different identifiers would turn one shop into two for Google.
  */
 export const bizRef = (site: string, lang: Lang = 'bg') => ({
   '@context': 'https://schema.org',
@@ -180,7 +181,7 @@ export const bizRef = (site: string, lang: Lang = 'bg') => ({
   url: `${site}/`,
   telephone: business.phoneIntl,
   email: business.email,
-  // празен идентификатор НЕ се изписва — по-добре липсва, отколкото да лъже
+  // an empty identifier is NOT written — better missing than lying
   ...(business.eik ? { identifier: business.eik, taxID: business.eik } : {}),
   ...(business.vat ? { vatID: business.vat } : {}),
   address: postal(lang),

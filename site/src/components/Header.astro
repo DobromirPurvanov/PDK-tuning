@@ -1,19 +1,19 @@
 ---
 /**
- * Лентата горе. Стои на всяка страница, затова живее тук, а не в началната.
+ * The top bar. It sits on every page, so it lives here and not in the home page.
  *
- * Лентата е ЗАЛЕПЕНА горе и има собствено ПЛЪТНО тяло — полупрозрачна лента
- * върху светъл кадър от видеото посивяваше и седеше като чуждо петно.
- * Затова и няма backdrop-filter: размазването смуква светлината и черното става
- * сиво-млечно.
+ * The bar is STUCK to the top and has its own SOLID body - a semi-transparent bar
+ * over a bright frame of the video went grey and sat there like a foreign patch.
+ * That is also why there is no backdrop-filter: blurring sucks out the light and black turns
+ * milky grey.
  *
- * Внимание с имената: лентата за напредък в избирача веднъж се казваше `bar`
- * като този хедър и наследи `position:fixed` — легна през целия екран като бяла
- * ивица. Класът `bar` е ЗАЕТ от тук.
+ * Careful with names: the progress bar in the picker was once called `bar`
+ * like this header and inherited `position:fixed` - it lay across the whole screen like a white
+ * stripe. The class `bar` is TAKEN from here.
  *
- * САЙТЪТ ВЕЧЕ НЕ Е ЕДНА СТРАНИЦА, затова менюто вече не е списък от котви, а
- * от адреси, а две от точките имат подсписък. Прагът за широкото меню се качи
- * на 1180px: шест точки с моно разредка не се побират под това.
+ * THE SITE IS NO LONGER ONE PAGE, so the menu is no longer a list of anchors but
+ * of addresses, and two of the items have a sub-list. The threshold for the wide menu went up
+ * to 1180px: six items with mono letter-spacing do not fit below it.
  */
 import { EN_LIVE, NAV, portalUrl } from '../config/site';
 import { NAV_EN, langOf, twin } from '../i18n';
@@ -23,34 +23,34 @@ const path = Astro.url.pathname;
 const lang = langOf(path);
 const t = dict(lang);
 const nav = lang === 'en' ? NAV_EN : NAV;
-/** порталът пази езика в пътя: адресът на каталога + `/<lang>/login` */
+/** the portal keeps the language in the path: the catalog address + `/<lang>/login` */
 const portal = portalUrl(lang);
 const home = lang === 'en' ? '/en/' : '/';
 
-/** текущата точка: „/uslugi/chip-tuning/“ свети „Услуги“ */
+/** the current item: "/uslugi/chip-tuning/" lights up "Services" */
 const active = (href: string) =>
   href === home ? path === home : path.startsWith(href.replace(/\/$/, ''));
 
 /**
- * ПРЕВКЛЮЧВАТЕЛЯТ. Дотук тук стоеше `<span>BG / EN</span>` — надпис, който
- * ИЗГЛЕЖДА като копче (носи `btn btn--pill`), а не води наникъде. Възложителят
- * го прочете като счупено и беше прав: неактивно копче се различава от
- * счупено само ако някой прочете `title`.
+ * THE SWITCH. Until now this was `<span>BG / EN</span>` - a label that
+ * LOOKS like a button (it carries `btn btn--pill`) but leads nowhere. The client
+ * read it as broken and was right: an inactive button differs from a
+ * broken one only if someone reads the `title`.
  *
- * Сега е връзка и казва накъде води — „EN“ на българска страница, „BG“ на
- * английска, не „BG / EN“ на двете. Страница без двойник (електрическите,
- * статиите, PDK Flasher) води към началната на другия език и го признава в
- * `title`, вместо копчето да изчезне: изчезващо копче на част от страниците е
- * по-объркващо от копче, което казва къде отива.
+ * Now it is a link and says where it leads - "EN" on a Bulgarian page, "BG" on an
+ * English one, not "BG / EN" on both. A page with no counterpart (the electric ones,
+ * the articles, PDK Flasher) leads to the home page of the other language and admits it in
+ * `title`, instead of the button disappearing: a button vanishing on some of the pages is
+ * more confusing than a button that says where it goes.
  */
 const other = twin(path);
 const switchHref = other?.href ?? (lang === 'bg' ? '/en/' : '/');
 const switchTitle = other ? t.switchTo : t.switchHome;
 const switchLang = lang === 'bg' ? 'en' : 'bg';
-/* Докато `PUBLIC_EN` не е вдигнат, копчето изобщо го няма: английската част се
-   строи на етапи и половин сайт зад видимо копче е по-лошо от липсващо копче.
-   На самите английски страници то ОСТАВА — те не се стигат отникъде, но който
-   е попаднал там, трябва да има изход. */
+/* Until `PUBLIC_EN` is raised, the button is not there at all: the English part is
+      built in stages and half a site behind a visible button is worse than a missing button.
+      On the English pages themselves it STAYS - nothing links to them, but whoever
+      landed there must have a way out. */
 const showSwitch = EN_LIVE || lang === 'en';
 ---
 <header class="bar">
@@ -92,7 +92,7 @@ const showSwitch = EN_LIVE || lang === 'en';
 </header>
 
 <script>
-  // плътна лента, щом сме минали първия екран с очи
+  // solid bar once we have scrolled past the first screen
   const bar = document.querySelector('.bar')!;
   const onScroll = () => bar.classList.toggle('stuck', scrollY > 60);
   addEventListener('scroll', onScroll, { passive: true });
@@ -103,7 +103,7 @@ const showSwitch = EN_LIVE || lang === 'en';
     const open = bar.classList.toggle('open');
     burger.setAttribute('aria-expanded', String(open));
   });
-  // с щракване по връзка менюто се затваря — иначе остава отворено върху съдържанието
+  // clicking a link closes the menu - otherwise it stays open over the content
   bar.querySelectorAll('.menu a').forEach((a) =>
     a.addEventListener('click', () => {
       bar.classList.remove('open');
@@ -111,9 +111,9 @@ const showSwitch = EN_LIVE || lang === 'en';
     })
   );
 
-  // Подсписъкът се отваря с посочване (CSS), но с КЛАВИАТУРА посочване няма.
-  // Затова фокусът вътре в групата я държи отворена — иначе тринайсетте услуги
-  // са недостижими без мишка.
+  // The sub-list opens on hover (CSS), but there is no hovering with a KEYBOARD.
+  // So focus inside the group keeps it open - otherwise the thirteen services
+  // are unreachable without a mouse.
   document.querySelectorAll<HTMLElement>('.has-sub').forEach((g) => {
     g.addEventListener('focusin', () => g.classList.add('open'));
     g.addEventListener('focusout', (e) => {
@@ -132,7 +132,7 @@ const showSwitch = EN_LIVE || lang === 'en';
 .logo img{width:40px;height:40px;border-radius:var(--r-s);border:1px solid var(--line-soft);display:block}
 .logo span{font:400 var(--fz-nav)/1 var(--mono);letter-spacing:.26em;text-transform:uppercase;white-space:nowrap}
 
-/* тънка черта дели марката от менюто — преди „PDK TUNING“ и „КАТАЛОГ“ се сливаха */
+/* a thin line separates the brand from the menu - before, "PDK TUNING" and "CATALOG" ran together */
 .menu{display:none;gap:clamp(18px,1.4vw,32px);margin-left:12px;padding-left:24px;border-left:1px solid var(--line)}
 @media(min-width:1180px){.menu{display:flex;align-items:center}}
 .menu > a,.has-sub > a{position:relative;display:inline-flex;align-items:center;gap:6px;
@@ -146,7 +146,7 @@ const showSwitch = EN_LIVE || lang === 'en';
 .menu [aria-current="page"]{color:var(--white)}
 .menu [aria-current="page"]::after{right:0}
 
-/* ── падащият списък ────────────────────────────────────────────────────── */
+/* ── dropdown list ──────────────────────────────────────────────────────── */
 .has-sub{position:relative}
 .caret{width:5px;height:5px;border-right:1.4px solid currentColor;border-bottom:1.4px solid currentColor;
   transform:rotate(45deg) translate(-1px,-1px);transition:transform var(--t-fast)}
@@ -161,8 +161,8 @@ const showSwitch = EN_LIVE || lang === 'en';
 .sub-in a:hover{background:var(--lime-wash);color:var(--lime)}
 
 .right{margin-left:auto;display:flex;align-items:center;gap:10px}
-/* Вече е ВРЪЗКА, не мъртъв надпис — затова няма `cursor:default` и се държи
-   като останалите копчета в лентата. */
+/* It is now a LINK, not a dead label - so there is no `cursor:default` and it behaves
+      like the other buttons in the bar. */
 .lang-pill{color:var(--ink-3)}
 .lang-pill:hover{color:var(--white);border-color:var(--lime-line)}
 
@@ -176,7 +176,7 @@ const showSwitch = EN_LIVE || lang === 'en';
 .bar.open .burger i:nth-child(2){opacity:0}
 .bar.open .burger i:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
 
-/* ── под 1180px менюто няма как да се отвори без бургер ─────────────────── */
+/* ── below 1180px the menu cannot be opened without a burger ────────────── */
 @media(max-width:1179px){
   .bar{flex-wrap:wrap;padding:14px var(--gut);gap:10px}
   .burger{display:block;order:3}
@@ -191,8 +191,8 @@ const showSwitch = EN_LIVE || lang === 'en';
   .menu > a::after,.has-sub > a::after{display:none}
   .bar.open{background:var(--bg);border-bottom-color:var(--line)}
 
-  /* На тесен екран подсписъкът НЕ е падащ — стои разгънат и с отстъп.
-     Падащо меню, което се отваря с посочване, с пръст е капан. */
+  /* On a narrow screen the sub-list is NOT a dropdown - it stays expanded and indented.
+          A menu that opens on hover is a trap for a finger. */
   .has-sub{position:static}
   .caret{display:none}
   .sub{position:static;padding-top:0;opacity:1;visibility:visible;transform:none}
@@ -202,21 +202,21 @@ const showSwitch = EN_LIVE || lang === 'en';
   .sub-in a:hover{background:none}
 }
 @media(max-width:559px){
-  /* Копчето за език ОСТАВА и на телефон. Криеше се, докато беше мъртъв надпис;
-     сега е единственият вход към другия език, а англичанинът на телефон е
-     точно посетителят, заради когото го има — 5 585 от 5 586 индексирани
-     адреса на стария сайт са английски. Надписът е две букви и не разлива
-     лентата; „PDK TUNING“ до логото си остава скрито. */
+  /* The language button STAYS on the phone too. It used to hide while it was a dead label;
+          now it is the only way into the other language, and an English speaker on a phone is
+          exactly the visitor it exists for - 5,585 of the old site's 5,586 indexed
+          addresses are English. The label is two letters and does not overflow
+          the bar; "PDK TUNING" next to the logo stays hidden. */
   .logo span{display:none}
 }
-/* с пръст всяко копче е поне 48px — на мишка плътността остава каквато е одобрена */
+/* with a finger every button is at least 48px - with a mouse the density stays as approved */
 @media(pointer:coarse){
-  /* бутонът вдига височината си сам в `ui.css` */
-  /* Под 560px надписът „PDK TUNING“ се крие и логото остава 40px ШИРОКО —
-     висока, но тясна цел. Отстоянието я прави 48×48, без да мести знака. */
+  /* the button raises its own height in `ui.css` */
+  /* Below 560px the "PDK TUNING" label hides and the logo stays 40px WIDE -
+          a tall but narrow target. The offset makes it 48×48 without moving the mark. */
   .logo{min-height:48px;min-width:48px;padding:0 4px;margin-left:-4px}
-  /* таблет над 1180px вижда широкото меню, но го пипа с пръст — там точките
-     иначе остават 23px, защото правилото за бургера не важи */
+  /* a tablet above 1180px sees the wide menu but touches it with a finger - there the items
+          would otherwise stay 23px, because the burger rule does not apply */
   .menu > a,.has-sub > a{min-height:48px}
   .burger{width:48px;height:48px}
   .burger i{left:15px;right:15px}

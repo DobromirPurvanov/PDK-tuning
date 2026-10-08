@@ -1,14 +1,14 @@
 ---
 /**
- * Хъбът на английските услуги — огледало на `src/pages/uslugi/index.astro`.
+ * The hub of the English services: a mirror of `src/pages/uslugi/index.astro`.
  *
- * Две разлики от българския и двете са нарочни:
- *  • НЯМА раздел „по вид техника“. Категориите (`/leki-avtomobili/`, `/kamioni/`,
- *    `/selskostopanska-tehnika/`) са български страници; връзка към тях оттук
- *    щеше да извади англичанина от английския сайт.
- *  • Групите се рисуват само ако имат какво. Докато английските текстове се
- *    пишат един по един, хъбът показва готовите и мълчи за останалите, вместо
- *    да остави празно заглавие на раздел.
+ * Two differences from the Bulgarian one, both deliberate:
+ *  * There is NO "by type of vehicle" section. The categories (`/leki-avtomobili/`, `/kamioni/`,
+ *    `/selskostopanska-tehnika/`) are Bulgarian pages; a link to them from here
+ *    would take the English reader out of the English site.
+ *  * Groups are drawn only if they have something. While the English texts are
+ *    written one by one, the hub shows the finished ones and stays silent about the rest, instead of
+ *    leaving an empty section heading.
  */
 import Page from '../../../layouts/Page.astro';
 import { ICONS } from '../../../data/services';
@@ -37,7 +37,7 @@ const schema = [
   },
 ];
 
-/** трите семейства — същото разделение като българското, с английски слугове */
+/** the three families: the same split as the Bulgarian one, with English slugs */
 const groups = [
   {
     lab: 'Power',

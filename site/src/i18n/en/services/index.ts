@@ -1,25 +1,25 @@
 /**
- * УСЛУГИТЕ НА АНГЛИЙСКИ — по един файл на услуга.
+ * THE SERVICES IN ENGLISH — one file per service.
  *
  * ═══════════════════════════════════════════════════════════════════════════
- * ЗАЩО ПАПКА, А БЪЛГАРСКИТЕ СА ЕДИН ФАЙЛ.
+ * WHY A FOLDER, WHEN THE BULGARIAN ONES ARE A SINGLE FILE.
  *
- * `src/data/services.ts` е 65 KB и това е добре: той е написан наведнъж и се
- * чете наведнъж. Английските се пишат от няколко страни паралелно (вж.
- * `docs/ANGLIYSKI-DOGOVOR.md`) — тринайсет души или модула в един файл значи
- * тринайсет сблъсъка. По един файл на услуга е цената на паралелната работа и
- * се плаща само веднъж.
+ * `src/data/services.ts` is 65 KB and that is fine: it was written in one go
+ * and is read in one go. The English ones are written by several parties in
+ * parallel (see `docs/ENGLISH-CONTRACT.md`) — thirteen people or modules in
+ * one file means thirteen collisions. One file per service is the price of
+ * parallel work, and it is paid only once.
  *
- * `slug` в ТОЗИ набор е АНГЛИЙСКИЯТ: четирите български слуга стават
- * `dtc-errors`, `diagnostics`, `dyno`, `software-repair` (вж. `serviceSlugEn`
- * в `../../index.ts`). `related` сочи английски слугове — иначе връзките в
- * дъното на страницата водят към български адреси.
+ * `slug` in THIS set is the ENGLISH one: the four Bulgarian slugs become
+ * `dtc-errors`, `diagnostics`, `dyno`, `software-repair` (see `serviceSlugEn`
+ * in `../../index.ts`). `related` points at English slugs — otherwise the links
+ * at the bottom of the page lead to Bulgarian addresses.
  *
- * `icon` и `priceKey` остават СЪЩИТЕ като българските: иконите са рисунки, а
- * цените са в евро и не се превалутират.
+ * `icon` and `priceKey` stay the SAME as the Bulgarian ones: the icons are
+ * drawings, and the prices are in euro and are not converted.
  *
- * РЕДЪТ ТУК Е РЕДЪТ НА САЙТА — меню, хъб, падащото поле във формата. Същият е
- * като българския, за да не се четат двата сайта различно.
+ * THE ORDER HERE IS THE SITE ORDER — menu, hub, the dropdown in the form. It is
+ * the same as the Bulgarian one, so the two sites do not read differently.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 import type { Service } from '../../../data/services';
@@ -40,13 +40,12 @@ import { softwareRepair } from './software-repair';
 export { OFFROAD_NOTE_EN } from './offroad';
 
 /**
- * Услугите, които вече имат английски текст.
+ * The services that already have English text.
  *
- * Празен масив е работещо състояние: `/en/services/` показва толкова карти,
- * колкото има, `/en/services/<slug>/` изгражда толкова страници, колкото има, а
- * `ROUTES` дава `hreflang` само за двойките, които съществуват и от двете
- * страни. Услуга се появява навсякъде наведнъж в мига, в който файлът ѝ се
- * внесе тук.
+ * An empty array is a working state: `/en/services/` shows as many cards as
+ * there are, `/en/services/<slug>/` builds as many pages as there are, and
+ * `ROUTES` gives `hreflang` only for the pairs that exist on both sides. A
+ * service appears everywhere at once the moment its file is imported here.
  */
 export const SERVICES_EN: Service[] = [
   chipTuning,
@@ -64,8 +63,8 @@ export const SERVICES_EN: Service[] = [
   softwareRepair,
 ];
 
-/** шестте на английската начална; докато наборът е празен, е празен и този */
+/** the six on the English home page; while the set is empty, this one is empty too */
 export const FEATURED_EN = SERVICES_EN.filter((s) => s.featured);
 
-/** по английски слуг — същото, което `BY_SLUG` прави за българските */
+/** by English slug — the same thing `BY_SLUG` does for the Bulgarian ones */
 export const BY_SLUG_EN = new Map(SERVICES_EN.map((s) => [s.slug, s]));

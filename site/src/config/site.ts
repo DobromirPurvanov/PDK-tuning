@@ -1,76 +1,76 @@
 /**
- * Едно място за всичко, което различава макета от истинското пускане.
+ * One place for everything that differs between the mockup and the real launch.
  *
- * Когато сайтът тръгне на собствен домейн, се пипат ДВЕ неща:
- *   1. `site` в astro.config.mjs → истинският домейн (канониклите и картата го четат оттам);
- *   2. `PUBLIC_INDEXABLE=true` в средата → маха се `noindex` и robots.txt отваря обхождането.
- * Нищо друго не се търси из страниците.
+ * When the site goes live on its own domain, TWO things change:
+ *   1. `site` in astro.config.mjs → the real domain (canonicals and the sitemap read it from there);
+ *   2. `PUBLIC_INDEXABLE=true` in the environment → removes `noindex` and robots.txt opens crawling.
+ * Nothing else has to be hunted down across the pages.
  */
 import business from '../data/business.json';
 import { SERVICES } from '../data/services';
 import { CATEGORIES } from '../data/categories';
 
-/** Дали пускаме търсачките. Макетът стои ЗАТВОРЕН: индексира се истинският домейн,
- *  не new-pdk.pages.dev — иначе двата адреса се бият за едни и същи думи. */
+/** Whether search engines are let in. The mockup stays CLOSED: the real domain gets indexed,
+ *  not new-pdk.pages.dev — otherwise the two addresses compete for the same words. */
 export const INDEXABLE = import.meta.env.PUBLIC_INDEXABLE === 'true';
 
-/** GA4 маркерът идва от средата и е ПРАЗЕН в макета: демонстрационните посещения
- *  нямат работа в имота на клиента. Празно = не се зарежда нищо. */
+/** The GA4 measurement ID comes from the environment and is EMPTY in the mockup: demo visits
+ *  have no business in the client's property. Empty = nothing is loaded. */
 export const GA_ID = import.meta.env.PUBLIC_GA_ID ?? '';
 
 /**
- * ЖИВА ЛИ Е АНГЛИЙСКАТА ВЕРСИЯ. Изключена по подразбиране.
+ * WHETHER THE ENGLISH VERSION IS LIVE. Off by default.
  *
- * Английският сайт се строи на етапи (`docs/ANGLIYSKI.md`) и междинните
- * състояния са НЕПЪЛНИ по замисъл: обвивката е готова, но не всяка страница
- * има двойник. Пуснат така, той дава копче „EN“, което води към работеща
- * страница, чийто футър сочи четири правни страници, които ги няма — тоест
- * посетител, попаднал на 404 от собственото ни меню.
+ * The English site is built in stages (`docs/ENGLISH.md`) and the intermediate
+ * states are INCOMPLETE by design: the shell is ready, but not every page
+ * has a counterpart. Released like that, it shows an "EN" button that leads to a working
+ * page whose footer points to four legal pages that don't exist yet, i.e. a
+ * visitor landing on a 404 from our own menu.
  *
- * Един ключ държи цялата английска част:
- *   празно  → `/en/…` НЕ се изгражда, копчето за език го няма, `hreflang`
- *             мълчи, картата на сайта не обещава английски адреси.
- *             Българският сайт е точно какъвто беше — може да се пуска днес.
- *   `true`  → всичко английско се появява наведнъж.
+ * One key controls the whole English part:
+ *   empty   → `/en/…` is NOT built, there is no language button, `hreflang`
+ *             stays silent, the sitemap promises no English addresses.
+ *             The Bulgarian site is exactly as it was, ready to ship today.
+ *   `true`  → everything English appears at once.
  *
- * Така строежът върви на `main`, без да чака деня на пускането, и без да
- * заплашва пускането. Вдига се, когато `npm run check:en` мине на нула липсващи
- * страници.
+ * This way the build proceeds on `main` without waiting for launch day, and without
+ * endangering the launch. Raise it when `npm run check:en` reports zero missing
+ * pages.
  */
 export const EN_LIVE = import.meta.env.PUBLIC_EN === 'true';
 
 /**
- * КОДЪТ ЗА УДОСТОВЕРЯВАНЕ В SEARCH CONSOLE.
+ * THE SEARCH CONSOLE VERIFICATION CODE.
  *
- * Google дава четири начина да докажеш, че сайтът е твой: DNS запис, файл в
- * корена, връзка с Analytics и мета таг. Първите три тук не стават:
- *   - DNS: зоната `pdktuning.com` НЕ е в нашия акаунт (16.09.2026) и токенът
- *     ни няма `dns:write` — записът го прави IT-то на клиента;
- *   - файл в корена: Pages ще го обслужва, но името е случайно и се сменя при
- *     всяко ново потвърждаване, тоест влиза в repo-то за нищо;
- *   - Analytics: имотът на стария сайт (`G-13T4ZTVM1W`) не е наш.
- * Остава мета тагът — той се слага като ключ в средата и не изисква никого.
+ * Google offers four ways to prove the site is yours: a DNS record, a file in
+ * the root, an Analytics link and a meta tag. The first three don't work here:
+ *   - DNS: the `pdktuning.com` zone is NOT in our account (16.09.2026) and our token
+ *     has no `dns:write` — the record is made by the client's IT;
+ *   - file in the root: Pages would serve it, but the name is random and changes on
+ *     every re-verification, so it would go into the repo for nothing;
+ *   - Analytics: the old site's property (`G-13T4ZTVM1W`) is not ours.
+ * That leaves the meta tag — it is set as an environment key and needs nobody else.
  *
- * ПРАЗНО = тагът изобщо не се изписва. Стойността е САМО съдържанието на
- * `content`, без обвивката: от `<meta name="google-site-verification"
- * content="abc123" />` се копира `abc123`.
+ * EMPTY = the tag is not written at all. The value is ONLY the contents of
+ * `content`, without the wrapper: from `<meta name="google-site-verification"
+ * content="abc123" />` you copy `abc123`.
  *
- * Тагът се пише на ВСЯКА страница, не само на началната — Google проверява
- * адреса, който сам избере, а за домейн-собственост и без това не важи.
+ * The tag is written on EVERY page, not just the home page — Google checks the
+ * address it picks itself, and for domain ownership it doesn't apply anyway.
  */
 export const GSC_VERIFY = import.meta.env.PUBLIC_GSC_VERIFY ?? '';
 
 /**
- * ЖИВ ЛИ Е ЧЕКАУТЪТ. Изключен по подразбиране.
+ * WHETHER CHECKOUT IS LIVE. Off by default.
  *
- * Страницата за поръчка е статична и не може да пита работника дали има ключ за
- * Stripe, а текстът „плащането още не става онлайн“ трябва да изчезне в същия
- * миг, в който плащането тръгне. Затова един флаг при билда управлява думите,
- * а работникът си решава сам по `STRIPE_SECRET_KEY`.
+ * The order page is static and cannot ask the worker whether there is a Stripe
+ * key, and the text "payment isn't online yet" must disappear the moment
+ * payment goes live. So one build-time flag controls the wording,
+ * while the worker decides for itself by `STRIPE_SECRET_KEY`.
  *
- * При пускането се вдигат ДВЕТЕ: `PUBLIC_CHECKOUT=true` в билда и
- * `STRIPE_SECRET_KEY` в средата на Pages. Само едното дава или мълчалива
- * страница, която обещава плащане, или обратното.
+ * At launch BOTH are raised: `PUBLIC_CHECKOUT=true` in the build and
+ * `STRIPE_SECRET_KEY` in the Pages environment. Only one of them gives either a silent
+ * page that promises payment, or the opposite.
  */
 export const CHECKOUT_LIVE = import.meta.env.PUBLIC_CHECKOUT === 'true';
 
@@ -79,11 +79,11 @@ export const SITE = {
   locale: 'bg_BG',
   lang: 'bg',
   /**
-   * Снимката за споделяне; прави се абсолютна спрямо домейна в Head.astro.
+   * The share image; made absolute against the domain in Head.astro.
    *
-   * ОТДЕЛЕН ФАЙЛ, не хиро кадърът. Facebook, LinkedIn, X и Slack режат към
-   * 1,91 (1200×630); хирото е 1280×704 = 1,82 и всяка платформа го реже сама
-   * и по различен начин. Този е изрязан веднъж, съзнателно —
+   * A SEPARATE FILE, not the hero frame. Facebook, LinkedIn, X and Slack crop to
+   * 1.91 (1200×630); the hero is 1280×704 = 1.82 and each platform crops it itself
+   * and differently. This one is cropped once, deliberately —
    * `node scripts/make-og.mjs`.
    */
   ogImage: '/img/og-pdk.jpg',
@@ -93,29 +93,29 @@ export const SITE = {
   ogImageAlt: 'Тъмно купе на стенда на PDK Tuning във Варна, осветено в зелено',
   themeColor: '#080808',
   /**
-   * Марката НЯМА профил в X. `twitter:site` и `twitter:creator` нарочно
-   * ЛИПСВАТ — измислен хендъл сочи чужд профил, а празен атрибут е невалиден.
-   * `twitter:card` работи и без тях.
+   * The brand has NO profile on X. `twitter:site` and `twitter:creator` are
+   * deliberately ABSENT — an invented handle points to someone else's profile, and an empty attribute is invalid.
+   * `twitter:card` works without them.
    */
   twitterHandle: '' as string,
 } as const;
 
 /**
  * ═══════════════════════════════════════════════════════════════════════════
- * АДРЕСИТЕ СА НА КОРЕНА, С ЛАТИНИЦА — и това НЕ е стилово решение.
+ * ADDRESSES LIVE AT THE ROOT, IN LATIN LETTERS — and this is NOT a style decision.
  *
- * След прехвърлянето този сайт застава върху pdktuning.com, а старият остава
- * отдолу: `/bg`, `/en`, `/images`, `/vendor`, `/js`, `/css`, `/uploads`,
- * `/storage` се ПОДАВАТ на него (виж `passThrough` в public/_worker.js), за да
- * не се счупят ~9 000 индексирани адреса и входът на дилърите.
+ * After the transfer this site sits on pdktuning.com while the old one stays
+ * underneath: `/bg`, `/en`, `/images`, `/vendor`, `/js`, `/css`, `/uploads`,
+ * `/storage` are PASSED THROUGH to it (see `passThrough` in public/_worker.js) so
+ * that ~9,000 indexed addresses and the dealers' login don't break.
  *
- * Затова нито една наша страница не бива да живее под `/bg/` — тя просто няма
- * да стигне до нас. Всеки нов адрес се добавя тук и се проверява, че не се
- * застъпва със списъка в работника.
+ * So none of our pages may live under `/bg/` — it simply would not
+ * reach us. Every new address is added here and checked so it doesn't overlap with the list
+ * in the worker.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-/** Разделите НА НАЧАЛНАТА — котви, не страници. */
+/** The sections ON THE HOME PAGE — anchors, not pages. */
 export const SECTIONS = [
   { id: 'picker', label: 'Изберете автомобил' },
   { id: 'services', label: 'Услуги' },
@@ -125,8 +125,8 @@ export const SECTIONS = [
 
 export type NavItem = { href: string; label: string; children?: { href: string; label: string }[] };
 
-/** Основното меню. Двете групи с падащ списък се четат от данните, за да не
- *  съществува връзка към услуга или категория, която я няма. */
+/** The main menu. The two dropdown groups are read from the data, so that
+ *  there is no link to a service or category that doesn't exist. */
 export const NAV: NavItem[] = [
   {
     href: '/uslugi/',
@@ -142,8 +142,8 @@ export const NAV: NavItem[] = [
       { href: '/katalog/', label: 'Всички марки' },
     ],
   },
-  // Собствен вход в лентата, а не само в падащия списък: това е новото
-  // направление и рекламата на началната води точно тук.
+  // Own entry in the bar, not only in the dropdown: this is the new
+  // direction and the home page advert leads exactly here.
   { href: '/elektricheski/', label: 'Електрически автомобили' },
   { href: '/tseni/', label: 'Цени' },
   { href: '/kak-rabotim/', label: 'Как работим' },
@@ -151,7 +151,7 @@ export const NAV: NavItem[] = [
   { href: '/kontakti/', label: 'Контакти' },
 ];
 
-/** Втори ред връзки — стоят в долния ред, не в лентата. */
+/** Second row of links — they sit in the bottom row, not in the bar. */
 export const MORE = [
   { href: '/pdk-flasher/', label: 'Устройството PDK Flasher' },
   { href: '/vaprosi/', label: 'Въпроси и отговори' },
@@ -160,7 +160,7 @@ export const MORE = [
   { href: '/za-dileri/', label: 'За дилъри и сервизи' },
 ] as const;
 
-/** Правните страници: едно място, от което ги вадят и футърът, и картата. */
+/** The legal pages: one place from which both the footer and the sitemap take them. */
 export const LEGAL = [
   { href: '/privacy/', label: 'Поверителност' },
   { href: '/terms/', label: 'Общи условия' },
@@ -169,9 +169,9 @@ export const LEGAL = [
 ] as const;
 
 /**
- * Данните на фирмата. `legalAddress` СЕ СТРОИ, не се чете от файла — вж.
- * `_legalAddress_todo` в business.json: отделно поле значеше правни страници
- * със стария адрес (ул. „Прилеп“ 164) — възложителят потвърди 96 и полето отпадна.
+ * The company data. `legalAddress` is BUILT, not read from the file — see
+ * `_legalAddress_todo` in business.json: a separate field meant legal pages
+ * with the old address (ul. "Prilep" 164) — the client confirmed 96 and the field was dropped.
  */
 export const BUSINESS = {
   ...business,
@@ -179,23 +179,23 @@ export const BUSINESS = {
 };
 
 /**
- * АДРЕСИТЕ ИДВАТ ОТ `.env.local`, НЕ СЕ ЗАШИВАТ. Виж бележката в astro.config.mjs.
+ * ADDRESSES COME FROM `.env.local`, THEY ARE NOT HARDCODED. See the note in astro.config.mjs.
  *
- * `PDK_BASE_URL` / `PDK_CATALOG_URL` се вграждат при билда от `vite.define` —
- * не са `PUBLIC_`, значи НЕ излизат в браузъра като променливи, само като
- * готовия текст на връзките.
+ * `PDK_BASE_URL` / `PDK_CATALOG_URL` are baked in at build time by `vite.define` —
+ * they are not `PUBLIC_`, so they do NOT reach the browser as variables, only as
+ * the finished text of the links.
  */
 export const BASE_URL = (import.meta.env.PDK_BASE_URL ?? '').replace(/\/+$/, '');
 export const CATALOG_URL = (import.meta.env.PDK_CATALOG_URL ?? '').replace(/\/+$/, '');
 
 /**
- * ПОРТАЛЪТ НА ДИЛЪРИТЕ — „Вход“, „Качи файл“, „Портал за партньори“.
+ * THE DEALER PORTAL — "Login", "Upload file", "Partner portal".
  *
- * Връзките водят директно към отделния адрес на каталога и пазят езика в пътя:
- * `files.pdktuning.com/<lang>/login`. Така входът не зависи от проксито на
- * основния сайт, а английската версия може да използва същия строител с `en`.
+ * The links go directly to the separate catalog address and keep the language in the path:
+ * `files.pdktuning.com/<lang>/login`. This way login doesn't depend on the main site's
+ * proxy, and the English version can use the same builder with `en`.
  *
- * `PORTAL_URL` остава като изрично пренаписване за временна или друга среда.
+ * `PORTAL_URL` remains as an explicit override for a temporary or other environment.
  */
 export type PortalLanguage = 'bg' | 'en';
 

@@ -1,25 +1,25 @@
 /**
- * ЖЕТОНИТЕ НА БРАНДА — единственият източник на истината за визията.
+ * BRAND TOKENS — the single source of truth for the look.
  *
- * Източникът е бранд таблото на клиента в Canva (`docs/brand/p1.png` и
- * `p7.png`): черно + киселинно зелено, Oswald главни за заглавията, слоганът
- * „Всеки автомобил има потенциал / Ние знаем как да го отключим“. Палитрата тук
- * е мерена от пиксела на таблото, не измислена — затова стойностите не се
- * „подобряват“ без нова дума от клиента.
+ * The source is the client's brand board in Canva (`docs/brand/p1.png` and
+ * `p7.png`): black + acid green, Oswald caps for headings, the slogan
+ * "Every car has potential / We know how to unlock it". The palette here
+ * was measured from the board's pixels, not invented — so the values are not
+ * "improved" without a new word from the client.
  *
- * Правилото е просто: в останалия CSS няма гол hex, гол радиус и голо време.
- * `scripts/check-tokens.mjs` го пази, `docs/DIZAYN.md` го обяснява, `/stil` го
- * показва на живо.
+ * The rule is simple: in the rest of the CSS there is no bare hex, bare radius or bare time.
+ * `scripts/check-tokens.mjs` guards it, `docs/DESIGN.md` explains it, `/stil` shows
+ * it live.
  *
- * Преди този файл в кода имаше 32 прозрачности на бялото, 15 на зеленото, 9
- * почти-черни, 15 радиуса и 12 продължителности на прехода — за едни и същи
- * шест неща. Наборите долу са свиване на точно това, всеки път към най-често
- * срещаната стойност, за да мръдне възможно най-малко.
+ * Before this file the code had 32 opacities of white, 15 of green, 9
+ * near-blacks, 15 radii and 12 transition durations — for the same
+ * six things. The sets below collapse exactly that, each time to the most
+ * common value, so that as little as possible moves.
  */
 
-/* ── шрифтовете ──────────────────────────────────────────────────────────────
-   Кирилицата и латиницата са отделни файлове с `unicode-range`: българският
-   текст не чака латинските знаци. Само две тегла в целия сайт — 400 и 700.
+/* ── fonts ───────────────────────────────────────────────────────────────────
+   Cyrillic and Latin are separate files with `unicode-range`: Bulgarian
+   text doesn't wait for the Latin glyphs. Only two weights on the whole site — 400 and 700.
 */
 @font-face{font-family:'Oswald';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/oswald-700-cyrillic.woff2) format('woff2');unicode-range:U+0400-045F,U+0490-0491}
 @font-face{font-family:'Oswald';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/oswald-700-latin.woff2) format('woff2')}
@@ -29,32 +29,32 @@
 @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/jetbrains-mono-400-latin.woff2) format('woff2')}
 
 :root{
-  /* ── повърхности ───────────────────────────────────────────────────────────
-     Девет почти-черни станаха четири. `#0A0A0A` оцелява отделно от `#0C0C0C`
-     не заради окото — разликата е 2/255 — а защото за лентата „плътно черно и
-     в покой“ е взето решение: полупрозрачна лента върху светъл кадър от
-     видеото посивява, а `backdrop-filter:blur` над видео дава млечно сиво.
-     `--hair` е цветът на диагоналните косъм-щрихи, не повърхност за съдържание.
+  /* ── surfaces ──────────────────────────────────────────────────────────────
+     Nine near-blacks became four. `#0A0A0A` survives separately from `#0C0C0C`
+     not for the eye — the difference is 2/255 — but because a decision was made for the bar:
+     "solid black even at rest": a translucent bar over a bright frame of the
+     video turns gray, and `backdrop-filter:blur` over video gives milky gray.
+     `--hair` is the color of the diagonal hairline strokes, not a content surface.
   */
   --bg:#080808;
   --bg-bar:#0A0A0A;
   --surface:#0C0C0C;
   --hair:#1A1A1A;
 
-  /* ── текст ─────────────────────────────────────────────────────────────────
-     ЧЕТИВНИЯТ ТЕКСТ НЕ Е ЧИСТО БЯЛО, и това не е дребна настройка.
+  /* ── text ──────────────────────────────────────────────────────────────────
+     READABLE TEXT IS NOT PURE WHITE, and this is not a minor tweak.
 
-     `#FFFFFF` върху `#080808` дава контраст 20:1 — максималният възможен. На
-     тъмен фон толкова силен светъл текст halate-ва: буквите „греят“ в тъмното
-     и след няколко абзаца очите започват да парят. Прагът на WCAG е долна
-     граница (4,5:1), не цел; за дълъг текст на тъмна тема таванът е около
-     16:1. `--ink` е `#E8E8E8` → 16,3:1, тоест четири пъти над прага.
+     `#FFFFFF` on `#080808` gives a contrast of 20:1 — the maximum possible. On a
+     dark background light text that strong halates: the letters "glow" in the dark
+     and after a few paragraphs the eyes start to burn. The WCAG threshold is a lower
+     bound (4.5:1), not a goal; for long text on a dark theme the ceiling is about
+     16:1. `--ink` is `#E8E8E8` → 16.3:1, i.e. almost four times over the threshold.
 
-     Заглавията остават чисто бели (`--white`): те са едри и кратки, там халация
-     няма, а разликата в цвета сама подрежда йерархията.
+     Headings stay pure white (`--white`): they are large and short, there is no halation
+     there, and the color difference alone orders the hierarchy.
 
-     `--ink-5` е ДЪНОТО. Измерено върху `#0C0C0C`, под алфа 0,45 нищо не стига
-     4,5:1 — затова по-бледо от това не е текст, а разделител, и се взима от
+     `--ink-5` is the FLOOR. Measured on `#0C0C0C`, below alpha 0.45 nothing reaches
+     4.5:1 — so anything paler than this is not text but a divider, and is taken from
      `--line-*`.
   */
   --white:#FFFFFF;
@@ -64,15 +64,15 @@
   --ink-4:rgba(255,255,255,.62);
   --ink-5:rgba(255,255,255,.45);
 
-  /* ── линии и подложки ──────────────────────────────────────────────────────
-     `--line` е плътната граница (картите, разделителите между разделите).
-     Прозрачните три са за неща ВЪРХУ повърхност, където плътният сив би се
-     видял като втора кутия: рамките на бутоните и разделителите вътре в панел.
-     `--line-mid` е и цветът на декоративните знаци между думи („/“, „·“) —
-     те не са текст за четене, затова им е позволено да са под контрастния праг.
+  /* ── lines and underlays ───────────────────────────────────────────────────
+     `--line` is the solid border (cards, dividers between sections).
+     The three translucent ones are for things ON a surface, where a solid gray would
+     look like a second box: button borders and dividers inside a panel.
+     `--line-mid` is also the color of decorative marks between words ("/", "·") —
+     they are not text to read, so they are allowed to fall below the contrast threshold.
 
-     `--tint-*` са едва доловимите светли подложки: полето на формата, кутийката
-     под иконата, реда под показалеца в таблица.
+     `--tint-*` are barely perceptible light underlays: the form field, the box
+     under an icon, the row under the pointer in a table.
   */
   --line:#232323;
   --line-soft:rgba(255,255,255,.16);
@@ -81,10 +81,10 @@
   --tint-1:rgba(255,255,255,.03);
   --tint-2:rgba(255,255,255,.06);
 
-  /* ── акцентът ──────────────────────────────────────────────────────────────
-     `--lime` е марката. `--green` е другият край на градиента от таблото —
-     двата заедно правят лентата на мощността. `--lime-ink` е тъмнозеленото за
-     текст ВЪРХУ лайм: черното изглежда мръсно върху толкова наситен цвят.
+  /* ── the accent ────────────────────────────────────────────────────────────
+     `--lime` is the brand. `--green` is the other end of the board's gradient —
+     together they make the power bar. `--lime-ink` is the dark green for
+     text ON lime: black looks dirty on such a saturated color.
   */
   --lime:#52FB09;
   --green:#05AD02;
@@ -93,47 +93,47 @@
   --lime-wash:rgba(82,251,9,.14);
   --lime-dim:rgba(82,251,9,.06);
 
-  /* ── сигналът ──────────────────────────────────────────────────────────────
-     Единственият топъл цвят на сайта. Пази се за „кога няма смисъл“, за
-     правната граница и за грешка във форма — ако се появи някъде другаде,
-     спира да значи нещо.
+  /* ── the signal ────────────────────────────────────────────────────────────
+     The only warm color on the site. Reserved for "when it makes no sense", for
+     the legal boundary and for a form error — if it appears anywhere else,
+     it stops meaning anything.
   */
   --warn:#FF8E72;
   --warn-line:rgba(255,142,114,.40);
   --warn-bg:rgba(255,107,74,.07);
-  /* Текстът в съобщението на формата. Не е `--warn` и не е `--lime`: върху
-     техните собствени фонове наситеният цвят се слива, затова е избелен
-     вариант на същия тон. */
+  /* Text in the form message. It is neither `--warn` nor `--lime`: on
+     their own backgrounds the saturated color blends in, so it is a lightened
+     variant of the same hue. */
   --warn-ink:#FFC2B0;
   --ok-ink:#CFFFB8;
 
-  /* ── затъмнение и сянка ────────────────────────────────────────────────────
-     Черното с прозрачност е отделно от повърхностите: то ляга ВЪРХУ кадър или
-     видео, а не образува кутия. `--shade-hard` е сянката под текста в хирото —
-     тя е единственото, което държи заглавието четимо, когато под него мине
-     светъл кадър, затова е толкова плътна. `--tick` са деленията на лентата на
-     мощността: изрязват фона, вместо да рисуват линия отгоре.
+  /* ── dimming and shadow ────────────────────────────────────────────────────
+     Translucent black is separate from the surfaces: it lies ON a frame or
+     video and does not form a box. `--shade-hard` is the shadow under the text in the hero —
+     it is the only thing keeping the heading legible when a bright
+     frame passes under it, which is why it is so dense. `--tick` are the divisions of the
+     power bar: they cut out the background instead of drawing a line on top.
   */
   --shade:rgba(8,8,8,.72);
   --shade-hard:rgba(8,8,8,.95);
   --tick:rgba(8,8,8,.45);
   --shadow:0 18px 44px rgba(0,0,0,.6);
-  /* сиянието около числото — зеленото на бранда, разредено до мъгла */
+  /* the glow around the number — the brand green, thinned to a haze */
   --green-glow:rgba(5,173,2,.12);
-  /* Сърцевината на зеления дим по дъното на хирото. Отделна стойност, защото
-     петното вече НЕ се размазва с `filter:blur()` — размазването струваше цял
-     кадър на всеки кадър. Мекотата идва от самия градиент, а за да изглежда
-     еднакво, сърцевината стои между `--lime-wash` и `--lime-line`. */
+  /* The core of the green smoke along the bottom of the hero. A separate value, because
+     the blob is no longer blurred with `filter:blur()` — blurring cost a whole
+     frame on every frame. The softness comes from the gradient itself, and for it to look
+     the same, the core sits between `--lime-wash` and `--lime-line`. */
   --smoke:rgba(82,251,9,.30);
 
-  /* ── шрифтове ──────────────────────────────────────────────────────────── */
+  /* ── fonts ─────────────────────────────────────────────────────────────── */
   --head:'Oswald','Arial Narrow',sans-serif;
   --body:'Golos Text',system-ui,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
 
-  /* ── размери ───────────────────────────────────────────────────────────────
-     По роля, не по число: така „етикетът“ е един размер навсякъде, вместо да
-     е 9, 10 или 11 според това кой го е писал.
+  /* ── sizes ─────────────────────────────────────────────────────────────────
+     By role, not by number: this way the "label" is one size everywhere, instead of
+     being 9, 10 or 11 depending on who wrote it.
   */
   /* Fluid on purpose: fixed px sizes read as fine print on large high-res
      monitors (client complaint, 26.09.2026). Each step grows with the viewport
@@ -143,18 +143,18 @@
   /* Desktop menu: appears at 1180px, where eight items barely fit, so it starts
      at the old 11px and only grows on wide screens. */
   --fz-nav:clamp(11px,.55vw + 4px,14px);
-  /* Дъното на скалата. В кода имаше и 8px, и 9px — на екран това вече не е
-     надпис, а текстура; вдигнати са дотук. По-дребно от 10px в моно с широка
-     разредка не се чете, а точно широката разредка е характерът на бранда. */
+  /* The bottom of the scale. The code had both 8px and 9px — on screen that is no longer
+     a caption but a texture; they were raised to this. Anything smaller than 10px in wide-tracked
+     mono is not readable, and the wide tracking is exactly the brand's character. */
   --fz-2xs:clamp(13px,.15vw + 11.5px,14px);
   --fz-xs:clamp(14px,.2vw + 12px,15px);
   --fz-s:clamp(15px,.3vw + 12.5px,17px);
-  /* ДЪЛЪГ ТЕКСТ ЗА ЧЕТЕНЕ — правните страници, прозата в услугите, статиите.
-     Не е `--fz-s`: 15px е за карта и списък, където текстът е кратък и гледан
-     на пробег. В колона от 70 знака, която се чете изречение по изречение, един
-     пиксел по-малко се усеща — правните страници се свиха с 3 до 6 %, когато
-     двата размера бяха слети, и това се ВИЖДА. Не е и `--fz-m`: той е ръстът на
-     `body` и се наследява от всичко останало. */
+  /* LONG READING TEXT — the legal pages, the prose in services, the articles.
+     Not `--fz-s`: 15px is for a card and a list, where the text is short and skimmed.
+     In a 70-character column read sentence by sentence, one
+     pixel less is felt — the legal pages shrank by 3 to 6% when
+     the two sizes were merged, and that is VISIBLE. Nor is it `--fz-m`: that is the size of
+     `body` and is inherited by everything else. */
   --fz-body:clamp(16px,.35vw + 13px,19px);
   --fz-m:clamp(17px,.35vw + 14px,20px);
   --fz-l:clamp(17px,1.5vw,21px);
@@ -163,10 +163,10 @@
   --fz-h3:clamp(19px,2.1vw,25px);
   --fz-h4:clamp(17px,.3vw + 14px,19px);
 
-  /* ── разредка ──────────────────────────────────────────────────────────────
-     Отрицателна за заглавията (Oswald при едър кегел се разкрачва), силно
-     положителна за моно етикетите — това е характерът на бранда, затова е тук,
-     а не се преоткрива на всяко заглавие.
+  /* ── letter-spacing ────────────────────────────────────────────────────────
+     Negative for headings (Oswald at large sizes spreads out), strongly
+     positive for mono labels — that is the brand's character, which is why it is here,
+     and not reinvented on every heading.
   */
   --ls-tight:-.026em;
   --ls-snug:-.02em;
@@ -174,59 +174,59 @@
   --ls-lab:.24em;
   --ls-btn:.16em;
 
-  /* ── отстояния ─────────────────────────────────────────────────────────────
-     `--gut` е полето отстрани на страницата и е единственото, което се мени с
-     ширината. `--sec-y` е вертикалният ритъм между разделите.
+  /* ── spacing ───────────────────────────────────────────────────────────────
+     `--gut` is the side margin of the page and the only one that changes with
+     width. `--sec-y` is the vertical rhythm between sections.
   */
   --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px;
   --sp-5:24px; --sp-6:32px; --sp-7:44px; --sp-8:64px;
   --gut:22px;
   --sec-y:44px;
 
-  /* ── отстояние ПОД заглавие ────────────────────────────────────────────────
-     Беше на око: 4, 6, 8, 10, 12, 14, 16 и 32 на трийсетина места, половината
-     зашити в пиксели. Заглавието излизаше залепено за текста си, а разстоянието
-     над него оставаше четири пъти по-голямо — окото чете това като „текстът не
-     е на заглавието“.
+  /* ── spacing UNDER a heading ───────────────────────────────────────────────
+     It was by eye: 4, 6, 8, 10, 12, 14, 16 and 32 in thirty-odd places, half of them
+     hardcoded in pixels. The heading came out glued to its text, while the distance
+     above it stayed four times larger — the eye reads that as "the text doesn't
+     belong to the heading".
 
-     Сега са три случая и се избират по РОЛЯТА на заглавието, не по кегела:
-       `--h-gap`       заглавие на страница или раздел → каквото следва
-       `--h-gap-tight` заглавие вътре в текст → абзаца; заглавие → бележката му
-       `--h-gap-card`  заглавие в карта или плочка → текста ѝ (плътен блок)
+     Now there are three cases, chosen by the heading's ROLE, not by its size:
+       `--h-gap`       page or section heading → whatever follows
+       `--h-gap-tight` heading inside text → the paragraph; heading → its note
+       `--h-gap-card`  heading in a card or tile → its text (dense block)
   */
   --h-gap:var(--sp-6);
   --h-gap-tight:var(--sp-4);
   --h-gap-card:var(--sp-3);
 
-  /* ── радиуси ───────────────────────────────────────────────────────────────
-     Петнайсет станаха четири. `--r-xs` е само за контура на фокуса.
+  /* ── radii ─────────────────────────────────────────────────────────────────
+     Fifteen became four. `--r-xs` is only for the focus outline.
   */
   --r-xs:3px;
   --r-s:10px;
   --r-m:14px;
   --r-pill:999px;
 
-  /* ── движение ──────────────────────────────────────────────────────────────
-     Три времена вместо дванайсет. Кривата НАРОЧНО остава браузърната: свой
-     easing мени усещането на всяко движение в сайта наведнъж, а движението тук
-     е одобрено такова, каквото е. Дългите анимации на хирото (1.1s, 1.7s) са
-     си композиция и остават на място.
+  /* ── motion ────────────────────────────────────────────────────────────────
+     Three durations instead of twelve. The curve is DELIBERATELY left as the browser's: a custom
+     easing changes the feel of every motion on the site at once, and the motion here
+     is approved as it is. The long hero animations (1.1s, 1.7s) are
+     a composition of their own and stay in place.
   */
   --t-fast:.18s;
   --t:.25s;
   --t-slow:.5s;
 
-  /* ── ширини ────────────────────────────────────────────────────────────── */
+  /* ── widths ────────────────────────────────────────────────────────────── */
   --w-page:1180px;
   --w-panel:1000px;
   --w-text:900px;
   --w-prose:70ch;
   --w-read:62ch;
 
-  /* ── слоеве ────────────────────────────────────────────────────────────────
-     Седем голи числа, разпръснати из кода, получиха имена. Прескачането към
-     съдържанието е най-отгоре — то трябва да се вижда дори върху отворен
-     прозорец за бисквитките.
+  /* ── layers ────────────────────────────────────────────────────────────────
+     Seven bare numbers scattered through the code got names. The skip link to
+     the content is topmost — it must be visible even over an open
+     cookie window.
   */
   --z-base:2;
   --z-sticky:10;
@@ -238,11 +238,11 @@
 }
 
 /*
-  ПРАГОВЕТЕ СА ДОГОВОР, НЕ ЖЕТОН — CSS не приема `var()` в media query.
-  Наборът е: 560 · 620 · 700 · 760 · 900 · 980 · 1060 · 1180.
-  Нарастващото се пише с `min-width`; когато `max-width` е неизбежен, е
-  `праг − 1`, за да няма застъпване. Преди това правило в кода имаше и
-  `max-width:760px`, и `min-width:760px` — един пиксел, на който важаха двете.
+  THE THRESHOLDS ARE A CONTRACT, NOT A TOKEN — CSS doesn't accept `var()` in a media query.
+  The set is: 560 · 620 · 700 · 760 · 900 · 980 · 1060 · 1180.
+  Ascending is written with `min-width`; when `max-width` is unavoidable, it is
+  `threshold − 1`, so there is no overlap. Before this rule the code had both
+  `max-width:760px` and `min-width:760px` — one pixel where both applied.
 */
 @media(min-width:900px){
   :root{--gut:56px}

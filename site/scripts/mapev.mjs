@@ -1,25 +1,26 @@
 /**
- * Събира СПРАВКАТА за електрическите модели от mapev.net → src/data/ev-source.json
+ * Collects the REFERENCE for the electric models from mapev.net → src/data/ev-source.json
  *
- * Защо оттам: mapev.net е единственият публичен източник, който казва кои
- * електрически модели са фабрично занижени и с колко. Взимаме от него САМО
- * фактите за автомобила — име, години, фабрична мощност и въртящ момент, и
- * докъде стига блокът по тяхно измерване.
+ * Why from there: mapev.net is the only public source that says which
+ * electric models are factory-derated and by how much. We take from it ONLY
+ * the facts about the car: name, years, factory power and torque, and how far
+ * the block goes by their measurement.
  *
- * ТОВА НЕ СА НАШИТЕ ЧИСЛА И НЕ Е НАШАТА ЦЕНА. MapEV продава СМЯНА НА МОДУЛА
- * (ново „plug and play“ управляващо тяло, €2159–2599 без ДДС, обновява се с
- * техния MapEV Diag и ENET кабел от компютър). Ние продаваме СВОЙ софтуер през
- * PDK Flasher по OBD-II. Затова изходът тук се използва само като справка, а
- * това, което се показва на сайта, живее в src/data/ev.ts и се попълва от нас.
+ * THESE ARE NOT OUR NUMBERS AND NOT OUR PRICE. MapEV sells a MODULE SWAP
+ * (a new "plug and play" control unit, €2159–2599 excl. VAT, updated with
+ * their MapEV Diag and an ENET cable from a computer). We sell OUR OWN
+ * software through PDK Flasher over OBD-II. So the output here is used only as
+ * a reference, and what is shown on the site lives in src/data/ev.ts and is
+ * filled in by us.
  *
- * Пуска се ръчно, не при билд: `node scripts/mapev.mjs`
+ * Run by hand, not on build: `node scripts/mapev.mjs`
  */
 import { writeFile } from 'node:fs/promises';
 
 const UA =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36';
 
-/** Страниците, събрани от началната на mapev.net (31 модела, 4 марки). */
+/** Pages collected from the mapev.net start page (31 models, 4 brands). */
 const PAGES = [
   'taycan-4', 'taycan-4s-pb', 'taycan-4s-pb-plus', 'taycan-pb', 'taycan-pb-plus',
   'taycan-gts', 'taycan-turbo', 'porsche-taycan-turbo-s',
@@ -32,7 +33,7 @@ const PAGES = [
   'enyaq-iv-50', 'enyaq-iv-60', 'enyaq-iv-80x',
 ];
 
-/** Марката се чете от адреса — на техните страници тя никъде не е отделно поле. */
+/** The brand is read from the URL; on their pages it is nowhere a separate field. */
 function brandOf(slug) {
   if (slug.includes('taycan')) return 'porsche';
   if (slug.includes('e-tron')) return 'audi';
@@ -40,7 +41,7 @@ function brandOf(slug) {
   return 'vw';
 }
 
-/** HTML → редове чист текст. Страниците са Elementor: смисълът е в реда на възлите. */
+/** HTML → lines of plain text. The pages are Elementor: the meaning is in the order of the nodes. */
 function lines(html) {
   const t = html
     .replace(/<(script|style|noscript)[^>]*>[\s\S]*?<\/\1>/gi, '')
@@ -54,11 +55,11 @@ function lines(html) {
 }
 
 /**
- * Числата стоят като отделни възли в строг ред:
- *   име · години · описание · US|$ N · EU|€ N · стокHP „Horsepower“ · стокNm
- *   „Nm of torque“ · „Order now“ · нормалнаPS · PS · следPS · PS · Gain: · N PS
- *   · нормNm · Nm · следNm · Nm · Gain: · N Nm
- * Затова се чете по котви, а не по класове — класовете на Elementor се менят.
+ * The numbers sit as separate nodes in a strict order:
+ *   name · years · description · US|$ N · EU|€ N · stockHP "Horsepower" · stockNm
+ *   "Nm of torque" · "Order now" · normalPS · PS · afterPS · PS · Gain: · N PS
+ *   · normNm · Nm · afterNm · Nm · Gain: · N Nm
+ * So it is read by anchors, not by classes; Elementor classes change.
  */
 function parse(slug, html) {
   const L = lines(html);
@@ -69,7 +70,7 @@ function parse(slug, html) {
   const iNm = at(/^Nm of torque$/i);
   const iOrder = at(/^Order now$/i);
 
-  // Заглавието и годините стоят преди първото число.
+  // The title and years sit before the first number.
   const iYears = at(/^\d{4}\s*[–-]\s*(\d{4}|present|\.\.\.)?$/i);
   const name = iYears > 0 ? L[iYears - 1] : slug;
   const years = iYears > 0 ? L[iYears].replace(/\s*[–-]\s*/, '–') : null;
@@ -77,7 +78,7 @@ function parse(slug, html) {
   const usd = num(L[at(/^\$\s*[\d,]+/)] ?? '');
   const eur = num(L[at(/^€\s*[\d,]+/)] ?? '');
 
-  // Двойките PS и Nm след „Order now“: [нормална, след] и [нормален, след].
+  // The PS and Nm pairs after "Order now": [normal, after] and [normal, after].
   const tail = L.slice(iOrder + 1, iOrder + 40);
   const ps = [];
   const nm = [];
@@ -93,12 +94,12 @@ function parse(slug, html) {
     brand: brandOf(slug),
     name,
     years,
-    /** фабрично, както го обявява производителят */
+    /** factory, as declared by the manufacturer */
     stock: { ps: num(L[iHp - 1]), nm: num(L[iNm - 1]) },
-    /** в нормален режим фабрично → след тяхната намеса */
+    /** in normal mode factory → after their intervention */
     normal: { ps: ps[0] ?? null, nm: nm[0] ?? null },
     mapev: { ps: ps[1] ?? null, nm: nm[1] ?? null },
-    /** тяхната цена за СМЯНА НА МОДУЛА, без ДДС и без доставка — само за ориентир */
+    /** their price for the MODULE SWAP, excl. VAT and delivery, for orientation only */
     mapevPrice: { usd, eur, note: 'смяна на модула, без ДДС и доставка' },
     descr,
     src: `https://www.mapev.net/${slug}/`,
@@ -127,4 +128,4 @@ await writeFile(
   new URL('../src/data/ev-source.json', import.meta.url),
   JSON.stringify({ harvested: new Date().toISOString().slice(0, 10), source: 'mapev.net', models: out }, null, 2) + '\n',
 );
-console.log(`\n${out.length} модела → src/data/ev-source.json`);
+console.log(`\n${out.length} models → src/data/ev-source.json`);

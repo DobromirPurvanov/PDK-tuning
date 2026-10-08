@@ -1,5 +1,5 @@
-// Формата (план, стр. 32): писмо до вас + копие до втори адрес, Turnstile, 5 изпращания на час от адрес.
-// Без ключ за Resend заявката се записва в лога и връща 503 — формата показва телефона.
+// The form (plan, p. 32): a letter to you + a copy to a second address, Turnstile, 5 submissions per hour per address.
+// Without a Resend key the request is written to the log and returns 503 - the form shows the phone number.
 import http from 'node:http';
 import { createRateLimiter } from './rate-limiter.mjs';
 

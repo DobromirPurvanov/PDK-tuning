@@ -1,11 +1,11 @@
 ---
 /**
- * Общи условия.
+ * General terms.
  *
- * Пише каквото важи за ТАЗИ дейност, вкл. неудобното: гаранцията на производителя,
- * границите на отговорността и това, че изключване на системите за пречистване е
- * позволено САМО за машини извън обществените пътища. По-добре е да го прочетат
- * тук, отколкото да го научат след това.
+ * States what applies to THIS business, including the uncomfortable: the manufacturer's warranty,
+ * the limits of liability, and the fact that disabling the emission-control systems is
+ * allowed ONLY for machines off public roads. Better that they read it
+ * here than learn it afterwards.
  */
 import Text from '../layouts/Text.astro';
 import { BUSINESS as b, LEGAL, PORTAL } from '../config/site';
@@ -30,7 +30,7 @@ const schema = [{
 >
   <h2>1. Кой сме</h2>
   <p>
-    {/* ЕИК-ът се вписва в изречението само когато го има — иначе то свършва на адреса */}
+    {/* the company ID (EIK) goes into the sentence only when we have it, otherwise the sentence ends at the address */}
     Сайтът се поддържа от <strong>{b.legalName}</strong>, работещо под марката „{b.name}“,
     {b.legalAddress}{b.eik && <>, ЕИК {b.eik}</>}.
     Връзка: <a href={`tel:${b.phone}`}>{b.phoneDisplay}</a>,
@@ -236,12 +236,12 @@ const schema = [{
     <a href="https://consumer-redress.ec.europa.eu/dispute-resolution-bodies_en" target="_blank" rel="noopener noreferrer">consumer-redress.ec.europa.eu</a>.
   </p>
   {/*
-    ТУК СТОЕШЕ ВРЪЗКА КЪМ ПЛАТФОРМАТА ОРС НА ЕК — МАХНАТА Е НАРОЧНО.
-    Регламент (ЕС) 2024/3228 отмени Регламент (ЕС) № 524/2013: приемът на жалби спря
-    на 20.03.2025, платформата беше изключена на 20.07.2025, данните — изтрити, а
-    задължението да се сочи връзка към нея отпадна заедно с нея.
-    Задържането ѝ днес НЕ е просто мъртъв линк — сочене на несъществуващ ред за защита
-    се чете като заблуждаваща търговска практика. Не я връщайте.
-    В сила остава Директива 2013/11/ЕС (АРС) → помирителните комисии към КЗП, по-горе.
+    THERE USED TO BE A LINK TO THE EC ODR PLATFORM, REMOVED ON PURPOSE.
+    Regulation (EU) 2024/3228 repealed Regulation (EU) No 524/2013: the intake of complaints stopped
+    on 20.03.2025, the platform was switched off on 20.07.2025, the data was deleted, and
+    the obligation to link to it lapsed with it.
+    Keeping it today is NOT just a dead link: pointing to a non-existent redress
+    channel reads as a misleading commercial practice. Do not put it back.
+    Directive 2013/11/EU (ADR) remains in force, so the conciliation commissions of the CPC (KZP), above.
   */}
 </Text>

@@ -1,19 +1,19 @@
 ---
 /**
- * ЕЛЕКТРИЧЕСКИТЕ — входната страница на новото направление.
+ * THE ELECTRICS: the entry page of the new line of business.
  *
- * Тук се събират две неща: кои електрически модели поемаме (данните са в
- * src/data/ev.ts) и как работи PDK Flasher, с който клиентът си записва
- * файла сам, без да идва до Варна.
+ * Two things come together here: which electric models we take on (the data is in
+ * src/data/ev.ts) and how PDK Flasher works, with which the customer writes the
+ * file themselves, without coming to Varna.
  *
- * Числата в текста НЕ се пишат на ръка. „33 модела“ и най-голямата разлика
- * идват от данните — иначе един ден ще пише 33, а в избирача ще има 40.
+ * The numbers in the text are NOT written by hand. "33 models" and the biggest difference
+ * come from the data, otherwise one day it will say 33 while the picker has 40.
  */
 import Page from '../../layouts/Page.astro';
 import EvPicker from '../../components/EvPicker.astro';
 import { EV_COUNT, EV_BY_BRAND, money } from '../../data/ev';
 import { crumbSchema, faqSchema, bizRef } from '../../lib/seo';
-// стъпките и екраните на приложението живеят в данните — ползва ги и /pdk-flasher/
+// the steps and screens of the app live in the data; /pdk-flasher/ uses them too
 import { FLASHER_STEPS, FLASHER_APP } from '../../data/flasher';
 
 const site = Astro.site!.href.replace(/\/$/, '');

@@ -1,14 +1,14 @@
 ---
 /**
- * След плащането — тук връща Stripe при успех (`success_url`).
+ * After payment: this is where Stripe returns on success (`success_url`).
  *
- * Нарочно НЕ твърди „плащането е прието“ като факт. Страницата е статична и не
- * знае нищо: върната е от чужд сървър и всеки може да я отвори направо в
- * адреса. Потвърждението за парите идва от банката и от писмото, не оттук.
- * Затова текстът казва какво СЛЕДВА, а не какво е станало.
+ * It deliberately does NOT claim "payment accepted" as a fact. The page is static and
+ * knows nothing: it is returned by a foreign server and anyone can open it directly by
+ * typing the address. Confirmation of the money comes from the bank and from the email, not from here.
+ * So the text says what FOLLOWS, not what has happened.
  *
- * `noindex` — няма какво да търси в индекса и не бива да излиза на човек,
- * който не е поръчвал.
+ * `noindex`: there is nothing for it to do in the index and it should not show up for
+ * someone who has not ordered.
  */
 import Page from '../../layouts/Page.astro';
 import { BUSINESS as b } from '../../config/site';

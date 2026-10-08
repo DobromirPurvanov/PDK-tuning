@@ -1,9 +1,9 @@
 ---
 /**
- * Долният ред. Беше един ред сив текст (`#4E544E` = контраст 2,58:1 — не се
- * четеше), после стана четири колони с котвите на началната. Сега сайтът има
- * страници, затова носи и втория ред връзки, който не се побра в лентата:
- * въпросите, мит/факт, статиите и порталът за партньори.
+ * The bottom bar. It used to be one line of grey text (`#4E544E` = contrast 2.58:1 — it
+ * could not be read), then became four columns with the home page anchors. Now the site has
+ * pages, so it also carries the second row of links that did not fit in the bar:
+ * the questions, myth/fact, the articles and the partner portal.
  */
 import { NAV, MORE, LEGAL, BUSINESS as b, portalUrl } from '../config/site';
 import { LEGAL_EN, MORE_EN, NAV_EN, langOf } from '../i18n';
@@ -21,11 +21,11 @@ const portal = portalUrl(lang);
 const servicesHref = en ? '/en/services/' : '/uslugi/';
 
 /**
- * Колоните с подниво. На български това са услугите и каталогът; на английски
- * каталог НЯМА (вж. бележката при `NAV_EN` в `src/i18n/index.ts`), а услугите
- * го получават чак когато английските им текстове са написани. `?.children`,
- * не `!` — докато наборът е празен, колоната просто не се рисува, вместо
- * билдът да падне върху удивителна.
+ * The columns with a sub-level. In Bulgarian these are the services and the catalogue; in English
+ * there is NO catalogue (see the note at `NAV_EN` in `src/i18n/index.ts`), and the services
+ * get it only once their English texts are written. `?.children`,
+ * not `!` — while the set is empty, the column is simply not drawn, instead of
+ * the build failing on an exclamation mark.
  */
 const services = nav.find((n) => n.href === servicesHref)?.children;
 const catalog = en ? undefined : NAV.find((n) => n.href === '/katalog/')?.children;
@@ -39,16 +39,16 @@ const social = [
 <footer class="foot">
   <div class="foot-in">
     {/*
-      ТЪРГОВСКАТА ИДЕНТИФИКАЦИЯ Е ЗАДЪЛЖИТЕЛНА, не украса: чл. 4 от Закона за
-      електронната търговия иска наименование, седалище, адрес за кореспонденция,
-      данни за контакт и номер на вписване. Затова стои на ВСЯКА страница, а не
-      само в общите условия.
+      THE COMMERCIAL IDENTIFICATION IS MANDATORY, not decoration: Art. 4 of the Electronic
+      Commerce Act requires a name, registered seat, correspondence address,
+      contact details and a registration number. That is why it appears on EVERY page, not
+      only in the terms and conditions.
 
-      ЕИК и ДДС номерът се четат от business.json. Празни са → редът НЕ СЕ
-      РИСУВА. Дотук стоеше видима рамка „чака се“; тя вършеше работа, докато
-      сайтът се гледаше отвътре, но пред посетител е признание за недовършеност.
-      Щом дойдат от възложителя, редът се появява сам — нищо друго не се пипа.
-      Ако е дошло само едното, излиза само то, без увиснал разделител.
+      The EIK and the VAT number are read from business.json. If they are empty → the row is NOT
+      DRAWN. Until now a visible "pending" frame stood here; it did its job while
+      the site was viewed from the inside, but in front of a visitor it is an admission of being unfinished.
+      Once they arrive from the client, the row appears by itself — nothing else is touched.
+      If only one has arrived, only that one is shown, without a dangling separator.
     */}
     <address class="fcol">
       <p class="ftitle">{b.name}</p>
@@ -60,7 +60,7 @@ const social = [
           {b.vat && <>{t.vat}: {b.vat}</>}
         </p>
       )}
-      {/* адресът има латинска форма в business.json — не се транслитерира тук */}
+      {/* the address has a Latin form in business.json — it is not transliterated here */}
       <p class="fline">
         {en ? `${b.address.streetEn}, ${b.address.cityEn} ${b.address.postalCode}`
             : `${b.address.street}, ${b.address.city} ${b.address.postalCode}`}
@@ -73,9 +73,9 @@ const social = [
     </address>
 
     {/*
-      ШЕСТ услуги, не осем. Тринайсетте са в падащото меню горе и на /uslugi/;
-      тук са само най-търсените, за да не надвиши тази колона всички останали и
-      да разтегли футъра заради себе си. „Всички услуги“ поема останалите.
+      SIX services, not eight. The thirteen are in the dropdown menu at the top and on /uslugi/;
+      here only the most sought-after, so this column does not exceed all the others and
+      stretch the footer for its own sake. "All services" takes the rest.
     */}
     {services && (
       <nav class="fcol" aria-label={t.services}>
@@ -86,10 +86,10 @@ const social = [
     )}
 
     {/*
-      „Сайтът“ (Електрически, Цени, Как работим, За нас, Контакти) беше ТУК и
-      преписваше лентата горе дума по дума — пет реда, които не водеха никого
-      никъде. Махнат. Останалото в тази колона е каталогът, който наистина има
-      подниво.
+      "The site" (Electric, Prices, How we work, About us, Contacts) used to be HERE and
+      copied the bar at the top word for word — five rows that led nobody
+      anywhere. Removed. What remains in this column is the catalogue, which really has
+      a sub-level.
     */}
     {catalog && (
       <nav class="fcol" aria-label={t.catalog}>
@@ -99,10 +99,10 @@ const social = [
     )}
 
     {/*
-      „Полезно“ остава на своето място, защото това е ЕДИНСТВЕНИЯТ вход към
-      тези страници — в лентата горе ги няма. Правното и социалните слязоха в
-      долния ред: те са по три думи всяка и вертикалният списък им отпускаше
-      цяла колона за нищо.
+      "Useful" stays in its place, because it is the ONLY entry to
+      those pages — they are not in the bar at the top. The legal and social links moved down to the
+      bottom row: they are three words each, and a vertical list gave them
+      a whole column for nothing.
     */}
     <nav class="fcol" aria-label={t.useful}>
       <p class="ftitle">{t.useful}</p>
@@ -113,8 +113,8 @@ const social = [
   <div class="foot-end">
     <nav class="fend-links" aria-label={t.legalAria}>
       {legal.map((l) => <a href={l.href}>{l.label}</a>)}
-      {/* „Бисквитки“ до „Политика за бисквитки“ се четеше като две страници за
-          едно и също. Това е бутон, който отваря избора — казва се какъв е. */}
+      {/* "Cookies" next to "Cookie policy" read as two pages for
+          the same thing. This is a button that opens the choice — it says what it is. */}
       <button type="button" id="cookieOpen" class="linky">{t.cookieSettings}</button>
     </nav>
 
@@ -125,10 +125,10 @@ const social = [
     </nav>
 
     {/*
-      ТУК СТОЕШЕ „Каталогът се чете на живо от pdktuning.com — тук не се пази
-      копие.“ Това е бележка за устройството на сайта: на посетителя не му
-      трябва, а сочи чужд домейн от всяка страница. Останалото е авторското
-      право, което си е на място.
+      THERE USED TO BE "The catalogue is read live from pdktuning.com — no copy is
+      kept here." That is a note about how the site is built: the visitor does not
+      need it, and it points to a foreign domain from every page. What remains is the copyright,
+      which belongs there.
     */}
     <p class="fend-note">
       <span>© {year} {b.legalName}.</span>
@@ -138,10 +138,10 @@ const social = [
 
 <style>
 .foot{border-top:1px solid var(--line);padding:56px var(--gut) 28px;background:var(--bg-bar)}
-/* На телефон трите колони с връзки стояха ЕДНА ПОД ДРУГА и футърът ставаше
-   1330px — един екран и половина само за навигация. Заглавията им са по две
-   думи, тоест се събират по две на ред и при 390px. Данните на фирмата остават
-   на цял ред: адресът и имейлът не се пречупват добре в половин колона. */
+/* On a phone the three columns of links stood ONE UNDER ANOTHER and the footer became
+   1330px — a screen and a half just for navigation. Their headings are two
+   words each, so they fit two per row even at 390px. The company data stays
+   on a full row: the address and the email do not wrap well in half a column. */
 .foot-in{max-width:1180px;margin:0 auto;display:grid;gap:30px 24px;grid-template-columns:1fr 1fr}
 address.fcol{grid-column:1 / -1}
 @media(min-width:980px){
@@ -149,12 +149,12 @@ address.fcol{grid-column:1 / -1}
   address.fcol{grid-column:auto}
 }
 
-/* <address> носи наклонен шрифт по подразбиране — тук е блок с данни, не цитат */
+/* <address> has an italic font by default — here it is a data block, not a quotation */
 address.fcol{font-style:normal}
 .ftitle{margin:0 0 16px;font:400 var(--fz-lab)/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--lime)}
-/* Разделителят е декоративен и е aria-hidden, но СЕ ВИЖДА — значи важи прагът
-   за контраст. При .3 даваше 2,59:1 върху var(--bg-bar). Минималната алфа за 4,5:1
-   на този фон е около 0,45; .5 оставя запас. */
+/* The separator is decorative and aria-hidden, but it IS VISIBLE — so the contrast
+   threshold applies. At .3 it gave 2.59:1 on var(--bg-bar). The minimum alpha for 4.5:1
+   on this background is about 0.45; .5 leaves a margin. */
 .fsep{padding:0 6px;color:var(--ink-5)}
 .ftitle a{border-bottom:1px solid transparent;transition:border-color var(--t-fast)}
 .ftitle a:hover{border-bottom-color:var(--lime-line)}
@@ -164,12 +164,12 @@ address.fcol{font-style:normal}
   border:0;background:none;padding:0;cursor:pointer;text-align:left;font:inherit;
   border-bottom:1px solid transparent;transition:color var(--t-fast),border-color var(--t-fast)}
 .fline a:hover,.linky:hover{color:var(--lime);border-bottom-color:var(--lime-line)}
-/* заглавията на колоните вече са връзки („Услуги", „Каталог") — и те искат пръст */
+/* the column headings are now links ("Services", "Catalogue") — and they too want a finger */
 @media(pointer:coarse){.fline a,.linky,.ftitle a{min-height:48px;display:inline-flex;align-items:center}}
 
-/* Долният ред пое правното и социалните. Те са по три думи всяка и като
-   вертикални списъци държаха цяла колона; наредени водоравно се събират на
-   един-два реда. */
+/* The bottom row took over the legal and social links. They are three words each and as
+   vertical lists they held a whole column; laid out horizontally they fit in
+   one or two rows. */
 .foot-end{max-width:1180px;margin:30px auto 0;padding-top:18px;border-top:1px solid var(--line);
   display:flex;flex-wrap:wrap;align-items:center;gap:10px 28px}
 .fend-links{display:flex;flex-wrap:wrap;gap:4px 20px;align-items:center}
@@ -177,7 +177,7 @@ address.fcol{font-style:normal}
   border:0;background:none;padding:0;cursor:pointer;display:inline-flex;align-items:center;min-height:30px;
   border-bottom:1px solid transparent;transition:color var(--t-fast),border-color var(--t-fast)}
 .fend-links a:hover,.fend-links .linky:hover{color:var(--lime);border-bottom-color:var(--lime-line)}
-/* социалните се отделят от правните, за да не се четат като един списък */
+/* the social links are separated from the legal ones, so they do not read as one list */
 .fend-social{margin-left:auto}
 .fend-social a{font:400 var(--fz-lab)/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase}
 .fend-note{flex-basis:100%;margin:2px 0 0;display:flex;flex-wrap:wrap;gap:4px 18px;

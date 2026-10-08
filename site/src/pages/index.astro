@@ -1,16 +1,16 @@
 ---
-// НОВИЯТ САЙТ — начален екран.
+// THE NEW SITE: home screen.
 //
-// Базата НЕ се мигрира и НЕ се сваля. Старият сайт (www.pdktuning.com) продължава да
-// работи и остава единственият ѝ пазител; тук няма нито един запис от каталога.
-// Всяко ниво на избирача се пита на живо през public/_worker.js → /api/live/*.
+// The database is NOT migrated and NOT downloaded. The old site (www.pdktuning.com) keeps
+// working and remains its only keeper; there is not a single catalog record here.
+// Every level of the picker is queried live through public/_worker.js to /api/live/*.
 //
-// Дизайнът е одобреният: бранд таблото в Canva (черно #080808 + киселинно зелено
-// #52FB09, „Всеки автомобил има потенциал / Ние знаем как да го отключим") плюс
-// компоненти от 21st.dev — Crypto Hero (8759), Experience Hero (9724),
+// The design is the approved one: the brand board in Canva (black #080808 + acid green
+// #52FB09, "Every car has potential / We know how to unlock it") plus
+// components from 21st.dev: Crypto Hero (8759), Experience Hero (9724),
 // Pixel Logo Grid (12815), Feature Velocity (18901), Multi-Step Form (8281).
 //
-// Общото (глава, лента, долен ред, бисквитки) е в src/layouts/Base.astro.
+// What is shared (head, bar, bottom row, cookies) is in src/layouts/Base.astro.
 import Base from '../layouts/Base.astro';
 import Picker from '../components/Picker.astro';
 import MarkGrid from '../components/MarkGrid.astro';
@@ -26,19 +26,19 @@ import { FAQ_HOME } from '../data/faq';
 import { ARTICLES } from '../data/articles';
 import { EV_COUNT, EV_BY_BRAND } from '../data/ev';
 
-// Емблемите са АКТУАЛНИТЕ знаци на марките, събрани от Simple Icons и Уикиданни
-// (свойство „лого“ → файл в Commons). Стоят в public/marks. За марките без чист
-// знак в свободен източник се показва името, набрано в Oswald.
+// The emblems are the CURRENT brand marks, collected from Simple Icons and Wikidata
+// (the "logo" property to a file on Commons). They sit in public/marks. For brands without a clean
+// mark in a free source, the name set in Oswald is shown.
 type Mark = { slug: string; name: string; kind: string; ext: string | null };
 const all = marks as Mark[];
 
-// Популярните при нас — показват се едро отпред. Списъкът е НАШ избор и се
-// пипа само тук; останалите се отварят с копчето под тях.
+// The ones popular with us are shown large in front. The list is OUR choice and is
+// edited only here; the rest open with the button under them.
 const TOP = ['bmw', 'mercedes-benz', 'volkswagen', 'audi', 'opel-vauxhall', 'ford',
   'renault', 'peugeot', 'citroen', 'skoda', 'toyota', 'fiat', 'volvo', 'seat',
   'nissan', 'honda', 'hyundai', 'kia', 'mazda', 'mini'];
 
-/** марките с електрически модели — за лентата под избирача */
+/** brands with electric models, for the strip under the picker */
 const evBrands = EV_BY_BRAND.map((b) => b.name).join(', ');
 
 const cars = all.filter((m) => m.kind === 'леки');
@@ -46,28 +46,28 @@ const byTop = (a: Mark, b: Mark) => TOP.indexOf(a.slug) - TOP.indexOf(b.slug);
 const carsTop = cars.filter((m) => TOP.includes(m.slug)).sort(byTop);
 const carsRest = cars.filter((m) => !TOP.includes(m.slug));
 
-// Камионите и селскостопанската техника вече имат СВОИ страници — етикетът
-// отляво е връзка към тях, а не мъртъв надпис.
+// Trucks and agricultural machinery now have THEIR OWN pages: the label
+// on the left is a link to them, not a dead caption.
 const groups = CATEGORIES.filter((c) => c.kind !== 'леки').map((c) => {
   const items = all.filter((m) => m.kind === c.kind);
   return { cat: c, items, note: `${items.length} марки` };
 });
 const carsCat = CATEGORIES.find((c) => c.kind === 'леки')!;
 
-// ── услуги: шестте отбелязани в src/data/services.ts, цените от prices.json ──
-// Списъкът стоеше вграден тук и вече беше на две места. Сега е едно.
+// ── services: the six marked in src/data/services.ts, prices from prices.json ──
+// The list used to be embedded here and was already in two places. Now it is one.
 const P = prices.items as Record<string, { from: number; time: string }>;
 const services = FEATURED;
 
-// ── въпросите, които наистина ни задават ──────────────────────────────────
-// Списъкът вече живее в src/data/faq.ts, защото го ползва и /vaprosi/.
-// Текстът тук е СЪЩИЯТ, който отива и в структурираните данни по-долу —
-// FAQPage важи само когато отговорът се вижда на страницата.
+// ── the questions we are really asked ──────────────────────────────────────
+// The list now lives in src/data/faq.ts, because /vaprosi/ uses it too.
+// The text here is the SAME one that goes into the structured data below:
+// FAQPage is valid only when the answer is visible on the page.
 const faq = FAQ_HOME;
 
-// ── структурирани данни ───────────────────────────────────────────────────
-// Оценката от Google НЕ се маркира: правилата на Google не признават оценка,
-// която фирмата слага сама за себе си, без отзивите да се виждат на страницата.
+// ── structured data ────────────────────────────────────────────────────────
+// The Google rating is NOT marked up: Google rules do not accept a rating
+// the company gives itself, without the reviews being visible on the page.
 const b = business;
 const site = Astro.site!.href.replace(/\/$/, '');
 const schema = [
@@ -83,8 +83,8 @@ const schema = [
     telephone: b.phoneIntl,
     email: b.email,
     priceRange: '€€',
-    // Идентификаторите излизат в схемата САМО ако наистина ги имаме — празен
-    // `taxID` е по-лош от липсващ, защото твърди нещо и не го казва.
+    // Identifiers go into the schema ONLY if we really have them; an empty
+    // `taxID` is worse than a missing one, because it claims something and does not say it.
     ...(b.eik ? { identifier: b.eik, taxID: b.eik } : {}),
     ...(b.vat ? { vatID: b.vat } : {}),
     address: {
@@ -103,7 +103,7 @@ const schema = [
     })),
     areaServed: { '@type': 'City', name: 'Варна' },
     sameAs: [b.social.facebook, b.social.instagram, b.social.youtube],
-    // всичките тринайсет услуги, не само шестте на екрана
+    // all thirteen services, not only the six on screen
     makesOffer: SERVICES.map((s) => ({
       '@type': 'Offer',
       itemOffered: {
@@ -153,7 +153,7 @@ const hoursText = b.hours.map((h) => {
   schema={schema}
 >
   <Fragment slot="head">
-    <!-- само това, което рисува първия екран; останалите шрифтове идват при нужда -->
+    <!-- only what draws the first screen; the other fonts come when needed -->
     <link rel="preload" as="font" type="font/woff2" href="/fonts/jetbrains-mono-400-cyrillic.woff2" crossorigin />
     <link rel="preload" as="image" href="/img/pdk-hero2.webp" fetchpriority="high" />
   </Fragment>
@@ -209,10 +209,10 @@ const hoursText = b.hours.map((h) => {
         <div class="row"><b class="cell-val" id="hNm" data-to="40">+0</b><span class="unit">Nm</span><span class="track"><i style="width:74%"></i></span></div>
       </div>
       {/*
-        ТУК СТОЕШЕ клетка „Източникът“: база `pdktuning.com`, четене „на живо,
-        без копие“. Тя обясняваше как е УСТРОЕН сайтът — на посетителя това не
-        му трябва, а на конкурент му върши работа. Сега клетката казва какво
-        покрива сервизът. Числата идват от marks.json, не са преписани.
+        THERE USED TO BE a cell "The source" here: base `pdktuning.com`, read "live,
+        without a copy". It explained how the site is BUILT, which the visitor does not
+        need and a competitor can use. Now the cell says what the workshop
+        covers. The numbers come from marks.json, they are not copied.
       */}
       <div class="cell">
         <span class="id">003 // Обхватът</span>
@@ -227,7 +227,7 @@ const hoursText = b.hours.map((h) => {
 
 <Picker />
 
-{/* Електрическите — рекламата изскача веднъж на 14 дни, този вход стои винаги. */}
+{/* The electrics: the ad pops up once every 14 days, this entry is always there. */}
 <section class="ev-band" aria-labelledby="ev-band-h">
   <div class="ev-band-in">
     <div>
@@ -381,8 +381,8 @@ const hoursText = b.hours.map((h) => {
 <HomeShell />
 
 <script>
-// Стената: останалите марки се отварят с копчето. Останалите скриптове на тази
-// страница вече са в компонентите — избирачът в Picker.astro, формата в
+// The wall: the remaining brands open with the button. The other scripts of this
+// page are already in the components: the picker in Picker.astro, the form in
 // ContactForm.astro.
 const moreBtn = document.getElementById('moreBtn');
 if (moreBtn) moreBtn.onclick = () => {

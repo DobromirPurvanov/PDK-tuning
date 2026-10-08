@@ -6,29 +6,29 @@ import { parseEnv } from 'node:util';
 import rocketLoaderOptOut from './scripts/rocket-loader.mjs';
 
 /**
- * АДРЕСИТЕ СЕ ЧЕТАТ ОТ `.env.local`, НЕ СЕ ЗАШИВАТ.
+ * ADDRESSES ARE READ FROM `.env.local`, NOT HARDCODED.
  *
- * Два ключа управляват всичко:
+ * Two keys control everything:
  *
- *   BASE_URL           къде стои НАШИЯТ сайт — канониклите, картата и схемите
- *   CATALOG_BASE_URL   откъде се чете каталогът и къде живее порталът
+ *   BASE_URL           where OUR site lives - canonicals, the sitemap and the schemas
+ *   CATALOG_BASE_URL   where the catalog is read from and where the portal lives
  *
- * При превключването се сменя само файлът. В кода няма нито един зашит домейн;
- * ако някой се върне, `scripts/check-hardcoded.mjs` го хваща.
+ * On a switch only the file changes. There is not a single hardcoded domain in the code;
+ * if one comes back, `scripts/check-hardcoded.mjs` catches it.
  *
- * `loadEnv` се вика ръчно, защото стойностите трябват на ТРИ места: тук (за
- * `site`), в `src/config/site.ts` при билда и в скриптовете за миграция.
- * Vite сам зарежда `.env*` само в `import.meta.env`, а `astro.config` и
- * скриптовете четат `process.env` — затова се прехвърля веднъж, изрично.
+ * `loadEnv` is called manually because the values are needed in THREE places: here (for
+ * `site`), in `src/config/site.ts` at build time, and in the migration scripts.
+ * Vite loads `.env*` on its own only into `import.meta.env`, while `astro.config` and
+ * the scripts read `process.env` - so it is copied over once, explicitly.
  *
- * ВНИМАНИЕ: `import.meta.env.BASE_URL` е ЗАПАЗЕНО име във Vite и значи базовия
- * ПЪТ на приложението („/“), не домейна. Затова стойността се чете САМО през
- * `process.env.BASE_URL`. Объркат ли се двете, каноникълът тихо става „/“.
+ * WARNING: `import.meta.env.BASE_URL` is a RESERVED name in Vite and means the app's base
+ * PATH ("/"), not the domain. So the value is read ONLY via
+ * `process.env.BASE_URL`. If the two get mixed up, the canonical silently becomes "/".
  */
 const env = loadEnv(process.env.NODE_ENV ?? 'production', process.cwd(), '');
 for (const [k, v] of Object.entries(env)) {
-  // истинската среда бие файла: така Pages и еднократното
-  // `BASE_URL=… npm run build` продължават да работят
+  // the real environment beats the file: this way Pages and a one-off
+  // `BASE_URL=... npm run build` keep working
   if (process.env[k] === undefined) process.env[k] = v;
 }
 
@@ -40,13 +40,13 @@ for (const key of ['BASE_URL', 'CATALOG_BASE_URL']) {
 }
 
 /**
- * Редът е: истинската среда → `.env.local` → старото име `PUBLIC_SITE_URL`
- * (пазено, защото `npm run build:etap1` и записките го ползват).
+ * The order is: the real environment -> `.env.local` -> the old name `PUBLIC_SITE_URL`
+ * (kept because `npm run build:stage1` and the notes use it).
  *
- * НЯМА ПОДРАЗБИРАНЕ. Дотук тук стоеше зашито `https://www.pdktuning.com` и
- * билдът минаваше мълчаливо при празна среда — с каноникли, които сочат СТАРИЯ
- * сайт. Такъв билд изглежда успешен и е точно грешката, която се вижда чак
- * когато Google вече я е обходил. По-добре да не тръгне.
+ * NO DEFAULT. Until now `https://www.pdktuning.com` was hardcoded here and
+ * the build passed silently with an empty environment - with canonicals pointing at the OLD
+ * site. Such a build looks successful and is exactly the mistake you only see once
+ * Google has already crawled it. Better that it does not start.
  */
 const site = process.env.BASE_URL || process.env.PUBLIC_SITE_URL;
 if (!site) {
@@ -62,8 +62,8 @@ if (!site) {
 
 export default defineConfig({
   integrations: [rocketLoaderOptOut()],
-  // Изцяло статичен изход. Динамичното е само _worker.js, който чете живата база
-  // от стария сайт (виж public/_worker.js). Нищо от каталога не се пази тук.
+  // Fully static output. Only _worker.js is dynamic, and it reads the live database
+  // from the old site (see public/_worker.js). Nothing from the catalog is stored here.
   site,
   build: { format: 'directory', inlineStylesheets: 'always', assets: 'assets' },
   compressHTML: true,
@@ -83,13 +83,13 @@ export default defineConfig({
       },
     },
     define: {
-      // стойностите трябват и в кода на страниците; влизат при билда, не в браузъра
+      // the values are also needed in the page code; they go in at build time, not into the browser
       'import.meta.env.PDK_BASE_URL': JSON.stringify(site),
       'import.meta.env.PDK_CATALOG_URL': JSON.stringify(
         process.env.CATALOG_BASE_URL || process.env.LEGACY_ORIGIN || '',
       ),
-      // По избор: изрично пренаписва адреса на портала. Празно означава
-      // CATALOG_BASE_URL/<lang>/login. Виж PORTAL в config/site.ts.
+      // Optional: explicitly overrides the portal address. Empty means
+      // CATALOG_BASE_URL/<lang>/login. See PORTAL in config/site.ts.
       'import.meta.env.PDK_PORTAL_URL': JSON.stringify(process.env.PORTAL_URL || ''),
     },
   },

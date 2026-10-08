@@ -1,43 +1,43 @@
 ---
 /**
- * ИЗБИРАЧЪТ — марка → модел → година → двигател, на живо от базата.
+ * THE PICKER — make → model → year → engine, live from the database.
  *
- * Стоеше вграден в началната. Изнесен е тук, защото сега го ползват и
- * стоте страници на марките: копие от 150 реда скрипт на всяка от тях е
- * начинът един ден да се окажат три различни версии.
+ * It used to be embedded in the home page. It was moved out here because now the
+ * hundred brand pages use it too: a copy of 150 lines of script on each of them is
+ * the way to end up with three different versions one day.
  *
- * Тук НЕ се пази нищо от каталога. Всяко ниво е една заявка към
- * `/api/live/*` в public/_worker.js, който чете стария сайт в момента на
- * заявката. Кешът е само в паметта на отворената страница.
+ * Nothing from the catalogue is stored here. Every level is one request to
+ * `/api/live/*` in public/_worker.js, which reads the old site at the moment of
+ * the request. The cache lives only in the memory of the open page.
  *
- * ВНИМАНИЕ С ИМЕНАТА НА КЛАСОВЕТЕ. Стиловете са `is:global`, защото
- * скриптът създава копчетата с JS и обхватът на Astro не ги хваща. Веднъж
- * лентата за напредък се казваше `bar` — точно като лентата горе — и наследи
- * `position:fixed`, та легна през целия екран. Затова е `pline`.
+ * WATCH OUT FOR CLASS NAMES. The styles are `is:global`, because the
+ * script creates the buttons with JS and Astro's scoping does not catch them. Once
+ * the progress bar was called `bar` — just like the bar at the top — and inherited
+ * `position:fixed`, so it lay across the whole screen. That is why it is `pline`.
  */
 import { BUSINESS } from '../config/site';
 import { langOf } from '../i18n';
 
 interface Props {
-  /** заглавие над избирача */
+  /** heading above the picker */
   heading?: string;
   sub?: string;
-  /** марка, която да се избере сама при зареждане (страниците на марките) */
+  /** brand to preselect on load (the brand pages) */
   brand?: string;
-  /** къде отива „Запазете час", когато на страницата няма форма */
+  /** where the "Book an appointment" button goes when the page has no form */
   formHref?: string;
 }
 
 /**
- * НАДПИСИТЕ НА ИЗБИРАЧА.
+ * THE PICKER'S LABELS.
  *
- * Държани тук, а не в `i18n/ui.ts`, защото са негови и само негови — двайсет и
- * пет реда, които никой друг компонент не чете. В общия речник те щяха да
- * удвоят дължината му и да го направят по-труден за преглед точно когато се
- * проверява дали превод липсва.
+ * Kept here, not in `i18n/ui.ts`, because they are its own and only its own — twenty-
+ * five lines that no other component reads. In the shared dictionary they would
+ * double its length and make it harder to review exactly when
+ * checking whether a translation is missing.
  *
- * Скриптът долу ги получава като ЕДИН data-атрибут: `<script>` в Astro се
- * бъндълва отделно и не вижда променливите отгоре. Същият похват като във
+ * The script below receives them as ONE data attribute: `<script>` in Astro is
+ * bundled separately and cannot see the variables above. The same trick as in
  * `ContactForm.astro`.
  */
 const L = {
@@ -119,16 +119,16 @@ const {
     </div>
 
     {/*
-      РЕЗУЛТАТЪТ Е ПРЕЗ ЦЯЛАТА ШИРИНА, не в четвъртата колона.
-      Там стоеше стиснат до 250px и покриваше списъка с двигателите — точно в
-      мига, в който човекът най-сетне вижда числото си. Сега е лента под
-      колоните: голямата разлика вляво, двете величини като ленти вдясно.
+      THE RESULT SPANS THE FULL WIDTH, not the fourth column.
+      There it sat squeezed to 250px and covered the list of engines — exactly at
+      the moment the person finally sees their number. Now it is a bar under the
+      columns: the big difference on the left, the two quantities as bars on the right.
 
-      Лентите са взети от Line graph на 21st (@motiondotdev, id 24687) —
-      рисуват се при показване и носят компактна процентна разлика. Кривата
-      ОТТАМ не е пренесена нарочно: от базата идват две числа (макс. мощност
-      преди и след), а начертана крива между тях изглежда като замерване от
-      стенд, каквото не е.
+      The bars are taken from Line graph on 21st (@motiondotdev, id 24687) —
+      they are drawn when shown and carry a compact percentage difference. The curve
+      FROM THERE was deliberately not carried over: the database gives two numbers (max power
+      before and after), and a curve drawn between them looks like a dyno
+      measurement, which it is not.
     */}
     <div class="res" id="res" role="status" aria-live="polite">
       <div class="res-l">
@@ -167,16 +167,16 @@ const {
 </section>
 
 <script>
-// Всяко ниво е ЕДНА заявка към живата база през /api/live/* (виж public/_worker.js).
+// Every level is ONE request to the live database via /api/live/* (see public/_worker.js).
 type Item = { slug: string; label: string; right?: string; value?: any; key?: string };
 
 const panel = document.getElementById('picker');
 if (panel) {
-  // надписите идват от страницата (data-lab) — вж. `L` в началото на файла
+  // the labels come from the page (data-lab) — see `L` at the top of the file
   const L = JSON.parse(panel.dataset.lab!) as Record<string, string>;
   const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  // Нарочно НЕ е `!`: същият скрипт върви и на страници без форма и без
-  // броячи в хирото. Липсващ възел значи „тази страница няма това“, не грешка.
+  // Deliberately NOT `!`: the same script runs on pages without the form and without
+  // the counters in the hero. A missing node means "this page does not have that", not an error.
   const $ = (id: string) => document.getElementById(id);
   const need = (id: string) => document.getElementById(id)!;
   const cols = [need('c1'), need('c2'), need('c3'), need('c4')];
@@ -224,7 +224,7 @@ if (panel) {
 
   const cols4 = panel.querySelector('.cols') as HTMLElement;
   const step = (n: number) => {
-    cols4.dataset.step = String(n);   // на тесен екран се вижда само тази колона
+    cols4.dataset.step = String(n);   // on a narrow screen only this column is visible
     need('pbar').style.width = (n / 4 * 100) + '%';
     need('pstep').textContent = `${n} / 4 ${L.step}`;
     (need('pback') as HTMLButtonElement).disabled = n <= 1;
@@ -234,32 +234,32 @@ if (panel) {
     for (let i = from; i < 4; i++) note(cols[i], hints[i]);
     need('res').classList.remove('on');
   };
-  // „316D 116hp“ → 116; показваме мощността ВДЯСНО в колоната.
-  // Мерната единица е „к.с.“, не „hp“ — под нея, в резултата, пише същото, а
-  // две различни единици за едно и също число четат като две различни числа.
-  // Ако мощността НЕ може да излезе от името (стои пред кода на блока, както в
-  // „1.4 Multi-Air - 140 hp (8GMK.Fx)“), колоната вдясно се оставя празна —
-  // иначе същото число се чете два пъти на един ред.
+  // "316D 116hp" → 116; we show the power on the RIGHT in the column.
+  // The unit is the Bulgarian "hp" abbreviation, not Latin "hp" — below it, in the result, it says the same, and
+  // two different units for the same number read as two different numbers.
+  // If the power CANNOT be derived from the name (it sits before the engine code, as in
+  // "1.4 Multi-Air - 140 hp (8GMK.Fx)"), the right column is left empty —
+  // otherwise the same number is read twice on one row.
   const hpOf = (label: string) => {
     if (/\d\s*hp/i.test(stripHp(label))) return '';
     const m = label.match(/(\d+)\s*hp/i);
     return m ? m[1] + ' ' + L.hp : '';
   };
-  // …и я МАХАМЕ от самото име, иначе редът излиза „3.0i Bi-turbo 340hp   340 hp“.
-  // Старата база лепи мощността накрая ту с интервал, ту без. Реже се само в
-  // КРАЯ — „320d 163hp“ да, „116d 1.6 116hp xDrive“ не.
-  // Второто чистене е за увисналия разделител: „2.0 Tfsi - 235hp“ оставяше
-  // „2.0 Tfsi -“ с тире, което не води наникъде.
-  // След мощността базата понякога лепи и обема: „318D 136hp (1995cc)“. Той се
-  // допуска СЛЕД числото, защото е разпознаваем къс, а не част от името на
-  // версията — иначе редът излизаше „318D 136hp (1995cc)   136 к.с.“.
+  // …and we REMOVE it from the name itself, otherwise the row comes out as "3.0i Bi-turbo 340hp   340 hp".
+  // The old database appends the power at the end, sometimes with a space, sometimes without. It is cut only at
+  // the END — "320d 163hp" yes, "116d 1.6 116hp xDrive" no.
+  // The second cleanup is for the dangling separator: "2.0 Tfsi - 235hp" used to leave
+  // "2.0 Tfsi -" with a dash that leads nowhere.
+  // After the power the database sometimes appends the displacement too: "318D 136hp (1995cc)". It is
+  // allowed AFTER the number, because it is a recognisable fragment and not part of the name of
+  // the version — otherwise the row came out as "318D 136hp (1995cc)   136 hp (BG unit)".
   const stripHp = (label: string) =>
     label
       .replace(/\s*\d+\s*hp(\s*\(\s*\d+\s*(?:cc|ccm)\s*\))?\s*$/i, '')
       .replace(/\s*[-–—·|,]\s*$/, '').trim() || label;
 
-  /** Една лента: сивото е фабричното, зеленото е добавеното. Дължината на
-   *  зеленото е ДЯЛЪТ на добавката от крайното число — не произволна. */
+  /** One bar: grey is the factory value, green is the addition. The length of
+   *  the green is the SHARE of the addition in the final number — not arbitrary. */
   function bar(rowId: string, a0: string, b0: string, d0: string,
                pair: number[] | null, unit: string, delay: number) {
     const row = need(rowId);
@@ -273,10 +273,10 @@ if (panel) {
     row.classList.remove('nodata');
     need(a0).textContent = String(pair[0]);
     need(b0).innerHTML = `<b>${pair[1]}</b> ${unit}`;
-    // компактната процентна разлика е идеята на Line graph от 21st
+    // the compact percentage difference is the idea of Line graph from 21st
     need(d0).textContent = '+' + Math.round(((pair[1] - pair[0]) / pair[0]) * 100) + '%';
-    // нула → ширина в следващия кадър, за да тръгне преходът; забавянето реди
-    // двете ленти една след друга, вместо да скочат заедно
+    // zero → width in the next frame, so the transition starts; the delay lines up
+    // the two bars one after the other, instead of jumping together
     fill.style.transition = 'none';
     fill.style.width = '0';
     requestAnimationFrame(() => {
@@ -289,8 +289,8 @@ if (panel) {
   async function pickEngine(e: Item) {
     state.e = e; step(4);
     need('rhp').textContent = '…';
-    // Всяка част е отделен неразбиваем къс — иначе „2010 → 2011“ се чупеше на
-    // две и годината увисваше на следващия ред без стрелката си.
+    // Every part is a separate non-breaking chunk — otherwise "2010 → 2011" used to break into
+    // two and the year dangled on the next line without its arrow.
     const car = need('rcar');
     car.replaceChildren();
     for (const part of [state.b?.label, state.m?.label, state.y?.label, stripHp(e.label)].filter(Boolean)) {
@@ -301,8 +301,8 @@ if (panel) {
     need('res').classList.add('on');
     try {
       const r = await live(`result/${state.b.slug}/${state.m.slug}/${state.y.slug}/${e.slug}`);
-      // В старата база има двигатели с празни клетки — тогава излизаше „+-140“ и
-      // „140 → 0 к.с.“. По-добре празно, отколкото измислено число.
+      // In the old database there are engines with empty cells — then "+-140" came out and
+      // "140 → 0" with the unit. Better empty than an invented number.
       const real = (p: number[] | null) => (p && p[0] > 0 && p[1] > p[0] ? p : null);
       const hp = real(r.hp), nm = real(r.nm);
       need('rhp').textContent = hp ? '+' + (hp[1] - hp[0]) : '—';
@@ -324,8 +324,8 @@ if (panel) {
     note(cols[3], L.loading);
     try {
       const list = await live(`engines/${state.b.slug}/${state.m.slug}/${y.slug}`);
-      // `value` пази ЦЯЛОТО име — то отива в запитването и в полето „Автомобил“;
-      // подрязаното е само за екрана, за да не се повтаря мощността.
+      // `value` keeps the WHOLE name — it goes into the enquiry and the "Car" field;
+      // the trimmed one is only for the screen, so the power is not repeated.
       fill(cols[3], list.map((e: Item) => ({
         ...e, label: stripHp(e.label), right: hpOf(e.label), value: e,
       })), pickEngine);
@@ -336,9 +336,9 @@ if (panel) {
     state.m = m; reset(2); step(2);
     note(cols[2], L.loading);
     try {
-      // Старата база пише поколението „без години“ като `All` — английска дума
-      // насред български списък. Слугът остава какъвто е (той отива в заявката),
-      // сменя се само видимото.
+      // The old database writes the generation "without years" as `All` — an English word
+      // in the middle of a Bulgarian list. The slug stays as it is (it goes into the request),
+      // only the visible text is changed.
       const years = await live(`years/${state.b.slug}/${m.slug}`);
       fill(cols[2], years.map((y: Item) =>
         /^all$/i.test(y.label) ? { ...y, label: L.allYears } : y), pickYear);
@@ -359,14 +359,14 @@ if (panel) {
       const list = await live('brands');
       brandItems = list.map((b: Item) => ({ ...b, key: b.label.toLowerCase() }));
       fill(cols[0], brandItems, pickBrand);
-      // броячите съществуват само на началната
+      // the counters exist only on the home page
       const n = String(list.length);
       const hb = $('hBrands'); if (hb) hb.textContent = n;
       const wc = $('wCount'); if (wc) wc.textContent = n;
 
-      // На страницата на марка избирачът тръгва вече избран. Ако живата база не
-      // познава този slug, просто оставаме на първа стъпка — по-добре, отколкото
-      // да мълчим с празна колона.
+      // On a brand page the picker starts already selected. If the live database does not
+      // know this slug, we simply stay on the first step — better than
+      // staying silent with an empty column.
       const want = panel.dataset.brand;
       if (want) {
         const hit = brandItems.find((b) => b.slug === want);
@@ -398,7 +398,7 @@ if (panel) {
     else if (state.m) { state.m = null; reset(2); step(1); }
   };
 
-  // „✕“ изчиства избора и връща избирача на първа стъпка
+  // "✕" clears the selection and returns the picker to the first step
   need('pclear').onclick = () => {
     state.b = state.m = state.y = state.e = null;
     (need('bq') as HTMLInputElement).value = '';
@@ -406,9 +406,9 @@ if (panel) {
     reset(1); step(1);
   };
 
-  // „Запази час“ пренася избраното в запитването. На началната и на /kontakti/
-  // формата е на същата страница; навсякъде другаде отиваме при нея с автомобила
-  // в адреса, за да не се набира наум.
+  // "Book appointment" carries the selection into the enquiry. On the home page and on /kontakti/
+  // the form is on the same page; everywhere else we go to it with the car
+  // in the URL, so it does not have to be typed by hand.
   need('pnext').onclick = () => {
     const parts = [state.b?.label, state.m?.label, state.y?.label, state.e?.label].filter(Boolean);
     const car = $('f-car') as HTMLInputElement | null;
@@ -425,11 +425,11 @@ if (panel) {
 </script>
 
 <style is:global>
-/* ── избирачът — от Multi-Step Form (21st, id 8281) ─────────────────────── */
+/* ── the picker — from Multi-Step Form (21st, id 8281) ─────────────────────── */
 .pick{padding:0 var(--gut) 104px}
-/* фонът, рамката и радиусът идват от `.panel` в `ui.css`; ТУК беше вторият
-   клас с име `panel` — две правила за едно име в глобален обхват са капан,
-   който вече ни е струвал два кръга гледане в грешния елемент. */
+/* the background, border and radius come from `.panel` in `ui.css`; HERE there used to be a second
+   class named `panel` — two rules for one name in global scope are a trap
+   that has already cost us two rounds of looking at the wrong element. */
 .pick-panel{max-width:var(--w-panel);margin:0 auto;overflow:hidden}
 .ph{padding:30px 34px 26px;border-bottom:1px solid var(--line)}
 .ph .line{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
@@ -464,7 +464,7 @@ if (panel) {
 .col button em{font-style:normal;font-family:var(--mono);font-size:var(--fz-btn);color:var(--ink-4)}
 .col .empty{padding:16px 18px;font:400 var(--fz-btn)/1.6 var(--mono);color:var(--ink-4)}
 
-/* ── резултатът: лента през цялата ширина под колоните ────────────────── */
+/* ── the result: a bar across the full width under the columns ────────────────── */
 .res{display:none;border-top:1px solid var(--line);
   background:linear-gradient(180deg,var(--lime-dim),transparent 70%)}
 .res.on{display:grid;grid-template-columns:1fr;gap:0}
@@ -482,7 +482,7 @@ if (panel) {
 .res-car span + span::before{content:'· ';color:var(--line-mid)}
 
 .res-r{padding:22px 30px 24px;min-width:0}
-/* редът: етикет · от · лента · до · разлика — на телефон лентата пада на свой ред */
+/* the row: label · from · bar · to · difference — on a phone the bar drops onto its own row */
 .res-row{display:grid;grid-template-columns:auto auto 1fr auto;grid-template-areas:'lab lab a d' 'bar bar bar bar' 'b b b b';
   align-items:center;gap:6px 10px;padding:12px 0}
 @media(min-width:560px){
@@ -495,8 +495,8 @@ if (panel) {
 .res-b b{color:var(--white);font-weight:400;font-size:var(--fz-s)}
 .res-d{grid-area:d;font:400 var(--fz-btn)/1 var(--mono);color:var(--lime);font-variant-numeric:tabular-nums;text-align:right}
 
-/* Сивото е фабричното, зеленото е добавеното — дължината му е делът на
-   добавката от крайното число. Деленията са същите като на лентата в хироту. */
+/* Grey is the factory value, green is the addition — its length is the share of
+   the addition in the final number. The ticks are the same as on the bar in the hero. */
 .res-bar{grid-area:bar;position:relative;height:7px;background:var(--tint-2);
   overflow:hidden;min-width:0}
 .res-bar::after{content:'';position:absolute;inset:0;pointer-events:none;
@@ -518,8 +518,8 @@ if (panel) {
 .pf button.go{background:var(--lime);border-color:var(--lime);color:var(--lime-ink);font-weight:700}
 .pf button:disabled{opacity:.4;cursor:not-allowed}
 
-/* Под 760px четирите колони се редяха една под друга и всяка имаше СВОЙ скрол.
-   Сега се вижда само стъпката, на която си. */
+/* Below 760px the four columns stacked one under another and each had its OWN scroll.
+   Now only the step you are on is visible. */
 @media(max-width:759px){
   .pick{padding-bottom:64px}
   .ph{padding:22px 20px 20px}

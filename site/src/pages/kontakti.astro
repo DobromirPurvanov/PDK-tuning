@@ -1,10 +1,10 @@
 ---
 /**
- * Контакти — адрес, работно време, телефон и работещата форма.
+ * Contacts: address, opening hours, phone and the working form.
  *
- * Секцията на началната остава: човек, който е дошъл да чете за услуга, не бива
- * да бъде пращан на трета страница, за да остави телефон. Тази страница е за
- * тези, които идват направо от търсачка с „чип тунинг варна телефон“.
+ * The section on the home page stays: someone who came to read about a service should not
+ * be sent to a third page to leave a phone number. This page is for
+ * those who come straight from a search engine with "chip tuning varna phone".
  */
 import Page from '../layouts/Page.astro';
 import ContactForm from '../components/ContactForm.astro';
@@ -106,6 +106,6 @@ const schema = [
 .k-grid{display:grid;gap:44px;grid-template-columns:1fr}
 @media(min-width:980px){.k-grid{grid-template-columns:1fr 1.15fr;gap:64px;align-items:start}}
 
-/* Адресът и работното време идват от `.nas-*` в `styles/ui.css` — същият блок
-   се ползва и на началната. */
+/* The address and opening hours come from `.nas-*` in `styles/ui.css`: the same block
+   is used on the home page too. */
 </style>

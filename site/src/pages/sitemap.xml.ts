@@ -1,14 +1,14 @@
 /**
- * Картата на сайта.
+ * The sitemap.
  *
- * Строи се от СЪЩИТЕ данни, от които се строят и страниците — списък, писан на
- * ръка, се разминава с истинските адреси още при първата добавена услуга.
+ * Built from the SAME data the pages are built from: a hand-written list drifts
+ * from the real addresses at the first added service.
  *
- * `lastmod` е датата на ФАЙЛА, който поражда страницата, а не „сега“. На стария
- * сайт картата се генерираше в момента на заявката и всеки обход твърдеше, че
- * целите 5 586 адреса са сменени току-що — така Google престава да ѝ вярва.
+ * `lastmod` is the date of the FILE that produces the page, not "now". On the old
+ * site the map was generated at request time and every crawl claimed that
+ * all 5,586 addresses had just changed, which is how Google stops trusting it.
  *
- * 404 нарочно не е тук.
+ * 404 is deliberately not here.
  */
 import type { APIRoute } from 'astro';
 import { pages, modified } from '../lib/sitemap';

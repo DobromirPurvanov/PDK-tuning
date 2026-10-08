@@ -1,10 +1,10 @@
 ---
 /**
- * Тринайсетте страници на услугите — една за всеки запис в `src/data/services.ts`.
+ * The thirteen service pages: one for each entry in `src/data/services.ts`.
  *
- * Нищо тук не се пише на ръка за конкретна услуга: ако липсва раздел (примерно
- * „кога няма смисъл“ или собствени въпроси), той просто не се рисува. Така
- * добавянето на четиринайсета услуга е един запис в данните, а не нова страница.
+ * Nothing here is written by hand for a specific service: if a section is missing (for example
+ * "when it makes no sense" or its own questions), it is simply not drawn. So
+ * adding a fourteenth service is one entry in the data, not a new page.
  */
 import Page from '../../layouts/Page.astro';
 import { SERVICES, BY_SLUG, ICONS } from '../../data/services';
@@ -35,7 +35,7 @@ const schema = [
   serviceSchema(site, { name: s.name, description: s.description, slug: s.slug },
     price ? { from: price.from, currency: prices.currency } : undefined),
   crumbSchema(site, trail),
-  // FAQPage само когато въпросите наистина стоят в текста по-долу
+  // FAQPage only when the questions are really in the text below
   ...(s.faq?.length ? [faqSchema(s.faq)] : []),
 ];
 ---

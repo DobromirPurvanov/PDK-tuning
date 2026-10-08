@@ -1,25 +1,25 @@
 ---
 /**
- * ИЗБИРАЧЪТ ЗА ЕЛЕКТРИЧЕСКИ — марка → модел → числата и цената → покупка.
+ * THE ELECTRIC-VEHICLE PICKER - brand → model → the numbers and the price → purchase.
  *
- * Различава се от Picker.astro по едно важно нещо: ТУК НЯМА ЗАЯВКИ. Големият
- * каталог живее в стария сайт и се пита на живо; електрическите са 33 реда в
- * src/data/ev.ts и се рисуват целите на сървъра. Скриптът само показва,
- * скрива и попълва — не създава нито един възел.
+ * It differs from Picker.astro in one important way: THERE ARE NO REQUESTS HERE. The big
+ * catalog lives on the old site and is queried live; the electric ones are 33 rows in
+ * src/data/ev.ts and are rendered whole on the server. The script only shows,
+ * hides and fills in - it creates not a single node.
  *
- * Затова и стиловете тук са ОБХВАНАТИ (без `is:global`): всичко, което се
- * стилизира, съществува в HTML-а от самото начало. Класовете са с представка
- * `ev`, за да не се срещнат с `.panel`, `.col` и `.result` на другия избирач,
- * които са глобални.
+ * That is why the styles here are SCOPED (no `is:global`): everything that gets
+ * styled exists in the HTML from the very start. The classes carry an `ev` prefix
+ * so they do not collide with `.panel`, `.col` and `.result` of the other picker,
+ * which are global.
  */
 import { EV_BY_BRAND, money, type EvModel } from '../data/ev';
 
 interface Props {
   heading?: string;
   sub?: string;
-  /** марка, избрана при зареждане */
+  /** brand selected on load */
   brand?: string;
-  /** модел, избран при зареждане (страницата на модела) */
+  /** model selected on load (the model page) */
   model?: string;
 }
 const {
@@ -29,7 +29,7 @@ const {
   model = '',
 } = Astro.props;
 
-/** Каквото скриптът пише в дясната колона, идва от тези атрибути. */
+/** Whatever the script writes into the right column comes from these attributes. */
 const attrs = (m: EvModel) => ({
   'data-slug': m.slug,
   'data-brand': m.brand,
@@ -97,9 +97,9 @@ const attrs = (m: EvModel) => ({
           <div class="evcard" id="evcard" hidden>
             <p class="evname"><b id="ev-full"></b> <span id="ev-years"></span></p>
 
-            {/* Голямото число го има само когато НИЕ имаме обявено число. Иначе
-                целият блок изчезва: тире, набрано 46px в Oswald, се чете като
-                счупена зелена черта, а не като „няма данни“. */}
+            {/* The big number exists only when WE have a published number. Otherwise
+                                the whole block disappears: a dash set at 46px in Oswald reads as
+                                a broken green line, not as "no data". */}
             <div class="evbig" id="evbig" hidden>
               <b id="ev-gain"></b><span>к.с. повече</span>
             </div>
@@ -130,7 +130,7 @@ const attrs = (m: EvModel) => ({
 </section>
 
 <script>
-// Скриптът НЕ създава възли — само показва, скрива и попълва вече съществуващи.
+// The script does NOT create nodes - it only shows, hides and fills in ones that already exist.
 const panel = document.querySelector<HTMLElement>('#evpicker .evpanel');
 if (panel) {
   const need = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
@@ -160,8 +160,8 @@ if (panel) {
     need('ev-full').textContent = d.full!;
     need('ev-years').textContent = d.years!;
 
-    // Празно поле в OURS значи „още не е обявено“. Тогава на мястото на нашето
-    // число НЕ влиза чуждото — влиза честното „по запитване“.
+    // An empty field in OURS means "not announced yet". Then in place of our
+    // number someone else's does NOT go in - the honest "on request" does.
     need('ev-gain').textContent = ps ? '+' + (ps - stockPs) : '';
     need('evbig').hidden = !ps;
     need('ev-p').innerHTML = ps
@@ -225,7 +225,7 @@ if (panel) {
     step(1);
   });
 
-  // Страницата на модела зарежда избирача вече отворен на този модел.
+  // The model page loads the picker already open on that model.
   const wantBrand = panel.dataset.brand;
   const wantModel = panel.dataset.model;
   if (wantModel) {
@@ -239,7 +239,7 @@ if (panel) {
 
 <style>
 .evp{padding:0 var(--gut) 96px}
-/* фонът, рамката и радиусът идват от `.panel` в `ui.css` */
+/* background, border and radius come from `.panel` in `ui.css` */
 .evpanel{max-width:var(--w-panel);margin:0 auto;overflow:hidden}
 .evhead{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;
   padding:30px 34px 26px;border-bottom:1px solid var(--line)}
@@ -264,9 +264,9 @@ if (panel) {
 .evlist button:hover{color:var(--white);background:var(--tint-2)}
 .evlist button.on{color:var(--lime);background:var(--lime-dim);box-shadow:inset 2px 0 0 var(--lime)}
 .evlist button em{font-style:normal;font-family:var(--mono);font-size:var(--fz-btn);color:var(--ink-4)}
-/* Знаците в public/marks са ЧЕРНИ (Simple Icons, `fill="#000000"`). На черен
-   фон `grayscale()` ги прави невидими — трябва същото обръщане, което ползва и
-   MarkGrid: brightness(0) сплесква до черно, invert(1) го вдига до бяло. */
+/* The marks in public/marks are BLACK (Simple Icons, `fill="#000000"`). On a black
+      background `grayscale()` makes them invisible - we need the same inversion that
+      MarkGrid uses: brightness(0) flattens to black, invert(1) lifts it to white. */
 .evlist button img{width:22px;height:22px;object-fit:contain;
   filter:brightness(0) invert(1);opacity:.55;transition:opacity var(--t-fast)}
 .evlist button:hover img,.evlist button.on img{opacity:1}
@@ -299,8 +299,8 @@ if (panel) {
 .evbtns button:hover,.evbtns a:hover{border-color:var(--line-strong)}
 .evbtns .evgo{background:var(--lime);border-color:var(--lime);color:var(--lime-ink);font-weight:700}
 .evbtns button:disabled{opacity:.4;cursor:not-allowed}
-/* Бутонът съществува от началото, за да не подскача редът — но до избор на
-   модел той не води наникъде и това се казва и на четеца. */
+/* The button exists from the start so the row does not jump - but until a
+      model is chosen it leads nowhere, and the screen reader is told that too. */
 .evbtns .evgo[aria-disabled="true"]{background:none;border-color:var(--line);color:var(--ink-5);
   pointer-events:none;font-weight:400}
 

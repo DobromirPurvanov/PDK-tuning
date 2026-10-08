@@ -24,10 +24,10 @@ for i in $(seq 1 30); do
   if curl --connect-timeout 3 --max-time 5 -fsS -o /dev/null http://127.0.0.1:8000/__alive && curl --connect-timeout 3 --max-time 5 -fsS -o /dev/null http://127.0.0.1:8000/api/health; then
     node_check=$("${compose[@]}" exec -T web node -e "fetch('http://127.0.0.1/api/health').then(r=>r.json()).then(j=>{if(j.site!=='new-pdk')process.exit(1);console.log(j.release)})")
     echo "Active new site release: $node_check"
-    # Записва се в .compose.active.yml, а НЕ върху следения docker-compose.yml.
-    # Следеният е за локална работа (`build:`), продукционният е с `image:` —
-    # копиран отгоре, той правеше `git status` на сървъра вечно „modified“ и
-    # всяко влизане там изглеждаше като че някой е пипал хранилището на ръка.
+    # Written to .compose.active.yml, NOT over the tracked docker-compose.yml.
+    # The tracked one is for local work (`build:`), the production one uses `image:` -
+    # copied over it, it kept `git status` on the server permanently "modified" and
+    # made every login there look as if someone had edited the repository by hand.
     cp "$release/docker-compose.yml" .compose.active.yml
     cp "$release/images.env" .images.env
     rm "$release/images.tar"

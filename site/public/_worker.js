@@ -1,55 +1,55 @@
 /**
- * Четенето на базата.
+ * Reading the database.
  *
- * Уговорката е базата да НЕ се мигрира и да НЕ се сваля — старият сайт продължава
- * да работи и си остава единственият ѝ пазител. Затова тук няма нито един запис от
- * каталога: всяко ниво се пита на живо от стария сайт в момента на заявката,
- * отговорът се разчита от HTML-а и се връща като JSON.
+ * The agreement is that the database is NOT migrated and NOT downloaded - the old site keeps
+ * running and remains its only custodian. So there is not a single catalog record here:
+ * every level is asked live from the old site at the moment of the request,
+ * the answer is parsed out of the HTML and returned as JSON.
  *
- * Едно ниво = една заявка към стария сайт:
- *   /api/live/brands                                → марките от началната
- *   /api/live/models/<марка>                        → моделите
- *   /api/live/years/<марка>/<модел>                 → годините
- *   /api/live/engines/<марка>/<модел>/<години>      → двигателите
- *   /api/live/result/<марка>/<модел>/<години>/<a>/<b> → числата преди и след
+ * One level = one request to the old site:
+ *   /api/live/brands                                -> the brands from the home page
+ *   /api/live/models/<brand>                        -> the models
+ *   /api/live/years/<brand>/<model>                 -> the years
+ *   /api/live/engines/<brand>/<model>/<years>       -> the engines
+ *   /api/live/result/<brand>/<model>/<years>/<a>/<b> -> the numbers before and after
  *
- * Отговорите се кешират на ръба, за да не удряме стария сайт при всяко зареждане.
+ * Responses are cached at the edge so we do not hit the old site on every load.
  *
  * ─────────────────────────────────────────────────────────────────────────────
- * КОЙ Е „СТАРИЯТ САЙТ“ СЛЕД ПРЕХВЪРЛЯНЕТО
+ * WHO IS "THE OLD SITE" AFTER THE TRANSFER
  *
- * Планът е този сайт да застане НА ТЕХНИЯ ДОМЕЙН. В мига, в който това стане,
- * `www.pdktuning.com` сме НИЕ — и ако източникът остане записан така, работникът
- * ще пита сам себе си и каталогът ще замълчи.
+ * The plan is for this site to take over THEIR DOMAIN. The moment that happens,
+ * `www.pdktuning.com` is US - and if the origin stays recorded that way, the worker
+ * will ask itself and the catalog will go silent.
  *
- * Затова адресът на източника се чете от средата: `CATALOG_BASE_URL` (старото
- * име `LEGACY_ORIGIN` още се приема). Преди прехвърлянето сочи `www`, както
- * досега. В деня на смяната клиентът прави ЕДИН DNS запис към същия произход
- * (`files.pdktuning.com`, проксиран през Cloudflare, за да има валиден
- * сертификат) и ключът сочи към него. Код не се пипа — местно стойността
- * живее в `.env.local`, в Pages е в настройките на проекта.
+ * So the origin address is read from the environment: `CATALOG_BASE_URL` (the old
+ * name `LEGACY_ORIGIN` is still accepted). Before the transfer it points to `www`, as
+ * before. On switch day the client makes ONE DNS record to the same origin
+ * (`files.pdktuning.com`, proxied through Cloudflare so there is a valid
+ * certificate) and the key points to it. No code is touched - locally the value
+ * lives in `.env.local`, in Pages it is in the project settings.
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
 /**
- * ОТКЪДЕ СЕ ЧЕТЕ КАТАЛОГЪТ. Името на ключа е `CATALOG_BASE_URL`; `LEGACY_ORIGIN`
- * се приема заради вече качените среди и записките, но новото е водещото.
+ * WHERE THE CATALOG IS READ FROM. The key is named `CATALOG_BASE_URL`; `LEGACY_ORIGIN`
+ * is accepted for environments already uploaded and for the notes, but the new one leads.
  *
- * ПРАЗНО НЕ Е ПОДРАЗБИРАНЕ. По-рано тук стоеше зашит `https://www.pdktuning.com`
- * и това мълчаливо работеше и при празен ключ — а мълчаливото работене е точно
- * начинът да се пусне деплой без настроена среда и никой да не забележи, докато
- * `www` не станем ние и работникът не почне да пита сам себе си. Сега липсващият
- * ключ казва честно, че липсва.
+ * EMPTY IS NOT A DEFAULT. Earlier `https://www.pdktuning.com` was hardcoded here
+ * and that silently worked even with an empty key - and silent working is exactly
+ * how a deploy ships with no environment configured and nobody notices until
+ * we become `www` and the worker starts asking itself. Now a missing
+ * key says honestly that it is missing.
  */
 const legacyOf = (env) =>
   String(env.CATALOG_BASE_URL || env.LEGACY_ORIGIN || '').replace(/\/+$/, '');
 
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36';
 
-// колко държим отговора на ръба, по нива
+// how long we keep the response at the edge, per level
 const TTL = { brands: 86400, models: 86400, years: 86400, engines: 43200, result: 43200 };
 
-// страници под /en/, които не са марки
+// pages under /en/ that are not brands
 const NAV = new Set(['about-us', 'contact', 'contacts', 'login', 'logout', 'tuning',
   'privacy-policy', 'upload', 'upload-file', 'register', 'sign-up']);
 
@@ -58,24 +58,24 @@ const dec = (s) => s.replace(/&(#x?[0-9a-f]+|[a-z]+);/gi, (m, e) =>
   e[0] === '#'
     ? String.fromCharCode(parseInt(e[1] === 'x' ? e.slice(2) : e.slice(1), e[1] === 'x' ? 16 : 10))
     : (ENT[e.toLowerCase()] ?? m));
-// старият сайт кодира двойно (&amp;#039;), затова декодираме два пъти
+// the old site encodes twice (&amp;#039;), so we decode twice
 const txt = (h) => dec(dec(String(h).replace(/<[^>]+>/g, ' '))).replace(/\s+/g, ' ').trim();
-// „316D 116hp 116hp“ → „316D 116hp“: мощността се повтаря вдясно в реда
+// "316D 116hp 116hp" -> "316D 116hp": the power is repeated on the right in the row
 const dedupe = (s) => { const w = s.split(' '); return w.length > 1 && w.at(-1) === w.at(-2) ? w.slice(0, -1).join(' ') : s; };
 
 /**
- * Излъскване на надписа от стария сайт.
- * Две неща се виждаха в готовия вид и нямаше как да останат:
- *  1. „1.4 Multi-Air - 140 hp (8GMK.Fx) 140hp“ — колоната с мощността се лепи в края
- *     БЕЗ интервал, затова `dedupe` не я хваща: маха се, ако същото число вече го има;
- *  2. „2017 -> ...“ — стрелката и многоточието са ASCII от базата.
+ * Polishing the label from the old site.
+ * Two things were visible in the finished result and could not stay:
+ *  1. "1.4 Multi-Air - 140 hp (8GMK.Fx) 140hp" - the power column is glued to the end
+ *     WITHOUT a space, so `dedupe` does not catch it: it is removed if the same number is already there;
+ *  2. "2017 -> ..." - the arrow and the ellipsis are ASCII from the database.
  */
 const tidy = (s) => {
   let out = dedupe(s);
-  // `\b` беше твърде строго: в „116D 116hp (1995cc) 116hp“ границата след 116
-  // липсва и в „116D“, и в „116hp“ (следва буква), затова повторението
-  // оставаше и излизаше „116D 116hp (1995cc)   116 к.с.“ — три пъти едно число.
-  // Търси се ЧИСЛОТО, а не думата: без цифра преди и след него.
+  // `\b` was too strict: in "116D 116hp (1995cc) 116hp" the boundary after 116
+  // is missing in both "116D" and "116hp" (a letter follows), so the repetition
+  // stayed and it came out as "116D 116hp (1995cc)   116 к.с." - the same number three times.
+  // The NUMBER is searched for, not the word: with no digit before or after it.
   out = out.replace(/\s*(\d+)\s*hp\s*$/i, (m, n) =>
     new RegExp(`(?:^|\\D)${n}(?!\\d)`).test(out.slice(0, out.length - m.length)) ? '' : m);
   return out.replace(/\s*->\s*/g, ' → ').replace(/\.\.\./g, '…').replace(/\s+/g, ' ').trim();
@@ -92,13 +92,13 @@ async function fetchPage(src, path) {
   return r.text();
 }
 
-/** връзките точно `depth` сегмента под `base` */
+/** the links exactly `depth` segments under `base` */
 function children(html, base, depth) {
   const seen = new Map();
   for (const m of html.matchAll(/<a\s[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi)) {
-    // Махаме КОЙТО И ДА Е произход, не само този, от който сме теглили: страниците
-    // на стария сайт носят връзки, зашити като `https://www.pdktuning.com/…`, а
-    // след прехвърлянето ще ги четем от друго име (files.pdktuning.com).
+    // We strip WHATEVER origin, not only the one we fetched from: the old site's pages
+    // carry links hardcoded as `https://www.pdktuning.com/...`, and
+    // after the transfer we will read them from another name (files.pdktuning.com).
     const href = m[1].replace(/^https?:\/\/[^/]+/i, '').replace(/[?#].*$/, '');
     if (!href.startsWith(base + '/')) continue;
     const rest = href.slice(base.length + 1).replace(/\/$/, '');
@@ -205,16 +205,16 @@ const snapshot = {
 };
 
 /* ══════════════════════════════════════════════════════════════════════════
-   ЗАПИТВАНЕТО ОТ ФОРМАТА
-   Проверява се ВТОРИ път тук: проверката в браузъра пази човека от грешка,
-   тази пази сървъра от робот. Писмото тръгва през Resend и се праща само ако
-   средата е настроена — иначе казваме честно, че формата не е свързана, вместо
-   да покажем „изпратено“ и да изгубим запитването.
+   THE FORM SUBMISSION
+   It is checked a SECOND time here: the browser check protects the person from a mistake,
+   this one protects the server from a robot. The letter goes out through Resend and is sent only if
+   the environment is configured - otherwise we say honestly that the form is not connected, instead of
+   showing "sent" and losing the inquiry.
 
-   В средата на Pages се слагат: RESEND_API_KEY, CONTACT_TO, CONTACT_FROM.
+   In the Pages environment set: RESEND_API_KEY, CONTACT_TO, CONTACT_FROM.
    ══════════════════════════════════════════════════════════════════════════ */
 
-const LIMIT = { count: 5, window: 3600 };   // 5 запитвания на час от един адрес
+const LIMIT = { count: 5, window: 3600 };   // 5 inquiries per hour from one address
 const MAX_BODY = 8 * 1024;
 
 const reply = (body, status = 200) =>
@@ -223,7 +223,7 @@ const reply = (body, status = 200) =>
     headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' },
   });
 
-/** брояч на ръба: ключът е измислен адрес, стойността — броят за текущия час */
+/** counter at the edge: the key is a made-up address, the value is the count for the current hour */
 async function tooMany(ip, ctx) {
   if (!ip) return false;
   const key = new Request(`https://pdk.local/rate/${encodeURIComponent(ip)}`);
@@ -240,18 +240,18 @@ async function tooMany(ip, ctx) {
 const s = (v, max) => String(v ?? '').trim().slice(0, max);
 
 /**
- * Пазачите, общи за формата и за поръчката.
+ * The guards shared by the form and the order.
  *
- * Извадени в едно място, когато се появи вторият вход: две копия на едни и
- * същи проверки е начинът един ден едното да пропусне това, което другото
- * лови. Връща или `{ bad }` — готов отговор, който се връща както е — или
- * разчетеното тяло.
+ * Pulled into one place when the second entry point appeared: two copies of the same
+ * checks are how one day one misses what the other
+ * catches. Returns either `{ bad }` - a ready response that is returned as-is - or
+ * the parsed body.
  */
 async function guard(request, ctx) {
   if (request.method === 'OPTIONS') return { bad: new Response(null, { status: 204 }) };
   if (request.method !== 'POST') return { bad: reply({ ok: false, code: 'method' }, 405) };
 
-  // заявка от чужда страница не се приема
+  // a request from a foreign page is not accepted
   const origin = request.headers.get('origin');
   if (origin && new URL(origin).host !== new URL(request.url).host) {
     return { bad: reply({ ok: false, code: 'origin' }, 403) };
@@ -263,7 +263,7 @@ async function guard(request, ctx) {
   let d;
   try { d = JSON.parse(raw); } catch { return { bad: reply({ ok: false, code: 'json' }, 400) }; }
 
-  // примамката и прекалено бързото попълване издават робот
+  // the decoy field and filling in too fast give away a robot
   if (String(d.pdk_extra || '').trim() || Number(d.elapsed) < 2000) {
     return { bad: reply({ ok: false, code: 'spam' }, 400) };
   }
@@ -283,7 +283,7 @@ async function guard(request, ctx) {
   return { d, name, phone, email };
 }
 
-/** Писмото през Resend. Без ключовете в средата казваме честно, че не сме свързани. */
+/** The letter through Resend. Without the keys in the environment we say honestly that we are not connected. */
 async function send(env, { subject, text, replyTo }) {
   const to = env.CONTACT_TO, from = env.CONTACT_FROM, key = env.RESEND_API_KEY;
   if (!to || !from || !key) return reply({ ok: false, code: 'not-configured' }, 503);
@@ -307,7 +307,7 @@ async function contact(request, env, ctx) {
     email ? `Имейл: ${email}` : null,
     s(d.service, 60) ? `Услуга: ${s(d.service, 60)}` : null,
     s(d.car, 120) ? `Автомобил: ${s(d.car, 120)}` : null,
-    // от коя страница е дошло — сайтът вече не е един екран и това е полезно
+    // which page it came from - the site is no longer a single screen and this is useful
     s(d.page, 120) ? `Страница: ${s(d.page, 120)}` : null,
     '',
     s(d.message, 1500) || '(без съобщение)',
@@ -321,27 +321,27 @@ async function contact(request, env, ctx) {
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
-   ПОРЪЧКАТА ЗА ЕЛЕКТРИЧЕСКИ
+   THE ORDER FOR ELECTRIC
 
-   Два пътя, а не два вида код:
+   Two paths, not two kinds of code:
 
-   1. БЕЗ `STRIPE_SECRET_KEY` в средата — поръчката пристига като писмо и
-      плащането се уговаря по телефона. Така работи, докато няма сметка.
-   2. СЪС `STRIPE_SECRET_KEY` — прави се сесия в Stripe Checkout и на
-      страницата се връща `{ ok: true, redirect }`. Писмото пак тръгва, за да
-      има следа от поръчката дори ако човекът се откаже на екрана за плащане.
+   1. WITHOUT `STRIPE_SECRET_KEY` in the environment - the order arrives as a letter and
+      payment is arranged by phone. That is how it works while there is no account.
+   2. WITH `STRIPE_SECRET_KEY` - a session is created in Stripe Checkout and
+      `{ ok: true, redirect }` is returned to the page. The letter still goes out, so that
+      there is a trace of the order even if the person abandons the payment screen.
 
-   ЦЕНАТА НЕ ИДВА ОТ БРАУЗЪРА. От него идва само `slug`; сумата се вади от
-   `/ev-prices.json`, което билдът изнася от src/data/ev.ts. Иначе всеки щеше
-   да плати колкото си напише в конзолата.
+   THE PRICE DOES NOT COME FROM THE BROWSER. Only `slug` comes from it; the amount is taken from
+   `/ev-prices.json`, which the build exports from src/data/ev.ts. Otherwise everyone would
+   pay whatever they typed in the console.
 
-   КАРТА И PAYPAL. Нарочно НЕ подаваме `payment_method_types`: така Stripe
-   показва методите, включени в таблото на сметката. PayPal се вдига оттам с
-   един ключ, без деплой. Ако беше изброен тук, изключен PayPal щеше да чупи
-   цялата сесия с грешка, вместо просто да не се показва.
+   CARD AND PAYPAL. We deliberately do NOT pass `payment_method_types`: this way Stripe
+   shows the methods enabled in the account dashboard. PayPal is turned on from there with
+   one switch, without a deploy. If it were listed here, a disabled PayPal would break
+   the whole session with an error instead of just not being shown.
    ══════════════════════════════════════════════════════════════════════════ */
 
-/** Ценоразписът, изнесен от билда. Чете се през ASSETS, не по мрежата. */
+/** The price list exported from the build. Read through ASSETS, not over the network. */
 async function evPrices(env, request) {
   try {
     const url = new URL('/ev-prices.json', request.url);
@@ -352,7 +352,7 @@ async function evPrices(env, request) {
   }
 }
 
-/** Stripe иска `application/x-www-form-urlencoded` с квадратни скоби за вложеното. */
+/** Stripe wants `application/x-www-form-urlencoded` with square brackets for nested values. */
 function form(obj, prefix = '', out = new URLSearchParams()) {
   for (const [k, v] of Object.entries(obj)) {
     if (v === undefined || v === null || v === '') continue;
@@ -379,19 +379,19 @@ async function checkout(env, request, { slug, item, currency, name, email, phone
         product_data: { name: item.name },
       },
     }],
-    // каквото ще трябва на човека, който изпълнява поръчката, се вижда в Stripe
+    // whatever the person fulfilling the order will need is visible in Stripe
     metadata: {
       slug,
-      kupuvach: name,
-      telefon: phone,
-      predpochetano_plashtane: pay || '',
-      // дали е дал съгласие файлът да се подготви веднага (чл. 57, т. 13 ЗЗП)
-      saglasie_vednaga: now ? 'да' : 'не',
+      buyer: name,
+      phone,
+      preferred_payment: pay || '',
+      // whether they consented to the file being prepared immediately (art. 57, item 13 of the Consumer Protection Act)
+      immediate_consent: now ? 'yes' : 'no',
     },
   });
 
-  // Паднал Stripe не бива да става 500 на нашия сайт: връщаме `null` и поръчката
-  // тръгва по пътя „уговаряме плащането“, вместо страницата да се срине.
+  // A failed Stripe must not become a 500 on our site: we return `null` and the order
+  // goes down the "we arrange payment" path instead of the page collapsing.
   try {
     const r = await fetch('https://api.stripe.com/v1/checkout/sessions', {
       method: 'POST',
@@ -418,11 +418,11 @@ async function order(request, env, ctx) {
 
   const slug = s(d.slug, 80);
   const pay = s(d.pay, 20);
-  // изричното съгласие по чл. 57, т. 13 ЗЗП — отметка, която НЕ е сложена предварително
+  // explicit consent under art. 57, item 13 of the Consumer Protection Act - a checkbox that is NOT pre-ticked
   const now = d.now === 'on' || d.now === true;
 
-  // Сумата се решава тук, по slug. Каквото е дошло като цена от браузъра, се
-  // ползва САМО в писмото, и то с етикет, че е видяното на екрана.
+  // The amount is decided here, by slug. Whatever came as a price from the browser is
+  // used ONLY in the letter, and labelled as what was seen on screen.
   const table = slug ? await evPrices(env, request) : null;
   const item = table?.items?.[slug] ?? null;
 
@@ -459,94 +459,94 @@ async function order(request, env, ctx) {
     replyTo: email,
   });
 
-  // Ако сесията за плащане е готова, човекът тръгва натам дори когато пощата
-  // не е настроена — иначе платена поръчка би се сринала на „не-configured“.
+  // If the payment session is ready, the person goes there even when the mail
+  // is not configured - otherwise a paid order would collapse into "not-configured".
   if (redirect) return reply({ ok: true, redirect });
   return sent;
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
-   ПРЕМИНАВАНЕТО КЪМ СТАРИЯ САЙТ
+   THE PASS-THROUGH TO THE OLD SITE
 
-   Новият сайт стъпва ВЪРХУ техния домейн, а не до него. Той обаче е шест
-   страници, докато на стария живеят ~9 000 адреса на каталога и порталът за
-   дилъри. Ако домейнът просто смени посоката си, всичко останало изчезва:
-   индексираните страници стават 404, а отметките на партньорските сервизи
-   към входа — също.
+   The new site stands ON TOP of their domain, not next to it. But it is six
+   pages, while the old one holds ~9,000 catalog addresses and the dealer
+   portal. If the domain simply switches direction, everything else disappears:
+   indexed pages become 404, and the partner garages' bookmarks
+   to the login do too.
 
-   Затова адресите, които са ТЕХНИ, се подават на стария сайт както са:
-   заявката се препредава с метода, заглавките и тялото ѝ (входът е POST,
-   качването на файл — също), отговорът се връща непокътнат. Нищо не се
-   мигрира и нищо не се дублира — старият сайт продължава да си работи, само
-   че вече отдолу.
+   So the addresses that are THEIRS are handed to the old site as they are:
+   the request is forwarded with its method, headers and body (login is POST,
+   file upload too), and the response is returned untouched. Nothing is
+   migrated and nothing is duplicated - the old site keeps running, only
+   now underneath.
 
-   Списъкът е нарочно ЗАТВОРЕН, а не „всичко непознато“: старият сайт връща
-   200 и началната страница за измислен адрес (стар дефект), тоест ако му
-   подавахме всичко, нашата 404 никога нямаше да се вижда.
+   The list is deliberately CLOSED, not "everything unknown": the old site returns
+   200 and the home page for a made-up address (an old defect), so if we
+   passed it everything, our 404 would never be seen.
 
-   ЕДИН КЛЮЧ, ТРИ СЪСТОЯНИЯ. `LEGACY_ORIGIN` казва едновременно откъде се чете
-   каталогът и дали техните пътища се препредават:
+   ONE KEY, THREE STATES. `LEGACY_ORIGIN` says both where the catalog is read from
+   and whether their paths are forwarded:
 
-     празно                       макет на `pdk-mockup.pages.dev`
-                                  каталогът се чете от www, но нищо не се
-                                  препредава — `/bg/…` е нашата 404
+     empty                        mockup on `pdk-mockup.pages.dev`
+                                  the catalog is read from www, but nothing is
+                                  forwarded - `/bg/...` is our 404
 
-     `https://www.pdktuning.com`  етап 1: стоим на `new.pdktuning.com`
-                                  www е ОЩЕ СТАРИЯТ САЙТ, значи е и източникът,
-                                  и целта на препредаването. Каталогът и входът
-                                  работят през нас, без нищо да се пипа при тях
+     `https://www.pdktuning.com`  stage 1: we stand on `new.pdktuning.com`
+                                  www is STILL THE OLD SITE, so it is both the source
+                                  and the forwarding target. The catalog and login
+                                  work through us, with nothing touched on their side
 
-     `https://files.pdktuning.com`  етап 2: поели сме и www
-                                  www вече сме НИЕ, затова старият сървър се
-                                  нуждае от собствено име, иначе работникът пита
-                                  сам себе си (има предпазител, който го спира)
+     `https://files.pdktuning.com`  stage 2: we have taken over www too
+                                  www is now US, so the old server
+                                  needs its own name, otherwise the worker asks
+                                  itself (there is a guard that stops it)
 
-   Разликата между етапите е САМО стойността на ключа. Кодът е един и същ и през
-   трите, затова етап 1 е истинска проба на етап 2, а не негово подобие.
+   The difference between stages is ONLY the value of the key. The code is the same in all
+   three, so stage 1 is a real rehearsal of stage 2, not an approximation of it.
    ══════════════════════════════════════════════════════════════════════════ */
 
-/** какво остава на стария сайт: двата езика, порталът под тях и техните файлове */
+/** what stays with the old site: the two languages, the portal under them and their files */
 const LEGACY_PATHS = /^\/(bg|en|images|vendor|js|css|uploads|storage)(\/|$)|^\/manifest\.json$/i;
 
 /* ══════════════════════════════════════════════════════════════════════════
-   ПРЕНАСОЧВАНИЯТА ОТ СТАРИТЕ АДРЕСИ
+   REDIRECTS FROM THE OLD ADDRESSES
 
-   Старият сайт има шест истински страници извън каталога на всеки език и
-   всяка от тях има наследник тук. Оставени на passThrough, те биха се
-   обслужвали в стария си вид от нашия домейн — тоест два адреса за едно и
-   също нещо, и точно те са индексираните.
+   The old site has six real pages outside the catalog in each language and
+   each of them has a successor here. Left to passThrough, they would be
+   served in their old form from our domain - that is, two addresses for the one
+   same thing, and they are exactly the indexed ones.
 
-   Кое СЕ пренасочва и кое НЕ:
-   • Шестте страници и нивото на марката → при нас. За марките имаме свой
-     текст на всяка от 110-те (`brand-notes.ts`) плюс жив избирач — slug-овете
-     съвпадат едно към едно, сверено срещу свалянето на стария сайт.
-   • Порталът на дилърите (`login`, `sign-up`, `logout`, качването на файлове)
-     НЕ се пренасочва. Той остава да работи на стария сървър — нямаме негов
-     наследник и входът на дилърите не бива да се чупи.
-   • Дълбокият каталог (`/bg/bmw/3-series/…`, ~12 500 адреса) НЕ се пренасочва.
-     Нашият каталог свършва на ниво марка; отдолу нямаме какво да предложим и
-     301 към родителя би изял точно съдържанието, с което сайтът се намира.
+   What IS redirected and what is NOT:
+   * The six pages and the brand level -> to us. For brands we have our own
+     text for each of the 110 (`brand-notes.ts`) plus a live selector - the slugs
+     match one to one, checked against the old site's download.
+   * The dealer portal (`login`, `sign-up`, `logout`, file uploads)
+     is NOT redirected. It keeps working on the old server - we have no successor for it
+     and the dealers' login must not break.
+   * The deep catalog (`/bg/bmw/3-series/...`, ~12,500 addresses) is NOT redirected.
+     Our catalog ends at brand level; below that we have nothing to offer and
+     a 301 to the parent would eat exactly the content the site is found by.
 
-   Работят ВИНАГИ, не само след трансфера: пренасочването е чиста функция от
-   пътя, не пита стария сайт за нищо, и така се проверява дни преди деня на
-   смяната. Днес `/bg/about-us` е нашата 404 — 301 към `/za-nas/` е по-добре
-   и от 404, и от чакането.
+   They work ALWAYS, not only after the transfer: the redirect is a pure function of
+   the path, asks the old site for nothing, and so can be checked days before the
+   switch day. Today `/bg/about-us` is our 404 - a 301 to `/za-nas/` is better
+   than both a 404 and waiting.
    ══════════════════════════════════════════════════════════════════════════ */
 
-/** страниците извън каталога → наследниците им при нас */
+/** pages outside the catalog -> their successors here */
 const LEGACY_PAGES = new Map([
-  ['', '/'],                        // /bg/ и /en/ → началната
+  ['', '/'],                        // /bg/ and /en/ -> the home page
   ['about-us', '/za-nas/'],
   ['contact', '/kontakti/'],
   ['contacts', '/kontakti/'],
   ['privacy-policy', '/privacy/'],
   ['tuning', '/uslugi/'],
-  /* Двете подстраници на `tuning` са в ТЕХНИЯ sitemap, тоест индексирани са.
-     В свалянето на сайта ги нямаше — намерени са чак от картата им.
-     Останалите имена под `/tuning/` не са реални страници: `/tuning/dpf`,
-     `/tuning/egr` и дори `/tuning/измислено` връщат същото като `chip-tuning`.
-     Затова не се изброяват — всичко непознато под `tuning` отива в индекса на
-     услугите. */
+  /* The two subpages of `tuning` are in THEIR sitemap, so they are indexed.
+     They were not in the site download - they were found only from their sitemap.
+     The other names under `/tuning/` are not real pages: `/tuning/dpf`,
+     `/tuning/egr` and even `/tuning/madeup` return the same as `chip-tuning`.
+     So they are not listed - anything unknown under `tuning` goes to the services
+     index. */
   ['tuning/chip-tuning', '/uslugi/chip-tuning/'],
   ['tuning/software-repair', '/uslugi/softueren-remont/'],
 ]);
@@ -562,10 +562,10 @@ const LEGACY_PAGES_EN = new Map([
   ['tuning/software-repair', '/en/services/software-repair/'],
 ]);
 
-/** порталът на дилърите — стои на стария сървър, не се пренасочва */
+/** the dealer portal - stays on the old server, is not redirected */
 const PORTAL_PATHS = new Set(['login', 'logout', 'sign-up', 'register', 'upload', 'upload-file']);
 
-/** нашите 110 марки; пълни се при първото извикване от `marks.json` в изхода */
+/** our 110 brands; filled on the first call from `marks.json` in the output */
 let MARK_SLUGS = null;
 
 async function markSlugs(env, origin) {
@@ -573,34 +573,34 @@ async function markSlugs(env, origin) {
   try {
     const r = await env.ASSETS.fetch(new Request(origin + '/marks.json'));
     if (r.ok) MARK_SLUGS = new Set((await r.json()).map((m) => m.slug));
-  } catch { /* при съмнение марките не се пренасочват — по-добре стария сайт, отколкото 404 */ }
+  } catch { /* when in doubt, brands are not redirected - better the old site than a 404 */ }
   return MARK_SLUGS ?? new Set();
 }
 
 /**
- * Кой нов адрес отговаря на стария. `null` значи „няма наследник, остави го
- * на стария сайт“.
+ * Which new address corresponds to the old one. `null` means "no successor, leave it
+ * to the old site".
  */
 async function legacyTarget(pathname, env, origin) {
   const m = pathname.match(/^\/(bg|en)(?:\/(.*))?$/i);
   if (!m) return null;
 
-  /* ПРЕНАСОЧВАТ СЕ САМО БЪЛГАРСКИТЕ АДРЕСИ.
+  /* ONLY THE BULGARIAN ADDRESSES ARE REDIRECTED.
 
-     Първият вариант пращаше и `/en/about-us` → `/za-nas/`, тоест посетител,
-     дошъл от английска страница в Google, попадаше на български текст. И това
-     не е рядък случай: **5 585 от 5 586 адреса в техния sitemap са на `/en/`** —
-     целият индексиран трафик на клиента е английски.
+     The first version also sent `/en/about-us` -> `/za-nas/`, so a visitor
+     arriving from an English page in Google landed on Bulgarian text. And that
+     is not a rare case: **5,585 of the 5,586 addresses in their sitemap are under `/en/`** -
+     all of the client's indexed traffic is English.
 
-     Докато нашият сайт е само на български, английските адреси си остават при
-     стария сайт, където имат английски отговор. Пренасочването им се връща на
-     етап 6 от `docs/ANGLIYSKI.md` — тогава ще водят към НАШИ английски
-     страници, не към български. */
-  // режем крайната наклонена черта и опашката, за да сравняваме едно и също
+     While our site is Bulgarian only, the English addresses stay with
+     the old site, where they have an English response. Redirecting them returns in
+     stage 6 of `docs/ENGLISH.md` - then they will lead to OUR English
+     pages, not to Bulgarian ones. */
+  // we cut the trailing slash and the tail so we compare like with like
   const rest = (m[2] || '').replace(/\/+$/, '');
 
   /* English: the old site's own English pages now have English successors of
-     ours (stage 6 of docs/ANGLIYSKI.md). Everything else under /en/ (the 110
+     ours (stage 6 of docs/ENGLISH.md). Everything else under /en/ (the 110
      makes, the deep catalogue, the dealer portal) stays with the old site. */
   if (m[1].toLowerCase() === 'en') {
     const key = rest.toLowerCase();
@@ -615,12 +615,12 @@ async function legacyTarget(pathname, env, origin) {
   const page = LEGACY_PAGES.get(rest.toLowerCase());
   if (page) return page;
 
-  /* Непознато име под `/tuning/` — на стария сайт то мълчаливо показва
-     чиптунинга, вместо да върне 404. Индексът на услугите е по-честният
-     наследник от това да отгатваме коя услуга е имал предвид. */
+  /* An unknown name under `/tuning/` - on the old site it silently shows
+     chip tuning instead of returning a 404. The services index is a more honest
+     successor than guessing which service the person meant. */
   if (/^tuning\//i.test(rest)) return '/uslugi/';
 
-  // само ПЪРВОТО ниво е марка; има ли втора черта, това е модел или по-надолу
+  // only the FIRST level is a brand; if there is a second slash, it is a model or deeper
   if (!rest || rest.includes('/')) return null;
 
   const slug = rest.toLowerCase();
@@ -629,21 +629,21 @@ async function legacyTarget(pathname, env, origin) {
   const slugs = await markSlugs(env, origin);
   if (slugs.has(slug)) return `/katalog/${slug}/`;
 
-  /* `alpine` и `westfield` съществуват като техни страници, но не са свързани
-     от началната им и ги няма в нашите 110 — пращаме ги в индекса на каталога,
-     вместо да ги оставим на страница, до която никой не стига. */
+  /* `alpine` and `westfield` exist as their pages, but are not linked
+     from their home page and are not among our 110 - we send them to the catalog index,
+     instead of leaving them on a page nobody reaches. */
   if (slug === 'alpine' || slug === 'westfield') return '/katalog/';
 
   return null;
 }
 
-/** заглавки, които нямат работа в препредадената заявка */
+/** headers that have no business in the forwarded request */
 const HOP = ['content-encoding', 'content-length', 'transfer-encoding', 'connection'];
 
 async function passThrough(request, url, src, indexable) {
   const target = new URL(url.pathname + url.search, src);
 
-  // предпазител: ако източникът сочи към самите нас, заявката щеше да се върти в кръг
+  // guard: if the origin points at ourselves, the request would loop forever
   if (target.host === url.host) {
     return new Response(
       'LEGACY_ORIGIN сочи към този същия домейн — старият сайт трябва да е на свое име.',
@@ -674,11 +674,11 @@ async function passThrough(request, url, src, indexable) {
   const headers = new Headers(r.headers);
   for (const h of HOP) headers.delete(h);
 
-  // пренасочване към стария адрес се връща към нашия домейн
+  // a redirect to the old address is turned back to our domain
   const loc = headers.get('location');
   if (loc) headers.set('location', loc.replace(/^https?:\/\/[^/]+/i, url.origin));
 
-  // бисквитките на входа са закачени за стария домейн; без „Domain“ стават наши
+  // the login cookies are attached to the old domain; without "Domain" they become ours
   const cookies = r.headers.getSetCookie ? r.headers.getSetCookie()
     : r.headers.getAll ? r.headers.getAll('set-cookie') : [];
   if (cookies.length) {
@@ -686,16 +686,16 @@ async function passThrough(request, url, src, indexable) {
     for (const c of cookies) headers.append('set-cookie', c.replace(/;\s*domain=[^;]*/i, ''));
   }
 
-  // докато сме на макетния адрес, чуждото съдържание не бива да влиза в индекса
+  // while we are on the mockup address, foreign content must not get into the index
   if (!indexable) headers.set('x-robots-tag', 'noindex, nofollow');
 
   const type = headers.get('content-type') || '';
   const out = new Response(r.body, { status: r.status, statusText: r.statusText, headers });
   if (!type.includes('text/html')) return out;
 
-  // Връзките в техния HTML са зашити като `https://www.pdktuning.com/…`. След
-  // прехвърлянето това сме ние и всичко съвпада, но докато преглеждаме отвън
-  // (или ако източникът е под друго име) те водят навън. Правим ги относителни.
+  // The links in their HTML are hardcoded as `https://www.pdktuning.com/...`. After
+  // the transfer that is us and everything matches, but while we browse from outside
+  // (or if the origin has another name) they lead out. We make them relative.
   const relative = {
     element(el) {
       for (const attr of ['href', 'src', 'action']) {
@@ -706,16 +706,16 @@ async function passThrough(request, url, src, indexable) {
       }
     },
   };
-  // HTMLRewriter приема ЕДИН избирач на извикване — списък с запетаи не се поддържа
+  // HTMLRewriter accepts ONE selector per call - a comma-separated list is not supported
   let rw = new HTMLRewriter();
   for (const tag of ['a', 'link', 'script', 'img', 'form', 'iframe', 'source']) rw = rw.on(tag, relative);
 
-  /* Каноникълът на техните страници сочи `http://127.0.0.1:9100/<същия път>` —
-     адресът от машината на разработчика е останал в продукционния билд и стои
-     така на всичките ~9 000 страници (главната находка от одита, непоправена).
-     Докато сайтът е техен, това си е техен проблем. В мига, в който минем на
-     техния домейн, страниците се обслужват от НАС и проблемът става наш —
-     затова каноникълът се пренаписва тук, на нашия истински адрес. */
+  /* The canonical of their pages points to `http://127.0.0.1:9100/<same path>` -
+     a developer-machine address was left in the production build and sits
+     like that on all ~9,000 pages (the main audit finding, unfixed).
+     While the site is theirs, that is their problem. The moment we move to
+     their domain, the pages are served by US and the problem becomes ours -
+     so the canonical is rewritten here, to our real address. */
   return rw
     .on('link[rel="canonical"]', {
       element(el) { el.setAttribute('href', url.origin + url.pathname); },
@@ -723,8 +723,8 @@ async function passThrough(request, url, src, indexable) {
     .transform(out);
 }
 
-/** адресът сочи ли към стария сайт — сравнява се със СЕГАШНИЯ източник, какъвто
- *  е в средата; зашито име тук би остаряло в деня на превключването */
+/** does the address point to the old site - compared with the CURRENT origin, as it
+ *  is in the environment; a hardcoded name here would go stale on switch day */
 function isLegacyHost(value, src) {
   try {
     if (!src) return false;
@@ -741,13 +741,13 @@ export default {
     if (url.pathname === '/api/contact') return contact(request, env, ctx);
     if (url.pathname === '/api/order') return order(request, env, ctx);
 
-    // преминаването се включва САМО когато стоим на тяхно място (виж бележката горе)
+    // pass-through is turned on ONLY when we stand in their place (see the note above)
     const takenOver = Boolean(src);
 
     if (!url.pathname.startsWith('/api/live/')) {
-      /* Пренасочванията вървят ПРЕДИ преминаването: адрес с наследник при нас
-         не бива да се обслужва от стария сайт, иначе едно и също нещо живее на
-         два адреса и индексираният е старият. */
+      /* Redirects run BEFORE the pass-through: an address with a successor here
+         must not be served by the old site, otherwise the same thing lives at
+         two addresses and the indexed one is the old one. */
       const to = await legacyTarget(url.pathname, env, url.origin);
       if (to) {
         // Relative on purpose: on the VPS `url.origin` is the configured BASE_URL

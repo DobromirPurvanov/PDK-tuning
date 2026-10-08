@@ -1,14 +1,16 @@
 /**
- * Кои редове в един файл са ПРОЗА, а не код.
+ * Which lines in a file are PROSE, not code.
  *
- * Ползва се и от `check-hardcoded.mjs`, и от `check-tokens.mjs`: и двата търсят
- * низове, които в коментар ОБЯСНЯВАТ нещо, а в код го ПРАВЯТ. Едната проверка
- * гледа домейн, другата — цвят, но въпросът „това ред код ли е“ е един и същ.
+ * Used by both `check-hardcoded.mjs` and `check-tokens.mjs`: both look for
+ * strings that EXPLAIN something in a comment and DO it in code. One check
+ * looks at a domain, the other at a colour, but the question "is this a line
+ * of code" is the same.
  *
- * Първата версия гледаше само началото на реда и пропускаше продълженията на
- * блоковите коментари — ред без звездичка насред `{/* … *\/}` изглеждаше като код
- * и вдигаше фалшива тревога на четири места. Затова състоянието „вътре в блоков
- * коментар“ се носи през файла, вместо да се гадае по един ред.
+ * The first version only looked at the start of the line and missed the
+ * continuations of block comments: a line without an asterisk in the middle of
+ * `{/* … *\/}` looked like code and raised a false alarm in four places.
+ * That is why the "inside a block comment" state is carried through the file
+ * instead of being guessed from a single line.
  */
 export function proseLines(text) {
   const out = new Set();

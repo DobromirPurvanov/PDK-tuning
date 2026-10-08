@@ -1,16 +1,16 @@
 /**
- * ЦЕНОРАЗПИСЪТ ЗА РАБОТНИКА — slug → име и цена в стотинки.
+ * THE PRICE LIST FOR THE WORKER: slug to name and price in cents.
  *
- * ЗАЩО СЪЩЕСТВУВА. Чекаутът се прави в public/_worker.js, а той е обикновен
- * JavaScript във файловата система на Pages — не може да внесе `src/data/ev.ts`.
- * Ако цената идваше от браузъра заедно с поръчката, всеки щеше да плати колкото
- * си напише. Затова билдът изнася цените тук, работникът ги чете през `ASSETS`
- * и взима СВОЯТА цена по slug. От браузъра идва само кой е моделът.
+ * WHY IT EXISTS. The checkout is done in public/_worker.js, which is plain
+ * JavaScript in the Pages file system and cannot import `src/data/ev.ts`.
+ * If the price came from the browser together with the order, everyone would pay whatever
+ * they typed. So the build exports the prices here, the worker reads them through `ASSETS`
+ * and takes ITS OWN price by slug. Only the model identity comes from the browser.
  *
- * Съдържа единствено моделите с обявена цена. За останалите няма какво да се
- * плаща — те минават по пътя „заяви оферта“.
+ * It contains only the models with an announced price. For the rest there is nothing to
+ * pay for: they take the "request a quote" path.
  *
- * Публичен адрес, но в него няма нищо, което вече да не пише на страниците.
+ * A public address, but it holds nothing that is not already written on the pages.
  */
 import type { APIRoute } from 'astro';
 import { EV_MODELS, EV_CURRENCY } from '../data/ev';
@@ -21,7 +21,7 @@ export const GET: APIRoute = () => {
     if (m.price == null) continue;
     items[m.slug] = {
       name: `Тунинг пакет за ${m.full} ${m.years}`,
-      // Stripe брои в най-малката единица на валутата
+      // Stripe counts in the smallest unit of the currency
       amount: Math.round(m.price * 100),
     };
   }

@@ -1,8 +1,8 @@
 ---
 /**
- * Хъбът на каталога — всичките 110 марки, подредени по категория, плюс живия
- * избирач. Тук е и единственото място със сортиране по азбучен ред: човек,
- * който търси конкретна марка, я търси с очи, не по популярност.
+ * The catalog hub: all 110 brands, ordered by category, plus the live
+ * picker. It is also the only place with alphabetical sorting: someone
+ * looking for a specific brand looks for it by eye, not by popularity.
  */
 import Page from '../../layouts/Page.astro';
 import Picker from '../../components/Picker.astro';
@@ -95,7 +95,7 @@ const schema = [
 </Page>
 
 <script>
-// Търсенето скрива плочките на място — без заявка и без пренареждане на решетката.
+// Search hides tiles in place: no query and no rearranging of the grid.
 const q = document.getElementById('mq') as HTMLInputElement | null;
 if (q) {
   const groups = Array.from(document.querySelectorAll<HTMLElement>('[data-group]'));
@@ -126,15 +126,15 @@ if (q) {
 
   q.addEventListener('input', apply);
 
-  // Страницата 404 праща търсенето насам с `?q=…` през обикновен <form method="get">,
-  // за да работи и без JavaScript. Тук го подхващаме и филтрираме веднага.
-  // Дължината се реже, защото стойността идва отвън.
+  // The 404 page sends the search here with `?q=…` through a plain <form method="get">,
+  // so that it works without JavaScript too. Here we pick it up and filter at once.
+  // The length is cut, because the value comes from outside.
   const wanted = new URLSearchParams(location.search).get('q');
   if (wanted) {
     q.value = wanted.slice(0, 40);
     apply();
     q.scrollIntoView({ block: 'center' });
-    // адресът се изчиства — филтърът е състояние на екрана, не адрес за споделяне
+    // the address is cleaned: the filter is screen state, not an address to share
     history.replaceState(null, '', location.pathname);
   }
 }

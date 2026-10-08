@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Проверява дали видимият текст във файл звучи като писан от човек.
+"""Checks whether the visible text in a file sounds human-written.
 
-python3 scripts/ai-tekst/proverka.py src/data/services.ts [...]
+python3 scripts/ai-text/check.py src/data/services.ts [...]
 
-Сравнява работното копие с версията в git HEAD. Вади само текста в низовете
-и в разметката (без коментари). Правилата са същите като при cc78 и Динкови:
-тире ≤ 1 на 250 думи, „не X, а Y“ рядко, без обявление с двоеточие, без
-рекламни думи, без нови цифри, дължина 0,85–1,15 от оригинала.
-Английските файлове (път с /en/) се мерят по английския списък.
-Изход 1 при ГРЕШКА.
+Compares the working copy with the version in git HEAD. Extracts only the text
+in strings and markup (no comments). Same rules as for cc78 and Dinkovi:
+dash <= 1 per 250 words, "not X, but Y" rare, no colon announcements, no
+marketing words, no new numbers, length 0.85-1.15 of the original.
+English files (path containing /en/) are measured against the English list.
+Exit code 1 on ERROR.
 """
 import re
 import subprocess
@@ -49,13 +49,13 @@ def strip_comments(t: str) -> str:
 
 
 def chunks(src: str, lang: str):
-    """Видими текстови парчета: низове и текст между тагове с поне 2 думи."""
+    """Visible text chunks: strings and text between tags with at least 2 words."""
     t = strip_comments(src)
     t = re.sub(r"<style\b[^>]*>.*?</style>", " ", t, flags=re.S)
     letters = r"[а-яА-Я]" if lang == "bg" else r"[a-zA-Z]"
     code, tpl = t, ""
     fm = re.match(r"\s*---\n(.*?)\n---\n(.*)", t, flags=re.S)
-    if fm:  # .astro: горе е код (само низовете), долу е разметка
+    if fm:  # .astro: code on top (strings only), markup below
         code, tpl = fm.group(1), fm.group(2)
         scripts = re.findall(r"<script\b[^>]*>(.*?)</script>", tpl, flags=re.S)
         code += "\n" + "\n".join(re.sub(r"(?m)//.*$", " ", s) for s in scripts)
@@ -64,10 +64,10 @@ def chunks(src: str, lang: str):
     STR = r"'((?:[^'\\\n]|\\.)*)'|\"((?:[^\"\\\n]|\\.)*)\"|`((?:[^`\\]|\\.)*)`"
     for m in re.finditer(STR, code):
         raw.append(next(g for g in m.groups() if g is not None))
-    for m in re.finditer(r"\{([^{}]*)\}", tpl):  # низове в изрази {…}
+    for m in re.finditer(r"\{([^{}]*)\}", tpl):  # strings in {...} expressions
         for n in re.finditer(STR, m.group(1)):
             raw.append(next(g for g in n.groups() if g is not None))
-    for m in re.finditer(r"\s[\w-]+=\"([^\"]*)\"", tpl):  # атрибути: title, aria-label, content…
+    for m in re.finditer(r"\s[\w-]+=\"([^\"]*)\"", tpl):  # attributes: title, aria-label, content...
         raw.append(m.group(1))
     for m in re.finditer(r">([^<>]+)<", re.sub(r"\{[^{}]*\}", " ", tpl)):
         if not re.search(r"=>|&&|\|\||;\s*$", m.group(1)):
@@ -91,7 +91,7 @@ def numbers(t):
 
 
 def prose(t):
-    # диапазони не са тирета в прозата: 2–4, +15 до +25, 9:00–18:00, 300–500 €, Пон–Пет
+    # ranges are not dashes in prose: 2–4, +15 to +25, 9:00–18:00, 300–500 €, Mon–Fri
     t = re.sub(r"[\d%€]\s*[–—-]\s*[+\-−]?\d", " ", t)
     t = re.sub(r"\b(Пон|Пн|Mon)[–—-](Пет|Съб|Нед|Пт|Fri|Sat|Sun)\b", " ", t)
     return t
@@ -112,47 +112,47 @@ def check(path: str) -> int:
     allow = wn // 250
     if d > allow:
         ex = [c for c in cn if DASH.search(prose(c))][:4]
-        err.append(f"тирета: {d} на {wn} думи (позволени {allow}); напр.: " + " | ".join(x[:90] for x in ex))
+        err.append(f"dashes: {d} in {wn} words (allowed {allow}); e.g.: " + " | ".join(x[:90] for x in ex))
     na = R["ne_a"].findall(tn)
     if len(na) > max(1, wn // 1000):
-        err.append(f"„не X, а Y“: {len(na)} (позволени {max(1, wn // 1000)}): {na[:4]}")
+        err.append(f"\"not X, but Y\": {len(na)} (allowed {max(1, wn // 1000)}): {na[:4]}")
     for f in R["frazi"]:
-        # слоганът от таблото в Canva („Ние знаем как да го отключим“) е марка, не почерк
+        # the slogan from the Canva board ("We know how to unlock it") is a brand mark, not a voice tell
         hits = [c for c in cn if re.search(re.escape(f), c, re.I) and c != "отключим"]
         if hits:
-            err.append(f"забранен израз „{f}“: {hits[0][:100]}")
+            err.append(f"banned phrase \"{f}\": {hits[0][:100]}")
 
     def colons(cs):
         return sum(max(0, c.count(":") - len(re.findall(r"\d:\d|https?:", c))) for c in cs if len(c.split()) > 4)
 
     col_o, col = colons(co), colons(cn)
     if col > max(col_o, wn // 200, 1):
-        err.append(f"двоеточия в изречения: {col} (в оригинала {col_o}); тирето НЕ се сменя с двоеточие")
+        err.append(f"colons in sentences: {col} (original {col_o}); a dash is NOT replaced with a colon")
     two = [c for c in cn if any(s.count(":") - len(re.findall(r"\d:\d", s)) >= 2 for s in re.split(r"(?<=[.!?])\s+", c))]
     if two:
-        err.append(f"изречение с две двоеточия: {two[0][:100]}")
+        err.append(f"sentence with two colons: {two[0][:100]}")
     sc = tn.count(";")
     if sc > max(1, wn // 300):
-        err.append(f"точка и запетая: {sc} (позволени {max(1, wn // 300)})")
+        err.append(f"semicolons: {sc} (allowed {max(1, wn // 300)})")
     add = sorted(set(numbers(tn)) - set(numbers(to)))
     lost = sorted(set(numbers(to)) - set(numbers(tn)))
     if add:
-        err.append(f"нови цифри, които ги няма в оригинала: {add[:12]}")
+        err.append(f"new numbers not in the original: {add[:12]}")
     if lost:
-        warn.append(f"изчезнали цифри (изтрит факт?): {lost[:12]}")
+        warn.append(f"vanished numbers (deleted fact?): {lost[:12]}")
     rep = re.findall(r"\b(\w{3,})\s+\1\b", tn, re.I)
     if rep:
-        err.append(f"повторени думи: {rep[:5]}")
+        err.append(f"repeated words: {rep[:5]}")
     for c in cn:
         for s in re.split(r"(?<=[.!?])\s+", c):
             if 0 < len(s.split()) <= 4 and s.endswith(".") and len(c.split()) > 12:
-                warn.append(f"кратко изречение в абзац (поанта?): „{s}“")
+                warn.append(f"short sentence in a paragraph (punchline?): \"{s}\"")
     if wo:
         ratio = wn / wo
         if not 0.85 <= ratio <= 1.15:
-            err.append(f"дължина {wo}→{wn} думи ({ratio:.2f}×; позволено 0,85–1,15)")
-    print(f"[{path}] {'ОК' if not err else 'ГРЕШКА'}  думи {wo}→{wn}  тирета {d_old}→{d} (≤{allow})  "
-          f"двоеточия {col_o}→{col}  не-X-а-Y {len(R['ne_a'].findall(to))}→{len(na)}")
+            err.append(f"length {wo}→{wn} words ({ratio:.2f}x; allowed 0.85-1.15)")
+    print(f"[{path}] {'OK' if not err else 'ERROR'}  words {wo}→{wn}  dashes {d_old}→{d} (<={allow})  "
+          f"colons {col_o}→{col}  not-X-but-Y {len(R['ne_a'].findall(to))}→{len(na)}")
     for e in err:
         print("   ✗", e)
     for w in warn[:8]:

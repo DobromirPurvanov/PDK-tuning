@@ -1,22 +1,22 @@
 ---
 /**
- * ДИЗАЙН СИСТЕМАТА НА ЖИВО.
+ * THE DESIGN SYSTEM, LIVE.
  *
- * Не е част от сайта: `noindex`, няма я в `sitemap.xml.ts`, не се стига до нея
- * от меню. Служи за три неща — да се одобри системата с очи, да се провери
- * дали нещо е мръднало след промяна, и да се види какво вече съществува, преди
- * да се напише поредният нов бутон.
+ * Not part of the site: `noindex`, it is not in `sitemap.xml.ts`, and no menu leads to it.
+ * It serves three purposes: to approve the system by eye, to check
+ * whether anything moved after a change, and to see what already exists before
+ * writing yet another new button.
  *
- * Тук НЯМА нито един собствен цвят, размер или радиус. Всичко се чете от
- * жетоните с `getComputedStyle`, тоест страницата не описва системата, а я
- * ПОКАЗВА — ако утре някой смени `--lime`, тази страница се сменя с него.
- * Списък, писан на ръка, щеше да остарее още първия път.
+ * There is NOT ONE colour, size or radius of its own here. Everything is read from the
+ * tokens with `getComputedStyle`, so the page does not describe the system, it
+ * SHOWS it: if someone changes `--lime` tomorrow, this page changes with it.
+ * A hand-written list would have gone stale the first time.
  *
- * Правилата са в `docs/DIZAYN.md`, стойностите — в `src/styles/tokens.css`.
+ * The rules are in `docs/DESIGN.md`, the values in `src/styles/tokens.css`.
  */
 import Page from '../layouts/Page.astro';
 
-/** Жетоните по групи. Имената се четат от `:root` в браузъра — тук е само редът. */
+/** Tokens by group. The names are read from `:root` in the browser; only the order is here. */
 const GROUPS: { title: string; note: string; names: string[] }[] = [
   {
     title: 'Повърхности',
@@ -250,8 +250,8 @@ const BREAKPOINTS = [420, 560, 620, 700, 760, 900, 980, 1060, 1180];
   </div>
 
 <script is:inline>
-  // Стойностите се четат от самите жетони — страницата показва системата,
-  // а не описание на системата, писано на ръка и остаряло от първата промяна.
+  // The values are read from the tokens themselves: the page shows the system,
+  // not a hand-written description of it that went stale at the first change.
   (function () {
     var cs = getComputedStyle(document.documentElement);
     document.querySelectorAll('[data-token]').forEach(function (el) {
@@ -261,7 +261,7 @@ const BREAKPOINTS = [420, 560, 620, 700, 760, 900, 980, 1060, 1180];
     var show = function () { if (w) w.textContent = window.innerWidth + 'px'; };
     show();
     addEventListener('resize', show);
-    // --gut и --sec-y се менят с ширината; след resize се четат наново
+    // --gut and --sec-y change with the width; after a resize they are read again
     addEventListener('resize', function () {
       var c = getComputedStyle(document.documentElement);
       document.querySelectorAll('[data-token]').forEach(function (el) {

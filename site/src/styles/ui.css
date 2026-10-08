@@ -1,28 +1,28 @@
 /**
- * ПРИМИТИВИТЕ — нещата, които се появяват на повече от една страница.
+ * PRIMITIVES — things that appear on more than one page.
  *
- * Всеки клас тук е сливане на дубликати, които вече съществуваха. Лаймовият
- * бутон беше написан наново на ЕДИНАЙСЕТ места, с три различни височини и три
- * радиуса; повърхността на картата — дословно на петнайсет. Разликите не бяха
- * решения, а следа от реда, по който са писани файловете.
+ * Every class here merges duplicates that already existed. The lime button was
+ * written anew in ELEVEN places, with three different heights and three
+ * radii; the card surface — verbatim in fifteen. The differences were not
+ * decisions but a trace of the order the files were written in.
  *
- * Внася се от `Base.astro`, тоест важи навсякъде. Формите остават в отделен
- * `form.css`, защото страница без форма не бива да ги сваля.
+ * Imported by `Base.astro`, so it applies everywhere. Forms stay in a separate
+ * `form.css`, because a page with no form must not download them.
  *
- * Правилото за добавяне тук: нещо влиза, когато го има на ДВЕ места. Един
- * единствен случай си остава при компонента — иначе файлът се превръща във
- * втора глобална сметка за всичко.
+ * Rule for adding here: something goes in when it exists in TWO places. A single
+ * case stays with its component — otherwise the file turns into a
+ * second global account of everything.
  */
 
-/* ── бутон ───────────────────────────────────────────────────────────────────
-   Един бутон с три варианта по вид (`--go` плътен, `--ghost` блед, обикновен
-   контурен) и два по форма (`--pill` за лентата, `--sm` за по-плътните места).
-   Размерите минават през локални променливи, за да не се пише ново правило за
-   всяко отклонение.
+/* ── button ──────────────────────────────────────────────────────────────────
+   One button with three variants by kind (`--go` solid, `--ghost` faint, plain
+   outline) and two by shape (`--pill` for the bar, `--sm` for denser places).
+   Sizes go through local variables so no new rule has to be written for
+   every deviation.
 
-   С пръст всяко копче е поне 48px (WCAG 2.5.8); на мишка плътността остава
-   каквато е одобрена. Затова височината се вдига в `pointer:coarse`, а не
-   навсякъде.
+   With a finger every button is at least 48px (WCAG 2.5.8); with a mouse the density stays
+   as approved. That is why the height is raised in `pointer:coarse`, not
+   everywhere.
 */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;
@@ -44,24 +44,24 @@
 .btn[disabled],.btn[aria-disabled="true"]{opacity:.55;cursor:progress}
 @media(pointer:coarse){.btn{--btn-h:52px}}
 
-/* ── повърхност ──────────────────────────────────────────────────────────────
-   Картите, панелите, изскачащите — всичко издигнато над фона изглежда така.
-   `--panel-hover` пали рамката в лайм там, където повърхността е връзка.
+/* ── surface ─────────────────────────────────────────────────────────────────
+   Cards, panels, popups — everything raised above the background looks like this.
+   `--panel-hover` lights the border lime where the surface is a link.
 */
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-m)}
 a.panel,.panel--link{transition:border-color var(--t-slow)}
 a.panel:hover,.panel--link:hover{border-color:var(--lime-line)}
 
-/* ── микро-етикет ────────────────────────────────────────────────────────────
-   Дребният моно надпис с широка разредка — „001 // МОЩНОСТ“, „ПРОЗРАЧНО“,
-   „НАЧАЛОТО“. Той е половината от характера на бранда и затова е примитив, а
-   не се преоткрива на всяко заглавие.
+/* ── micro-label ─────────────────────────────────────────────────────────────
+   The small mono caption with wide tracking — "001 // POWER", "TRANSPARENT",
+   "THE BEGINNING". It is half of the brand's character and therefore a primitive, and
+   not reinvented on every heading.
 */
 .lab{font:400 var(--fz-lab)/1 var(--mono);letter-spacing:var(--ls-lab);
   text-transform:uppercase;color:var(--ink-4)}
 .lab--lime{color:var(--lime)}
 
-/* ── трошици ───────────────────────────────────────────────────────────────── */
+/* ── breadcrumbs ───────────────────────────────────────────────────────────── */
 .crumbs ol{display:flex;flex-wrap:wrap;gap:0 var(--sp-2);margin:0;padding:0;list-style:none}
 .crumbs li{display:flex;align-items:center;gap:var(--sp-2);
   font:400 var(--fz-lab)/1.6 var(--mono);letter-spacing:var(--ls-btn);
@@ -70,12 +70,12 @@ a.panel:hover,.panel--link:hover{border-color:var(--lime-line)}
 .crumbs a{display:inline-flex;align-items:center;min-height:28px;color:var(--ink-3);transition:color var(--t-fast)}
 .crumbs a:hover{color:var(--lime)}
 .crumbs [aria-current]{color:var(--white)}
-/* пътеката стои плътна на мишка; с пръст се разтваря до пълните 48px */
+/* the trail stays dense with a mouse; with a finger it opens up to the full 48px */
 @media(pointer:coarse){.crumbs a{min-height:48px}}
 
-/* ── въпрос и отговор ────────────────────────────────────────────────────────
-   Плюсът е два псевдоелемента, не икона: така е един цвят с текста и не тегли
-   нищо. При отворено остава само хоризонталната черта.
+/* ── question and answer ─────────────────────────────────────────────────────
+   The plus is two pseudo-elements, not an icon: that way it is one color with the text and pulls
+   nothing. When open, only the horizontal bar remains.
 */
 .qa{max-width:var(--w-text)}
 .qa details{border-bottom:1px solid var(--line)}
@@ -96,9 +96,9 @@ a.panel:hover,.panel--link:hover{border-color:var(--lime-line)}
 .qa .ans p{margin:0 0 var(--sp-3);font:400 var(--fz-s)/1.68 var(--body);color:var(--ink-3)}
 .qa .ans p:last-child{margin-bottom:0}
 
-/* ── таблица ─────────────────────────────────────────────────────────────────
-   Под 620px се пренарежда на редове: главата се маха от потока, а всяка клетка
-   си носи името в `data-l`. Иначе таблица с четири колони излиза извън екрана.
+/* ── table ───────────────────────────────────────────────────────────────────
+   Below 620px it reflows into rows: the head leaves the flow, and each cell
+   carries its name in `data-l`. Otherwise a four-column table runs off the screen.
 */
 .tbl{width:100%;border-collapse:collapse;font:400 var(--fz-s)/1.55 var(--body);color:var(--ink-2)}
 .tbl th,.tbl td{padding:var(--sp-4) var(--sp-4);text-align:left;
@@ -120,10 +120,10 @@ a.panel:hover,.panel--link:hover{border-color:var(--lime-line)}
     text-transform:uppercase;color:var(--ink-4)}
 }
 
-/* ── предупредителна плоча ───────────────────────────────────────────────────
-   Правната граница: изключване на DPF/EGR/AdBlue само за техника извън
-   обществените пътища. Стои на пет страници и навсякъде изглежда еднакво —
-   иначе престава да се чете като едно и също правило.
+/* ── warning plate ───────────────────────────────────────────────────────────
+   The legal boundary: DPF/EGR/AdBlue deletion only for equipment off
+   public roads. Appears on five pages and looks the same everywhere —
+   otherwise it stops reading as one and the same rule.
 */
 .warn{margin:0 0 var(--sp-5);padding:var(--sp-5) var(--sp-5);
   border:1px solid var(--warn-line);border-radius:var(--r-m);background:var(--warn-bg)}
@@ -131,19 +131,19 @@ a.panel:hover,.panel--link:hover{border-color:var(--lime-line)}
   letter-spacing:var(--ls-lab);text-transform:uppercase;color:var(--warn)}
 .warn p{margin:0;font:400 var(--fz-s)/1.65 var(--body);color:var(--ink-2)}
 
-/* ── поле „чака данни от клиента“ ────────────────────────────────────────────
-   Пунктирът е нарочен: празното място трябва да се ВИЖДА, за да не отиде на
-   живо като изречение без число.
+/* ── "waiting for client data" field ─────────────────────────────────────────
+   The dashed outline is deliberate: the empty spot must be VISIBLE, so it doesn't go
+   live as a sentence without a number.
 */
 .fill{display:inline-block;padding:1px var(--sp-2);
   border:1px dashed var(--lime-line);border-radius:var(--r-xs);
   font:400 var(--fz-xs)/1.5 var(--mono);color:var(--ink-3);background:var(--lime-dim)}
 
-/* ── адрес и работно време ───────────────────────────────────────────────────
-   Един и същ блок на началната и в /kontakti/. Стоеше два пъти в ГЛОБАЛЕН
-   обхват под имената `.nap` и `.hrow`, с разлика от един ред — общо име в
-   глобален обхват е капан, който вече ни е струвал два кръга гледане в грешния
-   елемент, затова тук имената казват чии са.
+/* ── address and opening hours ───────────────────────────────────────────────
+   The same block on the home page and in /kontakti/. It stood twice in GLOBAL
+   scope under the names `.nap` and `.hrow`, differing by one line — a generic name in
+   global scope is a trap that has already cost us two rounds of looking at the wrong
+   element, so here the names say whose they are.
 */
 .nas-dl{margin:0;display:grid;grid-template-columns:auto;gap:0}
 .nas-dl dt{margin-top:var(--sp-5);font:400 var(--fz-lab)/1 var(--mono);

@@ -2,31 +2,30 @@
 /**
  * 404.
  *
- * Cloudflare Pages връща `index.html` със статус 200 за непознат адрес, ако в
- * изхода НЯМА `404.html`. Тогава всяка сгрешена препратка изглежда като работеща
- * страница — и за човека, и за търсачката. Този файл е причината да връща 404.
+ * Cloudflare Pages returns `index.html` with status 200 for an unknown address if the
+ * output has NO `404.html`. Then every wrong link looks like a working page, to
+ * people and to search engines alike. This file is the reason it returns 404.
  */
 import Base from '../layouts/Base.astro';
 import { NAV, BUSINESS as b } from '../config/site';
 import { dict } from '../i18n/ui';
 
 /**
- * 404 Е ЕДНА И Е БЪЛГАРСКА — нарочно.
+ * THERE IS ONE 404 AND IT IS BULGARIAN, on purpose.
  *
- * Останалите страници четат езика от адреса си, но тази се показва ВМЕСТО
- * непознат адрес: `dist/404.html` е един файл и нито Pages, нито `server.mjs`
- * знаят кой език е искал посетителят, когато са стигнали до него. Отделна
- * `/en/404.html` би трябвало да се избира от сървъра по пътя — това е етап 6
- * работа, заедно с пренасочванията.
+ * The other pages read the language from their address, but this one is shown INSTEAD
+ * of an unknown address: `dist/404.html` is a single file and neither Pages nor
+ * `server.mjs` know which language the visitor wanted when they landed on it. A
+ * separate `/en/404.html` would have to be picked by the server from the path, which is
+ * stage 6 work, together with the redirects.
  *
- * Дотогава страницата е българска, но копчето за език в лентата води към
- * английската начална (тя няма двойник), тоест изходът съществува.
- */
+ * Until then the page is Bulgarian, but the language switch in the bar leads to the
+ * English home page (it has no twin), so there is a way out. */
 const t = dict('bg');
 
-// Сочехме котви на началната (`/#services`), когато сайтът беше една страница.
-// Сега страниците са 144 и човек, попаднал на сгрешен адрес, трябва да стигне
-// до ИСТИНСКАТА страница, а не до раздел, покрай който да скролва.
+// We used to point at anchors on the home page (`/#services`) when the site was a single page.
+// Now there are 144 pages, and someone who landed on a wrong address should reach
+// the REAL page, not a section they have to scroll to.
 const quick = NAV.map((n) => ({ href: n.href, label: n.label }));
 ---
 <Base title={t.nfTitle} description={t.nfDescription} noindex>
@@ -42,10 +41,10 @@ const quick = NAV.map((n) => ({ href: n.href, label: n.label }));
       </nav>
 
       {/*
-        Търсене на марка: каталогът вече има свой филтър, затова тук не строим
-        втора търсачка, а водим към нея с готова заявка. Полето е `<form>` с
-        `method="get"`, за да работи и БЕЗ JavaScript — 404 страницата е точно
-        мястото, където нищо не бива да зависи от скрипт.
+        Brand search: the catalog already has its own filter, so we do not build a
+        second search engine here, we link to it with a ready-made query. The field is a `<form>` with
+        `method="get"` so that it works WITHOUT JavaScript too, and the 404 page is exactly
+        the place where nothing should depend on a script.
       */}
       <form class="nf-find" action="/katalog/" method="get" role="search">
         <label for="nf-q">{t.nfFind}</label>
@@ -79,7 +78,7 @@ const quick = NAV.map((n) => ({ href: n.href, label: n.label }));
 .nf-lead{margin:var(--sp-5) auto 0;max-width:46ch;font:400 var(--fz-body)/1.65 var(--body);color:var(--ink-2)}
 
 .nf-links{margin:38px 0 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-/* видът идва от `.btn`; `.nf-alt` е контурният вариант */
+/* the look comes from `.btn`; `.nf-alt` is the outline variant */
 .nf-alt:hover{border-color:var(--lime-line);color:var(--white)}
 
 .nf-find{margin:34px auto 0;max-width:460px;text-align:left}

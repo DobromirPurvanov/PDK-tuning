@@ -1,16 +1,16 @@
 ---
 /**
- * Цените на английски — огледало на `src/pages/tseni.astro`.
+ * Prices in English: a mirror of `src/pages/tseni.astro`.
  *
- * ТАБЛИЦАТА Е ОБЩА: чете се от `prices.json`, същият файл, същите числа, същата
- * валута. Цените са в евро и НЕ се превалутират — превалутиране тук значеше
- * две таблици, които се разминават при първата промяна на курса.
+ * THE TABLE IS SHARED: it is read from `prices.json`, the same file, the same numbers, the same
+ * currency. Prices are in euro and are NOT converted; converting here would mean
+ * two tables that drift apart at the first change of the exchange rate.
  *
- * Редовете идват от `SERVICES_EN`: услуга без английски текст няма ред, защото
- * няма къде да води. Докато наборът се пълни, таблицата расте сама.
+ * Rows come from `SERVICES_EN`: a service without English text has no row, because
+ * there is nowhere for it to link. While the set is being filled, the table grows on its own.
  *
- * Кутията „числата чакат потвърждение“ е СЪЩАТА като българската и си отива от
- * двете страници заедно — когато възложителят потвърди цените.
+ * The "numbers await confirmation" box is the SAME as the Bulgarian one and leaves both
+ * pages together, when the client confirms the prices.
  */
 import Page from '../../layouts/Page.astro';
 import { SERVICES_EN } from '../../i18n/en/services/index';

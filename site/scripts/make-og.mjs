@@ -1,17 +1,19 @@
 /**
- * Прави картинката за споделяне в КАНОНИЧНИЯ размер 1200×630.
+ * Makes the share image at the CANONICAL size 1200×630.
  *
- * Защо изобщо: `public/img/pdk-hero.jpg` е 1280×704 — кадър от видеото, с
- * съотношение 1,82. Facebook, LinkedIn, X и Slack режат към 1,91 (1200×630).
- * При 1,82 всяка платформа реже сама и по различен начин, а композицията с
- * празното черно поле вляво е точно това, което не бива да се реже.
+ * Why at all: `public/img/pdk-hero.jpg` is 1280×704, a frame from the video,
+ * with a ratio of 1.82. Facebook, LinkedIn, X and Slack crop to 1.91
+ * (1200×630). At 1.82 every platform crops on its own and differently, and
+ * the composition with the empty black field on the left is exactly what must
+ * not be cropped.
  *
- * Затова кадърът се реже ВЕДНЪЖ тук, съзнателно и в наша полза: взима се
- * пълната ширина и се маха от височината, като изрезката се вдига нагоре
- * (`position: top`), защото колата стои в долната част на кадъра.
+ * So the frame is cropped ONCE here, deliberately and in our favour: the full
+ * width is taken and height is removed, with the crop shifted up
+ * (`position: top`), because the car sits in the lower part of the frame.
  *
- * ПУСКА СЕ НА РЪКА, не при всеки билд: `node scripts/make-og.mjs`.
- * Изходът се комитва. Билдът не зависи от `sharp` и не му трябва.
+ * RUN BY HAND, not on every build: `node scripts/make-og.mjs`.
+ * The output is committed. The build does not depend on `sharp` and does not
+ * need it.
  */
 import sharp from 'sharp';
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -28,7 +30,7 @@ const meta = await src.metadata();
 const buf = await src
   .resize(W, H, {
     fit: 'cover',
-    // колата е в долната половина; изрязваме отгоре, не по средата
+    // the car is in the lower half; crop from the top, not the middle
     position: 'attention',
   })
   .jpeg({ quality: 82, mozjpeg: true, progressive: true })
@@ -37,5 +39,5 @@ const buf = await src
 writeFileSync(OUT, buf);
 
 const kb = (n) => (n / 1024).toFixed(1) + ' KB';
-console.log(`вход:  ${meta.width}×${meta.height}  ${kb(readFileSync(IN).length)}`);
-console.log(`изход: ${W}×${H}  ${kb(buf.length)}  →  public/img/og-pdk.jpg`);
+console.log(`in:  ${meta.width}×${meta.height}  ${kb(readFileSync(IN).length)}`);
+console.log(`out: ${W}×${H}  ${kb(buf.length)}  →  public/img/og-pdk.jpg`);

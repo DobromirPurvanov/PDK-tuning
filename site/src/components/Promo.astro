@@ -1,25 +1,25 @@
 ---
 /**
- * РЕКЛАМНИЯТ ПРОЗОРЕЦ НА НАЧАЛНАТА — новото направление с електрическите.
+ * THE HOME PAGE PROMO WINDOW - the new electric-vehicle line.
  *
- * Прави се с `<dialog>` и `showModal()`, а не с наш `div`: браузърът сам
- * затваря фокуса вътре, сам връща фокуса откъдето е тръгнал, сам слуша Esc и
- * сам рисува подложката. Всичко това, написано на ръка, е трийсет реда, които
- * после не работят с четец на екран.
+ * Built with `<dialog>` and `showModal()`, not our own `div`: the browser itself
+ * traps the focus inside, returns focus to where it started, listens for Esc and
+ * draws the backdrop. Writing all this by hand is thirty lines that
+ * then do not work with a screen reader.
  *
- * ЧЕТИРИ ПРАВИЛА, за да не е досаден и да не яде позиции:
+ * FOUR RULES, so it is not annoying and does not eat rankings:
  *
- *   1. НЕ веднага. Google брои изскачащото, което посреща човека от търсенето,
- *      за натрапчиво и сваля страницата. Този чака 7 секунди или 40% скрол —
- *      дотогава човекът вече чете сайта, а не рекламата.
- *   2. НЕ докато пита за бисквитки. Онази лента също е `aria-modal` и двата
- *      прозореца заедно са задънена улица за четеца. Чака се решението.
- *   3. ВЕДНЪЖ. Показването се помни 14 дни в localStorage. Номерът на версия
- *      позволява следващата кампания да се покаже наново, без да чака изтичане.
- *   4. НЕ на човек, който вече е там. Ако адресът е /elektricheski/, мълчи.
+ *     1. NOT immediately. Google counts a popup that greets a person from search
+ *           as intrusive and demotes the page. This one waits 7 seconds or 40% scroll -
+ *           by then the person is already reading the site, not the ad.
+ *     2. NOT while the cookie question is open. That bar is also `aria-modal` and the two
+ *           windows together are a dead end for a screen reader. It waits for the decision.
+ *     3. ONCE. The showing is remembered for 14 days in localStorage. The version number
+ *           lets the next campaign show again without waiting for expiry.
+ *     4. NOT for a person who is already there. If the address is /elektricheski/, stay silent.
  *
- * Текстът НЕ обещава числа. Нашите числа за електрическите още не са обявени
- * (виж OURS в src/data/ev.ts) и рекламата не е мястото, където да се измислят.
+ * The text does NOT promise numbers. Our numbers for the electric ones are not yet announced
+ * (see OURS in src/data/ev.ts) and an ad is not the place to invent them.
  */
 import { EV_COUNT, EV_BY_BRAND } from '../data/ev';
 
@@ -54,17 +54,17 @@ const brands = EV_BY_BRAND.map((b) => b.name).join(' · ');
 </dialog>
 
 <script>
-// Показва се веднъж, със закъснение, и само след като въпросът за бисквитките
-// е решен. Всичко наоколо е предпазител срещу това да подскочи в лицето.
+// Shown once, with a delay, and only after the cookie question
+// is settled. Everything around it is a guard against it jumping in the face.
 const dlg = document.getElementById('promo') as HTMLDialogElement | null;
 if (dlg && !location.pathname.startsWith('/elektricheski')) {
   const KEY = 'pdk-promo';
-  const V = 1;                       // вдига се при нова кампания
+  const V = 1;                       // bumped on a new campaign
   const DAYS = 14;
   const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /** Затворено ли е вече? Счупен или недостъпен localStorage значи „покажи“ —
-   *  по-добре втори път, отколкото никога. */
+  /** Is it already closed? A broken or unavailable localStorage means "show" -
+   *   *  better a second time than never. */
   function seen() {
     try {
       const raw = JSON.parse(localStorage.getItem(KEY) || 'null');
@@ -74,16 +74,16 @@ if (dlg && !location.pathname.startsWith('/elektricheski')) {
   }
 
   function remember() {
-    try { localStorage.setItem(KEY, JSON.stringify({ v: V, ts: Date.now() })); } catch { /* без памет — просто ще се покаже пак */ }
+    try { localStorage.setItem(KEY, JSON.stringify({ v: V, ts: Date.now() })); } catch { /* no storage - it will simply show again */ }
   }
 
   if (!seen()) {
     let done = false;
     let waiting = false;
 
-    /** Лентата за бисквитки стои ли в момента? Проверява се В МИГА НА ОТВАРЯНЕТО,
-     *  а не веднъж в началото: двата скрипта са в един пакет и редът им не е
-     *  обещан — при проверка в началото лентата още може да не е изгряла. */
+    /** Is the cookie bar present right now? Checked AT THE MOMENT OF OPENING,
+     *       *  not once at the start: the two scripts are in one bundle and their order is not
+     *       *  guaranteed - checked at the start, the bar may not have appeared yet. */
     const asking = () => {
       const bar = document.getElementById('cookieBar');
       return Boolean(bar && !bar.hidden);
@@ -92,7 +92,7 @@ if (dlg && !location.pathname.startsWith('/elektricheski')) {
     const open = () => {
       if (done || dlg.open || seen()) return;
       if (asking()) {
-        // изчакваме решението и тогава отваряме — веднъж, не при всяко подминаване
+        // wait for the decision and then open - once, not on every pass
         if (!waiting) {
           waiting = true;
           document.addEventListener('pdk:consent', () => setTimeout(open, 600), { once: true });
@@ -114,8 +114,8 @@ if (dlg && !location.pathname.startsWith('/elektricheski')) {
       if (past > 0.4) open();
     };
 
-    // Щракване ИЗВЪН панела затваря. `<dialog>` праща събитието на себе си,
-    // когато е ударена подложката — панелът вътре го спира.
+    // A click OUTSIDE the panel closes it. `<dialog>` sends the event to itself
+    // when the backdrop is hit - the panel inside stops it.
     dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close('backdrop'); });
 
     setTimeout(open, 7000);
@@ -127,14 +127,14 @@ if (dlg && !location.pathname.startsWith('/elektricheski')) {
 <style>
 .promo{
   width:min(92vw,520px);padding:0;color:var(--white);overflow:hidden;
-  /* браузърът центрира сам модалния диалог; margin:auto пази старите поведения */
+  /* the browser centres a modal dialog itself; margin:auto preserves the old behaviours */
   margin:auto;
 }
 .promo::backdrop{background:var(--shade);backdrop-filter:blur(3px)}
 .promo.in{animation:promo-up .3s cubic-bezier(.2,.7,.3,1)}
 @keyframes promo-up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
-/* Косите косъм-линии са същият знак, който носи и секцията с услугите. */
+/* The slanted hairlines are the same mark the services section carries. */
 .promo-in{position:relative;padding:34px 32px 30px}
 .promo-in::before{content:'';position:absolute;inset:0;pointer-events:none;
   background:repeating-linear-gradient(45deg,var(--hair) 0 1px,transparent 1px 8px);
@@ -166,7 +166,7 @@ if (dlg && !location.pathname.startsWith('/elektricheski')) {
   font:400 var(--fz-btn)/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-4)}
 .promo-no:hover{color:var(--white)}
 
-/* На телефон сяда долу като лист: там пръстът е долу, а не в средата на екрана. */
+/* On a phone it sits at the bottom as a sheet: the finger is at the bottom, not in the middle of the screen. */
 @media(max-width:559px){
   .promo{width:100%;max-width:none;margin:auto 0 0;border-radius:var(--r-m) var(--r-m) 0 0;border-bottom:0}
   .promo.in{animation:promo-sheet .3s cubic-bezier(.2,.7,.3,1)}

@@ -1,9 +1,9 @@
 ---
 /**
- * Обвивката на всяка страница: глава, лента, съдържание, долен ред, бисквитки.
+ * The shell of every page: head, bar, content, bottom row, cookies.
  *
- * Тук стоят САМО общите неща — жетоните на бранда, шрифтовете, нулирането и
- * скелетът. Всичко, което е само за началната, си остава в index.astro.
+ * Only the shared things live here — the brand tokens, the fonts, the reset and
+ * the skeleton. Everything that is only for the home page stays in index.astro.
  */
 import Head from '../components/Head.astro';
 import Header from '../components/Header.astro';
@@ -12,9 +12,9 @@ import Consent from '../components/Consent.astro';
 import Analytics from '../components/Analytics.astro';
 import { langOf } from '../i18n';
 import { dict } from '../i18n/ui';
-/* Жетоните и примитивите. Внасят се ТУК, за да важат за всяка страница —
-   `tokens.css` е единственият източник на цвят, размер и движение, а `ui.css`
-   държи нещата, които се срещат на повече от едно място. Виж `docs/DIZAYN.md`. */
+/* The tokens and primitives. Imported HERE so they apply to every page —
+   `tokens.css` is the single source of colour, size and motion, and `ui.css`
+   holds the things that occur in more than one place. See `docs/DESIGN.md`. */
 import '../styles/tokens.css';
 import '../styles/ui.css';
 
@@ -25,13 +25,13 @@ interface Props {
   ogType?: 'website' | 'article';
   noindex?: boolean;
   schema?: Record<string, unknown>[];
-  /** класове за <body> — началната си боядисва фона другояче */
+  /** classes for <body> — the home page paints its background differently */
   bodyClass?: string;
 }
 const { bodyClass = '', ...head } = Astro.props;
-/* Езикът се чете от АДРЕСА, не се подава от страницата — вж. бележката в
-   `src/i18n/index.ts`. Сто осемдесет и три страници не могат да го подадат
-   правилно сто осемдесет и три пъти. */
+/* The language is read from the URL, not passed by the page — see the note in
+   `src/i18n/index.ts`. One hundred and eighty-three pages cannot pass it
+   correctly one hundred and eighty-three times. */
 const lang = langOf(Astro.url.pathname);
 const t = dict(lang);
 ---
@@ -40,27 +40,27 @@ const t = dict(lang);
 <head>
   <Head {...head} />
   <!--
-    Двата шрифта, с които е написан ПЪРВИЯТ екран на всяка страница: Oswald
-    рисува заглавията, Golos е `--body`, тоест всеки абзац и всеки бутон.
-    Golos липсваше дълго време — теглеше се чак след като браузърът разчете
-    вградения CSS, докато моно шрифтът за дребните етикети се дърпаше с
-    приоритет. Тоест най-важният текст чакаше заради второстепенния.
-    Латинските части и моно шрифтът идват при нужда.
+    The two fonts the FIRST screen of every page is set in: Oswald draws the
+    headings, Golos is `--body`, i.e. every paragraph and every button.
+    Golos was missing for a long time — it was only fetched after the browser
+    parsed the inline CSS, while the mono font for the small labels was pulled
+    with priority. That is, the most important text waited for the secondary one.
+    The Latin parts and the mono font come on demand.
   -->
   <link rel="preload" as="font" type="font/woff2" href="/fonts/oswald-700-cyrillic.woff2" crossorigin />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/golos-text-400-cyrillic.woff2" crossorigin />
   <slot name="head" />
   <style is:global>
-    /* Нулирането. Жетоните, шрифтовете и примитивите идват от `styles/`. */
+    /* The reset. Tokens, fonts and primitives come from `styles/`. */
     *,*::before,*::after{box-sizing:border-box}
     html{scroll-padding-top:88px}
     body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--fz-m)/1.65 var(--body);
       overflow-x:hidden}
     h1,h2,h3,h4{color:var(--white)}
     img{display:block;max-width:100%}
-    /* УЛОВКА: правило с `display` от таблицата бие `[hidden]` на браузъра. Така
-       скритите марки в каталога и грешките под полетата се виждаха ВЕДНАГА.
-       Едно правило спасява всяко бъдещо `hidden` в тази страница. */
+    /* GOTCHA: a stylesheet rule with `display` beats the browser's `[hidden]`. That
+       is how the hidden makes in the catalogue and the errors under the fields
+       showed up IMMEDIATELY. One rule saves every future `hidden` on this page. */
     [hidden]{display:none !important}
     a,button{color:inherit;text-decoration:none;font:inherit}
     :focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:var(--r-xs)}
@@ -71,10 +71,10 @@ const t = dict(lang);
       font:700 var(--fz-2xs)/1 var(--mono);letter-spacing:var(--ls-btn);text-transform:uppercase}
     .skip:focus{left:12px;top:12px}
     /*
-      `-webkit-font-smoothing:antialiased` НЕ се слага. На macOS той ИЗТЪНЯВА
-      буквите, а Golos при тегло 400 и без това е лек; тънки ярки линии върху
-      черно е точно рецептата за трептене. Оставено на `auto` — буквите
-      получават тяло.
+      `-webkit-font-smoothing:antialiased` is NOT set. On macOS it THINS the
+      letters, and Golos at weight 400 is light anyway; thin bright lines on
+      black are exactly the recipe for shimmer. Left at `auto` — the letters
+      get body.
     */
     @media(prefers-reduced-motion:reduce){
       html{scroll-behavior:auto}

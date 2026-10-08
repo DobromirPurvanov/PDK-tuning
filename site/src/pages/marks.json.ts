@@ -1,17 +1,17 @@
 /**
- * СЛУГОВЕТЕ НА МАРКИТЕ — за работника, не за хора.
+ * THE BRAND SLUGS: for the worker, not for people.
  *
- * ЗАЩО СЪЩЕСТВУВА. `public/_worker.js` пренасочва `/bg/<марка>` към
- * `/katalog/<марка>/` и за това трябва да знае кои са нашите 110 марки. Той е
- * обикновен JavaScript във файловата система на Pages и не може да внесе
- * `src/data/marks.json`. Вторият вариант — списък, преписан в работника — щеше
- * да се разминава с данните при първата добавена марка и никой нямаше да
- * забележи, защото разминаването изглежда като „просто не пренасочва“.
+ * WHY IT EXISTS. `public/_worker.js` redirects `/bg/<brand>` to
+ * `/katalog/<brand>/` and for that it must know which are our 110 brands. It is
+ * plain JavaScript in the Pages file system and cannot import
+ * `src/data/marks.json`. The second option, a list copied into the worker, would
+ * drift from the data at the first added brand and nobody would
+ * notice, because the drift looks like "it just does not redirect".
  *
- * Същият похват като `ev-prices.json.ts`: билдът изнася, работникът чете през
- * `ASSETS`. Един източник.
+ * The same approach as `ev-prices.json.ts`: the build exports, the worker reads through
+ * `ASSETS`. One source.
  *
- * Не влиза в картата на сайта и не носи нищо, което да не се вижда на
+ * It is not in the sitemap and carries nothing that cannot be seen at
  * `/katalog/`.
  */
 import type { APIRoute } from 'astro';

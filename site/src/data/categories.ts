@@ -1,33 +1,33 @@
 /**
- * ТРИТЕ КАТЕГОРИИ — леки, камиони, селскостопанска и индустриална техника.
+ * THE THREE CATEGORIES — cars, trucks, agricultural and industrial machinery.
  *
  * The third group also holds construction machinery (JCB, Caterpillar, Doosan,
  * Hitachi): the catalogue files them with the tractors, so the name says so.
  *
- * Тук е най-големият пропуснат актив на стария сайт: камионите и селскостопанската
- * техника СЪЩЕСТВУВАТ в базата (26 марки), но на стария сайт нямаха нито входна
- * страница, нито дума текст. Никой не ги е търсил, защото нямаше какво да намери.
+ * This is the biggest missed asset of the old site: trucks and agricultural
+ * machinery EXIST in the database (26 brands), but the old site had neither an entry
+ * page nor a word of text for them. Nobody searched for them, because there was nothing to find.
  *
- * `kind` съответства на полето в marks.json — оттам се вадят марките за всяка
- * категория, без втори списък, който да се разминава с първия.
+ * `kind` matches the field in marks.json — the brands for each
+ * category are taken from there, without a second list that could drift from the first.
  */
 
 export type Category = {
   slug: string;
-  /** стойността в marks.json */
+  /** the value in marks.json */
   kind: 'леки' | 'камиони' | 'селскостопански';
-  /** името в менюто и трошиците */
+  /** the name in the menu and breadcrumbs */
   name: string;
-  /** етикетът в стената на началната */
+  /** the label in the wall on the home page */
   wallLabel: string;
   title: string;
   description: string;
   h1: string;
   lead: string;
-  /** какво печели точно този вид техника */
+  /** what this particular kind of machinery gains */
   gains: { k: string; v: string }[];
   body: { h: string; p: string[] }[];
-  /** услугите, които имат смисъл за тази категория */
+  /** the services that make sense for this category */
   services: string[];
 };
 

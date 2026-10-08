@@ -1,15 +1,15 @@
 ---
 /**
- * СТРАНИЦАТА НА ЕДИН ЕЛЕКТРИЧЕСКИ МОДЕЛ — числата, цената и бутонът.
+ * THE PAGE OF ONE ELECTRIC MODEL: the numbers, the price and the button.
  *
- * Тук свършва пътят от рекламата и от избирача: човекът вижда своята кола и
- * едно действие. Нищо на тази страница не се пише на ръка за конкретен модел —
- * всичко идва от src/data/ev.ts, за да няма страница, която казва едно, а
- * избирачът — друго.
+ * This is where the path from the ad and from the picker ends: the person sees their car and
+ * one action. Nothing on this page is written by hand for a specific model;
+ * everything comes from src/data/ev.ts, so there is never a page saying one thing and the
+ * picker another.
  *
- * КАКВО СТАВА С ЛИПСВАЩАТА ЦЕНА. Докато `price` в OURS е празно, бутонът не
- * казва „Купи“, а „Заяви оферта“, и `offers` не влиза в схемата. Празно поле
- * значи „още не е обявено“, а не „нула“.
+ * WHAT HAPPENS WITH A MISSING PRICE. While `price` in OURS is empty, the button does not
+ * say "Buy" but "Request a quote", and `offers` does not enter the schema. An empty field
+ * means "not announced yet", not "zero".
  */
 import Page from '../../layouts/Page.astro';
 import EvPicker from '../../components/EvPicker.astro';
@@ -29,7 +29,7 @@ const crumbs = [
   { href: m.href, label: m.full },
 ];
 
-/** Братята по марка — за да има накъде да се продължи от дъното. */
+/** Siblings of the same brand, so there is somewhere to continue from the bottom. */
 const siblings = EV_MODELS.filter((x) => x.brand === m.brand && x.slug !== m.slug).slice(0, 8);
 
 const headline = m.hasOurs

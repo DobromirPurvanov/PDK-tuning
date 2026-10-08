@@ -1,7 +1,7 @@
 ---
 /**
- * Обвивка за страниците, които са само текст — правните и подобните.
- * Типографията е една: мярка около 70 знака, дишащи заглавия, четим сив.
+ * Wrapper for text-only pages — the legal ones and similar.
+ * The typography is one: a measure of about 70 characters, breathing headings, a readable grey.
  */
 import Base from './Base.astro';
 import { langOf } from '../i18n';
@@ -10,7 +10,7 @@ interface Props {
   title: string;
   description: string;
   heading: string;
-  /** „в сила от“ — датата стои под заглавието и се вижда от читателя */
+  /** "effective from" — the date sits under the heading and is visible to the reader */
   updated?: string;
   lead?: string;
   noindex?: boolean;
@@ -35,8 +35,8 @@ const effective = langOf(Astro.url.pathname) === 'en' ? 'Effective from' : 'В �
 </Base>
 
 <style is:global>
-/* Таблицата е примитив (`.tbl` в `styles/ui.css`) — правните страници я ползват
-   както всяка друга. Тук остава само типографията на дългия текст. */
+/* The table is a primitive (`.tbl` in `styles/ui.css`) — the legal pages use it
+   like any other. Only the typography of the long text stays here. */
 .doc{max-width:var(--w-text);margin:0 auto;padding:150px var(--gut) 96px}
 @media(max-width:759px){.doc{padding:120px var(--gut) 72px}}
 

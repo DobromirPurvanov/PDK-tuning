@@ -1,22 +1,22 @@
 ---
 /**
- * Съгласието за бисквитки.
+ * Cookie consent.
  *
- * Правилото е просто: докато човекът не каже „да“, НЕ се зарежда нищо, което
- * следи. Затова аналитиката не стои в страницата — тя се закача чак след
- * съгласие (виж Analytics.astro, слуша събитието `pdk:consent`).
+ * The rule is simple: until the person says "yes", NOTHING that tracks gets loaded.
+ * That is why analytics is not in the page - it is attached only after
+ * consent (see Analytics.astro, which listens for the `pdk:consent` event).
  *
- * ТРИ РАВНОПОСТАВЕНИ ИЗБОРА, не два. Надзорните органи гледат точно това:
- * „приемам всички“ и „само необходимите“ трябва да струват еднакво усилие —
- * едно натискане, еднакво видими копчета. Затова отказът НЕ е скрит текст.
- * Третото копче отваря категориите поотделно.
+ * THREE EQUAL CHOICES, not two. Supervisory authorities look at exactly this:
+ * "accept all" and "necessary only" must cost the same effort -
+ * one click, equally visible buttons. That is why refusal is NOT hidden text.
+ * The third button opens the categories individually.
  *
- * НИТО ЕДНА ОТМЕТКА НЕ Е ПРЕДВАРИТЕЛНО СЛОЖЕНА. Строго необходимите стоят
- * сложени и заключени, защото без тях няма услуга и за тях не се иска съгласие.
+ * NO CHECKBOX IS PRE-TICKED. The strictly necessary ones are ticked
+ * and locked, because there is no service without them and they need no consent.
  *
- * Изборът се пази в localStorage под `pdk-consent` с НОМЕР НА ВЕРСИЯ: ако утре
- * се появи нов доставчик, вдигането на `V` пита наново, вместо старото „да“ да
- * покрие нещо, което не е било описано, когато е дадено.
+ * The choice is kept in localStorage under `pdk-consent` with a VERSION NUMBER: if a new
+ * provider appears tomorrow, bumping `V` asks again, instead of the old "yes"
+ * covering something that was not described when it was given.
  */
 import { LEGAL } from '../config/site';
 import { LEGAL_EN, langOf } from '../i18n';
@@ -29,7 +29,7 @@ const legal = lang === 'en' ? LEGAL_EN : LEGAL;
 const privacy = legal[0].href;
 const cookies = legal.find((l) => l.href.includes('cookie'))!;
 
-/** категориите, както се виждат и в /cookie-policy/ */
+/** categories, as shown in /cookie-policy/ too */
 const CATS = [
   { key: 'necessary', name: t.ccNecessary, note: t.ccNecessaryNote, locked: true, on: true },
   { key: 'analytics', name: t.ccStats, note: t.ccStatsNote, locked: false, on: false },
@@ -47,8 +47,8 @@ const CATS = [
       </p>
     </div>
 
-    <!-- Категориите: скрити, докато не се поиска „Настрой“. Не са отделен екран —
-         банерът се разгъва на място, за да не се губи контекстът. -->
+    <!-- <!-- Categories: hidden until "Customize" is requested. Not a separate screen -
+                  the banner expands in place so the context is not lost. -->
     <div class="cc-cats" id="ccCats" hidden>
       <fieldset>
         <legend class="cc-leg">{t.ccLegend}</legend>
@@ -84,7 +84,7 @@ const CATS = [
   (() => {
     'use strict';
     const KEY = 'pdk-consent';
-    const V = 2;                       // вдигни при нов доставчик → пита наново
+    const V = 2;                       // bump on a new provider → asks again
     const bar = document.getElementById('cookieBar');
     if (!bar) return;
 
@@ -93,14 +93,14 @@ const CATS = [
     const bCustom = $('ccCustom'), bNo = $('ccNo'), bYes = $('ccYes'), bSave = $('ccSave');
     if (!cats || !bCustom || !bNo || !bYes || !bSave) return;
 
-    /** какво връщаме на слушателите; маркетинг стои за бъдещето, днес е винаги false */
+    /** what we return to the listeners; marketing is reserved for the future, today it is always false */
     const shape = (analytics, marketing) => ({ analytics: !!analytics, marketing: !!marketing });
 
     const read = () => {
       try {
         const raw = JSON.parse(localStorage.getItem(KEY) || 'null');
         if (!raw || typeof raw !== 'object') return null;
-        if (raw.v !== V) return null;                 // стара версия = питаме наново
+        if (raw.v !== V) return null;                 // old version = ask again
         if (typeof raw.analytics !== 'boolean') return null;
         return raw;
       } catch { return null; }
@@ -108,9 +108,9 @@ const CATS = [
 
     const tell = (c) => document.dispatchEvent(new CustomEvent('pdk:consent', { detail: c }));
 
-    // ── капан за фокуса ─────────────────────────────────────────────────────
-    // Диалогът иска решение, затова Tab обикаля вътре в него. Изходът НЕ е
-    // блокиран: Escape затваря с ОТКАЗ — безопасната посока.
+    // ── focus trap ──────────────────────────────────────────────────────────
+    // The dialog demands a decision, so Tab cycles inside it. The exit is NOT
+    // blocked: Escape closes with a REFUSAL - the safe direction.
     let opener = null;
     const focusables = () =>
       [...bar.querySelectorAll('a[href],button:not([disabled]),input:not([disabled])')]
@@ -130,14 +130,14 @@ const CATS = [
       opener = from || null;
       bar.hidden = false;
       bar.addEventListener('keydown', onKey);
-      // фокусът отива на диалога, не на копче — четецът първо прочита за какво става дума
+      // focus goes to the dialog, not to a button - the screen reader first reads what this is about
       bar.focus({ preventScroll: true });
     };
 
     const close = () => {
       bar.removeEventListener('keydown', onKey);
       bar.hidden = true;
-      // фокусът се връща откъдето е дошъл, иначе изчезва в началото на документа
+      // focus returns to where it came from, otherwise it vanishes to the start of the document
       if (opener && document.contains(opener)) { try { opener.focus(); } catch {} }
       opener = null;
     };
@@ -146,12 +146,12 @@ const CATS = [
       const c = shape(analytics, marketing);
       try {
         localStorage.setItem(KEY, JSON.stringify({ v: V, ...c, ts: Date.now() }));
-      } catch { /* режим „без запис“ — решението важи поне за това зареждане */ }
+      } catch { /* "no storage" mode - the decision still holds for this page load */ }
       close();
       tell(c);
     };
 
-    // ── трите избора ────────────────────────────────────────────────────────
+    // ── the three choices ───────────────────────────────────────────────────
     bYes.addEventListener('click', () => decide(true, false));
     bNo.addEventListener('click', () => decide(false, false));
 
@@ -159,7 +159,7 @@ const CATS = [
       const show = cats.hidden;
       cats.hidden = !show;
       bCustom.setAttribute('aria-expanded', String(show));
-      // при отворени категории „Приемам всички“ отстъпва на „Запази избора“
+      // with the categories open, "Accept all" yields to "Save choice"
       bYes.hidden = show;
       bSave.hidden = !show;
       if (show) $('cc-analytics')?.focus();
@@ -170,16 +170,16 @@ const CATS = [
       decide(!!(a && a.checked), false);
     });
 
-    // ── пускане ─────────────────────────────────────────────────────────────
+    // ── startup ─────────────────────────────────────────────────────────────
     const saved = read();
     if (saved) tell(shape(saved.analytics, saved.marketing));
     else open(null);
 
-    // връзката в долния ред отваря банера пак, за да се смени решението
+    // the link in the bottom row reopens the banner so the decision can be changed
     document.getElementById('cookieOpen')?.addEventListener('click', (e) => {
       const s = read();
       const a = $('cc-analytics');
-      if (a) a.checked = !!(s && s.analytics);      // показваме ТЕКУЩИЯ избор, не нулиран
+      if (a) a.checked = !!(s && s.analytics);      // show the CURRENT choice, not a reset one
       open(e.currentTarget);
     });
   })();
@@ -195,7 +195,7 @@ const CATS = [
 .cc-p{margin:0;font:400 var(--fz-xs)/1.6 var(--body);color:var(--ink-3)}
 .cc-p a{color:var(--lime);border-bottom:1px solid var(--lime-line)}
 
-/* ── категориите ─────────────────────────────────────────────────────────── */
+/* ── categories ──────────────────────────────────────────────────────────── */
 .cc-cats fieldset{margin:0;padding:0;border:0}
 .cc-leg{padding:0 0 12px;font:400 var(--fz-lab)/1 var(--mono);letter-spacing:.2em;
   text-transform:uppercase;color:var(--ink-4)}
@@ -210,9 +210,9 @@ const CATS = [
   text-transform:uppercase;color:var(--ink-5)}
 .cc-note{display:block;margin-top:5px;font:400 var(--fz-2xs)/1.55 var(--body);color:var(--ink-4)}
 
-/* ── копчетата: отказът НЕ е по-дребен от приемането ──────────────────────── */
+/* ── buttons: refusal is NOT smaller than acceptance ──────────────────────── */
 .cc-btns{display:flex;flex-wrap:wrap;gap:10px}
-/* видът идва от `.btn`; тук е само как се делят по ширина */
+/* look comes from `.btn`; here is only how they split the width */
 .cc-b{flex:1 1 auto;--btn-h:48px;--btn-py:14px;--btn-px:18px}
 .cc-b[hidden]{display:none}
 .cc-b.btn--ghost{flex:0 1 auto}

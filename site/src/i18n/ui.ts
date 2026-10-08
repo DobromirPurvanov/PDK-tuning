@@ -1,37 +1,37 @@
 /**
- * НАДПИСИТЕ ОТ ОБВИВКАТА — лента, футър, бисквитки, форма, пътека, 404.
+ * THE SHELL LABELS — bar, footer, cookies, form, trail, 404.
  *
  * ═══════════════════════════════════════════════════════════════════════════
- * ЗАЩО ТУК Е `{ bg, en }`, а данните са отделни набори.
+ * WHY `{ bg, en }` LIVES HERE while the data are separate sets.
  *
- * `docs/ANGLIYSKI.md` изрично отказва двуезични полета във всеки обект — за
- * УСЛУГИТЕ и статиите. Там текстът е дълъг, живее в `src/data/` и се чете от
- * всичките 183 страници: двуезичен запис щеше да направи всяко четене на данни
- * двуезично заради двайсет страници.
+ * `docs/ENGLISH.md` explicitly rejects bilingual fields in every object — for
+ * the SERVICES and the articles. There the text is long, lives in `src/data/`
+ * and is read by all 183 pages: a bilingual record would make every data read
+ * bilingual for the sake of twenty pages.
  *
- * Надписите от шаблоните са другото нещо: по две-три думи, четат се само от
- * обвивката и ВИНАГИ вървят по двойки. Тук съседството е предимството —
- * липсващ превод не е скрит файл, а дупка на един ред. А типът го прави
- * невъзможен: `en` е обявен като `Dict`, тоест `astro check` пада, ако ключ
- * липсва или е излишен.
+ * Template labels are a different thing: two or three words, read only by the
+ * shell, and they ALWAYS come in pairs. Here adjacency is the advantage — a
+ * missing translation is not a hidden file but a hole on one line. And the
+ * type makes it impossible: `en` is declared as `Dict`, so `astro check` fails
+ * if a key is missing or extra.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 import type { Lang } from './index';
 
 const bg = {
-  /* ── обвивка ───────────────────────────────────────────────────────────── */
+  /* ── shell ────────────────────────────────────────────────────────────── */
   skip: 'Към съдържанието',
   homeAria: 'PDK Tuning, начална страница',
   menuAria: 'Основно меню',
   menuLabel: 'Меню',
   upload: 'Качете файл',
-  /** заглавието на копчето за език — казва КЪДЕ води, не къде сме */
+  /** the language button's title — says WHERE it leads, not where we are */
   switchTo: 'Прочетете тази страница на английски',
-  /** същото копче, когато тази страница НЯМА английски двойник */
+  /** the same button when this page has NO English twin */
   switchHome: 'Тази страница я няма на английски, затова води към английската начална',
   switchLabel: 'EN',
 
-  /* ── пътека и заключително действие (Page.astro) ───────────────────────── */
+  /* ── trail and closing action (Page.astro) ───────────────────────────── */
   home: 'Начало',
   trailAria: 'Пътека',
   ctaTitle: 'Запишете час за измерване',
@@ -39,7 +39,7 @@ const bg = {
   ctaWrite: 'Изпратете запитване',
   portal: 'Портал за партньори ↗',
 
-  /* ── футър ─────────────────────────────────────────────────────────────── */
+  /* ── footer ──────────────────────────────────────────────────────────────── */
   eik: 'ЕИК',
   vat: 'ДДС',
   services: 'Услуги',
@@ -50,7 +50,7 @@ const bg = {
   socialAria: 'Социални мрежи',
   cookieSettings: 'Настройки за бисквитки',
 
-  /* ── формата ───────────────────────────────────────────────────────────── */
+  /* ── form ─────────────────────────────────────────────────────────────── */
   fName: 'Име',
   fPhone: 'Телефон',
   fEmail: 'Имейл',
@@ -79,7 +79,7 @@ const bg = {
   fOrWrite: 'или пишете на',
   fOffline: 'Няма връзка със сървъра. Обадете се на',
 
-  /* ── бисквитки ─────────────────────────────────────────────────────────── */
+  /* ── cookies ────────────────────────────────────────────────────────────── */
   ccTitle: 'Бисквитки',
   ccText:
     'Сайтът работи и без тях. Ако се съгласите, ще ползваме бисквитки само за анонимна ' +
@@ -119,20 +119,21 @@ const bg = {
 } as const;
 
 /**
- * `Record<keyof …, string>`, а НЕ `typeof bg`. Българският набор е `as const`,
- * тоест типът на всяко поле е самият низ („Към съдържанието“, не `string`).
- * `typeof bg` значеше, че английското „Skip to content“ не съвпада с типа на
- * българското — седемдесет и шест грешки, всяка от които твърди, че преводът е
- * грешен, защото не е дословно копие. Ключовете остават задължителни: липсващ
- * или излишен ключ пада при `astro check`, а това е единственото, което типът
- * тук трябва да пази.
+ * `Record<keyof …, string>`, NOT `typeof bg`. The Bulgarian set is `as const`,
+ * so the type of each field is the string itself ("Към съдържанието", not
+ * `string`). `typeof bg` meant the English "Skip to content" did not match the
+ * Bulgarian type — seventy-six errors, each claiming the translation is wrong
+ * because it is not a verbatim copy. The keys stay mandatory: a missing or
+ * extra key fails `astro check`, and that is the only thing the type needs to
+ * guard here.
  */
 export type Dict = Record<keyof typeof bg, string>;
 
 /**
- * Английското НЕ е превод дума по дума. Там, където българското е разговорно
- * („Да я погледнем.“), английското е също толкова късо и също толкова сухо —
- * буквалният превод на такива изречения звучи като инструкция за пералня.
+ * The English is NOT a word-for-word translation. Where the Bulgarian is
+ * colloquial ("Да я погледнем."), the English is just as short and just as dry —
+ * a literal translation of such sentences sounds like washing-machine
+ * instructions.
  */
 const en: Dict = {
   skip: 'Skip to content',
@@ -228,5 +229,5 @@ const en: Dict = {
 
 const DICTS: Record<Lang, Dict> = { bg, en };
 
-/** Надписите на този език. Ползва се като `const t = dict(lang)`. */
+/** The labels for this language. Used as `const t = dict(lang)`. */
 export const dict = (lang: Lang): Dict => DICTS[lang];

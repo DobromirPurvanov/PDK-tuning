@@ -1,9 +1,9 @@
 ---
 /**
- * Всички въпроси на едно място, групирани.
+ * All questions in one place, grouped.
  *
- * `FAQPage` схемата се строи от СЪЩИЯ списък, който се рисува — иначе схемата
- * би обещала отговори, които ги няма на екрана.
+ * The `FAQPage` schema is built from the SAME list that is drawn: otherwise the schema
+ * would promise answers that are not on the screen.
  */
 import Page from '../layouts/Page.astro';
 import { FAQ, FAQ_GROUPS } from '../data/faq';
@@ -15,7 +15,7 @@ const crumbs = [{ href: '/vaprosi/', label: 'Въпроси' }];
 
 const groups = FAQ_GROUPS.map((g) => ({ g, items: FAQ.filter((f) => f.group === g) }));
 
-/** услугите със собствени въпроси — препращаме към тях, вместо да ги преписваме */
+/** services with their own questions: we link to them instead of copying them */
 const withFaq = SERVICES.filter((s) => s.faq?.length);
 
 const schema = [

@@ -1,12 +1,12 @@
 /**
- * СТАТИИТЕ.
+ * THE ARTICLES.
  *
- * Целият стар сайт има около 225 думи човешки текст — всичко останало е каталог
- * или „очаквайте скоро". Това е причината да не се намира по нищо, освен по
- * името си. Тези страници са първите, които отговарят на въпрос, вместо да
- * изброяват двигатели.
+ * The whole old site has about 225 words of human text — everything else is a catalogue
+ * or "coming soon". That is why it can't be found by anything except its
+ * name. These pages are the first to answer a question instead of
+ * listing engines.
  *
- * Датите са в ISO, за да влязат както са в схемата и в картата на сайта.
+ * Dates are in ISO so they go as they are into the schema and the sitemap.
  */
 
 export type Article = {
@@ -15,13 +15,13 @@ export type Article = {
   description: string;
   h1: string;
   lead: string;
-  /** дата на публикуване, ISO */
+  /** publication date, ISO */
   date: string;
-  /** време за четене, минути — смята се на ръка веднъж, не се гадае от браузъра */
+  /** reading time, minutes — counted by hand once, not guessed by the browser */
   minutes: number;
   kicker: string;
   body: { h: string; p: string[] }[];
-  /** услугите, за които статията подготвя читателя */
+  /** the services the article prepares the reader for */
   related: string[];
 };
 

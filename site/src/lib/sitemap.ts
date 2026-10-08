@@ -25,7 +25,7 @@ export type Page = { path: string; file: string; changefreq: string; priority: s
    found, and every lastmod silently became the build date. */
 const SRC_LIB = resolve(process.cwd(), 'src/lib');
 
-/** датата на файла; ако го няма — днес, но това не бива да се случва */
+/** the file's date; if it is missing — today, but that should not happen */
 export const modified = (file: string) => {
   try {
     return statSync(resolve(SRC_LIB, file)).mtime.toISOString().slice(0, 10);
@@ -37,7 +37,7 @@ export const modified = (file: string) => {
 export const pages: Page[] = [
   { path: '/', file: '../pages/index.astro', changefreq: 'weekly', priority: '1.0' },
 
-  // услугите
+  // the services
   { path: '/uslugi/', file: '../pages/uslugi/index.astro', changefreq: 'monthly', priority: '0.9' },
   ...SERVICES.map((s) => ({
     path: `/uslugi/${s.slug}/`,
@@ -46,7 +46,7 @@ export const pages: Page[] = [
     priority: '0.8',
   })),
 
-  // категориите — корен, защото /bg и /en отиват на стария сайт
+  // the categories — at the root, because /bg and /en go to the old site
   ...CATEGORIES.map((c) => ({
     path: `/${c.slug}/`,
     file: '../data/categories.ts',
@@ -54,8 +54,8 @@ export const pages: Page[] = [
     priority: '0.9',
   })),
 
-  // електрическите — /elektricheski/poracha/ и /elektricheski/blagodarim/ нарочно
-  // ЛИПСВАТ: те са стъпки от поръчката, носят `noindex` и нямат работа в картата
+  // the electric ones — /elektricheski/poracha/ and /elektricheski/blagodarim/ are
+  // MISSING on purpose: they are order steps, carry `noindex` and have no place in the sitemap
   { path: '/elektricheski/', file: '../pages/elektricheski/index.astro', changefreq: 'weekly', priority: '0.9' },
   { path: '/pdk-flasher/', file: '../pages/pdk-flasher.astro', changefreq: 'monthly', priority: '0.8' },
   ...EV_MODELS.map((m) => ({
@@ -65,7 +65,7 @@ export const pages: Page[] = [
     priority: '0.7',
   })),
 
-  // каталогът
+  // the catalogue
   { path: '/katalog/', file: '../pages/katalog/index.astro', changefreq: 'weekly', priority: '0.9' },
   ...(marks as Mark[]).map((m) => ({
     path: `/katalog/${m.slug}/`,
@@ -74,7 +74,7 @@ export const pages: Page[] = [
     priority: '0.6',
   })),
 
-  // фирмените
+  // the company pages
   { path: '/tseni/', file: '../pages/tseni.astro', changefreq: 'monthly', priority: '0.8' },
   { path: '/kak-rabotim/', file: '../pages/kak-rabotim.astro', changefreq: 'yearly', priority: '0.7' },
   { path: '/za-nas/', file: '../pages/za-nas.astro', changefreq: 'yearly', priority: '0.6' },
@@ -83,7 +83,7 @@ export const pages: Page[] = [
   { path: '/kontakti/', file: '../pages/kontakti.astro', changefreq: 'yearly', priority: '0.8' },
   { path: '/za-dileri/', file: '../pages/za-dileri.astro', changefreq: 'yearly', priority: '0.6' },
 
-  // статиите
+  // the articles
   { path: '/blog/', file: '../pages/blog/index.astro', changefreq: 'monthly', priority: '0.7' },
   ...ARTICLES.map((a) => ({
     path: `/blog/${a.slug}/`,
@@ -92,17 +92,17 @@ export const pages: Page[] = [
     priority: '0.6',
   })),
 
-  // правните
+  // the legal pages
   { path: '/privacy/', file: '../pages/privacy.astro', changefreq: 'yearly', priority: '0.3' },
   { path: '/terms/', file: '../pages/terms.astro', changefreq: 'yearly', priority: '0.3' },
   { path: '/cookie-policy/', file: '../pages/cookie-policy.astro', changefreq: 'yearly', priority: '0.3' },
   { path: '/otkaz-i-reklamacii/', file: '../pages/otkaz-i-reklamacii.astro', changefreq: 'yearly', priority: '0.3' },
 
-  /* АНГЛИЙСКИТЕ. Влизат САМО когато `PUBLIC_EN=true` — дотогава страниците се
-     изграждат, но носят `noindex` и картата не бива да ги обещава. `ROUTES`
-     знае кои двойки съществуват и от двете страни, затова списъкът тук не се
-     поддържа втори път на ръка. Каталогът на марките не е в него: неговите
-     английски страници са на СТАРИЯ сайт и са в тяхната карта. */
+  /* THE ENGLISH ONES. Included ONLY when `PUBLIC_EN=true` — until then the pages
+     are built but carry `noindex` and the sitemap must not promise them. `ROUTES`
+     knows which pairs exist on both sides, so the list here is not maintained a
+     second time by hand. The makes catalogue is not in it: its English pages are
+     on the OLD site and are in its sitemap. */
   ...(EN_LIVE
     ? ROUTES.map((r) => ({
         path: r.en,

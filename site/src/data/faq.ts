@@ -1,12 +1,12 @@
 /**
- * ВЪПРОСИТЕ, които наистина ни задават.
+ * THE QUESTIONS people really ask us.
  *
- * Стояха вградени в началната. Изнесени са тук, защото сега ги ползват и
- * `/vaprosi/`, и схемата на двете страници. Един източник значи, че отговорът
- * на екрана и отговорът в структурираните данни не могат да се разминат — а
- * `FAQPage` със скрит отговор е повод за ръчна санкция от Google.
+ * They used to be embedded in the home page. They were moved here because they are now used by
+ * `/vaprosi/` and by the schema of both pages. One source means the answer
+ * on screen and the answer in the structured data cannot drift apart — and
+ * an `FAQPage` with a hidden answer is grounds for a manual penalty from Google.
  *
- * Услугите имат СВОИ въпроси в `services.ts`; тези тук са общите.
+ * The services have THEIR OWN questions in `services.ts`; these here are the general ones.
  */
 
 export type Qa = { q: string; a: string; group: string };
@@ -84,10 +84,10 @@ export const FAQ: Qa[] = [
   },
 ];
 
-/** редът на групите на страницата — не по азбука, а по това какво пита човек първо */
+/** the order of the groups on the page — not alphabetical, but by what a person asks first */
 export const FAQ_GROUPS = ['Гаранция и риск', 'Резултатът', 'Изгорели газове', 'Практично'];
 
-/** осемте, които стоят на началната — останалите са на /vaprosi/ */
+/** the eight that sit on the home page — the rest are on /vaprosi/ */
 export const FAQ_HOME = FAQ.filter((f) =>
   [
     'Ще загубя ли гаранцията на автомобила?',

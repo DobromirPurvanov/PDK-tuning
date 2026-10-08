@@ -15,13 +15,13 @@
     "check:urls": "node scripts/check-hardcoded.mjs",
     "check:tokens": "node scripts/check-tokens.mjs",
     "lint": "astro check",
-    "build:etap1": "npm run build",
-    "deploy:etap1": "npm run build:etap1 && npx wrangler pages deploy dist --project-name=new-pdk --branch=main --commit-dirty=true",
+    "build:stage1": "npm run build",
+    "deploy:stage1": "npm run build:stage1 && npx wrangler pages deploy dist --project-name=new-pdk --branch=main --commit-dirty=true",
     "preflight": "node scripts/migration/preflight.mjs --dns",
-    "preflight:etap2": "node scripts/migration/preflight.mjs --etap2 --dns",
+    "preflight:stage2": "node scripts/migration/preflight.mjs --stage2 --dns",
     "redirects": "node scripts/migration/redirects.mjs",
     "postflight": "node scripts/migration/preflight.mjs --dns --live https://new.pdktuning.com",
-    "postflight:etap2": "node scripts/migration/preflight.mjs --etap2 --dns --live https://www.pdktuning.com"
+    "postflight:stage2": "node scripts/migration/preflight.mjs --stage2 --dns --live https://www.pdktuning.com"
   },
   "dependencies": {
     "@worker-tools/html-rewriter": "0.1.0-pre.19",

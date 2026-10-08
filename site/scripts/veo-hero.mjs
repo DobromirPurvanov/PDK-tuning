@@ -1,31 +1,31 @@
 /**
- * ГЕНЕРИРА КАДЪР ЗА ХИРОТО С VEO 3.1.
+ * GENERATES A HERO FRAME WITH VEO 3.1.
  *
- * Пуска се на ръка и ХАРЧИ ПАРИ от сметката на Google зад `GEMINI_API_KEY` —
- * затова не е вързан за никоя команда от package.json и иска изрично
- * потвърждение с `--da`.
+ * Run by hand and it SPENDS MONEY from the Google account behind `GEMINI_API_KEY`,
+ * so it is not tied to any package.json command and requires explicit
+ * confirmation with `--yes`.
  *
- *   node scripts/veo-hero.mjs --da                 # един опит, „fast“ модел
- *   node scripts/veo-hero.mjs --da --model veo-3.1-generate-preview
- *   node scripts/veo-hero.mjs --da --prompt "…"    # свой текст
+ *   node scripts/veo-hero.mjs --yes                 # one attempt, the "fast" model
+ *   node scripts/veo-hero.mjs --yes --model veo-3.1-generate-preview
+ *   node scripts/veo-hero.mjs --yes --prompt "..."    # your own text
  *
- * Изходът пада в `public/img/veo/<печат>.mp4` и НЕ влиза в сайта сам — гледа се
- * пръв, после се пуска през веригата в `docs/HIRO-VIDEO.md`.
+ * The output lands in `public/img/veo/<stamp>.mp4` and does NOT enter the site
+ * by itself: it is looked at first, then run through the chain in `docs/HERO-VIDEO.md`.
  *
- * Звукът е ИЗКЛЮЧЕН нарочно: видеото в хирото е `muted`, а генерирането на звук
- * се плаща отделно.
+ * Audio is OFF on purpose: the hero video is `muted`, and audio generation is
+ * billed separately.
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const KEY = process.env.GEMINI_API_KEY;
-if (!KEY) { console.error('няма GEMINI_API_KEY'); process.exit(1); }
+if (!KEY) { console.error('GEMINI_API_KEY is missing'); process.exit(1); }
 
 const args = process.argv.slice(2);
 const flag = (n, d = null) => { const i = args.indexOf('--' + n); return i < 0 ? d : args[i + 1]; };
-if (!args.includes('--da')) {
-  console.error('Това извикване се плаща. Пусни го с --da, ако наистина го искаш.');
+if (!args.includes('--yes')) {
+  console.error('This call is paid. Run it with --yes if you really mean it.');
   process.exit(1);
 }
 
@@ -58,8 +58,8 @@ const post = async (url, body) => {
   return j;
 };
 
-console.log('модел:', MODEL);
-console.log('текст:', PROMPT.slice(0, 120) + '…');
+console.log('model:', MODEL);
+console.log('prompt:', PROMPT.slice(0, 120) + '…');
 
 const op = await post(`${base}/models/${MODEL}:predictLongRunning`, {
   instances: [{ prompt: PROMPT }],
@@ -71,23 +71,23 @@ const op = await post(`${base}/models/${MODEL}:predictLongRunning`, {
     sampleCount: 1,
   },
 });
-console.log('пуснато:', op.name);
+console.log('started:', op.name);
 
 let done = null;
 for (let i = 0; i < 90; i++) {
   await new Promise((r) => setTimeout(r, 10000));
   const r = await fetch(`${base}/${op.name}`, { headers: { 'x-goog-api-key': KEY } });
   const j = await r.json();
-  if (j.error) { console.error('грешка:', JSON.stringify(j.error).slice(0, 500)); process.exit(1); }
+  if (j.error) { console.error('error:', JSON.stringify(j.error).slice(0, 500)); process.exit(1); }
   if (j.done) { done = j; break; }
   process.stdout.write('.');
 }
 console.log('');
-if (!done) { console.error('не се дочака'); process.exit(1); }
+if (!done) { console.error('timed out waiting'); process.exit(1); }
 
 const res = done.response || {};
 const vids = res.generatedVideos || res.generateVideoResponse?.generatedSamples || [];
-if (!vids.length) { console.error('няма видео в отговора:', JSON.stringify(res).slice(0, 800)); process.exit(1); }
+if (!vids.length) { console.error('no video in the response:', JSON.stringify(res).slice(0, 800)); process.exit(1); }
 
 const stamp = new Date().toISOString().replace(/[-:T]/g, '').slice(0, 14);
 let n = 0;
@@ -101,5 +101,5 @@ for (const v of vids) {
     await fs.writeFile(file, Buffer.from(await r.arrayBuffer()));
   }
   const { size } = await fs.stat(file);
-  console.log('записано:', file, Math.round(size / 1024) + ' KB');
+  console.log('saved:', file, Math.round(size / 1024) + ' KB');
 }

@@ -1,11 +1,11 @@
 /**
- * robots.txt се ГЕНЕРИРА, а не се пише на ръка в public/.
+ * robots.txt is GENERATED, not written by hand in public/.
  *
- * Старият файл сочеше картата на ДРУГ сайт (www.pdktuning.com) и забраняваше
- * пътища, които тук изобщо не съществуват — тоест лъжеше и в двете посоки.
+ * The old file pointed to the sitemap of ANOTHER site (www.pdktuning.com) and disallowed
+ * paths that do not exist here at all, so it lied in both directions.
  *
- * Докато `PUBLIC_INDEXABLE` не е `true`, обхождането е ЗАТВОРЕНО: макетът и
- * истинският сайт не бива да се бият за едни и същи думи.
+ * Until `PUBLIC_INDEXABLE` is `true`, crawling is CLOSED: the mockup and the
+ * real site must not fight over the same words.
  */
 import type { APIRoute } from 'astro';
 import { INDEXABLE } from '../config/site';

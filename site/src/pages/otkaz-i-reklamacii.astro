@@ -1,19 +1,19 @@
 ---
 /**
- * Право на отказ и рекламации.
+ * Right of withdrawal and complaints.
  *
- * ЗАЩО СЪЩЕСТВУВА: общите условия уреждаха само отмяна на записан час. Това НЕ е
- * законното право на отказ. Когато договорът се сключва по телефон или през
- * формата, той е договор от разстояние и потребителят има 14 дни по чл. 50 ЗЗП
- * (Директива 2011/83/ЕС), с изключението по чл. 57, т. 1 за услуга, изпълнена
- * изцяло с предварително изрично съгласие.
+ * WHY IT EXISTS: the general terms only covered cancelling a booked slot. That is NOT
+ * the legal right of withdrawal. When the contract is concluded by phone or through the
+ * form, it is a distance contract and the consumer has 14 days under Art. 50 ZZP
+ * (Directive 2011/83/EU), with the exception in Art. 57, item 1 for a service performed
+ * entirely with prior express consent.
  *
- * Изключението е СЪЩЕСТВЕНОТО за този бизнес: колата се оставя и работата се
- * върши същия ден, тоест почти винаги попада в него. Затова тук е обяснено кога
- * правото важи и кога отпада — а не е преписан общ текст, който после не важи.
+ * The exception is the ESSENTIAL point for this business: the car is left and the work is
+ * done the same day, so it almost always falls under it. That is why this explains when
+ * the right applies and when it lapses, instead of copying generic text that then does not apply.
  *
- * Отделно се урежда рекламацията по чл. 123 и сл. ЗЗП — това е ДРУГО право и
- * двете редовно се бъркат.
+ * Complaints under Art. 123 ff. ZZP are regulated separately. That is a DIFFERENT right and
+ * the two are regularly confused.
  */
 import Text from '../layouts/Text.astro';
 import { BUSINESS as b, LEGAL } from '../config/site';
@@ -101,7 +101,7 @@ const schema = [{
 
   <h3>2.3. Стандартен формуляр за отказ</h3>
   <p>Попълва се само ако желаете. Всяко ясно изявление върши същата работа.</p>
-  <blockquote class="form-otkaz">
+  <blockquote class="form-withdrawal">
     <p>До {b.legalName}, {b.address.street}, {b.address.city} {b.address.postalCode}, {b.email}</p>
     <p>
       С настоящото уведомявам, че се отказвам от сключения от мен договор за покупка на
@@ -250,13 +250,13 @@ const schema = [{
 </Text>
 
 <style is:global>
-/* формулярът за отказ: личи си, че е образец за попълване, а не текст за четене */
-.form-otkaz{margin:0 0 22px;padding:22px 24px;border-left:2px solid var(--lime);
+/* the withdrawal form: it is clear that it is a template to fill in, not text to read */
+.form-withdrawal{margin:0 0 22px;padding:22px 24px;border-left:2px solid var(--lime);
   background:var(--lime-dim);border-radius:0 var(--r-s) var(--r-s) 0}
-/* Редовете за попълване са дълъг НЕПРЕКЪСВАЕМ низ от точки. На 320px той
-   изкарваше документа на 330px — нищо не се виждаше отдясно, но скролът беше
-   там. `anywhere` позволява прекъсване вътре в низа, без да чупи думите. */
-.form-otkaz p{margin:0 0 12px;font:400 var(--fz-s)/1.75 var(--body);color:var(--ink-2);
+/* The fill-in lines are a long UNBREAKABLE string of dots. At 320px it
+   pushed the document to 330px: nothing was visible on the right, but the scroll was
+   there. `anywhere` allows a break inside the string without breaking words. */
+.form-withdrawal p{margin:0 0 12px;font:400 var(--fz-s)/1.75 var(--body);color:var(--ink-2);
   overflow-wrap:anywhere}
-.form-otkaz p:last-child{margin-bottom:0}
+.form-withdrawal p:last-child{margin-bottom:0}
 </style>

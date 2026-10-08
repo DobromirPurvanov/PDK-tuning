@@ -1,47 +1,47 @@
-# Новият сайт на PDK Tuning
+# The new PDK Tuning site
 
-Това е единственият frontend в хранилището. Старият сайт от корена е премахнат.
-Таг `v*` изгражда тази директория и я качва директно на VPS. Няма препращане
-на началната страница към Cloudflare Pages. Виж [основния README](../README.md).
+This is the only frontend in the repository. The old site in the root has been removed.
+A `v*` tag builds this directory and uploads it directly to the VPS. The home page
+is not forwarded to Cloudflare Pages. See the [main README](../README.md).
 
-`server/server.mjs` добавя Node.js среда за съществуващия Worker: локални активи,
-кеш с ограничен размер, HTMLRewriter и HTTP обслужване. Каталогът и порталът
-остават на отделния сървър, зададен чрез `CATALOG_BASE_URL`.
+`server/server.mjs` adds a Node.js environment for the existing Worker: local assets,
+a size-limited cache, HTMLRewriter and HTTP serving. The catalog and the portal
+stay on the separate server set through `CATALOG_BASE_URL`.
 
-Cloudflare Pages е допълнителен вариант за хостване със същия Worker.
-
----
-
-## Какво прави този сайт
-
-183 страници: начална, услуги, цени, каталог на 110 марки, електрически
-автомобили, статии, правни. Плюс динамичен слой в `public/_worker.js`
-(Cloudflare Worker), който върши четири неща:
-
-1. **Чете каталога на живо** от стария сайт (`/live/*`). Базата НЕ се мигрира и
-   НЕ се копира — старият сайт остава единственият ѝ пазител.
-2. **Препредава техните пътища** — `/bg`, `/en`, порталът на дилърите,
-   статиката. Със същия метод, заглавки и тяло, за да не се счупят ~5 500
-   индексирани адреса и входът на партньорите.
-3. **Пренасочва 117 стари адреса** към новите им наследници.
-4. **Формата и чекаутът** — Resend и Stripe.
-
-На VPS `server/server.mjs` осигурява съвместимата среда за същия работник,
-без да дублира логиката на каталога, портала и формите.
+Cloudflare Pages is an additional hosting option with the same Worker.
 
 ---
 
-## Един файл за адресите
+## What this site does
 
-`.env.local` съдържа само публичната конфигурация:
+183 pages: home, services, prices, a catalog of 110 brands, electric
+cars, articles, legal pages. Plus a dynamic layer in `public/_worker.js`
+(a Cloudflare Worker) that does four things:
+
+1. **Reads the catalog live** from the old site (`/live/*`). The database is NOT migrated and
+   NOT copied; the old site remains its only keeper.
+2. **Proxies their paths**: `/bg`, `/en`, the dealer portal,
+   static files. With the same method, headers and body, so that the ~5,500
+   indexed addresses and the partners' login do not break.
+3. **Redirects 117 old addresses** to their new successors.
+4. **The form and the checkout**: Resend and Stripe.
+
+On the VPS `server/server.mjs` provides the compatible environment for the same worker,
+without duplicating the logic for the catalog, the portal and the forms.
+
+---
+
+## One file for the addresses
+
+`.env.local` contains only the public configuration:
 
 ```dotenv
 CATALOG_BASE_URL=https://files.pdktuning.com
 BASE_URL=https://www.pdktuning.com
 ```
 
-Astro и VPS runtime четат точно този файл. Той влиза в образа и се версионира
-заедно с кода. Тайните остават в средата на сървъра, не в този файл.
+Astro and the VPS runtime read exactly this file. It goes into the image and is versioned
+together with the code. Secrets stay in the server environment, not in this file.
 
 ```sh
 npm ci
@@ -50,67 +50,67 @@ npm run build
 PORT=8000 node server/server.mjs
 ```
 
-Таг `v*` от корена публикува същия билд на VPS. `build:etap1` е оставен само
-като съвместим псевдоним на `build` и вече не заменя адресите с други стойности.
+A `v*` tag from the root publishes the same build to the VPS. `build:stage1` is kept only
+as a compatible alias of `build` and no longer replaces the addresses with other values.
 
-### Състояние (16.09.2026)
+### Status (16.09.2026)
 
-VPS вече изгражда и обслужва този сайт директно. DNS промените за основния
-домейн остават за IT на клиента. Преди смяната трябва да осигурят работещ
-отделен HTTPS произход за каталога и портала.
+The VPS already builds and serves this site directly. The DNS changes for the main
+domain are left to the client's IT. Before the switch, they must provide a working
+separate HTTPS origin for the catalog and the portal.
 
-## Ключове в средата на Pages
+## Keys in the Pages environment
 
 ```
-BASE_URL           адресът на сайта (виж по-горе)
-CATALOG_BASE_URL   източникът (старото име LEGACY_ORIGIN още се приема)
-PUBLIC_INDEXABLE   НЕ се задава на етап 1 — иначе new и www се бият за едни
-                   и същи думи, а по-силният адрес е техният
-PUBLIC_GA_ID       GA4 маркерът на клиента (G-13T4ZTVM1W) — виж docs/mereneto.md
-PUBLIC_GSC_VERIFY  кодът за Search Console, само съдържанието на `content`
-PORTAL_URL         по избор: пренаписва CATALOG_BASE_URL/<lang>/login
-RESEND_API_KEY / CONTACT_TO / CONTACT_FROM    без тях формата връща 503
-STRIPE_SECRET_KEY + PUBLIC_CHECKOUT=true      вдигат се ЗАЕДНО
+BASE_URL           the site address (see above)
+CATALOG_BASE_URL   the source (the old name LEGACY_ORIGIN is still accepted)
+PUBLIC_INDEXABLE   NOT set in stage 1, otherwise new and www fight over the same
+                   words, and the stronger address is theirs
+PUBLIC_GA_ID       the client's GA4 tag (G-13T4ZTVM1W), see docs/measurement.md
+PUBLIC_GSC_VERIFY  the Search Console code, only the contents of `content`
+PORTAL_URL         optional: rewrites CATALOG_BASE_URL/<lang>/login
+RESEND_API_KEY / CONTACT_TO / CONTACT_FROM    without them the form returns 503
+STRIPE_SECRET_KEY + PUBLIC_CHECKOUT=true      raised TOGETHER
 ```
 
-**Качен ключ не действа, докато не се пусне нов деплой.** Pages чете средата
-при билда, не при заявката; 1010 в отговора не е 401.
+**An uploaded key does not take effect until a new deploy is run.** Pages reads the environment
+at build time, not at request time; 1010 in the response is not a 401.
 
-## Команди
+## Commands
 
-| команда | какво прави |
+| command | what it does |
 |---|---|
-| `npm run dev` | местен сървър (Astro) |
+| `npm run dev` | local server (Astro) |
 | `npm run build` | `dist/` |
-| `npm run check` | `astro check` + пазачът за зашити адреси |
-| `npm run check:urls` | само пазачът |
-| `npm run deploy:etap1` | билд с адресите на етап 1 + качване към Pages |
-| `npm run preflight` | готово ли е всичко преди DNS-а; `--live` = след смяната |
-| `npm run redirects` | целият им sitemap през новия сайт; гледа СЪДЪРЖАНИЕ, не статус |
+| `npm run check` | `astro check` + the guard for hardcoded addresses |
+| `npm run check:urls` | only the guard |
+| `npm run deploy:stage1` | build with the stage 1 addresses + upload to Pages |
+| `npm run preflight` | is everything ready before DNS; `--live` = after the switch |
+| `npm run redirects` | their whole sitemap through the new site; checks CONTENT, not status |
 
-Динамичното се тества с `npx wrangler pages dev dist --binding КЛЮЧ=стойност`.
-**`--env-file` се глътва мълчаливо** от `wrangler pages dev` — ключът не стига
-до работника и изглежда, че кодът не работи.
+The dynamic part is tested with `npx wrangler pages dev dist --binding KEY=value`.
+**`--env-file` is silently swallowed** by `wrangler pages dev`: the key never
+reaches the worker and it looks as if the code does not work.
 
-## Какво чака клиента
+## What is waiting on the client
 
-ЕИК и ДДС, потвърждение на адреса и работното време, потвърждение на цените,
-истинският имейл, линковете към PDK Flasher в двата магазина и цените на
-33-те електрически модела.
+Company ID (EIK) and VAT number, confirmation of the address and working hours, confirmation of the prices,
+the real email, the links to PDK Flasher in both stores and the prices of the
+33 electric models.
 
-**Празните полета вече НЕ се показват** — редът просто не се рисува и се
-появява сам, щом стойността влезе в `src/data/business.json`. Рамките „чака
-се“ бяха махнати на 16.09.2026, защото пред посетител четат като недовършен
-сайт. Следствието е, че **от сайта няма кой да напомни**: единственото
-напомняне е `npm run preflight` и бележките с долна черта в самия
-`business.json`.
+**Empty fields are no longer shown**: the row is simply not drawn and
+appears on its own once the value enters `src/data/business.json`. The "pending"
+frames were removed on 16.09.2026, because to a visitor they read as an unfinished
+site. The consequence is that **the site itself cannot remind anyone**: the only
+reminders are `npm run preflight` and the underscore notes inside `business.json`
+itself.
 
-## Документите
+## The documents
 
-| файл | за какво |
+| file | what it is for |
 |---|---|
-| [`docs/prevklyuchvane.md`](docs/prevklyuchvane.md) | двата етапа, DNS редът, проверките, връщане назад |
-| [`docs/pismo-do-it.md`](docs/pismo-do-it.md) | готови съобщения до IT-то на клиента и до самия клиент |
-| [`docs/mereneto.md`](docs/mereneto.md) | Search Console и Analytics: какво има, какво липсва, кой може да го направи |
-| [`docs/ANGLIYSKI.md`](docs/ANGLIYSKI.md) | английската версия — етапите и защо `/en/` още стои при тях |
-| [`docs/ODIT.md`](docs/ODIT.md) | предстартовият одит |
+| [`docs/cutover.md`](docs/cutover.md) | the two stages, the DNS order, the checks, rollback |
+| [`docs/letter-to-it.md`](docs/letter-to-it.md) | ready-made messages to the client's IT and to the client |
+| [`docs/measurement.md`](docs/measurement.md) | Search Console and Analytics: what exists, what is missing, who can do it |
+| [`docs/ENGLISH.md`](docs/ENGLISH.md) | the English version: the stages and why `/en/` still stays with them |
+| [`docs/AUDIT.md`](docs/AUDIT.md) | the pre-launch audit |

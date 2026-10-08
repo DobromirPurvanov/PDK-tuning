@@ -1,14 +1,14 @@
 ---
 /**
- * ТРИТЕ КАТЕГОРИЙНИ СТРАНИЦИ — /leki-avtomobili/, /kamioni/,
+ * THE THREE CATEGORY PAGES: /leki-avtomobili/, /kamioni/,
  * /selskostopanska-tehnika/.
  *
- * Тук е зарязаният актив: камионите (7 марки) и селскостопанската техника
- * (19 марки) съществуват в базата от години, но на стария сайт нямаха нито
- * входна страница, нито дума текст. Двайсет и шест марки без конкуренция.
+ * This is the neglected asset: trucks (7 brands) and agricultural machinery
+ * (19 brands) have existed in the database for years, but the old site had neither
+ * an entry page nor a word of text for them. Twenty-six brands with no competition.
  *
- * Маршрутът е динамичен, но НЕ е широк: `getStaticPaths` връща точно трите
- * адреса, значи никой друг път не се хваща от него.
+ * The route is dynamic but NOT broad: `getStaticPaths` returns exactly the three
+ * addresses, so no other path is caught by it.
  */
 import Page from '../layouts/Page.astro';
 import MarkGrid from '../components/MarkGrid.astro';

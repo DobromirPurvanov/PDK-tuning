@@ -1,29 +1,29 @@
 ---
 /**
- * ФОРМАТА ЗА ЗАПИТВАНЕ.
+ * THE ENQUIRY FORM.
  *
- * Изнесена от началната, защото сега стои и на `/kontakti/`. Две копия на един
- * и същ скрипт е начинът един ден да се окажат две различни проверки.
+ * Extracted from the home page because it now also lives on `/kontakti/`. Two copies of the
+ * same script are how you end up with two different validations one day.
  *
- * Праща на `/api/contact` в public/_worker.js → Resend. Без ключовете в средата
- * работникът връща `not-configured` (503) и страницата казва честно „не е
- * свързана, обадете се" — вместо да покаже фалшив успех.
+ * Posts to `/api/contact` in public/_worker.js → Resend. Without the keys in the environment
+ * the worker returns `not-configured` (503) and the page honestly says "not
+ * connected, please call" - instead of showing a fake success.
  *
- * Защитата е в четири пласта и трите от тях са на СЪРВЪРА: примамка `pdk_extra`
- * (нарочно НЕ „website“ — мениджърите на пароли пълнят такова поле и режат
- * истински хора), праг от две секунди, проверка на произхода и 5 заявки на час
- * от адрес.
+ * Protection has four layers and three of them are on the SERVER: a `pdk_extra` honeypot
+ * (deliberately NOT "website" - password managers fill such a field and cut off
+ * real people), a two-second threshold, an origin check and 5 requests per hour
+ * per address.
  */
 import { SERVICES } from '../data/services';
 import { BUSINESS as b } from '../config/site';
 import { SERVICES_EN } from '../i18n/en/services/index';
 import { langOf } from '../i18n';
 import { dict } from '../i18n/ui';
-// Стиловете на полетата са общи с поръчката за електрически — src/styles/form.css.
+// The field styles are shared with the electric-vehicle order form - src/styles/form.css.
 import '../styles/form.css';
 
 interface Props {
-  /** заглавие над формата; на началната то е на секцията, не тук */
+  /** heading above the form; on the home page it belongs to the section, not here */
   heading?: string;
 }
 const { heading } = Astro.props;
@@ -32,18 +32,18 @@ const lang = langOf(Astro.url.pathname);
 const t = dict(lang);
 const en = lang === 'en';
 const privacyHref = en ? '/en/privacy/' : '/privacy/';
-/* Падащото поле показва английските имена, ако ги има; докато `SERVICES_EN` е
-   празен, английската форма остава с „— choose —“ и „Other“ и нищо не лъже. */
+/* The dropdown shows the English names if there are any; while `SERVICES_EN` is
+      empty, the English form keeps "— choose —" and "Other" and nothing lies. */
 const services = en ? SERVICES_EN : SERVICES;
 
 /**
- * НАДПИСИТЕ ЗА СКРИПТА пътуват като един data-атрибут.
+ * THE LABELS FOR THE SCRIPT travel as a single data attribute.
  *
- * `<script>` в Astro се бъндълва отделно и НЕ вижда променливите отгоре.
- * Досега това не личеше, защото съобщенията бяха на български и зашити в него —
- * заедно с телефона и имейла, които при смяна трябваше да се търсят и тук.
- * Сега и двете идват оттук: един `JSON.parse` вместо девет data-атрибута и
- * нула зашити низа в скрипта.
+ * A `<script>` in Astro is bundled separately and does NOT see the variables above.
+ * Until now this was not noticeable, because the messages were in Bulgarian and hardcoded in it -
+ * together with the phone and email, which had to be hunted down here too whenever they changed.
+ * Now both come from here: one `JSON.parse` instead of nine data attributes and
+ * zero hardcoded strings in the script.
  */
 const MSG = JSON.stringify({
   sending: t.fSending,
@@ -111,7 +111,7 @@ const MSG = JSON.stringify({
     <span class="err" id="e-gdpr" hidden>{t.eGdpr}</span>
   </p>
 
-  {/* примамка за роботи: истински човек не я вижда и не я попълва */}
+  {/* decoy for robots: a real person does not see it and does not fill it in */}
   <p class="trap" aria-hidden="true">
     <label for="f-web">{t.fTrap}</label>
     <input id="f-web" name="pdk_extra" type="text" tabindex="-1" autocomplete="off" />
@@ -127,11 +127,11 @@ const MSG = JSON.stringify({
 </form>
 
 <script>
-// Проверява се и тук, и на сървъра (public/_worker.js). Копчето се заключва,
-// докато трае заявката, а резултатът се казва с думи — не с мълчание.
+// Validated both here and on the server (public/_worker.js). The button locks
+// while the request runs, and the result is stated in words - not in silence.
 const form = document.getElementById('cform') as HTMLFormElement | null;
 if (form) {
-  // надписите и контактите идват от страницата (data-msg) — вж. MSG отгоре
+  // the labels and contacts come from the page (data-msg) - see MSG above
   const m = JSON.parse(form.dataset.msg!) as Record<string, string>;
   const tel = `<a href="tel:${m.phone}">${m.phoneDisplay}</a>`;
   const mail = `<a href="mailto:${m.email}">${m.email}</a>`;
@@ -143,9 +143,9 @@ if (form) {
   const field = (id: string) => document.getElementById('f-' + id) as HTMLInputElement;
   const errBox = (id: string) => document.getElementById('e-' + id)!;
 
-  // Избирачът на друга страница праща избраното в адреса. Пренасяме го в полето,
-  // за да не се набира наум — но с ограничение по дължина, защото стойността
-  // идва отвън.
+  // A picker on another page sends the selection in the URL. We carry it into the field
+  // so it does not have to be typed from memory - but with a length limit, because the value
+  // comes from outside.
   const car = new URLSearchParams(location.search).get('car');
   if (car) {
     (field('car') as HTMLInputElement).value = car.slice(0, 120);
@@ -166,7 +166,7 @@ if (form) {
     gdpr: () => field('gdpr').checked,
   };
 
-  // проверката на едно поле става, щом човекът го напусне — не по време на писане
+  // a single field is validated as soon as the person leaves it - not while typing
   for (const id of Object.keys(checks)) {
     field(id).addEventListener('blur', () => setErr(id, !checks[id]()));
     field(id).addEventListener('input', () => { if (!errBox(id).hidden) setErr(id, !checks[id]()); });
@@ -186,7 +186,7 @@ if (form) {
 
     const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
     data.elapsed = String(Date.now() - opened);
-    data.page = location.pathname;   // от коя страница е дошло запитването
+    data.page = location.pathname;   // which page the enquiry came from
 
     send.disabled = true;
     const label = send.textContent;

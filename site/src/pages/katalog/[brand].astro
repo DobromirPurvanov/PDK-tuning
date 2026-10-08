@@ -1,14 +1,14 @@
 ---
 /**
- * СТО И ДЕСЕТТЕ СТРАНИЦИ НА МАРКИТЕ.
+ * THE HUNDRED AND TEN BRAND PAGES.
  *
- * Тук базата НЕ се копира — на страницата няма нито един двигател, записан
- * статично. Живият избирач под текста тръгва ВЕЧЕ ИЗБРАН на тази марка и
- * пита стария сайт в момента на отваряне.
+ * The database is NOT copied here: the page has not a single engine written
+ * statically. The live picker under the text starts ALREADY SET to this brand and
+ * queries the old site at the moment of opening.
  *
- * Текстът е свой за всяка марка (`src/data/brand-notes.ts`). Това не е
- * украса: сто и десет страници с един и същ абзац и сменено име са точно
- * определението за doorway pages.
+ * The text is unique for each brand (`src/data/brand-notes.ts`). This is not
+ * decoration: a hundred and ten pages with the same paragraph and a changed name are exactly
+ * the definition of doorway pages.
  */
 import Page from '../../layouts/Page.astro';
 import Picker from '../../components/Picker.astro';
@@ -31,7 +31,7 @@ const m = all.find((x) => x.slug === brand)!;
 const cat = CAT_BY_KIND.get(m.kind as any)!;
 const note = noteFor(m.slug);
 
-// съседите в същата категория — за да не е страницата задънена улица
+// neighbours in the same category, so the page is not a dead end
 const siblings = all.filter((x) => x.kind === m.kind && x.slug !== m.slug);
 const nearby = siblings.slice(0, 24);
 
@@ -44,12 +44,12 @@ const crumbs = [
   { href: `/katalog/${m.slug}/`, label: m.name },
 ];
 
-// Имената са от 3 знака („MG“) до 21 („Mercedes-Benz Trucks“). Един шаблон за
-// всички изкарва дългите марки извън 158 знака и Google реже изречението по
-// средата. Вариантите са от най-дълъг към най-къс.
-// Същото и за заглавието: „Mercedes-Benz Trucks“ изкарва шаблона на 77 знака,
-// а Google реже около 60 и марката пада първа — тоест точно това, което трябва
-// да оцелее. Вариантите са от най-описателен към най-къс.
+// Names range from 3 characters ("MG") to 21 ("Mercedes-Benz Trucks"). One template for
+// all pushes the long brands past 158 characters and Google cuts the sentence in the
+// middle. The variants go from longest to shortest.
+// The same goes for the title: "Mercedes-Benz Trucks" brings the template to 77 characters,
+// and Google cuts around 60 and the brand drops off first, which is exactly what must
+// survive. The variants go from most descriptive to shortest.
 const pageTitle = pickTitle(
   `Чип тунинг ${m.name}, числа преди и след | PDK Tuning`,
   `Чип тунинг ${m.name}, Варна | PDK Tuning`,

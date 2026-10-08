@@ -27,7 +27,7 @@ jobs:
       PUBLIC_GSC_VERIFY: ${{ vars.PUBLIC_GSC_VERIFY }}
       RELEASE: releases/${{ github.run_id }}-${{ github.run_attempt }}
     steps:
-      # Пълната история е нужна за пакета, с който сървърът си оправя гита.
+      # The full history is needed for the bundle the server uses to fix its git tree.
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -144,8 +144,8 @@ jobs:
           printf 'WEB_IMAGE=%s\nAPI_IMAGE=%s\nPUBLIC_INDEXABLE=%s\n' "$WEB_IMAGE" "$API_IMAGE" "$PUBLIC_INDEXABLE" > "$RELEASE/images.env"
           cp docker-compose.production.yml "$RELEASE/docker-compose.yml"
           cp scripts/deploy/activate.sh "$RELEASE/activate.sh"
-          # Сървърът е с HTTPS origin и без креденшъли за частното хранилище,
-          # затова историята пътува с деплоя вместо да се тегли оттам.
+          # The server uses an HTTPS origin and has no credentials for the private repository,
+          # so the history travels with the deploy instead of being pulled from there.
           git bundle create "$RELEASE/repo.bundle" --all
 
       - name: Transfer only prebuilt images and runtime configuration
@@ -178,11 +178,11 @@ jobs:
             cd /home/pdk_new/website
             bash "$RELEASE/activate.sh" "$RELEASE"
 
-      # Кодът пътува в Docker образите, не с `git checkout`, затова работното
-      # дърво на сървъра оставаше заковано на тага, с който е клонирано, и
-      # всеки, който влезеше там, четеше стара версия при нов дизайн. Тази
-      # стъпка е след здравата проверка: сайтът вече работи, тук се оправя само
-      # какво показва сървърът. Затова тя не вали деплоя, ако не успее.
+      # The code ships in the Docker images, not via `git checkout`, so the server's working
+      # tree stayed pinned to the tag it was cloned at, and anyone who logged in there
+      # read an old version after a new design shipped. This step runs after the healthy
+      # check: the site already works, and here we only fix what the server shows.
+      # So it does not fail the deploy if it does not succeed.
       - name: Point the server working tree at the deployed tag
         if: startsWith(github.ref, 'refs/tags/v')
         uses: appleboy/ssh-action@v1.2.2
@@ -204,9 +204,9 @@ jobs:
             printf '%s %s %s\n' "$TAG" "$SHA" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > ACTIVE-VERSION
             echo "PDK_TREE_BEGIN"
             echo "преди: $(git describe --tags --always 2>&1)"
-            # Untracked файлове (.env, releases/, .compose.active.yml) не се
-            # пипат от checkout; следените са огледало на деплоя, не работно
-            # място, затова --force е безопасен тук.
+            # Untracked files (.env, releases/, .compose.active.yml) are not
+            # touched by checkout; tracked ones mirror the deploy, they are not a working
+            # copy, so --force is safe here.
             if git fetch --force "$RELEASE/repo.bundle" "refs/tags/$TAG:refs/tags/$TAG" \
                && git checkout --detach --force "refs/tags/$TAG"; then
               echo "след: $(git describe --tags)"
@@ -214,10 +214,10 @@ jobs:
               echo "Дървото остава на стария таг; меродавен е ACTIVE-VERSION" >&2
             fi
             rm -f "$RELEASE/repo.bundle"
-            # Деплоят не се нуждае от origin — кодът дойде с bundle-а. Това е
-            # само за ръчното `git pull` на сървъра: ключът там не важи за
-            # HTTPS адрес, затова адресът се сменя, но само ако ключът
-            # наистина отваря GitHub. Няма ключ -> нищо не се пипа.
+            # The deploy does not need origin - the code came with the bundle. This is
+            # only for a manual `git pull` on the server: the key there does not apply to an
+            # HTTPS address, so the address is switched, but only if the key
+            # actually opens GitHub. No key -> nothing is touched.
             export GIT_SSH_COMMAND='ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new -o ConnectTimeout=10'
             if [ "$(git remote get-url origin)" != "$SSH_URL" ] \
                && git ls-remote --quiet "$SSH_URL" HEAD >/dev/null 2>&1; then
@@ -225,8 +225,8 @@ jobs:
               echo "origin мина на SSH"
             fi
             echo "origin: $(git remote get-url origin)"
-            # --force, защото дървото е огледало на GitHub: заварен таг, който
-            # не съвпада, иначе вали целия fetch с „would clobber existing tag“.
+            # --force, because the tree mirrors GitHub: a stale tag that
+            # does not match would otherwise fail the whole fetch with "would clobber existing tag".
             if git fetch --force --tags --prune origin 2>&1; then
               echo "ръчният git pull работи"
             else

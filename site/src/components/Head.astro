@@ -1,10 +1,10 @@
 ---
 /**
- * Главата на всяка страница — едно място за заглавие, описание, каноникъл,
- * споделяне и икони. Нито една страница не пише мета тагове сама.
+ * The head of every page - one place for title, description, canonical,
+ * sharing and icons. No page writes meta tags on its own.
  *
- * Каноникълът се смята от `site` в astro.config.mjs, а НЕ от адреса, на който
- * страницата е отворена — така макетът никога не сочи към localhost.
+ * The canonical is computed from `site` in astro.config.mjs, NOT from the address the
+ * page is opened on - so the mockup never points to localhost.
  */
 import { SITE, INDEXABLE, EN_LIVE, GSC_VERIFY } from '../config/site';
 import { alternates, langOf, LOCALE } from '../i18n';
@@ -12,39 +12,39 @@ import { alternates, langOf, LOCALE } from '../i18n';
 interface Props {
   title: string;
   description: string;
-  /** снимка за споделяне, ако страницата има своя */
+  /** image for sharing, if the page has its own */
   image?: string;
-  /** `article` за текстовите страници, `website` за началната */
+  /** `article` for text pages, `website` for the home page */
   ogType?: 'website' | 'article';
-  /** страници, които никога не се индексират (404) — независимо от флага */
+  /** pages that are never indexed (404) - regardless of the flag */
   noindex?: boolean;
-  /** структурирани данни; всеки обект се изписва като отделен JSON-LD блок */
+  /** structured data; each object is written out as a separate JSON-LD block */
   schema?: Record<string, unknown>[];
 }
 
 const { title, description, image = SITE.ogImage, ogType = 'website', noindex = false, schema = [] } = Astro.props;
 
-// „/privacy" → „/privacy/" — билдът вади папки, каноникълът трябва да е същият адрес
+// "/privacy" → "/privacy/" - the build emits folders, the canonical must be the same address
 const path = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
 const canonical = new URL(path, Astro.site).href;
 const ogImage = new URL(image, Astro.site).href;
 const lang = langOf(path);
-/* Недопусната английска страница НЕ се индексира, дори когато сайтът е отворен
-   за обхождане. Тя се изгражда (билдът е статичен и не знае условия), но не се
-   сочи отникъде — а Google намира и несочени адреси. */
+/* An English page that is not allowed is NOT indexed, even when the site is open
+      to crawling. It is built (the build is static and knows no conditions), but it is
+      linked from nowhere - and Google finds unlinked addresses too. */
 const hidden = noindex || (lang === 'en' && !EN_LIVE);
 const robots = hidden || !INDEXABLE ? 'noindex, nofollow' : 'index, follow, max-image-preview:large';
 /**
- * ДВОЙКИТЕ ЗА `hreflang`. Празен списък за страница, която съществува само на
- * един език — електрическите, статиите, PDK Flasher.
+ * THE PAIRS FOR `hreflang`. An empty list for a page that exists in only
+ * one language - the electric ones, the articles, PDK Flasher.
  *
- * `hreflang` със САМО един ред не значи нищо (Google го пропуска мълчаливо), а
- * алтернатива към адрес, който билдът не изгражда, е истинска грешка в Search
- * Console. Затова `alternates()` ги вади от ROUTES, а ROUTES знае само за
- * двойки, които съществуват и от двете страни.
+ * `hreflang` with only ONE row means nothing (Google skips it silently), and an
+ * alternate pointing to an address the build does not produce is a real error in Search
+ * Console. That is why `alternates()` takes them from ROUTES, and ROUTES only knows about
+ * pairs that exist on both sides.
  *
- * `x-default` сочи БЪЛГАРСКАТА страница: сервизът е във Варна и работи на
- * български; английската е за чуждия посетител, не обратното.
+ * `x-default` points to the BULGARIAN page: the service is in Varna and works in
+ * Bulgarian; the English one is for the foreign visitor, not the other way round.
  */
 const alts = hidden ? [] : alternates(path);
 const xDefault = alts.find((a) => a.lang === 'bg');
@@ -54,14 +54,14 @@ const xDefault = alts.find((a) => a.lang === 'bg');
 
 <title>{title}</title>
 <meta name="description" content={description} />
-{/* 404 няма собствен адрес — каноникъл към „/404/“ би сочил страница, която не е съдържание */}
+{/* 404 has no address of its own - a canonical to "/404/" would point to a page that is not content */}
 {!noindex && <link rel="canonical" href={canonical} />}
 <meta name="robots" content={robots} />
 {alts.map((a) => <link rel="alternate" hreflang={a.lang} href={new URL(a.href, Astro.site).href} />)}
 {xDefault && <link rel="alternate" hreflang="x-default" href={new URL(xDefault.href, Astro.site).href} />}
 {/*
-  Удостоверяването за Search Console. Празен ключ = тагът го няма изобщо —
-  чужд или сгрешен код е по-лошо от липсващ. Виж бележката при GSC_VERIFY.
+    Verification for Search Console. Empty key = the tag is absent altogether -
+    a foreign or wrong code is worse than a missing one. See the note at GSC_VERIFY.
 */}
 {GSC_VERIFY && <meta name="google-site-verification" content={GSC_VERIFY} />}
 
@@ -83,8 +83,8 @@ const xDefault = alts.find((a) => a.lang === 'bg');
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
 <meta name="twitter:image:alt" content={SITE.ogImageAlt} />
-{/* Марката няма профил в X — `twitter:site` се изписва само ако бъде попълнен
-    в site.ts. Празен или измислен хендъл е по-лош от липсващ. */}
+{/* The brand has no X profile - `twitter:site` is written only once one is filled in
+        in site.ts. An empty or invented handle is worse than a missing one. */}
 {SITE.twitterHandle && <meta name="twitter:site" content={SITE.twitterHandle} />}
 {SITE.twitterHandle && <meta name="twitter:creator" content={SITE.twitterHandle} />}
 

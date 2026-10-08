@@ -1,9 +1,9 @@
 ---
 /**
- * „МИТ / ФАКТ“ — заглавие от собствения им речник (таблото в Canva).
+ * "MYTH / FACT": a heading from their own vocabulary (the Canva board).
  *
- * Форматът е нарочен: най-скъпите грешки в тунинга идват от неща, които хората
- * знаят с сигурност и които не са верни. Страницата ги подрежда едно до друго.
+ * The format is deliberate: the most expensive mistakes in tuning come from things people
+ * know for certain and which are not true. The page sets them side by side.
  */
 import Page from '../layouts/Page.astro';
 import { crumbSchema, faqSchema, bizRef } from '../lib/seo';
@@ -65,7 +65,7 @@ const pairs = [
 const schema = [
   bizRef(site),
   crumbSchema(site, [{ href: '/', label: 'Начало' }, ...crumbs]),
-  // Схемата е FAQPage: митът е въпросът, фактът е отговорът — и двете се виждат
+  // The schema is FAQPage: the myth is the question, the fact is the answer, and both are visible
   faqSchema(pairs.map((p) => ({ q: p.mit, a: p.fakt }))),
 ];
 ---

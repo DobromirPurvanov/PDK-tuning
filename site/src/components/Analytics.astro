@@ -1,14 +1,14 @@
 ---
 /**
- * Аналитиката.
+ * The analytics.
  *
- * Маркерът идва от средата (`PUBLIC_GA_ID`) и в макета е ПРАЗЕН — демонстрационните
- * посещения нямат работа в имота на клиента. Празно = този компонент не изписва
- * НИТО ЕДИН ред в страницата.
+ * The tag ID comes from the environment (`PUBLIC_GA_ID`) and is EMPTY in the mockup: demo
+ * visits have no business in the client's property. Empty = this component emits
+ * NOT A SINGLE line into the page.
  *
- * Скриптът на Google не се тегли предварително и не се „изключва“ след това:
- * тегли се ЧАК след „да“ от банера (събитието `pdk:consent`). При отказ — нищо;
- * при отмяна на вече дадено съгласие маркерът се гаси и бисквитките се трият.
+ * Google's script is neither preloaded nor "switched off" afterwards:
+ * it loads ONLY after a "yes" from the banner (the `pdk:consent` event). On refusal nothing loads;
+ * when an already-given consent is withdrawn the tag is shut off and the cookies are deleted.
  */
 import { GA_ID } from '../config/site';
 ---
@@ -23,7 +23,7 @@ import { GA_ID } from '../config/site';
         window.dataLayer = window.dataLayer || [];
         window.gtag = function () { window.dataLayer.push(arguments); };
         gtag('js', new Date());
-        // Consent Mode v2: разрешава се САМО статистиката, реклама няма
+        // Consent Mode v2: only statistics are allowed, no advertising
         gtag('consent', 'default', {
           ad_storage: 'denied',
           ad_user_data: 'denied',
@@ -39,7 +39,7 @@ import { GA_ID } from '../config/site';
 
       const stop = () => {
         window['ga-disable-' + id] = true;
-        // изтриване на вече оставените бисквитки на Google
+        // delete the cookies Google has already left behind
         for (const c of document.cookie.split(';')) {
           const name = c.split('=')[0].trim();
           if (/^(_ga|_gid|_gat)/.test(name)) {
@@ -49,9 +49,9 @@ import { GA_ID } from '../config/site';
         }
       };
 
-      // Отбранително: липсващ или сгрешен detail значи „няма съгласие“ — при
-      // съмнение НЕ се зарежда нищо. Мълчаливото падане към `load()` е точно
-      // грешката, която прави барера безсмислен.
+      // Defensive: a missing or malformed detail means "no consent" - when
+      // in doubt NOTHING loads. Silently falling through to `load()` is exactly
+      // the bug that would make the banner pointless.
       document.addEventListener('pdk:consent', (e) => {
         const ok = !!(e && e.detail && e.detail.analytics === true);
         ok ? load() : stop();

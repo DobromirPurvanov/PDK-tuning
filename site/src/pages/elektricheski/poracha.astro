@@ -1,20 +1,20 @@
 ---
 /**
- * ПОРЪЧКАТА ЗА ЕЛЕКТРИЧЕСКИ — последната стъпка след избирача.
+ * THE ELECTRIC ORDER: the last step after the picker.
  *
- * ЧЕКАУТ ОЩЕ НЯМА. Сметка при доставчик не е открита, затова поръчката
- * пристига при нас като писмо през `/api/order` и плащането се уговаря с
- * човек. Страницата НЕ се преструва, че е плащане: казва го с думи, горе,
- * преди полетата.
+ * THERE IS NO CHECKOUT YET. No account with a payment provider has been found, so the order
+ * reaches us as an email through `/api/order` and payment is arranged with a
+ * person. The page does NOT pretend to be a payment: it says so in words, at the top,
+ * before the fields.
  *
- * КОГАТО ДОЙДЕ СМЕТКАТА се пипат две места и нищо друго:
- *   1. `order()` в public/_worker.js — прави сесия при доставчика и връща
- *      `{ ok: true, redirect: <адрес на плащането> }`;
- *   2. текстът на бележката тук.
- * Скриптът долу вече чете `redirect` и тръгва натам, ако го има.
+ * WHEN THE ACCOUNT ARRIVES, two places are touched and nothing else:
+ *   1. `order()` in public/_worker.js: creates a session with the provider and returns
+ *      `{ ok: true, redirect: <payment address> }`;
+ *   2. the text of the note here.
+ * The script below already reads `redirect` and goes there if it is present.
  *
- * `noindex`, защото това е стъпка от поръчката, а не страница за търсене.
- * Моделите се намират през /elektricheski/ и през страницата на модела.
+ * `noindex`, because this is a step of the order, not a page for search.
+ * Models are found through /elektricheski/ and through the model page.
  */
 import Page from '../../layouts/Page.astro';
 import { EV_BY_BRAND, money } from '../../data/ev';
@@ -140,13 +140,13 @@ const crumbs = [
           </p>
 
           {/*
-            ОТДЕЛНА ОТМЕТКА, НЕЗАДЪЛЖИТЕЛНА И НЕОТМЕТНАТА ПРЕДВАРИТЕЛНО.
-            По чл. 57, т. 13 ЗЗП правото на отказ за цифрово съдържание отпада само
-            при три условия наведнъж: изрично съгласие, потвърждение, че човекът знае
-            какво губи, и започнало изпълнение. Предварително сложена отметка НЕ е
-            съгласие, а сливането ѝ с отметката за лични данни отнема избора.
-            Затова тук стои сама, поръчката минава и без нея, а какво следва при
-            всеки от двата избора пише под нея.
+            A SEPARATE CHECKBOX, OPTIONAL AND NOT PRE-TICKED.
+            Under Art. 57, item 13 of the Consumer Protection Act (ZZP) the right of withdrawal for digital content lapses only
+            under three conditions at once: express consent, confirmation that the person knows
+            what they lose, and performance already started. A pre-ticked box is NOT
+            consent, and merging it with the personal-data checkbox takes away the choice.
+            That is why it stands alone here, the order goes through without it, and what follows
+            for each of the two choices is written under it.
           */}
           <p class="fld check onow">
             <input id="f-now" name="now" type="checkbox" />
@@ -200,9 +200,9 @@ const crumbs = [
 </Page>
 
 <script>
-// Същият ред като при формата за запитване: проверява се тук за човека и в
-// public/_worker.js за сървъра. Разликата е една — ако доставчикът на плащания
-// някой ден върне адрес, тръгваме натам вместо да показваме „прието“.
+// Same order as in the inquiry form: it is checked here for the person and in
+// public/_worker.js for the server. There is one difference: if the payment provider
+// ever returns an address, we go there instead of showing "accepted".
 const form = document.getElementById('oform') as HTMLFormElement | null;
 if (form) {
   const send = document.getElementById('osend') as HTMLButtonElement;
@@ -216,21 +216,21 @@ if (form) {
   const priceBox = document.getElementById('oprice')!;
   const priceVal = document.getElementById('oprice-v')!;
 
-  /** Жив ли е чекаутът — решено при билда (PUBLIC_CHECKOUT), не гадано тук. */
+  /** Is the checkout live: decided at build time (PUBLIC_CHECKOUT), not guessed here. */
   const live = form.dataset.live === '1';
 
-  /** цената идва от избраната възможност, не от втори списък в скрипта */
+  /** the price comes from the selected option, not from a second list in the script */
   function showPrice() {
     const opt = model.selectedOptions[0];
     const p = opt?.dataset.price;
     priceVal.textContent = p ?? '—';
     priceBox.hidden = !p;
-    // Модел без обявена цена НИКОГА не води до плащане, дори чекаутът да е жив.
+    // A model without an announced price NEVER leads to payment, even if the checkout is live.
     const askOnly = !p || p === 'Цена по запитване';
     send.textContent = askOnly ? 'Заявете оферта' : live ? 'Към плащането' : 'Изпратете поръчката';
   }
 
-  // Бутонът „Купи“ носи модела в адреса: /elektricheski/poracha/?m=taycan-4
+  // The "Buy" button carries the model in the address: /elektricheski/poracha/?m=taycan-4
   const want = new URLSearchParams(location.search).get('m');
   if (want) {
     const hit = Array.from(model.options).find((o) => o.dataset.slug === want);
@@ -276,8 +276,8 @@ if (form) {
 
     const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
     data.elapsed = String(Date.now() - opened);
-    // Кодът на модела е ЕДИНСТВЕНОТО, по което сървърът вади цената. Самата цена
-    // тук е само каквото е видял човекът на екрана и служи за сверка, не за плащане.
+    // The model code is the ONLY thing the server uses to look up the price. The price itself
+    // here is only what the person saw on screen and serves as a cross-check, not for payment.
     data.slug = model.selectedOptions[0]?.dataset.slug ?? '';
     data.price = model.selectedOptions[0]?.dataset.price ?? '';
 
@@ -293,7 +293,7 @@ if (form) {
       });
       const j = await r.json().catch(() => ({}));
 
-      // Тук влиза чекаутът: щом работникът върне адрес на плащането, тръгваме натам.
+      // The checkout goes in here: once the worker returns a payment address, we go there.
       if (r.ok && j.ok && j.redirect) { location.href = j.redirect; return; }
 
       if (r.ok && j.ok) {
@@ -337,8 +337,8 @@ if (form) {
 .oprice span{font:400 var(--fz-lab)/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
 .oprice b{font:700 24px/1 var(--head);color:var(--lime);font-variant-numeric:tabular-nums}
 
-/* Съгласието по чл. 57, т. 13 е отделено с линия: то е ДРУГО решение, не
-   продължение на отметката за лични данни отгоре. */
+/* Consent under Art. 57, item 13 is set apart with a line: it is a DIFFERENT decision, not
+   a continuation of the personal-data checkbox above. */
 .onow{margin-top:-6px;padding-top:16px;border-top:1px solid var(--line)}
 .onow .hint{grid-column:1 / -1;margin-top:2px}
 

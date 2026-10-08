@@ -6,7 +6,7 @@
  */
 ---
 <style is:global>
-/* ── електрическите: лентата под избирача ──────────────── */
+/* ── electric: the strip under the picker ──────────────── */
 .ev-band{padding:0 var(--gut) 104px}
 .ev-band-in{position:relative;max-width:1000px;margin:0 auto;padding:34px 36px;overflow:hidden;
   background:var(--surface);border:1px solid var(--line);border-radius:var(--r-m);
@@ -27,32 +27,32 @@
   .ev-band-go{width:100%}
 }
 
-/* ── хиро ──────────────────────────────────────────────── */
+/* ── hero ──────────────────────────────────────────────── */
 .hero{position:relative;min-height:100vh;overflow:hidden;
   background:linear-gradient(180deg,#0A1206 0%,#111B08 46%,var(--bg) 100%)}
 .hero .shot{position:absolute;inset:-3%;overflow:hidden}
-/* ЦВЕТОКОРЕКЦИЯТА Е ЗАПЕЧЕНА ВЪВ ФАЙЛА, не се смята в браузъра.
-   Тук стоеше `filter:contrast(1.2) brightness(.5) saturate(.34)` върху въртящо
-   се видео през целия екран — тоест всеки декодиран кадър минаваше през филтър
-   на площ 4608×2044 при dpr 2, двайсет и четири пъти в секунда.
-   `public/img/pdk-hero2.*` носи същата корекция, сметната веднъж от ffmpeg
-   (`docs/HIRO-VIDEO.md` пази командата). Проверено: кадър, минат през ffmpeg, и
-   същият кадър, минат през `ctx.filter` в Chrome, се разминават средно с 0,18
-   от 255. Файловете са НОВИ имена нарочно — `/img/*` се кешира месец, а старото
-   име с ново съдържание значеше светло видео под тъмния макет до месец. */
-/* Кадърът е 1470×630, тоест по-широк от всеки екран, на който ще застане:
-   `cover` го мащабира по ВИСОЧИНА и реже отстрани. Затова вертикалната стойност
-   тук е без значение, а хоризонталната решава какво се вижда.
-   На телефон от кадъра остава ивица от около една пета — при 52% тя пада в
-   най-черната част и хирото изглежда като празно черно поле. 30% я мести върху
-   калника и колелото. Мерено на 390px: средната яркост се вдига от 14,0 на 20,8,
-   а на снимката се вижда каросерията, не черно. */
+/* THE COLOUR CORRECTION IS BAKED INTO THE FILE, not computed in the browser.
+   This used to be `filter:contrast(1.2) brightness(.5) saturate(.34)` on a looping
+   full-screen video, so every decoded frame went through a filter over an area
+   of 4608×2044 at dpr 2, twenty-four times a second.
+   `public/img/pdk-hero2.*` carries the same correction, computed once by ffmpeg
+   (`docs/HERO-VIDEO.md` keeps the command). Checked: a frame run through ffmpeg and
+   the same frame run through `ctx.filter` in Chrome differ by 0.18 on average
+   out of 255. The files have NEW names on purpose — `/img/*` is cached for a month, and an old
+   name with new content meant a bright video under the dark mockup for up to a month. */
+/* The frame is 1470×630, wider than any screen it will sit on:
+   `cover` scales it by HEIGHT and crops the sides. So the vertical value
+   is irrelevant here, and the horizontal one decides what is visible.
+   On a phone only a strip of about one fifth of the frame remains — at 52% it lands in
+   the blackest part and the hero looks like an empty black field. 30% moves it onto
+   the fender and the wheel. Measured at 390px: average brightness goes up from 14.0 to 20.8,
+   and the picture shows the bodywork, not black. */
 .hero .shot video,.hero .shot img{width:100%;height:100%;object-fit:cover;object-position:52% 50%;
   opacity:.95;
   transform:scale(1.04) translate3d(var(--px,0),var(--py,0),0);transition:transform var(--t-slow) cubic-bezier(.2,.8,.2,1)}
 @media(max-width:759px){.hero .shot video,.hero .shot img{object-position:30% 50%}}
 
-/* ── „фото режим“: подът и хоризонтът, както в играта ──────────────────── */
+/* ── "photo mode": the floor and the horizon, as in the game ──────────────────── */
 .stagelines{position:absolute;inset:0;pointer-events:none;opacity:.5;
   background:
     linear-gradient(transparent 0 calc(100% - 1px), var(--lime-wash) calc(100% - 1px)) 0 0/100% 62px,
@@ -60,8 +60,8 @@
   -webkit-mask-image:linear-gradient(180deg,transparent 42%,#000 88%,transparent 100%);
   mask-image:linear-gradient(180deg,transparent 42%,#000 88%,transparent 100%)}
 
-/* ── HUD: ъглови скоби и мерна лента ──────────────────── */
-/* горният ръб е под лентата — иначе ъгловата скоба сечеше логото */
+/* ── HUD: corner brackets and measuring bar ──────────────────── */
+/* the top edge sits below the bar — otherwise the corner bracket cut through the logo */
 .hud{position:absolute;inset:82px 22px 22px;pointer-events:none;z-index:5}
 @media(min-width:900px){.hud{inset:96px 34px 34px}}
 .cn{position:absolute;width:26px;height:26px;border:1px solid var(--lime-line);opacity:0;
@@ -76,7 +76,7 @@
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent);
   mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent)}
 
-/* лентата на мощността: стоково → след файла, като телеметрия в игра */
+/* the power bar: stock → after the file, like telemetry in a game */
 .power{max-width:640px}
 .p-head{display:flex;align-items:baseline;gap:14px;margin:0 0 10px;
   font:400 var(--fz-lab)/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-4)}
@@ -85,22 +85,22 @@
 .p-mid{margin:0 auto;letter-spacing:.1em;color:var(--ink-4)}
 @media(max-width:559px){.p-mid{display:none}}
 .p-bar{position:relative;height:7px;background:var(--tint-2);overflow:hidden}
-/* деленията са НАД запълването, но леки — иначе изяждаха зеленото */
+/* the ticks sit ABOVE the fill, but light — otherwise they ate the green */
 .p-bar::after{content:'';position:absolute;inset:0;pointer-events:none;
   background:repeating-linear-gradient(90deg,transparent 0 15px,var(--tick) 15px 16px)}
 .p-bar i{display:block;height:100%;width:0;
   background:linear-gradient(90deg,var(--green),var(--lime));
   box-shadow:0 0 16px var(--lime-line);transition:width 1.7s cubic-bezier(.2,.8,.2,1)}
 
-/* ── зеленият дим: тънка мъгла по дъното, не петно ────────────────────── */
-/* ТУК СТОЕШЕ `filter:blur(70px)` върху трите петна. Размазването се смята на
-   всеки кадър, защото анимацията мени `scale()` — тоест слоят не може да се
-   кешира и три огромни ядра се преминават по 60 пъти в секунда, докато
-   страницата е отворена. Мерено (headless, софтуерен растер): само димът сваляше
-   хирото от 35 на 21 кадъра в секунда.
-   Размазаното петно и без това е меко — затова падането е в САМИЯ градиент, а
-   елементите са пораснали с толкова, с колкото размазването ги е разливало.
-   Сравнено кадър по кадър при закована анимация: средна разлика 0,47 от 255. */
+/* ── green smoke: thin fog along the bottom, not a blob ────────────────────── */
+/* THIS USED TO BE `filter:blur(70px)` on the three blobs. The blur is computed on
+   every frame, because the animation changes `scale()` — so the layer cannot be
+   cached and three huge kernels are run 60 times a second while the
+   page is open. Measured (headless, software raster): the smoke alone dropped
+   the hero from 35 to 21 frames per second.
+   A blurred blob is soft anyway — so the falloff is in the gradient ITSELF, and the
+   elements are grown by as much as the blur used to spread them.
+   Compared frame by frame with the animation frozen: average difference 0.47 out of 255. */
 .smoke{position:absolute;left:0;right:0;bottom:0;height:46%;pointer-events:none;overflow:hidden;z-index:2;
   -webkit-mask-image:linear-gradient(180deg,transparent,#000 62%,#000);
   mask-image:linear-gradient(180deg,transparent,#000 62%,#000)}
@@ -116,13 +116,13 @@
   75%{opacity:.35}
   100%{opacity:0;transform:translate3d(120px,-34px,0) scale(1.25)}}
 
-/* ── еднократно метене при зареждане, като сканиране в игра ───────────── */
+/* ── one-time sweep on load, like a scan in a game ───────────── */
 .sweep{position:absolute;inset:0;pointer-events:none;z-index:4;
   background:linear-gradient(90deg,transparent,var(--lime-wash) 46%,var(--lime-line) 50%,var(--lime-wash) 54%,transparent);
   transform:translateX(-100%);animation:sweep-go 1.5s cubic-bezier(.5,0,.2,1) .35s 1}
 @keyframes sweep-go{to{transform:translateX(100%)}}
 
-/* ── въвеждащото движение на текста ──────────────────────────────────── */
+/* ── the intro motion of the text ──────────────────────────────────── */
 .left > *{opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) forwards}
 .left > *:nth-child(1){animation-delay:.25s}
 .left > *:nth-child(2){animation-delay:.4s}
@@ -133,9 +133,9 @@
 .deck .cell:nth-child(3){animation-delay:.9s}
 @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 
-/* Хирото извън екрана или в скрит таб: безкрайните анимации спират на място.
-   `paused`, не `none` — при връщане пухът продължава оттам, където е стоял,
-   вместо да скочи на нула и да се види като мигване. */
+/* Hero off-screen or in a hidden tab: the infinite animations stop in place.
+   `paused`, not `none` — on return the smoke continues from where it stood,
+   instead of jumping to zero and showing up as a flicker. */
 .hero.rest .smoke i,
 .hero.rest .dot::after{animation-play-state:paused}
 
@@ -151,7 +151,7 @@
 @media(min-width:980px){.inner{flex-direction:row;align-items:stretch;padding-top:130px}}
 .left{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-between;gap:38px}
 
-/* жива точка + моно надпис — от Experience Hero */
+/* live dot + mono label — from Experience Hero */
 .live{display:flex;align-items:center;gap:11px}
 .dot{position:relative;width:9px;height:9px;border-radius:50%;background:var(--lime)}
 .dot::after{content:'';position:absolute;inset:0;border-radius:50%;background:var(--lime);animation:ping 1.9s cubic-bezier(0,0,.2,1) infinite}
@@ -162,15 +162,15 @@
   margin:0 0 16px;text-shadow:0 1px 12px var(--shade-hard)}
 h1{margin:0;font-family:var(--head);font-weight:700;--stroke:2px;
   font-size:clamp(2.9rem,10.4vw,9.5rem);line-height:1.02;letter-spacing:-.022em;text-transform:uppercase}
-/* Стъпаловидно: изречението е подстъп на един по-дребен ред, думата е кулминацията.
-   Трите равни реда се слепваха един върху друг — това дава йерархия и въздух. */
+/* Stepped: the sentence is a sub-step of one smaller line, the word is the climax.
+   Three equal lines stuck together — this gives hierarchy and air. */
 h1 .lead{display:block;font-size:.46em;line-height:1.12;letter-spacing:.02em;color:var(--ink)}
 @media(min-width:900px){h1{--stroke:3px}}
-/* Вторият ред е КОНТУР (ходът е от Experience Hero, цветът от таблото).
-   -webkit-text-stroke рисува линията ЦЕНТРИРАНО върху буквата — половината излиза
-   навън и редът увисва наляво спрямо запълнените. Отместваме с половин дебелина,
-   за да застанат трите реда на една вертикала. Разредката е малко по-широка,
-   защото при контур съседните букви се слепват. */
+/* The second line is an OUTLINE (the move is from Experience Hero, the colour from the dashboard).
+   -webkit-text-stroke draws the line CENTRED on the letter — half of it sticks
+   out and the line hangs to the left relative to the filled ones. We offset by half the thickness
+   so the three lines sit on one vertical. The letter-spacing is slightly wider,
+   because with an outline neighbouring letters stick together. */
 h1 .out{display:block;color:transparent;-webkit-text-stroke:var(--stroke) var(--lime);
   paint-order:stroke fill;margin-left:calc(var(--stroke) / 2);letter-spacing:-.008em;margin-top:.1em}
 .sub{margin:30px 0 0;font:400 var(--fz-lab)/1.9 var(--mono);letter-spacing:.34em;text-transform:uppercase;
@@ -188,7 +188,7 @@ h1 .out{display:block;color:transparent;-webkit-text-stroke:var(--stroke) var(--
   font:400 var(--fz-lab)/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
 .tel b{color:var(--white);font-weight:400}
 
-/* командните клетки — от Experience Hero, съдържанието е нашето */
+/* command cells — from Experience Hero, the content is ours */
 .deck{width:100%;display:flex;flex-direction:column;gap:14px;justify-content:center}
 @media(min-width:980px){.deck{width:340px;flex:0 0 340px}}
 @media(min-width:1180px){.deck{width:390px;flex:0 0 390px}}
@@ -198,8 +198,8 @@ h1 .out{display:block;color:transparent;-webkit-text-stroke:var(--stroke) var(--
   text-transform:uppercase;color:var(--ink-4)}
 .cell .row{display:flex;align-items:flex-end;gap:9px}
 .cell .track{margin-left:auto;margin-bottom:9px}
-/* Беше <h4>. Числото е СТОЙНОСТ, не заглавие — като заглавие правеше скок
-   h1 → h4 на началната и обявяваше раздел, който не съществува. */
+/* It used to be <h4>. The number is a VALUE, not a heading — as a heading it made a jump
+   h1 → h4 on the home page and announced a section that does not exist. */
 .cell .cell-val{display:block;margin:0;font:700 clamp(30px,3.2vw,42px)/1 var(--head);
   letter-spacing:-.02em;color:var(--lime);font-variant-numeric:tabular-nums}
 .cell .unit{font:400 var(--fz-lab)/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-4);padding-bottom:5px}
@@ -209,8 +209,8 @@ h1 .out{display:block;color:transparent;-webkit-text-stroke:var(--stroke) var(--
 .cell .kv + .kv{border-top:1px solid var(--tint-2)}
 .cell .kv b{color:var(--white);font-weight:400}
 
-/* ── стената: подредбата САМА казва „леки, камиони, селскостопански“ —
-      три реда с етикет отляво, вместо заглавие, увиснало в средата. ─────────── */
+/* ── the wall: the layout ITSELF says "cars, trucks, agricultural" —
+      three rows with a label on the left, instead of a heading hanging in the middle. ─────────── */
 .wall{padding:84px var(--gut) 96px;content-visibility:auto;contain-intrinsic-size:auto 900px}
 .wall-in{max-width:var(--w-page);margin:0 auto}
 .wall-head{display:flex;align-items:baseline;gap:20px;flex-wrap:wrap;margin:0 0 40px;
@@ -223,20 +223,20 @@ h1 .out{display:block;color:transparent;-webkit-text-stroke:var(--stroke) var(--
 @media(min-width:900px){.row{grid-template-columns:220px 1fr;gap:34px;align-items:center;padding:30px 0}}
 .row:last-child{border-bottom:0}
 .row-lab h3{margin:0 0 var(--h-gap-card);font:700 24px/1 var(--head);text-transform:uppercase;letter-spacing:.01em}
-/* етикетът отляво вече води към категорийната страница, а не е мъртъв надпис */
+/* the label on the left now leads to the category page, instead of being a dead caption */
 .row-lab h3 a{border-bottom:1px solid transparent;transition:color var(--t-fast),border-color var(--t-fast)}
 .row-lab h3 a:hover{color:var(--lime);border-bottom-color:var(--lime-line)}
 .row-lab span{font:400 var(--fz-btn)/1.5 var(--mono);color:var(--ink-4)}
 
-/* „виж всичко“ — на дъното на стената и под всяка решетка от плочки */
+/* "view all" — at the bottom of the wall and under every grid of tiles */
 .wall-more,.srv-more{margin:26px 0 0}
 .wall-more a,.srv-more a{display:inline-flex;align-items:center;min-height:44px;
   font:400 var(--fz-btn)/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--lime);
   border-bottom:1px solid var(--lime-line);transition:border-color var(--t-fast)}
 .wall-more a:hover,.srv-more a:hover{border-bottom-color:var(--lime)}
 @media(pointer:coarse){.wall-more a,.srv-more a{min-height:48px}}
-/* Плочките на марките (.row-marks/.mark) живеят в MarkGrid.astro —
-   ползват ги и стоте страници на марките, затова не стоят тук. */
+/* The brand tiles (.row-marks/.mark) live in MarkGrid.astro —
+   the hundred brand pages use them too, so they do not stay here. */
 
 .more{padding:22px 0 30px;border-bottom:1px solid var(--line)}
 @media(min-width:900px){.more{padding-left:254px}}
@@ -250,11 +250,11 @@ h1 .out{display:block;color:transparent;-webkit-text-stroke:var(--stroke) var(--
 #moreBtn[aria-expanded="true"] i{transform:rotate(-135deg) translate(-2px,-2px)}
 .rest{margin-top:20px}
 
-/* ── услуги и въпроси — от Feature Velocity ───────────────────────── */
+/* ── services and questions — from Feature Velocity ───────────────────────── */
 .srv,.faq{position:relative;padding:96px var(--gut) 104px;overflow:hidden;
   content-visibility:auto;contain-intrinsic-size:auto 1100px}
 .faq{padding-top:0}
-/* диагоналните косъм-линии с радиална маска са техни; цветът е нашият */
+/* the diagonal hairlines with a radial mask are theirs; the colour is ours */
 .srv::before{content:'';position:absolute;inset:0;
   background:repeating-linear-gradient(45deg,var(--hair) 0px 1px,transparent 1px 8px);
   -webkit-mask-image:radial-gradient(ellipse 80% 50% at 50% 0%,#000 70%,transparent 110%);
@@ -284,19 +284,19 @@ h1 .out{display:block;color:transparent;-webkit-text-stroke:var(--stroke) var(--
 .tile h3{margin:0 0 var(--h-gap-card);font:700 clamp(22px,2.2vw,29px)/1.05 var(--head);letter-spacing:-.015em;text-transform:uppercase}
 .tile p{margin:0;font:400 var(--fz-xs)/1.6 var(--mono);color:var(--ink-4)}
 .tile p b{color:var(--lime);font-weight:400}
-/* ясното действие на плочката — преди картата водеше към „#“ и не правеше нищо */
+/* the tile's clear action — before, the card led to "#" and did nothing */
 .tile-go{display:inline-block;margin-top:18px;font:400 var(--fz-lab)/1 var(--mono);letter-spacing:.2em;
   text-transform:uppercase;color:var(--lime);opacity:.85;transition:opacity var(--t-fast)}
 .tile:hover .tile-go{opacity:1}
 
-/* ── въпросите ───────────────────────────────────────────────────────────────
-   Акордеонът е примитив (`.qa` в `styles/ui.css`). Тук стоеше втори, почти
-   еднакъв екземпляр — същата логика, същата плюс-икона от два псевдоелемента,
-   разлика само в clamp-а и едно отстояние. Останало е единствено онова, с
-   което началната се РАЗЛИЧАВА: заглавието ѝ е с една степен по-едро. */
+/* ── the questions ───────────────────────────────────────────────────────────────
+   The accordion is a primitive (`.qa` in `styles/ui.css`). A second, almost
+   identical copy used to live here — same logic, same plus icon made of two pseudo-elements,
+   differing only in the clamp and one offset. All that is left is what
+   sets the home page APART: its heading is one step larger. */
 .qa summary{font-size:clamp(17px,1.9vw,21px);line-height:1.3;letter-spacing:.005em}
 
-/* ── статиите: три реда, не картички — тук текстът е стоката ────────────── */
+/* ── the articles: three rows, not cards — here the text is the goods ────────────── */
 .reads{position:relative;padding:0 var(--gut) 96px;content-visibility:auto;contain-intrinsic-size:auto 700px}
 .reads .in{position:relative;z-index:2;max-width:var(--w-page);margin:0 auto}
 .reads .top{display:flex;flex-direction:column;gap:26px;justify-content:space-between;
@@ -320,29 +320,29 @@ h1 .out{display:block;color:transparent;-webkit-text-stroke:var(--stroke) var(--
   .read{padding:22px 0}
 }
 
-/* ── контакти и форма ──────────────────────────────────── */
+/* ── contacts and form ──────────────────────────────────── */
 .cnt{padding:0 var(--gut) 104px}
 .cnt .in{display:grid;gap:44px;grid-template-columns:1fr}
 @media(min-width:980px){.cnt .in{grid-template-columns:1fr 1.15fr;gap:64px;align-items:start}}
 .cnt .note{margin:18px 0 34px;max-width:26rem}
 
-/* Адресът и работното време са примитив (`.nas-*` в `styles/ui.css`). Същият
-   блок стоеше и тук, и в /kontakti/, в ГЛОБАЛЕН обхват и под общите имена
-   `.nap` и `.hrow` — с разлика от един ред. Две правила за едно име в глобален
-   обхват вече са ни стрували два кръга гледане в грешния елемент. */
+/* The address and opening hours are a primitive (`.nas-*` in `styles/ui.css`). The same
+   block used to live both here and in /kontakti/, in GLOBAL scope and under the shared names
+   `.nap` and `.hrow` — differing by one line. Two rules for one name in global
+   scope have already cost us two rounds of looking at the wrong element. */
 
-/* Формата (.form/.fld/.fmsg…) живее в ContactForm.astro — ползва я и /kontakti/. */
+/* The form (.form/.fld/.fmsg…) lives in ContactForm.astro — /kontakti/ uses it too. */
 
-/* Избирачът (.pick/.panel/.cols/.col/.pf…) живее в Picker.astro, заедно с
-   правилата си за тесен екран — ползват го и каталогът, и марките. */
+/* The picker (.pick/.panel/.cols/.col/.pf…) lives in Picker.astro, together with
+   its narrow-screen rules — the catalogue and the brand pages use it too. */
 
 /* ══════════════════════════════════════════════════════════════════════════
-   ТЕСНИТЕ ЕКРАНИ
-   Мерено с iframe на 375 / 414 / 768 / 1024 (смяната на размера на прозореца
-   лъже — innerWidth не се променя). Оправя се това, което наистина се чупеше.
+   NARROW SCREENS
+   Measured with an iframe at 375 / 414 / 768 / 1024 (resizing the window
+   lies — innerWidth does not change). This fixes what was really breaking.
    ══════════════════════════════════════════════════════════════════════════ */
 
-/* ── хиро ────────────────────────────────────────────────────────────────── */
+/* ── hero ────────────────────────────────────────────────────────────────── */
 @media(max-width:979px){
   .inner{padding-top:96px;padding-bottom:44px;gap:34px}
   .left{gap:28px}
@@ -351,7 +351,7 @@ h1 .out{display:block;color:transparent;-webkit-text-stroke:var(--stroke) var(--
   .cta{gap:18px}
 }
 @media(min-width:560px) and (max-width:979px){
-  /* трите клетки: две горе, третата през цялата ширина */
+  /* the three cells: two on top, the third across the full width */
   .deck{display:grid;grid-template-columns:1fr 1fr;width:100%;flex:none}
   .cell:last-child{grid-column:1 / -1}
 }
@@ -361,7 +361,7 @@ h1 .out{display:block;color:transparent;-webkit-text-stroke:var(--stroke) var(--
   .circle i{width:54px;height:54px}
 }
 
-/* ── стената на тесен екран ─────────────────────────────────────────────── */
+/* ── the wall on a narrow screen ─────────────────────────────────────────────── */
 @media(max-width:759px){
   .wall{padding:56px var(--gut) 64px}
   .wall-head{margin-bottom:26px}
@@ -369,7 +369,7 @@ h1 .out{display:block;color:transparent;-webkit-text-stroke:var(--stroke) var(--
   .row-lab h3{font-size:20px}
 }
 
-/* ── услугите, въпросите и контактите ───────────────────────────────────── */
+/* ── services, questions and contacts ───────────────────────────────────── */
 @media(max-width:759px){
   .srv{padding:64px var(--gut) 72px}
   .faq{padding:0 var(--gut) 72px}
@@ -379,7 +379,7 @@ h1 .out{display:block;color:transparent;-webkit-text-stroke:var(--stroke) var(--
   .tile .body{gap:34px}
 }
 
-/* ── с пръст всяко копче е поне 48px; на мишка плътността остава одобрената ── */
+/* ── with a finger every button is at least 48px; with a mouse the approved density stays ── */
 @media(pointer:coarse){
   #moreBtn{min-height:48px}
   .tel{min-height:48px}
@@ -387,13 +387,13 @@ h1 .out{display:block;color:transparent;-webkit-text-stroke:var(--stroke) var(--
 </style>
 
 <script>
-// ── хирото: числата се навъртат, стрелката мете, кадърът се движи с показалеца ──
+// ── hero: the numbers count up, the arrow sweeps, the frame moves with the pointer ──
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const STOCK = 190, TUNED = 220, MAXHP = 400;   // примерът в хироту
+const STOCK = 190, TUNED = 220, MAXHP = 400;   // the example in the hero
 
 const ease = (k: number) => 1 - Math.pow(1 - k, 3);
-// В скрит таб requestAnimationFrame спира — без това числата увисват на нула,
-// ако страницата е отворена на заден план. Тогава просто показваме крайното.
+// In a hidden tab requestAnimationFrame stops — without this the numbers hang at zero,
+// if the page is opened in the background. Then we simply show the final value.
 const run = (ms: number, step: (k: number) => void) => {
   if (reduce || document.hidden) { step(1); return; }
   const t0 = performance.now();
@@ -418,37 +418,37 @@ setTimeout(() => {
   if (num) run(1800, (e) => { num.textContent = String(Math.round(STOCK + (TUNED - STOCK) * e)); });
 }, 700);
 
-// ── видеото се закача СЛЕД като страницата е готова: то тежи ~400 KB и не бива
-//    да се състезава с шрифтовете и текста за първото рисуване. Докато го няма,
-//    се вижда плакатът. При пестене на данни, бавна връзка или изключено
-//    движение изобщо не се тегли.
+// ── the video is attached AFTER the page is ready: it weighs ~400 KB and must not
+//    compete with the fonts and the text for the first paint. Until it arrives,
+//    the poster is shown. With data saver, a slow connection or reduced
+//    motion it is not downloaded at all.
 (() => {
   const v = document.getElementById('shot') as HTMLVideoElement | null;
   const hero = document.querySelector('.hero') as HTMLElement | null;
   if (!v || !hero) return;
   const c = (navigator as any).connection || {};
   const slow = c.saveData === true || /^(slow-)?2g$/.test(c.effectiveType || '') || c.effectiveType === '3g';
-  if (!reduce && !slow) {                     // иначе остава плакатът
+  if (!reduce && !slow) {                     // otherwise the poster stays
     const start = () => {
       for (const [src, type] of [['/img/pdk-hero2.webm', 'video/webm'], ['/img/pdk-hero2.mp4', 'video/mp4']]) {
         const s = document.createElement('source'); s.src = src; s.type = type; v.appendChild(s);
       }
       v.preload = 'auto'; v.load();
-      v.play().catch(() => {});               // ако браузърът откаже — плакатът остава
+      v.play().catch(() => {});               // if the browser refuses — the poster stays
     };
     if ('requestIdleCallback' in window) requestIdleCallback(start, { timeout: 2500 });
     else addEventListener('load', () => setTimeout(start, 400));
   }
 
-  // ── ХИРОТО СПИ, КОГАТО НЕ СЕ ГЛЕДА ──────────────────────────────────────
-  // Важи и когато видеото го няма: при `saveData` или бавна мрежа плакатът
-  // стои, но димът и живата точка пак се въртят, а точно тези машини имат
-  // най-малко ток за излишно рисуване. Затова наблюдателят се закача винаги.
-  // Видеото върви в примка, а димът и живата точка са безкрайни анимации.
-  // Дотук всичко това продължаваше да се декодира и рисува, докато човекът
-  // чете каталога три екрана по-надолу или е отишъл в друг таб: декодер,
-  // компоновка и `backdrop-filter` в трите клетки, за кадър, който никой не
-  // вижда. `.rest` спира анимациите с CSS, видеото се пауза направо.
+  // ── THE HERO SLEEPS WHEN NOBODY IS LOOKING ──────────────────────────────────────
+  // This also applies when there is no video: with `saveData` or a slow network the poster
+  // stays, but the smoke and the live dot still spin, and exactly these machines have
+  // the least power to spare for needless painting. That is why the observer is always attached.
+  // The video loops, and the smoke and the live dot are infinite animations.
+  // Until now all of this kept being decoded and painted while the person
+  // was reading the catalogue three screens down or had gone to another tab: decoder,
+  // compositing and `backdrop-filter` in the three cells, for a frame nobody
+  // sees. `.rest` stops the animations with CSS, the video is paused directly.
   let inView = true, tabOn = !document.hidden;
   const settle = () => {
     const awake = inView && tabOn;
@@ -460,13 +460,13 @@ setTimeout(() => {
   document.addEventListener('visibilitychange', () => { tabOn = !document.hidden; settle(); });
 })();
 
-// дълбочина: кадърът се измества съвсем малко след показалеца
+// depth: the frame shifts very slightly after the pointer
 if (!reduce && matchMedia('(pointer:fine)').matches) {
   const hero = document.querySelector('.hero') as HTMLElement;
   const shot = document.getElementById('shot') as HTMLElement;
-  // Мишката праща до няколкостотин събития в секунда, а всяко пипаше
-  // преобразуването на видеото през целия екран. Сега пише най-много веднъж на
-  // кадър: последното положение се запомня и се прилага в следващия кадър.
+  // The mouse sends up to several hundred events a second, and each one touched
+  // the transform of the full-screen video. Now it writes at most once per
+  // frame: the last position is remembered and applied in the next frame.
   let px = 0, py = 0, queued = false;
   const apply = () => {
     queued = false;
