@@ -75,7 +75,6 @@ export const pages: Page[] = [
   })),
 
   // the company pages
-  { path: '/tseni/', file: '../pages/tseni.astro', changefreq: 'monthly', priority: '0.8' },
   { path: '/kak-rabotim/', file: '../pages/kak-rabotim.astro', changefreq: 'yearly', priority: '0.7' },
   { path: '/za-nas/', file: '../pages/za-nas.astro', changefreq: 'yearly', priority: '0.6' },
   { path: '/vaprosi/', file: '../pages/vaprosi.astro', changefreq: 'monthly', priority: '0.7' },

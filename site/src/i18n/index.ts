@@ -70,7 +70,6 @@ export const serviceSlugBg = (slug: string) =>
 export const ROUTES: { bg: string; en: string }[] = [
   { bg: '/', en: '/en/' },
   { bg: '/uslugi/', en: '/en/services/' },
-  { bg: '/tseni/', en: '/en/prices/' },
   { bg: '/kak-rabotim/', en: '/en/how-we-work/' },
   { bg: '/za-nas/', en: '/en/about/' },
   { bg: '/kontakti/', en: '/en/contact/' },
@@ -153,7 +152,6 @@ export const NAV_EN: NavItem[] = [
       ? { children: SERVICES_EN.map((s) => ({ href: `/en/services/${s.slug}/`, label: s.name })) }
       : {}),
   },
-  { href: '/en/prices/', label: 'Prices' },
   { href: '/en/how-we-work/', label: 'How we work' },
   { href: '/en/about/', label: 'About' },
   { href: '/en/contact/', label: 'Contact' },

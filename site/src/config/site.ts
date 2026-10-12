@@ -145,7 +145,6 @@ export const NAV: NavItem[] = [
   // Own entry in the bar, not only in the dropdown: this is the new
   // direction and the home page advert leads exactly here.
   { href: '/elektricheski/', label: 'Електрически автомобили' },
-  { href: '/tseni/', label: 'Цени' },
   { href: '/kak-rabotim/', label: 'Как работим' },
   { href: '/za-nas/', label: 'За нас' },
   { href: '/kontakti/', label: 'Контакти' },
