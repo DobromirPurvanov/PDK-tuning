@@ -18,6 +18,7 @@
  */
 import { EN_LIVE } from '../config/site';
 import { SERVICES_EN } from './en/services/index';
+import { serviceMenu, type MenuGroup } from '../lib/service-menu';
 
 export type Lang = 'bg' | 'en';
 
@@ -141,7 +142,12 @@ export function alternates(pathname: string): { lang: Lang; href: string }[] {
    make names.
    ══════════════════════════════════════════════════════════════════════════ */
 
-export type NavItem = { href: string; label: string; children?: { href: string; label: string }[] };
+export type NavItem = {
+  href: string;
+  label: string;
+  children?: { href: string; label: string }[];
+  groups?: MenuGroup[];
+};
 
 export const NAV_EN: NavItem[] = [
   {
@@ -149,7 +155,10 @@ export const NAV_EN: NavItem[] = [
     label: 'Services',
     // empty set → no sub-list; see the note in `en/services.ts`
     ...(SERVICES_EN.length
-      ? { children: SERVICES_EN.map((s) => ({ href: `/en/services/${s.slug}/`, label: s.name })) }
+      ? {
+          children: SERVICES_EN.map((s) => ({ href: `/en/services/${s.slug}/`, label: s.name })),
+          groups: serviceMenu(SERVICES_EN, '/en/services/', 'en'),
+        }
       : {}),
   },
   { href: '/en/how-we-work/', label: 'How we work' },

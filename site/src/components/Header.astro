@@ -18,6 +18,7 @@
 import { EN_LIVE, NAV, portalUrl } from '../config/site';
 import { NAV_EN, langOf, twin } from '../i18n';
 import { dict } from '../i18n/ui';
+import { ICONS } from '../data/services';
 
 const path = Astro.url.pathname;
 const lang = langOf(path);
@@ -69,11 +70,31 @@ const showSwitch = EN_LIVE || lang === 'en';
             <a href={n.href} aria-current={active(n.href) ? 'page' : undefined}>
               {n.label}<i class="caret" aria-hidden="true"></i>
             </a>
-            <div class="sub">
-              <div class="sub-in">
-                {n.children.map((c) => <a href={c.href}>{c.label}</a>)}
-              </div>
-            </div>
+            {n.groups
+              ? <div class="sub sub--mega">
+                  <div class="mega">
+                    <div class="mega-cols">
+                      {n.groups.map((g) => (
+                        <div class="mega-col">
+                          <p class="mega-h">{g.label}</p>
+                          {g.items.map((c) => (
+                            <a class="mega-a" href={c.href}>
+                              <svg class="mega-ic" viewBox="0 0 24 24" aria-hidden="true" set:html={ICONS[c.icon]} />
+                              <span class="mega-t">{c.label}</span>
+                              <span class="mega-d">{c.desc}</span>
+                            </a>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                    <a class="mega-all" href={n.href}>{t.allServices}</a>
+                  </div>
+                </div>
+              : <div class="sub">
+                  <div class="sub-in">
+                    {n.children.map((c) => <a href={c.href}>{c.label}</a>)}
+                  </div>
+                </div>}
           </div>
         : <a href={n.href} aria-current={active(n.href) ? 'page' : undefined}>{n.label}</a>
     ))}
@@ -160,6 +181,27 @@ const showSwitch = EN_LIVE || lang === 'en';
   font:400 var(--fz-2xs)/1.3 var(--body);color:var(--ink-2);transition:var(--t-fast)}
 .sub-in a:hover{background:var(--lime-wash);color:var(--lime)}
 
+/* ── the services panel: three groups, icon + name + one line ───────────── */
+.mega{width:min(900px,calc(100vw - 2 * var(--gut) - 240px));padding:20px 20px 14px;background:var(--surface);
+  border:1px solid var(--line);border-radius:var(--r-m);box-shadow:var(--shadow)}
+.mega-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px 18px}
+.mega-col + .mega-col{border-left:1px solid var(--line);padding-left:18px}
+.mega-h{margin:0 0 8px;padding:0 10px;font:400 var(--fz-lab)/1.2 var(--mono);letter-spacing:.16em;
+  text-transform:uppercase;color:var(--lime)}
+.mega-a{display:grid;grid-template-columns:20px 1fr;column-gap:12px;row-gap:3px;align-items:start;
+  padding:10px;border-radius:var(--r-s);transition:background var(--t-fast)}
+.mega-ic{grid-row:span 2;width:20px;height:20px;margin-top:1px;fill:none;stroke:var(--ink-3);
+  stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;transition:stroke var(--t-fast)}
+.mega-t{font:500 var(--fz-2xs)/1.25 var(--body);color:var(--white)}
+.mega-d{font:400 12.5px/1.4 var(--body);color:var(--ink-4);display:-webkit-box;-webkit-line-clamp:3;
+  -webkit-box-orient:vertical;overflow:hidden}
+.mega-a:hover{background:var(--lime-wash)}
+.mega-a:hover .mega-ic{stroke:var(--lime)}
+.mega-a:hover .mega-t{color:var(--lime)}
+.mega-all{display:block;margin-top:10px;padding:12px 10px 2px;border-top:1px solid var(--line);
+  font:400 var(--fz-nav)/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.mega-all:hover{color:var(--lime)}
+
 .right{margin-left:auto;display:flex;align-items:center;gap:10px}
 /* It is now a LINK, not a dead label - so there is no `cursor:default` and it behaves
       like the other buttons in the bar. */
@@ -200,6 +242,19 @@ const showSwitch = EN_LIVE || lang === 'en';
     border-bottom:1px solid var(--line)}
   .sub-in a{min-height:40px;padding:6px 0;font-size:var(--fz-2xs);color:var(--ink-4)}
   .sub-in a:hover{background:none}
+
+  /* the panel folds into the same indented list: group label, icon and name, no description */
+  .mega{width:auto;padding:4px 0 10px 16px;background:none;border:0;border-radius:0;box-shadow:none;
+    border-bottom:1px solid var(--line)}
+  .mega-cols{grid-template-columns:1fr;gap:0}
+  .mega-col + .mega-col{border-left:0;padding-left:0}
+  .mega-h{margin:12px 0 2px;padding:0}
+  .mega-a{grid-template-columns:18px 1fr;align-items:center;min-height:40px;padding:6px 0}
+  .mega-ic{grid-row:auto;width:18px;height:18px;margin:0}
+  .mega-t{font-weight:400;color:var(--ink-4)}
+  .mega-d{display:none}
+  .mega-a:hover{background:none}
+  .mega-all{margin-top:6px;padding:12px 0 2px}
 }
 @media(max-width:559px){
   /* The language button STAYS on the phone too. It used to hide while it was a dead label;
@@ -223,6 +278,6 @@ const showSwitch = EN_LIVE || lang === 'en';
   .burger i:nth-child(1){top:18px}
   .burger i:nth-child(2){top:23px}
   .burger i:nth-child(3){top:28px}
-  .sub-in a{min-height:48px}
+  .sub-in a,.mega-a{min-height:48px}
 }
 </style>

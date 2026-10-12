@@ -9,6 +9,7 @@
 import business from '../data/business.json';
 import { SERVICES } from '../data/services';
 import { CATEGORIES } from '../data/categories';
+import { serviceMenu, type MenuGroup } from '../lib/service-menu';
 
 /** Whether search engines are let in. The mockup stays CLOSED: the real domain gets indexed,
  *  not new-pdk.pages.dev — otherwise the two addresses compete for the same words. */
@@ -123,7 +124,13 @@ export const SECTIONS = [
   { id: 'contact', label: 'Контакти' },
 ] as const;
 
-export type NavItem = { href: string; label: string; children?: { href: string; label: string }[] };
+export type NavItem = {
+  href: string;
+  label: string;
+  children?: { href: string; label: string }[];
+  /** the wide panel with icons and one line of text — see `lib/service-menu.ts` */
+  groups?: MenuGroup[];
+};
 
 /** The main menu. The two dropdown groups are read from the data, so that
  *  there is no link to a service or category that doesn't exist. */
@@ -132,6 +139,7 @@ export const NAV: NavItem[] = [
     href: '/uslugi/',
     label: 'Услуги',
     children: SERVICES.map((s) => ({ href: `/uslugi/${s.slug}/`, label: s.name })),
+    groups: serviceMenu(SERVICES, '/uslugi/', 'bg'),
   },
   {
     href: '/katalog/',
